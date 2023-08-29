@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [SelectSeleniumTests1]" guice-stage="DEVELOPMENT" verbose="5">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" parallel="tests" name="journalspodplaceorder3(failed)" verbose="5">
+    <classes>
+      <class name="com.sheridan.select.tests.sds.JournalsPodPlaceOrderTest">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="setUp"/>
+          <include name="establishConnection"/>
+          <include name="verifyIfJournalPODOrderIsPlacedTheDefaultEnabledProductionPlantInProviderSettingsNeedsToBeUsed" invocation-numbers="0">
+            <parameter name="testcaseid" value="1212648"/>
+            <parameter name="category" value="4.3_4.4"/>
+          </include> <!-- verifyIfJournalPODOrderIsPlacedTheDefaultEnabledProductionPlantInProviderSettingsNeedsToBeUsed -->
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.sheridan.select.tests.sds.JournalsPodPlaceOrderTest -->
+    </classes>
+  </test> <!-- journalspodplaceorder3(failed) -->
+</suite> <!-- Failed suite [SelectSeleniumTests1] -->

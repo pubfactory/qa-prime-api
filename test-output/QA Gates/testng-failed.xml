@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="4" parallel="tests" name="Failed suite [QA Gates]" guice-stage="DEVELOPMENT" verbose="5">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="4" parallel="tests" name="Manual Drop(failed)" verbose="5">
+    <classes>
+      <class name="com.sheridan.select.tests.gates.ManualDropJournals">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="setUp"/>
+          <include name="verifyPOAOrderNotificationShouldDisplayONHOLDReason" invocation-numbers="0">
+            <parameter name="testcaseid" value="1547138"/>
+            <parameter name="category" value="Gates"/>
+          </include> <!-- verifyPOAOrderNotificationShouldDisplayONHOLDReason -->
+          <include name="establishConnection"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.sheridan.select.tests.gates.ManualDropJournals -->
+    </classes>
+  </test> <!-- Manual Drop(failed) -->
+</suite> <!-- Failed suite [QA Gates] -->

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PrimeFPJ Integration Suite" verbose="5" parallel="tests"
+	thread-count="6" preserve-order="true">
+	<listeners>
+		<listener class-name="com.retryAnalyzers.RetryListener" />
+	</listeners>
+
+  	<test name="DEMO_E2E" preserve-order="true">
+		<classes>
+			<class
+				name="com.prime.tests.FPJ.IntegrationE2EFlow">
+			</class>
+		</classes> 
+	</test>
+</suite> 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="4" parallel="tests" name="Failed suite [Gates]" guice-stage="DEVELOPMENT" verbose="5">
+  <parameter name="testRailIntegrationMode" value="ON"/>
+  <parameter name="testRunId" value="2775"/>
+  <parameter name="serverURL" value="https://sheridan.testrail.com"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="serverUsername" value="vandit.nagvekar@kwglobal.com"/>
+  <parameter name="serverPassword" value="Cjk@2022"/>
+  <listeners>
+    <listener class-name="com.retryAnalyzers.RetryListener"/>
+  </listeners>
+  <test thread-count="4" parallel="tests" name="Manual Drop(failed)" verbose="5">
+    <classes>
+      <class name="com.sheridan.select.tests.gates.ManualDropJournals">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="setUp"/>
+          <include name="loadConfigurationValues"/>
+          <include name="establishConnection"/>
+          <include name="verifyUgateOrderXmlSchemaIsAddedWithNewAddressLinesmanualDropbook">
+            <parameter name="testcaseid" value="1620670"/>
+            <parameter name="category" value="Gates"/>
+          </include> <!-- verifyUgateOrderXmlSchemaIsAddedWithNewAddressLinesmanualDropbook -->
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.sheridan.select.tests.gates.ManualDropJournals -->
+    </classes>
+  </test> <!-- Manual Drop(failed) -->
+</suite> <!-- Failed suite [Gates] -->

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="6" parallel="tests" name="Failed suite [PrimeFPJ Regression Suite]" guice-stage="DEVELOPMENT" verbose="5">
+  <listeners>
+    <listener class-name="com.retryAnalyzers.RetryListener"/>
+  </listeners>
+  <test thread-count="6" parallel="tests" name="PRIME_971_Citation_Functionlity(failed)" verbose="5">
+    <classes>
+      <class name="com.prime.tests.FPJ.ArticleCitationPageTSCIR">
+        <parameter name="testcaseid" value="4"/>
+        <methods>
+          <include name="closeDriver"/>
+          <include name="setUp"/>
+          <include name="verifyThatTheUserAbleToSeeRISBIBENWExportCitationButtonAndUserExportTheCitationsInRISBIBENWFormatInAppropriateFolderLocationOrDefaultDownloadFolderLocationOnTSCIRAPP" invocation-numbers="0 0"/>
+          <include name="loadConfigurationValues"/>
+          <include name="establishConnection"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.FPJ.ArticleCitationPageTSCIR -->
+    </classes>
+  </test> <!-- PRIME_971_Citation_Functionlity(failed) -->
+</suite> <!-- Failed suite [PrimeFPJ Regression Suite] -->

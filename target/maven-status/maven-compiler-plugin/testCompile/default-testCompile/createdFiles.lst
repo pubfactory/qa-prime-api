@@ -1,0 +1,3 @@
+com\pubFactory\tests\Brill\InvalidLoginTest.class
+com\pubFactory\tests\Brill\ValidLoginTest.class
+com\miscellaneous\SeleniumMongoDB.class
