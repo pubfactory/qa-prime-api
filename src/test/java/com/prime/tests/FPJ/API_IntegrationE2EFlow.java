@@ -13,12 +13,12 @@ import com.prime.generics.Helper;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import com.prime.pageFactory.pages.fpj.SignInPage;
+import com.prime.pojo.searchResults.SearchResultsResponse;
 import com.prime.retryAnalyzers.Retry;
 
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 public class API_IntegrationE2EFlow extends BaseTest {
@@ -45,7 +45,7 @@ public class API_IntegrationE2EFlow extends BaseTest {
 //	String application=BaseTest.properties.getProperty("application");
 //   String baseURI=BaseTest.properties.getProperty("baseURI_Search");
 //   String platform=BaseTest.properties.getProperty("platform");
-//   String status=BaseTest.properties.getProperty("status");
+		String status = BaseTest.properties.getProperty("status");
 
 		// APIUtils apiutils = new APIUtils();
 		// apiutils.getTestDataForApplication(platform, application, status);
@@ -55,31 +55,30 @@ public class API_IntegrationE2EFlow extends BaseTest {
 		// System.out.println("Filename=" + testDataFileName);
 		JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
 		// System.out.println("TestData=" + testData);
-		username = testData.get("username").toString();
-		password = testData.get("password").toString();
-		System.out.println(application + platform + status);
-		loginServiceHelper = new LoginServiceHelper();
-		response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username,
-				password);
-		JsonPath js = new JsonPath(response.asString());
-		String token = js.get("userAccessDescriptor").toString();
-		response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
-		js = new JsonPath(response.asString());
-		System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
+//		username = testData.get("username").toString();
+//		password = testData.get("password").toString();
+//		System.out.println(application + platform + status);
+//		loginServiceHelper = new LoginServiceHelper();
+//		response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username,
+//				password);
+//		JsonPath js = new JsonPath(response.asString());
+//		String token = js.get("userAccessDescriptor").toString();
+//		response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
+//		js = new JsonPath(response.asString());
+//		System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
 //   APIUtils apiutils=new APIUtils();
 //   RequestSpecification request=apiutils.requestSpecification(baseURI,endpoint, platform, application, status);
 //   RequestSpecification req=given().spec(request).log().all();
 //   ResponseSpecification res=apiutils.responseSpecification(); 
 //   Response response=req.when().get(endpoint).then().log().all().spec(res).extract().response();
 
-//		searchServiceHelper = new SearchServiceHelper();
-//		response = searchServiceHelper.fetchSearchResults(platform, application, status);
+		searchServiceHelper = new SearchServiceHelper();
+		response = searchServiceHelper.fetchSearchResults(platform, application, status);
 		// System.out.println("BLOOP 1");
 //		JsonPath js = new JsonPath(response.asString());
 //		totalResultsFromAPI = Integer.parseInt(js.get("pagination.totalResults").toString());
 		// ResponseBody responsebody = response.getBody();
-		// SearchResultsResponse searchResultsResponse = (SearchResultsResponse)
-		// response.as(SearchResultsResponse.class);
+		SearchResultsResponse searchResultsResponse = response.as(SearchResultsResponse.class);
 //		Assert.assertEquals(searchResultsResponse.getPagination().getTotalResults(), 830);
 //   //Create request spec
 //   

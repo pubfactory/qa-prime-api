@@ -6,6 +6,7 @@ import com.prime.api.endpoints.SearchServiceEndpoint;
 import com.prime.generics.APIUtils;
 import com.prime.generics.BaseTest;
 
+import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
@@ -30,7 +31,7 @@ public class SearchServiceHelper {
 		RequestSpecification request = apiutils.requestSpecification(SEARCH_BASE,
 				SearchServiceEndpoint.FETCH_SEARCH_RESULTS, platform, site, status);
 		RequestSpecification req = given().spec(request).log().all();
-		ResponseSpecification res = apiutils.responseSpecification();
+		ResponseSpecification res = apiutils.responseSpecification().expect().defaultParser(Parser.JSON);
 		Response response = req.when().get(SearchServiceEndpoint.FETCH_SEARCH_RESULTS).then().log().all().spec(res)
 				.extract().response();
 		return response;

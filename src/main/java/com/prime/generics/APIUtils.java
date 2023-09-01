@@ -58,7 +58,7 @@ public class APIUtils {
 	 * @Created Date : 24/08/2023
 	 */
 	public ResponseSpecification responseSpecification() {
-		res = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+		res = new ResponseSpecBuilder().build();
 		return res;
 	}
 

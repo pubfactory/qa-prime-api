@@ -1,6 +1,5 @@
 package com.prime.pojo.searchResults;
 
-import java.util.Date;
 import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
@@ -23,7 +22,7 @@ public class Pagination {
 	SortOrder sortOrder;
 
 	@SerializedName("validPageSizes")
-	Date validPageSizes;
+	List<Integer> validPageSizes;
 
 	@SerializedName("sortOptions")
 	List<SortOptions> sortOptions;
@@ -60,11 +59,11 @@ public class Pagination {
 		return sortOrder;
 	}
 
-	public void setValidPageSizes(Date validPageSizes) {
+	public void setValidPageSizes(List<Integer> validPageSizes) {
 		this.validPageSizes = validPageSizes;
 	}
 
-	public Date getValidPageSizes() {
+	public List<Integer> getValidPageSizes() {
 		return validPageSizes;
 	}
 

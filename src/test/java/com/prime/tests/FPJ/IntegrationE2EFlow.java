@@ -5,6 +5,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.prime.api.helpers.LoginServiceHelper;
 import com.prime.api.helpers.SearchServiceHelper;
 import com.prime.generics.BasePage;
 import com.prime.generics.BaseTest;
@@ -30,10 +31,13 @@ public class IntegrationE2EFlow extends BaseTest {
 	private int totalResultsFromAPI;
 	private int totalResultsFromWebPage;
 	Response response;
+	private String username;
+	private String password;
+	private LoginServiceHelper loginServiceHelper;
 
 	@Severity(SeverityLevel.BLOCKER)
 	@Test(groups = {
-			"SignIn" }, enabled = true, retryAnalyzer = Retry.class, description = "7 - Verify that Login(SIGN IN) link should available in header")
+			"SignIn" }, enabled = true, retryAnalyzer = Retry.class, description = "1721043 - Verify that the user is able to do blank search and compare that the search results API is giving the same results")
 	@Story("EPIC-971")
 	@Parameters({ "testcaseid" })
 	public void verifyThatUserAbleToLaunchApplication(@Optional String testCaseId) throws Exception {
@@ -41,6 +45,7 @@ public class IntegrationE2EFlow extends BaseTest {
 		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
 		String application = BaseTest.properties.getProperty("application");
 		System.out.println("url=" + BaseTest.properties.getProperty(application));
+		String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
 		navigateToUrl(BaseTest.properties.getProperty("application"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -48,6 +53,7 @@ public class IntegrationE2EFlow extends BaseTest {
 		BaseTest.assertEquals(WebDriverManager.getDriver(), basePage.getTitleFromWebPage(),
 				testData.get("title").toString(), "Verifying the page title ");
 		masterPage.clickOnSearchMagnifyingLense();
+		System.out.println("CLICK SUCCESSFUL!!");
 		browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
 		BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBrowsePageLabelText(),
 				testData.get("browsetext").toString(), "Verifying the Browse page title");
@@ -55,10 +61,24 @@ public class IntegrationE2EFlow extends BaseTest {
 		System.out.println("Web COUNT=" + totalResultsFromWebPage);
 		searchServiceHelper = new SearchServiceHelper();
 		response = searchServiceHelper.fetchSearchResults(platform, application, status);
+		BaseTest.assertEquals(WebDriverManager.getDriver(), response.getStatusCode(), 200, "API not 200 OK");
 		JsonPath js = new JsonPath(response.asString());
 		totalResultsFromAPI = Integer.parseInt(js.get("pagination.totalResults").toString());
 		BaseTest.assertEquals(WebDriverManager.getDriver(), totalResultsFromAPI, totalResultsFromWebPage,
 				"Total Search results from api and webpage mismatching");
+		testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
+		// System.out.println("TestData=" + testData);
+		username = testData.get("username").toString();
+		password = testData.get("password").toString();
+		System.out.println(application + platform + status);
+		loginServiceHelper = new LoginServiceHelper();
+		response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username,
+				password);
+		js = new JsonPath(response.asString());
+		String token = js.get("userAccessDescriptor").toString();
+		response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
+		js = new JsonPath(response.asString());
+		System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
 
 	}
 

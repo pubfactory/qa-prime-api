@@ -31,6 +31,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -113,12 +115,14 @@ public class BaseTest {
 	private String testCaseId;
 	private static String error;
 	protected String status;
+	protected String teststatus;
 	private XmlSuite suite;
 	private String browserstack;
 	private JSONParser parser;
 	protected String application;
 	protected String baseURI;
 	protected String platform;
+	private String suitefilepathnamee;
 	public static String testCaseName;
 
 	public static String TCNUM = "";
@@ -272,7 +276,7 @@ public class BaseTest {
 			suiteName = context.getSuite().getName();
 			suite = context.getSuite().getXmlSuite();
 			String env = BaseTest.properties.getProperty("Environment");
-			String suitefilepathnamee = suite.toString();
+			suitefilepathnamee = suite.toString();
 			if (suitefilepathnamee.contains("Core Case") && env.equalsIgnoreCase("staging")) {
 				testRailId = BaseTest.properties.getProperty("staging_core_case_testrunid");
 			} else if (suitefilepathnamee.contains("Gates") && env.equalsIgnoreCase("staging")) {
@@ -444,6 +448,15 @@ public class BaseTest {
 					System.out.println("******Before Chrome Driver*****" + browser);
 					driver = new ChromeDriver(options);
 					System.out.println("******After Chrome Driver*****" + driver);
+				} else if (browser.equalsIgnoreCase("firefox")) {
+					System.out.println("****** Initiate Firefox Browser using " + browser + " *****");
+					FirefoxOptions options = new FirefoxOptions();
+					if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Yes")) {
+						options.setHeadless(true);
+					}
+					io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
+					driver = new FirefoxDriver(options);
+					System.out.println("******After Firefox Driver*****" + driver);
 				}
 				WebDriverManager.setWebDriver(driver);
 			}
@@ -637,27 +650,39 @@ public class BaseTest {
 	 * @author Rakesh.Shevale
 	 * @Created Date : 10/07/2023
 	 */
-	@AfterMethod
+	@AfterMethod(alwaysRun = true)
 	@Parameters({ "testcaseid" })
 	public void closeApplication(@Optional String testcaseId) throws Exception {
 		try {
 			Helper.INSTANCE.logEventInfoToReport("After Method");
-			status = Helper.INSTANCE.getErrorMessage(testcaseId);
-			if (!status.equalsIgnoreCase("")) {
-				Helper.INSTANCE.publishResults(testRailId, testcaseId, "5", status);
-				Allure.step(testCaseId + " :: " + status);
+			testcaseId = Helper.INSTANCE.getCurrentTestCaseId();
+			teststatus = Helper.INSTANCE.getErrorMessage(testcaseId);
+//			try {
+//				status = Helper.INSTANCE.getErrorMessage(testcaseId);
+//			} catch (NullPointerException e) {
+//				status = "";
+//
+//			}
+			if (teststatus != null) {
+				if (!suitefilepathnamee.contains("Default suite")) {
+					Helper.INSTANCE.publishResults(testRailId, testcaseId, "5", teststatus);
+				}
+				Allure.step(testCaseId + " :: " + teststatus);
 				browserstack = BaseTest.properties.getProperty("BrowserStack");
 				if (browserstack.equalsIgnoreCase("Y")) {
 					final JavascriptExecutor jse = (JavascriptExecutor) driver;
 					JSONObject executorObject = new JSONObject();
 					JSONObject argumentsObject = new JSONObject();
 					argumentsObject.put("status", "failed");
-					argumentsObject.put("reason", status);
+					argumentsObject.put("reason", teststatus);
 					executorObject.put("action", "setSessionStatus");
 					executorObject.put("arguments", argumentsObject);
 					jse.executeScript(String.format("browserstack_executor: %s", executorObject));
 				}
 			} else {
+				if (!suitefilepathnamee.contains("Default suite")) {
+					Helper.INSTANCE.publishResults(testRailId, testcaseId, "1", "Test Passed Successfully");
+				}
 				Allure.addAttachment("Test Passed Successfully",
 						new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
 				browserstack = BaseTest.properties.getProperty("BrowserStack");
@@ -673,6 +698,7 @@ public class BaseTest {
 				}
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 
 		} finally {
 			Helper.INSTANCE.logEventInfoToReport("Execution Completed for " + testCaseId);

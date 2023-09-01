@@ -6,11 +6,11 @@
       <class name="com.prime.tests.FPJ.IntegrationE2EFlow">
         <methods>
           <include name="closeDriver"/>
-          <include name="setUp"/>
-          <include name="loadConfigurationValues"/>
           <include name="establishConnection"/>
-          <include name="closeApplication"/>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
           <include name="verifyThatUserAbleToLaunchApplication" invocation-numbers="0"/>
+          <include name="closeApplication"/>
         </methods>
       </class> <!-- com.prime.tests.FPJ.IntegrationE2EFlow -->
     </classes>

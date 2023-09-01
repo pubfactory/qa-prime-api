@@ -7,16 +7,16 @@ import com.google.gson.annotations.SerializedName;
 public class SearchResultsResponse {
 
 	@SerializedName("results")
-	List<Results> results;
+	private List<Results> results;
 
 	@SerializedName("pagination")
-	Pagination pagination;
+	private Pagination pagination;
 
 	@SerializedName("parameters")
-	List<String> parameters;
+	private List<String> parameters;
 
 	@SerializedName("filters")
-	List<Filters> filters;
+	private List<Filters> filters;
 
 	public SearchResultsResponse() {
 

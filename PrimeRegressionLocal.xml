@@ -3,7 +3,7 @@
 <suite name="PrimeFPJ Integration Suite" verbose="5" parallel="tests"
 	thread-count="6" preserve-order="true">
 	<listeners>
-		<listener class-name="com.retryAnalyzers.RetryListener" />
+		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>
 
   	<test name="DEMO_E2E" preserve-order="true">
