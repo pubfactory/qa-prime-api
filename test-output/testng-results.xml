@@ -1,47 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="1" ignored="1" total="3" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-01T13:56:59 IST" name="PRIMEFPJ Regression Suite" finished-at="2023-09-01T13:56:59 IST" duration-ms="0">
-    <groups>
-    </groups>
-  </suite> <!-- PRIMEFPJ Regression Suite -->
-  <suite started-at="2023-09-01T13:56:17 IST" name="PrimeFPJ Integration Suite" finished-at="2023-09-01T13:56:59 IST" duration-ms="41343">
+  <suite started-at="2023-09-01T16:07:51 IST" name="Default suite" finished-at="2023-09-01T16:08:10 IST" duration-ms="18597">
     <groups>
       <group name="SignIn">
-        <method signature="IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" name="verifyThatUserAbleToLaunchApplication" class="com.prime.tests.FPJ.IntegrationE2EFlow"/>
+        <method signature="IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@74f5ce22]" name="verifyThatUserAbleToLaunchApplication" class="com.prime.tests.FPJ.IntegrationE2EFlow"/>
       </group> <!-- SignIn -->
     </groups>
-    <test started-at="2023-09-01T13:56:17 IST" name="DEMO_E2E" finished-at="2023-09-01T13:56:59 IST" duration-ms="41343">
+    <test started-at="2023-09-01T16:07:51 IST" name="Default test" finished-at="2023-09-01T16:08:10 IST" duration-ms="18597">
       <class name="com.prime.tests.FPJ.IntegrationE2EFlow">
-        <test-method is-config="true" signature="establishConnection(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-01T13:56:17 IST" name="establishConnection" finished-at="2023-09-01T13:56:17 IST" duration-ms="25" status="PASS">
+        <test-method is-config="true" signature="establishConnection(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@74f5ce22]" started-at="2023-09-01T16:07:51 IST" name="establishConnection" finished-at="2023-09-01T16:07:51 IST" duration-ms="35" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@53142455]]>
+                <![CDATA[org.testng.TestRunner@534762ed]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- establishConnection -->
-        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-01T13:56:17 IST" name="loadConfigurationValues" finished-at="2023-09-01T13:56:17 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@74f5ce22]" started-at="2023-09-01T16:07:51 IST" name="loadConfigurationValues" finished-at="2023-09-01T16:07:51 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@53142455]]>
+                <![CDATA[org.testng.TestRunner@534762ed]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfigurationValues -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-01T13:56:17 IST" name="setUp" finished-at="2023-09-01T13:56:19 IST" duration-ms="1513" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@74f5ce22]" started-at="2023-09-01T16:07:51 IST" name="setUp" finished-at="2023-09-01T16:07:53 IST" duration-ms="1599" status="PASS">
           <params>
             <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
+              <value is-null="true"/>
             </param>
             <param index="1">
               <value is-null="true"/>
@@ -61,50 +55,16 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method retried="true" signature="verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-01T13:56:19 IST" name="verifyThatUserAbleToLaunchApplication" description="1721043 - Verify that the user is able to do blank search and compare that the search results API is giving the same results" finished-at="2023-09-01T13:56:43 IST" duration-ms="23701" status="SKIP">
+        <test-method signature="verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@74f5ce22]" started-at="2023-09-01T16:07:53 IST" name="verifyThatUserAbleToLaunchApplication" description="1721043 - Verify that the user is able to do blank search and compare that the search results API is giving the same results" finished-at="2023-09-01T16:08:10 IST" duration-ms="16475" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Verifying the Browse page title ::  Expected Result--> Browse || Actual Result--> ]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Verifying the Browse page title ::  Expected Result--> Browse || Actual Result--> 
-at org.testng.Assert.fail(Assert.java:111)
-at com.prime.generics.BaseTest.assertEquals(BaseTest.java:806)
-at com.prime.tests.FPJ.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(IntegrationE2EFlow.java:58)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-at java.base/java.lang.Thread.run(Thread.java:831)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyThatUserAbleToLaunchApplication -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-01T13:56:43 IST" name="closeApplication" finished-at="2023-09-01T13:56:45 IST" duration-ms="2360" status="PASS">
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@74f5ce22]" started-at="2023-09-01T16:08:10 IST" name="closeApplication" finished-at="2023-09-01T16:08:10 IST" duration-ms="297" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -113,88 +73,11 @@ at java.base/java.lang.Thread.run(Thread.java:831)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-01T13:56:45 IST" name="setUp" finished-at="2023-09-01T13:56:45 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value is-null="true"/>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-            <param index="3">
-              <value is-null="true"/>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[public void com.prime.tests.FPJ.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(java.lang.String) throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-01T13:56:45 IST" name="verifyThatUserAbleToLaunchApplication" description="1721043 - Verify that the user is able to do blank search and compare that the search results API is giving the same results" finished-at="2023-09-01T13:56:57 IST" duration-ms="12271" status="FAIL">
-          <params>
-            <param index="0">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[API not 200 OK ::  Expected Result--> 200 || Actual Result--> 403]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: API not 200 OK ::  Expected Result--> 200 || Actual Result--> 403
-at org.testng.Assert.fail(Assert.java:111)
-at com.prime.generics.BaseTest.assertEquals(BaseTest.java:836)
-at com.prime.tests.FPJ.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(IntegrationE2EFlow.java:64)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-at java.base/java.lang.Thread.run(Thread.java:831)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyThatUserAbleToLaunchApplication -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-01T13:56:57 IST" name="closeApplication" finished-at="2023-09-01T13:56:59 IST" duration-ms="1360" status="PASS">
-          <params>
-            <param index="0">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-01T13:56:59 IST" name="closeDriver" finished-at="2023-09-01T13:56:59 IST" duration-ms="227" status="PASS">
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@74f5ce22]" started-at="2023-09-01T16:08:10 IST" name="closeDriver" finished-at="2023-09-01T16:08:11 IST" duration-ms="477" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
       </class> <!-- com.prime.tests.FPJ.IntegrationE2EFlow -->
-    </test> <!-- DEMO_E2E -->
-  </suite> <!-- PrimeFPJ Integration Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

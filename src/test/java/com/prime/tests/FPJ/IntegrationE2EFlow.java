@@ -14,6 +14,7 @@ import com.prime.generics.WebDriverManager;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import com.prime.pageFactory.pages.fpj.SignInPage;
+import com.prime.pojo.login.LoginUserAccessResponse;
 import com.prime.retryAnalyzers.Retry;
 
 import io.qameta.allure.Severity;
@@ -74,8 +75,8 @@ public class IntegrationE2EFlow extends BaseTest {
 		loginServiceHelper = new LoginServiceHelper();
 		response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username,
 				password);
-		js = new JsonPath(response.asString());
-		String token = js.get("userAccessDescriptor").toString();
+		LoginUserAccessResponse loginuseraccessresponse = response.as(LoginUserAccessResponse.class);
+		String token = loginuseraccessresponse.getUserAccessDescriptor().toString();
 		response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
 		js = new JsonPath(response.asString());
 		System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
