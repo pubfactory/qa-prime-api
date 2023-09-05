@@ -31,6 +31,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -123,6 +125,7 @@ public class BaseTest {
 	protected String baseURI;
 	protected String platform;
 	private String suitefilepathnamee;
+	private EdgeOptions edgeoptions;
 	public static String testCaseName;
 
 	public static String TCNUM = "";
@@ -451,16 +454,35 @@ public class BaseTest {
 				} else if (browser.equalsIgnoreCase("firefox")) {
 					System.out.println("****** Initiate Firefox Browser using " + browser + " *****");
 					FirefoxOptions options = new FirefoxOptions();
-					if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Yes")) {
+					if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
 						options.setHeadless(true);
 					}
 					io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
 					driver = new FirefoxDriver(options);
 					System.out.println("******After Firefox Driver*****" + driver);
+				} else if (browser.equalsIgnoreCase("edge")) {
+					System.out.println("****** Initiate Edge Browser using " + browser + " *****");
+					DesiredCapabilities capabilities = DesiredCapabilities.edge();
+					edgeoptions = new EdgeOptions();
+					// capabilities.setCapability(CapabilityType.);
+					// EdgeDriver driver = new EdgeDriver(capabilities);
+
+					// EdgeOptions edgeoptions = new EdgeOptions();
+					// EdgeOptions edgeoptions = new EdgeOptions();
+
+					if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
+
+						// edgeoptions.addArguments("--headless");
+
+					}
+					io.github.bonigarcia.wdm.WebDriverManager.edgedriver().setup();
+					driver = new EdgeDriver(edgeoptions);
+					System.out.println("******After Edge Driver*****" + driver);
 				}
 				WebDriverManager.setWebDriver(driver);
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -1028,6 +1050,11 @@ public class BaseTest {
 		return finalObj;
 	}
 
+	/**
+	 * This methos automatically generates allure html report
+	 * 
+	 * @throws IOException
+	 */
 	public void allureReporting() throws IOException {
 		Runtime.getRuntime().exec(new String[] { "mvn allure:serve" });
 
