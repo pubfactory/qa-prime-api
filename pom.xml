@@ -202,7 +202,7 @@
 				<version>2.19.1</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>src/Config.xml</suiteXmlFile>
+						<suiteXmlFile>src/PrimeConfig.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
