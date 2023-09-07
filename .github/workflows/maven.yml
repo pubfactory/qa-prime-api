@@ -30,7 +30,8 @@ jobs:
       uses: nanasess/setup-chromedriver@v2
     - name: Navigating to chromedriver and making it executable
       run: |
-          cd qa-prime-e2e
+          cd /home/runner/work 
+          ls
           chmod +x chromedriver
     - name: Build with Maven
       run: mvn -B clean test
