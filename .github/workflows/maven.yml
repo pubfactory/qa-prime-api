@@ -23,11 +23,8 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Install Google Chrome
-      uses: browser-actions/setup-chrome@latest
-    - name: Display chrome version  
-      run: chrome --version
-    - name: Installing chrome driver
-      uses: nanasess/setup-chromedriver@v2
+      run: |
+            sudo apt-get install chromium-chromedriver
     - name: Navigating to chromedriver and making it executable
       run: |
           cd /home/runner/work/qa-prime-e2e/qa-prime-e2e
