@@ -24,8 +24,8 @@ jobs:
         cache: maven
     - name: Install Google Chrome
       uses: browser-actions/setup-chrome@latest
-      with:
-        chrome-version: 116.0.5845.180
+    - name: Display chrome version  
+      run: chrome --version
     - name: Display chrome version  
       run: chrome --version
     - name: Display chrome version  
