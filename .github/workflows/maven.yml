@@ -32,7 +32,7 @@ jobs:
       run: |
           cd /home/runner/work/qa-prime-e2e/qa-prime-e2e
           ls
-          chmod +x chromedriver
+          chmod +x chromedriver.exe
     - name: Build with Maven
       run: mvn -B clean test
 
