@@ -12,10 +12,10 @@ on: workflow_dispatch
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3 
+    - uses: actions/checkout@v3
     - name: Set up JDK 8
       uses: actions/setup-java@v3
       with:
@@ -23,13 +23,11 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Install Google Chrome
-      run: |
-            sudo apt-get install chromium-chromedriver
-   # - name: Navigating to chromedriver and making it executable
-   #   run: |
-    #      cd /home/runner/work/qa-prime-e2e/qa-prime-e2e
-     #     ls
-      #    sudo chmod +x chromedriver.exe
+      uses: browser-actions/setup-chrome@latest
+    - name: Display chrome version  
+      run: chrome --version
+    - name: Installing chrome driver
+      uses: nanasess/setup-chromedriver@v2
     - name: Build with Maven
       run: mvn -B clean test
 
