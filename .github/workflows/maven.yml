@@ -23,10 +23,11 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Install Google Chrome
-      uses: abhi1693/setup-browser@v0.3.4
+      uses: browser-actions/setup-chrome@latest
       with:
-        browser: chrome
-        version: 116.0.5845.180
+        chrome-version: 116.0.5845.180
+    - name: Display chrome version  
+      run: chrome --version
     - name: Display chrome version  
       run: chrome --version
     - name: Installing chrome driver
