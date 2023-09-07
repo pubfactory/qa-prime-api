@@ -32,6 +32,7 @@ jobs:
       run: chrome --version
     - name: Installing chrome driver
       uses: nanasess/setup-chromedriver@v2
+            chmod +x chromedriver
     - name: Build with Maven
       run: mvn -B clean test
 
