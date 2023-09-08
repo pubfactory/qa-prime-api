@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="17.274" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="27.631" tests="2" errors="0" skipped="1" failures="1">
   <properties>
     <property name="jansi.mode" value="strip"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -65,5 +65,614 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="verifyThatUserAbleToLaunchApplication" classname="com.prime.tests.FPJ.IntegrationE2EFlow" time="12.197"/>
+  <testcase name="verifyThatUserAbleToLaunchApplication" classname="com.prime.tests.FPJ.IntegrationE2EFlow" time="0">
+    <skipped message="Cannot parse content to class com.prime.pojo.login.LoginUserAccessResponse because no content-type was present in the response and no default parser has been set.&#10;You can specify a default parser using e.g.:&#10;RestAssured.defaultParser = Parser.JSON;&#10;&#10;or you can specify an explicit ObjectMapper using as(class com.prime.pojo.login.LoginUserAccessResponse, &lt;ObjectMapper&gt;);"/>
+    <system-out><![CDATA[ENV=dev
+PROP={platform=meridian, baseURI_Authentication=https://meridian-fpj-draft.dev.prime.pubfactory.com/, BrowserStack=N, tsir=https://prime-dev:prime-dev@meridian-tscir-draft.dev.prime.pubfactory.com/, headLess=Y, executionMode=local, status=draft, baseURI_Content=https://meridian-fpj-draft.dev.prime.pubfactory.com/, browser=chrome, fpj=https://prime-dev:prime-dev@meridian-fpj-draft.dev.prime.pubfactory.com/, application=fpj, timeOut=19, Environment=dev, baseURI_Search=https://meridian-fpj-draft.dev.prime.pubfactory.com/, sleepTime=500, sleepEnabled=true}
+threadId 1
+PrimeFPJ Integration Suite is Started
+******Enter Chrome Browser*****chrome
+C:\Users\veena.mathew\eclipse-workspace\com.QAPrimeIntegration
+******Before Chrome Driver*****chrome
+******After Chrome Driver*****ChromeDriver: chrome on WINDOWS (534329526fb6a55b9f81b4dd9781d4bc)
+*******************Suite name is :PrimeFPJ Integration Suite
+url=https://prime-dev:prime-dev@meridian-fpj-draft.dev.prime.pubfactory.com/
+CLICK SUCCESSFUL!!
+Web COUNT=830
+INSIDE SPECfpjmeridiandraft
+Request method:	GET
+Request URI:	https://meridian-fpj-draft.dev.prime.pubfactory.com/meridian/fpj/draft/rest/search/v1/search
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	platform=meridian
+				site=fpj
+				status=draft
+Headers:		x-pf-internal=false
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 805
+Connection: keep-alive
+Date: Thu, 07 Sep 2023 14:44:56 GMT
+Content-Encoding: gzip
+Cache-Control: no-cache, no-transform, no-store, max-age=0, private
+ETag: "1444906395"
+X-Cache: Miss from cloudfront
+Via: 1.1 1861b67291103164103ad7299a51ed5e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MRS52-P5
+X-Amz-Cf-Id: ae0Pm46_pDowX4hRDWazBTSufuI54ZHW9LYF5LqT-ZT2e1T4wZmr0Q==
+Vary: Origin
+
+{
+    "results": [
+        {
+            "uri": "/journals/fpro/73/2/article-p175.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p171.xml"
+        },
+        {
+            "uri": "/journals/fpro/72/s2/article-p8.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p126.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p154.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p146.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p133.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p142.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p113.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p104.xml"
+        }
+    ],
+    "pagination": {
+        "totalResults": 830,
+        "pageSize": 10,
+        "pageNumber": 1,
+        "sortOrder": {
+            "id": "datedescending",
+            "fieldId": "date",
+            "fieldName": "ifp:sortdate",
+            "ascending": false,
+            "supportsJumpTo": false
+        },
+        "validPageSizes": [
+            10,
+            20,
+            50
+        ],
+        "sortOptions": [
+            {
+                "id": "date",
+                "fieldId": "date",
+                "fieldName": "ifp:sortdate",
+                "ascending": true,
+                "supportsJumpTo": false
+            },
+            {
+                "id": "datedescending",
+                "fieldId": "date",
+                "fieldName": "ifp:sortdate",
+                "ascending": false,
+                "supportsJumpTo": false
+            }
+        ]
+    },
+    "parameters": [
+        
+    ],
+    "filters": [
+        {
+            "id": "search-terms",
+            "type": "ADVANCED",
+            "defaultLabel": "Refine terms",
+            "multiValued": true,
+            "collapsed": false,
+            "parameterType": "advanced-search",
+            "displayCounts": false,
+            "cutoff": -1,
+            "advancedValues": {
+                "availableFields": [
+                    "all",
+                    "title",
+                    "fulltext",
+                    "identifier",
+                    "author",
+                    "abstract",
+                    "affiliation"
+                ],
+                "availableOperators": [
+                    "AND",
+                    "OR",
+                    "NOT"
+                ],
+                "currentTerms": [
+                    
+                ],
+                "currentOperators": [
+                    
+                ]
+            }
+        },
+        {
+            "id": "by-type",
+            "type": "TREE",
+            "defaultLabel": "Refine by Type",
+            "multiValued": true,
+            "collapsed": false,
+            "parameterName": "type",
+            "parameterType": "type",
+            "displayCounts": true,
+            "cutoff": -1,
+            "operator": "OR",
+            "values": [
+                {
+                    "value": "ARTICLE",
+                    "count": 830,
+                    "selected": false
+                }
+            ]
+        },
+        {
+            "id": "by-date",
+            "type": "DATE",
+            "defaultLabel": "Refine by Date",
+            "multiValued": true,
+            "collapsed": false,
+            "parameterName": "date",
+            "parameterType": "date_range",
+            "displayCounts": false,
+            "cutoff": -1,
+            "operator": "AND",
+            "dateValues": {
+                "startParamName": "fromDate",
+                "endParamName": "toDate",
+                "validYears": [
+                    "2009",
+                    "2010",
+                    "2011",
+                    "2012",
+                    "2013",
+                    "2014",
+                    "2015",
+                    "2016",
+                    "2017",
+                    "2018",
+                    "2019",
+                    "2020",
+                    "2021",
+                    "2022",
+                    "2023"
+                ]
+            }
+        },
+        {
+            "id": "by-access",
+            "type": "LIST",
+            "defaultLabel": "Refine by Access",
+            "multiValued": false,
+            "collapsed": false,
+            "parameterName": "access",
+            "parameterType": "access",
+            "displayCounts": false,
+            "cutoff": -1,
+            "operator": "AND",
+            "values": [
+                {
+                    "value": "ALL",
+                    "count": 0,
+                    "selected": false
+                },
+                {
+                    "value": "USER",
+                    "count": 0,
+                    "selected": false
+                },
+                {
+                    "value": "OPEN",
+                    "count": 0,
+                    "selected": false
+                },
+                {
+                    "value": "FREE",
+                    "count": 0,
+                    "selected": false
+                }
+            ]
+        },
+        {
+            "id": "by-article-type",
+            "type": "LIST",
+            "defaultLabel": "By Article Type",
+            "multiValued": false,
+            "collapsed": false,
+            "parameterName": "articleType",
+            "parameterType": "articleType",
+            "displayCounts": true,
+            "cutoff": -1,
+            "operator": "AND",
+            "values": [
+                {
+                    "value": "correction",
+                    "count": 3,
+                    "selected": false
+                },
+                {
+                    "value": "other",
+                    "count": 169,
+                    "selected": false
+                },
+                {
+                    "value": "research-article",
+                    "count": 636,
+                    "selected": false
+                },
+                {
+                    "value": "review-article",
+                    "count": 22,
+                    "selected": false
+                }
+            ]
+        }
+    ]
+}
+fpjmeridiandraft
+INSIDE SPECfpjmeridiandraft
+Request method:	POST
+Request URI:	https://meridian-fpj-draft.dev.prime.pubfactory.com/meridian/fpj/draft/rest/authentication/v1/authenticate/active
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	platform=meridian
+				site=fpj
+				status=draft
+Headers:		x-pf-internal=false
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "username": "veena.mathew@kwglobal.com",
+    "password": "Default@123"
+}
+HTTP/1.1 500 Internal Server Error
+Content-Length: 0
+Connection: keep-alive
+Date: Thu, 07 Sep 2023 14:44:58 GMT
+X-Cache: Error from cloudfront
+Via: 1.1 0b0f38f2d36e8d8d64e111855bc5576e.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MRS52-P5
+X-Amz-Cf-Id: adBi7T496DOv_MOrLcgClZ7MS_VVw4bjpPr-_TeDAONexPGLkpAaIw==
+Vary: Origin
+Retrying test verifyThatUserAbleToLaunchApplication with status FAILURE for the 1 time(s).
+]]></system-out>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 116.0.5845.96 (1a391816688002153ef791ffe60d9e899a71a037-refs/branch-heads/5845@{#1382}) on port 31449
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Sep 07, 2023 8:14:50 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="verifyThatUserAbleToLaunchApplication" classname="com.prime.tests.FPJ.IntegrationE2EFlow" time="9.645">
+    <failure message="Cannot parse content to class com.prime.pojo.login.LoginUserAccessResponse because no content-type was present in the response and no default parser has been set.&#10;You can specify a default parser using e.g.:&#10;RestAssured.defaultParser = Parser.JSON;&#10;&#10;or you can specify an explicit ObjectMapper using as(class com.prime.pojo.login.LoginUserAccessResponse, &lt;ObjectMapper&gt;);" type="java.lang.IllegalStateException"><![CDATA[java.lang.IllegalStateException: 
+Cannot parse content to class com.prime.pojo.login.LoginUserAccessResponse because no content-type was present in the response and no default parser has been set.
+You can specify a default parser using e.g.:
+RestAssured.defaultParser = Parser.JSON;
+
+or you can specify an explicit ObjectMapper using as(class com.prime.pojo.login.LoginUserAccessResponse, <ObjectMapper>);
+	at com.prime.tests.FPJ.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(IntegrationE2EFlow.java:78)
+]]></failure>
+    <system-out><![CDATA[PrimeFPJ Integration Suite is Started
+url=https://prime-dev:prime-dev@meridian-fpj-draft.dev.prime.pubfactory.com/
+CLICK SUCCESSFUL!!
+Web COUNT=830
+INSIDE SPECfpjmeridiandraft
+Request method:	GET
+Request URI:	https://meridian-fpj-draft.dev.prime.pubfactory.com/meridian/fpj/draft/rest/search/v1/search
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	platform=meridian
+				site=fpj
+				status=draft
+Headers:		x-pf-internal=false
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 805
+Connection: keep-alive
+Date: Thu, 07 Sep 2023 14:45:08 GMT
+Content-Encoding: gzip
+Cache-Control: no-cache, no-transform, no-store, max-age=0, private
+ETag: "1444906395"
+X-Cache: Miss from cloudfront
+Via: 1.1 b5531ef792e817bdf665b09adf99ef4a.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MRS52-P5
+X-Amz-Cf-Id: RdAMdvSzZnUvQa7PNbEqv7MK04P5LgNqyuluy2Wbrfv1mIfPjUXUeQ==
+Vary: Origin
+
+{
+    "results": [
+        {
+            "uri": "/journals/fpro/73/2/article-p175.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p171.xml"
+        },
+        {
+            "uri": "/journals/fpro/72/s2/article-p8.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p126.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p154.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p146.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p133.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p142.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p113.xml"
+        },
+        {
+            "uri": "/journals/fpro/73/2/article-p104.xml"
+        }
+    ],
+    "pagination": {
+        "totalResults": 830,
+        "pageSize": 10,
+        "pageNumber": 1,
+        "sortOrder": {
+            "id": "datedescending",
+            "fieldId": "date",
+            "fieldName": "ifp:sortdate",
+            "ascending": false,
+            "supportsJumpTo": false
+        },
+        "validPageSizes": [
+            10,
+            20,
+            50
+        ],
+        "sortOptions": [
+            {
+                "id": "date",
+                "fieldId": "date",
+                "fieldName": "ifp:sortdate",
+                "ascending": true,
+                "supportsJumpTo": false
+            },
+            {
+                "id": "datedescending",
+                "fieldId": "date",
+                "fieldName": "ifp:sortdate",
+                "ascending": false,
+                "supportsJumpTo": false
+            }
+        ]
+    },
+    "parameters": [
+        
+    ],
+    "filters": [
+        {
+            "id": "search-terms",
+            "type": "ADVANCED",
+            "defaultLabel": "Refine terms",
+            "multiValued": true,
+            "collapsed": false,
+            "parameterType": "advanced-search",
+            "displayCounts": false,
+            "cutoff": -1,
+            "advancedValues": {
+                "availableFields": [
+                    "all",
+                    "title",
+                    "fulltext",
+                    "identifier",
+                    "author",
+                    "abstract",
+                    "affiliation"
+                ],
+                "availableOperators": [
+                    "AND",
+                    "OR",
+                    "NOT"
+                ],
+                "currentTerms": [
+                    
+                ],
+                "currentOperators": [
+                    
+                ]
+            }
+        },
+        {
+            "id": "by-type",
+            "type": "TREE",
+            "defaultLabel": "Refine by Type",
+            "multiValued": true,
+            "collapsed": false,
+            "parameterName": "type",
+            "parameterType": "type",
+            "displayCounts": true,
+            "cutoff": -1,
+            "operator": "OR",
+            "values": [
+                {
+                    "value": "ARTICLE",
+                    "count": 830,
+                    "selected": false
+                }
+            ]
+        },
+        {
+            "id": "by-date",
+            "type": "DATE",
+            "defaultLabel": "Refine by Date",
+            "multiValued": true,
+            "collapsed": false,
+            "parameterName": "date",
+            "parameterType": "date_range",
+            "displayCounts": false,
+            "cutoff": -1,
+            "operator": "AND",
+            "dateValues": {
+                "startParamName": "fromDate",
+                "endParamName": "toDate",
+                "validYears": [
+                    "2009",
+                    "2010",
+                    "2011",
+                    "2012",
+                    "2013",
+                    "2014",
+                    "2015",
+                    "2016",
+                    "2017",
+                    "2018",
+                    "2019",
+                    "2020",
+                    "2021",
+                    "2022",
+                    "2023"
+                ]
+            }
+        },
+        {
+            "id": "by-access",
+            "type": "LIST",
+            "defaultLabel": "Refine by Access",
+            "multiValued": false,
+            "collapsed": false,
+            "parameterName": "access",
+            "parameterType": "access",
+            "displayCounts": false,
+            "cutoff": -1,
+            "operator": "AND",
+            "values": [
+                {
+                    "value": "ALL",
+                    "count": 0,
+                    "selected": false
+                },
+                {
+                    "value": "USER",
+                    "count": 0,
+                    "selected": false
+                },
+                {
+                    "value": "OPEN",
+                    "count": 0,
+                    "selected": false
+                },
+                {
+                    "value": "FREE",
+                    "count": 0,
+                    "selected": false
+                }
+            ]
+        },
+        {
+            "id": "by-article-type",
+            "type": "LIST",
+            "defaultLabel": "By Article Type",
+            "multiValued": false,
+            "collapsed": false,
+            "parameterName": "articleType",
+            "parameterType": "articleType",
+            "displayCounts": true,
+            "cutoff": -1,
+            "operator": "AND",
+            "values": [
+                {
+                    "value": "correction",
+                    "count": 3,
+                    "selected": false
+                },
+                {
+                    "value": "other",
+                    "count": 169,
+                    "selected": false
+                },
+                {
+                    "value": "research-article",
+                    "count": 636,
+                    "selected": false
+                },
+                {
+                    "value": "review-article",
+                    "count": 22,
+                    "selected": false
+                }
+            ]
+        }
+    ]
+}
+fpjmeridiandraft
+INSIDE SPECfpjmeridiandraft
+Request method:	POST
+Request URI:	https://meridian-fpj-draft.dev.prime.pubfactory.com/meridian/fpj/draft/rest/authentication/v1/authenticate/active
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	platform=meridian
+				site=fpj
+				status=draft
+Headers:		x-pf-internal=false
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "username": "veena.mathew@kwglobal.com",
+    "password": "Default@123"
+}
+HTTP/1.1 500 Internal Server Error
+Content-Length: 0
+Connection: keep-alive
+Date: Thu, 07 Sep 2023 14:45:09 GMT
+X-Cache: Error from cloudfront
+Via: 1.1 edb63ae1a17d77e53974b3e98e5872d2.cloudfront.net (CloudFront)
+X-Amz-Cf-Pop: MRS52-P5
+X-Amz-Cf-Id: ScyLcb-rr8K9gieJx_KeWPUgrS-p1BsjfhWyElv31QvwJjrcNZJ29Q==
+Vary: Origin
+]]></system-out>
+  </testcase>
 </testsuite>
