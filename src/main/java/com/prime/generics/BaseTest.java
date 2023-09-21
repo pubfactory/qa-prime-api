@@ -1025,6 +1025,12 @@ public class BaseTest {
         return finalObj;
     }
 
+
+    public static void verifyTextInURL(String linkText) {
+        WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 5);
+        wait.until(ExpectedConditions.urlContains(linkText));
+    }
+
     /**
      * This methos automatically generates allure html report
      * 

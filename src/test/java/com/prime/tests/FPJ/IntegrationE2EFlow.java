@@ -81,6 +81,23 @@ public class IntegrationE2EFlow extends BaseTest {
         js = new JsonPath(response.asString());
         System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
 
+
+        /*Verify that the pagination links displayed are functional and the number of pagination
+         *  links displayed changes as per items per page dropdown is selected.*/
+
+        BaseTest.assertEquals(driver, browseOrSearchPage.getStatusPaginationLink().toString(), "true", "Verifying if pagination link is active");
+        int numberOfItemsPerPage = browseOrSearchPage.getItemsPerPage();
+        int noOfPaginationLinks = Math.round(totalResultsFromWebPage / numberOfItemsPerPage);
+        BaseTest.assertEquals(driver, browseOrSearchPage.getLastItemOfPaginationLinks(), noOfPaginationLinks, "Verifying if the number of pagination is as expected");
+
+        /* Verify if search results page can be sorted in ascending and descending
+         */
+        browseOrSearchPage.SelectSortDateAscFromSortByDropdownOnSearchOrBrowsePage();
+        BaseTest.verifyTextInURL("sort=date");
+        browseOrSearchPage.SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage();
+        BaseTest.verifyTextInURL("sort=datedescending");
+
+
     }
 
 }
