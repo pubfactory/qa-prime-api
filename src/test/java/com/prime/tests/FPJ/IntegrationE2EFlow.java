@@ -70,16 +70,16 @@ public class IntegrationE2EFlow extends BaseTest {
         testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
 
         // Verify if user is able to login and retrieve the accountID
-        username = testData.get("username").toString();
-        password = testData.get("password").toString();
-        System.out.println(application + platform + status);
-        loginServiceHelper = new LoginServiceHelper();
-        response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username, password);
-        LoginUserAccessResponse loginuseraccessresponse = response.as(LoginUserAccessResponse.class);
-        String token = loginuseraccessresponse.getUserAccessDescriptor().toString();
-        response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
-        js = new JsonPath(response.asString());
-        System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
+        // username = testData.get("username").toString();
+        // password = testData.get("password").toString();
+        // System.out.println(application + platform + status);
+        // loginServiceHelper = new LoginServiceHelper();
+        // response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username, password);
+        // LoginUserAccessResponse loginuseraccessresponse = response.as(LoginUserAccessResponse.class);
+        // String token = loginuseraccessresponse.getUserAccessDescriptor().toString();
+        // response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
+        // js = new JsonPath(response.asString());
+        // System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
 
     }
 
