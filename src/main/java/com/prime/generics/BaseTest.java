@@ -154,15 +154,11 @@ public class BaseTest {
     @BeforeSuite(alwaysRun = true)
     public void establishConnection(ITestContext context) throws InstantiationException, IllegalAccessException, Exception {
         try {
-            ConfigurationManager.createManager(context);
-            System.setProperty("Environment", ConfigurationManager.getConfigurationValue("Environment"));
-            System.setProperty("browser", ConfigurationManager.getConfigurationValue("browser"));
-            System.setProperty("application", ConfigurationManager.getConfigurationValue("application"));
             Helper.INSTANCE.logEventInfoToReport("Before Suite");
             this.properties = new Properties();
             FileInputStream fStream = new FileInputStream(new File(System.getProperty("user.dir") + "/src/test/resources/config.properties"));
             properties.load(fStream);
-            String env = System.getProperty("Environment");
+            String env = BaseTest.properties.getProperty("Environment");
             System.out.println("ENV=" + env);
             this.loadUrlFromEnvProperties(env);
             System.out.println("PROP=" + properties);
@@ -275,14 +271,14 @@ public class BaseTest {
             testRailId = ConfigurationManager.getTestRailId();
             suiteName = context.getSuite().getName();
             suite = context.getSuite().getXmlSuite();
-            String env = System.getProperty("Environment");
+            String env = BaseTest.properties.getProperty("Environment");
             suitefilepathnamee = suite.toString();
             if (suitefilepathnamee.contains("Core Case") && env.equalsIgnoreCase("staging")) {
                 testRailId = BaseTest.properties.getProperty("staging_core_case_testrunid");
             } else if (suitefilepathnamee.contains("Gates") && env.equalsIgnoreCase("staging")) {
                 testRailId = BaseTest.properties.getProperty("staging_gates_testrunid");
             }
-            application = System.getProperty("application");
+            application = BaseTest.properties.getProperty("application");
             baseURI = BaseTest.properties.getProperty("baseURI_Search");
             platform = BaseTest.properties.getProperty("platform");
             status = BaseTest.properties.getProperty("status");
@@ -345,7 +341,7 @@ public class BaseTest {
             WebDriverManager.setWebDriver(driver);
         } catch (Exception ex) {
             try {
-                String browser = System.getProperty("browser");
+                String browser = BaseTest.properties.getProperty("browser");
                 String executionMode = BaseTest.properties.getProperty("executionMode");
                 if (executionMode.equalsIgnoreCase("local")) {
                     if (browser.equalsIgnoreCase("chrome")) {
@@ -406,17 +402,16 @@ public class BaseTest {
      */
     private void setupEnvironment() {
         try {
-            String browser = System.getProperty("browser");
+            String browser = BaseTest.properties.getProperty("browser");
             String executionMode = BaseTest.properties.getProperty("executionMode");
             if (executionMode.equalsIgnoreCase("local")) {
                 if (browser.equalsIgnoreCase("chrome")) {
                     System.out.println("******Enter Chrome Browser*****" + browser);
-                    //             io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
+                    //               io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
-                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
-                    //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
+                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                    //     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--start-maximized");
                     options.addArguments("--disable-extensions");
                     options.addArguments("--disable-dev-shm-usage");
                     options.addArguments("--no-sandbox");
@@ -426,6 +421,9 @@ public class BaseTest {
 
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
                         options.addArguments("--headless");
+                        options.addArguments("--window-size=1400,600");
+                    } else {
+                        options.addArguments("--start-maximized");
                     }
 
                     Thread.sleep(Integer.parseInt(BasePage.randomWait()));
@@ -522,7 +520,7 @@ public class BaseTest {
         JSONObject finalObj = null;
         try {
             parser = new JSONParser();
-            application = System.getProperty("application");
+            application = BaseTest.properties.getProperty("application");
             this.fetchTestDataApplicationWise(application);
             switch (application) {
                 case "fpj":
@@ -939,7 +937,7 @@ public class BaseTest {
     public JSONArray getTCDetails() throws Exception {
         try {
             parser = new JSONParser();
-            application = System.getProperty("application");
+            application = BaseTest.properties.getProperty("application");
             this.fetchTestDataApplicationWise(application);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -1012,7 +1010,7 @@ public class BaseTest {
         JSONObject finalObj = null;
         try {
             parser = new JSONParser();
-            application = System.getProperty("application");
+            application = BaseTest.properties.getProperty("application");
             jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/" + filename))));
 
             for (Object jsonobj : jsonarray) {
