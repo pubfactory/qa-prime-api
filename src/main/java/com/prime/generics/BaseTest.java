@@ -1,3 +1,5 @@
+Bastest
+
 package com.prime.generics;
 
 import java.io.ByteArrayInputStream;
@@ -383,7 +385,7 @@ public class BaseTest {
         }
     }
 
-    /**
+ /**
      * This method used to create a driver object for given browser for execution on
      * Browser Stack Environment based on browserName,browser_version,os,os_version
      * parameters from XML File
@@ -478,6 +480,7 @@ public class BaseTest {
             e.printStackTrace();
         }
     }
+
 
     /**
      * This method is used to login application randomly using different credentials
@@ -1025,12 +1028,6 @@ public class BaseTest {
             throw new Exception("Unable to Find TestCase " + testcaseid);
         }
         return finalObj;
-    }
-
-
-    public static void verifyTextInURL(String linkText) {
-        WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 5);
-        wait.until(ExpectedConditions.urlContains(linkText));
     }
 
     /**
