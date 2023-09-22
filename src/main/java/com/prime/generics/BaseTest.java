@@ -154,11 +154,15 @@ public class BaseTest {
     @BeforeSuite(alwaysRun = true)
     public void establishConnection(ITestContext context) throws InstantiationException, IllegalAccessException, Exception {
         try {
+            ConfigurationManager.createManager(context);
+            System.setProperty("Environment", ConfigurationManager.getConfigurationValue("Environment"));
+            System.setProperty("browser", ConfigurationManager.getConfigurationValue("browser"));
+            System.setProperty("application", ConfigurationManager.getConfigurationValue("application"));
             Helper.INSTANCE.logEventInfoToReport("Before Suite");
             this.properties = new Properties();
             FileInputStream fStream = new FileInputStream(new File(System.getProperty("user.dir") + "/src/test/resources/config.properties"));
             properties.load(fStream);
-            String env = BaseTest.properties.getProperty("Environment");
+            String env = System.getProperty("Environment");
             System.out.println("ENV=" + env);
             this.loadUrlFromEnvProperties(env);
             System.out.println("PROP=" + properties);
@@ -271,14 +275,14 @@ public class BaseTest {
             testRailId = ConfigurationManager.getTestRailId();
             suiteName = context.getSuite().getName();
             suite = context.getSuite().getXmlSuite();
-            String env = BaseTest.properties.getProperty("Environment");
+            String env = System.getProperty("Environment");
             suitefilepathnamee = suite.toString();
             if (suitefilepathnamee.contains("Core Case") && env.equalsIgnoreCase("staging")) {
                 testRailId = BaseTest.properties.getProperty("staging_core_case_testrunid");
             } else if (suitefilepathnamee.contains("Gates") && env.equalsIgnoreCase("staging")) {
                 testRailId = BaseTest.properties.getProperty("staging_gates_testrunid");
             }
-            application = BaseTest.properties.getProperty("application");
+            application = System.getProperty("application");
             baseURI = BaseTest.properties.getProperty("baseURI_Search");
             platform = BaseTest.properties.getProperty("platform");
             status = BaseTest.properties.getProperty("status");
@@ -341,7 +345,7 @@ public class BaseTest {
             WebDriverManager.setWebDriver(driver);
         } catch (Exception ex) {
             try {
-                String browser = BaseTest.properties.getProperty("browser");
+                String browser = System.getProperty("browser");
                 String executionMode = BaseTest.properties.getProperty("executionMode");
                 if (executionMode.equalsIgnoreCase("local")) {
                     if (browser.equalsIgnoreCase("chrome")) {
@@ -402,15 +406,15 @@ public class BaseTest {
      */
     private void setupEnvironment() {
         try {
-            String browser = BaseTest.properties.getProperty("browser");
+            String browser = System.getProperty("browser");
             String executionMode = BaseTest.properties.getProperty("executionMode");
             if (executionMode.equalsIgnoreCase("local")) {
                 if (browser.equalsIgnoreCase("chrome")) {
                     System.out.println("******Enter Chrome Browser*****" + browser);
-                    //               io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
+                    //             io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
                     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
-                    //     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
+                    //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--start-maximized");
                     options.addArguments("--disable-extensions");
@@ -518,7 +522,7 @@ public class BaseTest {
         JSONObject finalObj = null;
         try {
             parser = new JSONParser();
-            application = BaseTest.properties.getProperty("application");
+            application = System.getProperty("application");
             this.fetchTestDataApplicationWise(application);
             switch (application) {
                 case "fpj":
@@ -935,7 +939,7 @@ public class BaseTest {
     public JSONArray getTCDetails() throws Exception {
         try {
             parser = new JSONParser();
-            application = BaseTest.properties.getProperty("application");
+            application = System.getProperty("application");
             this.fetchTestDataApplicationWise(application);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -1008,7 +1012,7 @@ public class BaseTest {
         JSONObject finalObj = null;
         try {
             parser = new JSONParser();
-            application = BaseTest.properties.getProperty("application");
+            application = System.getProperty("application");
             jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/" + filename))));
 
             for (Object jsonobj : jsonarray) {
@@ -1023,6 +1027,12 @@ public class BaseTest {
             throw new Exception("Unable to Find TestCase " + testcaseid);
         }
         return finalObj;
+    }
+
+
+    public static void verifyTextInURL(String linkText) {
+        WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 5);
+        wait.until(ExpectedConditions.urlContains(linkText));
     }
 
     /**
