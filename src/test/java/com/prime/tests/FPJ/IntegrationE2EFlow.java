@@ -66,7 +66,7 @@ public class IntegrationE2EFlow extends BaseTest {
         totalResultsFromAPI = Integer.parseInt(js.get("pagination.totalResults").toString());
         BaseTest.assertEquals(WebDriverManager.getDriver(), totalResultsFromAPI, totalResultsFromWebPage, "Total Search results from api and webpage");
 
-        testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
+      //  testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
 
         // Verify if user is able to login and retrieve the accountID
         //        username = testData.get("username").toString();
@@ -80,7 +80,7 @@ public class IntegrationE2EFlow extends BaseTest {
         //        js = new JsonPath(response.asString());
         //        System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
 
-
+ System.out.println("BEFORE PAGINATION");
         /*Verify that the pagination links displayed are functional and the number of pagination
          *  links displayed changes as per items per page dropdown is selected.*/
 
