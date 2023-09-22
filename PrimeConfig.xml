@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="PRIMEFPJ Regression Suite">
@@ -15,8 +14,15 @@
 
 	<suite-files>
 		<suite-file path="PrimeRegressionLocal.xml">
+			<parameter name="Environment" value="${Environment}" />
+			<parameter name="browser" value="${browser}" />
+			<parameter name="application" value="${application}" />
+			<parameter name="testRunId" value="4001" />
+			
+<!-- 			<parameter name="Environment" value="dev" />
 			<parameter name="browser" value="chrome" />
-				<parameter name="testRunId" value="4001" />												- Indicates the Test Run Id from TestRail to execute
+			<parameter name="application" value="fpj" />
+			<parameter name="testRunId" value="4001" />	 -->											
 		</suite-file>
 	</suite-files>
 </suite>
