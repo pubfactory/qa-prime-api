@@ -92,6 +92,8 @@ public class BrowseOrSearchPage extends BasePage {
      * 
      */
     public Boolean getStatusPaginationLink() throws Exception {
+        System.out.println("IN GETSTATUS");
+        System.out.println("PAGINATION ARRAY SIZE=" + paginationArray.size());
         WebElement paginationClickLink = paginationArray.get(1);
         return mouseOver(paginationClickLink, "pagination link is active");
     }
