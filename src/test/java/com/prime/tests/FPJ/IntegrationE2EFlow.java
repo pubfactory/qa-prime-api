@@ -13,7 +13,6 @@ import com.prime.generics.WebDriverManager;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import com.prime.pageFactory.pages.fpj.SignInPage;
-import com.prime.pojo.login.LoginUserAccessResponse;
 import com.prime.retryAnalyzers.Retry;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -42,7 +41,7 @@ public class IntegrationE2EFlow extends BaseTest {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
         // Identifying the application and its url to test
-        String application = BaseTest.properties.getProperty("application");
+        String application = System.getProperty("application");
         System.out.println("url=" + BaseTest.properties.getProperty(application));
         String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
         navigateToUrl(BaseTest.properties.getProperty("application"));
@@ -70,16 +69,33 @@ public class IntegrationE2EFlow extends BaseTest {
         testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
 
         // Verify if user is able to login and retrieve the accountID
-        // username = testData.get("username").toString();
-        // password = testData.get("password").toString();
-        // System.out.println(application + platform + status);
-        // loginServiceHelper = new LoginServiceHelper();
-        // response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username, password);
-        // LoginUserAccessResponse loginuseraccessresponse = response.as(LoginUserAccessResponse.class);
-        // String token = loginuseraccessresponse.getUserAccessDescriptor().toString();
-        // response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
-        // js = new JsonPath(response.asString());
-        // System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
+        //        username = testData.get("username").toString();
+        //        password = testData.get("password").toString();
+        //        System.out.println(application + platform + status);
+        //        loginServiceHelper = new LoginServiceHelper();
+        //        response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username, password);
+        //        LoginUserAccessResponse loginuseraccessresponse = response.as(LoginUserAccessResponse.class);
+        //        String token = loginuseraccessresponse.getUserAccessDescriptor().toString();
+        //        response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
+        //        js = new JsonPath(response.asString());
+        //        System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
+
+
+        /*Verify that the pagination links displayed are functional and the number of pagination
+         *  links displayed changes as per items per page dropdown is selected.*/
+
+        BaseTest.assertEquals(driver, browseOrSearchPage.getStatusPaginationLink().toString(), "true", "Verifying if pagination link is active");
+        int numberOfItemsPerPage = browseOrSearchPage.getItemsPerPage();
+        int noOfPaginationLinks = Math.round(totalResultsFromWebPage / numberOfItemsPerPage);
+        BaseTest.assertEquals(driver, browseOrSearchPage.getLastItemOfPaginationLinks(), noOfPaginationLinks, "Verifying if the number of pagination is as expected");
+
+        /* Verify if search results page can be sorted in ascending and descending
+         */
+        browseOrSearchPage.SelectSortDateAscFromSortByDropdownOnSearchOrBrowsePage();
+        BaseTest.verifyTextInURL("sort=date");
+        browseOrSearchPage.SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage();
+        BaseTest.verifyTextInURL("sort=datedescending");
+
 
     }
 
