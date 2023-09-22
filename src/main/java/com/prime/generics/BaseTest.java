@@ -1,5 +1,3 @@
-Bastest
-
 package com.prime.generics;
 
 import java.io.ByteArrayInputStream;
