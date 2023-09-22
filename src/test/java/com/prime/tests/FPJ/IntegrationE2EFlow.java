@@ -92,10 +92,10 @@ public class IntegrationE2EFlow extends BaseTest {
 
         /* Verify if search results page can be sorted in ascending and descending
          */
-        // browseOrSearchPage.SelectSortDateAscFromSortByDropdownOnSearchOrBrowsePage();
-        // BaseTest.verifyTextInURL("sort=date");
-        // browseOrSearchPage.SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage();
-        // BaseTest.verifyTextInURL("sort=datedescending");
+        browseOrSearchPage.SelectSortDateAscFromSortByDropdownOnSearchOrBrowsePage();
+        BaseTest.verifyTextInURL("sort=date");
+        browseOrSearchPage.SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage();
+        BaseTest.verifyTextInURL("sort=datedescending");
 
 
     }
