@@ -84,6 +84,7 @@ public class IntegrationE2EFlow extends BaseTest {
         /*Verify that the pagination links displayed are functional and the number of pagination
          *  links displayed changes as per items per page dropdown is selected.*/
 
+        System.out.println("PAGINATION STATUS=" + browseOrSearchPage.getStatusPaginationLink().toString());
         BaseTest.assertEquals(driver, browseOrSearchPage.getStatusPaginationLink().toString(), "true", "Verifying if pagination link is active");
         int numberOfItemsPerPage = browseOrSearchPage.getItemsPerPage();
         int noOfPaginationLinks = Math.round(totalResultsFromWebPage / numberOfItemsPerPage);
