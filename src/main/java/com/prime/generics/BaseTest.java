@@ -412,7 +412,6 @@ public class BaseTest {
                     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                     //     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--start-maximized");
                     options.addArguments("--disable-extensions");
                     options.addArguments("--disable-dev-shm-usage");
                     options.addArguments("--no-sandbox");
@@ -422,6 +421,9 @@ public class BaseTest {
 
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
                         options.addArguments("--headless");
+                        options.addArguments("--window-size=1400,600");
+                    } else {
+                        options.addArguments("--start-maximized");
                     }
 
                     Thread.sleep(Integer.parseInt(BasePage.randomWait()));

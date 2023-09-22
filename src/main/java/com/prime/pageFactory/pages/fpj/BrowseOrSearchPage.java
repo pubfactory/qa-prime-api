@@ -92,6 +92,10 @@ public class BrowseOrSearchPage extends BasePage {
      * 
      */
     public Boolean getStatusPaginationLink() throws Exception {
+        System.out.println("IN GETSTATUS");
+        //        WebDriverWait wait = new WebDriverWait(driver, 30);
+        //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Page:']//following-sibling::ul[@role='list']//child::li")));
+        System.out.println("PAGINATION ARRAY SIZE=" + paginationArray.size());
         WebElement paginationClickLink = paginationArray.get(1);
         return mouseOver(paginationClickLink, "pagination link is active");
     }

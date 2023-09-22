@@ -2,37 +2,37 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-21T18:28:43 IST" name="Default suite" finished-at="2023-09-21T18:29:04 IST" duration-ms="20125">
+  <suite started-at="2023-09-22T13:31:14 IST" name="Default suite" finished-at="2023-09-22T13:31:41 IST" duration-ms="26943">
     <groups>
       <group name="SignIn">
         <method signature="IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" name="verifyThatUserAbleToLaunchApplication" class="com.prime.tests.FPJ.IntegrationE2EFlow"/>
       </group> <!-- SignIn -->
     </groups>
-    <test started-at="2023-09-21T18:28:43 IST" name="Default test" finished-at="2023-09-21T18:29:04 IST" duration-ms="20125">
+    <test started-at="2023-09-22T13:31:14 IST" name="Default test" finished-at="2023-09-22T13:31:41 IST" duration-ms="26943">
       <class name="com.prime.tests.FPJ.IntegrationE2EFlow">
-        <test-method is-config="true" signature="establishConnection(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-21T18:28:43 IST" name="establishConnection" finished-at="2023-09-21T18:28:43 IST" duration-ms="25" status="PASS">
+        <test-method is-config="true" signature="establishConnection(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-22T13:31:14 IST" name="establishConnection" finished-at="2023-09-22T13:31:14 IST" duration-ms="30" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@19a7906c]]>
+                <![CDATA[org.testng.TestRunner@24b3f778]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- establishConnection -->
-        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-21T18:28:43 IST" name="loadConfigurationValues" finished-at="2023-09-21T18:28:43 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-22T13:31:14 IST" name="loadConfigurationValues" finished-at="2023-09-22T13:31:14 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@19a7906c]]>
+                <![CDATA[org.testng.TestRunner@24b3f778]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfigurationValues -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-21T18:28:43 IST" name="setUp" finished-at="2023-09-21T18:28:45 IST" duration-ms="1215" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-22T13:31:14 IST" name="setUp" finished-at="2023-09-22T13:31:16 IST" duration-ms="1740" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -55,7 +55,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-21T18:28:45 IST" name="verifyThatUserAbleToLaunchApplication" description="1721043 - Verify that the user is able to do blank search and compare that the search results API is giving the same results" finished-at="2023-09-21T18:29:03 IST" duration-ms="18628" status="PASS">
+        <test-method signature="verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-22T13:31:16 IST" name="verifyThatUserAbleToLaunchApplication" description="1721043 - Verify that the user is able to do blank search and compare that the search results API is giving the same results" finished-at="2023-09-22T13:31:41 IST" duration-ms="24645" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -64,7 +64,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyThatUserAbleToLaunchApplication -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-21T18:29:03 IST" name="closeApplication" finished-at="2023-09-21T18:29:04 IST" duration-ms="169" status="PASS">
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-22T13:31:41 IST" name="closeApplication" finished-at="2023-09-22T13:31:41 IST" duration-ms="356" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -73,7 +73,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-21T18:29:04 IST" name="closeDriver" finished-at="2023-09-21T18:29:04 IST" duration-ms="301" status="PASS">
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@25aca718]" started-at="2023-09-22T13:31:41 IST" name="closeDriver" finished-at="2023-09-22T13:31:41 IST" duration-ms="301" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
