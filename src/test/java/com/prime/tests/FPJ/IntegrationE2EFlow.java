@@ -19,7 +19,7 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-
+//Checking E2E flow
 public class IntegrationE2EFlow extends BaseTest {
     private MasterPage masterPage;
     private SignInPage signInPage;
