@@ -555,6 +555,10 @@ public class BaseTest {
             case "tsir":
                 jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/TSIR_TestData.json"))));
                 break;
+
+            case "anesthesiaprogress":
+                jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/ANESTHESIAPROGRESS_TestData.json"))));
+                break;
             default:
                 throw new Exception("Not a valid application Choice");
         }
@@ -938,6 +942,8 @@ public class BaseTest {
         try {
             parser = new JSONParser();
             application = BaseTest.properties.getProperty("application");
+            String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
+            //this.getTestDataDetailsWithFileName(testCaseId, testDataFileName);
             this.fetchTestDataApplicationWise(application);
         } catch (Exception ex) {
             ex.printStackTrace();

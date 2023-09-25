@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">2 suites, 1 failed test</span>
+      <span class="top-banner-font-1">2 suites</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-PrimeFPJ_Integration_Suite">
-              <span class="suite-name border-failed">PrimeFPJ Integration Suite</span>
+              <span class="suite-name border-passed">PrimeFPJ Integration Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,35 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,  1 skipped,  </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-PrimeFPJ_Integration_Suite" class="hide-methods failed suite-PrimeFPJ_Integration_Suite"> (hide)</a> <!-- hide-methods failed suite-PrimeFPJ_Integration_Suite -->
-                      <a href="#" panel-name="suite-PrimeFPJ_Integration_Suite" class="show-methods failed suite-PrimeFPJ_Integration_Suite"> (show)</a> <!-- show-methods failed suite-PrimeFPJ_Integration_Suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-PrimeFPJ_Integration_Suite" class="hide-methods passed suite-PrimeFPJ_Integration_Suite"> (hide)</a> <!-- hide-methods passed suite-PrimeFPJ_Integration_Suite -->
+                      <a href="#" panel-name="suite-PrimeFPJ_Integration_Suite" class="show-methods passed suite-PrimeFPJ_Integration_Suite"> (show)</a> <!-- show-methods passed suite-PrimeFPJ_Integration_Suite -->
                     </span>
-                    <div class="method-list-content failed suite-PrimeFPJ_Integration_Suite">
+                    <div class="method-list-content passed suite-PrimeFPJ_Integration_Suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-PrimeFPJ_Integration_Suite" title="com.prime.tests.FPJ.IntegrationE2EFlow" hash-for-method="verifyThatUserAbleToLaunchApplication(null)">verifyThatUserAbleToLaunchApplication(null)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-PrimeFPJ_Integration_Suite -->
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-PrimeFPJ_Integration_Suite" class="hide-methods skipped suite-PrimeFPJ_Integration_Suite"> (hide)</a> <!-- hide-methods skipped suite-PrimeFPJ_Integration_Suite -->
-                      <a href="#" panel-name="suite-PrimeFPJ_Integration_Suite" class="show-methods skipped suite-PrimeFPJ_Integration_Suite"> (show)</a> <!-- show-methods skipped suite-PrimeFPJ_Integration_Suite -->
-                    </span>
-                    <div class="method-list-content skipped suite-PrimeFPJ_Integration_Suite">
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-PrimeFPJ_Integration_Suite" title="com.prime.tests.FPJ.IntegrationE2EFlow" hash-for-method="verifyThatUserAbleToLaunchApplication(null)">verifyThatUserAbleToLaunchApplication(null)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-PrimeFPJ_Integration_Suite -->
+                    </div> <!-- method-list-content passed suite-PrimeFPJ_Integration_Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -133,9 +119,9 @@
         <div panel-name="suite-PRIMEFPJ_Regression_Suite" class="panel PRIMEFPJ_Regression_Suite">
         </div> <!-- panel PRIMEFPJ_Regression_Suite -->
         <div panel-name="suite-PrimeFPJ_Integration_Suite" class="panel PrimeFPJ_Integration_Suite">
-          <div class="suite-PrimeFPJ_Integration_Suite-class-failed">
+          <div class="suite-PrimeFPJ_Integration_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.prime.tests.FPJ.IntegrationE2EFlow</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -145,94 +131,12 @@
                   </a> <!-- verifyThatUserAbleToLaunchApplication(null) -->
                   <span class="method-name">verifyThatUserAbleToLaunchApplication</span>
                   <span class="parameters">(null)</span>
-                  <div class="stack-trace">java.lang.IllegalStateException: Cannot parse content to class com.prime.pojo.login.LoginUserAccessResponse because no content-type was present in the response and no default parser has been set.
-You can specify a default parser using e.g.:
-RestAssured.defaultParser = Parser.JSON;
-
-or you can specify an explicit ObjectMapper using as(class com.prime.pojo.login.LoginUserAccessResponse, &lt;ObjectMapper&gt;);
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl$_as_closure3.doCall(RestAssuredResponseOptionsGroovyImpl.groovy:226)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl$_as_closure3.doCall(RestAssuredResponseOptionsGroovyImpl.groovy)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
-	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:279)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:39)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.findContentType(RestAssuredResponseOptionsGroovyImpl.groovy:494)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.this$2$findContentType(RestAssuredResponseOptionsGroovyImpl.groovy)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:225)
-	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:169)
-	at com.prime.tests.FPJ.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(IntegrationE2EFlow.java:78)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
                   <em>
 (1721043 - Verify that the user is able to do blank search and compare that the search results API is giving the same results)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-PrimeFPJ_Integration_Suite-class-failed -->
-          <div class="suite-PrimeFPJ_Integration_Suite-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">com.prime.tests.FPJ.IntegrationE2EFlow</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyThatUserAbleToLaunchApplication(null)">
-                  </a> <!-- verifyThatUserAbleToLaunchApplication(null) -->
-                  <span class="method-name">verifyThatUserAbleToLaunchApplication</span>
-                  <span class="parameters">(null)</span>
-                  <div class="stack-trace">java.lang.IllegalStateException: Cannot parse content to class com.prime.pojo.login.LoginUserAccessResponse because no content-type was present in the response and no default parser has been set.
-You can specify a default parser using e.g.:
-RestAssured.defaultParser = Parser.JSON;
-
-or you can specify an explicit ObjectMapper using as(class com.prime.pojo.login.LoginUserAccessResponse, &lt;ObjectMapper&gt;);
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl$_as_closure3.doCall(RestAssuredResponseOptionsGroovyImpl.groovy:226)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl$_as_closure3.doCall(RestAssuredResponseOptionsGroovyImpl.groovy)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
-	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:279)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:39)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:130)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.findContentType(RestAssuredResponseOptionsGroovyImpl.groovy:494)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.this$2$findContentType(RestAssuredResponseOptionsGroovyImpl.groovy)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at io.restassured.internal.RestAssuredResponseOptionsGroovyImpl.as(RestAssuredResponseOptionsGroovyImpl.groovy:225)
-	at io.restassured.internal.RestAssuredResponseOptionsImpl.as(RestAssuredResponseOptionsImpl.java:169)
-	at com.prime.tests.FPJ.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(IntegrationE2EFlow.java:78)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 31 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(1721043 - Verify that the user is able to do blank search and compare that the search results API is giving the same results)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-PrimeFPJ_Integration_Suite-class-skipped -->
+          </div> <!-- suite-PrimeFPJ_Integration_Suite-class-passed -->
         </div> <!-- panel PrimeFPJ_Integration_Suite -->
         <div panel-name="test-xml-PRIMEFPJ_Regression_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -367,20 +271,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyThatUserAbleToLaunchApplication')
 data.setCell(0, 2, 'com.prime.tests.FPJ.IntegrationE2EFlow')
-data.setCell(0, 3, 12179);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyThatUserAbleToLaunchApplication')
-data.setCell(1, 2, 'com.prime.tests.FPJ.IntegrationE2EFlow')
-data.setCell(1, 3, 9639);
+data.setCell(0, 3, 27609);
 window.suiteTableData['PrimeFPJ_Integration_Suite']= { tableData: data, tableDiv: 'times-div-PrimeFPJ_Integration_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 21 seconds</span>
+              <span class="suite-total-time">Total running time: 27 seconds</span>
               <div id="times-div-PrimeFPJ_Integration_Suite">
               </div> <!-- times-div-PrimeFPJ_Integration_Suite -->
             </div> <!-- times-div -->
@@ -429,42 +329,28 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.IntegrationE2EFlow</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">establishConnection(org.testng.TestRunner@3d51f06e)</span>
+                <span class="method-name">establishConnection(org.testng.TestRunner@27ce24aa)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@3d51f06e)</span>
-                <span class="method-start">27 ms</span>
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@27ce24aa)</span>
+                <span class="method-start">33 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.FPJ.IntegrationE2EFlow.verifyThatUserAbleToLau...)</span>
-                <span class="method-start">35 ms</span>
+                <span class="method-start">49 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyThatUserAbleToLaunchApplication(null)</span>
-                <span class="method-start">1900 ms</span>
+                <span class="method-start">2537 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">14095 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.FPJ.IntegrationE2EFlow.verifyThatUserAbleToLau...)</span>
-                <span class="method-start">15546 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">verifyThatUserAbleToLaunchApplication(null)</span>
-                <span class="method-start">15549 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">25198 ms</span>
+                <span class="method-start">30171 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">closeDriver</span>
-                <span class="method-start">26333 ms</span>
+                <span class="method-start">32283 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

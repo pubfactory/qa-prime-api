@@ -18,6 +18,7 @@ com\prime\pojo\searchResults\Pagination.class
 com\prime\pojo\searchResults\SearchResultsResponse.class
 com\prime\pojo\smoketestdata\TestDataResponse.class
 com\prime\pageFactory\pages\fpj\SaveSearchPage.class
+com\prime\tests\FPJ\CopyOfIntegrationE2EFlow.class
 com\prime\pageFactory\pages\fpj\SignInPage.class
 com\prime\pojo\searchResults\AdvancedValues.class
 com\prime\tests\FPJ\IntegrationE2EFlow.class
