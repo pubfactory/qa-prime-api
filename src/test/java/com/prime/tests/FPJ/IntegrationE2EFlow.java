@@ -95,7 +95,7 @@ public class IntegrationE2EFlow extends BaseTest {
         /* Verify if search results page can be sorted in ascending and descending
          */
         browseOrSearchPage.SelectSortDateAscFromSortByDropdownOnSearchOrBrowsePage();
-        BBaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=date"), "Verifying if search results are sorted in ascending order")
+        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=date"), "Verifying if search results are sorted in ascending order");
         browseOrSearchPage.SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage();
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=datedescending"), "Verifying if search results are sorted in descending order");
 
