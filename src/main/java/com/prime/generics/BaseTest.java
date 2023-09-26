@@ -1000,6 +1000,24 @@ public class BaseTest {
         }
     }
 
+     /**
+     * This method navigates the specific URL when you have the link
+     * 
+     * @param url
+     * @throws Exception
+     * @author Veena.Mathew
+     * @Created Date : 26 Sep 2022
+     */
+    public void navigateToUrlLink(String url) throws Exception {
+        try {
+            // url = BaseTest.properties.getProperty(url);
+            WebDriverManager.getDriver().get(url);
+            Allure.step("Opening URL: " + url);
+            waitForLoad(driver);
+        } catch (Exception e) {
+            Assert.fail("Failure while opening URL: " + url);
+        }
+    }
     /**
      * It is used to get test case id from testCase.json
      * 
