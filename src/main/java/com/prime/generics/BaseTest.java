@@ -939,7 +939,9 @@ public class BaseTest {
         try {
             parser = new JSONParser();
             application = BaseTest.properties.getProperty("application");
-            this.fetchTestDataApplicationWise(application);
+            String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
+            this.getTestDataDetailsWithFileName(testCaseId, testDataFileName);
+            //this.fetchTestDataApplicationWise(application);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -1028,9 +1030,15 @@ public class BaseTest {
         return finalObj;
     }
 
-        public static void verifyTextInURL(String linkText) {
-        WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 5);
-        wait.until(ExpectedConditions.urlContains(linkText));
+    public static boolean verifyTextInURL(String linkText) {	
+        try {	
+            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 5);	
+            wait.until(ExpectedConditions.urlContains(linkText));	
+            return true;	
+        } catch (Exception ex) {	
+            Assert.fail(linkText + " not found");	
+            return false;	
+        }	
     }
     /**
      * This methos automatically generates allure html report
