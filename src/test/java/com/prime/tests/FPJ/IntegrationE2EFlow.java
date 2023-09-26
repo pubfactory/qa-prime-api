@@ -42,9 +42,10 @@ public class IntegrationE2EFlow extends BaseTest {
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
         // Identifying the application and its url to test
         String application = System.getProperty("application");
-        System.out.println("url=" + BaseTest.properties.getProperty(application));
+        String url = BaseTest.properties.getProperty(application);
+        System.out.println("url=" +url);
         String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
-        navigateToUrl(BaseTest.properties.getProperty("application"));
+        navigateToUrl(url);
         // Launch the application and verify if the launch has been successful
         JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
         masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
