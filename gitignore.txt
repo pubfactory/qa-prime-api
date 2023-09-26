@@ -1,9 +1,0 @@
-target/
-test-output/
-GenerateAllureReport.bat.bak
-LDPOC/Screenshots/
-*.iml
-*.log
-idea/
-#Eclipse
-.settings/
