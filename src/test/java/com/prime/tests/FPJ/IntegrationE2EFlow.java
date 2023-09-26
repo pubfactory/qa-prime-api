@@ -87,15 +87,17 @@ public class IntegrationE2EFlow extends BaseTest {
         System.out.println("PAGINATION STATUS=" + browseOrSearchPage.getStatusPaginationLink().toString());
         BaseTest.assertEquals(driver, browseOrSearchPage.getStatusPaginationLink().toString(), "true", "Verifying if pagination link is active");
         int numberOfItemsPerPage = browseOrSearchPage.getItemsPerPage();
-        int noOfPaginationLinks = Math.round(totalResultsFromWebPage / numberOfItemsPerPage);
+         double noOfPaginationLinksD = Math.ceil(totalResultsFromWebPage / (double) numberOfItemsPerPage);	
+        Double dnp = new Double(noOfPaginationLinksD);	
+        int noOfPaginationLinks = dnp.intValue();
         BaseTest.assertEquals(driver, browseOrSearchPage.getLastItemOfPaginationLinks(), noOfPaginationLinks, "Verifying if the number of pagination is as expected");
 
         /* Verify if search results page can be sorted in ascending and descending
          */
         browseOrSearchPage.SelectSortDateAscFromSortByDropdownOnSearchOrBrowsePage();
-        BaseTest.verifyTextInURL("sort=date");
+        BBaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=date"), "Verifying if search results are sorted in ascending order")
         browseOrSearchPage.SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage();
-        BaseTest.verifyTextInURL("sort=datedescending");
+        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=datedescending"), "Verifying if search results are sorted in descending order");
 
 
     }
