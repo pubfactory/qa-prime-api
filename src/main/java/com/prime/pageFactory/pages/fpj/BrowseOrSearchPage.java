@@ -93,6 +93,8 @@ public class BrowseOrSearchPage extends BasePage {
      */
     public Boolean getStatusPaginationLink() throws Exception {
         System.out.println("IN GETSTATUS");
+        //        WebDriverWait wait = new WebDriverWait(driver, 30);
+        //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Page:']//following-sibling::ul[@role='list']//child::li")));
         System.out.println("PAGINATION ARRAY SIZE=" + paginationArray.size());
         WebElement paginationClickLink = paginationArray.get(1);
         return mouseOver(paginationClickLink, "pagination link is active");
@@ -162,11 +164,12 @@ public class BrowseOrSearchPage extends BasePage {
 
 
     public void SelectSortDateAscFromSortByDropdownOnSearchOrBrowsePage() throws Exception {
-        clickOnElement(sortDateAsc);
+        clickOnElement(sortDateAsc, "Changing the drop down option to Sort ASC in search results page");
     }
 
     public void SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage() throws Exception {
-        clickOnElement(sortDateDesc);
+        clickOnElement(sortDateDesc, "Changing the drop down option to Sort DESC in search results page");
+
     }
 
     public void selectSortByValueSortByDropdownOnSearchOrBrowsePage(String value) throws Exception {
