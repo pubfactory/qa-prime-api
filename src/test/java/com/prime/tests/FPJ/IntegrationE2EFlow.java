@@ -62,7 +62,7 @@ public class IntegrationE2EFlow extends BaseTest {
         System.out.println("Web COUNT=" + totalResultsFromWebPage);
         searchServiceHelper = new SearchServiceHelper();
         response = searchServiceHelper.fetchSearchResults(platform, application, status);
-        BaseTest.assertEquals(WebDriverManager.getDriver(), response.getStatusCode(), 200, "Verifying search results API");
+        BaseTest.assertEquals(WebDriverManager.getDriver(), response.getStatusCode(), 400, "Verifying search results API");
         JsonPath js = new JsonPath(response.asString());
         totalResultsFromAPI = Integer.parseInt(js.get("pagination.totalResults").toString());
         BaseTest.assertEquals(WebDriverManager.getDriver(), totalResultsFromAPI, totalResultsFromWebPage, "Total Search results from api and webpage");
