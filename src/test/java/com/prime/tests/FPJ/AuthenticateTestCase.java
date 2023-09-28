@@ -13,6 +13,7 @@ import com.prime.generics.WebDriverManager;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import com.prime.pageFactory.pages.fpj.SignInPage;
+import com.prime.pojo.login.LoginUserAccessResponse;
 import com.prime.retryAnalyzers.Retry;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -20,7 +21,7 @@ import io.qameta.allure.Story;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-public class CopyOfIntegrationE2EFlow extends BaseTest {
+public class AuthenticateTestCase extends BaseTest {
     private MasterPage masterPage;
     private SignInPage signInPage;
     private BasePage basePage;
@@ -52,55 +53,47 @@ public class CopyOfIntegrationE2EFlow extends BaseTest {
         basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
         BaseTest.assertEquals(WebDriverManager.getDriver(), basePage.getTitleFromWebPage(), testData.get("title").toString(), "Verifying the page title ");
 
-    }
+        //Add UI user login method calls
 
-    // Do a blank search and verify if user is taken to Browse Page
-    @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class, description = "1721043 - Verify that the user is able to do blank search and compare that the search results API is giving the same results",
-            dependsOnMethods = "verifyThatUserAbleToLaunchApplication")
-    @Story("EPIC-971")
-    @Parameters({"testcaseid"})
-    public void verifyThatUserIsTakenToBrowsePageSuccessfully(@Optional String testCaseId) throws Exception {
+
+        // Verify if user is able to login and retrieve the accountID
+        username = testData.get("username").toString();
+        password = testData.get("password").toString();
+        System.out.println(application + platform + status);
+        loginServiceHelper = new LoginServiceHelper();
+        response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username, password);
+        LoginUserAccessResponse loginuseraccessresponse = response.as(LoginUserAccessResponse.class);
+        String token = loginuseraccessresponse.getUserAccessDescriptor().toString();
+        response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
+        JsonPath js = new JsonPath(response.asString());
+        System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
+        String accountID = js.get("accountAccessDescriptors[0].accountId").toString();
+
+        // Click on Magnifying glass and click on RefineByUser Access
+
+        BaseTest.assertEquals(WebDriverManager.getDriver(), basePage.getTitleFromWebPage(), testData.get("title").toString(), "Verifying the page title ");
+        // Do a blank search and verify if user is taken to Browse Page
         masterPage.clickOnSearchMagnifyingLense();
         System.out.println("CLICK SUCCESSFUL!!");
         browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBrowsePageLabelText(), testData.get("browsetext").toString(), "Verifying the Browse page title");
-        // Verify if number of items in a search results is same as the number returned
-        // in search results api
-    }
 
-    // Do a blank search and verify if user is taken to Browse Page
-    @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class, description = "1721043 - Verify that the user is able to do blank search and compare that the search results API is giving the same results",
-            dependsOnMethods = "verifyThatUserIsTakenToBrowsePageSuccessfully")
-    @Story("EPIC-971")
-    @Parameters({"testcaseid"})
-    public void verifyThatSearchResultsFromWebMatchesAPIResults(@Optional String testCaseId) throws Exception {
-        totalResultsFromWebPage = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
-        System.out.println("Web COUNT=" + totalResultsFromWebPage);
-        searchServiceHelper = new SearchServiceHelper();
-        response = searchServiceHelper.fetchSearchResults(platform, application, status);
-        BaseTest.assertEquals(WebDriverManager.getDriver(), response.getStatusCode(), 200, "Verifying search results API");
-        JsonPath js = new JsonPath(response.asString());
-        totalResultsFromAPI = Integer.parseInt(js.get("pagination.totalResults").toString());
-        BaseTest.assertEquals(WebDriverManager.getDriver(), totalResultsFromAPI, totalResultsFromWebPage, "Total Search results from api and webpage");
-    }
+        // Get all content accessible to the user 
 
-    //    testData=
-    //
-    //    getTestDataDetailsWithFileName(testCaseId, testDataFileName);
-    //
-    //        // Verify if user is able to login and retrieve the accountID
-    //        username = testData.get("username").toString();
-    //        password = testData.get("password").toString();
-    //        System.out.println(application + platform + status);
-    //        loginServiceHelper = new LoginServiceHelper();
-    //        response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username, password);
-    //        LoginUserAccessResponse loginuseraccessresponse = response.as(LoginUserAccessResponse.class);
-    //        String token = loginuseraccessresponse.getUserAccessDescriptor().toString();
-    //        response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
-    //        js = new JsonPath(response.asString());
-    //        System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
+        response = loginServiceHelper.fetchUserAccessibleContent(platform, application, status, accountID);
+        js = new JsonPath(response.asString());
+        String noOfUserContentRecords = js.get("accountAccessDescriptors[0].accountId").toString();//This will depend on how the API response looks like
+
+        //Get number of records displayed in UI
+
+        int totalResultsFromWebPage = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
+        //Assert noOfUserContentRecords and totalResultsFromWebPage
+
+        //Access an article from the list
+
+
+
+    }
 
 
 

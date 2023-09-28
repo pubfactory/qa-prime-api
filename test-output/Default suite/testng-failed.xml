@@ -7,8 +7,8 @@
         <methods>
           <include name="closeDriver"/>
           <include name="establishConnection"/>
-          <include name="loadConfigurationValues"/>
           <include name="setUp"/>
+          <include name="loadConfigurationValues"/>
           <include name="verifyThatUserAbleToLaunchApplication" invocation-numbers="0"/>
           <include name="closeApplication"/>
         </methods>

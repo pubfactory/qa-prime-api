@@ -13,7 +13,6 @@ import com.prime.generics.WebDriverManager;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import com.prime.pageFactory.pages.fpj.SignInPage;
-import com.prime.pojo.login.LoginUserAccessResponse;
 import com.prime.retryAnalyzers.Retry;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
@@ -30,6 +29,7 @@ public class IntegrationE2EFlow extends BaseTest {
     private int totalResultsFromAPI;
     private int totalResultsFromWebPage;
     Response response;
+    private String url = "";
     private String username;
     private String password;
     private LoginServiceHelper loginServiceHelper;
@@ -43,9 +43,10 @@ public class IntegrationE2EFlow extends BaseTest {
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
         // Identifying the application and its url to test
         String application = BaseTest.properties.getProperty("application");
-        System.out.println("url=" + BaseTest.properties.getProperty(application));
+        url = BaseTest.properties.getProperty(application);
+        System.out.println("!url=" + url);
         String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
-        navigateToUrl(BaseTest.properties.getProperty("application"));
+        navigateToUrlLink(url);
         // Launch the application and verify if the launch has been successful
         JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
         masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -69,17 +70,17 @@ public class IntegrationE2EFlow extends BaseTest {
 
         testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
 
-        // Verify if user is able to login and retrieve the accountID
-        username = testData.get("username").toString();
-        password = testData.get("password").toString();
-        System.out.println(application + platform + status);
-        loginServiceHelper = new LoginServiceHelper();
-        response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username, password);
-        LoginUserAccessResponse loginuseraccessresponse = response.as(LoginUserAccessResponse.class);
-        String token = loginuseraccessresponse.getUserAccessDescriptor().toString();
-        response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
-        js = new JsonPath(response.asString());
-        System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
+        //        // Verify if user is able to login and retrieve the accountID
+        //        username = testData.get("username").toString();
+        //        password = testData.get("password").toString();
+        //        System.out.println(application + platform + status);
+        //        loginServiceHelper = new LoginServiceHelper();
+        //        response = loginServiceHelper.fetchUserAccessDescriptionToken(platform, application, status, username, password);
+        //        LoginUserAccessResponse loginuseraccessresponse = response.as(LoginUserAccessResponse.class);
+        //        String token = loginuseraccessresponse.getUserAccessDescriptor().toString();
+        //        response = loginServiceHelper.fetchUserInfoUsingToken(platform, application, status, token);
+        //        js = new JsonPath(response.asString());
+        //        System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
 
 
         /*Verify that the pagination links displayed are functional and the number of pagination
@@ -87,17 +88,36 @@ public class IntegrationE2EFlow extends BaseTest {
 
         BaseTest.assertEquals(driver, browseOrSearchPage.getStatusPaginationLink().toString(), "true", "Verifying if pagination link is active");
         int numberOfItemsPerPage = browseOrSearchPage.getItemsPerPage();
-        int noOfPaginationLinks = Math.round(totalResultsFromWebPage / numberOfItemsPerPage);
+        double noOfPaginationLinksD = Math.ceil(totalResultsFromWebPage / (double) numberOfItemsPerPage);
+        Double dnp = new Double(noOfPaginationLinksD);
+        int noOfPaginationLinks = dnp.intValue();
         BaseTest.assertEquals(driver, browseOrSearchPage.getLastItemOfPaginationLinks(), noOfPaginationLinks, "Verifying if the number of pagination is as expected");
 
         /* Verify if search results page can be sorted in ascending and descending
          */
         browseOrSearchPage.SelectSortDateAscFromSortByDropdownOnSearchOrBrowsePage();
-        BaseTest.verifyTextInURL("sort=date");
+        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=date"), "Verifying if search results are sorted in ascending order");
         browseOrSearchPage.SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage();
-        BaseTest.verifyTextInURL("sort=datedescending");
+        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=datedescending"), "Verifying if search results are sorted in descending order");
 
+        // Adding a search text in the search text box
 
+        masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchtext").toString());
+        masterPage.clickOnSearchMagnifyingLense();
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getSearchPageLabelText(), testData.get("searchpage").toString(), "Verifying Search Result page Header");
+
+        // Check returned results after applying article type filters
+
+        int totalResultOnsearchPage = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
+        browseOrSearchPage.clickOnArticleTypeFilterValueOnBrowseOrSearchPage(testData.get("articletypename").toString());
+
+        // Verifying the article type name and verifying number of results after applying filter
+
+        BaseTest.verifyTextInURL(testData.get("articletypename").toString());
+        System.out.println("Article type name=" + testData.get("articletypename").toString());
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getNumberOfFilteredResultsFrontOfArticleFilterValueOnBrowseOrSearchPage(testData.get("articletypename").toString()),
+                browseOrSearchPage.getTotatResultOnBrowseOrSearchPage(), "Verifying number of filtered results are returned after applying Article type filter");
+        System.out.println("total result actual webpage after article filter apply:" + browseOrSearchPage.getTotatResultOnBrowseOrSearchPage());
     }
 
 }

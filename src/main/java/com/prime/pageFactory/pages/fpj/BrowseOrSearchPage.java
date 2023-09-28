@@ -1,6 +1,7 @@
 package com.prime.pageFactory.pages.fpj;
 
 import java.util.List;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -163,16 +164,121 @@ public class BrowseOrSearchPage extends BasePage {
     }
 
 
+    /**
+     * 
+     * This method returns selecting acesnding sorting option from drop down 
+     * 
+     * @throws Exception
+     * 
+     * @author Veena.Mathew
+     * 
+     * @Created Date : 20/09/2023
+     * 
+     */
     public void SelectSortDateAscFromSortByDropdownOnSearchOrBrowsePage() throws Exception {
-        clickOnElement(sortDateAsc);
+        clickOnElement(sortDateAsc, "Changing the drop down option to Sort ASC in search results page");
     }
 
+    /**
+     * 
+     * This method is used for selecting descending sorting option from drop down 
+     * 
+     * @throws Exception
+     * 
+     * @author Veena.Mathew
+     * 
+     * @Created Date : 20/09/2023
+     * 
+     */
+
     public void SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage() throws Exception {
-        clickOnElement(sortDateDesc);
+        clickOnElement(sortDateDesc, "Changing the drop down option to Sort DESC in search results page");
+
     }
 
     public void selectSortByValueSortByDropdownOnSearchOrBrowsePage(String value) throws Exception {
         selectByValue(sortByDropdown, value, "Selecting the value " + value + " from sort by dropdown on search or browse page");
+    }
+
+    /**
+     * 
+     * This method clicks on refine by user filter
+     * 
+     * @throws Exception
+     * 
+     * @author Veena.Mathew
+     * 
+     * @Created Date : 20/09/2023
+     * 
+     */
+    public void clickOnRefineByAccessAsUser() throws Exception {
+        clickOnElement(refineByUserAccess, "Clicking on refine by Access and option as User");
+
+    }
+
+    /**
+     * 
+     * This method clicks on refine by user filter
+     * 
+     * @throws Exception
+     * 
+     * @author Veena.Mathew
+     * 
+     * @Created Date : 20/09/2023
+     * 
+     */
+    public void clickOnFirstArtcleFromSearchResults() throws Exception {
+
+        clickOnElement(searchResults.get(1), "Clicking on first article on search results page");
+
+    }
+
+    /**
+     * This method returns Search label text on Browse Page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 27/09/2023
+     */
+    public String getSearchPageLabelText() throws Exception {
+        String browsetext = getTextFromElement(SearchResultText);
+        return browsetext;
+    }
+
+    /**
+     * This method clicks on article type filter
+     * 
+     * @return void
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 27/09/2023
+     */
+    public void clickOnArticleTypeFilterValueOnBrowseOrSearchPage(String articleType) throws Exception {
+        WebElement element = driver.findElement(By.xpath("//span[contains(text(),'By Article Type')]//following::ul[1]//li//button//span[text()='" + articleType + "']"));
+        clickOnElement(element, "Clicking on " + articleType + " Artcile type");
+    }
+
+    /**
+     * This method number of filtered results From left hand side 
+     * 
+     * @return void
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 27/09/2023
+     */
+    public int getNumberOfFilteredResultsFrontOfArticleFilterValueOnBrowseOrSearchPage(String articleType) throws Exception {
+        WebElement element = driver.findElement(By.xpath("//span[contains(text(),'By Article Type')]"));
+        mouseOver(element, "Hovering on article type");
+        String filterResult = getTextFromElement(driver.findElement(By.xpath("//span[contains(text(),'By Article Type')]//following::ul[1]//li//button//span[text()='" + articleType + "']//following-sibling::span")));
+        System.out.println("filterResult=" + filterResult);
+        String s = "";
+        for (int i = 1; i < filterResult.length() - 1; i++) {
+            s += filterResult.charAt(i);
+        }
+        System.out.println("s=" + s);
+        int result = Integer.parseInt(s);
+        return result;
     }
 
 
@@ -199,6 +305,16 @@ public class BrowseOrSearchPage extends BasePage {
 
     @FindBy(xpath = "//select[@id='sortOptions']//option[text()='Sort Date DESC']")
     private WebElement sortDateDesc;
+
+    @FindBy(xpath = "//button[@data-facet-value='USER']/div")
+    private WebElement refineByUserAccess;
+
+    @FindBy(xpath = "//div[@class='searchResultsList']//a")
+    private List<WebElement> searchResults;
+
+    @FindBy(xpath = "//h1[text()='Search Results']")
+    private WebElement SearchResultText;
+
 
 
 }

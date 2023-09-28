@@ -943,8 +943,8 @@ public class BaseTest {
             parser = new JSONParser();
             application = BaseTest.properties.getProperty("application");
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
-            //this.getTestDataDetailsWithFileName(testCaseId, testDataFileName);
-            this.fetchTestDataApplicationWise(application);
+            this.getTestDataDetailsWithFileName(testCaseId, testDataFileName);
+            //this.fetchTestDataApplicationWise(application);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -1003,6 +1003,26 @@ public class BaseTest {
         }
     }
 
+
+    /**
+     * This method navigates the specific URL when you have the link
+     * 
+     * @param url
+     * @throws Exception
+     * @author Veena.Mathew
+     * @Created Date : 26 Sep 2022
+     */
+    public void navigateToUrlLink(String url) throws Exception {
+        try {
+            // url = BaseTest.properties.getProperty(url);
+            WebDriverManager.getDriver().get(url);
+            Allure.step("Opening URL: " + url);
+            waitForLoad(driver);
+        } catch (Exception e) {
+            Assert.fail("Failure while opening URL: " + url);
+        }
+    }
+
     /**
      * It is used to get test case id from testCase.json
      * 
@@ -1034,9 +1054,15 @@ public class BaseTest {
     }
 
 
-    public static void verifyTextInURL(String linkText) {
-        WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 5);
-        wait.until(ExpectedConditions.urlContains(linkText));
+    public static boolean verifyTextInURL(String linkText) {
+        try {
+            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 5);
+            wait.until(ExpectedConditions.urlContains(linkText));
+            return true;
+        } catch (Exception ex) {
+            Assert.fail(linkText + " not found");
+            return false;
+        }
     }
 
     /**
