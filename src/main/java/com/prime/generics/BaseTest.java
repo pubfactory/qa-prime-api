@@ -383,7 +383,7 @@ public class BaseTest {
         }
     }
 
- /**
+    /**
      * This method used to create a driver object for given browser for execution on
      * Browser Stack Environment based on browserName,browser_version,os,os_version
      * parameters from XML File
@@ -555,6 +555,10 @@ public class BaseTest {
                 break;
             case "tsir":
                 jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/TSIR_TestData.json"))));
+                break;
+
+            case "anesthesiaprogress":
+                jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/ANESTHESIAPROGRESS_TestData.json"))));
                 break;
             default:
                 throw new Exception("Not a valid application Choice");
@@ -1000,14 +1004,15 @@ public class BaseTest {
         }
     }
 
-     /**
-     * This method navigates the specific URL when you have the link
-     * 
-     * @param url
-     * @throws Exception
-     * @author Veena.Mathew
-     * @Created Date : 26 Sep 2022
-     */
+
+    /**
+    * This method navigates the specific URL when you have the link
+    * 
+    * @param url
+    * @throws Exception
+    * @author Veena.Mathew
+    * @Created Date : 26 Sep 2022
+    */
     public void navigateToUrlLink(String url) throws Exception {
         try {
             // url = BaseTest.properties.getProperty(url);
@@ -1018,6 +1023,8 @@ public class BaseTest {
             Assert.fail("Failure while opening URL: " + url);
         }
     }
+
+
     /**
      * It is used to get test case id from testCase.json
      * 
@@ -1048,16 +1055,18 @@ public class BaseTest {
         return finalObj;
     }
 
-    public static boolean verifyTextInURL(String linkText) {	
-        try {	
-            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 5);	
-            wait.until(ExpectedConditions.urlContains(linkText));	
-            return true;	
-        } catch (Exception ex) {	
-            Assert.fail(linkText + " not found");	
-            return false;	
-        }	
+
+    public static boolean verifyTextInURL(String linkText) {
+        try {
+            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 5);
+            wait.until(ExpectedConditions.urlContains(linkText));
+            return true;
+        } catch (Exception ex) {
+            Assert.fail(linkText + " not found");
+            return false;
+        }
     }
+
     /**
      * This methos automatically generates allure html report
      * 

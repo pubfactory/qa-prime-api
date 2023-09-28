@@ -4,12 +4,25 @@
 		"data": {
 			"description": "verifyThatUserAbleToLaunchApplication",
 			"title":"anesthesiaprogress",
-			"searchtext":"women",
+			"searchtext":"book",
+			"searchpage":"Search Results",
 			"username":"veena.mathew@kwglobal.com",
 			"password":"Default@123",
 			"paginationsize":"1,2",
 			"searchresulttext":"Search Results",
-			"browsetext":"Browse"
+			"browsetext":"Browse",
+			"articletypename":"other"
+		}
+	},
+	{
+		"id": "54",
+		"data": {
+			"description": "verifyThatViewPagesDisplayed",
+			"title":"anesthesiaprogress",
+			"issuespageheader":"Issues",
+			"journalpageurl":"https://prime-dev:prime-dev@meridian-anesthesiaprogress-draft.dev.prime.pubfactory.com/view/journals/anpr/anpr-overview.xml",
+			"journalpageheader":"Anesthesia Progress"
 		}
 	}
+
 ]

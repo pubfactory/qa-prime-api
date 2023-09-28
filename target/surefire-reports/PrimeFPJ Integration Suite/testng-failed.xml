@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="6" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [PrimeFPJ Integration Suite]" parallel="tests">
+  <parameter name="testRailIntegrationMode" value="ON"/>
+  <parameter name="testRunId" value="4001"/>
+  <parameter name="serverURL" value="https://sheridan.testrail.com"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="serverUsername" value="veena.mathew@kwglobal.com"/>
+  <parameter name="serverPassword" value="Welcome123il%"/>
+  <listeners>
+    <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
+  </listeners>
+  <test name="DEMO_E2E(failed)" parallel="tests">
+    <classes>
+      <class name="com.prime.tests.FPJ.IntegrationE2EFlow">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="establishConnection"/>
+          <include name="verifyThatUserAbleToLaunchApplication" invocation-numbers="0 0"/>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.FPJ.IntegrationE2EFlow -->
+    </classes>
+  </test> <!-- DEMO_E2E(failed) -->
+</suite> <!-- Failed suite [PrimeFPJ Integration Suite] -->
