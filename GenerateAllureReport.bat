@@ -1,1 +1,0 @@
-C:\Allure\bin\allure serve target/allure-results

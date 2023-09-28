@@ -409,7 +409,7 @@ public class BaseTest {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     //               io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
-                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
                     //     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
@@ -478,6 +478,7 @@ public class BaseTest {
             e.printStackTrace();
         }
     }
+
 
     /**
      * This method is used to login application randomly using different credentials
@@ -1005,13 +1006,13 @@ public class BaseTest {
 
 
     /**
-     * This method navigates the specific URL when you have the link
-     * 
-     * @param url
-     * @throws Exception
-     * @author Veena.Mathew
-     * @Created Date : 26 Sep 2022
-     */
+    * This method navigates the specific URL when you have the link
+    * 
+    * @param url
+    * @throws Exception
+    * @author Veena.Mathew
+    * @Created Date : 26 Sep 2022
+    */
     public void navigateToUrlLink(String url) throws Exception {
         try {
             // url = BaseTest.properties.getProperty(url);
@@ -1022,6 +1023,7 @@ public class BaseTest {
             Assert.fail("Failure while opening URL: " + url);
         }
     }
+
 
     /**
      * It is used to get test case id from testCase.json

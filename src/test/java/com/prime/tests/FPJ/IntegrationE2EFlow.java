@@ -20,6 +20,7 @@ import io.qameta.allure.Story;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
+//Checking E2E flow
 public class IntegrationE2EFlow extends BaseTest {
     private MasterPage masterPage;
     private SignInPage signInPage;
@@ -42,9 +43,9 @@ public class IntegrationE2EFlow extends BaseTest {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
         // Identifying the application and its url to test
-        String application = BaseTest.properties.getProperty("application");
-        url = BaseTest.properties.getProperty(application);
-        System.out.println("!url=" + url);
+        String application = System.getProperty("application");
+        String url = BaseTest.properties.getProperty(application);
+        System.out.println("url=" + url);
         String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
         navigateToUrlLink(url);
         // Launch the application and verify if the launch has been successful
@@ -68,9 +69,10 @@ public class IntegrationE2EFlow extends BaseTest {
         totalResultsFromAPI = Integer.parseInt(js.get("pagination.totalResults").toString());
         BaseTest.assertEquals(WebDriverManager.getDriver(), totalResultsFromAPI, totalResultsFromWebPage, "Total Search results from api and webpage");
 
-        testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
+        //  testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
 
-        //        // Verify if user is able to login and retrieve the accountID
+
+        // Verify if user is able to login and retrieve the accountID
         //        username = testData.get("username").toString();
         //        password = testData.get("password").toString();
         //        System.out.println(application + platform + status);
@@ -82,10 +84,11 @@ public class IntegrationE2EFlow extends BaseTest {
         //        js = new JsonPath(response.asString());
         //        System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
 
-
+        System.out.println("BEFORE PAGINATION");
         /*Verify that the pagination links displayed are functional and the number of pagination
          *  links displayed changes as per items per page dropdown is selected.*/
 
+        System.out.println("PAGINATION STATUS=" + browseOrSearchPage.getStatusPaginationLink().toString());
         BaseTest.assertEquals(driver, browseOrSearchPage.getStatusPaginationLink().toString(), "true", "Verifying if pagination link is active");
         int numberOfItemsPerPage = browseOrSearchPage.getItemsPerPage();
         double noOfPaginationLinksD = Math.ceil(totalResultsFromWebPage / (double) numberOfItemsPerPage);
@@ -99,6 +102,7 @@ public class IntegrationE2EFlow extends BaseTest {
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=date"), "Verifying if search results are sorted in ascending order");
         browseOrSearchPage.SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage();
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=datedescending"), "Verifying if search results are sorted in descending order");
+
 
         // Adding a search text in the search text box
 
