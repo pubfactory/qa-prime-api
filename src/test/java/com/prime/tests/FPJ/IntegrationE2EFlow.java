@@ -36,7 +36,7 @@ public class IntegrationE2EFlow extends BaseTest {
     private LoginServiceHelper loginServiceHelper;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class, description = "1721043 - Verify that the user is able to do blank search and compare that the search results API is giving the same results")
+    @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class, description = "1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results")
     @Story("EPIC-971")
     @Parameters({"testcaseid"})
     public void verifyThatUserAbleToLaunchApplication(@Optional String testCaseId) throws Exception {
