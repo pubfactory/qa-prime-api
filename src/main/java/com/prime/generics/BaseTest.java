@@ -121,7 +121,7 @@ public class BaseTest {
     protected String application;
     protected String baseURI;
     protected String platform;
-    private String suitefilepathnamee;
+    protected String suitefilepathnamee;
     private EdgeOptions edgeoptions;
     public static String testCaseName;
 
@@ -676,7 +676,7 @@ public class BaseTest {
             //
             //			}
             if (teststatus != null) {
-                if (!suitefilepathnamee.contains("Default suite")) {
+                if (!suiteName.contains("Default suite")) {
                     Helper.INSTANCE.publishResults(testRailId, testcaseId, "5", teststatus);
                 }
                 Allure.step(testCaseId + " :: " + teststatus);
@@ -692,7 +692,7 @@ public class BaseTest {
                     jse.executeScript(String.format("browserstack_executor: %s", executorObject));
                 }
             } else {
-                if (!suitefilepathnamee.contains("Default suite")) {
+                if (!suiteName.contains("Default suite")) {
                     Helper.INSTANCE.publishResults(testRailId, testcaseId, "1", "Test Passed Successfully");
                 }
                 Allure.addAttachment("Test Passed Successfully", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
@@ -1020,7 +1020,9 @@ public class BaseTest {
             Allure.step("Opening URL: " + url);
             waitForLoad(driver);
         } catch (Exception e) {
-            Assert.fail("Failure while opening URL: " + url);
+            error = "Failure while opening URL: " + url;
+            Helper.INSTANCE.setErrorMessage(Helper.INSTANCE.getCurrentTestCaseId(), error);
+            Assert.fail(error);
         }
     }
 
