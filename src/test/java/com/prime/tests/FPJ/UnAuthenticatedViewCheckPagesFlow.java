@@ -40,7 +40,7 @@ public class UnAuthenticatedViewCheckPagesFlow extends BaseTest {
     private LoginServiceHelper loginServiceHelper;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class, description = "54 - Verify that view pages is displayed")
+    @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class, description = "1721285 - Verify that view pages is displayed")
     @Story("EPIC-971")
     @Parameters({"testcaseid"})
     public void verifyThatViewPagesDisplayed(@Optional String testCaseId) throws Exception {
