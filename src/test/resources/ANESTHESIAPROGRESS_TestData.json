@@ -1,6 +1,6 @@
 [
 	{
-		"id": "1721043",
+		"id": "1721284",
 		"data": {
 			"description": "verifyThatUserAbleToLaunchApplication",
 			"title":"anesthesiaprogress",
@@ -15,7 +15,7 @@
 		}
 	},
 	{
-		"id": "54",
+		"id": "1721285",
 		"data": {
 			"description": "verifyThatViewPagesDisplayed",
 			"title":"anesthesiaprogress",
