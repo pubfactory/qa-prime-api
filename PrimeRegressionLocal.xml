@@ -6,10 +6,17 @@
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>
 
-  	<test name="DEMO_E2E" preserve-order="true">
+  	<test name="SEARCH_E2E" preserve-order="true">
 		<classes>
 			<class
 				name="com.prime.tests.FPJ.IntegrationE2EFlow">
+			</class>
+		</classes> 
+	</test>
+	<test name="JOURNAL_HOME_E2E" preserve-order="true">
+		<classes>
+			<class
+				name="com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow">
 			</class>
 		</classes> 
 	</test>
