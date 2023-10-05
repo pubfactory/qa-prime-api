@@ -1,42 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-05T18:19:13 IST" name="PRIMEFPJ Regression Suite" finished-at="2023-10-05T18:19:13 IST" duration-ms="0">
+  <suite started-at="2023-10-06T00:20:26 IST" name="PRIMEFPJ Regression Suite" finished-at="2023-10-06T00:20:26 IST" duration-ms="0">
     <groups>
     </groups>
   </suite> <!-- PRIMEFPJ Regression Suite -->
-  <suite started-at="2023-10-05T18:18:44 IST" name="PrimeFPJ Integration Suite" finished-at="2023-10-05T18:19:12 IST" duration-ms="28542">
+  <suite started-at="2023-10-06T00:19:44 IST" name="PrimeFPJ Integration Suite" finished-at="2023-10-06T00:20:25 IST" duration-ms="41074">
     <groups>
       <group name="SignIn">
         <method signature="IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@40238dd0]" name="verifyThatUserAbleToLaunchApplication" class="com.prime.tests.FPJ.IntegrationE2EFlow"/>
+        <method signature="CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.CitationTest@8dbfffb]" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" class="com.prime.tests.FPJ.CitationTest"/>
       </group> <!-- SignIn -->
+      <group name="JournalHomePageIssues">
+        <method signature="UnAuthenticatedViewCheckPagesFlow.verifyThatViewPagesDisplayed(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow@253d9f73]" name="verifyThatViewPagesDisplayed" class="com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow"/>
+      </group> <!-- JournalHomePageIssues -->
     </groups>
-    <test started-at="2023-10-05T18:18:44 IST" name="DEMO_E2E1" finished-at="2023-10-05T18:19:12 IST" duration-ms="28542">
-      <class name="com.prime.tests.FPJ.IntegrationE2EFlow">
-        <test-method is-config="true" signature="establishConnection(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@40238dd0]" started-at="2023-10-05T18:18:44 IST" name="establishConnection" finished-at="2023-10-05T18:18:44 IST" duration-ms="26" status="PASS">
+    <test started-at="2023-10-06T00:19:44 IST" name="JOURNAL_HOME_E2E" finished-at="2023-10-06T00:20:03 IST" duration-ms="18971">
+      <class name="com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow">
+        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow@253d9f73]" started-at="2023-10-06T00:19:44 IST" name="loadConfigurationValues" finished-at="2023-10-06T00:19:44 IST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@60975100]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- establishConnection -->
-        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@40238dd0]" started-at="2023-10-05T18:18:44 IST" name="loadConfigurationValues" finished-at="2023-10-05T18:18:44 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@60975100]]>
+                <![CDATA[org.testng.TestRunner@708400f6]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfigurationValues -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@40238dd0]" started-at="2023-10-05T18:18:44 IST" name="setUp" finished-at="2023-10-05T18:18:45 IST" duration-ms="1189" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow@253d9f73]" started-at="2023-10-06T00:19:44 IST" name="setUp" finished-at="2023-10-06T00:19:46 IST" duration-ms="1885" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow.verifyThatViewPagesDisplayed(java.lang.String) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyThatViewPagesDisplayed(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow@253d9f73]" started-at="2023-10-06T00:19:46 IST" name="verifyThatViewPagesDisplayed" description="1721285 - Verify if Article, Issue, and Journal page renders correctly when user try to access it from homepage." finished-at="2023-10-06T00:20:01 IST" duration-ms="15206" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThatViewPagesDisplayed -->
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow@253d9f73]" started-at="2023-10-06T00:20:01 IST" name="closeApplication" finished-at="2023-10-06T00:20:03 IST" duration-ms="1702" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow -->
+    </test> <!-- JOURNAL_HOME_E2E -->
+    <test started-at="2023-10-06T00:19:44 IST" name="SEARCH_E2E" finished-at="2023-10-06T00:20:14 IST" duration-ms="30353">
+      <class name="com.prime.tests.FPJ.IntegrationE2EFlow">
+        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@40238dd0]" started-at="2023-10-06T00:19:44 IST" name="loadConfigurationValues" finished-at="2023-10-06T00:19:44 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5829e4f4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@40238dd0]" started-at="2023-10-06T00:19:44 IST" name="setUp" finished-at="2023-10-06T00:19:46 IST" duration-ms="1885" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -61,7 +112,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@40238dd0]" started-at="2023-10-05T18:18:45 IST" name="verifyThatUserAbleToLaunchApplication" description="1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results" finished-at="2023-10-05T18:19:11 IST" duration-ms="25721" status="PASS">
+        <test-method signature="verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@40238dd0]" started-at="2023-10-06T00:19:46 IST" name="verifyThatUserAbleToLaunchApplication" description="1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results" finished-at="2023-10-06T00:20:13 IST" duration-ms="27005" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -70,7 +121,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyThatUserAbleToLaunchApplication -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@40238dd0]" started-at="2023-10-05T18:19:11 IST" name="closeApplication" finished-at="2023-10-05T18:19:12 IST" duration-ms="1518" status="PASS">
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@40238dd0]" started-at="2023-10-06T00:20:13 IST" name="closeApplication" finished-at="2023-10-06T00:20:14 IST" duration-ms="1303" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -79,11 +130,80 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@40238dd0]" started-at="2023-10-05T18:19:12 IST" name="closeDriver" finished-at="2023-10-05T18:19:13 IST" duration-ms="238" status="PASS">
+      </class> <!-- com.prime.tests.FPJ.IntegrationE2EFlow -->
+    </test> <!-- SEARCH_E2E -->
+    <test started-at="2023-10-06T00:19:44 IST" name="CITATION_E2E" finished-at="2023-10-06T00:20:25 IST" duration-ms="41074">
+      <class name="com.prime.tests.FPJ.CitationTest">
+        <test-method is-config="true" signature="establishConnection(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.CitationTest@8dbfffb]" started-at="2023-10-06T00:19:44 IST" name="establishConnection" finished-at="2023-10-06T00:19:44 IST" duration-ms="37" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4cf8b2dc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- establishConnection -->
+        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.CitationTest@8dbfffb]" started-at="2023-10-06T00:19:44 IST" name="loadConfigurationValues" finished-at="2023-10-06T00:19:44 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4cf8b2dc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.CitationTest@8dbfffb]" started-at="2023-10-06T00:19:44 IST" name="setUp" finished-at="2023-10-06T00:19:46 IST" duration-ms="1885" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.FPJ.CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(java.lang.String) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.CitationTest@8dbfffb]" started-at="2023-10-06T00:19:46 IST" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" description="55 - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it" finished-at="2023-10-06T00:20:24 IST" duration-ms="37841" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt -->
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.CitationTest@8dbfffb]" started-at="2023-10-06T00:20:24 IST" name="closeApplication" finished-at="2023-10-06T00:20:25 IST" duration-ms="1185" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.prime.tests.FPJ.CitationTest@8dbfffb]" started-at="2023-10-06T00:20:25 IST" name="closeDriver" finished-at="2023-10-06T00:20:25 IST" duration-ms="230" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
-      </class> <!-- com.prime.tests.FPJ.IntegrationE2EFlow -->
-    </test> <!-- DEMO_E2E1 -->
+      </class> <!-- com.prime.tests.FPJ.CitationTest -->
+    </test> <!-- CITATION_E2E -->
   </suite> <!-- PrimeFPJ Integration Suite -->
 </testng-results>
