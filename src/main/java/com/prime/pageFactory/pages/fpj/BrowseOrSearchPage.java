@@ -12,7 +12,7 @@ public class BrowseOrSearchPage extends BasePage {
 
     /**
      * 
-     * This constructor initializes the ArticleCitationPage class object
+     * This constructor initializes the BrowsePage class object
      * 
      * 
      * 

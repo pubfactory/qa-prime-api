@@ -11,18 +11,18 @@
     <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
     <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
   </listeners>
-  <test thread-count="6" parallel="tests" name="DEMO_E2E(failed)" verbose="5">
+  <test thread-count="6" parallel="tests" name="DEMO_E2E2(failed)" verbose="5">
     <classes>
-      <class name="com.prime.tests.FPJ.IntegrationE2EFlow">
+      <class name="com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow">
         <methods>
           <include name="closeDriver"/>
+          <include name="verifyThatViewPagesDisplayed" invocation-numbers="0"/>
           <include name="establishConnection"/>
           <include name="loadConfigurationValues"/>
           <include name="setUp"/>
-          <include name="verifyThatUserAbleToLaunchApplication" invocation-numbers="0"/>
           <include name="closeApplication"/>
         </methods>
-      </class> <!-- com.prime.tests.FPJ.IntegrationE2EFlow -->
+      </class> <!-- com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow -->
     </classes>
-  </test> <!-- DEMO_E2E(failed) -->
+  </test> <!-- DEMO_E2E2(failed) -->
 </suite> <!-- Failed suite [PrimeFPJ Integration Suite] -->
