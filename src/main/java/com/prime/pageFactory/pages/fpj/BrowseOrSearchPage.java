@@ -232,6 +232,22 @@ public class BrowseOrSearchPage extends BasePage {
         clickOnElement(searchResults.get(1), "Clicking on first article on search results page");
 
     }
+    
+    /**
+     * 
+     * This method clicks on first article on Browse or Search Page
+     * 
+     * @throws Exception
+     * 
+     * @author Rakesh.Shevale
+     * 
+     * @Created Date : 04/10/2023
+     * 
+     */
+    public void clickOnFirstArticleOnSearchOrBrowsePage() throws Exception {
+		clickOnElement(firstArticleOnBrowseOrSearchPage);
+		
+	}
 
     /**
      * This method returns Search label text on Browse Page
@@ -314,6 +330,10 @@ public class BrowseOrSearchPage extends BasePage {
 
     @FindBy(xpath = "//h1[text()='Search Results']")
     private WebElement SearchResultText;
+
+    @FindBy(xpath="(//a[@target='_self'])[1]")
+    private WebElement firstArticleOnBrowseOrSearchPage;
+	
 
 
 
