@@ -134,9 +134,9 @@ public class ArticleCitationTest extends BaseTest{
 		List<String> expRISCitationLabels = Arrays.asList(testData.get("risbuttonlabel").toString().split(","));
 		List<String> expBIBCitationLabels = Arrays.asList(testData.get("bibbuttonlabel").toString().split(","));
 		List<String> expENWCitationLabels = Arrays.asList(testData.get("enwbuttonlabel").toString().split(","));
-		BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.getExportCitationFormatLabels(testData.get("risbutton").toString()).toString(),expRISCitationLabels.toString(), "checking the RIS button Labels on Export Ciatation Popup");
-		BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.getExportCitationFormatLabels(testData.get("bibbutton").toString()).toString(),expBIBCitationLabels.toString(), "checking the BIB button Labels on Export Ciatation Popup");
-		BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.getExportCitationFormatLabels(testData.get("enwbutton").toString()).toString(),expENWCitationLabels.toString(), "checking the ENW button Labels on Export Ciatation Popup");
+		BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.getExportCitationFormatLabels(testData.get("risbutton").toString()).toString(),expRISCitationLabels.toString(), "Verifying the RIS button Labels on Export Ciatation Popup");
+		BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.getExportCitationFormatLabels(testData.get("bibbutton").toString()).toString(),expBIBCitationLabels.toString(), "Verifying the BIB button Labels on Export Ciatation Popup");
+		BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.getExportCitationFormatLabels(testData.get("enwbutton").toString()).toString(),expENWCitationLabels.toString(), "Verifying the ENW button Labels on Export Ciatation Popup");
 	}
 	
 	@Severity(SeverityLevel.BLOCKER)

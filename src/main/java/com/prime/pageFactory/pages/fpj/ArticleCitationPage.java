@@ -211,9 +211,9 @@ public class ArticleCitationPage extends BasePage {
      * @author Rakesh.Shevale
      * @Created Date : 10/07/2023
      */
-    public void clickArticleOnArticlePagewrtContentType(String contentType) throws Exception {
-        List<WebElement> Contentlist = driver.findElements(By.xpath("//span[@title='" + contentType + "']//preceding-sibling::span//parent::span//parent::div//preceding-sibling::div//h6"));
-        clickOnElement(Contentlist.get(0), "Clicking on content type " + contentType + " on article page");
+    public void clickArticleOnArticlePagewrtContentType(String accessType) throws Exception {
+        List<WebElement> Contentlist = driver.findElements(By.xpath("//span[@title='" + accessType + "']//preceding-sibling::span//parent::span//parent::div//preceding-sibling::div//h6"));
+        clickOnElement(Contentlist.get(0), "Clicking on content type " + accessType + " on article page");
     }
 
     /**
@@ -274,7 +274,7 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 10/07/2023
      */
     public void verifyRISButtonIsPresentOnPreviewExportCitationOnPopup() throws Exception {
-        isElementPresent(RISButton, "checking the RIS Button is present or not under Export citation section on Preview Export Citation PopUp");
+        isElementPresent(RISButton, "Verifying the RIS Button is present or not under Export citation section on Preview Export Citation PopUp");
     }
 
     /**
@@ -327,7 +327,7 @@ public class ArticleCitationPage extends BasePage {
         return articleHeaderText;
     }
 
-    @FindBy(xpath = "//button[@title='Cite']")
+    @FindBy(xpath = "(//button[contains(text(),'Cite')])[1]")
     private WebElement citationButton;
     @FindBy(xpath = "//header[contains(text(),'Preview/Export Citation')]")
     private WebElement PreviewExportCitationPopUp;
