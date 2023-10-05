@@ -23,5 +23,26 @@
 			"journalpageurl":"https://prime-dev:prime-dev@meridian-anesthesiaprogress-draft.dev.prime.pubfactory.com/view/journals/anpr/anpr-overview.xml",
 			"journalpageheader":"Anesthesia Progress"
 		}
+	},
+	{
+		"id": "55",
+		"data": {
+			"description": "verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt",
+			"searchtext":"Anesthetic Management Using Remimazolam in a Hemodialysis Patient",
+			"popupheader":"Preview/Export Citation",
+			"formatvalueapa":"APA",
+			"formatvalueama":"AMA",
+			"risbuttonformat":"citationExport-article-p65.ris",
+			"bibbuttonformat":"citationExport-article-p65.bib",
+			"enwbuttonformat":"citationExport-article-p65.enw"
+			"risbutton":".ris",
+			"bibbutton":".bib",
+			"enwbutton":".enw",
+			"risbuttonlabel":"ProCite,RefWorks,Reference Manager",
+			"bibbuttonlabel":"BibTeX,Zotero",
+			"enwbuttonlabel":"EndNote",
+			"abbreviatedtitle":"Nishioka Y, Miyake S, Hamaoka M, et al. Anesthetic Management Using Remimazolam in a Hemodialysis Patient. Anesthesia Progress. 2023;70(2):65-69. doi: 10.2344/anpr-70-02-06"
+			
+		}
 	}
 ]
