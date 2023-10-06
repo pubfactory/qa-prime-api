@@ -232,7 +232,7 @@ public class BrowseOrSearchPage extends BasePage {
         clickOnElement(searchResults.get(1), "Clicking on first article on search results page");
 
     }
-    
+
     /**
      * 
      * This method clicks on first article on Browse or Search Page
@@ -245,9 +245,9 @@ public class BrowseOrSearchPage extends BasePage {
      * 
      */
     public void clickOnFirstArticleOnSearchOrBrowsePage() throws Exception {
-		clickOnElement(firstArticleOnBrowseOrSearchPage);
-		
-	}
+        clickOnElement(firstArticleOnBrowseOrSearchPage);
+
+    }
 
     /**
      * This method returns Search label text on Browse Page
@@ -331,9 +331,156 @@ public class BrowseOrSearchPage extends BasePage {
     @FindBy(xpath = "//h1[text()='Search Results']")
     private WebElement SearchResultText;
 
-    @FindBy(xpath="(//a[@target='_self'])[1]")
+    @FindBy(xpath = "(//a[@target='_self'])[1]")
     private WebElement firstArticleOnBrowseOrSearchPage;
-	
+
+
+
+    //    =======
+    //
+    //    /**
+    //     * 
+    //     * This method returns total search results count
+    //     * 
+    //     * @return int
+    //     * 
+    //     * @throws Exception
+    //     * 
+    //     * @author Rakesh.Shevale
+    //     * 
+    //     * @Created Date : 22/08/2023
+    //     * 
+    //     */
+    //    public int getTotatResultOnBrowseOrSearchPage() throws Exception {
+    //        String totalResult = getTextFromElement(totalResultCount);
+    //        int totalResultcount = Integer.parseInt(totalResult);
+    //        return totalResultcount;
+    //    }
+    //
+    //
+    //
+    //    /**
+    //     * 
+    //     * This method returns true is Pagination link is clickable
+    //     * 
+    //     * @return true
+    //     * 
+    //     * @throws Exception
+    //     * 
+    //     * @author Veena.Mathew
+    //     * 
+    //     * @Created Date : 20/09/2023
+    //     * 
+    //     */
+    //    public Boolean getStatusPaginationLink() throws Exception {
+    //        System.out.println("IN GETSTATUS");
+    //        //        WebDriverWait wait = new WebDriverWait(driver, 30);
+    //        //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Page:']//following-sibling::ul[@role='list']//child::li")));
+    //        System.out.println("PAGINATION ARRAY SIZE=" + paginationArray.size());
+    //        WebElement paginationClickLink = paginationArray.get(1);
+    //        return mouseOver(paginationClickLink, "pagination link is active");
+    //    }
+    //
+    //
+    //    /**
+    //     * 
+    //     * This method returns items per page
+    //     * 
+    //     * @return true
+    //     * 
+    //     * @throws Exception
+    //     * 
+    //     * @author Veena.Mathew
+    //     * 
+    //     * @Created Date : 20/09/2023
+    //     * 
+    //     */
+    //    public int getItemsPerPage() throws Exception {
+    //        String numberOfItemsPerPageString = getDefaultDropDownValue(itemsPerPage);
+    //        System.out.println("NOOFITEMS=" + numberOfItemsPerPageString);
+    //        int numberOfItemsPerPage = Integer.parseInt(numberOfItemsPerPageString);
+    //        return numberOfItemsPerPage;
+    //    }
+    //
+    //
+    //    /**
+    //     * 
+    //     * This method returns number of pagination links
+    //     * 
+    //     * @return int
+    //     * 
+    //     * @throws Exception
+    //     * 
+    //     * @author Veena.Mathew
+    //     * 
+    //     * @Created Date : 20/09/2023
+    //     * 
+    //     */
+    //    public int getTotalNoOfPaginationLinks() throws Exception {
+    //        String noOfPaginationLinksString = getTextFromElement(noOfPaginationLinks);
+    //        int noOfPaginationLinks = Integer.parseInt(noOfPaginationLinksString);
+    //        return noOfPaginationLinks;
+    //    }
+    //
+    //
+    //    /**
+    //     * 
+    //     * This method returns last item in the list of pagination links
+    //     * 
+    //     * @return List<String>
+    //     * 
+    //     * @throws Exception
+    //     * 
+    //     * @author Veena.Mathew
+    //     * 
+    //     * @Created Date : 20/09/2023
+    //     * 
+    //     */
+    //    public int getLastItemOfPaginationLinks() throws Exception {
+    //        WebElement lastWebElementOfPaginationLinks = paginationArray.get(paginationArray.size() - 1);
+    //        String lastItemOfPaginationLinksString = getTextFromElement(lastWebElementOfPaginationLinks);
+    //        int lastPageOfPagination = Integer.parseInt(lastItemOfPaginationLinksString);
+    //        return lastPageOfPagination;
+    //    }
+    //
+    //
+    //    public void SelectSortDateAscFromSortByDropdownOnSearchOrBrowsePage() throws Exception {
+    //        clickOnElement(sortDateAsc, "Changing the drop down option to Sort ASC in search results page");
+    //    }
+    //
+    //    public void SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage() throws Exception {
+    //        clickOnElement(sortDateDesc, "Changing the drop down option to Sort DESC in search results page");
+    //
+    //    }
+    //
+    //    public void selectSortByValueSortByDropdownOnSearchOrBrowsePage(String value) throws Exception {
+    //        selectByValue(sortByDropdown, value, "Selecting the value " + value + " from sort by dropdown on search or browse page");
+    //    }
+    //
+    //
+    //    @FindBy(xpath = "//h1[text()='Browse']")
+    //    private WebElement browseText;
+    //
+    //    @FindBy(xpath = "//span[text()='of ']//following::span[1]")
+    //    private WebElement totalResultCount;
+    //
+    //    @FindBy(xpath = "//select[@id='itemsPerPage']")
+    //    private WebElement itemsPerPage;
+    //
+    //    @FindBy(xpath = "")
+    //    private WebElement noOfPaginationLinks;
+    //
+    //    @FindBy(xpath = "//span[text()='Page:']//following-sibling::ul[@role='list']//child::li")
+    //    private List<WebElement> paginationArray;
+    //
+    //    @FindBy(xpath = "//select[@id='sortOptions']")
+    //    private WebElement sortByDropdown;
+    //
+    //    @FindBy(xpath = "//select[@id='sortOptions']//option[text()='Sort Date ASC']")
+    //    private WebElement sortDateAsc;
+    //
+    //    @FindBy(xpath = "//select[@id='sortOptions']//option[text()='Sort Date DESC']")
+    //    private WebElement sortDateDesc;>>>>>>>ubuntu-update-clone3
 
 
 

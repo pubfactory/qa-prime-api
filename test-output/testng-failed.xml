@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="6" parallel="tests" name="Failed suite [PrimeFPJ Integration Suite]" guice-stage="DEVELOPMENT" verbose="5">
-  <parameter name="testRailIntegrationMode" value="ON"/>
-  <parameter name="testRunId" value="4001"/>
-  <parameter name="serverURL" value="https://sheridan.testrail.com"/>
-  <parameter name="browser" value="chrome"/>
-  <parameter name="serverUsername" value="veena.mathew@kwglobal.com"/>
-  <parameter name="serverPassword" value="Welcome123il%"/>
-  <listeners>
-    <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
-    <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
-  </listeners>
-  <test thread-count="6" parallel="tests" name="DEMO_E2E2(failed)" verbose="5">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow">
         <methods>
-          <include name="closeDriver"/>
           <include name="verifyThatViewPagesDisplayed" invocation-numbers="0"/>
+          <include name="closeDriver"/>
           <include name="establishConnection"/>
           <include name="loadConfigurationValues"/>
           <include name="setUp"/>
@@ -24,5 +14,5 @@
         </methods>
       </class> <!-- com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow -->
     </classes>
-  </test> <!-- DEMO_E2E2(failed) -->
-</suite> <!-- Failed suite [PrimeFPJ Integration Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

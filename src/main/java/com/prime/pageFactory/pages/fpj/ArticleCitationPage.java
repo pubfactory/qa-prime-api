@@ -327,7 +327,7 @@ public class ArticleCitationPage extends BasePage {
         return articleHeaderText;
     }
 
-    @FindBy(xpath = "(//button[contains(text(),'Cite')])[1]")
+    @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
     @FindBy(xpath = "//header[contains(text(),'Preview/Export Citation')]")
     private WebElement PreviewExportCitationPopUp;

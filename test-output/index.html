@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-PrimeFPJ_Integration_Suite" class="navigator-link ">
-                    <span>2 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -143,7 +143,7 @@
                   <span class="method-name">verifyThatViewPagesDisplayed</span>
                   <span class="parameters">(null)</span>
                   <em>
-(1721285 - Verify if Article, Issue, and Journal page renders correctly when user try to access it from homepage.)                  </em>
+(1721285 - Verify that view pages is displayed)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -161,7 +161,7 @@
                   <span class="method-name">verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</span>
                   <span class="parameters">(null)</span>
                   <em>
-(55 - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it)                  </em>
+(1721296 - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -187,7 +187,7 @@
         </div> <!-- panel PrimeFPJ_Integration_Suite -->
         <div panel-name="test-xml-PRIMEFPJ_Regression_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\veena.mathew\eclipse-workspace\com.QAPrimeIntegration\PrimeConfig.xml</span>
+            <span class="header-content">C:\Users\veena.mathew\eclipse-workspace\com.QAPrimeIntegration\PrimeConfigW.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -287,14 +287,6 @@
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="test-group">
-              <span class="test-group-name">JournalHomePageIssues</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">verifyThatViewPagesDisplayed</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
-            <div class="test-group">
               <span class="test-group-name">SignIn</span>
               <br/>
               <div class="method-in-group">
@@ -303,6 +295,10 @@
               </div> <!-- method-in-group -->
               <div class="method-in-group">
                 <span class="method-in-group-name">verifyThatUserAbleToLaunchApplication</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyThatViewPagesDisplayed</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -351,20 +347,20 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt')
 data.setCell(0, 2, 'com.prime.tests.FPJ.CitationTest')
-data.setCell(0, 3, 38883);
+data.setCell(0, 3, 41228);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'verifyThatUserAbleToLaunchApplication')
 data.setCell(1, 2, 'com.prime.tests.FPJ.IntegrationE2EFlow')
-data.setCell(1, 3, 32439);
+data.setCell(1, 3, 26022);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'verifyThatViewPagesDisplayed')
 data.setCell(2, 2, 'com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow')
-data.setCell(2, 3, 21056);
+data.setCell(2, 3, 17922);
 window.suiteTableData['PrimeFPJ_Integration_Suite']= { tableData: data, tableDiv: 'times-div-PrimeFPJ_Integration_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 43 seconds</span>
+              <span class="suite-total-time">Total running time: 44 seconds</span>
               <div id="times-div-PrimeFPJ_Integration_Suite">
               </div> <!-- times-div-PrimeFPJ_Integration_Suite -->
             </div> <!-- times-div -->
@@ -413,96 +409,93 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.CitationTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">establishConnection(org.testng.TestRunner@5829e4f4)</span>
+                <span class="method-name">establishConnection(org.testng.TestRunner@4cf8b2dc)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+              <div class="configuration-test before">
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@4cf8b2dc)</span>
+                <span class="method-start">37 ms</span>
+              </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.IntegrationE2EFlow</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@4218500f)</span>
-                <span class="method-start">55 ms</span>
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@708400f6)</span>
+                <span class="method-start">38 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@4bff64c2)</span>
-                <span class="method-start">55 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.FPJ.CitationTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">loadConfigurationValues(org.testng.TestRunner@5829e4f4)</span>
-                <span class="method-start">56 ms</span>
+                <span class="method-start">38 ms</span>
               </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow.verifyTh...)</span>
-                <span class="method-start">82 ms</span>
-              </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.IntegrationE2EFlow</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.FPJ.IntegrationE2EFlow.verifyThatUserAbleToLau...)</span>
-                <span class="method-start">83 ms</span>
+                <span class="method-start">57 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow.verifyTh...)</span>
+                <span class="method-start">57 ms</span>
               </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.CitationTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.FPJ.CitationTest.verifyCitationButonAvailableA...)</span>
-                <span class="method-start">83 ms</span>
+                <span class="method-start">58 ms</span>
               </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.IntegrationE2EFlow</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">verifyThatUserAbleToLaunchApplication(null)</span>
-                <span class="method-start">2876 ms</span>
+                <span class="method-start">2186 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">verifyThatViewPagesDisplayed(null)</span>
-                <span class="method-start">2876 ms</span>
+                <span class="method-start">2186 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.CitationTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(null)</span>
-                <span class="method-start">2877 ms</span>
+                <span class="method-start">2186 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">23949 ms</span>
+                <span class="method-start">20119 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.IntegrationE2EFlow</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">35319 ms</span>
+                <span class="method-start">28212 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.FPJ.CitationTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">41768 ms</span>
+                <span class="method-start">43419 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">closeDriver</span>
-                <span class="method-start">43066 ms</span>
+                <span class="method-start">44597 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

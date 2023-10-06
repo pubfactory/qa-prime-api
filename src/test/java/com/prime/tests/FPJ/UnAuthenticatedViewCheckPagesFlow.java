@@ -40,7 +40,7 @@ public class UnAuthenticatedViewCheckPagesFlow extends BaseTest {
     private LoginServiceHelper loginServiceHelper;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"JournalHomePageIssues"}, enabled = true, retryAnalyzer = Retry.class, description = "1721285 - Verify if Article, Issue, and Journal page renders correctly when user try to access it from homepage.")
+    @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class, description = "1721285 - Verify that view pages is displayed")
     @Story("EPIC-971")
     @Parameters({"testcaseid"})
     public void verifyThatViewPagesDisplayed(@Optional String testCaseId) throws Exception {
@@ -49,7 +49,6 @@ public class UnAuthenticatedViewCheckPagesFlow extends BaseTest {
         // Identifying the application and its url to test
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
-        System.out.println("!url=" + url);
         String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
         navigateToUrlLink(url);
 
