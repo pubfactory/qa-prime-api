@@ -58,5 +58,17 @@ jobs:
         PUBLISH_DIR: allure-history
         keep_files: true
 
+    - name: Send ${{ job.status }} message to #qa-prime-integration room
+      uses: act10ns/slack@v2.0.0
+      with:
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: '#qa-prime-integration'
+          message: Build Status :${{ job.status }}
+                  Allure report url is :https://pubfactory.github.io/qa-prime-e2e/${{ github.run_number }}
+      env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
 
 
