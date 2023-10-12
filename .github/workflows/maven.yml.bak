@@ -8,14 +8,13 @@
 
 name: Java CI with Maven
 
-on:
-  workflow_dispatch:
-    inputs:
-      gitcommitId:
-        required: true
-        description: "get git commit Id from prime-frontend"
-        type: string
-        default: ''
+on: 
+ workflow_call:
+  inputs:
+   gitcommitid:
+    required:true
+    description:"Who to greet"
+    type:string
 jobs:
   build:
 
@@ -72,11 +71,10 @@ jobs:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
           channel: '#qa-prime-integration'
-          message: Build Status :${{ job.status }}.\n
-                  Allure report url is :https://pubfactory.github.io/qa-prime-e2e/${{ github.run_number }}.\n
-                  Git commitId is ${{inputs.gitcommitId}}
-                  
+          message: Build Status :${{ job.status }}
+                  Allure report url is :https://pubfactory.github.io/qa-prime-e2e/${{ github.run_number }}
       env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
 
 
