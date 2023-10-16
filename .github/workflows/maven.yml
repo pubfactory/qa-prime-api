@@ -16,8 +16,6 @@ on:
         description: "get git commit Id from prime-frontend"
         type: string
         default: ''
-    
-    inputs:
       jobId:
         required: true
         description: "get job Id from prime-frontend"
@@ -82,7 +80,7 @@ jobs:
           message: Build Status :${{ job.status }}.
                   Allure report url is :https://pubfactory.github.io/qa-prime-e2e/${{ github.run_number }}
                   Git commitId is ${{inputs.gitcommitId}} .
-                  Prime-frontend job is : https://github.com/pubfactory/prime-frontend/actions/runs/${{inputs.jobId}}
+                  Prime-frontend job is :https://github.com/pubfactory/prime-frontend/actions/runs/${{inputs.jobId}}
                   
       env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
