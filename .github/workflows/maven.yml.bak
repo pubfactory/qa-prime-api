@@ -72,8 +72,8 @@ jobs:
           status: ${{ job.status }}
           steps: ${{ toJson(steps) }}
           channel: '#qa-prime-integration'
-          message: Build Status :${{ job.status }}.\n
-                  Allure report url is :https://pubfactory.github.io/qa-prime-e2e/${{ github.run_number }}.\n
+          message: Build Status :${{ job.status }}.
+                  Allure report url is :https://pubfactory.github.io/qa-prime-e2e/${{ github.run_number }}
                   Git commitId is ${{inputs.gitcommitId}}
                   
       env:
