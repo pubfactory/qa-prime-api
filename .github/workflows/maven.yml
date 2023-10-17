@@ -7,7 +7,7 @@
 # documentation.
 
 name: Java CI with Maven
-
+    
 on:
   workflow_dispatch:
     inputs:
@@ -28,7 +28,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      id: checkout-gitrepo
     - name: Set up JDK 8
+      id: install-java
       uses: actions/setup-java@v3
       with:
         java-version: '8'
@@ -36,11 +38,14 @@ jobs:
         cache: maven
     - name: Install Google Chrome
       uses: browser-actions/setup-chrome@latest
+      id: install-chrome
     - name: Navigating to chromedriver and making it executable
+      id: chromedriver-executable
       run: |
           cd /home/runner/work/qa-prime-e2e/qa-prime-e2e/src/test/resources
           chmod +x chromedriver
     - name: Build with Maven
+      id: run-test-case
       run: mvn test -DsuiteXmlFile=PrimeConfig.xml  -DEnvironment=dev -Dapplication=anesthesiaprogress -Dbrowser=chrome
 
     - name: Get Allure history
@@ -62,6 +67,7 @@ jobs:
           allure_history: allure-history
           
     - name: Deploy report to Github Pages
+      id: gh-pages
       if: always()
       uses: peaceiris/actions-gh-pages@v2
       env:
@@ -84,4 +90,3 @@ jobs:
                   
       env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
