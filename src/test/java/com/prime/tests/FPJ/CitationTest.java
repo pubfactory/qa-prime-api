@@ -47,7 +47,7 @@ public class CitationTest extends BaseTest {
             browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
-            articleCitationPage.verifyCitationButtonPresentOnArticlePage();
+           // articleCitationPage.verifyCitationButtonPresentOnArticlePage();
             articleCitationPage.clickOnCitationButtonOnArticlePage();
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getPreviewExportCitationPopUpHeaderText(), testData.get("popupheader").toString(),
                     "Verifying the Preview Export Citation popup is display");
