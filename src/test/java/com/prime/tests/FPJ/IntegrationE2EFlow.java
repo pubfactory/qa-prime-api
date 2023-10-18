@@ -34,12 +34,12 @@ public class IntegrationE2EFlow extends BaseTest {
     private String username;
     private String password;
     private LoginServiceHelper loginServiceHelper;
+    private String testCaseId;
 
     @Severity(SeverityLevel.BLOCKER)
     @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class, description = "1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results")
     @Story("EPIC-971")
-    @Parameters({"testcaseid"})
-    public void verifyThatUserAbleToLaunchApplication(@Optional String testCaseId) throws Exception {
+    public void verifyThatUserAbleToLaunchApplication() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
         // Identifying the application and its url to test
