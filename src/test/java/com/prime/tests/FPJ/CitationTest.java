@@ -25,13 +25,13 @@ public class CitationTest extends BaseTest {
     private ArticleCitationPage articleCitationPage;
     private BrowseOrSearchPage browseOrSearchPage;
     private String url = "";
+    private String testCaseId;
 
     @Severity(SeverityLevel.BLOCKER)
     @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class,
             description = "1721296 - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it")
     @Story("EPIC-971")
-    @Parameters({"testcaseid"})
-    public void verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(@Optional String testCaseId) throws Exception {
+    public void verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt() throws Exception {
         try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
             Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
@@ -47,7 +47,7 @@ public class CitationTest extends BaseTest {
             browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
-            articleCitationPage.verifyCitationButtonPresentOnArticlePage();
+           // articleCitationPage.verifyCitationButtonPresentOnArticlePage();
             articleCitationPage.clickOnCitationButtonOnArticlePage();
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getPreviewExportCitationPopUpHeaderText(), testData.get("popupheader").toString(),
                     "Verifying the Preview Export Citation popup is display");

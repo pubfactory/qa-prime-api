@@ -38,12 +38,12 @@ public class UnAuthenticatedViewCheckPagesFlow extends BaseTest {
     private String username;
     private String password;
     private LoginServiceHelper loginServiceHelper;
+    private String testCaseId;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class, description = "1721285 - Verify that view pages is displayed")
+    @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class, description = "1721285 - Verify Journal pages")
     @Story("EPIC-971")
-    @Parameters({"testcaseid"})
-    public void verifyThatViewPagesDisplayed(@Optional String testCaseId) throws Exception {
+    public void verifyThatViewPagesDisplayed() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
         // Identifying the application and its url to test
