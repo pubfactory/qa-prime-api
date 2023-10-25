@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="PrimeFPJ Integration Suite" verbose="5" parallel="tests"
-	thread-count="6" preserve-order="true">
+<suite name="PrimeFPJ Integration Suite" verbose="5"
+	parallel="tests" thread-count="6" preserve-order="true">
 	<listeners>
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>
 
-  	<test name="DEMO_E2E" preserve-order="true">
+
+
+	<test name="SEARCH_E2E" preserve-order="true">
+		<classes>
+			<class name="com.prime.tests.FPJ.IntegrationE2EFlow">
+			</class>
+		</classes>
+	</test>
+		<test name="SEARCH_E2E_FULL" preserve-order="true">
+		<classes>
+			<class name="com.prime.tests.FPJ.SearchFunctionalityTest">
+			</class>
+		</classes>
+	</test>
+	<test name="JOURNAL_HOME_E2E" preserve-order="true">
 		<classes>
 			<class
-				name="com.prime.tests.FPJ.IntegrationE2EFlow">
+				name="com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow">
 			</class>
-		</classes> 
+		</classes>
 	</test>
-</suite> 
+
+	<test name="CITATION_E2E" preserve-order="true">
+		<classes>
+			<class name="com.prime.tests.FPJ.CitationTest">
+			</class>
+		</classes>
+	</test>
+</suite>
+
+ 

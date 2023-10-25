@@ -1081,6 +1081,14 @@ public class BaseTest {
 		return finalObj;
 	}
 
+	/**
+	 * This method used to Verify the URL
+
+	 * @throws Exception
+	 * @return boolean
+	 * @author Rakesh.Shevale
+	 * @Created Date : 27/09/23
+	 */
 	public static boolean verifyTextInURL(String linkText) {
 		try {
 			WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 5);
@@ -1102,9 +1110,84 @@ public class BaseTest {
 
 	}
 	
+	/**
+	 * This method used to delete downloaded file
+
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 27/09/23
+	 */
 	public static void deleteDonwloadedFile() throws IOException {
 		File f = new File(System.getProperty("user.dir") + "//target//Assets"); 
 		FileUtils.deleteDirectory(f);
 		System.out.println("Dleete Successfully");
 	}
+	
+	/**
+	 * This method asserts expected and actual value
+	 * 
+	 * @param driver
+	 * @param actual
+	 * @param expected
+	 * @param desc
+	 * @return boolean
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @return 
+	 * @Created Date : 14/12/2022
+	 */
+	public static void assertEquals(WebDriver driver, boolean actual, boolean expected, String desc) throws Exception {
+		String description = desc + " :: " + " Expected Result--> " + expected + " || " + "Actual Result--> " + actual;
+		if (expected==actual){
+			Allure.step("Assertion Passed: " + description);
+		} else {
+			Allure.step("Assertion Failed: " + description);
+			error = description + " mismatch found";
+			Helper.INSTANCE.setErrorMessage(Helper.INSTANCE.getCurrentTestCaseId(), error);
+			Assert.fail(description);
+		}
+	}
+	
+	/**This method is used to verify PagInation Link size change after applying filter 
+	 * 
+	 * @param totalResult
+	 * @param afterApplyFilter
+	 * @return boolean
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 14/10/2023
+	 */
+	public static boolean VerifyPagInationLinksizeChange(int defaultPagination,int selectePagination) throws Exception {
+		if(defaultPagination>selectePagination) {
+    		return true;
+    	}else
+		return false;
+    }
+	
+	/** This method is used to verify search result count change after applying filter 
+	 * 
+	 * @param totalResult
+	 * @param afterApplyFilter
+	 * @return boolean
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 19/10/2023
+	 */
+	public static boolean VerifyTotalResultCOuntChangeAfterApplyingFilter(int totalResult,int afterApplyFilter) throws Exception {
+		if(totalResult>afterApplyFilter) {
+    		return true;
+    	}else
+		return false;
+    }
+	
+	public static String getLastsixStringCharacter(String str) {
+		String finalWord = str.substring(str.length()-6, str.length());
+		return finalWord;
+		
+	}
+	
+	public static boolean verifyStringContainsSpecificWord(String str,String word) {
+		return str.contains(word);
+	}
+	
 }

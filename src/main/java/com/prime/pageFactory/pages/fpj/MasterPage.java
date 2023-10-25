@@ -1,5 +1,8 @@
 package com.prime.pageFactory.pages.fpj;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,6 +26,19 @@ public class MasterPage extends BasePage {
     }
 
     /**
+	 * This method used to Verifying the search box is present on header
+	 *
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+     * @return 
+	 * @Created Date : 10/10/2023
+	 */
+	public boolean verifySearchBoxIsPresentOnHeader() throws Exception {
+		List<WebElement>searchBox=driver.findElements(By.xpath("(//input[@placeholder='Search'])[1]"));
+		return isElementPresent(searchBox);
+	}
+    
+    /**
      * This method used to enter the text in search box
      * 
      * @param searchText
@@ -32,10 +48,11 @@ public class MasterPage extends BasePage {
      * @Created Date : 07/07/2023
      */
     public MasterPage enterTextInSearchBoxOnHomePage(String searchText) throws Exception {
-        typeOnElement(searchBox, searchText, "Entering the text in search box on home page");
+        typeOnElement(searchBox, searchText, "Entering the text in search box");
         return new MasterPage(driver);
     }
-
+    
+    
     /**
      * This method used to click on Magnifying Lens for search on home page`
      * 
@@ -47,6 +64,19 @@ public class MasterPage extends BasePage {
         clickOnElement(clickOnMagnifyingLens, "clicking on Magnifying Lens on home page beside the search box");
     }
 
+    /**
+	 * This method used to Verifying the Magnifying Lense is present on header
+	 *
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+     * @return boolean
+	 * @Created Date : 19/10/2023
+	 */
+	public boolean verifySearchMagnifyingLenseIsPresentOnHeader() throws Exception {
+		List<WebElement>magniFyingLense=driver.findElements(By.xpath("(//button[@type='submit'][@aria-label='Search'])[1]"));
+		return isElementPresent(magniFyingLense);
+	}
+    
     /**
      * This method used to click on Article under Content List section on home page
      * 

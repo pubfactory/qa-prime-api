@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
+import io.qameta.allure.Allure;
+
 public class TetsingJava {
 //	private static int sizeCount;
 //
@@ -30,25 +32,11 @@ public class TetsingJava {
 //			System.out.println("count :" + count);
 //		}
 //	}
-	
-	public static void main(String[]args) throws IOException {
-		File f = new File(System.getProperty("user.dir") + "//target//Assets"); 
-	//	File f = new File("C:/PF/PubFactorySuite/PubFactorySuite/qa-prime-e2e/target/Assets");
-//		System.out.println("F : "+f);
-//		if(f.exists()){
-//			System.out.println("available");
-//			if (f.delete())
-//			{
-//				System.out.println(f.getName() + " deleted"); // getting and printing the file name
-//			} else {
-//				System.out.println("failed");
-//			}
-//		}
-//		else {
-//			System.out.println("not available");
-//		}
-//		
-//	}
-		FileUtils.deleteDirectory(f);
-	}
+
+		public static void main(String[]args)  {
+		String str = "10.2344%2Fanpr-70-02-06";
+				String finalWord = str.substring(str.length()-6, str.length());
+				System.out.println( finalWord);
+				
+			}
 }

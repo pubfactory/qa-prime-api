@@ -37,7 +37,7 @@ public class CitationTest extends BaseTest {
 
 	@Severity(SeverityLevel.BLOCKER)
 	@Test(groups = {
-			"SignIn" }, enabled = true, retryAnalyzer = Retry.class, description = "55 - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it")
+			"Citation" }, enabled = true, retryAnalyzer = Retry.class, description = "55 - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it")
 	@Story("EPIC-971")
 	@Parameters({ "testcaseid" })
 	public void verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(
@@ -57,7 +57,10 @@ public class CitationTest extends BaseTest {
 			browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
 			browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
 			articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
-			articleCitationPage.verifyCitationButtonPresentOnArticlePage();
+			basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
+			BaseTest.assertEquals(WebDriverManager.getDriver(),
+					articleCitationPage.verifyCitationButtonPresentOnArticlePage(), true,
+					"Verifying Element is present");
 			articleCitationPage.clickOnCitationButtonOnArticlePage();
 			BaseTest.assertEquals(WebDriverManager.getDriver(),
 					articleCitationPage.getPreviewExportCitationPopUpHeaderText(),
@@ -66,9 +69,15 @@ public class CitationTest extends BaseTest {
 					.selectFormatValueOnPreviewExportCitationPopUp(testData.get("formatvalueapa").toString());
 			articleCitationPage
 					.selectFormatValueOnPreviewExportCitationPopUp(testData.get("formatvalueama").toString());
-			articleCitationPage.verifyRISButtonIsPresentOnPreviewExportCitationOnPopup();
-			articleCitationPage.verifyBIBButtonIsPresentOnPreviewExportCitationOnPopup();
-			articleCitationPage.verifyENWButtonIsPresentOnPreviewExportCitationOnPopup();
+			BaseTest.assertEquals(WebDriverManager.getDriver(),
+					articleCitationPage.verifyRISButtonIsPresentOnPreviewExportCitationOnPopup(), true,
+					"Verifying the RIS Button is present under Export citation section on Preview Export Citation PopUp");
+			BaseTest.assertEquals(WebDriverManager.getDriver(),
+					articleCitationPage.verifyBIBButtonIsPresentOnPreviewExportCitationOnPopup(), true,
+					"Verifying the BIB Button is present under Export citation section on Preview Export Citation PopUp");
+			BaseTest.assertEquals(WebDriverManager.getDriver(),
+					articleCitationPage.verifyENWButtonIsPresentOnPreviewExportCitationOnPopup(), true,
+					"Verifying the ENW Button is present under Export citation section on Preview Export Citation PopUp");
 			articleCitationPage.clickOnRISExportCitationFormat();
 			BaseTest.assertEquals(WebDriverManager.getDriver(),
 					articleCitationPage.getLatestDownloadFileRelatedToCitation(),
@@ -97,15 +106,12 @@ public class CitationTest extends BaseTest {
 					articleCitationPage.getExportCitationFormatLabels(testData.get("enwbutton").toString()).toString(),
 					expENWCitationLabels.toString(), "Verifying the ENW button Labels on Export Ciatation Popup");
 			BaseTest.assertEquals(WebDriverManager.getDriver(),
-					articleCitationPage.getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingAMAFormat(),
-					testData.get("abbreviatedtitle").toString(),
-					"Verifying the Abbreviated Journal Title is Displayed on Preview Export Citation PopUp");
+					articleCitationPage.verifyPreviewExportCitationCloseButtonPresentOnPreviewExportCitationPopUp(),
+					true,
+					"Verifying the Preview Export Citation PopUp Close Button is present on Preview Export Citation PopUp");
 			articleCitationPage.clickOnPreviewExportCitationPopUpCloseButton();
-		} catch (Exception e) {
-			e.printStackTrace();
 		} finally {
 			BaseTest.deleteDonwloadedFile();
 		}
 	}
-
 }

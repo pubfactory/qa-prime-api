@@ -32,9 +32,9 @@
 			"popupheader":"Preview/Export Citation",
 			"formatvalueapa":"APA",
 			"formatvalueama":"AMA",
-			"risbuttonformat":"citationExport-article-p65.ris",
-			"bibbuttonformat":"citationExport-article-p65.bib",
-			"enwbuttonformat":"citationExport-article-p65.enw"
+			"risbuttonformat":"citationExport-article.ris",
+			"bibbuttonformat":"citationExport-article.bib",
+			"enwbuttonformat":"citationExport-article.enw",
 			"risbutton":".ris",
 			"bibbutton":".bib",
 			"enwbutton":".enw",
@@ -42,7 +42,124 @@
 			"bibbuttonlabel":"BibTeX,Zotero",
 			"enwbuttonlabel":"EndNote",
 			"abbreviatedtitle":"Nishioka Y, Miyake S, Hamaoka M, et al. Anesthetic Management Using Remimazolam in a Hemodialysis Patient. Anesthesia Progress. 2023;70(2):65-69. doi: 10.2344/anpr-70-02-06"
+		}
+	},
+	{
+		"id": "56",
+		"data": {
+			"description": "VerifySearchPageTopPanel",
+			"searchtext":"book",
+			"searchpagetitle":"Search Results",
+			"browserpagetitle":"Browse",
+			"itemperpagedefaultval":"10",
+			"itemperpagetwenty":"20",
+			"itemperpagefifty":"50"
+		}
+	},
+	{
+	"id": "57",
+		"data": {
+			"description": "VerifyPpaginationAndSortingOptionsIntheSearchResultsPage",
+			"searchtext":"men",
+			"itemperpagetwenty":"20",
+			"itemperpagefifty":"50"
+		}
+	},
+	{
+	"id": "58",
+		"data": {
+			"description": "VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected",
+			"searchtext":"book",
+			"signinpageheader":"Sign in to your personal profile",
+			"refineterm":"Refine terms",
+			"refinetype":"Refine by Type",
+			"refinearticletype":"By Article Type",
+			"refinedate":"Refine by Date",
+			"refineaccess":"Refine by Access"
+		}
+	},	
+	{
+	"id": "59",
+		"data": {
+			"description": "VerifyVariousRefineTermsInTheSearchResultsPage",
+			"searchtext":"book",
+			"refinefiltervalues":"All,Author or Editor,Full Text,ISBN / ISSN / DOI,Publisher,Title,Alternative Title,Affiliation,Abstract,Subjects"
+			"testidvalueselect":"AdvanceSearchFilter-select-0",
+			"testidvalueenter":"AdvanceSearchFilter-input-0",
+			"refinefilteroptionauthor":"Author or Editor",
+			"refinefilteroptionfulltext":"Full Text",
+			"refinefiltervaluefulltext":"measured using",
+			"refinefilteroptionisbndoi":"ISBN / ISSN / DOI",
+			"refinefilteroptionabstract":"Abstract",
+			"refinefiltervalueabstract":"intravenous anesthetic",
+			"refinefilteroptiontitle":"Title",
+			"testidvalueselecttwo":"AdvanceSearchFilter-select-1",
+			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
+			"refinefilteroptionaffiliation":"Affiliation",
+			"refinefiltervalueaffiliation":"Washington"
+		}
+	},	
+	{
+	"id": "60",
+		"data": {
+			"description": "VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows",
+			"refinefiltervalues":"All,Author or Editor,Full Text,ISBN / ISSN / DOI,Publisher,Title,Alternative Title,Affiliation,Abstract,Subjects"
+			"testidvalueselect":"AdvanceSearchFilter-select-0",
+			"testidvalueenter":"AdvanceSearchFilter-input-0",
+			"refinefilteroptionisbndoi":"ISBN / ISSN / DOI",
+			"refinefilteroptiontitle":"Title",
+			"testidvalueselecttwo":"AdvanceSearchFilter-select-1",
+			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
+			"rowcancelbuttton":"AdvanceSearchFilter-remove-cta-1",
+		}
+	},
+	{
+	"id": "61",
+		"data": {
+			"description": "VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard",
+			"refinearticletype":"By Article Type",
+			"articletypename":"editorial",
+			"refineaccess":"Refine by Access"
+			"allaccess":"all",
+			"useraccess":"user",
+			"openaccess":"open",
+			"freeaccess":"free",
+			"refinetype":"Refine by Type",
+			"refinetypevalue":"Article"
 			
+			}
+	},
+	{
+	"id": "62",
+		"data": {
+			"description": "VerifyThatTheVariousShareButtonFeatures",
+			"refinearticletype":"By Article Type",
+			"facebookplatform":"facebook",
+			"twitterplatform":"twitter",
+			"linkedinplatform":"linkedin"
+		}
+	},
+	{
+	"id": "63",
+		"data": {
+			"description": "VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages",
+			"todate":"2010",
+			"fromdate":"2015",
+			"searchtext":"book",
+			"articlepage":"article",
+			"issuepage":"issue",
+			"journalpage":"anpr-overview.xml"
+
+		}
+	},
+	{
+	"id": "64",
+		"data": {
+			"description": "VerifyJournalToCFeatures",
+			"journalpageheader":"Anesthesia Progress",
+			"volumevalue":"Volume 70",
+			"issuevalue":"1"
+
 		}
 	}
 ]

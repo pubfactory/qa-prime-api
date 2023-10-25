@@ -85,4 +85,12 @@ public class IssuePage extends BasePage {
     private WebElement firstArticleOnIssuePage;
     @FindBy(xpath = "//a[text()='All Issues']")
     private WebElement allIssues;
+	@FindBy(xpath="(//span[contains(text(),'Volume/Issue')])[1]")
+	private WebElement volumeIssueElement;
+	@FindBy(xpath="(//span[contains(text(),'DOI')])[1]")
+	private WebElement DOIElement;
+	@FindBy(xpath="(//div[contains(@data-testid,'contributors')])[1]")
+	private WebElement authorElement;
+	@FindBy(xpath="(//button[contains(text(),'Abstract')])[1]")
+	private WebElement abstractElement;
 }

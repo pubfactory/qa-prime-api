@@ -381,6 +381,16 @@ public class BasePage {
 		return flag;
 	}
 
+	protected boolean isElementNotPresent(List<WebElement> element) throws Exception {
+		boolean flag = true;
+		if (element.size() > 0) {
+			flag = false;
+		} else {
+			flag = true;
+		}
+		return flag;
+	}
+	
 	/**
 	 * This method performs verify the presents of element on webpage
 	 * @param element
@@ -712,11 +722,9 @@ public class BasePage {
 		try {
 			waitForElementVisible(element);
 			element.isDisplayed();
-			Helper.INSTANCE.logEventToReport(driver, "pass", desc);
 			flag = true;
 		} catch (Exception e) {
-			Helper.INSTANCE.logEventToReport(driver, "error", element, e.getMessage());
-			throw new Exception("Unable to determine if the element is present.", e);
+			flag=false;
 		}
 		return flag;
 	}
@@ -1821,4 +1829,77 @@ public class BasePage {
 			return null;
 		}
 	}
+	
+	/**
+	 * This method performs to wait until the element visible in DOM of the page 
+	 * @param element
+	 * @return boolean
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 01 Aug 2022
+	 */
+	public boolean waitForElementVisibleLimitedWait(WebElement element,int timeOut) throws Exception {
+		boolean elementPresent = false;
+		try {
+			waitForDocumentReady();
+			WebDriverWait wait = new WebDriverWait(driver, timeOut);
+			wait.until(ExpectedConditions.visibilityOf(element));
+			wait.ignoring(StaleElementReferenceException.class)
+					.ignoring(NoSuchElementException.class);
+			wait.ignoring(InvalidElementStateException.class)
+					.ignoring(NoSuchElementException.class);
+			elementPresent = true;
+		} catch (Exception e) {
+			elementPresent=false;
+		}
+		return elementPresent;
+	}
+	
+	/**
+	 * This method performs verify the presence of element on webpage
+	 * 
+	 * @param element
+	 * @param desc
+	 * @return boolean
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 08/12/2022
+	 */
+	protected boolean isElementNotPresentWithTimeOut(WebElement element, int timeOut,String desc) throws Exception {
+		boolean flag = false;
+		try {
+			waitForElementVisibleLimitedWait(element,timeOut);
+			element.isDisplayed();
+			Helper.INSTANCE.logEventToReport(driver, "pass", desc);
+			flag = false;
+		} catch (Exception e) {
+			flag = true;
+		}
+		return flag;
+	}
+	
+
+	/**
+	 * This method performs verify the presence of element on webpage
+	 * 
+	 * @param element
+	 * @param desc
+	 * @return boolean
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 08/12/2022
+	 */
+	protected boolean isElementPresentWithTimeOut(WebElement element, int timeOut,String desc) throws Exception {
+		boolean flag = false;
+		try {
+			waitForElementVisibleLimitedWait(element,timeOut);
+			element.isDisplayed();
+			Helper.INSTANCE.logEventToReport(driver, "pass", desc);
+			flag = true;
+		} catch (Exception e) {
+			flag = false;
+		}
+		return flag;
+	}
+	
 }
