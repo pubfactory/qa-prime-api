@@ -1,8 +1,6 @@
 package com.prime.tests.E2E;
 
 import org.json.simple.JSONObject;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.prime.generics.BasePage;
 import com.prime.generics.BaseTest;
@@ -28,12 +26,12 @@ public class ToCFunctionalityTest extends BaseTest {
     private IssuePage issuePage;
     private JournalPage journalPage;
     private String url = "";
+    private String testCaseId;
 
     @Severity(SeverityLevel.BLOCKER)
     @Test(groups = {"TOC Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "64 - Verify Journal ToC features")
     @Story("EPIC-427")
-    @Parameters({"testcaseid"})
-    public void VerifyJournalToCFeatures(@Optional String testCaseId) throws Exception {
+    public void VerifyJournalToCFeatures() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
         String application = BaseTest.properties.getProperty("application");
@@ -64,7 +62,7 @@ public class ToCFunctionalityTest extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), issuePage.ClickingOnContentToCheckHyperLinkOrNot(), true, "Verifying the content title is as hyperlink available on issue page");
         WebDriverManager.getDriver().navigate().back();
         BaseTest.assertEquals(WebDriverManager.getDriver(), issuePage.verifyContentAuthorIsPresentOnIssuePage(), true, "Verifying the content Author is present on Content");
-     //   BaseTest.assertEquals(WebDriverManager.getDriver(), issuePage.verifyContentVolumeIssueIsPresentOnIssuePage(), true, "Verifying the content Volume-Issue is present on Content");
-     //   BaseTest.assertEquals(WebDriverManager.getDriver(), issuePage.verifyContentDOIIsPresentOnIssuePage(), true, "Verifying the content DOI is present on Content");
+        BaseTest.assertEquals(WebDriverManager.getDriver(), issuePage.verifyContentVolumeIssueIsPresentOnIssuePage(), true, "Verifying the content Volume-Issue is present on Content");
+        BaseTest.assertEquals(WebDriverManager.getDriver(), issuePage.verifyContentDOIIsPresentOnIssuePage(), true, "Verifying the content DOI is present on Content");
     }
 }
