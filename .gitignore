@@ -6,4 +6,8 @@ LDPOC/Screenshots/
 *.log
 idea/
 #Eclipse
+<<<<<<< HEAD
 .settings/
+=======
+.settings/
+>>>>>>> ubuntu-update-clone3

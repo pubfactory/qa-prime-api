@@ -14,9 +14,15 @@
 
 	<suite-files>
 		<suite-file path="PrimeRegressionLocal.xml">
-			<parameter name="browser" value="chrome" />
+<!--			<parameter name="Environment" value="${Environment}" />
+			<parameter name="browser" value="${browser}" />
+			<parameter name="application" value="${application}" />
+			<parameter name="testRunId" value="4001" /> -->	
 			
-				<parameter name="testRunId" value="4001" />												- Indicates the Test Run Id from TestRail to execute
+ 			<parameter name="Environment" value="dev" />
+			<parameter name="browser" value="chrome" />
+			<parameter name="application" value="anesthesiaprogress" />
+			<parameter name="testRunId" value="4001" />	 										
 		</suite-file>
 	</suite-files>
 </suite>

@@ -45,7 +45,11 @@ jobs:
           cd /home/runner/work/qa-prime-e2e/qa-prime-e2e/src/test/resources
           chmod +x chromedriver
     - name: Build with Maven
+<<<<<<< HEAD
+      id:run-test-case
+=======
       id: run-test-case
+>>>>>>> 155fb722da8629f8b2fa707ab16e37f95206fba9
       run: mvn test -DsuiteXmlFile=PrimeConfig.xml  -DEnvironment=dev -Dapplication=anesthesiaprogress -Dbrowser=chrome
 
     - name: Get Allure history

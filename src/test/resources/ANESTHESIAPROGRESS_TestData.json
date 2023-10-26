@@ -1,6 +1,6 @@
 [
 	{
-		"id": "1721043",
+		"id": "1721284",
 		"data": {
 			"description": "verifyThatUserAbleToLaunchApplication",
 			"title":"anesthesiaprogress",
@@ -15,7 +15,7 @@
 		}
 	},
 	{
-		"id": "54",
+		"id": "1721285",
 		"data": {
 			"description": "verifyThatViewPagesDisplayed",
 			"title":"anesthesiaprogress",
@@ -25,7 +25,7 @@
 		}
 	},
 	{
-		"id": "55",
+		"id": "1721296",
 		"data": {
 			"description": "verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt",
 			"searchtext":"Anesthetic Management Using Remimazolam in a Hemodialysis Patient",
@@ -45,7 +45,7 @@
 		}
 	},
 	{
-		"id": "56",
+		"id": "1722541",
 		"data": {
 			"description": "VerifySearchPageTopPanel",
 			"searchtext":"book",
@@ -57,7 +57,7 @@
 		}
 	},
 	{
-	"id": "57",
+	"id": "1722542",
 		"data": {
 			"description": "VerifyPpaginationAndSortingOptionsIntheSearchResultsPage",
 			"searchtext":"men",
@@ -66,7 +66,7 @@
 		}
 	},
 	{
-	"id": "58",
+	"id": "1722543",
 		"data": {
 			"description": "VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected",
 			"searchtext":"book",
@@ -79,7 +79,7 @@
 		}
 	},	
 	{
-	"id": "59",
+	"id": "1722544",
 		"data": {
 			"description": "VerifyVariousRefineTermsInTheSearchResultsPage",
 			"searchtext":"book",
@@ -100,7 +100,7 @@
 		}
 	},	
 	{
-	"id": "60",
+	"id": "1722545",
 		"data": {
 			"description": "VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows",
 			"refinefiltervalues":"All,Author or Editor,Full Text,ISBN / ISSN / DOI,Publisher,Title,Alternative Title,Affiliation,Abstract,Subjects"
@@ -114,7 +114,7 @@
 		}
 	},
 	{
-	"id": "61",
+	"id": "1722546",
 		"data": {
 			"description": "VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard",
 			"refinearticletype":"By Article Type",
@@ -130,7 +130,7 @@
 			}
 	},
 	{
-	"id": "62",
+	"id": "1722547",
 		"data": {
 			"description": "VerifyThatTheVariousShareButtonFeatures",
 			"refinearticletype":"By Article Type",
@@ -140,7 +140,7 @@
 		}
 	},
 	{
-	"id": "63",
+	"id": "1722548",
 		"data": {
 			"description": "VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages",
 			"todate":"2010",
@@ -158,8 +158,10 @@
 			"description": "VerifyJournalToCFeatures",
 			"journalpageheader":"Anesthesia Progress",
 			"volumevalue":"Volume 70",
-			"issuevalue":"1"
+			"issuevalue":"1",
+			"issuepageheader":"Issues"
 
 		}
 	}
+
 ]

@@ -14,9 +14,9 @@
 
 	<suite-files>
 		<suite-file path="PrimeRegressionLocal.xml">
-			<parameter name="browser" value="chrome" />
-			
+						<parameter name="browser" value="chrome" />
 				<parameter name="testRunId" value="4001" />												- Indicates the Test Run Id from TestRail to execute
 		</suite-file>
 	</suite-files>
 </suite>
+			

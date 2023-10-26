@@ -1,30 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-25T12:44:12 IST" name="PRIMEFPJ Regression Suite" finished-at="2023-10-25T12:44:12 IST" duration-ms="0">
+  <suite started-at="2023-10-26T13:00:37 IST" name="Default suite" finished-at="2023-10-26T13:01:01 IST" duration-ms="24422">
     <groups>
+      <group name="TOC Functionality">
+        <method signature="ToCFunctionalityTest.VerifyJournalToCFeatures(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@dbd8e44]" name="VerifyJournalToCFeatures" class="com.prime.tests.FPJ.ToCFunctionalityTest"/>
+      </group> <!-- TOC Functionality -->
     </groups>
-  </suite> <!-- PRIMEFPJ Regression Suite -->
-  <suite started-at="2023-10-25T12:44:12 IST" name="PrimeFPJ Integration Suite" finished-at="2023-10-25T12:44:12 IST" duration-ms="0">
-    <groups>
-      <group name="Search Functionality">
-        <method signature="SearchFunctionalityTest.VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@48e92c5c]" name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifyThatAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterFromIndexCard(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@48e92c5c]" name="VerifyThatAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterFromIndexCard" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifyThatEverySearchResultsAreDisplayedWithDetails(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@48e92c5c]" name="VerifyThatEverySearchResultsAreDisplayedWithDetails" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifyThatShareButtonIsPresentInActionBarOnTheSearchResultPage(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@48e92c5c]" name="VerifyThatShareButtonIsPresentInActionBarOnTheSearchResultPage" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifyThatUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingMoreThanOneRows(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@48e92c5c]" name="VerifyThatUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingMoreThanOneRows" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifyThatVerifyRefineTermFilterIsPresentOnTheResultPageWithTheFilterOptions(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@48e92c5c]" name="VerifyThatVerifyRefineTermFilterIsPresentOnTheResultPageWithTheFilterOptions" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.verifyPaginationLinksCountChangesBasedOnSelectionMadeUnderItemsPerPageDropdownAndSearchResultsAreSortedAsPerSelectionMadeInSortByDropdown(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@48e92c5c]" name="verifyPaginationLinksCountChangesBasedOnSelectionMadeUnderItemsPerPageDropdownAndSearchResultsAreSortedAsPerSelectionMadeInSortByDropdown" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.verifySearchBoxFunctionalityOnanesthesiaprogres(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@48e92c5c]" name="verifySearchBoxFunctionalityOnanesthesiaprogres" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-      </group> <!-- Search Functionality -->
-      <group name="SignIn">
-        <method signature="IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@27eedb64]" name="verifyThatUserAbleToLaunchApplication" class="com.prime.tests.FPJ.IntegrationE2EFlow"/>
-        <method signature="UnAuthenticatedViewCheckPagesFlow.verifyThatViewPagesDisplayed(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow@5e4bd84a]" name="verifyThatViewPagesDisplayed" class="com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow"/>
-      </group> <!-- SignIn -->
-      <group name="Citation">
-        <method signature="CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.CitationTest@4ce1d6d0]" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" class="com.prime.tests.FPJ.CitationTest"/>
-      </group> <!-- Citation -->
-    </groups>
-  </suite> <!-- PrimeFPJ Integration Suite -->
+    <test started-at="2023-10-26T13:00:37 IST" name="Default test" finished-at="2023-10-26T13:01:01 IST" duration-ms="24422">
+      <class name="com.prime.tests.FPJ.ToCFunctionalityTest">
+        <test-method is-config="true" signature="establishConnection(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@dbd8e44]" started-at="2023-10-26T13:00:37 IST" name="establishConnection" finished-at="2023-10-26T13:00:37 IST" duration-ms="30" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2a8a4e0c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- establishConnection -->
+        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@dbd8e44]" started-at="2023-10-26T13:00:37 IST" name="loadConfigurationValues" finished-at="2023-10-26T13:00:37 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2a8a4e0c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@dbd8e44]" started-at="2023-10-26T13:00:37 IST" name="setUp" finished-at="2023-10-26T13:00:39 IST" duration-ms="2233" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.FPJ.ToCFunctionalityTest.VerifyJournalToCFeatures(java.lang.String) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="VerifyJournalToCFeatures(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@dbd8e44]" started-at="2023-10-26T13:00:39 IST" name="VerifyJournalToCFeatures" description="64 - Verify Journal ToC features" finished-at="2023-10-26T13:01:01 IST" duration-ms="21791" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyJournalToCFeatures -->
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@dbd8e44]" started-at="2023-10-26T13:01:01 IST" name="closeApplication" finished-at="2023-10-26T13:01:01 IST" duration-ms="199" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@dbd8e44]" started-at="2023-10-26T13:01:01 IST" name="closeDriver" finished-at="2023-10-26T13:01:02 IST" duration-ms="287" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.prime.tests.FPJ.ToCFunctionalityTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
