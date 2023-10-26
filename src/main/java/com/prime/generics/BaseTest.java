@@ -476,6 +476,7 @@ public class BaseTest {
                     driver = new EdgeDriver(edgeoptions);
                     System.out.println("******After Edge Driver*****" + driver);
                 }
+
                 WebDriverManager.setWebDriver(driver);
             }
         } catch (Exception e) {
@@ -1023,9 +1024,12 @@ public class BaseTest {
             WebDriverManager.getDriver().get(url);
             Allure.step("Opening URL: " + url);
             waitForLoad(driver);
-            BasePage basePage = new BasePage(driver);
-            WebElement Ok = driver.findElement(By.xpath("//button[text()='Ok']"));
-            basePage.clickOnElement(Ok, "Clicking on ok button on popup On HomePage");
+            BasePage basePage = new BasePage(WebDriverManager.getDriver());
+            int j = driver.findElements(By.xpath("//button[text()='Ok']")).size();
+            if (j > 0) {
+                WebElement Ok = WebDriverManager.getDriver().findElement(By.xpath("//button[text()='Ok']"));
+                basePage.clickOnElement(Ok, "Clicking on ok button on popup On HomePage");
+            }
         } catch (Exception e) {
             error = "Failure while opening URL: " + url;
             Helper.INSTANCE.setErrorMessage(Helper.INSTANCE.getCurrentTestCaseId(), error);
