@@ -1,4 +1,4 @@
-package com.prime.tests.FPJ;
+package com.prime.tests.E2E;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.prime.tests.FPJ;
+package com.prime.tests.E2E;
 
 import org.json.simple.JSONObject;
 import org.testng.annotations.Optional;
@@ -10,7 +10,10 @@ import com.prime.generics.BasePage;
 import com.prime.generics.BaseTest;
 import com.prime.generics.Helper;
 import com.prime.generics.WebDriverManager;
+import com.prime.pageFactory.pages.fpj.ArticleCitationPage;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
+import com.prime.pageFactory.pages.fpj.IssuePage;
+import com.prime.pageFactory.pages.fpj.JournalPage;
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import com.prime.pageFactory.pages.fpj.SignInPage;
 import com.prime.retryAnalyzers.Retry;
@@ -20,8 +23,7 @@ import io.qameta.allure.Story;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
-//Checking E2E flow
-public class IntegrationE2EFlow extends BaseTest {
+public class IntegrationE2EFlow2 extends BaseTest {
     private MasterPage masterPage;
     private SignInPage signInPage;
     private BasePage basePage;
@@ -34,19 +36,21 @@ public class IntegrationE2EFlow extends BaseTest {
     private String username;
     private String password;
     private LoginServiceHelper loginServiceHelper;
-    private String testCaseId;
+    private IssuePage issuePage;
+    private ArticleCitationPage articleCitationPage;
+    private JournalPage journalPage;
 
     @Severity(SeverityLevel.BLOCKER)
     @Test(groups = {"SignIn"}, enabled = true, retryAnalyzer = Retry.class, description = "1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results")
     @Story("EPIC-971")
-    public void verifyThatUserAbleToLaunchApplication() throws Exception {
+    @Parameters({"testcaseid"})
+    public void verifyThatUserAbleToLaunchApplication(@Optional String testCaseId) throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
         // Identifying the application and its url to test
         String application = BaseTest.properties.getProperty("application");
-        //String application = System.getProperty("application");
-        String url = BaseTest.properties.getProperty(application);
-        System.out.println("url=" + url);
+        url = BaseTest.properties.getProperty(application);
+        System.out.println("!url=" + url);
         String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
         navigateToUrlLink(url);
         // Launch the application and verify if the launch has been successful
@@ -70,10 +74,9 @@ public class IntegrationE2EFlow extends BaseTest {
         totalResultsFromAPI = Integer.parseInt(js.get("pagination.totalResults").toString());
         BaseTest.assertEquals(WebDriverManager.getDriver(), totalResultsFromAPI, totalResultsFromWebPage, "Total Search results from api and webpage");
 
-        //  testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
+        testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
 
-
-        // Verify if user is able to login and retrieve the accountID
+        //        // Verify if user is able to login and retrieve the accountID
         //        username = testData.get("username").toString();
         //        password = testData.get("password").toString();
         //        System.out.println(application + platform + status);
@@ -85,11 +88,10 @@ public class IntegrationE2EFlow extends BaseTest {
         //        js = new JsonPath(response.asString());
         //        System.out.println("AccountID=" + js.get("accountAccessDescriptors[0].accountId").toString());
 
-        System.out.println("BEFORE PAGINATION");
+
         /*Verify that the pagination links displayed are functional and the number of pagination
          *  links displayed changes as per items per page dropdown is selected.*/
 
-        System.out.println("PAGINATION STATUS=" + browseOrSearchPage.getStatusPaginationLink().toString());
         BaseTest.assertEquals(driver, browseOrSearchPage.getStatusPaginationLink().toString(), "true", "Verifying if pagination link is active");
         int numberOfItemsPerPage = browseOrSearchPage.getItemsPerPage();
         double noOfPaginationLinksD = Math.ceil(totalResultsFromWebPage / (double) numberOfItemsPerPage);
@@ -103,7 +105,6 @@ public class IntegrationE2EFlow extends BaseTest {
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=date"), "Verifying if search results are sorted in ascending order");
         browseOrSearchPage.SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage();
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=datedescending"), "Verifying if search results are sorted in descending order");
-
 
         // Adding a search text in the search text box
 
@@ -123,6 +124,46 @@ public class IntegrationE2EFlow extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getNumberOfFilteredResultsFrontOfArticleFilterValueOnBrowseOrSearchPage(testData.get("articletypename").toString()),
                 browseOrSearchPage.getTotatResultOnBrowseOrSearchPage(), "Verifying number of filtered results are returned after applying Article type filter");
         System.out.println("total result actual webpage after article filter apply:" + browseOrSearchPage.getTotatResultOnBrowseOrSearchPage());
+    }
+
+
+    @Severity(SeverityLevel.BLOCKER)
+    @Test(groups = {"JournalHomePageIssues"}, enabled = true, retryAnalyzer = Retry.class, description = "1721285 - Verify if Article, Issue, and Journal page renders correctly when user try to access it from homepage.")
+    @Story("EPIC-971")
+    @Parameters({"testcaseid"})
+    public void verifyThatViewPagesDisplayed(@Optional String testCaseId) throws Exception {
+        testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
+        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        // Identifying the application and its url to test
+        String application = BaseTest.properties.getProperty("application");
+        url = BaseTest.properties.getProperty(application);
+        System.out.println("!url=" + url);
+        String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
+        navigateToUrlLink(url);
+
+        // Click on first article on the issue page
+
+        JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
+        masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
+        basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
+        BaseTest.assertEquals(WebDriverManager.getDriver(), basePage.getTitleFromWebPage(), testData.get("title").toString(), "Verifying the page title ");
+        masterPage.clickOnViewThisIssueOnHomePage();
+        issuePage = BasePage.initialize(WebDriverManager.getDriver(), IssuePage.class);
+        BaseTest.assertEquals(WebDriverManager.getDriver(), issuePage.getIssuePageHeaderText(), testData.get("issuespageheader").toString(), "Verifying Issue page Header");
+        String articleHeader = issuePage.getFirstArticleTextOnIssuePageHeaderText();
+        issuePage.clickOnFirstArticleOnIssuePage();
+
+        // Verifying if article page is rendered 
+
+        articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
+        BaseTest.assertEquals(WebDriverManager.getDriver(), articleHeader, articleCitationPage.getArticleHeaderOnArticlePage(), "Verifying the Header Of Article page");
+        WebDriverManager.getDriver().navigate().back();
+        issuePage.clickOnAllIssuesOnIssuePage();
+        BaseTest.verifyTextInURL(testData.get("journalpageurl").toString());
+        journalPage = BasePage.initialize(WebDriverManager.getDriver(), JournalPage.class);
+        BaseTest.assertEquals(WebDriverManager.getDriver(), journalPage.getJournalPageHeaderText(), testData.get("journalpageheader").toString(), "Verifying the Journal Page header");
+
+
     }
 
 

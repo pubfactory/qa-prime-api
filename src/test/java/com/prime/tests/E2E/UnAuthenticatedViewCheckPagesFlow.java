@@ -1,4 +1,4 @@
-package com.prime.tests.FPJ;
+package com.prime.tests.E2E;
 
 import org.json.simple.JSONObject;
 import org.testng.annotations.Optional;

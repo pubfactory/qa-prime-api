@@ -2,268 +2,36 @@
 <testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-26T15:18:21 IST" name="PRIMEFPJ Regression Suite" finished-at="2023-10-26T15:18:21 IST" duration-ms="0">
+  <suite started-at="2023-10-26T15:29:55 IST" name="PRIMEFPJ Regression Suite" finished-at="2023-10-26T15:29:55 IST" duration-ms="0">
     <groups>
     </groups>
   </suite> <!-- PRIMEFPJ Regression Suite -->
-  <suite started-at="2023-10-26T15:11:54 IST" name="Prime Automation E2E Suite" finished-at="2023-10-26T15:18:19 IST" duration-ms="384206">
+  <suite started-at="2023-10-26T15:23:30 IST" name="Prime Automation E2E Suite" finished-at="2023-10-26T15:29:53 IST" duration-ms="383571">
     <groups>
       <group name="Search Functionality">
-        <method signature="SearchFunctionalityTest.VerifyPpaginationAndSortingOptionsIntheSearchResultsPage()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" name="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifySearchPageTopPanel()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" name="VerifySearchPageTopPanel" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" name="VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" name="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifyThatTheVariousShareButtonFeatures()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" name="VerifyThatTheVariousShareButtonFeatures" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" name="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
-        <method signature="SearchFunctionalityTest.VerifyVariousRefineTermsInTheSearchResultsPage()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" name="VerifyVariousRefineTermsInTheSearchResultsPage" class="com.prime.tests.FPJ.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyPpaginationAndSortingOptionsIntheSearchResultsPage()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" name="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifySearchPageTopPanel()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" name="VerifySearchPageTopPanel" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" name="VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" name="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyThatTheVariousShareButtonFeatures()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" name="VerifyThatTheVariousShareButtonFeatures" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" name="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyVariousRefineTermsInTheSearchResultsPage()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" name="VerifyVariousRefineTermsInTheSearchResultsPage" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
       </group> <!-- Search Functionality -->
       <group name="TOC Functionality">
-        <method signature="ToCFunctionalityTest.VerifyJournalToCFeatures(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@4ff4357f]" name="VerifyJournalToCFeatures" class="com.prime.tests.FPJ.ToCFunctionalityTest"/>
+        <method signature="ToCFunctionalityTest.VerifyJournalToCFeatures(java.lang.String)[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@4ff4357f]" name="VerifyJournalToCFeatures" class="com.prime.tests.E2E.ToCFunctionalityTest"/>
       </group> <!-- TOC Functionality -->
       <group name="SignIn">
-        <method signature="IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication()[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@51acdf2e]" name="verifyThatUserAbleToLaunchApplication" class="com.prime.tests.FPJ.IntegrationE2EFlow"/>
-        <method signature="UnAuthenticatedViewCheckPagesFlow.verifyThatViewPagesDisplayed()[pri:0, instance:com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow@8dbfffb]" name="verifyThatViewPagesDisplayed" class="com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow"/>
+        <method signature="IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication()[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@51acdf2e]" name="verifyThatUserAbleToLaunchApplication" class="com.prime.tests.E2E.IntegrationE2EFlow"/>
+        <method signature="UnAuthenticatedViewCheckPagesFlow.verifyThatViewPagesDisplayed()[pri:0, instance:com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow@8dbfffb]" name="verifyThatViewPagesDisplayed" class="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow"/>
       </group> <!-- SignIn -->
       <group name="Citation">
-        <method signature="CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt()[pri:0, instance:com.prime.tests.FPJ.CitationTest@5dd1c9f2]" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" class="com.prime.tests.FPJ.CitationTest"/>
+        <method signature="CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt()[pri:0, instance:com.prime.tests.E2E.CitationTest@5dd1c9f2]" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" class="com.prime.tests.E2E.CitationTest"/>
       </group> <!-- Citation -->
     </groups>
-    <test started-at="2023-10-26T15:11:54 IST" name="JOURNAL_HOME_E2E" finished-at="2023-10-26T15:12:23 IST" duration-ms="28812">
-      <class name="com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow">
-        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow@8dbfffb]" started-at="2023-10-26T15:11:54 IST" name="loadConfigurationValues" finished-at="2023-10-26T15:11:54 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@58ffcbd7]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadConfigurationValues -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow@8dbfffb]" started-at="2023-10-26T15:11:54 IST" name="setUp" finished-at="2023-10-26T15:11:58 IST" duration-ms="4039" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value is-null="true"/>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-            <param index="3">
-              <value is-null="true"/>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[public void com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow.verifyThatViewPagesDisplayed() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyThatViewPagesDisplayed()[pri:0, instance:com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow@8dbfffb]" started-at="2023-10-26T15:11:59 IST" name="verifyThatViewPagesDisplayed" description="1721285 - Verify Journal pages" finished-at="2023-10-26T15:12:20 IST" duration-ms="21372" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyThatViewPagesDisplayed -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow@8dbfffb]" started-at="2023-10-26T15:12:20 IST" name="closeApplication" finished-at="2023-10-26T15:12:23 IST" duration-ms="3192" status="PASS">
-          <params>
-            <param index="0">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApplication -->
-      </class> <!-- com.prime.tests.FPJ.UnAuthenticatedViewCheckPagesFlow -->
-    </test> <!-- JOURNAL_HOME_E2E -->
-    <test started-at="2023-10-26T15:11:54 IST" name="JOURNAL_TOC" finished-at="2023-10-26T15:12:33 IST" duration-ms="39014">
-      <class name="com.prime.tests.FPJ.ToCFunctionalityTest">
-        <test-method is-config="true" signature="establishConnection(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:11:54 IST" name="establishConnection" finished-at="2023-10-26T15:11:54 IST" duration-ms="32" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5066d65f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- establishConnection -->
-        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:11:54 IST" name="loadConfigurationValues" finished-at="2023-10-26T15:11:54 IST" duration-ms="4" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@5066d65f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadConfigurationValues -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:11:54 IST" name="setUp" finished-at="2023-10-26T15:11:58 IST" duration-ms="3927" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value is-null="true"/>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-            <param index="3">
-              <value is-null="true"/>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[public void com.prime.tests.FPJ.ToCFunctionalityTest.VerifyJournalToCFeatures(java.lang.String) throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="VerifyJournalToCFeatures(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:11:59 IST" name="VerifyJournalToCFeatures" description="64 - Verify Journal ToC features" finished-at="2023-10-26T15:12:32 IST" duration-ms="33587" status="PASS">
-          <params>
-            <param index="0">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyJournalToCFeatures -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:12:32 IST" name="closeApplication" finished-at="2023-10-26T15:12:33 IST" duration-ms="1210" status="PASS">
-          <params>
-            <param index="0">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.prime.tests.FPJ.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:18:19 IST" name="closeDriver" finished-at="2023-10-26T15:18:20 IST" duration-ms="1827" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeDriver -->
-      </class> <!-- com.prime.tests.FPJ.ToCFunctionalityTest -->
-    </test> <!-- JOURNAL_TOC -->
-    <test started-at="2023-10-26T15:11:54 IST" name="CITATION_E2E" finished-at="2023-10-26T15:12:41 IST" duration-ms="46902">
-      <class name="com.prime.tests.FPJ.CitationTest">
-        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.CitationTest@5dd1c9f2]" started-at="2023-10-26T15:11:54 IST" name="loadConfigurationValues" finished-at="2023-10-26T15:11:54 IST" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@4233e892]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadConfigurationValues -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.CitationTest@5dd1c9f2]" started-at="2023-10-26T15:11:54 IST" name="setUp" finished-at="2023-10-26T15:11:58 IST" duration-ms="3936" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value is-null="true"/>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-            <param index="3">
-              <value is-null="true"/>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[public void com.prime.tests.FPJ.CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt()[pri:0, instance:com.prime.tests.FPJ.CitationTest@5dd1c9f2]" started-at="2023-10-26T15:11:59 IST" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" description="1721296  - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it" finished-at="2023-10-26T15:12:39 IST" duration-ms="40484" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.CitationTest@5dd1c9f2]" started-at="2023-10-26T15:12:39 IST" name="closeApplication" finished-at="2023-10-26T15:12:41 IST" duration-ms="2190" status="PASS">
-          <params>
-            <param index="0">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApplication -->
-      </class> <!-- com.prime.tests.FPJ.CitationTest -->
-    </test> <!-- CITATION_E2E -->
-    <test started-at="2023-10-26T15:11:54 IST" name="SEARCH_E2E" finished-at="2023-10-26T15:12:41 IST" duration-ms="47066">
-      <class name="com.prime.tests.FPJ.IntegrationE2EFlow">
-        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@51acdf2e]" started-at="2023-10-26T15:11:54 IST" name="loadConfigurationValues" finished-at="2023-10-26T15:11:54 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@3ecd267f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadConfigurationValues -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@51acdf2e]" started-at="2023-10-26T15:11:54 IST" name="setUp" finished-at="2023-10-26T15:11:58 IST" duration-ms="3936" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value is-null="true"/>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-            <param index="3">
-              <value is-null="true"/>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[public void com.prime.tests.FPJ.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyThatUserAbleToLaunchApplication()[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@51acdf2e]" started-at="2023-10-26T15:11:59 IST" name="verifyThatUserAbleToLaunchApplication" description="1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results" finished-at="2023-10-26T15:12:40 IST" duration-ms="41226" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyThatUserAbleToLaunchApplication -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.IntegrationE2EFlow@51acdf2e]" started-at="2023-10-26T15:12:40 IST" name="closeApplication" finished-at="2023-10-26T15:12:41 IST" duration-ms="1613" status="PASS">
-          <params>
-            <param index="0">
-              <value is-null="true"/>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApplication -->
-      </class> <!-- com.prime.tests.FPJ.IntegrationE2EFlow -->
-    </test> <!-- SEARCH_E2E -->
-    <test started-at="2023-10-26T15:11:54 IST" name="SEARCH_E2E_FULL" finished-at="2023-10-26T15:18:19 IST" duration-ms="384206">
-      <class name="com.prime.tests.FPJ.SearchFunctionalityTest">
-        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:11:54 IST" name="loadConfigurationValues" finished-at="2023-10-26T15:11:54 IST" duration-ms="2" status="PASS">
+    <test started-at="2023-10-26T15:23:30 IST" name="JOURNAL_HOME_E2E" finished-at="2023-10-26T15:23:52 IST" duration-ms="21938">
+      <class name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
+        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow@8dbfffb]" started-at="2023-10-26T15:23:30 IST" name="loadConfigurationValues" finished-at="2023-10-26T15:23:30 IST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -274,7 +42,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfigurationValues -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:11:54 IST" name="setUp" finished-at="2023-10-26T15:11:58 IST" duration-ms="3942" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow@8dbfffb]" started-at="2023-10-26T15:23:30 IST" name="setUp" finished-at="2023-10-26T15:23:32 IST" duration-ms="2488" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -292,18 +60,250 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[public void com.prime.tests.FPJ.SearchFunctionalityTest.VerifyPpaginationAndSortingOptionsIntheSearchResultsPage() throws java.lang.Exception]]>
+                <![CDATA[public void com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow.verifyThatViewPagesDisplayed() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:11:59 IST" name="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage" description="1722542 - Verify pagination and sorting options in the search results page" finished-at="2023-10-26T15:12:28 IST" duration-ms="29526" status="PASS">
+        <test-method signature="verifyThatViewPagesDisplayed()[pri:0, instance:com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow@8dbfffb]" started-at="2023-10-26T15:23:33 IST" name="verifyThatViewPagesDisplayed" description="1721285 - Verify Journal pages" finished-at="2023-10-26T15:23:50 IST" duration-ms="17513" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThatViewPagesDisplayed -->
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow@8dbfffb]" started-at="2023-10-26T15:23:50 IST" name="closeApplication" finished-at="2023-10-26T15:23:52 IST" duration-ms="1671" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow -->
+    </test> <!-- JOURNAL_HOME_E2E -->
+    <test started-at="2023-10-26T15:23:30 IST" name="JOURNAL_TOC" finished-at="2023-10-26T15:23:55 IST" duration-ms="24948">
+      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+        <test-method is-config="true" signature="establishConnection(org.testng.ITestContext)[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:23:30 IST" name="establishConnection" finished-at="2023-10-26T15:23:30 IST" duration-ms="42" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5066d65f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- establishConnection -->
+        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:23:30 IST" name="loadConfigurationValues" finished-at="2023-10-26T15:23:30 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5066d65f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:23:30 IST" name="setUp" finished-at="2023-10-26T15:23:32 IST" duration-ms="2493" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.ToCFunctionalityTest.VerifyJournalToCFeatures(java.lang.String) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="VerifyJournalToCFeatures(java.lang.String)[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:23:33 IST" name="VerifyJournalToCFeatures" description="64 - Verify Journal ToC features" finished-at="2023-10-26T15:23:54 IST" duration-ms="21589" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyJournalToCFeatures -->
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:23:54 IST" name="closeApplication" finished-at="2023-10-26T15:23:55 IST" duration-ms="633" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@4ff4357f]" started-at="2023-10-26T15:29:54 IST" name="closeDriver" finished-at="2023-10-26T15:29:54 IST" duration-ms="832" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+    </test> <!-- JOURNAL_TOC -->
+    <test started-at="2023-10-26T15:23:30 IST" name="SEARCH_E2E" finished-at="2023-10-26T15:24:05 IST" duration-ms="35548">
+      <class name="com.prime.tests.E2E.IntegrationE2EFlow">
+        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@51acdf2e]" started-at="2023-10-26T15:23:30 IST" name="loadConfigurationValues" finished-at="2023-10-26T15:23:30 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4233e892]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@51acdf2e]" started-at="2023-10-26T15:23:30 IST" name="setUp" finished-at="2023-10-26T15:23:32 IST" duration-ms="2490" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyThatUserAbleToLaunchApplication()[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@51acdf2e]" started-at="2023-10-26T15:23:33 IST" name="verifyThatUserAbleToLaunchApplication" description="1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results" finished-at="2023-10-26T15:24:04 IST" duration-ms="31338" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThatUserAbleToLaunchApplication -->
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@51acdf2e]" started-at="2023-10-26T15:24:04 IST" name="closeApplication" finished-at="2023-10-26T15:24:05 IST" duration-ms="1486" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
+    </test> <!-- SEARCH_E2E -->
+    <test started-at="2023-10-26T15:23:30 IST" name="CITATION_E2E" finished-at="2023-10-26T15:24:11 IST" duration-ms="41261">
+      <class name="com.prime.tests.E2E.CitationTest">
+        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.E2E.CitationTest@5dd1c9f2]" started-at="2023-10-26T15:23:30 IST" name="loadConfigurationValues" finished-at="2023-10-26T15:23:30 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@3ecd267f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.CitationTest@5dd1c9f2]" started-at="2023-10-26T15:23:30 IST" name="setUp" finished-at="2023-10-26T15:23:32 IST" duration-ms="2486" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt()[pri:0, instance:com.prime.tests.E2E.CitationTest@5dd1c9f2]" started-at="2023-10-26T15:23:33 IST" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" description="1721296  - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it" finished-at="2023-10-26T15:24:10 IST" duration-ms="37654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt -->
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.CitationTest@5dd1c9f2]" started-at="2023-10-26T15:24:10 IST" name="closeApplication" finished-at="2023-10-26T15:24:11 IST" duration-ms="879" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.CitationTest -->
+    </test> <!-- CITATION_E2E -->
+    <test started-at="2023-10-26T15:23:30 IST" name="SEARCH_E2E_FULL" finished-at="2023-10-26T15:29:53 IST" duration-ms="383571">
+      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
+        <test-method is-config="true" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:23:30 IST" name="loadConfigurationValues" finished-at="2023-10-26T15:23:30 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@58ffcbd7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:23:30 IST" name="setUp" finished-at="2023-10-26T15:23:32 IST" duration-ms="2486" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyPpaginationAndSortingOptionsIntheSearchResultsPage() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:23:33 IST" name="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage" description="1722542 - Verify pagination and sorting options in the search results page" finished-at="2023-10-26T15:23:57 IST" duration-ms="24264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyPpaginationAndSortingOptionsIntheSearchResultsPage -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:12:28 IST" name="closeApplication" finished-at="2023-10-26T15:12:31 IST" duration-ms="2598" status="PASS">
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:23:57 IST" name="closeApplication" finished-at="2023-10-26T15:23:57 IST" duration-ms="617" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -312,7 +312,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:12:31 IST" name="setUp" finished-at="2023-10-26T15:12:31 IST" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:23:57 IST" name="setUp" finished-at="2023-10-26T15:23:57 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -330,18 +330,18 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[public void com.prime.tests.FPJ.SearchFunctionalityTest.VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages() throws java.lang.Exception]]>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:12:31 IST" name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages" description="1722548 - Verify  Refine by Date Section and that search box is accessible in all pages" finished-at="2023-10-26T15:13:16 IST" duration-ms="45576" status="PASS">
+        <test-method signature="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:23:57 IST" name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages" description="1722548 - Verify  Refine by Date Section and that search box is accessible in all pages" finished-at="2023-10-26T15:24:41 IST" duration-ms="43117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:13:16 IST" name="closeApplication" finished-at="2023-10-26T15:13:18 IST" duration-ms="2053" status="PASS">
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:24:41 IST" name="closeApplication" finished-at="2023-10-26T15:24:42 IST" duration-ms="1369" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -350,7 +350,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:13:18 IST" name="setUp" finished-at="2023-10-26T15:13:18 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:24:42 IST" name="setUp" finished-at="2023-10-26T15:24:42 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -368,18 +368,18 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[public void com.prime.tests.FPJ.SearchFunctionalityTest.VerifySearchPageTopPanel() throws java.lang.Exception]]>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifySearchPageTopPanel() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="VerifySearchPageTopPanel()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:13:18 IST" name="VerifySearchPageTopPanel" description="1722541 - Verify search page top panel" finished-at="2023-10-26T15:13:50 IST" duration-ms="31991" status="PASS">
+        <test-method signature="VerifySearchPageTopPanel()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:24:42 IST" name="VerifySearchPageTopPanel" description="1722541 - Verify search page top panel" finished-at="2023-10-26T15:25:14 IST" duration-ms="31531" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifySearchPageTopPanel -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:13:50 IST" name="closeApplication" finished-at="2023-10-26T15:13:53 IST" duration-ms="2129" status="PASS">
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:25:14 IST" name="closeApplication" finished-at="2023-10-26T15:25:15 IST" duration-ms="1834" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -388,7 +388,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:13:53 IST" name="setUp" finished-at="2023-10-26T15:13:53 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:25:15 IST" name="setUp" finished-at="2023-10-26T15:25:15 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -406,18 +406,18 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[public void com.prime.tests.FPJ.SearchFunctionalityTest.VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected() throws java.lang.Exception]]>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:13:53 IST" name="VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected" description="1722543 - Verify that  search results details , toolbar options , Save options are as expected" finished-at="2023-10-26T15:14:17 IST" duration-ms="24764" status="PASS">
+        <test-method signature="VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:25:15 IST" name="VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected" description="1722543 - Verify that  search results details , toolbar options , Save options are as expected" finished-at="2023-10-26T15:25:41 IST" duration-ms="25347" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:14:17 IST" name="closeApplication" finished-at="2023-10-26T15:14:19 IST" duration-ms="1836" status="PASS">
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:25:41 IST" name="closeApplication" finished-at="2023-10-26T15:25:43 IST" duration-ms="1843" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -426,7 +426,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:14:19 IST" name="setUp" finished-at="2023-10-26T15:14:19 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:25:43 IST" name="setUp" finished-at="2023-10-26T15:25:43 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -444,18 +444,18 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[public void com.prime.tests.FPJ.SearchFunctionalityTest.VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard() throws java.lang.Exception]]>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:14:19 IST" name="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard" description="1722546 - Verify that the appropriate result is displayed when user select the Article type filter and access type filter from index card" finished-at="2023-10-26T15:14:58 IST" duration-ms="38830" status="PASS">
+        <test-method signature="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:25:43 IST" name="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard" description="1722546 - Verify that the appropriate result is displayed when user select the Article type filter and access type filter from index card" finished-at="2023-10-26T15:26:26 IST" duration-ms="43381" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:14:58 IST" name="closeApplication" finished-at="2023-10-26T15:15:00 IST" duration-ms="1744" status="PASS">
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:26:26 IST" name="closeApplication" finished-at="2023-10-26T15:26:28 IST" duration-ms="1871" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -464,7 +464,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:15:00 IST" name="setUp" finished-at="2023-10-26T15:15:00 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:26:28 IST" name="setUp" finished-at="2023-10-26T15:26:28 IST" duration-ms="15" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -482,18 +482,18 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[public void com.prime.tests.FPJ.SearchFunctionalityTest.VerifyThatTheVariousShareButtonFeatures() throws java.lang.Exception]]>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatTheVariousShareButtonFeatures() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="VerifyThatTheVariousShareButtonFeatures()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:15:00 IST" name="VerifyThatTheVariousShareButtonFeatures" description="1722547 - Verify that the various Share button features." finished-at="2023-10-26T15:15:18 IST" duration-ms="18042" status="PASS">
+        <test-method signature="VerifyThatTheVariousShareButtonFeatures()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:26:28 IST" name="VerifyThatTheVariousShareButtonFeatures" description="1722547 - Verify that the various Share button features." finished-at="2023-10-26T15:26:44 IST" duration-ms="16550" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyThatTheVariousShareButtonFeatures -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:15:18 IST" name="closeApplication" finished-at="2023-10-26T15:15:20 IST" duration-ms="2060" status="PASS">
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:26:44 IST" name="closeApplication" finished-at="2023-10-26T15:26:46 IST" duration-ms="1364" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -502,7 +502,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:15:20 IST" name="setUp" finished-at="2023-10-26T15:15:20 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:26:46 IST" name="setUp" finished-at="2023-10-26T15:26:46 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -520,18 +520,18 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[public void com.prime.tests.FPJ.SearchFunctionalityTest.VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows() throws java.lang.Exception]]>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:15:20 IST" name="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows" description="1722545 - Verify that user is able to perform search with the combination of refine terms by adding, clearing , removing more than one rows." finished-at="2023-10-26T15:16:56 IST" duration-ms="96171" status="PASS">
+        <test-method signature="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:26:46 IST" name="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows" description="1722545 - Verify that user is able to perform search with the combination of refine terms by adding, clearing , removing more than one rows." finished-at="2023-10-26T15:28:39 IST" duration-ms="113015" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:16:56 IST" name="closeApplication" finished-at="2023-10-26T15:16:58 IST" duration-ms="1781" status="PASS">
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:28:39 IST" name="closeApplication" finished-at="2023-10-26T15:28:40 IST" duration-ms="1628" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -540,7 +540,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:16:58 IST" name="setUp" finished-at="2023-10-26T15:16:58 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:28:40 IST" name="setUp" finished-at="2023-10-26T15:28:40 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -558,18 +558,18 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[public void com.prime.tests.FPJ.SearchFunctionalityTest.VerifyVariousRefineTermsInTheSearchResultsPage() throws java.lang.Exception]]>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyVariousRefineTermsInTheSearchResultsPage() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="VerifyVariousRefineTermsInTheSearchResultsPage()[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:16:58 IST" name="VerifyVariousRefineTermsInTheSearchResultsPage" description="1722544 - Verify various Refine terms in the search results page" finished-at="2023-10-26T15:18:17 IST" duration-ms="78689" status="PASS">
+        <test-method signature="VerifyVariousRefineTermsInTheSearchResultsPage()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:28:41 IST" name="VerifyVariousRefineTermsInTheSearchResultsPage" description="1722544 - Verify various Refine terms in the search results page" finished-at="2023-10-26T15:29:52 IST" duration-ms="71055" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyVariousRefineTermsInTheSearchResultsPage -->
-        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.FPJ.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:18:17 IST" name="closeApplication" finished-at="2023-10-26T15:18:19 IST" duration-ms="2042" status="PASS">
+        <test-method is-config="true" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@32f232a5]" started-at="2023-10-26T15:29:52 IST" name="closeApplication" finished-at="2023-10-26T15:29:53 IST" duration-ms="1883" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -578,7 +578,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-      </class> <!-- com.prime.tests.FPJ.SearchFunctionalityTest -->
+      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
     </test> <!-- SEARCH_E2E_FULL -->
   </suite> <!-- Prime Automation E2E Suite -->
 </testng-results>
