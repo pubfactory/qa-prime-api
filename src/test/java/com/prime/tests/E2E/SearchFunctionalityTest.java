@@ -171,8 +171,8 @@ public class SearchFunctionalityTest extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(browseResultCount, editorFilter), true,
                 "Verifying the total result count after applying the Author Editor filter from refine term filter on search Ppge");
         System.out.println("six " + BaseTest.getLastsixStringCharacter(authorEditor));
-        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(BaseTest.getLastsixStringCharacter(authorEditor)), "Verifying the Author Editor filter is applied on search result page");
-
+        String[] authoreditorwords = authorEditor.split(" ");
+        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(authoreditorwords[0]), "Verifying the Author Editor filter is applied on search result page");
 
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptionfulltext").toString());
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), testData.get("refinefiltervaluefulltext").toString());
