@@ -1,7 +1,5 @@
 package com.prime.tests.E2E;
 
-import java.util.Arrays;
-import java.util.List;
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 import com.prime.generics.BasePage;
@@ -64,8 +62,8 @@ public class SearchFunctionalityTest extends BaseTest {
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("pageSize=20"), "Verifying item per page is 20 on browse or search result page");
         browseOrSearchPage.selectItemPerPageValueFromItemPerPageDropdownOnBrowseOrSearchPage(testData.get("itemperpagefifty").toString());
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("pageSize=50"), "Verifying item per page is 50 on browse or search result page");
-        //			browseOrSearchPage.waitForAllItemVisible("20");
-        //			BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getTotalItemCountOnPage(),testData.get("itemperpagefifty").toString(),"Verifying the "+testData.get("itemperpagefifty").toString()+" Item per page is present on page");			
+        //          browseOrSearchPage.waitForAllItemVisible("20");
+        //          BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getTotalItemCountOnPage(),testData.get("itemperpagefifty").toString(),"Verifying the "+testData.get("itemperpagefifty").toString()+" Item per page is present on page");         
     }
 
     @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722542 - Verify pagination and sorting options in the search results page")
@@ -175,7 +173,7 @@ public class SearchFunctionalityTest extends BaseTest {
         System.out.println("six " + BaseTest.getLastsixStringCharacter(authorEditor));
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(BaseTest.getLastsixStringCharacter(authorEditor)), "Verifying the Author Editor filter is applied on search result page");
 
-        
+
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptionfulltext").toString());
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), testData.get("refinefiltervaluefulltext").toString());
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
@@ -225,6 +223,7 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptionaffiliation").toString());
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), testData.get("refinefiltervalueaffiliation").toString());
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
+        WebDriverManager.getDriver().navigate().refresh();
         browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
         articleCitationPage.clickFirstAuthorOnArticlePage();
         String authorlabel = articleCitationPage.getauthorAffiliationPopupLabel();
@@ -404,8 +403,8 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.selectFromDateValueFromToDateDDInRefineByDateFilterOnBrowseOrSearchResultPage(testData.get("fromdate").toString());
         browseOrSearchPage.clickOnSubmitButtonInRefineByDateOnBrowseOrSearchPage();
         int afterDateFilterUse = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
-        System.out.println("Browse"+totalResultCount);
-        System.out.println("After"+afterDateFilterUse);
+        System.out.println("Browse" + totalResultCount);
+        System.out.println("After" + afterDateFilterUse);
         BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("fromDate=" + testData.get("todate").toString() + "&toDate=" + testData.get("fromdate").toString()),
                 "Verifying Refine by Date filter is applied on search or browse page");
 
