@@ -684,6 +684,7 @@ public class BaseTest {
                 if (!suiteName.contains("Default suite")) {
                     Helper.INSTANCE.publishResults(testRailId, testcaseId, "5", teststatus);
                 }
+                Allure.addAttachment("Test Failed!", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
                 Allure.step(testCaseId + " :: " + teststatus);
                 browserstack = BaseTest.properties.getProperty("BrowserStack");
                 if (browserstack.equalsIgnoreCase("Y")) {
