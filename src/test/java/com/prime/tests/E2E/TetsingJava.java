@@ -2,8 +2,11 @@ package com.prime.tests.E2E;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+
+import com.prime.generics.Helper;
 
 import io.qameta.allure.Allure;
 
@@ -33,10 +36,12 @@ public class TetsingJava {
 //		}
 //	}
 
-		public static void main(String[]args)  {
-		String str = "10.2344%2Fanpr-70-02-06";
-				String finalWord = str.substring(str.length()-6, str.length());
-				System.out.println( finalWord);
-				
+public static void main(String[] args) {
+        String fileName ="anpr-article-p31.pdf";
+         String[] str1 = fileName.split("-");
+        List<String>l= Helper.INSTANCE.convertArrayToList(str1);
+        System.out.println(Helper.INSTANCE.convertArrayToList(l.get(2).split("pd")).get(0)+"xml");
+    }
+ 
 			}
-}
+

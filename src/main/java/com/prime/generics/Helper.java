@@ -24,11 +24,14 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
+import java.util.Set;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -1406,7 +1409,7 @@ public enum Helper {
      * @author Veena.Mathew
      * @Created Date : 08/12/2022
      */
-    public static String readTestDataFromFile(String filename) {
+    public String readTestDataFromFile(String filename) {
         String newfile = "";
         FileInputStream fis = null;
         try {
@@ -1426,5 +1429,56 @@ public enum Helper {
             e.printStackTrace();
         }
         return newfile;
+    }
+    
+    /**
+     * This method used to open new tab
+     * 
+     * @author rakesh.Shavale
+     * @Created Date : 02/11/2023
+     */
+    public void openNewTab() {
+    	((JavascriptExecutor)WebDriverManager.getDriver()).executeScript("window.open()");
+    }
+    
+    /**
+     * This method used to switching tab with tab index
+     * 
+     * @param index
+     * @author rakesh.Shavale
+     * @Created Date : 02/11/2023
+     */
+    public void switchToWindowTab(int index) {
+    	 Set<String> window = WebDriverManager.getDriver().getWindowHandles();
+	        List<String> list = new ArrayList<>(window);
+	        WebDriverManager.getDriver().switchTo().window(list.get(index));
+    }
+    
+    public void switchToWindowTab(WebDriver driver,String mainwidow) {
+        Set<String> allWindowHandles = driver.getWindowHandles();
+        Iterator<String> iterator = allWindowHandles.iterator();
+        while (iterator.hasNext()) {
+            String ChildWindow = iterator.next();
+                if (!mainwidow.equalsIgnoreCase(ChildWindow)) {
+                driver.switchTo().window(ChildWindow);
+                }
+//                else
+//                	 driver.switchTo().window(mainwidow);
+        }
+    }
+    public String getWindow(WebDriver driver) {
+    	 String window = driver.getWindowHandle();
+    	 return window;
+    }
+    
+    public void closeNewTab(String mainwidow,WebDriver driver) {
+    	Set<String> allWindowHandles = driver.getWindowHandles();
+        Iterator<String> iterator = allWindowHandles.iterator();
+        while (iterator.hasNext()) {
+            String ChildWindow = iterator.next();
+                if (!mainwidow.equalsIgnoreCase(ChildWindow)) {
+                driver.close();
+                }
+        }
     }
 }

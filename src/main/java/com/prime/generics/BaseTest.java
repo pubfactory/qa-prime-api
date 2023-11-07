@@ -413,7 +413,7 @@ public class BaseTest {
                     System.out.println(System.getProperty("user.dir"));
                     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
 
-                    //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                   // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                     //    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
@@ -1100,7 +1100,6 @@ public class BaseTest {
     public static void deleteDonwloadedFile() throws IOException {
         File f = new File(System.getProperty("user.dir") + "//target//Assets");
         FileUtils.deleteDirectory(f);
-        System.out.println("Dleete Successfully");
     }
 
     /**

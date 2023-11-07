@@ -1,6 +1,7 @@
 package com.prime.generics;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.fail;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -36,6 +37,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.prime.pageFactory.pages.fpj.MasterPage;
 
+import groovyjarjarantlr4.v4.parse.ANTLRParser.exceptionGroup_return;
 import io.qameta.allure.Allure;
 
 public class BasePage {
@@ -1901,5 +1903,23 @@ public class BasePage {
 		}
 		return flag;
 	}
+	
+	public List<String> splitStringAndRetunsList(List<String>list) {
+		List<String> list1 = new ArrayList<>();
+		for (String a : list) {
+			list1.add(a.substring(11, a.length()));
+		}
+		return list1;
+	}
+	
+	public String splitStringandReturnString(String str) {
+		
+			return (str.substring(11, str.length()));
+	}
+	
+	
+	
+	
+	
 	
 }

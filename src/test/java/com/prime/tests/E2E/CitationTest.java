@@ -41,7 +41,7 @@ public class CitationTest extends BaseTest {
             navigateToUrlLink(url);
             JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
             masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
-            masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchtext").toString());
+            //masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchtext").toString());
             masterPage.clickOnSearchMagnifyingLense();
             browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();

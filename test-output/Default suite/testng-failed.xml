@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+      <class name="com.prime.tests.E2E.DiscoveryWidgetTest">
         <methods>
-          <include name="VerifyJournalToCFeatures" invocation-numbers="0"/>
           <include name="closeDriver"/>
+          <include name="VerifyVariousEmailButtonFeatures"/>
           <include name="establishConnection"/>
           <include name="loadConfigurationValues"/>
           <include name="setUp"/>
           <include name="closeApplication"/>
         </methods>
-      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+      </class> <!-- com.prime.tests.E2E.DiscoveryWidgetTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

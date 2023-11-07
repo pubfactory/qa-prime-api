@@ -88,7 +88,7 @@
 			"testidvalueenter":"AdvanceSearchFilter-input-0",
 			"refinefilteroptionauthor":"Author or Editor",
 			"refinefilteroptionfulltext":"Full Text",
-			"refinefiltervaluefulltext":"measured using",
+			"refinefiltervaluefulltext":"aims to",
 			"refinefilteroptionisbndoi":"ISBN / ISSN / DOI",
 			"refinefilteroptionabstract":"Abstract",
 			"refinefiltervalueabstract":"intravenous anesthetic",
@@ -162,6 +162,37 @@
 			"issuepageheader":"Issues"
 
 		}
-	}
+	},
+	{
+	"id": "65",
+		"data": {
+			"description": "VerifyVariousEmailButtonFeatures",
+			"sharelinkpopupHeader":"Share Link"
 
+		}
+	},
+	{
+	"id": "66",
+		"data": {
+			"description": "VerifyGoogleScholarButtonFeatures"
+
+		}
+	},
+	{
+	"id": "67",
+		"data": {
+			"description": "VerifyPubMedButtonFeaturesAndAlmetricPageFeatures"
+
+		}
+	},
+		{
+	"id": "77",
+		"data": {
+			"description": "verifyPDFButonAvailableAndDownloadPDF",
+			"searchtext":"men",
+			"free":"free",
+			"open":"open",
+			"defaultzoomvalue":"Automatic Zoom"
+		}
+	}
 ]
