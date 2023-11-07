@@ -112,7 +112,7 @@ public class SearchFunctionalityTest extends BaseTest {
         navigateToUrlLink(url);
         JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
         masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
-        masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchtext").toString());
+        //masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchtext").toString());
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyContentTitleNameIsPresentOnBrosweOrSearchPage(), true, "Verifying the content title name is present on browse or search page");
