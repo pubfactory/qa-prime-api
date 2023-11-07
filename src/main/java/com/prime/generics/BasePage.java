@@ -237,6 +237,7 @@ public class BasePage {
 		boolean flag = false;
 		try {
 			waitForDocumentReady();
+			waitForElementPresenceSpecified(element, 120);
 			waitForElementVisible(element);
 			WebDriverManager.getWebdriverWait().until(ExpectedConditions.elementToBeClickable(element));
 			element.click();
@@ -1901,5 +1902,51 @@ public class BasePage {
 		}
 		return flag;
 	}
+/**
+     * This method waits for a particular element in the webpage
+     * 
+     * @param element
+     * @throws Exception
+     * @author Veena.Mathew
+     * @Created Date : 7/11/2022
+     */
+    public void waitForElementPresenceSpecified(WebElement element, int timeOut) {
+
+        try {
+            System.out.println("Waiting in fluencyyyyyy");
+
+            FluentWait<WebDriver> wait = new FluentWait<WebDriver>(WebDriverManager.getDriver());
+
+            wait.pollingEvery(timeOut, TimeUnit.SECONDS);
+
+            wait.withTimeout(30, TimeUnit.MILLISECONDS);
+
+            Function<WebDriver, Boolean> function = new Function<WebDriver, Boolean>()
+
+            {
+
+                public Boolean apply(WebDriver driver) {
+
+                    //driver.findElement();
+                    element.isDisplayed();
+                    System.out.println("Waiting in fluency in isDisplayed");
+
+                    return true;
+
+                }
+
+            };
+
+            wait.until(function);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+    }
+
+}
 	
 }
