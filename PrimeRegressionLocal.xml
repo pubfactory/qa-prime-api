@@ -40,15 +40,12 @@
 		</classes>
 	</test>
 	
-<<<<<<< HEAD
 	<test name="DISCOVERY_WIDGET" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.DiscoveryWidgetTest">
 			</class>
 		</classes>
 	</test>
-	
+
 </suite>
-=======
-</suite>
->>>>>>> dev
+
