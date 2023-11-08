@@ -46,7 +46,7 @@ public class DiscoveryWidgetTest extends BaseTest {
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
             String articleText = articleCitationPage.getArticleHeaderOnArticlePage();
-
+            System.out.println("Article Header : "+articleText);
             // Verifying Share via email button and Veriying Share link popup header
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyShareViaEmailButtonPresentOnArticlePage(), true, "Verifying the Share via Email button is present on Article Page");
             articleCitationPage.clickOnshareViaEmailButtonOnArticlePage();
