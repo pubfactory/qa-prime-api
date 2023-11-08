@@ -29,7 +29,7 @@ public class ToCFunctionalityTest extends BaseTest {
     private String testCaseId;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"TOC Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "64 - Verify Journal ToC features")
+    @Test(groups = {"TOC Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722740 - Verify Journal ToC features")
     @Story("EPIC-427")
     public void VerifyJournalToCFeatures() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
