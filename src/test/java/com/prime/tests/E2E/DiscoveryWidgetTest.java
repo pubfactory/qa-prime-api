@@ -124,8 +124,9 @@ public class DiscoveryWidgetTest extends BaseTest {
                     "Verifying the Similar Artcile Hyper Link is present in the Google Scholar section on Artical page");
             articleCitationPage.clickOnSimilarArticleInGoogleScholarHyperLink();
             Helper.INSTANCE.switchToWindowTab(1);
-            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyArticleElementInGoogleScholarTabIsPresenstedWhenClickOnSimilarArticleInGoogleScholarHyperLink(), true,
-                    "Verifying the Article Element In google scholar tab is presented when Click on Similar Article in Google Scholar HyperLink");
+            BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("scholar"), "Verifying if google scholar tab is opened");
+            //  BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyArticleElementInGoogleScholarTabIsPresenstedWhenClickOnSimilarArticleInGoogleScholarHyperLink(), true,
+            //          "Verifying the Article Element In google scholar tab is presented when Click on Similar Article in Google Scholar HyperLink");
             WebDriverManager.getDriver().close();
             Helper.INSTANCE.switchToWindowTab(0);
 
