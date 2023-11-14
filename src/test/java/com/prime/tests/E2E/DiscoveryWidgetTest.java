@@ -46,7 +46,6 @@ public class DiscoveryWidgetTest extends BaseTest {
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
             String articleText = articleCitationPage.getArticleHeaderOnArticlePage();
-
             // Verifying Share via email button and Veriying Share link popup header
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyShareViaEmailButtonPresentOnArticlePage(), true, "Verifying the Share via Email button is present on Article Page");
             articleCitationPage.clickOnshareViaEmailButtonOnArticlePage();
@@ -125,8 +124,6 @@ public class DiscoveryWidgetTest extends BaseTest {
             articleCitationPage.clickOnSimilarArticleInGoogleScholarHyperLink();
             Helper.INSTANCE.switchToWindowTab(1);
             BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("scholar"), "Verifying if google scholar tab is opened");
-            //  BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyArticleElementInGoogleScholarTabIsPresenstedWhenClickOnSimilarArticleInGoogleScholarHyperLink(), true,
-            //          "Verifying the Article Element In google scholar tab is presented when Click on Similar Article in Google Scholar HyperLink");
             WebDriverManager.getDriver().close();
             Helper.INSTANCE.switchToWindowTab(0);
 
