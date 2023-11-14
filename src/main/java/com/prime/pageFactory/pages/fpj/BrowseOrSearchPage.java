@@ -976,6 +976,17 @@ public class BrowseOrSearchPage extends BasePage {
         return isElementPresent(clearbutton);
     }
 
+    /**
+     * This method used to clicks on First Restricted Content on Browse or search page
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 09/11/2023
+     */
+    public void clickOnFirstRestrictedContentOnBrowseOrSearchPage() throws Exception {
+        clickOnElement(firstRestrictedContent, "Clicking on First Restricted Content on Browse or search page");
+    }
+
 
 
     @FindBy(xpath = "//h1[text()='Browse']")
@@ -1059,6 +1070,8 @@ public class BrowseOrSearchPage extends BasePage {
     private WebElement fromDateDD;
     @FindBy(xpath = "//select[@name='toDate']")
     private WebElement toDateDD;
+    @FindBy(xpath = "(//span[text()='Restricted access']//preceding::a[@target='_self'])[1]")
+    private WebElement firstRestrictedContent;
 
 }
 

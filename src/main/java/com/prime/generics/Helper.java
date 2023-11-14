@@ -31,7 +31,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -58,6 +57,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.json.simple.JSONObject;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import com.prime.testRail.APIClient;
 import com.prime.testRail.APIException;
@@ -1430,7 +1430,7 @@ public enum Helper {
         }
         return newfile;
     }
-    
+
     /**
      * This method used to open new tab
      * 
@@ -1438,9 +1438,9 @@ public enum Helper {
      * @Created Date : 02/11/2023
      */
     public void openNewTab() {
-    	((JavascriptExecutor)WebDriverManager.getDriver()).executeScript("window.open()");
+        ((JavascriptExecutor) WebDriverManager.getDriver()).executeScript("window.open()");
     }
-    
+
     /**
      * This method used to switching tab with tab index
      * 
@@ -1449,36 +1449,51 @@ public enum Helper {
      * @Created Date : 02/11/2023
      */
     public void switchToWindowTab(int index) {
-    	 Set<String> window = WebDriverManager.getDriver().getWindowHandles();
-	        List<String> list = new ArrayList<>(window);
-	        WebDriverManager.getDriver().switchTo().window(list.get(index));
+        Set<String> window = WebDriverManager.getDriver().getWindowHandles();
+        List<String> list = new ArrayList<>(window);
+        WebDriverManager.getDriver().switchTo().window(list.get(index));
     }
-    
-    public void switchToWindowTab(WebDriver driver,String mainwidow) {
+
+    public void switchToWindowTab(WebDriver driver, String mainwidow) {
         Set<String> allWindowHandles = driver.getWindowHandles();
         Iterator<String> iterator = allWindowHandles.iterator();
         while (iterator.hasNext()) {
             String ChildWindow = iterator.next();
-                if (!mainwidow.equalsIgnoreCase(ChildWindow)) {
+            if (!mainwidow.equalsIgnoreCase(ChildWindow)) {
                 driver.switchTo().window(ChildWindow);
-                }
-//                else
-//                	 driver.switchTo().window(mainwidow);
+            }
+            //                else
+            //                	 driver.switchTo().window(mainwidow);
         }
     }
+
     public String getWindow(WebDriver driver) {
-    	 String window = driver.getWindowHandle();
-    	 return window;
+        String window = driver.getWindowHandle();
+        return window;
     }
-    
-    public void closeNewTab(String mainwidow,WebDriver driver) {
-    	Set<String> allWindowHandles = driver.getWindowHandles();
+
+    public void closeNewTab(String mainwidow, WebDriver driver) {
+        Set<String> allWindowHandles = driver.getWindowHandles();
         Iterator<String> iterator = allWindowHandles.iterator();
         while (iterator.hasNext()) {
             String ChildWindow = iterator.next();
-                if (!mainwidow.equalsIgnoreCase(ChildWindow)) {
+            if (!mainwidow.equalsIgnoreCase(ChildWindow)) {
                 driver.close();
-                }
+            }
         }
+    }
+
+    /**
+     * This method used to switching into IFrame
+     * @param element
+     * @param desc
+     * @param driver
+     * @return 
+     * @author Rakesh.Shevale
+     * @Created Date : 08/11/2023
+     */
+    public void switchToIFrame(WebDriver driver, WebElement element, String desc) {
+        driver.switchTo().frame(element);
+        Allure.step(desc);
     }
 }

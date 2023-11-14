@@ -55,12 +55,12 @@
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Prime_Automation_E2E_Suite" class="navigator-link ">
-                    <span class="test-stats">6 tests</span>
+                    <span class="test-stats">7 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="group-Prime_Automation_E2E_Suite" class="navigator-link ">
-                    <span>5 groups</span>
+                    <span>6 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">15 methods,   15 passed</span>
+                    <span class="method-stats">17 methods,   17 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -109,6 +109,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.ToCFunctionalityTest" class="method navigator-link" hash-for-method="VerifyJournalToCFeatures">VerifyJournalToCFeatures</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.PDFFunctionalityTest" class="method navigator-link" hash-for-method="VerifyPDFFeaturesInRestrictedAccessContentPage">VerifyPDFFeaturesInRestrictedAccessContentPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -164,6 +169,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.CitationTest" class="method navigator-link" hash-for-method="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt">verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.PDFFunctionalityTest" class="method navigator-link" hash-for-method="verifyPDFButonAvailableAndDownloadPDF">verifyPDFButonAvailableAndDownloadPDF</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -308,6 +318,32 @@
           <div class="suite-Prime_Automation_E2E_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
+              <span class="class-name">com.prime.tests.E2E.PDFFunctionalityTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyPDFFeaturesInRestrictedAccessContentPage">
+                  </a> <!-- VerifyPDFFeaturesInRestrictedAccessContentPage -->
+                  <span class="method-name">VerifyPDFFeaturesInRestrictedAccessContentPage</span>
+                  <em>
+(1722759 - Verify PDF features in restricted access content page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyPDFButonAvailableAndDownloadPDF">
+                  </a> <!-- verifyPDFButonAvailableAndDownloadPDF -->
+                  <span class="method-name">verifyPDFButonAvailableAndDownloadPDF</span>
+                  <em>
+(1722758 - Verify that the PDF button available on current content page and  PDF Download will be successful when clicked on it)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Prime_Automation_E2E_Suite-class-passed -->
+          <div class="suite-Prime_Automation_E2E_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
               <span class="class-name">com.prime.tests.E2E.CitationTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -409,7 +445,7 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;6&quot; parallel=&quot;tests&quot; name=&quot;Prime Automation E2E Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;5&quot;&gt;
+&lt;suite thread-count=&quot;17&quot; parallel=&quot;tests&quot; name=&quot;Prime Automation E2E Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;5&quot;&gt;
   &lt;parameter name=&quot;testRailIntegrationMode&quot; value=&quot;ON&quot;/&gt;
   &lt;parameter name=&quot;application&quot; value=&quot;anesthesiaprogress&quot;/&gt;
   &lt;parameter name=&quot;testRunId&quot; value=&quot;4001&quot;/&gt;
@@ -421,36 +457,41 @@
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.prime.retryAnalyzers.RetryListener&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;6&quot; parallel=&quot;tests&quot; name=&quot;SEARCH_E2E&quot; verbose=&quot;5&quot;&gt;
+  &lt;test thread-count=&quot;17&quot; parallel=&quot;tests&quot; name=&quot;SEARCH_E2E&quot; verbose=&quot;5&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.prime.tests.E2E.IntegrationE2EFlow&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- SEARCH_E2E --&gt;
-  &lt;test thread-count=&quot;6&quot; parallel=&quot;tests&quot; name=&quot;JOURNAL_HOME_E2E&quot; verbose=&quot;5&quot;&gt;
+  &lt;test thread-count=&quot;17&quot; parallel=&quot;tests&quot; name=&quot;JOURNAL_HOME_E2E&quot; verbose=&quot;5&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- JOURNAL_HOME_E2E --&gt;
-  &lt;test thread-count=&quot;6&quot; parallel=&quot;tests&quot; name=&quot;CITATION_E2E&quot; verbose=&quot;5&quot;&gt;
+  &lt;test thread-count=&quot;17&quot; parallel=&quot;tests&quot; name=&quot;CITATION_E2E&quot; verbose=&quot;5&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.prime.tests.E2E.CitationTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- CITATION_E2E --&gt;
-  &lt;test thread-count=&quot;6&quot; parallel=&quot;tests&quot; name=&quot;SEARCH_E2E_FULL&quot; verbose=&quot;5&quot;&gt;
+  &lt;test thread-count=&quot;17&quot; parallel=&quot;tests&quot; name=&quot;SEARCH_E2E_FULL&quot; verbose=&quot;5&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.prime.tests.E2E.SearchFunctionalityTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- SEARCH_E2E_FULL --&gt;
-  &lt;test thread-count=&quot;6&quot; parallel=&quot;tests&quot; name=&quot;JOURNAL_TOC&quot; verbose=&quot;5&quot;&gt;
+  &lt;test thread-count=&quot;17&quot; parallel=&quot;tests&quot; name=&quot;JOURNAL_TOC&quot; verbose=&quot;5&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.prime.tests.E2E.ToCFunctionalityTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- JOURNAL_TOC --&gt;
-  &lt;test thread-count=&quot;6&quot; parallel=&quot;tests&quot; name=&quot;DISCOVERY_WIDGET&quot; verbose=&quot;5&quot;&gt;
+  &lt;test thread-count=&quot;17&quot; parallel=&quot;tests&quot; name=&quot;DISCOVERY_WIDGET&quot; verbose=&quot;5&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.prime.tests.E2E.DiscoveryWidgetTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- DISCOVERY_WIDGET --&gt;
+  &lt;test thread-count=&quot;17&quot; parallel=&quot;tests&quot; name=&quot;PDF_WORK&quot; verbose=&quot;5&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.prime.tests.E2E.PDFFunctionalityTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- PDF_WORK --&gt;
 &lt;/suite&gt; &lt;!-- Prime Automation E2E Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -488,6 +529,9 @@
               <li>
                 <span class="test-name">DISCOVERY_WIDGET (1 class)</span>
               </li>
+              <li>
+                <span class="test-name">PDF_WORK (1 class)</span>
+              </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -524,6 +568,18 @@
               </div> <!-- method-in-group -->
               <div class="method-in-group">
                 <span class="method-in-group-name">VerifyVariousEmailButtonFeatures</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">PDF Work</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">VerifyPDFFeaturesInRestrictedAccessContentPage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyPDFButonAvailableAndDownloadPDF</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -624,67 +680,75 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(15);
+data.addRows(17);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows')
 data.setCell(0, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(0, 3, 88802);
+data.setCell(0, 3, 91885);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'VerifyVariousRefineTermsInTheSearchResultsPage')
 data.setCell(1, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(1, 3, 66961);
+data.setCell(1, 3, 66793);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages')
 data.setCell(2, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(2, 3, 40114);
+data.setCell(2, 3, 44766);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'VerifyVariousEmailButtonFeatures')
 data.setCell(3, 2, 'com.prime.tests.E2E.DiscoveryWidgetTest')
-data.setCell(3, 3, 39905);
+data.setCell(3, 3, 42596);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt')
-data.setCell(4, 2, 'com.prime.tests.E2E.CitationTest')
-data.setCell(4, 3, 36546);
+data.setCell(4, 1, 'VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard')
+data.setCell(4, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
+data.setCell(4, 3, 40538);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard')
-data.setCell(5, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(5, 3, 35822);
+data.setCell(5, 1, 'verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt')
+data.setCell(5, 2, 'com.prime.tests.E2E.CitationTest')
+data.setCell(5, 3, 38876);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'verifyThatUserAbleToLaunchApplication')
-data.setCell(6, 2, 'com.prime.tests.E2E.IntegrationE2EFlow')
-data.setCell(6, 3, 30807);
+data.setCell(6, 1, 'VerifyPDFFeaturesInRestrictedAccessContentPage')
+data.setCell(6, 2, 'com.prime.tests.E2E.PDFFunctionalityTest')
+data.setCell(6, 3, 37966);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'VerifySearchPageTopPanel')
-data.setCell(7, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(7, 3, 26487);
+data.setCell(7, 1, 'verifyThatUserAbleToLaunchApplication')
+data.setCell(7, 2, 'com.prime.tests.E2E.IntegrationE2EFlow')
+data.setCell(7, 3, 37529);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'VerifyPpaginationAndSortingOptionsIntheSearchResultsPage')
-data.setCell(8, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(8, 3, 23729);
+data.setCell(8, 1, 'verifyPDFButonAvailableAndDownloadPDF')
+data.setCell(8, 2, 'com.prime.tests.E2E.PDFFunctionalityTest')
+data.setCell(8, 3, 35985);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'VerifyJournalToCFeatures')
-data.setCell(9, 2, 'com.prime.tests.E2E.ToCFunctionalityTest')
-data.setCell(9, 3, 22159);
+data.setCell(9, 1, 'VerifyPpaginationAndSortingOptionsIntheSearchResultsPage')
+data.setCell(9, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
+data.setCell(9, 3, 29135);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'VerifyGoogleScholarButtonFeatures')
-data.setCell(10, 2, 'com.prime.tests.E2E.DiscoveryWidgetTest')
-data.setCell(10, 3, 22008);
+data.setCell(10, 1, 'VerifySearchPageTopPanel')
+data.setCell(10, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
+data.setCell(10, 3, 28169);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected')
-data.setCell(11, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(11, 3, 21903);
+data.setCell(11, 1, 'VerifyJournalToCFeatures')
+data.setCell(11, 2, 'com.prime.tests.E2E.ToCFunctionalityTest')
+data.setCell(11, 3, 24981);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'VerifyPubMedButtonFeaturesAndAlmetricPageFeatures')
-data.setCell(12, 2, 'com.prime.tests.E2E.DiscoveryWidgetTest')
-data.setCell(12, 3, 19941);
+data.setCell(12, 1, 'VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected')
+data.setCell(12, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
+data.setCell(12, 3, 23303);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'verifyThatViewPagesDisplayed')
-data.setCell(13, 2, 'com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow')
-data.setCell(13, 3, 18371);
+data.setCell(13, 1, 'VerifyPubMedButtonFeaturesAndAlmetricPageFeatures')
+data.setCell(13, 2, 'com.prime.tests.E2E.DiscoveryWidgetTest')
+data.setCell(13, 3, 23289);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'VerifyThatTheVariousShareButtonFeatures')
-data.setCell(14, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(14, 3, 15647);
+data.setCell(14, 1, 'VerifyGoogleScholarButtonFeatures')
+data.setCell(14, 2, 'com.prime.tests.E2E.DiscoveryWidgetTest')
+data.setCell(14, 3, 22954);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'verifyThatViewPagesDisplayed')
+data.setCell(15, 2, 'com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow')
+data.setCell(15, 3, 21148);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'VerifyThatTheVariousShareButtonFeatures')
+data.setCell(16, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
+data.setCell(16, 3, 18605);
 window.suiteTableData['Prime_Automation_E2E_Suite']= { tableData: data, tableDiv: 'times-div-Prime_Automation_E2E_Suite'}
 return data;
 }
@@ -736,308 +800,351 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">establishConnection(org.testng.TestRunner@2f4205be)</span>
+                <span class="method-name">establishConnection(org.testng.TestRunner@2e554a3b)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@54e22bdd)</span>
-                <span class="method-start">59 ms</span>
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@54a67a45)</span>
+                <span class="method-start">48 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.CitationTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@3bd418e4)</span>
-                <span class="method-start">59 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@544820b7)</span>
-                <span class="method-start">59 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@2f4205be)</span>
-                <span class="method-start">60 ms</span>
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@7d42c224)</span>
+                <span class="method-start">48 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@6b98a075)</span>
-                <span class="method-start">62 ms</span>
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@56aaaecd)</span>
+                <span class="method-start">49 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@522a32b1)</span>
+                <span class="method-start">49 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@35390ee3)</span>
+                <span class="method-start">49 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@2e554a3b)</span>
+                <span class="method-start">49 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@2e61d218)</span>
-                <span class="method-start">62 ms</span>
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@5e01a982)</span>
+                <span class="method-start">50 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLau...)</span>
-                <span class="method-start">96 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.CitationTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.CitationTest.verifyCitationButonAvailableA...)</span>
-                <span class="method-start">96 ms</span>
+                <span class="method-start">90 ms</span>
               </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyPpaginationA...)</span>
-                <span class="method-start">96 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.ToCFunctionalityTest.VerifyJournalToCFeatu...)</span>
-                <span class="method-start">96 ms</span>
+                <span class="method-start">90 ms</span>
               </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyGoogleScholarBut...)</span>
-                <span class="method-start">96 ms</span>
+                <span class="method-start">90 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.PDFFunctionalityTest.VerifyPDFFeaturesInRe...)</span>
+                <span class="method-start">90 ms</span>
               </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow.verifyTh...)</span>
-                <span class="method-start">97 ms</span>
+                <span class="method-start">91 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.CitationTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.CitationTest.verifyCitationButonAvailableA...)</span>
+                <span class="method-start">91 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.ToCFunctionalityTest.VerifyJournalToCFeatu...)</span>
+                <span class="method-start">91 ms</span>
               </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">verifyThatUserAbleToLaunchApplication</span>
-                <span class="method-start">2600 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">verifyThatViewPagesDisplayed</span>
-                <span class="method-start">2600 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.CitationTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</span>
-                <span class="method-start">2600 ms</span>
+                <span class="method-start">2438 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">VerifyPpaginationAndSortingOptionsIntheSearchResultsPage</span>
-                <span class="method-start">2600 ms</span>
+                <span class="method-start">2947 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">VerifyJournalToCFeatures</span>
-                <span class="method-start">2600 ms</span>
+                <span class="method-name">VerifyPDFFeaturesInRestrictedAccessContentPage</span>
+                <span class="method-start">2962 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyThatViewPagesDisplayed</span>
+                <span class="method-start">2978 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.CitationTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</span>
+                <span class="method-start">2978 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">VerifyGoogleScholarButtonFeatures</span>
-                <span class="method-start">2600 ms</span>
+                <span class="method-start">2978 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">VerifyJournalToCFeatures</span>
+                <span class="method-start">3184 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">20987 ms</span>
+                <span class="method-start">24152 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">24615 ms</span>
+                <span class="method-start">25943 ms</span>
               </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyPubMedButtonFeat...)</span>
+                <span class="method-start">27007 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">VerifyPubMedButtonFeaturesAndAlmetricPageFeatures</span>
+                <span class="method-start">27211 ms</span>
+              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">24766 ms</span>
+                <span class="method-start">28174 ms</span>
               </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyPubMedButtonFeat...)</span>
-                <span class="method-start">25334 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">VerifyPubMedButtonFeaturesAndAlmetricPageFeatures</span>
-                <span class="method-start">25339 ms</span>
-              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">26333 ms</span>
+                <span class="method-start">32091 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyRefineByDate...)</span>
-                <span class="method-start">26897 ms</span>
+                <span class="method-start">34511 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages</span>
-                <span class="method-start">26901 ms</span>
+                <span class="method-start">34518 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">33411 ms</span>
+                <span class="method-start">39980 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApplication(null)</span>
+                <span class="method-start">40936 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.CitationTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">39149 ms</span>
+                <span class="method-start">41861 ms</span>
               </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.PDFFunctionalityTest.verifyPDFButonAvailab...)</span>
+                <span class="method-start">42111 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyPDFButonAvailableAndDownloadPDF</span>
+                <span class="method-start">42119 ms</span>
+              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">45283 ms</span>
+                <span class="method-start">50505 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyVariousEmailButt...)</span>
-                <span class="method-start">46554 ms</span>
+                <span class="method-start">52455 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyVariousEmailButtonFeatures</span>
-                <span class="method-start">46559 ms</span>
+                <span class="method-start">52461 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApplication(null)</span>
+                <span class="method-start">78114 ms</span>
+              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">67019 ms</span>
+                <span class="method-start">79294 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifySearchPageTo...)</span>
-                <span class="method-start">68137 ms</span>
+                <span class="method-start">80531 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifySearchPageTopPanel</span>
-                <span class="method-start">68140 ms</span>
+                <span class="method-start">80535 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">86469 ms</span>
+                <span class="method-start">95057 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">94631 ms</span>
+                <span class="method-start">108710 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatSsearchR...)</span>
-                <span class="method-start">95716 ms</span>
+                <span class="method-start">110328 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected</span>
-                <span class="method-start">95718 ms</span>
+                <span class="method-start">110334 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">117624 ms</span>
+                <span class="method-start">133637 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatTheAppro...)</span>
-                <span class="method-start">118786 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard</span>
-                <span class="method-start">118789 ms</span>
+                <span class="method-start">134904 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatTheAppro...)</span>
+                <span class="method-start">134904 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">154615 ms</span>
+                <span class="method-start">175454 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatTheVario...)</span>
-                <span class="method-start">155688 ms</span>
+                <span class="method-start">177107 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyThatTheVariousShareButtonFeatures</span>
-                <span class="method-start">155691 ms</span>
+                <span class="method-start">177114 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">171342 ms</span>
+                <span class="method-start">195720 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyUserIsAbleTo...)</span>
-                <span class="method-start">172645 ms</span>
+                <span class="method-start">197057 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows</span>
-                <span class="method-start">172648 ms</span>
+                <span class="method-start">197070 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">261456 ms</span>
+                <span class="method-start">288972 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyVariousRefin...)</span>
-                <span class="method-start">263079 ms</span>
+                <span class="method-start">291021 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyVariousRefineTermsInTheSearchResultsPage</span>
-                <span class="method-start">263081 ms</span>
+                <span class="method-start">291036 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(null)</span>
-                <span class="method-start">330049 ms</span>
+                <span class="method-start">357844 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">closeDriver</span>
-                <span class="method-start">331243 ms</span>
+                <span class="method-start">359475 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

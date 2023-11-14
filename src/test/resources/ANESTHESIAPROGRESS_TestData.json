@@ -185,14 +185,22 @@
 
 		}
 	},
-		{
-	"id": "77",
+			{
+	"id": "1722758",
 		"data": {
 			"description": "verifyPDFButonAvailableAndDownloadPDF",
 			"searchtext":"men",
 			"free":"free",
 			"open":"open",
-			"defaultzoomvalue":"Automatic Zoom"
+			"defaultzoomvalue":"Automatic Zoom",
+			"watermarkappname":"anesthesiaprogress"
+		}
+	},
+		{
+	"id": "1722759",
+		"data": {
+			"description": "VerifyPDFFeaturesInRestrictedAccessContentPage",
+			"fiftyvalue":"50"
 		}
 	}
 ]

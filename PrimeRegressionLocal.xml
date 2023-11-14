@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Prime Automation E2E Suite" verbose="5" parallel="tests"
-	thread-count="6" preserve-order="true">
+	thread-count="17" preserve-order="true">
 	<listeners>
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>
@@ -43,6 +43,13 @@
 	<test name="DISCOVERY_WIDGET" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+			</class>
+		</classes>
+	</test>
+	
+		<test name="PDF_WORK" preserve-order="true">
+		<classes>
+			<class name="com.prime.tests.E2E.PDFFunctionalityTest">
 			</class>
 		</classes>
 	</test>
