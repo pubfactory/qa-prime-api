@@ -393,9 +393,12 @@ public enum Helper {
      * @Created Date 8/12/2022
      */
     public void publishResults(String testRunId, String tcId, String testStatus, String message) throws Exception {
-        serverURL = ConfigurationManager.getConfigurationValue("serverURL");
-        serverUsername = ConfigurationManager.getConfigurationValue("serverUsername");
-        serverPassword = ConfigurationManager.getConfigurationValue("serverPassword");
+        serverURL = BaseTest.properties.getProperty("serverURL");
+        serverUsername = BaseTest.properties.getProperty("serverUsername");
+        serverPassword = BaseTest.properties.getProperty("serverPassword");
+        //        serverURL = ConfigurationManager.getConfigurationValue("serverURL");
+        //        serverUsername = ConfigurationManager.getConfigurationValue("serverUsername");
+        //        serverPassword = ConfigurationManager.getConfigurationValue("serverPassword");
         APIClient client = new APIClient(serverURL);
         client.setUser(serverUsername);
         client.setPassword(serverPassword);

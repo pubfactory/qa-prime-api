@@ -4,25 +4,17 @@
  <listeners>
         <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
   </listeners>
-<!-- TestRail Information -->
-
-	<parameter name="testRailIntegrationMode" value="ON" />  					<!--- Indicates if the integration is On/Off -->
-
-	<parameter name="serverURL" value="https://sheridan.testrail.com" />  					<!--- TestRail server url -->
-	<parameter name="serverUsername" value="veena.mathew@kwglobal.com" />  	<!--- TestRail username to connect with the API -->
-	<parameter name="serverPassword" value="Welcome123il%" />  								<!--- TestRail password for the user -->
-
 	<suite-files>
 		<suite-file path="PrimeRegressionLocal.xml">
-  	  <parameter name="Environment" value="${Environment}" />
+  	<!--   <parameter name="Environment" value="${Environment}" />
 			<parameter name="browser" value="${browser}" />
 			<parameter name="application" value="${application}" />
-			<parameter name="testRunId" value="4001" /> 	
+			<parameter name="testRunId" value="4001" /> 	 -->
 			
- 	  <!-- 	<parameter name="Environment" value="dev" /> 
+ 	  	<parameter name="Environment" value="dev" /> 
 			<parameter name="browser" value="chrome" />
 			<parameter name="application" value="anesthesiaprogress" />
-			<parameter name="testRunId" value="4001" />	  -->								
+		<!--  	<parameter name="testRunId" value="4001" />	  		-->					
 		</suite-file>
 	</suite-files>
 </suite>

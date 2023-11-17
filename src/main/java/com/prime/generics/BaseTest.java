@@ -163,6 +163,7 @@ public class BaseTest {
             String env = BaseTest.properties.getProperty("Environment");
             System.out.println("ENV=" + env);
             this.loadUrlFromEnvProperties(env);
+            this.loadUrlFromEnvProperties("testRail");
             System.out.println("PROP=" + properties);
             System.out.println("threadId " + Thread.currentThread().getId());
         } catch (Exception e) {
@@ -270,7 +271,7 @@ public class BaseTest {
             // integrationStatus = ConfigurationManager.getTestRailIntegrationMode();
             browser = ConfigurationManager.getBrowser();
             //          groupname = ConfigurationManager.getGroupName();
-            testRailId = ConfigurationManager.getTestRailId();
+            testRailId = BaseTest.properties.getProperty("testRunId");
             suiteName = context.getSuite().getName();
             suite = context.getSuite().getXmlSuite();
             String env = BaseTest.properties.getProperty("Environment");
@@ -411,9 +412,9 @@ public class BaseTest {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     //               io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
-                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+                    //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
 
-                    //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                     //    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
@@ -1023,7 +1024,7 @@ public class BaseTest {
         try {
             // url = BaseTest.properties.getProperty(url);
             WebDriverManager.getDriver().get(url);
-            Allure.step("Opening URL: " + url);
+            Allure.step("Opening Application: " + application);
             waitForLoad(driver);
             BasePage basePage = new BasePage(WebDriverManager.getDriver());
             int j = driver.findElements(By.xpath("//button[text()='Ok']")).size();

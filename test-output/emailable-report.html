@@ -8,41 +8,78 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">PRIMEFPJ Regression Suite</th></tr>
-<tr><th colspan="8">Prime Automation E2E Suite</th></tr>
-<tr><td><a href="#t0">JOURNAL_HOME_E2E</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">27,742</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">JOURNAL_TOC</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">31,306</td><td></td><td></td></tr>
-<tr><td><a href="#t2">SEARCH_E2E</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">45,251</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t3">CITATION_E2E</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">46,991</td><td></td><td></td></tr>
-<tr><td><a href="#t4">PDF_WORK</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">83,419</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t5">DISCOVERY_WIDGET</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">97,964</td><td></td><td></td></tr>
-<tr><td><a href="#t6">SEARCH_E2E_FULL</a></td><td class="num">8</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">352,368</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">17</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num">685,041</th><th colspan="2"></th></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num attn">1</td><td class="num">96,253</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">PRIMEFPJ Regression Suite</th></tr></tbody><tbody><tr><th colspan="4">Prime Automation E2E Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">JOURNAL_HOME_E2E &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</td><td><a href="#m0">verifyThatViewPagesDisplayed</a></td><td rowspan="1">1699970392327</td><td rowspan="1">22868</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">JOURNAL_TOC &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.prime.tests.E2E.ToCFunctionalityTest</td><td><a href="#m1">VerifyJournalToCFeatures</a></td><td rowspan="1">1699970392080</td><td rowspan="1">27540</td></tr></tbody>
-<tbody id="t2"><tr><th colspan="4">SEARCH_E2E &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.prime.tests.E2E.IntegrationE2EFlow</td><td><a href="#m2">verifyThatUserAbleToLaunchApplication</a></td><td rowspan="1">1699970392081</td><td rowspan="1">37872</td></tr></tbody>
-<tbody id="t3"><tr><th colspan="4">CITATION_E2E &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.prime.tests.E2E.CitationTest</td><td><a href="#m3">verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</a></td><td rowspan="1">1699970392344</td><td rowspan="1">39638</td></tr></tbody>
-<tbody id="t4"><tr><th colspan="4">PDF_WORK &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.prime.tests.E2E.PDFFunctionalityTest</td><td><a href="#m4">VerifyPDFFeaturesInRestrictedAccessContentPage</a></td><td rowspan="1">1699970392086</td><td rowspan="1">39785</td></tr><tr class="passedeven"><td><a href="#m5">verifyPDFButonAvailableAndDownloadPDF</a></td><td rowspan="1">1699970436155</td><td rowspan="1">35757</td></tr></tbody>
-<tbody id="t5"><tr><th colspan="4">DISCOVERY_WIDGET &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">com.prime.tests.E2E.DiscoveryWidgetTest</td><td><a href="#m6">VerifyGoogleScholarButtonFeatures</a></td><td rowspan="1">1699970392435</td><td rowspan="1">24107</td></tr><tr class="passedeven"><td><a href="#m7">VerifyPubMedButtonFeaturesAndAlmetricPageFeatures</a></td><td rowspan="1">1699970419890</td><td rowspan="1">21442</td></tr><tr class="passedeven"><td><a href="#m8">VerifyVariousEmailButtonFeatures</a></td><td rowspan="1">1699970442748</td><td rowspan="1">42964</td></tr></tbody>
-<tbody id="t6"><tr><th colspan="4">SEARCH_E2E_FULL &#8212; passed</th></tr><tr class="passedeven"><td rowspan="8">com.prime.tests.E2E.SearchFunctionalityTest</td><td><a href="#m9">VerifyPpaginationAndSortingOptionsIntheSearchResultsPage</a></td><td rowspan="1">1699970392690</td><td rowspan="1">28960</td></tr><tr class="passedeven"><td><a href="#m10">VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages</a></td><td rowspan="1">1699970422524</td><td rowspan="1">45003</td></tr><tr class="passedeven"><td><a href="#m11">VerifySearchPageTopPanel</a></td><td rowspan="1">1699970469008</td><td rowspan="1">29008</td></tr><tr class="passedeven"><td><a href="#m12">VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected</a></td><td rowspan="1">1699970499429</td><td rowspan="1">22847</td></tr><tr class="passedeven"><td><a href="#m13">VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard</a></td><td rowspan="1">1699970523471</td><td rowspan="1">38059</td></tr><tr class="passedeven"><td><a href="#m14">VerifyThatTheVariousShareButtonFeatures</a></td><td rowspan="1">1699970563302</td><td rowspan="1">17362</td></tr><tr class="passedeven"><td><a href="#m15">VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows</a></td><td rowspan="1">1699970583282</td><td rowspan="1">89025</td></tr><tr class="passedeven"><td><a href="#m16">VerifyVariousRefineTermsInTheSearchResultsPage</a></td><td rowspan="1">1699970673785</td><td rowspan="1">66410</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.prime.tests.E2E.CitationTest</td><td><a href="#m0">verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</a></td><td rowspan="1">1700223487509</td><td rowspan="1">41028</td></tr><tr><th colspan="4">Default test &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="1">com.prime.tests.E2E.CitationTest</td><td><a href="#m1">verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</a></td><td rowspan="1">1700223433710</td><td rowspan="1">53645</td></tr></tbody>
 </table>
-<h2>JOURNAL_HOME_E2E</h2><h3 id="m0">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow#verifyThatViewPagesDisplayed</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>JOURNAL_TOC</h2><h3 id="m1">com.prime.tests.E2E.ToCFunctionalityTest#VerifyJournalToCFeatures</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>SEARCH_E2E</h2><h3 id="m2">com.prime.tests.E2E.IntegrationE2EFlow#verifyThatUserAbleToLaunchApplication</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>CITATION_E2E</h2><h3 id="m3">com.prime.tests.E2E.CitationTest#verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>PDF_WORK</h2><h3 id="m4">com.prime.tests.E2E.PDFFunctionalityTest#VerifyPDFFeaturesInRestrictedAccessContentPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.prime.tests.E2E.PDFFunctionalityTest#verifyPDFButonAvailableAndDownloadPDF</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>DISCOVERY_WIDGET</h2><h3 id="m6">com.prime.tests.E2E.DiscoveryWidgetTest#VerifyGoogleScholarButtonFeatures</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">com.prime.tests.E2E.DiscoveryWidgetTest#VerifyPubMedButtonFeaturesAndAlmetricPageFeatures</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">com.prime.tests.E2E.DiscoveryWidgetTest#VerifyVariousEmailButtonFeatures</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>SEARCH_E2E_FULL</h2><h3 id="m9">com.prime.tests.E2E.SearchFunctionalityTest#VerifyPpaginationAndSortingOptionsIntheSearchResultsPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m10">com.prime.tests.E2E.SearchFunctionalityTest#VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m11">com.prime.tests.E2E.SearchFunctionalityTest#VerifySearchPageTopPanel</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m12">com.prime.tests.E2E.SearchFunctionalityTest#VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m13">com.prime.tests.E2E.SearchFunctionalityTest#VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m14">com.prime.tests.E2E.SearchFunctionalityTest#VerifyThatTheVariousShareButtonFeatures</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m15">com.prime.tests.E2E.SearchFunctionalityTest#VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m16">com.prime.tests.E2E.SearchFunctionalityTest#VerifyVariousRefineTermsInTheSearchResultsPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">com.prime.tests.E2E.CitationTest#verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Clicking on citation button on Article Page expected true but found false
+	at org.testng.Assert.fail(Assert.java:111)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:247)
+	at com.prime.pageFactory.pages.fpj.ArticleCitationPage.clickOnCitationButtonOnArticlePage(ArticleCitationPage.java:50)
+	at com.prime.tests.E2E.CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(CitationTest.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.prime.tests.E2E.CitationTest#verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Clicking on citation button on Article Page expected true but found false
+	at org.testng.Assert.fail(Assert.java:111)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:247)
+	at com.prime.pageFactory.pages.fpj.ArticleCitationPage.clickOnCitationButtonOnArticlePage(ArticleCitationPage.java:50)
+	at com.prime.tests.E2E.CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(CitationTest.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
