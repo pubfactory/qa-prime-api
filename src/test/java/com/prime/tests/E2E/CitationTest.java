@@ -47,6 +47,7 @@ public class CitationTest extends BaseTest {
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
             basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
+            articleCitationPage.clickOnToolsButtonInActionBarOnArticlePage();
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyCitationButtonPresentOnArticlePage(), true, "Verifying Element is present");
             articleCitationPage.clickOnCitationButtonOnArticlePage();
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getPreviewExportCitationPopUpHeaderText(), testData.get("popupheader").toString(),

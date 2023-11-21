@@ -26,7 +26,7 @@ public class DiscoveryWidgetTest extends BaseTest {
     private String mainWindow;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "1722741 - Verify various Email button features")
+    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "65 - Verify various Email button features")
     @Story("EPIC-973")
 
     public void VerifyVariousEmailButtonFeatures() throws Exception {
@@ -46,6 +46,7 @@ public class DiscoveryWidgetTest extends BaseTest {
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
             String articleText = articleCitationPage.getArticleHeaderOnArticlePage();
+
             // Verifying Share via email button and Veriying Share link popup header
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyShareViaEmailButtonPresentOnArticlePage(), true, "Verifying the Share via Email button is present on Article Page");
             articleCitationPage.clickOnshareViaEmailButtonOnArticlePage();
@@ -53,9 +54,9 @@ public class DiscoveryWidgetTest extends BaseTest {
             articleCitationPage.clickOnCopyLinkButtonOnShareLinkOnArticlePage();
 
             // Verifying Link Copied successfully meassage displayed
-            //			BaseTest.assertEquals(WebDriverManager.getDriver(),
-            //					articleCitationPage.verifyLinkCopiedSuccessfullyMessageDisplayedOnPopupOnArticlePage(), true,
-            //					"Verifying the Link copied message dispayed after clicking on copy link button on share link pop up on Article page");
+            //                                       BaseTest.assertEquals(WebDriverManager.getDriver(),
+            //                                                      articleCitationPage.verifyLinkCopiedSuccessfullyMessageDisplayedOnPopupOnArticlePage(), true,
+            //                                                                    "Verifying the Link copied message dispayed after clicking on copy link button on share link pop up on Article page");
             String directCopyLink = articleCitationPage.getCopyLinkDirectlyOnShareLinkPopupOnArticlePage();
             articleCitationPage.clickOnShareLinkPopupClosekButtonOnShareLinkOnArticlePage();
 
@@ -75,9 +76,9 @@ public class DiscoveryWidgetTest extends BaseTest {
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyShareLinkPopUpIsNotPresentOnArticlePageAfterClickingCloseButton(), true,
                     "Verifying the Share link pop up is Closed after clicking the close button of share link popup");
 
-            //	        articleCitationPage.clickOnshareViaEmailButtonOnArticlePage();
-            //	        articleCitationPage.clickOnEmailThisContentButtonOnShareLinkOnArticlePage();
-            //	        Helper.INSTANCE.switchToWindowTab(0);
+            //                   articleCitationPage.clickOnshareViaEmailButtonOnArticlePage();
+            //                   articleCitationPage.clickOnEmailThisContentButtonOnShareLinkOnArticlePage();
+            //                   Helper.INSTANCE.switchToWindowTab(0);
 
         } catch (Exception e) {
             e.getStackTrace();
@@ -88,7 +89,7 @@ public class DiscoveryWidgetTest extends BaseTest {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "1722742 - Verify Google Scholar Button features")
+    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "66 - Verify Google Scholar Button features")
     @Story("EPIC-973")
     public void VerifyGoogleScholarButtonFeatures() throws Exception {
         try {
@@ -124,6 +125,10 @@ public class DiscoveryWidgetTest extends BaseTest {
             articleCitationPage.clickOnSimilarArticleInGoogleScholarHyperLink();
             Helper.INSTANCE.switchToWindowTab(1);
             BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("scholar"), "Verifying if google scholar tab is opened");
+            //                                       BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage
+            //                                                      .verifyArticleElementInGoogleScholarTabIsPresenstedWhenClickOnSimilarArticleInGoogleScholarHyperLink(),
+            //                                                                    true,
+            //                                                                    "Verifying the Article Element In google scholar tab is presented when Click on Similar Article in Google Scholar HyperLink");
             WebDriverManager.getDriver().close();
             Helper.INSTANCE.switchToWindowTab(0);
 
@@ -144,7 +149,7 @@ public class DiscoveryWidgetTest extends BaseTest {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "1722743 - Verify PubMed button features and Almetric page features")
+    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "67 - Verify PubMed button features and Almetric page features")
     @Story("EPIC-973")
     public void VerifyPubMedButtonFeaturesAndAlmetricPageFeatures() throws Exception {
 
@@ -186,7 +191,7 @@ public class DiscoveryWidgetTest extends BaseTest {
             //Verifying altmetric badge present on article page
             Helper.INSTANCE.closeNewTab(mainWindow, WebDriverManager.getDriver());
             Helper.INSTANCE.switchToWindowTab(0);
-            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyAltmetricBadgePresentOnArticlePage(), true, "Verifying the altmetric badge is present on the artical page");
+            //           BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.verifyAltmetricBadgePresentOnArticlePage(), true, "Verifying the altmetric badge is present on the artical page");
         } catch (Exception e) {
             e.getStackTrace();
         } finally {

@@ -167,7 +167,7 @@ public class ArticleCitationPage extends BasePage {
     }
 
     /**
-     * This method return the Preview Citation Section text which is available on
+    * This method return the Preview Citation Section text which is available on
      * ciatatin pop up
      * 
      * @return String
@@ -244,8 +244,8 @@ public class ArticleCitationPage extends BasePage {
     public void clickOnToolsButtonOnArticlePage() throws Exception {
         clickOnElement(toolsButton, "clicking on tools button on Article Page");
     }
-    
-    
+
+
     /**
      * This method used for downloading the Export Citation in BIB format on Preview
      * Export Citation PopUp
@@ -260,7 +260,7 @@ public class ArticleCitationPage extends BasePage {
 
     /**
      * This method used for downloading the Export Citation in ENW format on Preview
-     * Export Citation PopUp
+    * Export Citation PopUp
      *
      * @throws Exception
      * @author Rakesh.Shevale
@@ -421,7 +421,7 @@ public class ArticleCitationPage extends BasePage {
     public void clickOnshareViaEmailButtonOnArticlePage() throws Exception {
         clickOnElement(shareViaEmailButton, "clicking on share via email button on Article Page");
     }
-    
+
     /**
      * This method is used to check share via Email button is present on article page
      * 
@@ -434,7 +434,7 @@ public class ArticleCitationPage extends BasePage {
         List<WebElement> email = driver.findElements(By.xpath("(//button[text()='Share via Email'])[1]"));
         return isElementPresent(email);
     }
-    
+
     /**
      * This method return share link Popup header available on Article page
      * @return String
@@ -446,9 +446,9 @@ public class ArticleCitationPage extends BasePage {
         String shareLinkText = getTextFromElement(shareLinkPopupHeader);
         return shareLinkText;
     }
-    
+
     /**
-   * This method used to clicks email this content button on Share link popup on article page
+    * This method used to clicks email this content button on Share link popup on article page
      *
      * @throws Exception
      * @author Rakesh.Shevale
@@ -468,7 +468,7 @@ public class ArticleCitationPage extends BasePage {
     public void clickOnCopyLinkButtonOnShareLinkOnArticlePage() throws Exception {
         clickOnElement(copyLinkButton, "clicking on copy link button on share Link popup on Article Page");
     }
-    
+
     /**
      * This method returns copy link direct on share link Popup on article page
      * @return String
@@ -477,12 +477,12 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 01/11/2023
      */
     public String getCopyLinkDirectlyOnShareLinkPopupOnArticlePage() throws Exception {
-   //     String directlyCopyLink = getTextFromElement(copyLinkDirectly);
-   
+        //     String directlyCopyLink = getTextFromElement(copyLinkDirectly);
+
         String textagain = copyLinkDirectly.getAttribute("value");
         return textagain;
     }
-    
+
     /**
      * This method is used to check popup close button is present on share link popup on article page
      * 
@@ -506,7 +506,7 @@ public class ArticleCitationPage extends BasePage {
     public void clickOnShareLinkPopupClosekButtonOnShareLinkOnArticlePage() throws Exception {
         clickOnElement(shareLinkPopupCloseButton, "clicking on shareLink pop up close  button on share Link popup on Article Page");
     }
-    
+
     /**
      * This method is returns list of Author available on author affiliation block on article page
      * 
@@ -516,7 +516,7 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 01/11/2023
      */
     public List<String> getAllAuthorNamesFromAuthorAffiliationBlockOnArticlePage() throws Exception {
-    	List<String> author = getTextFindElements(By.xpath("//div[@data-testid='contributors']//button//span"));
+        List<String> author = getTextFindElements(By.xpath("//div[@data-testid='contributors']//button//span"));
         return author;
     }
 
@@ -530,7 +530,7 @@ public class ArticleCitationPage extends BasePage {
     public void clickOnGoogleScholarkButtonOnArticlePage() throws Exception {
         clickOnElement(googleScholarButton, "clicking on google scholar button on Article Page");
     }
-    
+
     /** 
      * This method used to clicks on PubMed button on article page
      *
@@ -541,7 +541,7 @@ public class ArticleCitationPage extends BasePage {
     public void clickOnPubMedButtonOnArticlePage() throws Exception {
         clickOnElement(pubMedButton, "clicking on PubMed button on Article Page");
     }
-    
+
     /**
      * This method is returns list of Author available on Google scholar section on article page
      * 
@@ -554,7 +554,7 @@ public class ArticleCitationPage extends BasePage {
         List<String> authorsText = getTextFindElements(By.xpath("(//div[@data-testid='GoogleScholarWidget-container'])[1]//li//a"));
         return splitStringAndRetunsList(authorsText);
     }
-    
+
     /**
      * This method is returns list of Author available on PubMed section on article page
      * 
@@ -566,9 +566,9 @@ public class ArticleCitationPage extends BasePage {
     public List<String> getAllAuthorNamesFromPubMedSectionOnArticlePage() throws Exception {
         List<String> authorsText = getTextFindElements(By.xpath("(//div[@data-testid='PubMedWidget-container'])[1]//li//a"));
         return splitStringAndRetunsList(authorsText);
-        
+
     }
-    
+
 
     /**
      * This method is used to check Altmetric Badge is present on right hand side on article page
@@ -582,7 +582,7 @@ public class ArticleCitationPage extends BasePage {
         List<WebElement> altmtricBadge = driver.findElements(By.xpath("(//img[contains(@alt,'Article has an altmetric score')])[1]"));
         return isElementPresent(altmtricBadge);
     }
-    
+
 
     /**
      * This method is used to check Similar article hyperLink is present in google scholar section on article page
@@ -596,7 +596,7 @@ public class ArticleCitationPage extends BasePage {
         List<WebElement> simlilarArticle = driver.findElements(By.xpath("(//a[text()='Similar articles in Google Scholar'])[1]"));
         return isElementPresent(simlilarArticle);
     }
-    
+
     /**
      * This method is used to check link copied message displayed on share link popup on article page
      * 
@@ -606,16 +606,16 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 02/11/2023
      */
     public boolean verifyLinkCopiedSuccessfullyMessageDisplayedOnPopupOnArticlePage() throws Exception {
-//        List<WebElement> linkCopiedMessage = driver.findElements(By.xpath("//button[text()='Copy link'][@aria-expanded='true']"));
-//        return isElementPresent(linkCopiedMessage);
-    	String javascript = "document.getElementById('popover-body-:r42j:')";  
-    	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;  
-    	WebElement element = (WebElement) jsExecutor.executeScript(javascript);
-    	return element.isDisplayed();
-//    	 String msgName = getTextFromElement(element);
-//    	 return msgName;
+        //        List<WebElement> linkCopiedMessage = driver.findElements(By.xpath("//button[text()='Copy link'][@aria-expanded='true']"));
+        //        return isElementPresent(linkCopiedMessage);
+        String javascript = "document.getElementById('popover-body-:r42j:')";
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        WebElement element = (WebElement) jsExecutor.executeScript(javascript);
+        return element.isDisplayed();
+        //            String msgName = getTextFromElement(element);
+        //            return msgName;
     }
-    
+
     /**
      * This method is used to check popup close button is present on share link popup on article page
      * 
@@ -628,13 +628,13 @@ public class ArticleCitationPage extends BasePage {
         List<WebElement> shareLink = driver.findElements(By.xpath("//header[text()='Share Link']"));
         return isElementNotPresent(shareLink);
     }
-    
+
     public boolean hoverOnShareViaEmailButton() throws Exception {
-        return mouseOver(shareViaEmailButton,"");
+        return mouseOver(shareViaEmailButton, "");
     }
-    
-    
-    
+
+
+
     /**
      * This method is used to check Google Scholar is present on right hand side on article page
      * 
@@ -647,7 +647,7 @@ public class ArticleCitationPage extends BasePage {
         List<WebElement> googleScholar = driver.findElements(By.xpath("(//button[text()='Google Scholar'])[1]"));
         return isElementPresent(googleScholar);
     }
-    
+
     /**
      * This method is used to check PubMed is present on right hand side on article page
      * 
@@ -660,7 +660,7 @@ public class ArticleCitationPage extends BasePage {
         List<WebElement> pubmed = driver.findElements(By.xpath("(//button[text()='PubMed'])[1]"));
         return isElementPresent(pubmed);
     }
-    
+
     /**
      * This method is used to click on Similar Article in Google Shcolar HyperLink in Google Shcolar section on Article Page
      * 
@@ -669,9 +669,9 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 03/11/2023
      */
     public void clickOnSimilarArticleInGoogleScholarHyperLink() throws Exception {
-        clickOnElement(similarArticleInGoogleScolar,"Clicking on Similar Article in Google Shcolar HyperLink in Google Shcolar section on Article Page");
+        clickOnElement(similarArticleInGoogleScolar, "Clicking on Similar Article in Google Shcolar HyperLink in Google Shcolar section on Article Page");
     }
-    
+
     /**
      * This method is used to check Article Element In Google scholar tab is presented When Click on Similar Article in Google Scholar HyperLink
      * 
@@ -684,7 +684,7 @@ public class ArticleCitationPage extends BasePage {
         List<WebElement> articleElement = driver.findElements(By.xpath("(//span[text()='Articles'])[1]"));
         return isElementPresent(articleElement);
     }
-    
+
     /** 
      * This method used to clicks on First Author in Google Scholar Section on Article Page
      *
@@ -695,7 +695,7 @@ public class ArticleCitationPage extends BasePage {
     public void clickOnFirstAuthorInGoogleScholarSectionOnArticlePage() throws Exception {
         clickOnElement(firstAuthorInGoogleSection, "clicking on first author in google scholar on Article Page");
     }
-    
+
     /** 
      * This method used to clicks on First Author in PubMed Section on Article Page
      *
@@ -706,7 +706,7 @@ public class ArticleCitationPage extends BasePage {
     public void clickOnFirstAuthorInPubMedSectionOnArticlePage() throws Exception {
         clickOnElement(firstAuthorInPubMedSection, "clicking on first author in pubmed on Article Page");
     }
-    
+
     /**
      * This method is returns first Author available on Google scholar section on article page
      * 
@@ -716,10 +716,10 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 03/11/2023
      */
     public String getFirstAuthorNamesFromGoogleScholarSectionOnArticlePage() throws Exception {
-         WebElement authorsText = driver.findElement(By.xpath("((//div[@data-testid='GoogleScholarWidget-container'])[1]//li//a)[1]"));
-        return splitStringandReturnString( getTextFromElement(authorsText));
+        WebElement authorsText = driver.findElement(By.xpath("((//div[@data-testid='GoogleScholarWidget-container'])[1]//li//a)[1]"));
+        return splitStringandReturnString(getTextFromElement(authorsText));
     }
-    
+
     /**
      * This method is returns first Author available on pubMed section on article page
      * 
@@ -729,10 +729,22 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 06/11/2023
      */
     public String getFirstAuthorNamesFromPubMedSectionOnArticlePage() throws Exception {
-  //       WebElement authorsText = driver.findElement(By.xpath("((//div[@data-testid='GoogleScholarWidget-container'])[1]//li//a)[1]"));
-        return splitStringandReturnString( getTextFromElement(firstAuthorInPubMedSection));
+        //       WebElement authorsText = driver.findElement(By.xpath("((//div[@data-testid='GoogleScholarWidget-container'])[1]//li//a)[1]"));
+        return splitStringandReturnString(getTextFromElement(firstAuthorInPubMedSection));
     }
-    
+
+    /** 
+     * This method used to clicks on tools button in action bar on article page
+     *
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 20/11/2023
+     */
+    public void clickOnToolsButtonInActionBarOnArticlePage() throws Exception {
+        clickOnElement(toolsButton, "clicking on on tools button in action bar on article page");
+    }
+
+
     @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
     @FindBy(xpath = "//header[contains(text(),'Preview/Export Citation')]")
@@ -761,32 +773,34 @@ public class ArticleCitationPage extends BasePage {
     private WebElement firstauthor;
     @FindBy(xpath = "(//div[@class='affiliation'])[1]")
     private WebElement authorAffiliationPopupLabel;
-    @FindBy(xpath="(//button[text()='Tools'])[1]")
+    @FindBy(xpath = "(//button[text()='Tools'])[1]")
     private WebElement toolsButton;
-    @FindBy(xpath="(//button[text()='Share via Email'])[1]")
+    @FindBy(xpath = "(//button[text()='Share via Email'])[1]")
     private WebElement shareViaEmailButton;
-    @FindBy(xpath="//header[text()='Share Link']")
+    @FindBy(xpath = "//header[text()='Share Link']")
     private WebElement shareLinkPopupHeader;
-    @FindBy (xpath="//button[text()='Email this content']")
+    @FindBy(xpath = "//button[text()='Email this content']")
     private WebElement emailThisContentButton;
-    @FindBy (xpath="//button[text()='Copy link']")
+    @FindBy(xpath = "//button[text()='Copy link']")
     private WebElement copyLinkButton;
-    @FindBy(xpath="//textarea[contains(text(),'.com')]")
+    @FindBy(xpath = "//textarea[contains(text(),'.com')]")
     private WebElement copyLinkDirectly;
-    @FindBy(xpath="//header[text()='Share Link']//following-sibling::button")
+    @FindBy(xpath = "//header[text()='Share Link']//following-sibling::button")
     private WebElement shareLinkPopupCloseButton;
-    @FindBy(xpath="(//button[text()='Google Scholar'])[1]")
+    @FindBy(xpath = "(//button[text()='Google Scholar'])[1]")
     private WebElement googleScholarButton;
-    @FindBy(xpath="(//a[text()='Similar articles in Google Scholar'])[1]")
+    @FindBy(xpath = "(//a[text()='Similar articles in Google Scholar'])[1]")
     private WebElement similarArticleInGoogleScolar;
-    @FindBy(xpath="(//button[text()='PubMed'])[1]")
+    @FindBy(xpath = "(//button[text()='PubMed'])[1]")
     private WebElement pubMedButton;
-    @FindBy(xpath="(//img[contains(@alt,'Article has an altmetric score')])[1]")
+    @FindBy(xpath = "(//img[contains(@alt,'Article has an altmetric score')])[1]")
     private WebElement AltmetricBadge;
-    @FindBy(xpath="//button[text()='Copy link'][@aria-expanded='true']")
+    @FindBy(xpath = "//button[text()='Copy link'][@aria-expanded='true']")
     private WebElement linkCopiedMessageDisplay;
-    @FindBy(xpath="((//div[@data-testid='GoogleScholarWidget-container'])[1]//li//a)[1]")
+    @FindBy(xpath = "((//div[@data-testid='GoogleScholarWidget-container'])[1]//li//a)[1]")
     private WebElement firstAuthorInGoogleSection;
-    @FindBy(xpath="((//div[@data-testid='PubMedWidget-container'])[1]//li//a)[1]")
+    @FindBy(xpath = "((//div[@data-testid='PubMedWidget-container'])[1]//li//a)[1]")
     private WebElement firstAuthorInPubMedSection;
+    @FindBy(xpath = "(//button[text()='Tools'])[1]")
+    private WebElement toolsButtonInActionBar;
 }

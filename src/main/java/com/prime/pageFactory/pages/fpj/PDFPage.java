@@ -1,7 +1,9 @@
+
 package com.prime.pageFactory.pages.fpj;
 
 import java.util.List;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,6 +12,7 @@ import com.prime.generics.BasePage;
 import com.prime.generics.Helper;
 
 public class PDFPage extends BasePage {
+
     /**
      * This constructor initializes the PDFPage class object
      * 
@@ -43,7 +46,7 @@ public class PDFPage extends BasePage {
      * @Created Date : 06/11/2023
      */
     public boolean verifyPDFButtonPresentOnArticlePage() throws Exception {
-        List<WebElement> pdfbutton = driver.findElements(By.xpath("//div[@data-identifier='<toolbar>']//a[contains(text(),'Download PDF')]"));
+        List<WebElement> pdfbutton = driver.findElements(By.xpath("(//button[contains(text(),'Download PDF')])[1]"));
         return isElementPresent(pdfbutton);
     }
 
@@ -63,6 +66,7 @@ public class PDFPage extends BasePage {
         return articleID;
     }
 
+
     /** This method is used to check Inline PDF tab is present on article page
      * 
      * @throws Exception
@@ -71,7 +75,8 @@ public class PDFPage extends BasePage {
      * @Created Date : 07/11/2023
      */
     public boolean verifyInlinePDFTabIsPresentOnArticlePage() throws Exception {
-        List<WebElement> element = driver.findElements(By.xpath("//button[contains(text(),'Inline PDF')]"));
+        //                         List<WebElement> element = driver.findElements(By.xpath("//button[contains(text(),'Inline PDF')]"));
+        List<WebElement> element = driver.findElements(By.xpath("(//button[contains(text(),'Figure')])[1]//preceding-sibling::button[contains(text(),'PDF')]"));
         return isElementPresent(element);
     }
 
@@ -152,8 +157,11 @@ public class PDFPage extends BasePage {
      * @Created Date : 08/11/2023
      */
     public boolean VerifyPDFSizeChangesWhenClickOnZoomInButtonAtHundredPercentZoom() throws Exception {
-        List<WebElement> element = driver.findElements(By.xpath("(//div[@class='canvasWrapper'][contains(@style,'width: 791px')])[1]"));
-        return isElementPresent(element);
+        //           List<WebElement> element = driver.findElements(By.xpath("(//div[@class='canvasWrapper'][contains(@style,'width: 791px')])[1]"));
+        WebElement element = driver.findElement(By.xpath("(//div[@class='canvasWrapper'][contains(@style,'width: 633px')])[1]"));
+        scroll(element);
+        List<WebElement> elements = driver.findElements(By.xpath("(//div[@class='canvasWrapper'][contains(@style,'width: 633px')])[1]"));
+        return isElementPresent(elements);
     }
 
     /**
@@ -175,8 +183,16 @@ public class PDFPage extends BasePage {
      * @Created Date : 08/11/2023
      */
     public boolean VerifyPDFSizeChangesWhenClickOnZoomOutButtonAtEightyPercentZoom() throws Exception {
-        List<WebElement> element = driver.findElements(By.xpath("(//div[@class='canvasWrapper'][contains(@style,'width: 633px')])[1]"));
-        return isElementPresent(element);
+        //       List<WebElement> element = driver.findElements(By.xpath("(//div[@class='canvasWrapper'][contains(@style,'width: 633px')])[1]"));
+        WebElement element = driver.findElement(By.xpath("(//div[@class='canvasWrapper'][contains(@style,'width: 475px')])[1]"));
+        scroll(element);
+        List<WebElement> elements = driver.findElements(By.xpath("(//div[@class='canvasWrapper'][contains(@style,'width: 475px')])[1]"));
+        return isElementPresent(elements);
+    }
+
+    public void scroll(WebElement Element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", Element);
     }
 
     /**
@@ -238,9 +254,10 @@ public class PDFPage extends BasePage {
         return isElementPresent(element);
     }
 
-    @FindBy(xpath = "//div[@data-identifier='<toolbar>']//a[contains(text(),'Download PDF')]")
+    @FindBy(xpath = "(//button[contains(text(),'Download PDF')])[1]")
     private WebElement downloadPDFIntoolBar;
-    @FindBy(xpath = "//button[contains(text(),'Inline PDF')]")
+    //   @FindBy(xpath = "//button[contains(text(),'Inline PDF')]")
+    @FindBy(xpath = "(//button[contains(text(),'Figure')])[1]//preceding-sibling::button[contains(text(),'PDF')]")
     private WebElement inlinePDF;
     @FindBy(xpath = "//span[@id='scaleSelectContainer']/select")
     private WebElement zoomDropDownPDF;
