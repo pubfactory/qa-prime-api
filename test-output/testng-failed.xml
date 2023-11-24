@@ -3,37 +3,23 @@
 <suite thread-count="17" parallel="tests" name="Failed suite [Prime Automation E2E Suite]" guice-stage="DEVELOPMENT" verbose="5">
   <parameter name="application" value="anesthesiaprogress"/>
   <parameter name="browser" value="chrome"/>
-  <parameter name="Environment" value="dev"/>
+  <parameter name="Environment" value="uat"/>
   <listeners>
     <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
     <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
   </listeners>
-  <test thread-count="17" parallel="tests" name="JOURNAL_HOME_E2E(failed)" verbose="5">
+  <test thread-count="17" parallel="tests" name="CITATION_E2E(failed)" verbose="5">
     <classes>
-      <class name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
+      <class name="com.prime.tests.E2E.CitationTest">
         <methods>
           <include name="closeDriver"/>
           <include name="establishConnection"/>
           <include name="setUp"/>
           <include name="loadConfigurationValues"/>
-          <include name="verifyThatViewPagesDisplayed"/>
           <include name="closeApplication"/>
+          <include name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt"/>
         </methods>
-      </class> <!-- com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow -->
+      </class> <!-- com.prime.tests.E2E.CitationTest -->
     </classes>
-  </test> <!-- JOURNAL_HOME_E2E(failed) -->
-  <test thread-count="17" parallel="tests" name="JOURNAL_TOC(failed)" verbose="5">
-    <classes>
-      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
-        <methods>
-          <include name="VerifyJournalToCFeatures"/>
-          <include name="closeDriver"/>
-          <include name="establishConnection"/>
-          <include name="loadConfigurationValues"/>
-          <include name="setUp"/>
-          <include name="closeApplication"/>
-        </methods>
-      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
-    </classes>
-  </test> <!-- JOURNAL_TOC(failed) -->
+  </test> <!-- CITATION_E2E(failed) -->
 </suite> <!-- Failed suite [Prime Automation E2E Suite] -->
