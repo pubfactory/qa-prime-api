@@ -31,7 +31,7 @@ public class CitationTest extends BaseTest {
     @Story("EPIC-971")
 
     public void verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt() throws Exception {
-        try {
+        try { 
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
             Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
             String application = BaseTest.properties.getProperty("application");
@@ -39,6 +39,7 @@ public class CitationTest extends BaseTest {
             System.out.println("!url=" + url);
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
             navigateToUrlLink(url);
+           System.out.println(WebDriverManager.getDriver().getPageSource());
             JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
             masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
             System.out.println("HI");

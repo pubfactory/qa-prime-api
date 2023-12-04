@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.prime.tests.E2E.CitationTest">
+      <class name="com.prime.tests.E2E.IntegrationE2EFlow">
         <methods>
           <include name="closeDriver"/>
           <include name="establishConnection"/>
+          <include name="verifyThatUserAbleToLaunchApplication"/>
           <include name="loadConfigurationValues"/>
           <include name="setUp"/>
           <include name="closeApplication"/>
-          <include name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt"/>
         </methods>
-      </class> <!-- com.prime.tests.E2E.CitationTest -->
+      </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

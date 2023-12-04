@@ -216,7 +216,9 @@ public class SearchFunctionalityTest extends BaseTest {
         int titleResultCount = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(browseResultCount, titleResultCount), true,
                 "Verifying the total result count after applying the Title filter from refine term filter on search apge");
-        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(BaseTest.getLastsixStringCharacter(browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage())),
+        
+        String[] titleText = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage().toString().split(" ");
+        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(titleText[0]),
                 "Verifying the Title filter is applied on search result page");
 
 
@@ -225,11 +227,11 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), testData.get("refinefiltervalueaffiliation").toString());
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         // Thread.sleep(5000);
-        // browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
-        // articleCitationPage.clickFirstAuthorOnArticlePage();
-        // String authorlabel = articleCitationPage.getauthorAffiliationPopupLabel();
-        // BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.verifyStringContainsSpecificWord(authorlabel, testData.get("refinefiltervalueaffiliation").toString()), true,
-        //         "Verifying affiliation search keyword is exist in author affilaition popup");
+         browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
+         articleCitationPage.clickFirstAuthorOnArticlePage();
+         String authorlabel = articleCitationPage.getauthorAffiliationPopupLabel();
+         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.verifyStringContainsSpecificWord(authorlabel, testData.get("refinefiltervalueaffiliation").toString()), true,
+                 "Verifying affiliation search keyword is exist in author affilaition popup");
     }
 
     @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class,
@@ -317,9 +319,10 @@ public class SearchFunctionalityTest extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByArticleTypeFilterTextonSearchOrBrowsePage(), testData.get("refinearticletype").toString(),
                 "Verifying the Refine by artcile type filter text on search or Browse Page");
         browseOrSearchPage.clickOnArticleTypeFilterValueOnBrowseOrSearchPage(testData.get("articletypename").toString());
-        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("articleType=" + testData.get("articletypename").toString().toUpperCase()),
+        System.out.println("Current URL : "+driver.getCurrentUrl());
+        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("articleType=" + testData.get("articletypename").toString().toLowerCase()),
                 "Verifying the article type result is displayed on search result page");
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("articletypename").toString().toUpperCase()), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("articletypename").toString().toLowerCase()), true,
                 "Verifying the article type is displayed on search/browse result page");
 
         masterPage.clickOnSearchMagnifyingLense();
@@ -336,16 +339,16 @@ public class SearchFunctionalityTest extends BaseTest {
 
         browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
         WebDriverManager.getDriver().navigate().refresh();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("openaccess").toString().toUpperCase()), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("open").toString().toUpperCase()), true,
                 "Verifying the open access type result is displayed on search/browse result page");
-        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("openaccess").toString().toUpperCase()),
+        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("open").toString().toUpperCase()),
                 "Verifying the open access type result is displayed on search/browse result page");
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("freeaccess").toString());
         WebDriverManager.getDriver().navigate().refresh();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("freeaccess").toString().toUpperCase()), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("free").toString().toUpperCase()), true,
                 "Verifying the free access type result is displayed on search/browse result page");
-        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("freeaccess").toString().toUpperCase()),
+        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("free").toString().toUpperCase()),
                 "Verifying the open access type result is displayed on search/browse result page");
 
         masterPage.clickOnSearchMagnifyingLense();

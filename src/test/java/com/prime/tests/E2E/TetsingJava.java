@@ -4,10 +4,17 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import javax.swing.text.html.Option;
+
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import com.prime.generics.Helper;
+import com.vladsch.flexmark.util.sequence.BasedOptionsHolder.Options;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Allure;
 
 public class TetsingJava {
@@ -37,11 +44,12 @@ public class TetsingJava {
 //	}
 
 public static void main(String[] args) {
-        String fileName ="anpr-article-p31.pdf";
-         String[] str1 = fileName.split("-");
-        List<String>l= Helper.INSTANCE.convertArrayToList(str1);
-        System.out.println(Helper.INSTANCE.convertArrayToList(l.get(2).split("pd")).get(0)+"xml");
-    }
+
+     ChromeOptions options = new ChromeOptions();
+     options.setHeadless(true);
+     ChromeDriver driver = new ChromeDriver();
+     driver.get("https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-uat.pubfactory.com/");
  
 			}
 
+}

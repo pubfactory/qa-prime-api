@@ -118,7 +118,7 @@ public class IntegrationE2EFlow extends BaseTest {
 
         // Verifying the article type name and verifying number of results after applying filter
 
-        BaseTest.verifyTextInURL(testData.get("articletypename").toString());
+        BaseTest.verifyTextInURL(testData.get("articletypename").toString().toLowerCase());
         System.out.println("Article type name=" + testData.get("articletypename").toString());
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getNumberOfFilteredResultsFrontOfArticleFilterValueOnBrowseOrSearchPage(testData.get("articletypename").toString()),
                 browseOrSearchPage.getTotatResultOnBrowseOrSearchPage(), "Verifying number of filtered results are returned after applying Article type filter");

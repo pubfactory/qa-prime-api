@@ -75,6 +75,7 @@ public class UnAuthenticatedViewCheckPagesFlow extends BaseTest {
         issuePage.clickOnAllIssuesOnIssuePage();
         BaseTest.verifyTextInURL(testData.get("journalpageurl").toString());
         journalPage = BasePage.initialize(WebDriverManager.getDriver(), JournalPage.class);
+        System.out.println("Journal Page Header : "+journalPage.getJournalPageHeaderText());
         BaseTest.assertEquals(WebDriverManager.getDriver(), journalPage.getJournalPageHeaderText(), testData.get("journalpageheader").toString(), "Verifying the Journal Page header");
 
 

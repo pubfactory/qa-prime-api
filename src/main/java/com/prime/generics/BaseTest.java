@@ -412,9 +412,9 @@ public class BaseTest {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     //               io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
-                    // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
 
-                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+//                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                     //    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
@@ -423,6 +423,7 @@ public class BaseTest {
                     options.addArguments("--disable-extensions");
                     options.addArguments("--dns-prefetch-disable");
                     options.addArguments("--disable-gpu");
+                    options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
 
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
                         options.addArguments("--headless");

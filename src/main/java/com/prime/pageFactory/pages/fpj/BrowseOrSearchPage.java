@@ -987,7 +987,9 @@ public class BrowseOrSearchPage extends BasePage {
         clickOnElement(firstRestrictedContent, "Clicking on First Restricted Content on Browse or search page");
     }
 
-
+    public void clickOnAbstractTabOfFirstActileOnBrowsePageOrSearchPage() throws Exception {
+    	clickOnElement(abstractElement,"Clicking on Abstract");
+    }
 
     @FindBy(xpath = "//h1[text()='Browse']")
     private WebElement browseText;
@@ -1072,7 +1074,7 @@ public class BrowseOrSearchPage extends BasePage {
     private WebElement toDateDD;
     @FindBy(xpath = "(//span[text()='Restricted access']//preceding::a[@target='_self'])[1]")
     private WebElement firstRestrictedContent;
-
+    
 }
 
 

@@ -3,7 +3,7 @@
 		"id": "1721284",
 		"data": {
 			"description": "verifyThatUserAbleToLaunchApplication",
-			"title":"anesthesiaprogress",
+			"title":"Anesthesia Progress",
 			"searchtext":"book",
 			"searchpage":"Search Results",
 			"username":"veena.mathew@kwglobal.com",
@@ -11,17 +11,17 @@
 			"paginationsize":"1,2",
 			"searchresulttext":"Search Results",
 			"browsetext":"Browse",
-			"articletypename":"other"
+			"articletypename":"Other"
 		}
 	},
 	{
 		"id": "1721285",
 		"data": {
 			"description": "verifyThatViewPagesDisplayed",
-			"title":"anesthesiaprogress",
+			"title":"Anesthesia Progress",
 			"issuespageheader":"Issues",
-			"journalpageurl":"https://prime-dev:prime-dev@meridian-anesthesiaprogress-draft.dev.prime.pubfactory.com/view/journals/anpr/anpr-overview.xml",
-			"journalpageheader":"Anesthesia Progress"
+			"journalpageurl":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-uat.pubfactory.com/journal/anpr/",
+			"journalpageheader":"Archive"
 		}
 	},
 	{
@@ -118,14 +118,18 @@
 		"data": {
 			"description": "VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard",
 			"refinearticletype":"By Article Type",
-			"articletypename":"editorial",
+			"articletypename":"Editorial",
 			"refineaccess":"Refine by Access"
-			"allaccess":"all",
-			"useraccess":"user",
-			"openaccess":"open",
-			"freeaccess":"free",
+			"allaccess":"All Content",
+			"useraccess":"Available",
+			"openaccess":"Open Access",
+			"freeaccess":"Free",
 			"refinetype":"Refine by Type",
 			"refinetypevalue":"Article"
+			"open":"OPEN",
+			"all":"ALL",
+			"free":"FREE"
+			
 			
 			}
 	},
@@ -156,7 +160,7 @@
 	"id": "1722740",
 		"data": {
 			"description": "VerifyJournalToCFeatures",
-			"journalpageheader":"Anesthesia Progress",
+			"journalpageheader":"Archive",
 			"volumevalue":"Volume 70",
 			"issuevalue":"1",
 			"issuepageheader":"Issues"
@@ -190,8 +194,8 @@
 		"data": {
 			"description": "verifyPDFButonAvailableAndDownloadPDF",
 			"searchtext":"men",
-			"free":"free",
-			"open":"open",
+			"free":"Free",
+			"open":"Open Access",
 			"defaultzoomvalue":"Automatic Zoom",
 			"watermarkappname":"anesthesiaprogress"
 		}

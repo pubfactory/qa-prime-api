@@ -227,7 +227,7 @@ public class MasterPage extends BasePage {
     private WebElement AboutThisJournalOnHomePage;
     @FindBy(xpath = "//div[@class='title']")
     private WebElement contentListArticleTitle;
-    @FindBy(xpath = "//a[text()='View This Issue']")
+    @FindBy(xpath = "(//a[text()='View This Issue'])[2]")
     private WebElement viewThisIssue;
 
 }

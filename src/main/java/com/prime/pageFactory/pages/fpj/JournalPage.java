@@ -133,7 +133,7 @@ public class JournalPage extends BasePage {
         clickOnElement(volumeSection, "Clicking on issue under Volume section on Journal page");
     }
 
-    @FindBy(xpath = "//span[text()='Anesthesia Progress']")
+    @FindBy(xpath = "//span[text()='Archive']")
     private WebElement journalpageHeader;
     @FindBy(xpath = "(//div[contains(text(),'Volume 70')])[1]//parent::button[@aria-expanded='false']")
     private WebElement volumeLinkCollapse;
