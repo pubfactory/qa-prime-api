@@ -66,6 +66,9 @@
 			<include 
 			name="VerifyThatTheVariousShareButtonFeatures">
 			</include>
+			<include 
+			name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">
+			</include>
 			</methods>
 			</class>
 		</classes>
