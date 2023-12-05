@@ -1359,7 +1359,7 @@ public enum Helper {
      * @Created Date : 08/12/2022
      */
     public synchronized void setCurrentTestCaseId(String testId) throws Exception {
-        Helper.INSTANCE.logEventInfoToReport("Execution Started for " + testId);
+        Helper.INSTANCE.logEventInfoToReport("Execution Started for TC-" + testId);
         tcId = testId;
     }
 
