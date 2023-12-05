@@ -46,7 +46,7 @@ jobs:
           chmod +x chromedriver
     - name: Build with Maven
       id: run-test-case
-      run: mvn test -DsuiteXmlFile=PrimeConfig.xml  -DEnvironment=dev -Dapplication=anesthesiaprogress -Dbrowser=chrome
+      run: mvn test -DsuiteXmlFile=PrimeConfig.xml  -DEnvironment=uat -Dapplication=anesthesiaprogress -Dbrowser=chrome
 
     - name: Get Allure history
       uses: actions/checkout@v2
