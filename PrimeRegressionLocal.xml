@@ -9,6 +9,11 @@
   	<test name="SEARCH_E2E" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.IntegrationE2EFlow">
+			<methods>
+			<include 
+			name="verifyThatUserAbleToLaunchApplication">
+			</include>
+			</methods>
 			</class>
 		</classes>
 	</test>
@@ -16,12 +21,22 @@
 		<classes>
 			<class
 				name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
+				<methods>
+			<include 
+			name="verifyThatViewPagesDisplayed">
+			</include>
+			</methods>
 			</class>
 		</classes>
 	</test>
 	<test name="CITATION_E2E" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.CitationTest">
+			<methods>
+			<include 
+			name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt">
+			</include>
+			</methods>
 			</class>
 		</classes>
 	</test> 
@@ -29,6 +44,29 @@
 		<test name="SEARCH_E2E_FULL" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.SearchFunctionalityTest">
+			<methods>
+			<include 
+			name="VerifySearchPageTopPanel">
+			</include>
+			<include 
+			name="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage">
+			</include>
+			<include 
+			name="VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected">
+			</include>
+			<include 
+			name="VerifyVariousRefineTermsInTheSearchResultsPage">
+			</include>
+			<include 
+			name="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows">
+			</include>
+			<include 
+			name="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard">
+			</include>
+			<include 
+			name="VerifyThatTheVariousShareButtonFeatures">
+			</include>
+			</methods>
 			</class>
 		</classes>
 	</test>
@@ -36,6 +74,11 @@
 		<test name="JOURNAL_TOC" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.ToCFunctionalityTest">
+			<methods>
+			<include 
+			name="VerifyJournalToCFeatures">
+			</include>
+			</methods>
 			</class>
 		</classes>
 	</test>
@@ -43,6 +86,17 @@
 	<test name="DISCOVERY_WIDGET" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+			<methods>
+			<include 
+			name="VerifyVariousEmailButtonFeatures">
+			</include>
+			<include 
+			name="VerifyGoogleScholarButtonFeatures">
+			</include>
+			<include 
+			name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures">
+			</include>
+			</methods>
 			</class>
 		</classes>
 	</test>
@@ -50,11 +104,16 @@
 		<test name="PDF_WORK" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.PDFFunctionalityTest">
+			<methods>
+			<include 
+			name="verifyPDFButonAvailableAndDownloadPDF">
+			</include>
+			<include 
+			name="VerifyPDFFeaturesInRestrictedAccessContentPage">
+			</include>
+			</methods>
 			</class>
 		</classes>
 	</test>
 
 </suite>
-
-
-
