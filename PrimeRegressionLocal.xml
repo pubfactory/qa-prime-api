@@ -6,7 +6,7 @@
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>
 
-  	<test name="SEARCH_E2E" preserve-order="true" parallel="methods">
+  	<test name="SEARCH_E2E" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.IntegrationE2EFlow">
 			<methods>
@@ -17,7 +17,7 @@
 			</class>
 		</classes>
 	</test>
-	<test name="JOURNAL_HOME_E2E" preserve-order="true" parallel="methods">
+	<test name="JOURNAL_HOME_E2E" preserve-order="true">
 		<classes>
 			<class
 				name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
@@ -29,7 +29,7 @@
 			</class>
 		</classes>
 	</test>
-	<test name="CITATION_E2E" preserve-order="true" parallel="methods">
+	<test name="CITATION_E2E" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.CitationTest">
 			<methods>
@@ -41,7 +41,7 @@
 		</classes>
 	</test> 
 	 
-		<test name="SEARCH_E2E_FULL" preserve-order="true" parallel="methods">
+		<test name="SEARCH_E2E_FULL" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.SearchFunctionalityTest">
 			<methods>
@@ -74,7 +74,7 @@
 		</classes>
 	</test>
 	
-		<test name="JOURNAL_TOC" preserve-order="true" parallel="methods">
+		<test name="JOURNAL_TOC" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.ToCFunctionalityTest">
 			<methods>
@@ -86,7 +86,7 @@
 		</classes>
 	</test>
 	
-	<test name="DISCOVERY_WIDGET" preserve-order="true" parallel="methods">
+	<test name="DISCOVERY_WIDGET" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.DiscoveryWidgetTest">
 			<methods>
@@ -104,7 +104,7 @@
 		</classes>
 	</test>
 	
-		<test name="PDF_WORK" preserve-order="true" parallel="methods">
+		<test name="PDF_WORK" preserve-order="true">
 		<classes>
 			<class name="com.prime.tests.E2E.PDFFunctionalityTest">
 			<methods>
