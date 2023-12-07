@@ -674,7 +674,7 @@ public class BaseTest {
     public void closeApplication(@Optional String testcaseId) throws Exception {
         try {
             Helper.INSTANCE.logEventInfoToReport("After Method");
-            testcaseId = Helper.INSTANCE.getCurrentTestCaseId();
+           // testcaseId = Helper.INSTANCE.getCurrentTestCaseId();
             teststatus = Helper.INSTANCE.getErrorMessage(testcaseId);
             //          try {
             //              status = Helper.INSTANCE.getErrorMessage(testcaseId);
