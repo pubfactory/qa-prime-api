@@ -1766,6 +1766,30 @@ public class BasePage {
 		return newfile;
 	}
 
+	
+	
+
+	public String fetchLatestPDFDownloadFile() throws InterruptedException {
+		Thread.sleep(5000);
+		String newfile = "";
+		try {
+			File downloadedDir = new File(System.getProperty("user.dir") + File.separator + "target\\Assets");
+			File[] listofFiles = downloadedDir.listFiles();
+			if (listofFiles == null || listofFiles.length == 0) {
+				return "";
+			}
+//			File LatestModifiedFile = listofFiles[0];
+			for (int i = 1; i < listofFiles.length; i++) {
+				if (listofFiles[i].getName().contains(".pdf")) {
+					newfile = listofFiles[i].getName();
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return newfile;
+	}
+	
 	/**
 	 * This method return text list from WebElement list
 	 * @param locator

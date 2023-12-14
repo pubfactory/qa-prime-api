@@ -84,14 +84,23 @@ public class CitationTest extends BaseTest {
             articleCitationPage.clickOnRISExportCitationFormat();
 
             //Verifying if user is able to download RIS,BIB,ENW formats
-
-            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getLatestDownloadFileRelatedToCitation(), testData.get("risbuttonformat").toString(),
+           
+           String ris= articleCitationPage.getLatestDownloadFileRelatedToCitation();
+           System.out.println("ris : "+ris);
+           System.out.println("json ris"+testData.get("risbuttonformat").toString());
+            BaseTest.assertEquals(WebDriverManager.getDriver(), ris, testData.get("risbuttonformat").toString(),
                     "Verifying the file " + (testData.get("risbuttonformat").toString()) + " is downloaded");
             articleCitationPage.clickOnBIBExportCitationFormat();
-            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getLatestDownloadFileRelatedToCitation(), testData.get("bibbuttonformat").toString(),
+            String bib= articleCitationPage.getLatestDownloadFileRelatedToCitation();
+            System.out.println("bib : "+bib);
+            System.out.println("json bib"+testData.get("bibbuttonformat").toString());
+            BaseTest.assertEquals(WebDriverManager.getDriver(), bib, testData.get("bibbuttonformat").toString(),
                     "Verifying the file " + (testData.get("bibbuttonformat").toString()) + " is downloaded");
             articleCitationPage.clickOnENWExportCitationFormat();
-            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getLatestDownloadFileRelatedToCitation(), testData.get("enwbuttonformat").toString(),
+            String enw= articleCitationPage.getLatestDownloadFileRelatedToCitation();
+            System.out.println("enw : "+enw);
+            System.out.println("json enw"+testData.get("enwbuttonformat").toString());
+            BaseTest.assertEquals(WebDriverManager.getDriver(), enw, testData.get("enwbuttonformat").toString(),
                     "Verifying the file " + (testData.get("enwbuttonformat").toString()) + " is downloaded");
             List<String> expRISCitationLabels = Arrays.asList(testData.get("risbuttonlabel").toString().split(","));
             List<String> expBIBCitationLabels = Arrays.asList(testData.get("bibbuttonlabel").toString().split(","));

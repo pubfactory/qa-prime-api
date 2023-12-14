@@ -780,7 +780,7 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 16/10/2023
      */
     public boolean verifyContentTitleNameIsPresentOnBrosweOrSearchPage() throws Exception {
-        List<WebElement> TitleName = driver.findElements(By.xpath("(//a[@target='_self'])[1]"));
+        List<WebElement> TitleName = driver.findElements(By.xpath("(//div[@class='title'])[1]"));
         return isElementPresent(TitleName);
     }
 
@@ -1024,7 +1024,7 @@ public class BrowseOrSearchPage extends BasePage {
     @FindBy(xpath = "//h1[text()='Search Results']")
     private WebElement SearchResultText;
 
-    @FindBy(xpath = "(//a[@target='_self'])[1]")
+    @FindBy(xpath = "(//div[@class='title'])[1]")
     private WebElement firstArticleOnBrowseOrSearchPage;
     @FindBy(xpath = "//button[@title='[+] Add row']")
     private WebElement AddRowRefineTerm;
@@ -1072,7 +1072,7 @@ public class BrowseOrSearchPage extends BasePage {
     private WebElement fromDateDD;
     @FindBy(xpath = "//select[@name='toDate']")
     private WebElement toDateDD;
-    @FindBy(xpath = "(//span[text()='Restricted access']//preceding::a[@target='_self'])[1]")
+    @FindBy(xpath = "(//span[text()='Restricted access']//preceding::div[@class='title'])[1]")
     private WebElement firstRestrictedContent;
     
 }

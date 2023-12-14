@@ -1,55 +1,53 @@
-// package com.prime.tests.E2E;
+package com.prime.tests.E2E;
 
-// import java.io.File;
-// import java.io.IOException;
-// import java.util.List;
 
-// import javax.swing.text.html.Option;
 
-// import org.apache.commons.io.FileUtils;
-// import org.openqa.selenium.WebDriver;
-// import org.openqa.selenium.chrome.ChromeDriver;
-// import org.openqa.selenium.chrome.ChromeOptions;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
-// import com.prime.generics.Helper;
-// import com.vladsch.flexmark.util.sequence.BasedOptionsHolder.Options;
+ public class TetsingJava {
 
-// import io.github.bonigarcia.wdm.WebDriverManager;
-// import io.qameta.allure.Allure;
+	 public static String getPDFFileNames(String folderPath) {
+         List<String> pdfFileNames = new ArrayList<>();
 
-// public class TetsingJava {
-// //	private static int sizeCount;
-// //
-// //	public static void main(String[] args) {
-// //		showContent(51, 50);
-// //	}
-// //
-// //	public static void showContent(int actualCount, int filtersizecount) {
-// //		int count = 0;
-// //		if (actualCount > filtersizecount) {
-// //			int size = actualCount / filtersizecount;
-// //			for (int i = 0; i < size; i++) {
-// //				sizeCount = actualCount - filtersizecount;
-// //				actualCount = sizeCount;
-// //				count++;
-// //				if (actualCount < filtersizecount && actualCount>0) {
-// //					count++;
-// //				}
-// //			}
-// //			System.out.println("count :" + count);
-// //		} else if (actualCount == filtersizecount) {
-// //			count++;
-// //			System.out.println("count :" + count);
-// //		}
-// //	}
+         // Create a File object representing the folder
+         File folder = new File(folderPath);
 
-// public static void main(String[] args) {
+         // Check if the folder exists and is a directory
+         if (folder.exists() && folder.isDirectory()) {
+             // List all files in the folder
+             File[] files = folder.listFiles();
 
-//      ChromeOptions options = new ChromeOptions();
-//      options.setHeadless(true);
-//      ChromeDriver driver = new ChromeDriver();
-//      driver.get("https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-uat.pubfactory.com/");
- 
-// 			}
+             // Check if files exist
+             if (files != null) {
+                 // Iterate through the files
+                 for (File file : files) {
+                     // Check if the file is a PDF file (you can customize the check if needed)
+                     if (file.isFile() && file.getName().toLowerCase().endsWith(".pdf")) {
+                         pdfFileNames.add(file.getName());
+                     }
+                 }
+             }
+         } else {
+             System.out.println("The specified folder does not exist or is not a directory.");
+         }
 
-// }
+         return pdfFileNames.get(0).toString();
+     }
+
+
+
+	     public static void main(String[] args) {
+	         // Specify the path to the folder containing PDF files
+	         String folderPath = System.getProperty("user.dir") + File.separator + "target\\Assets";
+
+	         // Call the method to get PDF file names
+	        String pdfFileNames = getPDFFileNames(folderPath);
+
+	         // Print the names of PDF files
+	        System.out.println(pdfFileNames);
+	     }
+
+	     
+	 }

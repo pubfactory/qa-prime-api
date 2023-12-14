@@ -331,11 +331,12 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 13/07/2023
      */
     public String getLatestDownloadFileRelatedToCitation() throws Exception {
-        String fileName = fetchLatestDownloadFile();
-        String str1 = fileName.substring(0, 22);
-        String str2 = fileName.substring((fileName.length()) - 4, fileName.length());
-        String updateFileName = str1.concat(str2);
-        return updateFileName;
+        String citationFileName = fetchLatestDownloadFile();
+        System.out.println("citationFileName : "+citationFileName);
+//        String str1 = fileName.substring(0, 22);
+        String citationFileName1 = citationFileName.substring((citationFileName.length()) - 4, citationFileName.length());
+ //       String updateFileName = str1.concat(str2);
+        return citationFileName1;
     }
 
     /**
