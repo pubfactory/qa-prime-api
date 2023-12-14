@@ -1,3 +1,13 @@
+/**
+ * Testing the below functionality in Cite An Entry 
+
+1. Verifying if the citation button is present in the article page
+2. Verifying if citation pop-up is displayed when clicking on the citation button
+3. Verifying if user is able to see RIS,BIB,ENW Button is present under Export citation section.
+4. Verifying if user is able to download RIS,BIB,ENW formats
+5. Verifying if user is able to close citation pop-up after use.
+
+ */
 package com.prime.tests.E2E;
 
 import java.util.Arrays;
@@ -29,9 +39,8 @@ public class CitationTest extends BaseTest {
     @Test(groups = {"Citation"}, enabled = true, retryAnalyzer = Retry.class,
             description = "1721296  - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it")
     @Story("EPIC-971")
-
     public void verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt() throws Exception {
-        try { 
+        try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
             Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
             String application = BaseTest.properties.getProperty("application");
@@ -39,7 +48,7 @@ public class CitationTest extends BaseTest {
             System.out.println("!url=" + url);
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
             navigateToUrlLink(url);
-           System.out.println(WebDriverManager.getDriver().getPageSource());
+            System.out.println(WebDriverManager.getDriver().getPageSource());
             JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
             masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
             System.out.println("HI");
@@ -51,12 +60,21 @@ public class CitationTest extends BaseTest {
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
             basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
             articleCitationPage.clickOnToolsButtonInActionBarOnArticlePage();
-            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyCitationButtonPresentOnArticlePage(), true, "Verifying Element is present");
+
+            //Verifying if the citation button is present in the article page
+
+            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyCitationButtonPresentOnArticlePage(), true, "Verifying Citation Button is present");
             articleCitationPage.clickOnCitationButtonOnArticlePage();
+
+            // Verifying if citation pop-up is displayed when clicking on the citation button
+
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getPreviewExportCitationPopUpHeaderText(), testData.get("popupheader").toString(),
-                    "Verifying the Preview Export Citation popup is display");
+                    "Verifying the Preview Export Citation popup is displayed");
             articleCitationPage.selectFormatValueOnPreviewExportCitationPopUp(testData.get("formatvalueapa").toString());
             articleCitationPage.selectFormatValueOnPreviewExportCitationPopUp(testData.get("formatvalueama").toString());
+
+            //Verifying if user is able to see RIS,BIB,ENW Button is present under Export citation section.
+
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyRISButtonIsPresentOnPreviewExportCitationOnPopup(), true,
                     "Verifying the RIS Button is present under Export citation section on Preview Export Citation PopUp");
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyBIBButtonIsPresentOnPreviewExportCitationOnPopup(), true,
@@ -64,6 +82,9 @@ public class CitationTest extends BaseTest {
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyENWButtonIsPresentOnPreviewExportCitationOnPopup(), true,
                     "Verifying the ENW Button is present under Export citation section on Preview Export Citation PopUp");
             articleCitationPage.clickOnRISExportCitationFormat();
+
+            //Verifying if user is able to download RIS,BIB,ENW formats
+
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getLatestDownloadFileRelatedToCitation(), testData.get("risbuttonformat").toString(),
                     "Verifying the file " + (testData.get("risbuttonformat").toString()) + " is downloaded");
             articleCitationPage.clickOnBIBExportCitationFormat();
@@ -76,13 +97,15 @@ public class CitationTest extends BaseTest {
             List<String> expBIBCitationLabels = Arrays.asList(testData.get("bibbuttonlabel").toString().split(","));
             List<String> expENWCitationLabels = Arrays.asList(testData.get("enwbuttonlabel").toString().split(","));
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getExportCitationFormatLabels(testData.get("risbutton").toString()).toString(), expRISCitationLabels.toString(),
-                    "Verifying the RIS button Labels on Export Ciatation Popup");
+                    "Verifying RIS button Labels on Export Ciatation Popup");
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getExportCitationFormatLabels(testData.get("bibbutton").toString()).toString(), expBIBCitationLabels.toString(),
-                    "Verifying the BIB button Labels on Export Ciatation Popup");
+                    "Verifying BIB button Labels on Export Ciatation Popup");
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getExportCitationFormatLabels(testData.get("enwbutton").toString()).toString(), expENWCitationLabels.toString(),
-                    "Verifying the ENW button Labels on Export Ciatation Popup");
+                    "Verifying ENW button Labels on Export Ciatation Popup");
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyPreviewExportCitationCloseButtonPresentOnPreviewExportCitationPopUp(), true,
-                    "Verifying the Preview Export Citation PopUp Close Button is present on Preview Export Citation PopUp");
+                    "Verifying Preview Export Citation PopUp Close Button is present on Preview Export Citation PopUp");
+
+            //Verifying if user is able to close citation pop-up after use.
             articleCitationPage.clickOnPreviewExportCitationPopUpCloseButton();
         } finally {
             BaseTest.deleteDonwloadedFile();

@@ -30,6 +30,7 @@ public class SearchFunctionalityTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722541 - Verify search page top panel")
     @Story("EPIC-28")
+
     public void VerifySearchPageTopPanel() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
@@ -68,6 +69,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722542 - Verify pagination and sorting options in the search results page")
     @Story("EPIC-28")
+
     public void VerifyPpaginationAndSortingOptionsIntheSearchResultsPage() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
@@ -102,6 +104,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722543 - Verify that  search results details , toolbar options , Save options are as expected")
     @Story("EPIC-28")
+
     public void VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
@@ -147,6 +150,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722544 - Verify various Refine terms in the search results page")
     @Story("EPIC-28")
+
     public void VerifyVariousRefineTermsInTheSearchResultsPage() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
@@ -216,10 +220,9 @@ public class SearchFunctionalityTest extends BaseTest {
         int titleResultCount = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(browseResultCount, titleResultCount), true,
                 "Verifying the total result count after applying the Title filter from refine term filter on search apge");
-        
+
         String[] titleText = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage().toString().split(" ");
-        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(titleText[0]),
-                "Verifying the Title filter is applied on search result page");
+        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(titleText[0]), "Verifying the Title filter is applied on search result page");
 
 
         masterPage.clickOnSearchMagnifyingLense();
@@ -227,16 +230,17 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), testData.get("refinefiltervalueaffiliation").toString());
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         // Thread.sleep(5000);
-         browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
-         articleCitationPage.clickFirstAuthorOnArticlePage();
-         String authorlabel = articleCitationPage.getauthorAffiliationPopupLabel();
-         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.verifyStringContainsSpecificWord(authorlabel, testData.get("refinefiltervalueaffiliation").toString()), true,
-                 "Verifying affiliation search keyword is exist in author affilaition popup");
+        browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
+        articleCitationPage.clickFirstAuthorOnArticlePage();
+        String authorlabel = articleCitationPage.getauthorAffiliationPopupLabel();
+        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.verifyStringContainsSpecificWord(authorlabel, testData.get("refinefiltervalueaffiliation").toString()), true,
+                "Verifying affiliation search keyword is exist in author affilaition popup");
     }
 
     @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class,
             description = "1722545 - Verify that user is able to perform search with the combination of refine terms by adding, clearing , removing more than one rows.")
     @Story("EPIC-28")
+
     public void VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
@@ -304,6 +308,7 @@ public class SearchFunctionalityTest extends BaseTest {
     @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class,
             description = "1722546 - Verify that the appropriate result is displayed when user select the Article type filter and access type filter from index card")
     @Story("EPIC-28")
+
     public void VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
@@ -319,7 +324,7 @@ public class SearchFunctionalityTest extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByArticleTypeFilterTextonSearchOrBrowsePage(), testData.get("refinearticletype").toString(),
                 "Verifying the Refine by artcile type filter text on search or Browse Page");
         browseOrSearchPage.clickOnArticleTypeFilterValueOnBrowseOrSearchPage(testData.get("articletypename").toString());
-        System.out.println("Current URL : "+driver.getCurrentUrl());
+        System.out.println("Current URL : " + driver.getCurrentUrl());
         BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("articleType=" + testData.get("articletypename").toString().toLowerCase()),
                 "Verifying the article type result is displayed on search result page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("articletypename").toString().toLowerCase()), true,
@@ -364,6 +369,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722547 - Verify that the various Share button features.")
     @Story("EPIC-28")
+
     public void VerifyThatTheVariousShareButtonFeatures() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
@@ -389,6 +395,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722548 - Verify  Refine by Date Section and that search box is accessible in all pages")
     @Story("EPIC-28")
+
     public void VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         Helper.INSTANCE.setCurrentTestCaseId(testCaseId);

@@ -1,3 +1,16 @@
+/**
+ * 
+ **Testing the below functionality of the epic PDF-WORK
+
+1.Verifying Pdf download button is present on article page
+2.Verifying Button Downloaded
+3.Verify Inline PDF tab is diplayed
+4.Verifying the Default PDF Zoom value, ZoomIn and Zoom Out button in Inline PDF Tab
+5.Verifying the same article is displayed in PDFViewer in Inline PDF tab
+6.Verifying the dynamic watermark on pdf preview in Inline pdf tab
+7.Verifying PDF contect is not available for restricted content 
+
+ */
 
 package com.prime.tests.E2E;
 
@@ -30,7 +43,6 @@ public class PDFFunctionalityTest extends BaseTest {
     @Test(groups = {"PDF Work"}, enabled = true, retryAnalyzer = Retry.class,
             description = "1722758 - Verify that the PDF button available on current content page and  PDF Download will be successful when clicked on it")
     @Story("EPIC-1180")
-
     public void verifyPDFButonAvailableAndDownloadPDF() throws Exception {
         try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
@@ -50,7 +62,7 @@ public class PDFFunctionalityTest extends BaseTest {
             browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("free").toString());
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             pdfPage = BasePage.initialize(WebDriverManager.getDriver(), PDFPage.class);
-            BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyPDFButtonPresentOnArticlePage(), true, "Verifying PDF Button is present on article page");
+            BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyPDFButtonPresentOnArticlePage(), true, "Verifying PDF Button is present on the article page");
 
             //Verifying Button Downloaded
             String articleHeader = articleCitationPage.getArticleHeaderOnArticlePage();
@@ -59,13 +71,13 @@ public class PDFFunctionalityTest extends BaseTest {
             BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL(donwloladFileName), "Verifying the downloaded file name");
 
             //Verify Inline PDF tab is diplayed
-            BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyInlinePDFTabIsPresentOnArticlePage(), true, "Verifying Inline PDF tab is present on article page");
+            BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyInlinePDFTabIsPresentOnArticlePage(), true, "Verifying Inline PDF tab is present on the article page");
             pdfPage.clickOnInlinePdfTabOnArticlePage();
             pdfPage.switchToFrame(WebDriverManager.getDriver());
 
             // Verifying the Default PDF Zoom value, ZoomIn and Zoom Out button in Inline PDF Tab 
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.getDefaultPDFZoomValueInInlinePDFTab(), testData.get("defaultzoomvalue").toString(),
-                    "Verifying IDefault zoom value in Inline PDF Tab on article page");
+                    "Verifying Default zoom value in Inline PDF Tab on article page");
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyZoomInButtonIsPresentInInlinePDFTabOnArticlePage(), true, "Verifying ZoomIn button is present on Inline PDF tab on article page");
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyZoomOutButtonIsPresentInInlinePDFTabOnArticlePage(), true, "Verifying ZoomOut button is present on Inline PDF tab on article page");
 
@@ -80,13 +92,13 @@ public class PDFFunctionalityTest extends BaseTest {
             //Verifying the same article is displayed in PDFViewer in Inline PDF tab
             String partialArticleHeader = pdfPage.getPartialArticleTitleFromInlinePDFTab();
             BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.verifyStringContainsSpecificWord(articleHeader, partialArticleHeader), true,
-                    "Verifying the same article diplayed in PDF preview in inline PDF tab");
+                    "Verifying that same article diplayed in PDF preview in inline PDF tab");
 
             String applicationName = BaseTest.properties.getProperty("application");
 
             //Verifying the dynamic watermark on pdf preview in Inline pdf tab
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(applicationName), true,
-                    "Verifying the watermark is presented on pdf in Pdf preview in Inline pdf tab on articla page");
+                    "Verifying that watermark is presented on pdf in Pdf preview in Inline pdf tab on articla page");
             // Pickup Apps name or COnfig properly apps name 
 
         } finally {
@@ -114,8 +126,8 @@ public class PDFFunctionalityTest extends BaseTest {
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.selectItemPerPageValueFromItemPerPageDropdownOnBrowseOrSearchPage(testData.get("fiftyvalue").toString());
         browseOrSearchPage.clickOnFirstRestrictedContentOnBrowseOrSearchPage();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyPDFButtonIsNotPresentOnRestrictedArticleOnArticlePage(), true, "Verifying PDF Button is not present on restricted article on article page");
-        BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyInlinePDFTabIsNotPresentOnArticlePage(), true, "Verifying PDF Button is not present on restricted article on article page");
+        BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyPDFButtonIsNotPresentOnRestrictedArticleOnArticlePage(), true, "Verifying PDF Button is not present on restricted article");
+        BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyInlinePDFTabIsNotPresentOnArticlePage(), true, "Verifying Inline PDF tab is not present on restricted article on article page");
 
     }
 }

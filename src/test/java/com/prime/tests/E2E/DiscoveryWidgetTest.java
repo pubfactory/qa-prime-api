@@ -26,8 +26,9 @@ public class DiscoveryWidgetTest extends BaseTest {
     private String mainWindow;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "65 - Verify various Email button features")
+    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "1722741 - Verify various Email button features")
     @Story("EPIC-973")
+
 
     public void VerifyVariousEmailButtonFeatures() throws Exception {
         try {
@@ -89,8 +90,9 @@ public class DiscoveryWidgetTest extends BaseTest {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "66 - Verify Google Scholar Button features")
+    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "1722742 - Verify Google Scholar Button features")
     @Story("EPIC-973")
+
     public void VerifyGoogleScholarButtonFeatures() throws Exception {
         try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
@@ -149,8 +151,9 @@ public class DiscoveryWidgetTest extends BaseTest {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "67 - Verify PubMed button features and Almetric page features")
+    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "1722743 - Verify PubMed button features and Almetric page features")
     @Story("EPIC-973")
+
     public void VerifyPubMedButtonFeaturesAndAlmetricPageFeatures() throws Exception {
 
         try {

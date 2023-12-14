@@ -411,8 +411,10 @@ public enum Helper {
             data.put("comment", message);
             client.sendPost(request, data);
             Helper.INSTANCE.logEventInfoToReportForTestSteps("Pass", "TestcaseId-" + tcId + " Updated Successfully in Test Rail");
+            System.out.println("testcaseid at publishResults To Test Rail=" + tcId);
         } catch (IOException | APIException e) {
             Helper.INSTANCE.logEventInfoToReportForTestSteps("Pass", "Problem in updating TestcaseId-" + tcId + " in Test Rail");
+            System.out.println("Problem while updating testcaseid at publishResults To Test Rail=" + tcId);
             e.printStackTrace();
         }
     }

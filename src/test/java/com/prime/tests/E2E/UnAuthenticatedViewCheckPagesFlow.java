@@ -1,8 +1,6 @@
 package com.prime.tests.E2E;
 
 import org.json.simple.JSONObject;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.prime.api.helpers.LoginServiceHelper;
 import com.prime.api.helpers.SearchServiceHelper;
@@ -60,10 +58,8 @@ public class UnAuthenticatedViewCheckPagesFlow extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), basePage.getTitleFromWebPage(), testData.get("title").toString(), "Verifying the page title ");
         masterPage.clickOnViewThisIssueOnHomePage();
         issuePage = BasePage.initialize(WebDriverManager.getDriver(), IssuePage.class);
-//        BaseTest.assertEquals(WebDriverManager.getDriver(), issuePage.getIssuePageHeaderText(), testData.get("issuespageheader").toString(), "Verifying Issue page Header");
-        BaseTest.assertTrue(WebDriverManager.getDriver(),
-				BaseTest.verifyTextInURL("issue"),
-				"Verifying the Issue page is loaded");
+        //        BaseTest.assertEquals(WebDriverManager.getDriver(), issuePage.getIssuePageHeaderText(), testData.get("issuespageheader").toString(), "Verifying Issue page Header");
+        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("issue"), "Verifying the Issue page is loaded");
         String articleHeader = issuePage.getFirstArticleTextOnIssuePageHeaderText();
         issuePage.clickOnFirstArticleOnIssuePage();
 
@@ -75,7 +71,7 @@ public class UnAuthenticatedViewCheckPagesFlow extends BaseTest {
         issuePage.clickOnAllIssuesOnIssuePage();
         BaseTest.verifyTextInURL(testData.get("journalpageurl").toString());
         journalPage = BasePage.initialize(WebDriverManager.getDriver(), JournalPage.class);
-        System.out.println("Journal Page Header : "+journalPage.getJournalPageHeaderText());
+        System.out.println("Journal Page Header : " + journalPage.getJournalPageHeaderText());
         BaseTest.assertEquals(WebDriverManager.getDriver(), journalPage.getJournalPageHeaderText(), testData.get("journalpageheader").toString(), "Verifying the Journal Page header");
 
 

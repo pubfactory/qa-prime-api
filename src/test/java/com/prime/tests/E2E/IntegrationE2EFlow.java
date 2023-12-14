@@ -1,8 +1,6 @@
 package com.prime.tests.E2E;
 
 import org.json.simple.JSONObject;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.prime.api.helpers.LoginServiceHelper;
 import com.prime.api.helpers.SearchServiceHelper;
