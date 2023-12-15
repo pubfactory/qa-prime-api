@@ -30,7 +30,7 @@ public class ArticleCitationPageTSCIR extends BaseTest{
 	@Parameters({"testcaseid"})
 	public void verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnItOnHOmePageArticleOnTSCIRAPP(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -48,7 +48,7 @@ public class ArticleCitationPageTSCIR extends BaseTest{
 	@Parameters({"testcaseid"})
 	public void verifyXLinkOrCancelButtonOnPreviewExportCitationPopupAreVisibleToUserAndItWillBeClosedWhenUserClickedAnywhereOutsideThePopupOrClickOnXLinkOrCancelButtonOnTSCIRAPP (@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(),MasterPage.class);
@@ -67,7 +67,7 @@ public class ArticleCitationPageTSCIR extends BaseTest{
 	@Parameters({"testcaseid"})
 	 public void verifyThatTheUserAbleToSelectAMAandAPACitationFormatInPreviewExportCitationPopupForOpenAccessContentOnTSCIRAPP(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(),MasterPage.class);
@@ -85,7 +85,7 @@ public class ArticleCitationPageTSCIR extends BaseTest{
 	@Parameters({"testcaseid"})
 	public void verifyThatTheUserAbleToSeeRISBIBENWExportCitationButtonAndUserExportTheCitationsInRISBIBENWFormatInAppropriateFolderLocationOrDefaultDownloadFolderLocationOnTSCIRAPP(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(),MasterPage.class);
@@ -110,7 +110,7 @@ public class ArticleCitationPageTSCIR extends BaseTest{
 	@Parameters({"testcaseid"})
 	public void verifyTheExportCitationFormatLabelOnCitationPopupOnTSCIRAPP(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(),MasterPage.class);
@@ -132,7 +132,7 @@ public class ArticleCitationPageTSCIR extends BaseTest{
 	@Parameters({"testcaseid"})
 	public void verifyTheAbbreviatedJournalTitleDisplayOnExportCitationPopupWhenAMAFormatSelectedOnTSCIRAPP(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(),MasterPage.class);

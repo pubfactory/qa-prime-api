@@ -29,7 +29,7 @@ public class SignUpPageTest extends BaseTest {
 	@Parameters({ "testcaseid" })
 	public void VerifyThatUserAbletoRegister(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -54,7 +54,7 @@ public class SignUpPageTest extends BaseTest {
 	@Parameters({ "testcaseid" })
 	public void VerifyThatallErrorOnSignUpPage(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -81,7 +81,7 @@ public class SignUpPageTest extends BaseTest {
 	@Parameters({ "testcaseid" })
 	public void VerifyThatUserAbleToHideandShowPasswordOnSignUpPage(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);

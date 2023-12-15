@@ -59,9 +59,10 @@ public class PDFPage extends BasePage {
      * @Created Date : 06/11/2023
      */
     public String getLatestDownloadFileRelatedToPDF() throws Exception {
-    	
-        String filePdfName = fetchLatestDownloadFile();
-        System.out.println("Download Filename : "+filePdfName);
+
+        //String filePdfName = fetchLatestDownloadFile();
+        String filePdfName = fetchLatestDownloadFileWithExtension(".pdf");
+        System.out.println("Download Filename : " + filePdfName);
         String[] splitPDF = filePdfName.split("-");
         List<String> splitPDF1 = Helper.INSTANCE.convertArrayToList(splitPDF);
         String articleID = (Helper.INSTANCE.convertArrayToList(splitPDF1.get(2).split("pd")).get(0) + "xml");

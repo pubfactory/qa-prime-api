@@ -18,7 +18,6 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 import com.prime.generics.BasePage;
 import com.prime.generics.BaseTest;
-import com.prime.generics.Helper;
 import com.prime.generics.WebDriverManager;
 import com.prime.pageFactory.pages.fpj.ArticleCitationPage;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
@@ -44,9 +43,9 @@ public class PDFFunctionalityTest extends BaseTest {
             description = "1722758 - Verify that the PDF button available on current content page and  PDF Download will be successful when clicked on it")
     @Story("EPIC-1180")
     public void verifyPDFButonAvailableAndDownloadPDF() throws Exception {
-       // try {
+        try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-            Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+            WebDriverManager.setTestcaseIdTestRail(testCaseId);
             String application = BaseTest.properties.getProperty("application");
             url = BaseTest.properties.getProperty(application);
             System.out.println("!url=" + url);
@@ -68,7 +67,7 @@ public class PDFFunctionalityTest extends BaseTest {
             String articleHeader = articleCitationPage.getArticleHeaderOnArticlePage();
             pdfPage.clickOnDownloadPDFButtonOnArticlePage();
             String donwloladPDFFileName = pdfPage.getLatestDownloadFileRelatedToPDF();
-            System.out.println("donwloladPDFfileName : "+donwloladPDFFileName);
+            System.out.println("donwloladPDFfileName : " + donwloladPDFFileName);
             BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL(donwloladPDFFileName), "Verifying the downloaded file name");
 
             //Verify Inline PDF tab is diplayed
@@ -102,9 +101,9 @@ public class PDFFunctionalityTest extends BaseTest {
                     "Verifying that watermark is presented on pdf in Pdf preview in Inline pdf tab on articla page");
             // Pickup Apps name or COnfig properly apps name 
 
-//        } finally {
-//            BaseTest.deleteDonwloadedFile();
-//        }
+        } finally {
+            BaseTest.deleteDonwloadedFile();
+        }
     }
 
     @Severity(SeverityLevel.BLOCKER)
@@ -114,7 +113,7 @@ public class PDFFunctionalityTest extends BaseTest {
     public void VerifyPDFFeaturesInRestrictedAccessContentPage() throws Exception {
 
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);

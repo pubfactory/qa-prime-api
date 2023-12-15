@@ -32,7 +32,7 @@ public class ArticleCitationTest extends BaseTest{
 	@Parameters({"testcaseid"})
 	public void verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("application"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -52,7 +52,7 @@ public class ArticleCitationTest extends BaseTest{
 	@Parameters({"testcaseid"})
 	public void verifyXLinkOrCancelButtonOnPreviewExportCitationPopupAreVisibleToUserAndItWillBeClosedWhenUserClickedAnywhereOutsideThePopupOrClickOnXLinkOrCancelButton (@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		//navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		navigateToUrl(BaseTest.properties.getProperty("application"));
 		JSONObject testData = getDetails(testCaseId);
@@ -74,7 +74,7 @@ public class ArticleCitationTest extends BaseTest{
 	@Parameters({"testcaseid"})
 	 public void verifyThatTheUserAbleToSelectAMAandAPACitationFormatInPreviewExportCitationPopupForOpenAccessContent(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		//navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		navigateToUrl(BaseTest.properties.getProperty("application"));
 		JSONObject testData = getDetails(testCaseId);
@@ -94,7 +94,7 @@ public class ArticleCitationTest extends BaseTest{
 	@Parameters({"testcaseid"})
 	public void verifyThatTheUserAbleToSeeRISBIBENWExportCitationButtonAndUserExportTheCitationsInRISBIBENWFormatInAppropriateFolderLocationOrDefaultDownloadFolderLocation(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		//navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		navigateToUrl(BaseTest.properties.getProperty("application"));
 		JSONObject testData = getDetails(testCaseId);
@@ -121,7 +121,7 @@ public class ArticleCitationTest extends BaseTest{
 	@Parameters({"testcaseid"})
 	public void verifyTheExportCitationFormatLabelOnCitationPopup(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		//navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		navigateToUrl(BaseTest.properties.getProperty("application"));
 		JSONObject testData = getDetails(testCaseId);
@@ -145,7 +145,7 @@ public class ArticleCitationTest extends BaseTest{
 	@Parameters({"testcaseid"})
 	public void verifyTheAbbreviatedJournalTitleDisplayOnExportCitationPopupWhenAMAFormatSelected(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		//navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		navigateToUrl(BaseTest.properties.getProperty("application"));
 		JSONObject testData = getDetails(testCaseId);
@@ -165,7 +165,7 @@ public class ArticleCitationTest extends BaseTest{
 //	@Parameters({"testcaseid"})
 //	public void verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnItOnHOmePageArticle(@Optional String testCaseId) throws Exception {
 //		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-//		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+//		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 //		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 //		JSONObject testData = getDetails(testCaseId);
 //		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);

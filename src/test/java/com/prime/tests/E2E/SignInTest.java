@@ -31,7 +31,7 @@ public class SignInTest extends BaseTest {
 	@Parameters({"testcaseid"})
 	public void verifyThatSIGNLinkShouldAvailableInHeader(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -60,7 +60,7 @@ public class SignInTest extends BaseTest {
 	@Parameters({"testcaseid"})
 	public void verifyThatWithValidUsernameAndEmptyPasswordTheSystemThrowsAppropriateErrorMessage(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -82,7 +82,7 @@ public class SignInTest extends BaseTest {
 	@Parameters({"testcaseid"})
 	public void VerifyThatUserShouldReturntoPageTheyWereOnAfterSuccessfullyLoggingIn(@Optional String testCaseId) throws Exception {
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-		Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 		JSONObject testData = getDetails(testCaseId);
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);

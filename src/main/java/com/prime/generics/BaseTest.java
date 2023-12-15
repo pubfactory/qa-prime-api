@@ -414,7 +414,7 @@ public class BaseTest {
                     System.out.println(System.getProperty("user.dir"));
                     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
 
-                   // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                    // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                     //    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
@@ -423,7 +423,7 @@ public class BaseTest {
                     options.addArguments("--disable-extensions");
                     options.addArguments("--dns-prefetch-disable");
                     options.addArguments("--disable-gpu");
- //                   options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
+                    //                   options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
 
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
                         options.addArguments("--headless");
@@ -675,7 +675,7 @@ public class BaseTest {
         try {
             Helper.INSTANCE.logEventInfoToReport("After Method");
             Helper.INSTANCE.logEventInfoToReport("testcase=" + testcaseId);
-            // testcaseId = Helper.INSTANCE.getCurrentTestCaseId();
+            // testcaseId = WebDriverManager.getTestcaseIdTestRail();
             teststatus = Helper.INSTANCE.getErrorMessage(testcaseId);
             //          try {
             //              status = Helper.INSTANCE.getErrorMessage(testcaseId);
@@ -723,6 +723,8 @@ public class BaseTest {
         } finally {
             Helper.INSTANCE.logEventInfoToReport("Execution Completed for " + testCaseId);
             Allure.step("Fetching Current URL: " + WebDriverManager.getDriver().getCurrentUrl());
+            //  Helper.INSTANCE.setErrorMessage(testcaseId, "");
+
         }
     }
 
@@ -820,7 +822,7 @@ public class BaseTest {
                 e.printStackTrace();
             }
             error = description + " mismatch found";
-            Helper.INSTANCE.setErrorMessage(Helper.INSTANCE.getCurrentTestCaseId(), error);
+            Helper.INSTANCE.setErrorMessage(WebDriverManager.getTestcaseIdTestRail(), error);
             Assert.fail(description);
         }
     }
@@ -849,7 +851,7 @@ public class BaseTest {
                 e.printStackTrace();
             }
             error = description + " mismatch found";
-            Helper.INSTANCE.setErrorMessage(Helper.INSTANCE.getCurrentTestCaseId(), error);
+            Helper.INSTANCE.setErrorMessage(WebDriverManager.getTestcaseIdTestRail(), error);
             Assert.fail(description);
         }
     }
@@ -867,7 +869,7 @@ public class BaseTest {
                 e.printStackTrace();
             }
             error = desc + " expected true but found false";
-            Helper.INSTANCE.setErrorMessage(Helper.INSTANCE.getCurrentTestCaseId(), error);
+            Helper.INSTANCE.setErrorMessage(WebDriverManager.getTestcaseIdTestRail(), error);
             Assert.fail(desc);
         }
     }
@@ -1036,7 +1038,7 @@ public class BaseTest {
             }
         } catch (Exception e) {
             error = "Failure while opening URL: " + url;
-            Helper.INSTANCE.setErrorMessage(Helper.INSTANCE.getCurrentTestCaseId(), error);
+            Helper.INSTANCE.setErrorMessage(WebDriverManager.getTestcaseIdTestRail(), error);
             Assert.fail(error);
         }
     }
@@ -1126,7 +1128,7 @@ public class BaseTest {
         } else {
             Allure.step("Assertion Failed: " + description);
             error = description + " mismatch found";
-            Helper.INSTANCE.setErrorMessage(Helper.INSTANCE.getCurrentTestCaseId(), error);
+            Helper.INSTANCE.setErrorMessage(WebDriverManager.getTestcaseIdTestRail(), error);
             Assert.fail(description);
         }
     }

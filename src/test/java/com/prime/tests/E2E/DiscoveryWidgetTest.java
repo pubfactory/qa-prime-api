@@ -33,7 +33,7 @@ public class DiscoveryWidgetTest extends BaseTest {
     public void VerifyVariousEmailButtonFeatures() throws Exception {
         try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-            Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+            WebDriverManager.setTestcaseIdTestRail(testCaseId);
             String application = BaseTest.properties.getProperty("application");
             url = BaseTest.properties.getProperty(application);
             System.out.println("!url=" + url);
@@ -96,7 +96,7 @@ public class DiscoveryWidgetTest extends BaseTest {
     public void VerifyGoogleScholarButtonFeatures() throws Exception {
         try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-            Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+            WebDriverManager.setTestcaseIdTestRail(testCaseId);
             String application = BaseTest.properties.getProperty("application");
             url = BaseTest.properties.getProperty(application);
             System.out.println("!url=" + url);
@@ -158,7 +158,7 @@ public class DiscoveryWidgetTest extends BaseTest {
 
         try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-            Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+            WebDriverManager.setTestcaseIdTestRail(testCaseId);
             String application = BaseTest.properties.getProperty("application");
             url = BaseTest.properties.getProperty(application);
             System.out.println("!url=" + url);
