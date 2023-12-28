@@ -60,7 +60,8 @@ public class PDFPage extends BasePage {
      */
     public String getLatestDownloadFileRelatedToPDF() throws Exception {
     	
-        String filePdfName = fetchLatestDownloadFile();
+   //     String filePdfName = getDownloadPDFFileNames();
+    	String filePdfName = fetchLatestDownloadFileWithExtension(".pdf");
         System.out.println("Download Filename : "+filePdfName);
         String[] splitPDF = filePdfName.split("-");
         List<String> splitPDF1 = Helper.INSTANCE.convertArrayToList(splitPDF);
@@ -68,6 +69,18 @@ public class PDFPage extends BasePage {
         return articleID;
     }
 
+    /**
+     * This method used to verify pdf file is downloaded
+     *
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 28/12/2023
+     */
+    public boolean toVerifyPDFFIleIsDownload() throws Exception {
+    	
+    	return verifyFileISDowloadedwithExtension(".pdf");
+    }
 
     /** This method is used to check Inline PDF tab is present on article page
      * 

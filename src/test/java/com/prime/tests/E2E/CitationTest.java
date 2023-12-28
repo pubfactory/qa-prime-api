@@ -84,24 +84,28 @@ public class CitationTest extends BaseTest {
             articleCitationPage.clickOnRISExportCitationFormat();
 
             //Verifying if user is able to download RIS,BIB,ENW formats
-           
-           String ris= articleCitationPage.getLatestDownloadFileRelatedToCitation();
-           System.out.println("ris : "+ris);
-           System.out.println("json ris"+testData.get("risbuttonformat").toString());
-            BaseTest.assertEquals(WebDriverManager.getDriver(), ris, testData.get("risbuttonformat").toString(),
-                    "Verifying the file " + (testData.get("risbuttonformat").toString()) + " is downloaded");
+            
+//            String ris= articleCitationPage.getLatestDownloadFileRelatedToCitation(".ris");
+//            BaseTest.assertEquals(WebDriverManager.getDriver(), ris, testData.get("risbuttonformat").toString(),
+//                    "Verifying the file " + (testData.get("risbuttonformat").toString()) + " is downloaded");
+            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.toVerifyCitationFormatFileIsDownload(".ris"), true,"Verifying the file .ris format file is downloaded");
+            deletedownloadedFiles(".ris");
             articleCitationPage.clickOnBIBExportCitationFormat();
-            String bib= articleCitationPage.getLatestDownloadFileRelatedToCitation();
-            System.out.println("bib : "+bib);
-            System.out.println("json bib"+testData.get("bibbuttonformat").toString());
-            BaseTest.assertEquals(WebDriverManager.getDriver(), bib, testData.get("bibbuttonformat").toString(),
-                    "Verifying the file " + (testData.get("bibbuttonformat").toString()) + " is downloaded");
+            
+//            String bib= articleCitationPage.getLatestDownloadFileRelatedToCitation(".bib");
+//            BaseTest.assertEquals(WebDriverManager.getDriver(), bib, testData.get("bibbuttonformat").toString(),
+//                    "Verifying the file " + (testData.get("bibbuttonformat").toString()) + " is downloaded");
+            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.toVerifyCitationFormatFileIsDownload(".bib"), true,"Verifying the file .ris format file is downloaded");
+            
+            deletedownloadedFiles(".bib");
             articleCitationPage.clickOnENWExportCitationFormat();
-            String enw= articleCitationPage.getLatestDownloadFileRelatedToCitation();
-            System.out.println("enw : "+enw);
-            System.out.println("json enw"+testData.get("enwbuttonformat").toString());
-            BaseTest.assertEquals(WebDriverManager.getDriver(), enw, testData.get("enwbuttonformat").toString(),
-                    "Verifying the file " + (testData.get("enwbuttonformat").toString()) + " is downloaded");
+            
+//            String enw= articleCitationPage.getLatestDownloadFileRelatedToCitation(".enw");
+//            BaseTest.assertEquals(WebDriverManager.getDriver(), enw, testData.get("enwbuttonformat").toString(),
+//                    "Verifying the file " + (testData.get("enwbuttonformat").toString()) + " is downloaded");
+            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.toVerifyCitationFormatFileIsDownload(".enw"), true,"Verifying the file .ris format file is downloaded");
+            
+            deletedownloadedFiles(".enw");
             List<String> expRISCitationLabels = Arrays.asList(testData.get("risbuttonlabel").toString().split(","));
             List<String> expBIBCitationLabels = Arrays.asList(testData.get("bibbuttonlabel").toString().split(","));
             List<String> expENWCitationLabels = Arrays.asList(testData.get("enwbuttonlabel").toString().split(","));
@@ -117,7 +121,9 @@ public class CitationTest extends BaseTest {
             //Verifying if user is able to close citation pop-up after use.
             articleCitationPage.clickOnPreviewExportCitationPopUpCloseButton();
         } finally {
-            BaseTest.deleteDonwloadedFile();
+            deletedownloadedFiles(".ris");
+            deletedownloadedFiles(".bib");
+            deletedownloadedFiles(".enw");
         }
     }
 }

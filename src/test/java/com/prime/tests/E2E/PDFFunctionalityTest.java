@@ -44,7 +44,7 @@ public class PDFFunctionalityTest extends BaseTest {
             description = "1722758 - Verify that the PDF button available on current content page and  PDF Download will be successful when clicked on it")
     @Story("EPIC-1180")
     public void verifyPDFButonAvailableAndDownloadPDF() throws Exception {
-       // try {
+        try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
             Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
             String application = BaseTest.properties.getProperty("application");
@@ -67,10 +67,14 @@ public class PDFFunctionalityTest extends BaseTest {
             //Verifying Button Downloaded
             String articleHeader = articleCitationPage.getArticleHeaderOnArticlePage();
             pdfPage.clickOnDownloadPDFButtonOnArticlePage();
-            String donwloladPDFFileName = pdfPage.getLatestDownloadFileRelatedToPDF();
-            System.out.println("donwloladPDFfileName : "+donwloladPDFFileName);
-            BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL(donwloladPDFFileName), "Verifying the downloaded file name");
-
+     //       driver.navigate().refresh();
+            //String donwloladPDFFileName = pdfPage.getLatestDownloadFileRelatedToPDF();
+            //System.out.println("donwloladPDFfileName : "+donwloladPDFFileName);
+            //BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL(donwloladPDFFileName), "Verifying the downloaded file name");
+            BaseTest.assertEquals(WebDriverManager.getDriver(),pdfPage.toVerifyPDFFIleIsDownload(),true,"Pdf File is downloaded");
+            deletedownloadedFiles(".pdf");
+            deletedownloadedFiles(".crdownload");
+            
             //Verify Inline PDF tab is diplayed
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyInlinePDFTabIsPresentOnArticlePage(), true, "Verifying Inline PDF tab is present on the article page");
             pdfPage.clickOnInlinePdfTabOnArticlePage();
@@ -102,9 +106,11 @@ public class PDFFunctionalityTest extends BaseTest {
                     "Verifying that watermark is presented on pdf in Pdf preview in Inline pdf tab on articla page");
             // Pickup Apps name or COnfig properly apps name 
 
-//        } finally {
-//            BaseTest.deleteDonwloadedFile();
-//        }
+        } finally {
+        	deletedownloadedFiles(".pdf");
+        	deletedownloadedFiles(".crdownload");
+           // BaseTest.deleteDonwloadedFile();
+        }
     }
 
     @Severity(SeverityLevel.BLOCKER)

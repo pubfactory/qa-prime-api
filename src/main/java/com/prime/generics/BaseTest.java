@@ -412,9 +412,9 @@ public class BaseTest {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     //               io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
-                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+                  //  System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
 
-                   // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                     //    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
@@ -1175,5 +1175,27 @@ public class BaseTest {
         return str.contains(word);
     }
 
+    public static void deletedownloadedFiles(String fileExtension) {
+        File folder = new File(System.getProperty("user.dir") + File.separator + "target\\Assets");
+        if (folder.exists() && folder.isDirectory()) {
+            File[] files = folder.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    // Check if the file is a PDF file (you can customize the check if needed)
+                    if (file.isFile() && file.getName().toLowerCase().endsWith(fileExtension)) {
+                        // Attempt to delete the file
+                        if (file.delete()) {
+                       	  System.out.println("Deleted file: " + file.getName());
+                        } else {
+                            System.out.println("Failed to delete file: " + file.getName());
+                        }
+                    }
+                }
+            }
+        } else {
+            System.out.println("The specified folder does not exist or is not a directory.");
+        }
+    
+}
 
 }

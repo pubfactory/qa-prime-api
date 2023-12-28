@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -29,6 +30,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import com.opencsv.CSVReader;
@@ -1766,30 +1768,84 @@ public class BasePage {
 		return newfile;
 	}
 
-	
-	
+    public String fetchLatestDownloadFileWithExtension(String extension) throws InterruptedException, Exception {
 
-	public String fetchLatestPDFDownloadFile() throws InterruptedException {
-		Thread.sleep(5000);
-		String newfile = "";
-		try {
-			File downloadedDir = new File(System.getProperty("user.dir") + File.separator + "target\\Assets");
-			File[] listofFiles = downloadedDir.listFiles();
-			if (listofFiles == null || listofFiles.length == 0) {
-				return "";
-			}
-//			File LatestModifiedFile = listofFiles[0];
-			for (int i = 1; i < listofFiles.length; i++) {
-				if (listofFiles[i].getName().contains(".pdf")) {
-					newfile = listofFiles[i].getName();
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return newfile;
-	}
-	
+        Thread.sleep(5000);
+
+        String newfile = "";
+
+        List<String> pdfFileNames = new ArrayList<>();
+
+        try {
+
+            File downloadedDir = new File(System.getProperty("user.dir") + File.separator + "target\\Assets");
+
+            File[] listofFiles = downloadedDir.listFiles();
+
+            if (listofFiles == null || listofFiles.length == 0) {
+
+                return "nothing found !!";
+
+            }
+
+            for (File file : listofFiles) {
+
+                // Check if the file is a PDF file (you can customize the check if needed)
+
+                if (file.isFile() && file.getName().toLowerCase().endsWith(extension)) {
+
+                    pdfFileNames.add(file.getName());
+
+                }
+
+            }
+ 
+        } catch (
+ 
+        Exception e) {
+
+            e.printStackTrace();
+
+        }
+ 
+        return pdfFileNames.get(0).toString();
+
+    }
+    
+    public boolean verifyFileISDowloadedwithExtension(String extension) throws InterruptedException, Exception {
+    	boolean fileExist=false;
+        try {
+        	waitUntilFileIsDownloaded(driver,extension);
+            File downloadedDir = new File(System.getProperty("user.dir") + File.separator + "target\\Assets");
+            File[] listofFiles = downloadedDir.listFiles();
+            if (listofFiles == null || listofFiles.length == 0) {
+            	fileExist =  false;
+            //	Allure.step(Helper.INSTANCE.removeMoreSrtingOfExtension(extension)+" file is not downloaded");
+            	Allure.step("file is not Exist");
+            }
+            for (File file : listofFiles) {
+                if (file.isFile() && file.getName().toLowerCase().endsWith(extension)) {
+                	fileExist =  true;
+                	Allure.step(Helper.INSTANCE.removeMoreSrtingOfExtension(extension)+" file is downloaded");
+                	break;
+                }
+                else
+                	fileExist= false;  
+                	Allure.step(Helper.INSTANCE.removeMoreSrtingOfExtension(extension)+" file is not downloaded");
+                	break;
+            }
+        } catch (
+        Exception e) {
+            e.printStackTrace();
+        }
+		return fileExist;
+    }
+    
+    
+    
+    
+    
+    
 	/**
 	 * This method return text list from WebElement list
 	 * @param locator
@@ -1982,5 +2038,35 @@ public class BasePage {
         }
 
     }
-	
+    
+    /**
+     * This method waits for a particular file is downloaded
+     * 
+     * @param element
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 28/12/2022
+     */
+    private static void waitUntilFileIsDownloaded(WebDriver driver,String extensionName) {
+        Wait<WebDriver> wait = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(20))
+                .pollingEvery(Duration.ofSeconds(2))
+                .ignoring(NullPointerException.class);
+
+        wait.until(webDriver -> {
+            File dir = new File(System.getProperty("user.dir") + File.separator + "target\\Assets");
+            File[] files = dir.listFiles();
+
+            if (files != null) {
+                for (File file : files) {
+                    if (file.getName().endsWith(extensionName)) {
+                       return true;
+                    }
+                }
+            }
+            return false;
+        });
+    
+}
+
 }

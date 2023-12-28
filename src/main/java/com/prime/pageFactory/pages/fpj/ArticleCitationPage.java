@@ -330,13 +330,26 @@ public class ArticleCitationPage extends BasePage {
      * @author Rakesh.Shevale
      * @Created Date : 13/07/2023
      */
-    public String getLatestDownloadFileRelatedToCitation() throws Exception {
-        String citationFileName = fetchLatestDownloadFile();
+    public String getLatestDownloadFileRelatedToCitation(String extensionName) throws Exception {
+        String citationFileName = fetchLatestDownloadFileWithExtension(extensionName);
         System.out.println("citationFileName : "+citationFileName);
 //        String str1 = fileName.substring(0, 22);
         String citationFileName1 = citationFileName.substring((citationFileName.length()) - 4, citationFileName.length());
  //       String updateFileName = str1.concat(str2);
         return citationFileName1;
+    }
+    
+    /**
+     * This method used to verify file is downloaded
+     *
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 28/12/2023
+     */
+    public boolean toVerifyCitationFormatFileIsDownload(String extensionName) throws Exception {
+    	
+    	return verifyFileISDowloadedwithExtension(extensionName);
     }
 
     /**
