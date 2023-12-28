@@ -33,7 +33,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     public void VerifySearchPageTopPanel() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);
@@ -72,7 +72,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     public void VerifyPpaginationAndSortingOptionsIntheSearchResultsPage() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);
@@ -107,7 +107,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     public void VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);
@@ -153,7 +153,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     public void VerifyVariousRefineTermsInTheSearchResultsPage() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);
@@ -243,7 +243,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     public void VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);
@@ -312,7 +312,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     public void VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);
@@ -373,7 +373,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     public void VerifyThatTheVariousShareButtonFeatures() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);
@@ -399,7 +399,7 @@ public class SearchFunctionalityTest extends BaseTest {
 
     public void VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);

@@ -46,7 +46,7 @@ public class IntegrationE2EFlow2 extends BaseTest {
     @Parameters({"testcaseid"})
     public void verifyThatUserAbleToLaunchApplication(@Optional String testCaseId) throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         // Identifying the application and its url to test
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
@@ -133,7 +133,7 @@ public class IntegrationE2EFlow2 extends BaseTest {
     @Parameters({"testcaseid"})
     public void verifyThatViewPagesDisplayed(@Optional String testCaseId) throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         // Identifying the application and its url to test
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);

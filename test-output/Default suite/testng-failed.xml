@@ -7,8 +7,11 @@
         <methods>
           <include name="closeDriver"/>
           <include name="establishConnection"/>
-          <include name="loadConfigurationValues"/>
           <include name="setUp"/>
+<<<<<<< HEAD
+=======
+          <include name="loadConfigurationValues"/>
+>>>>>>> 543b2ad7cb6aa674d5dbf3399e303ea40bf4c831
           <include name="verifyPDFButonAvailableAndDownloadPDF"/>
           <include name="closeApplication"/>
         </methods>

@@ -40,7 +40,7 @@ public class SavedSearchTest extends BaseTest {
 	public void VerifyTheSaveButtonIsVisibledOnSearchResultPage(@Optional String testCaseId) throws Exception {
 		try {
 			testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-			Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+			WebDriverManager.setTestcaseIdTestRail(testCaseId);
 			navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 			testData = getDetails(testCaseId);
 			masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -96,7 +96,7 @@ public class SavedSearchTest extends BaseTest {
 			throws Exception {
 		try {
 			testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-			Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+			WebDriverManager.setTestcaseIdTestRail(testCaseId);
 //			navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 			navigateToUrl(BaseTest.properties.getProperty("application"));
 			testData = getDetails(testCaseId);
@@ -139,7 +139,7 @@ public class SavedSearchTest extends BaseTest {
 			@Optional String testCaseId) throws Exception {
 		try {
 			testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-			Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+			WebDriverManager.setTestcaseIdTestRail(testCaseId);
 			//navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 			navigateToUrl(BaseTest.properties.getProperty("application"));
 			testData = getDetails(testCaseId);
@@ -194,7 +194,7 @@ public class SavedSearchTest extends BaseTest {
 	@Parameters({ "testcaseid" })
 	public void VerifyThatConfirmationPopupWillDisplayWhenClickOnDeleteOrDeleteAllOption(@Optional String testCaseId) throws Exception {
 			testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-			Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+			WebDriverManager.setTestcaseIdTestRail(testCaseId);
 			navigateToUrl(BaseTest.properties.getProperty("APPURL"));
 			testData = getDetails(testCaseId);
 			masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -227,7 +227,7 @@ public class SavedSearchTest extends BaseTest {
 	@Parameters({ "testcaseid" })
 	public void VerifyThatSortByDropdownIsDisplayedWithTheFiltersInSavedSearchesTab(@Optional String testCaseId) throws Exception {
 			testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-			Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+			WebDriverManager.setTestcaseIdTestRail(testCaseId);
 			navigateToUrl(BaseTest.properties.getProperty("application"));
 			testData = getDetails(testCaseId);
 			masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -263,7 +263,7 @@ public class SavedSearchTest extends BaseTest {
 	@Parameters({ "testcaseid" })
 	public void VerifyThatPageSizeDropdownIsDisplayedWithTheFiltersSavedSearchesTab(@Optional String testCaseId) throws Exception {
 			testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-			Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+			WebDriverManager.setTestcaseIdTestRail(testCaseId);
 			navigateToUrl(BaseTest.properties.getProperty("application"));
 			testData = getDetails(testCaseId);
 			masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
@@ -299,7 +299,7 @@ public class SavedSearchTest extends BaseTest {
 	@Parameters({ "testcaseid" })
 	public void VerifyThatPaginationsAreDisplayedWhenTheSavedSearchesAreMoreThanThePageSize(@Optional String testCaseId) throws Exception {
 			testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-			Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+			WebDriverManager.setTestcaseIdTestRail(testCaseId);
 			navigateToUrl(BaseTest.properties.getProperty("application"));
 			testData = getDetails(testCaseId);
 			masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);

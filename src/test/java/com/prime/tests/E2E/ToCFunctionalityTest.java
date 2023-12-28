@@ -48,7 +48,7 @@ public class ToCFunctionalityTest extends BaseTest {
     @Story("EPIC-427")
     public void VerifyJournalToCFeatures() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);

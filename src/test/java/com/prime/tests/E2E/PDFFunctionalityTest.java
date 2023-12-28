@@ -18,7 +18,6 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 import com.prime.generics.BasePage;
 import com.prime.generics.BaseTest;
-import com.prime.generics.Helper;
 import com.prime.generics.WebDriverManager;
 import com.prime.pageFactory.pages.fpj.ArticleCitationPage;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
@@ -46,7 +45,7 @@ public class PDFFunctionalityTest extends BaseTest {
     public void verifyPDFButonAvailableAndDownloadPDF() throws Exception {
         try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-            Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+            WebDriverManager.setTestcaseIdTestRail(testCaseId);
             String application = BaseTest.properties.getProperty("application");
             url = BaseTest.properties.getProperty(application);
             System.out.println("!url=" + url);
@@ -67,6 +66,7 @@ public class PDFFunctionalityTest extends BaseTest {
             //Verifying Button Downloaded
             String articleHeader = articleCitationPage.getArticleHeaderOnArticlePage();
             pdfPage.clickOnDownloadPDFButtonOnArticlePage();
+
      //       driver.navigate().refresh();
             //String donwloladPDFFileName = pdfPage.getLatestDownloadFileRelatedToPDF();
             //System.out.println("donwloladPDFfileName : "+donwloladPDFFileName);
@@ -74,7 +74,7 @@ public class PDFFunctionalityTest extends BaseTest {
             BaseTest.assertEquals(WebDriverManager.getDriver(),pdfPage.toVerifyPDFFIleIsDownload(),true,"Pdf File is downloaded");
             deletedownloadedFiles(".pdf");
             deletedownloadedFiles(".crdownload");
-            
+
             //Verify Inline PDF tab is diplayed
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyInlinePDFTabIsPresentOnArticlePage(), true, "Verifying Inline PDF tab is present on the article page");
             pdfPage.clickOnInlinePdfTabOnArticlePage();
@@ -107,9 +107,11 @@ public class PDFFunctionalityTest extends BaseTest {
             // Pickup Apps name or COnfig properly apps name 
 
         } finally {
+
         	deletedownloadedFiles(".pdf");
         	deletedownloadedFiles(".crdownload");
            // BaseTest.deleteDonwloadedFile();
+
         }
     }
 
@@ -120,7 +122,7 @@ public class PDFFunctionalityTest extends BaseTest {
     public void VerifyPDFFeaturesInRestrictedAccessContentPage() throws Exception {
 
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);

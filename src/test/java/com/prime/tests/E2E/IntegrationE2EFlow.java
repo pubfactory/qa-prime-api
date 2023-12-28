@@ -6,7 +6,6 @@ import com.prime.api.helpers.LoginServiceHelper;
 import com.prime.api.helpers.SearchServiceHelper;
 import com.prime.generics.BasePage;
 import com.prime.generics.BaseTest;
-import com.prime.generics.Helper;
 import com.prime.generics.WebDriverManager;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
 import com.prime.pageFactory.pages.fpj.MasterPage;
@@ -39,7 +38,8 @@ public class IntegrationE2EFlow extends BaseTest {
     @Story("EPIC-971")
     public void verifyThatUserAbleToLaunchApplication() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        Helper.INSTANCE.setCurrentTestCaseId(testCaseId);
+        // WebDriverManager.setTestcaseIdTestRail(testCaseId);
+        WebDriverManager.setTestcaseIdTestRail(testCaseId);
         // Identifying the application and its url to test
         String application = BaseTest.properties.getProperty("application");
         //String application = System.getProperty("application");
