@@ -4,7 +4,6 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 import com.prime.generics.BasePage;
 import com.prime.generics.BaseTest;
-import com.prime.generics.Helper;
 import com.prime.generics.WebDriverManager;
 import com.prime.pageFactory.pages.fpj.ArticleCitationPage;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
@@ -53,7 +52,7 @@ public class SearchFunctionalityTest extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBrowsePageLabelText(), testData.get("browserpagetitle").toString(), "Verifying Browse page");
         masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchtext").toString());
         masterPage.clickOnSearchMagnifyingLense();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyClearAllButtonIsPresentOnBrowseOrSearchPage(), true, "Verifying the Clear All Button is present on Browse or search page");
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyClearAllButtonIsPresentOnBrowseOrSearchPage(), true, "Verifying Clear All Button is present on Browse or search page");
         browseOrSearchPage.clickOnClearAllOnBrowseOrSearchPage();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBrowsePageLabelText(), testData.get("browserpagetitle").toString(), "Verifying Browse page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyItemPerPageDDIsPresentOnBrowseOrSearchPage(), true, "Verifying the Item per page dropdown is present on Browse or search page");
@@ -125,7 +124,7 @@ public class SearchFunctionalityTest extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyContentDOIIsPresentOnBrosweOrSearchPage(), true, "Verifying the content DOI is present on Content");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyContentOnlinePublicationDateIsPresentOnBrosweOrSearchPage(), true,
                 "Verifying the content Online Publication Date is present on Content");
-//        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyContentAbstractIsPresentOnBrosweOrSearchPage(), true, "Verifying the content Abstract is present on Content");
+        //        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyContentAbstractIsPresentOnBrosweOrSearchPage(), true, "Verifying the content Abstract is present on Content");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifySaveButtonIsPresentOnBrowseOrSearchPage(), true, "Verifying the Save Button is present on Browse or search page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyShareButtonIsPresentOnBrowseOrSearchPage(), true, "Verifying the Share Button is present on Browse or search page");
         browseOrSearchPage.clickOnSaveButtonOnBrowseOrSearchPage();
@@ -292,11 +291,11 @@ public class SearchFunctionalityTest extends BaseTest {
         WebDriverManager.getDriver().navigate().refresh();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsNotPresentOnSearchOrBrowsePage(browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage()), true,
                 "Verifying the refine term filter search keyword is not presented on the search/browse page after clicked on the ClearAll button on the search/browse page");
-//
+        //
         masterPage.clickOnSearchMagnifyingLense();
         String title = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptiontitle").toString());
-                browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), title);
+        browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), title);
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsPresentOnSearchOrBrowsePage(title), true,
                 "Verifying the refine term filter search keyword is presented on the search/browse page before click on the refine term search slug sign on the search/browse page");

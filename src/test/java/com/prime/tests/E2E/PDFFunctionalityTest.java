@@ -67,11 +67,7 @@ public class PDFFunctionalityTest extends BaseTest {
             String articleHeader = articleCitationPage.getArticleHeaderOnArticlePage();
             pdfPage.clickOnDownloadPDFButtonOnArticlePage();
 
-     //       driver.navigate().refresh();
-            //String donwloladPDFFileName = pdfPage.getLatestDownloadFileRelatedToPDF();
-            //System.out.println("donwloladPDFfileName : "+donwloladPDFFileName);
-            //BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL(donwloladPDFFileName), "Verifying the downloaded file name");
-            BaseTest.assertEquals(WebDriverManager.getDriver(),pdfPage.toVerifyPDFFIleIsDownload(),true,"Pdf File is downloaded");
+            BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.toVerifyPDFFIleIsDownload(), true, "Pdf File is downloaded");
             deletedownloadedFiles(".pdf");
             deletedownloadedFiles(".crdownload");
 
@@ -83,8 +79,8 @@ public class PDFFunctionalityTest extends BaseTest {
             // Verifying the Default PDF Zoom value, ZoomIn and Zoom Out button in Inline PDF Tab 
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.getDefaultPDFZoomValueInInlinePDFTab(), testData.get("defaultzoomvalue").toString(),
                     "Verifying Default zoom value in Inline PDF Tab on article page");
-            BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyZoomInButtonIsPresentInInlinePDFTabOnArticlePage(), true, "Verifying ZoomIn button is present on Inline PDF tab on article page");
-            BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyZoomOutButtonIsPresentInInlinePDFTabOnArticlePage(), true, "Verifying ZoomOut button is present on Inline PDF tab on article page");
+            BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyZoomInButtonIsPresentInInlinePDFTabOnArticlePage(), true, "Verifying ZoomIn button is present on Inline PDF tab ");
+            BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyZoomOutButtonIsPresentInInlinePDFTabOnArticlePage(), true, "Verifying ZoomOut button is present on Inline PDF tab");
 
             //Verifying the PageSize changes when click on ZoomOut(Minus) or ZoomIn(Plus) button
             //            pdfPage.ClickOnAutomaticZoomFromPDFZoomScaleSelectorDD();
@@ -97,20 +93,19 @@ public class PDFFunctionalityTest extends BaseTest {
             //Verifying the same article is displayed in PDFViewer in Inline PDF tab
             String partialArticleHeader = pdfPage.getPartialArticleTitleFromInlinePDFTab();
             BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.verifyStringContainsSpecificWord(articleHeader, partialArticleHeader), true,
-                    "Verifying that same article diplayed in PDF preview in inline PDF tab");
+                    "Verifying that same article is displayed in PDF preview in inline PDF tab");
 
             String applicationName = BaseTest.properties.getProperty("application");
 
             //Verifying the dynamic watermark on pdf preview in Inline pdf tab
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(applicationName), true,
-                    "Verifying that watermark is presented on pdf in Pdf preview in Inline pdf tab on articla page");
+                    "Verifying that watermark is present on pdf in Pdf preview in Inline tab on the articla page");
             // Pickup Apps name or COnfig properly apps name 
 
         } finally {
 
-        	deletedownloadedFiles(".pdf");
-        	deletedownloadedFiles(".crdownload");
-           // BaseTest.deleteDonwloadedFile();
+            deletedownloadedFiles(".pdf");
+            deletedownloadedFiles(".crdownload");
 
         }
     }

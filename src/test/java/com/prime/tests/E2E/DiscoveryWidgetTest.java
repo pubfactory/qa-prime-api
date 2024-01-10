@@ -55,9 +55,7 @@ public class DiscoveryWidgetTest extends BaseTest {
             articleCitationPage.clickOnCopyLinkButtonOnShareLinkOnArticlePage();
 
             // Verifying Link Copied successfully meassage displayed
-            //                                       BaseTest.assertEquals(WebDriverManager.getDriver(),
-            //                                                      articleCitationPage.verifyLinkCopiedSuccessfullyMessageDisplayedOnPopupOnArticlePage(), true,
-            //                                                                    "Verifying the Link copied message dispayed after clicking on copy link button on share link pop up on Article page");
+
             String directCopyLink = articleCitationPage.getCopyLinkDirectlyOnShareLinkPopupOnArticlePage();
             articleCitationPage.clickOnShareLinkPopupClosekButtonOnShareLinkOnArticlePage();
 
@@ -77,9 +75,6 @@ public class DiscoveryWidgetTest extends BaseTest {
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyShareLinkPopUpIsNotPresentOnArticlePageAfterClickingCloseButton(), true,
                     "Verifying the Share link pop up is Closed after clicking the close button of share link popup");
 
-            //                   articleCitationPage.clickOnshareViaEmailButtonOnArticlePage();
-            //                   articleCitationPage.clickOnEmailThisContentButtonOnShareLinkOnArticlePage();
-            //                   Helper.INSTANCE.switchToWindowTab(0);
 
         } catch (Exception e) {
             e.getStackTrace();
@@ -127,10 +122,7 @@ public class DiscoveryWidgetTest extends BaseTest {
             articleCitationPage.clickOnSimilarArticleInGoogleScholarHyperLink();
             Helper.INSTANCE.switchToWindowTab(1);
             BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("scholar"), "Verifying if google scholar tab is opened");
-            //                                       BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage
-            //                                                      .verifyArticleElementInGoogleScholarTabIsPresenstedWhenClickOnSimilarArticleInGoogleScholarHyperLink(),
-            //                                                                    true,
-            //                                                                    "Verifying the Article Element In google scholar tab is presented when Click on Similar Article in Google Scholar HyperLink");
+         
             WebDriverManager.getDriver().close();
             Helper.INSTANCE.switchToWindowTab(0);
 

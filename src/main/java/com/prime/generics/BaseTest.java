@@ -76,7 +76,6 @@ public class BaseTest {
     public static final String USERNAME = "kglselectsignal_7pEVPF";
     public static final String AUTOMATE_KEY = "3HpPxaxVR3GLRjgxWg2K";
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-    // public static boolean loginFlag = false;
     public Set<Cookie> allCookies;
     public static List<String> domainName = new ArrayList<String>();
     protected WebDriver driver;
@@ -161,6 +160,7 @@ public class BaseTest {
             FileInputStream fStream = new FileInputStream(new File(System.getProperty("user.dir") + "/src/test/resources/config.properties"));
             properties.load(fStream);
             String env = BaseTest.properties.getProperty("Environment");
+            //String env = System.getProperty("Environment");
             System.out.println("ENV=" + env);
             this.loadUrlFromEnvProperties(env);
             this.loadUrlFromEnvProperties("testRail");
@@ -290,13 +290,6 @@ public class BaseTest {
         }
     }
 
-    //   @BeforeMethod(alwaysRun = true)
-    //     public static void PreExecution(Method method) {
-    //        System.out.println("Test name is: " + method.getName());
-    //        System.out.println("Test description is: " +  method.getAnnotation(Test.class).description());
-    //          testCaseName = method.getAnnotation(Test.class).description();
-    //      
-    //     }    
 
     /**
      * This method used to create a driver object for given browser for execution on
@@ -415,11 +408,8 @@ public class BaseTest {
                     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
 
 
-                   // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                    // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
 
-                 //   System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
-
-                    //    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
                     options.addArguments("--disable-dev-shm-usage");
@@ -467,11 +457,6 @@ public class BaseTest {
                     System.out.println("****** Initiate Edge Browser using " + browser + " *****");
                     DesiredCapabilities capabilities = DesiredCapabilities.edge();
                     edgeoptions = new EdgeOptions();
-                    // capabilities.setCapability(CapabilityType.);
-                    // EdgeDriver driver = new EdgeDriver(capabilities);
-
-                    // EdgeOptions edgeoptions = new EdgeOptions();
-                    // EdgeOptions edgeoptions = new EdgeOptions();
 
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
 
@@ -589,7 +574,6 @@ public class BaseTest {
     public boolean waitForElementVisibleWDR(WebElement element) throws Exception {
         boolean elementPresent = false;
         try {
-            // waitForDocumentReady();
             WebDriverManager.getWebdriverWait().until(ExpectedConditions.visibilityOf(element));
             new WebDriverWait(driver, 60).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
             new WebDriverWait(driver, 60).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
@@ -598,7 +582,7 @@ public class BaseTest {
         } catch (Exception e) {
             Helper.INSTANCE.logEventToReport(driver, "Error", element, e.getMessage() + Thread.currentThread().getId());
         } finally {
-            // Thread.sleep(2000);
+
         }
         return elementPresent;
     }
@@ -656,7 +640,7 @@ public class BaseTest {
 
             WebDriverManager.closeDriver();
             WebDriverManager.resetFlagMap().clear();
-            // allureReporting();
+
 
             System.out.println("After suite");
         } catch (Exception e) {
@@ -749,17 +733,6 @@ public class BaseTest {
         }
     }
 
-    //  @Parameters({"testcaseid"})
-    //  @AfterMethod
-    //  public void closeApplication(@Optional String testcaseid) throws Exception {
-    //      try {
-    //          System.out.println("[Testcase ID: " + testcaseid);
-    //          Allure.step(testcaseid);
-    //      }
-    //      catch (Exception e) {
-    //          
-    //      }
-    //  }
 
     /**
      * This method used to navigate the URL
@@ -936,7 +909,6 @@ public class BaseTest {
 
                 // Print key and value
                 if (keyvalue.toString().contains(desc)) {
-                    // System.out.println("key: " + keyStr + " value: " + keyvalue);
                     id = getTestCaseID(jsonObj);
                     break;
                 }
@@ -960,7 +932,6 @@ public class BaseTest {
             application = BaseTest.properties.getProperty("application");
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
             this.getTestDataDetailsWithFileName(testCaseId, testDataFileName);
-            //this.fetchTestDataApplicationWise(application);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -1191,7 +1162,7 @@ public class BaseTest {
                     if (file.isFile() && file.getName().toLowerCase().endsWith(fileExtension)) {
                         // Attempt to delete the file
                         if (file.delete()) {
-                       	  System.out.println("Deleted file: " + file.getName());
+                            System.out.println("Deleted file: " + file.getName());
                         } else {
                             System.out.println("Failed to delete file: " + file.getName());
                         }
@@ -1201,7 +1172,7 @@ public class BaseTest {
         } else {
             System.out.println("The specified folder does not exist or is not a directory.");
         }
-    
-}
+
+    }
 
 }

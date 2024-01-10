@@ -6,6 +6,7 @@
   <parameter name="Environment" value="uat"/>
   <listeners>
     <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
+    <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
   </listeners>
   <test thread-count="17" parallel="tests" name="JOURNAL_HOME_E2E(failed)" verbose="5">
     <classes>
@@ -13,8 +14,8 @@
         <methods>
           <include name="closeDriver"/>
           <include name="establishConnection"/>
-          <include name="loadConfigurationValues"/>
           <include name="setUp"/>
+          <include name="loadConfigurationValues"/>
           <include name="verifyThatViewPagesDisplayed">
             <parameter name="testcaseid" value="1721285"/>
           </include> <!-- verifyThatViewPagesDisplayed -->
@@ -32,13 +33,29 @@
           <include name="verifyThatUserAbleToLaunchApplication">
             <parameter name="testcaseid" value="1721284"/>
           </include> <!-- verifyThatUserAbleToLaunchApplication -->
-          <include name="loadConfigurationValues"/>
           <include name="setUp"/>
+          <include name="loadConfigurationValues"/>
           <include name="closeApplication"/>
         </methods>
       </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
     </classes>
   </test> <!-- SEARCH_E2E(failed) -->
+  <test thread-count="17" parallel="tests" name="JOURNAL_TOC(failed)" verbose="5">
+    <classes>
+      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+        <methods>
+          <include name="VerifyJournalToCFeatures">
+            <parameter name="testcaseid" value="1722740"/>
+          </include> <!-- VerifyJournalToCFeatures -->
+          <include name="closeDriver"/>
+          <include name="establishConnection"/>
+          <include name="setUp"/>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+    </classes>
+  </test> <!-- JOURNAL_TOC(failed) -->
   <test thread-count="17" parallel="tests" name="PDF_WORK(failed)" verbose="5">
     <classes>
       <class name="com.prime.tests.E2E.PDFFunctionalityTest">
@@ -55,4 +72,20 @@
       </class> <!-- com.prime.tests.E2E.PDFFunctionalityTest -->
     </classes>
   </test> <!-- PDF_WORK(failed) -->
+  <test thread-count="17" parallel="tests" name="SEARCH_E2E_FULL(failed)" verbose="5">
+    <classes>
+      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">
+            <parameter name="testcaseid" value="1722548"/>
+          </include> <!-- VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages -->
+          <include name="establishConnection"/>
+          <include name="setUp"/>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
+    </classes>
+  </test> <!-- SEARCH_E2E_FULL(failed) -->
 </suite> <!-- Failed suite [Prime Automation E2E Suite] -->

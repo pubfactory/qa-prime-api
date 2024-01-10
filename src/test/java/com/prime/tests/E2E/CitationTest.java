@@ -16,7 +16,6 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 import com.prime.generics.BasePage;
 import com.prime.generics.BaseTest;
-import com.prime.generics.Helper;
 import com.prime.generics.WebDriverManager;
 import com.prime.pageFactory.pages.fpj.ArticleCitationPage;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
@@ -44,6 +43,7 @@ public class CitationTest extends BaseTest {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
             WebDriverManager.setTestcaseIdTestRail(testCaseId);
             String application = BaseTest.properties.getProperty("application");
+            //String application = System.getProperty("application");
             url = BaseTest.properties.getProperty(application);
             System.out.println("!url=" + url);
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
@@ -84,27 +84,17 @@ public class CitationTest extends BaseTest {
             articleCitationPage.clickOnRISExportCitationFormat();
 
             //Verifying if user is able to download RIS,BIB,ENW formats
-            
-//            String ris= articleCitationPage.getLatestDownloadFileRelatedToCitation(".ris");
-//            BaseTest.assertEquals(WebDriverManager.getDriver(), ris, testData.get("risbuttonformat").toString(),
-//                    "Verifying the file " + (testData.get("risbuttonformat").toString()) + " is downloaded");
-            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.toVerifyCitationFormatFileIsDownload(".ris"), true,"Verifying the file .ris format file is downloaded");
+
+            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.toVerifyCitationFormatFileIsDownload(".ris"), true, "Verifying the file .ris format file is downloaded");
             deletedownloadedFiles(".ris");
             articleCitationPage.clickOnBIBExportCitationFormat();
-            
-//            String bib= articleCitationPage.getLatestDownloadFileRelatedToCitation(".bib");
-//            BaseTest.assertEquals(WebDriverManager.getDriver(), bib, testData.get("bibbuttonformat").toString(),
-//                    "Verifying the file " + (testData.get("bibbuttonformat").toString()) + " is downloaded");
-            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.toVerifyCitationFormatFileIsDownload(".bib"), true,"Verifying the file .ris format file is downloaded");
-            
+            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.toVerifyCitationFormatFileIsDownload(".bib"), true, "Verifying the file .ris format file is downloaded");
+
             deletedownloadedFiles(".bib");
             articleCitationPage.clickOnENWExportCitationFormat();
-            
-//            String enw= articleCitationPage.getLatestDownloadFileRelatedToCitation(".enw");
-//            BaseTest.assertEquals(WebDriverManager.getDriver(), enw, testData.get("enwbuttonformat").toString(),
-//                    "Verifying the file " + (testData.get("enwbuttonformat").toString()) + " is downloaded");
-            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.toVerifyCitationFormatFileIsDownload(".enw"), true,"Verifying the file .ris format file is downloaded");
-            
+
+            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.toVerifyCitationFormatFileIsDownload(".enw"), true, "Verifying the file .ris format file is downloaded");
+
             deletedownloadedFiles(".enw");
             List<String> expRISCitationLabels = Arrays.asList(testData.get("risbuttonlabel").toString().split(","));
             List<String> expBIBCitationLabels = Arrays.asList(testData.get("bibbuttonlabel").toString().split(","));
