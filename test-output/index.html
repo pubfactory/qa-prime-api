@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,11 +21,12 @@
      -->
   </head>
 
-  <body>    <div class="top-banner-root">
+  <body>
+    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">2 suites, 2 failed tests</span>
+      <span class="top-banner-font-1">2 suites</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" class="navigator-link">
-              <span class="suite-name border-failed">Prime Automation E2E Suite</span>
+              <span class="suite-name border-skipped">Prime Automation E2E Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Prime_Automation_E2E_Suite" class="navigator-link ">
-                    <span>C:\Users\veena.mathew\eclipse-workspace\com.QAPrimeIntegration\PrimeRegressionLocal.xml</span>
+                    <span>C:\PF\PubFactorySuite\PubFactorySuite\qa-prime-e2e\PrimeRegressionLocal.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,26 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">22 methods, 2 failed,  5 skipped,  15 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" class="hide-methods failed suite-Prime_Automation_E2E_Suite"> (hide)</a> <!-- hide-methods failed suite-Prime_Automation_E2E_Suite -->
-                      <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" class="show-methods failed suite-Prime_Automation_E2E_Suite"> (show)</a> <!-- show-methods failed suite-Prime_Automation_E2E_Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Prime_Automation_E2E_Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.ToCFunctionalityTest" class="method navigator-link" hash-for-method="VerifyJournalToCFeatures">VerifyJournalToCFeatures</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.SearchFunctionalityTest" class="method navigator-link" hash-for-method="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Prime_Automation_E2E_Suite -->
+                    <span class="method-stats">20 methods,  3 skipped,  17 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title skipped">Retried methods</span>
@@ -120,16 +102,6 @@
                       <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" class="show-methods skipped suite-Prime_Automation_E2E_Suite"> (show)</a> <!-- show-methods skipped suite-Prime_Automation_E2E_Suite -->
                     </span>
                     <div class="method-list-content skipped suite-Prime_Automation_E2E_Suite">
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.ToCFunctionalityTest" class="method navigator-link" hash-for-method="VerifyJournalToCFeatures">VerifyJournalToCFeatures</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.SearchFunctionalityTest" class="method navigator-link" hash-for-method="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="skipped.png" width="3%"/>
                         <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.PDFFunctionalityTest" class="method navigator-link" hash-for-method="verifyPDFButonAvailableAndDownloadPDF">verifyPDFButonAvailableAndDownloadPDF</a> <!-- method navigator-link -->
@@ -161,6 +133,11 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.ToCFunctionalityTest" class="method navigator-link" hash-for-method="VerifyJournalToCFeatures">VerifyJournalToCFeatures</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.PDFFunctionalityTest" class="method navigator-link" hash-for-method="VerifyPDFFeaturesInRestrictedAccessContentPage">VerifyPDFFeaturesInRestrictedAccessContentPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -172,6 +149,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.DiscoveryWidgetTest" class="method navigator-link" hash-for-method="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures">VerifyPubMedButtonFeaturesAndAlmetricPageFeatures</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Prime_Automation_E2E_Suite" title="com.prime.tests.E2E.SearchFunctionalityTest" class="method navigator-link" hash-for-method="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -243,97 +225,6 @@
         <div panel-name="suite-PRIMEFPJ_Regression_Suite" class="panel PRIMEFPJ_Regression_Suite">
         </div> <!-- panel PRIMEFPJ_Regression_Suite -->
         <div panel-name="suite-Prime_Automation_E2E_Suite" class="panel Prime_Automation_E2E_Suite">
-          <div class="suite-Prime_Automation_E2E_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.prime.tests.E2E.ToCFunctionalityTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="VerifyJournalToCFeatures">
-                  </a> <!-- VerifyJournalToCFeatures -->
-                  <span class="method-name">VerifyJournalToCFeatures</span>
-                  <div class="stack-trace">java.lang.AssertionError: Clicking on View This Issue On HomePage expected true but found false
-	at org.testng.Assert.fail(Assert.java:111)
-	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
-	at com.prime.pageFactory.pages.fpj.MasterPage.clickOnViewThisIssueOnHomePage(MasterPage.java:205)
-	at com.prime.tests.E2E.ToCFunctionalityTest.VerifyJournalToCFeatures(ToCFunctionalityTest.java:62)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:831)
-
-</div> <!-- stack-trace -->
-                  <em>
-(1722740 - Verify Journal ToC features)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Prime_Automation_E2E_Suite-class-failed -->
-          <div class="suite-Prime_Automation_E2E_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.prime.tests.E2E.SearchFunctionalityTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">
-                  </a> <!-- VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages -->
-                  <span class="method-name">VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages</span>
-                  <div class="stack-trace">java.lang.AssertionError: fromDate=2010&amp;toDate=2015 not found
-	at org.testng.Assert.fail(Assert.java:111)
-	at com.prime.generics.BaseTest.verifyTextInURL(BaseTest.java:1066)
-	at com.prime.tests.E2E.SearchFunctionalityTest.VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages(SearchFunctionalityTest.java:420)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:831)
-
-</div> <!-- stack-trace -->
-                  <em>
-(1722548 - Verify  Refine by Date Section and that search box is accessible in all pages)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Prime_Automation_E2E_Suite-class-failed -->
           <div class="suite-Prime_Automation_E2E_Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
               <img src="skipped.png"/>
@@ -346,31 +237,30 @@
                   </a> <!-- verifyThatViewPagesDisplayed -->
                   <span class="method-name">verifyThatViewPagesDisplayed</span>
                   <div class="stack-trace">java.lang.AssertionError: Verifying the page title  ::  Expected Result--&gt; Anesthesia Progress || Actual Result--&gt; anesthesiaprogress
-	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.fail(Assert.java:99)
 	at com.prime.generics.BaseTest.assertEquals(BaseTest.java:803)
 	at com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow.verifyThatViewPagesDisplayed(UnAuthenticatedViewCheckPagesFlow.java:58)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:831)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
 
 </div> <!-- stack-trace -->
                   <em>
@@ -382,44 +272,43 @@
           <div class="suite-Prime_Automation_E2E_Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
               <img src="skipped.png"/>
-              <span class="class-name">com.prime.tests.E2E.ToCFunctionalityTest</span>
+              <span class="class-name">com.prime.tests.E2E.IntegrationE2EFlow</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="VerifyJournalToCFeatures">
-                  </a> <!-- VerifyJournalToCFeatures -->
-                  <span class="method-name">VerifyJournalToCFeatures</span>
-                  <div class="stack-trace">java.lang.AssertionError: Verifying the content DOI is present on Content ::  Expected Result--&gt; true || Actual Result--&gt; false
-	at org.testng.Assert.fail(Assert.java:111)
-	at com.prime.generics.BaseTest.assertEquals(BaseTest.java:1107)
-	at com.prime.tests.E2E.ToCFunctionalityTest.VerifyJournalToCFeatures(ToCFunctionalityTest.java:92)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+                  <a name="verifyThatUserAbleToLaunchApplication">
+                  </a> <!-- verifyThatUserAbleToLaunchApplication -->
+                  <span class="method-name">verifyThatUserAbleToLaunchApplication</span>
+                  <div class="stack-trace">java.lang.AssertionError: Verifying the page title  ::  Expected Result--&gt; Anesthesia Progress || Actual Result--&gt; anesthesiaprogress
+	at org.testng.Assert.fail(Assert.java:99)
+	at com.prime.generics.BaseTest.assertEquals(BaseTest.java:803)
+	at com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(IntegrationE2EFlow.java:54)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:831)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
 
 </div> <!-- stack-trace -->
                   <em>
-(1722740 - Verify Journal ToC features)                  </em>
+(1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -436,126 +325,35 @@
                   </a> <!-- verifyPDFButonAvailableAndDownloadPDF -->
                   <span class="method-name">verifyPDFButonAvailableAndDownloadPDF</span>
                   <div class="stack-trace">java.lang.AssertionError: Click On First Article On Search Or Browse Page expected true but found false
-	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.fail(Assert.java:99)
 	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
 	at com.prime.pageFactory.pages.fpj.BrowseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage(BrowseOrSearchPage.java:296)
 	at com.prime.tests.E2E.PDFFunctionalityTest.verifyPDFButonAvailableAndDownloadPDF(PDFFunctionalityTest.java:62)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:831)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
 
 </div> <!-- stack-trace -->
                   <em>
 (1722758 - Verify that the PDF button available on current content page and  PDF Download will be successful when clicked on it)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Prime_Automation_E2E_Suite-class-skipped -->
-          <div class="suite-Prime_Automation_E2E_Suite-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">com.prime.tests.E2E.IntegrationE2EFlow</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyThatUserAbleToLaunchApplication">
-                  </a> <!-- verifyThatUserAbleToLaunchApplication -->
-                  <span class="method-name">verifyThatUserAbleToLaunchApplication</span>
-                  <div class="stack-trace">java.lang.AssertionError: Verifying the page title  ::  Expected Result--&gt; Anesthesia Progress || Actual Result--&gt; anesthesiaprogress
-	at org.testng.Assert.fail(Assert.java:111)
-	at com.prime.generics.BaseTest.assertEquals(BaseTest.java:803)
-	at com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(IntegrationE2EFlow.java:54)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:831)
-
-</div> <!-- stack-trace -->
-                  <em>
-(1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Prime_Automation_E2E_Suite-class-skipped -->
-          <div class="suite-Prime_Automation_E2E_Suite-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">com.prime.tests.E2E.SearchFunctionalityTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">
-                  </a> <!-- VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages -->
-                  <span class="method-name">VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages</span>
-                  <div class="stack-trace">java.lang.AssertionError: fromDate=2010&amp;toDate=2015 not found
-	at org.testng.Assert.fail(Assert.java:111)
-	at com.prime.generics.BaseTest.verifyTextInURL(BaseTest.java:1066)
-	at com.prime.tests.E2E.SearchFunctionalityTest.VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages(SearchFunctionalityTest.java:420)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:481)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:831)
-
-</div> <!-- stack-trace -->
-                  <em>
-(1722548 - Verify  Refine by Date Section and that search box is accessible in all pages)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -573,84 +371,6 @@
                   <span class="method-name">verifyThatViewPagesDisplayed</span>
                   <em>
 (1721285 - Verify Journal pages)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Prime_Automation_E2E_Suite-class-passed -->
-          <div class="suite-Prime_Automation_E2E_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.prime.tests.E2E.PDFFunctionalityTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="VerifyPDFFeaturesInRestrictedAccessContentPage">
-                  </a> <!-- VerifyPDFFeaturesInRestrictedAccessContentPage -->
-                  <span class="method-name">VerifyPDFFeaturesInRestrictedAccessContentPage</span>
-                  <em>
-(1722759 - Verify PDF features in restricted access content page)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyPDFButonAvailableAndDownloadPDF">
-                  </a> <!-- verifyPDFButonAvailableAndDownloadPDF -->
-                  <span class="method-name">verifyPDFButonAvailableAndDownloadPDF</span>
-                  <em>
-(1722758 - Verify that the PDF button available on current content page and  PDF Download will be successful when clicked on it)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Prime_Automation_E2E_Suite-class-passed -->
-          <div class="suite-Prime_Automation_E2E_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.prime.tests.E2E.DiscoveryWidgetTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="VerifyGoogleScholarButtonFeatures">
-                  </a> <!-- VerifyGoogleScholarButtonFeatures -->
-                  <span class="method-name">VerifyGoogleScholarButtonFeatures</span>
-                  <em>
-(1722742 - Verify Google Scholar Button features)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures">
-                  </a> <!-- VerifyPubMedButtonFeaturesAndAlmetricPageFeatures -->
-                  <span class="method-name">VerifyPubMedButtonFeaturesAndAlmetricPageFeatures</span>
-                  <em>
-(1722743 - Verify PubMed button features and Almetric page features)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="VerifyVariousEmailButtonFeatures">
-                  </a> <!-- VerifyVariousEmailButtonFeatures -->
-                  <span class="method-name">VerifyVariousEmailButtonFeatures</span>
-                  <em>
-(1722741 - Verify various Email button features)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Prime_Automation_E2E_Suite-class-passed -->
-          <div class="suite-Prime_Automation_E2E_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.prime.tests.E2E.IntegrationE2EFlow</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyThatUserAbleToLaunchApplication">
-                  </a> <!-- verifyThatUserAbleToLaunchApplication -->
-                  <span class="method-name">verifyThatUserAbleToLaunchApplication</span>
-                  <em>
-(1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -668,6 +388,15 @@
                   <span class="method-name">VerifyPpaginationAndSortingOptionsIntheSearchResultsPage</span>
                   <em>
 (1722542 - Verify pagination and sorting options in the search results page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">
+                  </a> <!-- VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages -->
+                  <span class="method-name">VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages</span>
+                  <em>
+(1722548 - Verify  Refine by Date Section and that search box is accessible in all pages)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -743,19 +472,119 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Prime_Automation_E2E_Suite-class-passed -->
+          <div class="suite-Prime_Automation_E2E_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.prime.tests.E2E.IntegrationE2EFlow</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyThatUserAbleToLaunchApplication">
+                  </a> <!-- verifyThatUserAbleToLaunchApplication -->
+                  <span class="method-name">verifyThatUserAbleToLaunchApplication</span>
+                  <em>
+(1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Prime_Automation_E2E_Suite-class-passed -->
+          <div class="suite-Prime_Automation_E2E_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.prime.tests.E2E.ToCFunctionalityTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyJournalToCFeatures">
+                  </a> <!-- VerifyJournalToCFeatures -->
+                  <span class="method-name">VerifyJournalToCFeatures</span>
+                  <em>
+(1722740 - Verify Journal ToC features)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Prime_Automation_E2E_Suite-class-passed -->
+          <div class="suite-Prime_Automation_E2E_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.prime.tests.E2E.DiscoveryWidgetTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyGoogleScholarButtonFeatures">
+                  </a> <!-- VerifyGoogleScholarButtonFeatures -->
+                  <span class="method-name">VerifyGoogleScholarButtonFeatures</span>
+                  <em>
+(1722742 - Verify Google Scholar Button features)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures">
+                  </a> <!-- VerifyPubMedButtonFeaturesAndAlmetricPageFeatures -->
+                  <span class="method-name">VerifyPubMedButtonFeaturesAndAlmetricPageFeatures</span>
+                  <em>
+(1722743 - Verify PubMed button features and Almetric page features)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyVariousEmailButtonFeatures">
+                  </a> <!-- VerifyVariousEmailButtonFeatures -->
+                  <span class="method-name">VerifyVariousEmailButtonFeatures</span>
+                  <em>
+(1722741 - Verify various Email button features)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Prime_Automation_E2E_Suite-class-passed -->
+          <div class="suite-Prime_Automation_E2E_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.prime.tests.E2E.PDFFunctionalityTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="VerifyPDFFeaturesInRestrictedAccessContentPage">
+                  </a> <!-- VerifyPDFFeaturesInRestrictedAccessContentPage -->
+                  <span class="method-name">VerifyPDFFeaturesInRestrictedAccessContentPage</span>
+                  <em>
+(1722759 - Verify PDF features in restricted access content page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyPDFButonAvailableAndDownloadPDF">
+                  </a> <!-- verifyPDFButonAvailableAndDownloadPDF -->
+                  <span class="method-name">verifyPDFButonAvailableAndDownloadPDF</span>
+                  <em>
+(1722758 - Verify that the PDF button available on current content page and  PDF Download will be successful when clicked on it)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Prime_Automation_E2E_Suite-class-passed -->
         </div> <!-- panel Prime_Automation_E2E_Suite -->
         <div panel-name="test-xml-PRIMEFPJ_Regression_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\veena.mathew\eclipse-workspace\com.QAPrimeIntegration\PrimeConfig.xml</span>
+            <span class="header-content">C:\PF\PubFactorySuite\PubFactorySuite\qa-prime-e2e\PrimeConfigW.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;PRIMEFPJ Regression Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;testRailIntegrationMode&quot; value=&quot;ON&quot;/&gt;
   &lt;parameter name=&quot;application&quot; value=&quot;anesthesiaprogress&quot;/&gt;
+  &lt;parameter name=&quot;testRunId&quot; value=&quot;4001&quot;/&gt;
+  &lt;parameter name=&quot;serverURL&quot; value=&quot;https://sheridan.testrail.com&quot;/&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
-  &lt;parameter name=&quot;Environment&quot; value=&quot;uat&quot;/&gt;
+  &lt;parameter name=&quot;serverUsername&quot; value=&quot;veena.mathew@kwglobal.com&quot;/&gt;
+  &lt;parameter name=&quot;Environment&quot; value=&quot;dev&quot;/&gt;
+  &lt;parameter name=&quot;serverPassword&quot; value=&quot;Welcome123il%&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.prime.retryAnalyzers.RetryListener&quot;/&gt;
   &lt;/listeners&gt;
@@ -768,16 +597,21 @@
         </div> <!-- panel -->
         <div panel-name="test-xml-Prime_Automation_E2E_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\veena.mathew\eclipse-workspace\com.QAPrimeIntegration\PrimeRegressionLocal.xml</span>
+            <span class="header-content">C:\PF\PubFactorySuite\PubFactorySuite\qa-prime-e2e\PrimeRegressionLocal.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;17&quot; parallel=&quot;tests&quot; name=&quot;Prime Automation E2E Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;5&quot;&gt;
+  &lt;parameter name=&quot;testRailIntegrationMode&quot; value=&quot;ON&quot;/&gt;
   &lt;parameter name=&quot;application&quot; value=&quot;anesthesiaprogress&quot;/&gt;
+  &lt;parameter name=&quot;testRunId&quot; value=&quot;4001&quot;/&gt;
+  &lt;parameter name=&quot;serverURL&quot; value=&quot;https://sheridan.testrail.com&quot;/&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
-  &lt;parameter name=&quot;Environment&quot; value=&quot;uat&quot;/&gt;
+  &lt;parameter name=&quot;serverUsername&quot; value=&quot;veena.mathew@kwglobal.com&quot;/&gt;
+  &lt;parameter name=&quot;Environment&quot; value=&quot;dev&quot;/&gt;
+  &lt;parameter name=&quot;serverPassword&quot; value=&quot;Welcome123il%&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.prime.retryAnalyzers.RetryListener&quot;/&gt;
   &lt;/listeners&gt;
@@ -1076,100 +910,92 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(22);
+data.addRows(20);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyPDFButonAvailableAndDownloadPDF')
-data.setCell(0, 2, 'com.prime.tests.E2E.PDFFunctionalityTest')
-data.setCell(0, 3, 133224);
+data.setCell(0, 1, 'VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows')
+data.setCell(0, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
+data.setCell(0, 3, 83273);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'VerifyJournalToCFeatures')
-data.setCell(1, 2, 'com.prime.tests.E2E.ToCFunctionalityTest')
-data.setCell(1, 3, 89133);
+data.setCell(1, 1, 'VerifyVariousRefineTermsInTheSearchResultsPage')
+data.setCell(1, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
+data.setCell(1, 3, 60263);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows')
-data.setCell(2, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(2, 3, 85715);
+data.setCell(2, 1, 'VerifyVariousEmailButtonFeatures')
+data.setCell(2, 2, 'com.prime.tests.E2E.DiscoveryWidgetTest')
+data.setCell(2, 3, 45625);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'VerifyPpaginationAndSortingOptionsIntheSearchResultsPage')
+data.setCell(3, 1, 'VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages')
 data.setCell(3, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(3, 3, 82915);
+data.setCell(3, 3, 39960);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyThatUserAbleToLaunchApplication')
-data.setCell(4, 2, 'com.prime.tests.E2E.IntegrationE2EFlow')
-data.setCell(4, 3, 79428);
+data.setCell(4, 1, 'VerifyPDFFeaturesInRestrictedAccessContentPage')
+data.setCell(4, 2, 'com.prime.tests.E2E.PDFFunctionalityTest')
+data.setCell(4, 3, 37466);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'VerifyVariousEmailButtonFeatures')
-data.setCell(5, 2, 'com.prime.tests.E2E.DiscoveryWidgetTest')
-data.setCell(5, 3, 66947);
+data.setCell(5, 1, 'verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt')
+data.setCell(5, 2, 'com.prime.tests.E2E.CitationTest')
+data.setCell(5, 3, 36130);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'VerifyVariousRefineTermsInTheSearchResultsPage')
+data.setCell(6, 1, 'VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard')
 data.setCell(6, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(6, 3, 63261);
+data.setCell(6, 3, 35607);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'VerifyJournalToCFeatures')
-data.setCell(7, 2, 'com.prime.tests.E2E.ToCFunctionalityTest')
-data.setCell(7, 3, 62677);
+data.setCell(7, 1, 'VerifySearchPageTopPanel')
+data.setCell(7, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
+data.setCell(7, 3, 32603);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt')
-data.setCell(8, 2, 'com.prime.tests.E2E.CitationTest')
-data.setCell(8, 3, 57533);
+data.setCell(8, 1, 'VerifyJournalToCFeatures')
+data.setCell(8, 2, 'com.prime.tests.E2E.ToCFunctionalityTest')
+data.setCell(8, 3, 29802);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'VerifySearchPageTopPanel')
-data.setCell(9, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(9, 3, 56201);
+data.setCell(9, 1, 'verifyThatUserAbleToLaunchApplication')
+data.setCell(9, 2, 'com.prime.tests.E2E.IntegrationE2EFlow')
+data.setCell(9, 3, 27621);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'VerifyPDFFeaturesInRestrictedAccessContentPage')
+data.setCell(10, 1, 'verifyPDFButonAvailableAndDownloadPDF')
 data.setCell(10, 2, 'com.prime.tests.E2E.PDFFunctionalityTest')
-data.setCell(10, 3, 36938);
+data.setCell(10, 3, 23938);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard')
+data.setCell(11, 1, 'VerifyPpaginationAndSortingOptionsIntheSearchResultsPage')
 data.setCell(11, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(11, 3, 36329);
+data.setCell(11, 3, 23142);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages')
-data.setCell(12, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(12, 3, 33968);
+data.setCell(12, 1, 'VerifyPubMedButtonFeaturesAndAlmetricPageFeatures')
+data.setCell(12, 2, 'com.prime.tests.E2E.DiscoveryWidgetTest')
+data.setCell(12, 3, 20314);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages')
+data.setCell(13, 1, 'VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected')
 data.setCell(13, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(13, 3, 33888);
+data.setCell(13, 3, 19254);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'verifyThatViewPagesDisplayed')
-data.setCell(14, 2, 'com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow')
-data.setCell(14, 3, 31523);
+data.setCell(14, 1, 'verifyPDFButonAvailableAndDownloadPDF')
+data.setCell(14, 2, 'com.prime.tests.E2E.PDFFunctionalityTest')
+data.setCell(14, 3, 17559);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'verifyPDFButonAvailableAndDownloadPDF')
-data.setCell(15, 2, 'com.prime.tests.E2E.PDFFunctionalityTest')
-data.setCell(15, 3, 21001);
+data.setCell(15, 1, 'VerifyGoogleScholarButtonFeatures')
+data.setCell(15, 2, 'com.prime.tests.E2E.DiscoveryWidgetTest')
+data.setCell(15, 3, 16804);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'VerifyPubMedButtonFeaturesAndAlmetricPageFeatures')
-data.setCell(16, 2, 'com.prime.tests.E2E.DiscoveryWidgetTest')
-data.setCell(16, 3, 20041);
+data.setCell(16, 1, 'verifyThatViewPagesDisplayed')
+data.setCell(16, 2, 'com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow')
+data.setCell(16, 3, 16704);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected')
-data.setCell(17, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(17, 3, 19017);
+data.setCell(17, 1, 'verifyThatViewPagesDisplayed')
+data.setCell(17, 2, 'com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow')
+data.setCell(17, 3, 16030);
 data.setCell(18, 0, 18)
 data.setCell(18, 1, 'verifyThatUserAbleToLaunchApplication')
 data.setCell(18, 2, 'com.prime.tests.E2E.IntegrationE2EFlow')
-data.setCell(18, 3, 17675);
+data.setCell(18, 3, 15635);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'verifyThatViewPagesDisplayed')
-data.setCell(19, 2, 'com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow')
-data.setCell(19, 3, 16403);
-data.setCell(20, 0, 20)
-data.setCell(20, 1, 'VerifyGoogleScholarButtonFeatures')
-data.setCell(20, 2, 'com.prime.tests.E2E.DiscoveryWidgetTest')
-data.setCell(20, 3, 15881);
-data.setCell(21, 0, 21)
-data.setCell(21, 1, 'VerifyThatTheVariousShareButtonFeatures')
-data.setCell(21, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
-data.setCell(21, 3, 14870);
+data.setCell(19, 1, 'VerifyThatTheVariousShareButtonFeatures')
+data.setCell(19, 2, 'com.prime.tests.E2E.SearchFunctionalityTest')
+data.setCell(19, 3, 14896);
 window.suiteTableData['Prime_Automation_E2E_Suite']= { tableData: data, tableDiv: 'times-div-Prime_Automation_E2E_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 minutes</span>
+              <span class="suite-total-time">Total running time: 5 minutes</span>
               <div id="times-div-Prime_Automation_E2E_Suite">
               </div> <!-- times-div-Prime_Automation_E2E_Suite -->
             </div> <!-- times-div -->
@@ -1218,434 +1044,391 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">establishConnection(org.testng.TestRunner@5ee2b6f9)</span>
+                <span class="method-name">establishConnection(org.testng.TestRunner@fade1fc)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@7ca33c24)</span>
+                <span class="method-start">34 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.CitationTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@23d1e5d0)</span>
-                <span class="method-start">61 ms</span>
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@61f05988)</span>
+                <span class="method-start">34 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@704f1591)</span>
-                <span class="method-start">61 ms</span>
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@41dd05a)</span>
+                <span class="method-start">34 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@58fb7731)</span>
-                <span class="method-start">61 ms</span>
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@3016fd5e)</span>
+                <span class="method-start">34 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@13e547a9)</span>
-                <span class="method-start">61 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@3fb6cf60)</span>
-                <span class="method-start">62 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@37ddb69a)</span>
-                <span class="method-start">62 ms</span>
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@67c2e933)</span>
+                <span class="method-start">34 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@5ee2b6f9)</span>
-                <span class="method-start">63 ms</span>
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@fade1fc)</span>
+                <span class="method-start">34 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifySearchPageTo...)</span>
-                <span class="method-start">113 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.ToCFunctionalityTest.VerifyJournalToCFeatu...)</span>
-                <span class="method-start">113 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyVariousEmailButt...)</span>
-                <span class="method-start">113 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLau...)</span>
-                <span class="method-start">114 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">loadConfigurationValues(org.testng.TestRunner@5aac4250)</span>
+                <span class="method-start">35 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow.verifyTh...)</span>
-                <span class="method-start">114 ms</span>
+                <span class="method-start">52 ms</span>
               </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.CitationTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.CitationTest.verifyCitationButonAvailableA...)</span>
-                <span class="method-start">114 ms</span>
+                <span class="method-start">52 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifySearchPageTo...)</span>
+                <span class="method-start">52 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.ToCFunctionalityTest.VerifyJournalToCFeatu...)</span>
+                <span class="method-start">52 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyVariousEmailButt...)</span>
+                <span class="method-start">52 ms</span>
               </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.PDFFunctionalityTest.verifyPDFButonAvailab...)</span>
-                <span class="method-start">114 ms</span>
+                <span class="method-start">52 ms</span>
               </div> <!-- configuration-method before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.CitationTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLau...)</span>
+                <span class="method-start">53 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</span>
-                <span class="method-start">3999 ms</span>
+                <span class="method-name">verifyThatViewPagesDisplayed</span>
+                <span class="method-start">3041 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">VerifySearchPageTopPanel</span>
-                <span class="method-start">4010 ms</span>
+                <span class="method-start">3041 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">VerifyJournalToCFeatures</span>
+                <span class="method-start">3041 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyPDFButonAvailableAndDownloadPDF</span>
+                <span class="method-start">3042 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.CitationTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt</span>
+                <span class="method-start">3063 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">VerifyVariousEmailButtonFeatures</span>
-                <span class="method-start">4246 ms</span>
+                <span class="method-start">3088 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">verifyThatUserAbleToLaunchApplication</span>
-                <span class="method-start">4248 ms</span>
+                <span class="method-start">3108 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApplication(1721284)</span>
+                <span class="method-start">18759 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApplication(1721285)</span>
+                <span class="method-start">19077 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow.verifyTh...)</span>
+                <span class="method-start">21560 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyThatViewPagesDisplayed</span>
+                <span class="method-start">21566 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLau...)</span>
+                <span class="method-start">22094 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">VerifyJournalToCFeatures</span>
-                <span class="method-start">4629 ms</span>
+                <span class="method-name">verifyThatUserAbleToLaunchApplication</span>
+                <span class="method-start">22099 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApplication(1722758)</span>
+                <span class="method-start">26986 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.PDFFunctionalityTest.verifyPDFButonAvailab...)</span>
+                <span class="method-start">28383 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyPDFButonAvailableAndDownloadPDF</span>
-                <span class="method-start">4832 ms</span>
+                <span class="method-start">28387 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">verifyThatViewPagesDisplayed</span>
-                <span class="method-start">4993 ms</span>
-              </div> <!-- test-method -->
+              <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
-                <span class="method-name">closeApplication(1721285)</span>
-                <span class="method-start">21411 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
-              <div class="configuration-method after">
-                <span class="method-name">closeApplication(1721284)</span>
-                <span class="method-start">21928 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLau...)</span>
-                <span class="method-start">24088 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow.verifyTh...)</span>
-                <span class="method-start">24089 ms</span>
-              </div> <!-- configuration-method before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">verifyThatUserAbleToLaunchApplication</span>
-                <span class="method-start">24092 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">verifyThatViewPagesDisplayed</span>
-                <span class="method-start">24092 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">closeApplication(1721285)</span>
-                <span class="method-start">55624 ms</span>
+                <span class="method-name">closeApplication(1722740)</span>
+                <span class="method-start">32849 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1722541)</span>
-                <span class="method-start">60218 ms</span>
+                <span class="method-start">35650 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyPpaginationA...)</span>
-                <span class="method-start">61361 ms</span>
+                <span class="method-start">36573 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyPpaginationAndSortingOptionsIntheSearchResultsPage</span>
-                <span class="method-start">61372 ms</span>
+                <span class="method-start">36577 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApplication(1721285)</span>
+                <span class="method-start">38273 ms</span>
+              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.CitationTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1721296)</span>
-                <span class="method-start">61538 ms</span>
+                <span class="method-start">39200 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
-                <span class="method-name">closeApplication(1722740)</span>
-                <span class="method-start">67323 ms</span>
+                <span class="method-name">closeApplication(1722758)</span>
+                <span class="method-start">45950 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.ToCFunctionalityTest.VerifyJournalToCFeatu...)</span>
-                <span class="method-start">68996 ms</span>
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.PDFFunctionalityTest.VerifyPDFFeaturesInRe...)</span>
+                <span class="method-start">47291 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">VerifyJournalToCFeatures</span>
-                <span class="method-start">69003 ms</span>
+                <span class="method-name">VerifyPDFFeaturesInRestrictedAccessContentPage</span>
+                <span class="method-start">47293 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1722741)</span>
-                <span class="method-start">71199 ms</span>
+                <span class="method-start">48716 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyGoogleScholarBut...)</span>
-                <span class="method-start">101952 ms</span>
+                <span class="method-start">49432 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyGoogleScholarButtonFeatures</span>
-                <span class="method-start">101957 ms</span>
+                <span class="method-start">49434 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.IntegrationE2EFlow</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1721284)</span>
-                <span class="method-start">103524 ms</span>
+                <span class="method-start">49723 ms</span>
               </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method after">
-                <span class="method-name">closeApplication(1722742)</span>
-                <span class="method-start">117843 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method after">
-                <span class="method-name">closeApplication(1722758)</span>
-                <span class="method-start">138061 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyPubMedButtonFeat...)</span>
-                <span class="method-start">139430 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">VerifyPubMedButtonFeaturesAndAlmetricPageFeatures</span>
-                <span class="method-start">139435 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.PDFFunctionalityTest.verifyPDFButonAvailab...)</span>
-                <span class="method-start">139464 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyPDFButonAvailableAndDownloadPDF</span>
-                <span class="method-start">139468 ms</span>
-              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1722542)</span>
-                <span class="method-start">144290 ms</span>
+                <span class="method-start">59722 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatSsearchR...)</span>
-                <span class="method-start">145268 ms</span>
+                <span class="method-start">61611 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected</span>
-                <span class="method-start">145272 ms</span>
+                <span class="method-start">61613 ms</span>
               </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.ToCFunctionalityTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method after">
-                <span class="method-name">closeApplication(1722740)</span>
-                <span class="method-start">158139 ms</span>
-              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
-                <span class="method-name">closeApplication(1722743)</span>
-                <span class="method-start">159480 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method after">
-                <span class="method-name">closeApplication(1722758)</span>
-                <span class="method-start">160473 ms</span>
+                <span class="method-name">closeApplication(1722742)</span>
+                <span class="method-start">66241 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.PDFFunctionalityTest.VerifyPDFFeaturesInRe...)</span>
-                <span class="method-start">161272 ms</span>
+                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyPubMedButtonFeat...)</span>
+                <span class="method-start">67146 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">VerifyPDFFeaturesInRestrictedAccessContentPage</span>
-                <span class="method-start">161275 ms</span>
+                <span class="method-name">VerifyPubMedButtonFeaturesAndAlmetricPageFeatures</span>
+                <span class="method-start">67149 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1722543)</span>
-                <span class="method-start">164292 ms</span>
+                <span class="method-start">80871 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyVariousRefin...)</span>
-                <span class="method-start">165092 ms</span>
+                <span class="method-start">82220 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyVariousRefineTermsInTheSearchResultsPage</span>
-                <span class="method-start">165094 ms</span>
+                <span class="method-start">82223 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1722759)</span>
-                <span class="method-start">198218 ms</span>
+                <span class="method-start">84763 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.prime.tests.E2E.DiscoveryWidgetTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">closeApplication(1722743)</span>
+                <span class="method-start">87466 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.SearchFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1722544)</span>
-                <span class="method-start">228358 ms</span>
+                <span class="method-start">142489 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyUserIsAbleTo...)</span>
-                <span class="method-start">229849 ms</span>
+                <span class="method-start">144367 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows</span>
-                <span class="method-start">229854 ms</span>
+                <span class="method-start">144370 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1722545)</span>
-                <span class="method-start">315573 ms</span>
+                <span class="method-start">227648 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatTheAppro...)</span>
-                <span class="method-start">318178 ms</span>
+                <span class="method-start">229313 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard</span>
-                <span class="method-start">318180 ms</span>
+                <span class="method-start">229314 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1722546)</span>
-                <span class="method-start">354515 ms</span>
+                <span class="method-start">264924 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatTheVario...)</span>
-                <span class="method-start">355971 ms</span>
+                <span class="method-start">266293 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyThatTheVariousShareButtonFeatures</span>
-                <span class="method-start">355974 ms</span>
+                <span class="method-start">266295 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1722547)</span>
-                <span class="method-start">370848 ms</span>
+                <span class="method-start">281195 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyRefineByDate...)</span>
-                <span class="method-start">372323 ms</span>
+                <span class="method-start">282543 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages</span>
-                <span class="method-start">372326 ms</span>
+                <span class="method-start">282545 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeApplication(1722548)</span>
-                <span class="method-start">406299 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(chrome, null, null, null, public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyRefineByDate...)</span>
-                <span class="method-start">407743 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages</span>
-                <span class="method-start">407747 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">closeApplication(1722548)</span>
-                <span class="method-start">441639 ms</span>
+                <span class="method-start">322508 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.prime.tests.E2E.PDFFunctionalityTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">closeDriver</span>
-                <span class="method-start">443114 ms</span>
+                <span class="method-start">324219 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

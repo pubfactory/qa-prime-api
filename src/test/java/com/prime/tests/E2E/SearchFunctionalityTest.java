@@ -411,13 +411,13 @@ public class SearchFunctionalityTest extends BaseTest {
         articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
         issuePage = BasePage.initialize(WebDriverManager.getDriver(), IssuePage.class);
         int totalResultCount = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
-        browseOrSearchPage.selectFromDateValueFromFromDateDDInRefineByDateFilterOnBrowseOrSearchResultPage(testData.get("todate").toString());
-        browseOrSearchPage.selectFromDateValueFromToDateDDInRefineByDateFilterOnBrowseOrSearchResultPage(testData.get("fromdate").toString());
+        browseOrSearchPage.selectFromDateValueFromFromDateDDInRefineByDateFilterOnBrowseOrSearchResultPage(browseOrSearchPage.getFromDateOption());
+        browseOrSearchPage.selectFromDateValueFromToDateDDInRefineByDateFilterOnBrowseOrSearchResultPage(browseOrSearchPage.getToDateOption());
         browseOrSearchPage.clickOnSubmitButtonInRefineByDateOnBrowseOrSearchPage();
         int afterDateFilterUse = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
         System.out.println("Browse" + totalResultCount);
         System.out.println("After" + afterDateFilterUse);
-        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("fromDate=" + testData.get("todate").toString() + "&toDate=" + testData.get("fromdate").toString()),
+        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("fromDate=" + browseOrSearchPage.getFromDateOption() + "&toDate=" + browseOrSearchPage.getToDateOption()),
                 "Verifying Refine by Date filter is applied on search or browse page");
 
         masterPage.clickOnSearchMagnifyingLense();

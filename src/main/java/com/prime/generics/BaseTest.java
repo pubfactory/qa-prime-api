@@ -408,7 +408,7 @@ public class BaseTest {
                     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
 
 
-                    // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                  //  System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
 
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");

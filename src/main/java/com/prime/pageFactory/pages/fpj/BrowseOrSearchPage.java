@@ -991,6 +991,36 @@ public class BrowseOrSearchPage extends BasePage {
     	clickOnElement(abstractElement,"Clicking on Abstract");
     }
 
+    /**
+     * This method return the single fromDate option  
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 10/01/2024
+     */
+    public String getFromDateOption() throws Exception {
+    	List<WebElement> fromdateElement = driver.findElements(By.xpath("//select[@name='fromDate']//child::option"));
+    	List<String> fromdateText = getMultipleWebElementText(fromdateElement);
+    	String fromDate=fromdateText.get(1);
+    	return fromDate;
+    }
+    
+    /**
+     * This method return the single toDate option  
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 10/01/2024
+     */
+    public String getToDateOption() throws Exception {
+    	String toDate=getFromDateOption();
+    	String toDateUpdate= Integer.toString(Integer.parseInt(toDate)+ 1);
+		return toDateUpdate;
+    }
+    
+    
     @FindBy(xpath = "//h1[text()='Browse']")
     private WebElement browseText;
 

@@ -1,5 +1,6 @@
 package com.prime.generics;
-
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -412,7 +413,15 @@ public enum Helper {
             data.put("comment", message);
             client.sendPost(request, data);
             Helper.INSTANCE.logEventInfoToReportForTestSteps("Pass", "TestcaseId-" + tcId + " Updated Successfully in Test Rail");
-            System.out.println("testcaseid at publishResults To Test Rail=" + tcId);
+
+            System.out.println("testcaseid at publishResults To Test Rail=" + tcId +" - " +testStatus);
+            String filePath = System.getProperty("user.dir") + File.separator + "target\\PrintStatement.txt";
+            try(BufferedWriter writer = new BufferedWriter(new FileWriter(filePath,true))) {
+            	writer.write("testcaseid at publishResults To Test Rail=" + tcId+ " - " +testStatus);
+                writer.newLine(); 
+                writer.flush();
+                writer.close();
+            }
         } catch (IOException | APIException e) {
             Helper.INSTANCE.logEventInfoToReportForTestSteps("Pass", "Problem in updating TestcaseId-" + tcId + " in Test Rail");
             System.out.println("Problem while updating testcaseid at publishResults To Test Rail=" + tcId);

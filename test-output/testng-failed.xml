@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="17" parallel="tests" name="Failed suite [Prime Automation E2E Suite]" guice-stage="DEVELOPMENT" verbose="5">
+  <parameter name="testRailIntegrationMode" value="ON"/>
   <parameter name="application" value="anesthesiaprogress"/>
+  <parameter name="testRunId" value="4001"/>
+  <parameter name="serverURL" value="https://sheridan.testrail.com"/>
   <parameter name="browser" value="chrome"/>
-  <parameter name="Environment" value="uat"/>
+  <parameter name="serverUsername" value="veena.mathew@kwglobal.com"/>
+  <parameter name="Environment" value="dev"/>
+  <parameter name="serverPassword" value="Welcome123il%"/>
   <listeners>
-    <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
     <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
   </listeners>
   <test thread-count="17" parallel="tests" name="JOURNAL_HOME_E2E(failed)" verbose="5">
@@ -14,8 +18,8 @@
         <methods>
           <include name="closeDriver"/>
           <include name="establishConnection"/>
-          <include name="setUp"/>
           <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
           <include name="verifyThatViewPagesDisplayed">
             <parameter name="testcaseid" value="1721285"/>
           </include> <!-- verifyThatViewPagesDisplayed -->
@@ -33,29 +37,13 @@
           <include name="verifyThatUserAbleToLaunchApplication">
             <parameter name="testcaseid" value="1721284"/>
           </include> <!-- verifyThatUserAbleToLaunchApplication -->
-          <include name="setUp"/>
           <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
           <include name="closeApplication"/>
         </methods>
       </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
     </classes>
   </test> <!-- SEARCH_E2E(failed) -->
-  <test thread-count="17" parallel="tests" name="JOURNAL_TOC(failed)" verbose="5">
-    <classes>
-      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
-        <methods>
-          <include name="VerifyJournalToCFeatures">
-            <parameter name="testcaseid" value="1722740"/>
-          </include> <!-- VerifyJournalToCFeatures -->
-          <include name="closeDriver"/>
-          <include name="establishConnection"/>
-          <include name="setUp"/>
-          <include name="loadConfigurationValues"/>
-          <include name="closeApplication"/>
-        </methods>
-      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
-    </classes>
-  </test> <!-- JOURNAL_TOC(failed) -->
   <test thread-count="17" parallel="tests" name="PDF_WORK(failed)" verbose="5">
     <classes>
       <class name="com.prime.tests.E2E.PDFFunctionalityTest">
@@ -72,20 +60,4 @@
       </class> <!-- com.prime.tests.E2E.PDFFunctionalityTest -->
     </classes>
   </test> <!-- PDF_WORK(failed) -->
-  <test thread-count="17" parallel="tests" name="SEARCH_E2E_FULL(failed)" verbose="5">
-    <classes>
-      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
-        <methods>
-          <include name="closeDriver"/>
-          <include name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">
-            <parameter name="testcaseid" value="1722548"/>
-          </include> <!-- VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages -->
-          <include name="establishConnection"/>
-          <include name="setUp"/>
-          <include name="loadConfigurationValues"/>
-          <include name="closeApplication"/>
-        </methods>
-      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
-    </classes>
-  </test> <!-- SEARCH_E2E_FULL(failed) -->
 </suite> <!-- Failed suite [Prime Automation E2E Suite] -->
