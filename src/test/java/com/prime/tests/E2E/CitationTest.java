@@ -48,7 +48,6 @@ public class CitationTest extends BaseTest {
             System.out.println("!url=" + url);
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
             navigateToUrlLink(url);
-            System.out.println(WebDriverManager.getDriver().getPageSource());
             JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
             masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
             System.out.println("HI");
