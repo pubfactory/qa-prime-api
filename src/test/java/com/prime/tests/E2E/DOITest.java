@@ -56,7 +56,6 @@ public class DOITest extends BaseTest {
 		} finally {
 			Helper.INSTANCE.closeNewTab(mainWindowDOI, WebDriverManager.getDriver());
 			Helper.INSTANCE.switchToWindowTab(0);
-
 		}
 	}
 }
