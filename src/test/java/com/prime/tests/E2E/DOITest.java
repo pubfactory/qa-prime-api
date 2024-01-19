@@ -2,7 +2,6 @@ package com.prime.tests.E2E;
 
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
-
 import com.prime.generics.BasePage;
 import com.prime.generics.BaseTest;
 import com.prime.generics.Helper;
@@ -11,7 +10,6 @@ import com.prime.pageFactory.pages.fpj.ArticleCitationPage;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import com.prime.retryAnalyzers.Retry;
-
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
