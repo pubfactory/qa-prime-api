@@ -1167,6 +1167,12 @@ public class BaseTest {
 
     }
     
+    /** This method is used wait until the URL gets loads 
+     * 
+     * @param totalResult
+     * @author Rakesh.Shevale
+     * @Created Date : 16/10/2023
+     */
     public static void waitUntilTheURLGetLoads(String linkText) {
 		WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 30);
 		 wait.until(ExpectedConditions.urlContains(linkText));
