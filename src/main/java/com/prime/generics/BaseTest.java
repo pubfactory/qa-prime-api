@@ -53,6 +53,8 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 import org.testng.xml.XmlSuite;
+
+
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import io.qameta.allure.Allure;
 import okhttp3.Cookie;
@@ -408,7 +410,7 @@ public class BaseTest {
                     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
 
 
-                  //  System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+//                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
 
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
@@ -1174,5 +1176,10 @@ public class BaseTest {
         }
 
     }
+    
+    public static void waitUntilTheURLGetLoads(String linkText) {
+		WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 30);
+		 wait.until(ExpectedConditions.urlContains(linkText));
+	}
 
 }

@@ -2020,5 +2020,22 @@ public class BasePage {
         });
 
     }
+    
+    /**
+     * This method used to verify the link is present or not on perticular element
+     * 
+     * @param element
+     * @param desc
+     * @return boolean
+     * @author Rakesh.Shevale
+     * @Created Date : 16/01/2024
+     */
+    public boolean VerifyLinkIsPresent(WebElement element,String desc) {
+    	 if ("a".equalsIgnoreCase(element.getTagName())) {
+    		 return true;
+         } else {
+        	 return false;
+         }
+    }
 
 }

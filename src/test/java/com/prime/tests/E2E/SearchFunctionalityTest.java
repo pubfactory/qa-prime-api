@@ -327,7 +327,7 @@ public class SearchFunctionalityTest extends BaseTest {
         System.out.println("Current URL : " + driver.getCurrentUrl());
         BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("articleType=" + testData.get("articletypename").toString().toLowerCase()),
                 "Verifying the article type result is displayed on search result page");
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("articletypename").toString().toLowerCase()), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("articletypename").toString()), true,
                 "Verifying the article type is displayed on search/browse result page");
 
         masterPage.clickOnSearchMagnifyingLense();
@@ -344,14 +344,14 @@ public class SearchFunctionalityTest extends BaseTest {
 
         browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
         WebDriverManager.getDriver().navigate().refresh();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("open").toString().toUpperCase()), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("openaccess").toString()), true,
                 "Verifying the open access type result is displayed on search/browse result page");
-        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("open").toString().toUpperCase()),
+        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("open").toString()),
                 "Verifying the open access type result is displayed on search/browse result page");
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("freeaccess").toString());
         WebDriverManager.getDriver().navigate().refresh();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("free").toString().toUpperCase()), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("freeaccess").toString()), true,
                 "Verifying the free access type result is displayed on search/browse result page");
         BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("free").toString().toUpperCase()),
                 "Verifying the open access type result is displayed on search/browse result page");

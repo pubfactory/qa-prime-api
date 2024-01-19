@@ -640,8 +640,9 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 11/10/2023
      */
     public boolean verifySearchSlugSignIsPresentOnBrowseOrSearchPage(String valueName) throws Exception {
-        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[text()='" + valueName + "']//parent::span//following-sibling::button"));
-        return isElementPresent(SearchSlugSign);
+//        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[text()='" + valueName + "']//parent::span//following-sibling::button"));
+    	 List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[text()='"+valueName+": "+valueName+"']//parent::span//following-sibling::button"));  	  
+    	return isElementPresent(SearchSlugSign);
     }
 
     /**

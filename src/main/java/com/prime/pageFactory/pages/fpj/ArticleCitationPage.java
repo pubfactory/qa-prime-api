@@ -757,7 +757,55 @@ public class ArticleCitationPage extends BasePage {
     public void clickOnToolsButtonInActionBarOnArticlePage() throws Exception {
         clickOnElement(toolsButton, "clicking on on tools button in action bar on article page");
     }
+    
+    /** 
+     * This method used to verify the DOI metadata tag name return true or false
+     *
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 16/01/2024
+     */
+    public boolean verifyDOIMetaDataIsLink() {
+    	return VerifyLinkIsPresent(DOIMetaData, "Verying DOI Meta data tag name and return true or false");
+    }
+    
+    /** 
+     * This method used to clicks on DOI Meta data on article page
+     *
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 16/01/2024
+     */
+    public void clickOnDOIMETADataOnArticlePage() throws Exception {
+    	clickOnElement(DOIMetaData, "Clicking On DOI Meta Data On article page");
+    }
+    
+    /**
+     * This method is returns DOI meta data text on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return 
+     * @Created Date : 16/01/2024
+     */
+    public String getDOIMetaDataOnMeridianAllenPressSite() throws Exception {
+    	String DOIAllen=getTextFromElement(DOIMetaDataOnMeridianAllenPress);
+    	return DOIAllen;
+    }
 
+    /**
+     * This method is returns DOI meta data text on Meridian AllenPress site
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 16/01/2024
+     */
+    public String getDOIMetaDataOnArticlePage() throws Exception {
+    	String DOI=getTextFromElement(DOIMetaData);
+    	return DOI;
+    }
 
     @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
@@ -817,4 +865,8 @@ public class ArticleCitationPage extends BasePage {
     private WebElement firstAuthorInPubMedSection;
     @FindBy(xpath = "(//button[text()='Tools'])[1]")
     private WebElement toolsButtonInActionBar;
+    @FindBy(xpath="//a[@data-testid='Metadata-doi-link']")
+    private WebElement DOIMetaData;
+    @FindBy(xpath="//div[@class='citation-doi']")
+    private WebElement DOIMetaDataOnMeridianAllenPress;
 }

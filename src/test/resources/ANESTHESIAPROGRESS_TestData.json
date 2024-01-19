@@ -128,7 +128,7 @@
 			"refinetypevalue":"Article"
 			"open":"OPEN",
 			"all":"ALL",
-			"free":"FREE"
+			"free":"Free"
 			
 			
 			}
@@ -205,6 +205,13 @@
 		"data": {
 			"description": "VerifyPDFFeaturesInRestrictedAccessContentPage",
 			"fiftyvalue":"50"
+		}
+	},
+	{
+	"id": "88",
+		"data": {
+			"description": "verifyThatMetaDataShouldBeLink",
+			
 		}
 	}
 ]
