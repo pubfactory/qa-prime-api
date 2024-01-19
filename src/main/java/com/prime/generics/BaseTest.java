@@ -53,8 +53,6 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 import org.testng.xml.XmlSuite;
-
-
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import io.qameta.allure.Allure;
 import okhttp3.Cookie;
@@ -353,9 +351,7 @@ public class BaseTest {
                         options.addArguments("--disable-extensions");
                         options.addArguments("--dns-prefetch-disable");
                         options.addArguments("--disable-gpu");
-
                         Thread.sleep(Integer.parseInt(BasePage.randomWait()));
-
                         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
                         chromePrefs.put("hardware_acceleration_mode.enabled", false);
                         chromePrefs.put("download.prompt_for_download", false);
@@ -408,10 +404,7 @@ public class BaseTest {
                     //               io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
                     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
-
-
-//                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
-
+//                  System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
                     options.addArguments("--disable-dev-shm-usage");
@@ -419,17 +412,14 @@ public class BaseTest {
                     options.addArguments("--disable-extensions");
                     options.addArguments("--dns-prefetch-disable");
                     options.addArguments("--disable-gpu");
-                                     options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
-
+                    options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
                         options.addArguments("--headless");
                         options.addArguments("--window-size=1400,600");
                     } else {
                         options.addArguments("--start-maximized");
                     }
-
                     Thread.sleep(Integer.parseInt(BasePage.randomWait()));
-
                     HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
                     chromePrefs.put("hardware_acceleration_mode.enabled", false);
                     chromePrefs.put("download.prompt_for_download", false);

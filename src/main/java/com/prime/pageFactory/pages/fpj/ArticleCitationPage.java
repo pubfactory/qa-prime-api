@@ -755,7 +755,7 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 20/11/2023
      */
     public void clickOnToolsButtonInActionBarOnArticlePage() throws Exception {
-        clickOnElement(toolsButton, "clicking on on tools button in action bar on article page");
+        clickOnElement(toolsButton, "clicking on tools button in action bar on article page");
     }
     
     /** 
