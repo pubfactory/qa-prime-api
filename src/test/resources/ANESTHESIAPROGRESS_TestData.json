@@ -129,8 +129,6 @@
 			"open":"OPEN",
 			"all":"ALL",
 			"free":"Free"
-			
-			
 			}
 	},
 	{
@@ -164,7 +162,6 @@
 			"volumevalue":"Volume 70",
 			"issuevalue":"1",
 			"issuepageheader":"Issues"
-
 		}
 	},
 	{
@@ -172,14 +169,12 @@
 		"data": {
 			"description": "VerifyVariousEmailButtonFeatures",
 			"sharelinkpopupHeader":"Share Link"
-
 		}
 	},
 	{
 	"id": "1722742",
 		"data": {
 			"description": "VerifyGoogleScholarButtonFeatures"
-
 		}
 	},
 	{
@@ -211,7 +206,6 @@
 	"id": "88",
 		"data": {
 			"description": "verifyThatMetaDataShouldBeLink",
-			
 		}
 	}
 ]

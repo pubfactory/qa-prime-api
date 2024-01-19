@@ -210,7 +210,6 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying the total result count after applying the Abstract filter from refine term filter on search apge");
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("adv-field=abstract&adv-value=intravenous+anesthetic"), "Verifying the Abstract filter is applied on search result page");
 
-
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptiontitle").toString());
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage());
@@ -222,7 +221,6 @@ public class SearchFunctionalityTest extends BaseTest {
 
         String[] titleText = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage().toString().split(" ");
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(titleText[0]), "Verifying the Title filter is applied on search result page");
-
 
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptionaffiliation").toString());
@@ -265,7 +263,6 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying the Title filter from Refine terms filter is presented on search/browse result page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(firstDOI), true,
                 "Verifying the DOI filter Refine terms filter is presented on search/browse result page");
-
 
         browseOrSearchPage.clickOnClearAllOnBrowseOrSearchPage();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyClearButtonFromRefineTermIsPresentOnBrowseOrSearchPage(), true,
