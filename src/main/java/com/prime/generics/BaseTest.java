@@ -403,8 +403,8 @@ public class BaseTest {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     //               io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
-                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
-//                  System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                    //                  System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
                     options.addArguments("--disable-dev-shm-usage");
@@ -1166,7 +1166,7 @@ public class BaseTest {
         }
 
     }
-    
+
     /** This method is used wait until the URL gets loads 
      * 
      * @param totalResult
@@ -1174,8 +1174,8 @@ public class BaseTest {
      * @Created Date : 16/10/2023
      */
     public static void waitUntilTheURLGetLoads(String linkText) {
-		WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 30);
-		 wait.until(ExpectedConditions.urlContains(linkText));
-	}
+        WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 30);
+        wait.until(ExpectedConditions.urlContains(linkText));
+    }
 
 }
