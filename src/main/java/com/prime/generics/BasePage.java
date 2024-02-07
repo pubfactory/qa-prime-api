@@ -2022,7 +2022,7 @@ public class BasePage {
     }
 
     /**
-     * This method used to verify the link is present or not on perticular element
+     * This method used to verify the link is present or not on particular element
      * 
      * @param element
      * @param desc
@@ -2031,10 +2031,26 @@ public class BasePage {
      * @Created Date : 16/01/2024
      */
     public boolean VerifyLinkIsPresent(WebElement element, String desc) {
-        if ("a".equalsIgnoreCase(element.getTagName())) {
+        String hrefAttributeValue = element.getAttribute("href");
+        if (hrefAttributeValue != null && !hrefAttributeValue.isEmpty()) {
             return true;
         } else {
             return false;
+        }
+    }
+
+    /**
+     * This method used to clicks on the OK button of cookies popup
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 07/02/2024
+     */
+    public void clickOnCookiesPopup() throws Exception {
+        int j = driver.findElements(By.xpath("//button[text()='Ok']")).size();
+        if (j > 0) {
+            WebElement Ok = WebDriverManager.getDriver().findElement(By.xpath("//button[text()='Ok']"));
+            clickOnElement(Ok, "Clicking on ok button on popup On HomePage");
         }
     }
 
