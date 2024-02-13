@@ -90,7 +90,7 @@ public class PDFPage extends BasePage {
      */
     public boolean verifyInlinePDFTabIsPresentOnArticlePage() throws Exception {
         //                         List<WebElement> element = driver.findElements(By.xpath("//button[contains(text(),'Inline PDF')]"));
-        List<WebElement> element = driver.findElements(By.xpath("(//button[contains(text(),'Figure')])[1]//preceding-sibling::button[contains(text(),'PDF')]"));
+        List<WebElement> element = driver.findElements(By.xpath("//button[text()='Full Text']//following::button[text()='PDF']"));
         return isElementPresent(element);
     }
 
@@ -271,7 +271,7 @@ public class PDFPage extends BasePage {
     @FindBy(xpath = "(//button[contains(text(),'Download PDF')])[1]")
     private WebElement downloadPDFIntoolBar;
     //   @FindBy(xpath = "//button[contains(text(),'Inline PDF')]")
-    @FindBy(xpath = "(//button[contains(text(),'Figure')])[1]//preceding-sibling::button[contains(text(),'PDF')]")
+    @FindBy(xpath = "//button[text()='Full Text']//following::button[text()='PDF']")
     private WebElement inlinePDF;
     @FindBy(xpath = "//span[@id='scaleSelectContainer']/select")
     private WebElement zoomDropDownPDF;
@@ -283,9 +283,10 @@ public class PDFPage extends BasePage {
     private WebElement pageNumberInputPDF;
     @FindBy(xpath = "(//span[@role='presentation' and contains(text(),'anesthesiaprogress')])[1]")
     private WebElement watermarkPDF;
+  //  @FindBy(xpath = "(//select[@id='scaleSelect']//option)[1]")
     @FindBy(xpath = "(//select[@id='scaleSelect']//option)[1]")
     private WebElement defaultPDFZoomValue;
-    @FindBy(xpath = "//iframe[contains(@src,'/frontend/pdf-viewer')]")
+    @FindBy(xpath = "(//iframe[contains(@src,'/frontend/pdf-viewer')])[2]")
     private WebElement pdfIFrame;
     @FindBy(xpath = "(//select[@id='scaleSelect']//option)[1]")
     private WebElement automaticZoompdfZoomDD;

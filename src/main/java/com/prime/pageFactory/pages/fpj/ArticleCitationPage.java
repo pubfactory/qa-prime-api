@@ -831,7 +831,7 @@ public class ArticleCitationPage extends BasePage {
     private WebElement articleHeader;
     @FindBy(xpath = "(//img[contains(@alt,'Cover Anesthesia Progress')])[1]")
     private WebElement journalCover;
-    @FindBy(xpath = "((//div[@data-testid='contributors'])//div//span)[1]")
+    @FindBy(xpath = "((//div[contains(@data-testid,'contributors')])//div//span)[1]")
     private WebElement firstauthor;
     @FindBy(xpath = "(//div[@class='affiliation'])[1]")
     private WebElement authorAffiliationPopupLabel;
