@@ -286,7 +286,7 @@ public class PDFPage extends BasePage {
   //  @FindBy(xpath = "(//select[@id='scaleSelect']//option)[1]")
     @FindBy(xpath = "(//select[@id='scaleSelect']//option)[1]")
     private WebElement defaultPDFZoomValue;
-    @FindBy(xpath = "(//iframe[contains(@src,'/frontend/pdf-viewer')])[2]")
+    @FindBy(xpath = "//div[contains(@data-testid,'block-pdf')]//iframe[contains(@title,'PDF Viewer')]")
     private WebElement pdfIFrame;
     @FindBy(xpath = "(//select[@id='scaleSelect']//option)[1]")
     private WebElement automaticZoompdfZoomDD;
