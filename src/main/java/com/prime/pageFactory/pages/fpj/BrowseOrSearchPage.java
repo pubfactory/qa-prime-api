@@ -679,7 +679,7 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 11/10/2023
      */
     public boolean verifyShareButtonIsPresentOnBrowseOrSearchPage() throws Exception {
-        List<WebElement> share = driver.findElements(By.xpath("//button[@title='Save']//following-sibling::span"));
+        List<WebElement> share = driver.findElements(By.xpath("//span[@title='Share']//parent::button[@role='button']"));
         return isElementPresent(share);
     }
 
@@ -717,7 +717,7 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 11/10/2023
      */
     public boolean verifySharingPlatformButtonIsPresentOnBrowseOrSearchPage(String platformName) throws Exception {
-        List<WebElement> platform = driver.findElements(By.xpath("//button[@title='Save']//following-sibling::span//following::button[contains(text(),'Share on " + platformName + "')]"));
+        List<WebElement> platform = driver.findElements(By.xpath("//button[contains(text(),'Share on "+platformName+"')]"));
         return isElementPresent(platform);
     }
 
@@ -1073,7 +1073,7 @@ public class BrowseOrSearchPage extends BasePage {
     private WebElement clearAllButton;
     @FindBy(xpath = "//button[@title='Save']")
     private WebElement saveButton;
-    @FindBy(xpath = "//button[@title='Save']//following-sibling::span")
+    @FindBy(xpath = "//span[@title='Share']//parent::button[@role='button']")
     private WebElement shareButton;
     @FindBy(xpath = "(//span[contains(@title,'access')])[1]")
     private WebElement accessIcon;

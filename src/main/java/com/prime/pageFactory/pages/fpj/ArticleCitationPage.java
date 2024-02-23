@@ -811,7 +811,7 @@ public class ArticleCitationPage extends BasePage {
     private WebElement citationButton;
     @FindBy(xpath = "//header[contains(text(),'Preview/Export Citation')]")
     private WebElement PreviewExportCitationPopUp;
-    @FindBy(xpath = "//Select[@name='format']")
+    @FindBy(xpath = "//Select[@id='Citation Format']")
     private WebElement citationFormatDropdown;
     @FindBy(xpath = "(//h2[contains(text(),'Export Citation')]//parent::div//following-sibling::div//button)[1]")
     private WebElement RISButton;
@@ -835,7 +835,7 @@ public class ArticleCitationPage extends BasePage {
     private WebElement firstauthor;
     @FindBy(xpath = "(//div[@class='affiliation'])[1]")
     private WebElement authorAffiliationPopupLabel;
-    @FindBy(xpath = "(//button[text()='Tools'])[1]")
+    @FindBy(xpath = "(//span[contains(text(),'Tools')]//parent::button[@role='button'])[1]")
     private WebElement toolsButton;
     @FindBy(xpath = "(//button[text()='Share via Email'])[1]")
     private WebElement shareViaEmailButton;

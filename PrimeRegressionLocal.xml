@@ -134,18 +134,18 @@
 			</class>
 		</classes>
 	</test>
-<!-- 	<test name="DOI" preserve-order="true"> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.prime.tests.E2E.DOITest"> -->
-<!-- 			<methods> -->
-<!-- 			<include  -->
-<!-- 			name="verifyThatMetaDataShouldBeLink"> -->
-<!-- 			<parameter name="testcaseid" value="88" /> -->
-<!-- 			</include> -->
-<!-- 			</methods> -->
-<!-- 			</class> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
+	<test name="DOI" preserve-order="true">
+		<classes>
+			<class name="com.prime.tests.E2E.DOITest">
+			<methods>
+			<include 
+			name="verifyThatMetaDataShouldBeLink">
+			<parameter name="testcaseid" value="1725698" />
+			</include>
+			</methods>
+			</class>
+		</classes>
+	</test>
 	
 
 </suite>
