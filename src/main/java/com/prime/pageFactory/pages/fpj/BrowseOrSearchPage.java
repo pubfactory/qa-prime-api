@@ -1034,7 +1034,7 @@ public class BrowseOrSearchPage extends BasePage {
     @FindBy(xpath = "")
     private WebElement noOfPaginationLinks;
 
-    @FindBy(xpath = "//span[text()='Page:']//following-sibling::ul[@role='list']//child::li")
+    @FindBy(xpath = "//span[text()='Page:']//following::ul[@role='list']//child::li")
     private List<WebElement> paginationArray;
 
     @FindBy(xpath = "//select[@id='sortOptions']")
