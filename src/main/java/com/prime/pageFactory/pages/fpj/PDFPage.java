@@ -46,7 +46,7 @@ public class PDFPage extends BasePage {
      * @Created Date : 06/11/2023
      */
     public boolean verifyPDFButtonPresentOnArticlePage() throws Exception {
-        List<WebElement> pdfbutton = driver.findElements(By.xpath("(//button[contains(text(),'Download PDF')])[1]"));
+        List<WebElement> pdfbutton = driver.findElements(By.xpath("(//div[@data-testid='block-downloadpdfbutton']//child::a)[1]"));
         return isElementPresent(pdfbutton);
     }
 
@@ -268,7 +268,7 @@ public class PDFPage extends BasePage {
         return isElementPresent(element);
     }
 
-    @FindBy(xpath = "(//button[contains(text(),'Download PDF')])[1]")
+    @FindBy(xpath = "(//div[@data-testid='block-downloadpdfbutton']//child::a)[1]")
     private WebElement downloadPDFIntoolBar;
     //   @FindBy(xpath = "//button[contains(text(),'Inline PDF')]")
     @FindBy(xpath = "//button[text()='Full Text']//following::button[text()='PDF']")
