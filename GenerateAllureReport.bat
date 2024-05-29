@@ -1,1 +1,1 @@
-C:\Allure\bin\allure serve target/allure-results
+C:\allure-2.29.0\bin\allure serve target/allure-results

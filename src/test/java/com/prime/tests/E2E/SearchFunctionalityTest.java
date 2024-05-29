@@ -133,8 +133,8 @@ public class SearchFunctionalityTest extends BaseTest {
         WebDriverManager.getDriver().navigate().back();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineTermFilterTextOnSearchOrBrowsePage(), testData.get("refineterm").toString(),
                 "Verifying the Refine terms filter text on search or Browse Page");
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByTypeFilterTextonSearchOrBrowsePage(), testData.get("refinetype").toString(),
-                "Verifying the Refine by type filter text on search or Browse Page");
+//        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByTypeFilterTextonSearchOrBrowsePage(), testData.get("refinetype").toString(),
+//                "Verifying the Refine by type filter text on search or Browse Page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByArticleTypeFilterTextonSearchOrBrowsePage(), testData.get("refinearticletype").toString(),
                 "Verifying the Refine by artcile type filter text on search or Browse Page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByDateFilterTextonSearchOrBrowsePage(), testData.get("refinedate").toString(),
@@ -353,15 +353,16 @@ public class SearchFunctionalityTest extends BaseTest {
         BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("free").toString().toUpperCase()),
                 "Verifying the open access type result is displayed on search/browse result page");
 
-        masterPage.clickOnSearchMagnifyingLense();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByTypeFilterTextonSearchOrBrowsePage(), testData.get("refinetype").toString(),
-                "Verifying the Refine by type filter text on search or Browse Page");
-        browseOrSearchPage.clickOnRefineByTypeFilterValueOnBrowseOrSearchPage(testData.get("refinetypevalue").toString());
-        WebDriverManager.getDriver().navigate().refresh();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("refinetypevalue").toString().toUpperCase()), true,
-                "Verifying the free access type result is displayed on search/browse result page");
-        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("type=" + testData.get("refinetypevalue").toString().toUpperCase()),
-                "Verifying the open access type result is displayed on search/browse result page");
+        //This funct available in dev not in UAT (Refine by type)
+//        masterPage.clickOnSearchMagnifyingLense();
+//        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByTypeFilterTextonSearchOrBrowsePage(), testData.get("refinetype").toString(),
+//                "Verifying the Refine by type filter text on search or Browse Page");
+//        browseOrSearchPage.clickOnRefineByTypeFilterValueOnBrowseOrSearchPage(testData.get("refinetypevalue").toString());
+//        WebDriverManager.getDriver().navigate().refresh();
+//        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("refinetypevalue").toString().toUpperCase()), true,
+//                "Verifying the free access type result is displayed on search/browse result page");
+//        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("type=" + testData.get("refinetypevalue").toString().toUpperCase()),
+//                "Verifying the open access type result is displayed on search/browse result page");
     }
 
     @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722547 - Verify that the various Share button features.")

@@ -25,7 +25,7 @@ public class DOITest extends BaseTest {
     private String mainWindowDOI;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"Citation"}, enabled = true, retryAnalyzer = Retry.class, description = "88  - Verify that DOI meta data should be link")
+    @Test(groups = {"Citation"}, enabled = true, retryAnalyzer = Retry.class, description = "1725698  - Verify that DOI meta data should be link")
     @Story("EPIC-1403")
     public void verifyThatMetaDataShouldBeLink() throws Exception {
         try {
@@ -39,6 +39,7 @@ public class DOITest extends BaseTest {
             navigateToUrlLink(url);
             JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
             masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
+            masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchtext").toString());
             masterPage.clickOnSearchMagnifyingLense();
             browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();

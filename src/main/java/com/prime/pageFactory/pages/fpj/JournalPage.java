@@ -47,7 +47,7 @@ public class JournalPage extends BasePage {
      * @Created Date : 20/10/2023
      */
     public boolean verifyVolumeSectionIsDisplayed(String volumeValue) throws Exception {
-        List<WebElement> volumeSection = driver.findElements(By.xpath("(//div[contains(text(),'" + volumeValue + "')])[1]"));
+        List<WebElement> volumeSection = driver.findElements(By.xpath("(//span[contains(text(),'" + volumeValue + "')])[1]"));
         return isElementPresent(volumeSection);
     }
 
@@ -61,7 +61,7 @@ public class JournalPage extends BasePage {
      * @Created Date : 20/10/2023
      */
     public boolean verifyVolumeLinkCollapseOnJournalPage(String volumeValue) throws Exception {
-        List<WebElement> volumeCollpase = driver.findElements(By.xpath("(//div[contains(text(),'" + volumeValue + "')])[1]//parent::button[@aria-expanded='false']"));
+        List<WebElement> volumeCollpase = driver.findElements(By.xpath("(//span[contains(text(),'" + volumeValue + "')])[1]//parent::div//parent::button[@aria-expanded='false']"));
         return isElementPresent(volumeCollpase);
     }
 
@@ -75,7 +75,7 @@ public class JournalPage extends BasePage {
      * @Created Date : 20/10/2023
      */
     public boolean verifyVolumeLinkExpandOnJournalPage(String volumeValue) throws Exception {
-        List<WebElement> volumeCollpase = driver.findElements(By.xpath("(//div[contains(text(),'" + volumeValue + "')])[1]//parent::button[@aria-expanded='true']"));
+        List<WebElement> volumeCollpase = driver.findElements(By.xpath("(//span[contains(text(),'" + volumeValue + "')])[1]//parent::div//parent::button[@aria-expanded='true']"));        																			
         return isElementPresent(volumeCollpase);
     }
 
@@ -102,7 +102,7 @@ public class JournalPage extends BasePage {
      * @Created Date : 20/10/2023
      */
     public void clickOnVolumeSectionOnJournalPage(String volumeValue) throws Exception {
-        WebElement volumeSection = driver.findElement(By.xpath("(//div[contains(text(),'" + volumeValue + "')])[1]"));
+        WebElement volumeSection = driver.findElement(By.xpath("(//span[contains(text(),'" + volumeValue + "')])[1]"));
         clickOnElement(volumeSection, "Clicking on Volume Section on Journal page");
     }
 
@@ -116,7 +116,7 @@ public class JournalPage extends BasePage {
      * @Created Date : 20/10/2023
      */
     public boolean verifyIssueIsDisplayedUnderVolumeSectionOnJornalPage(String volumeValue) throws Exception {
-        List<WebElement> issue = driver.findElements(By.xpath("((//div[contains(text(),'Volume 70')])[1]//following::a[contains(text(),'Issue 1')])[1]"));
+        List<WebElement> issue = driver.findElements(By.xpath("((//span[contains(text(),'"+volumeValue+"')])[1]//following::a[contains(text(),'Issue 1')])[1]"));
         return isElementPresent(issue);
     }
 
@@ -129,7 +129,7 @@ public class JournalPage extends BasePage {
      * @Created Date : 20/10/2023
      */
     public void clickOnIssueUnderVolumeSectionOnJornalPage(String volumeValue, String issueValue) throws Exception {
-        WebElement volumeSection = driver.findElement(By.xpath("((//div[contains(text(),'" + volumeValue + "')])[1]//following::a[contains(text(),'" + issueValue + "')])[1]"));
+        WebElement volumeSection = driver.findElement(By.xpath("((//span[contains(text(),'" + volumeValue + "')])[1]//following::a[contains(text(),'" + issueValue + "')])[1]"));
         clickOnElement(volumeSection, "Clicking on issue under Volume section on Journal page");
     }
 
