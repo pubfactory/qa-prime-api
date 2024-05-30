@@ -75,7 +75,7 @@ public class BaseTest {
     private static final String APP_URL = "appUrl";
     public static final String USERNAME = "kglselectsignal_7pEVPF";
     public static final String AUTOMATE_KEY = "3HpPxaxVR3GLRjgxWg2K";
-    public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    public static final String URL = "https://"+ USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
     public Set<Cookie> allCookies;
     public static List<String> domainName = new ArrayList<String>();
     protected WebDriver driver;
@@ -138,6 +138,7 @@ public class BaseTest {
     public static String suiteName;
     public static List<String> userList = new ArrayList<>();
     public static List<String> publisherList = new ArrayList<>();
+    public static String env;
 
     /**
      * 
@@ -162,7 +163,7 @@ public class BaseTest {
             String env = BaseTest.properties.getProperty("Environment");
             //String env = System.getProperty("Environment");
             System.out.println("ENV=" + env);
-            this.loadUrlFromEnvProperties(env);
+            //this.loadUrlFromEnvProperties(env);
             this.loadUrlFromEnvProperties("testRail");
             System.out.println("PROP=" + properties);
             System.out.println("threadId " + Thread.currentThread().getId());
@@ -207,7 +208,7 @@ public class BaseTest {
                     threadCount = threadCount - publisherCount;
                 }
                 publishers.add(publisherArray[i]);
-            }
+           }
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -274,7 +275,24 @@ public class BaseTest {
             testRailId = BaseTest.properties.getProperty("testRunId");
             suiteName = context.getSuite().getName();
             suite = context.getSuite().getXmlSuite();
-            String env = BaseTest.properties.getProperty("Environment");
+            //String env = BaseTest.properties.getProperty("Environment");
+            String executionMode = BaseTest.properties.getProperty("executionMode");
+            if (executionMode.equalsIgnoreCase("remote")) {
+                //System.setProperty("Environment", suite.getParameter("Environment"));
+                //System.setProperty("application", suite.getParameter("application"));
+                env = System.getProperty("Environment");
+                application = System.getProperty("application");
+            } else {
+                env = BaseTest.properties.getProperty("Environment");
+                application = BaseTest.properties.getProperty("application");
+            }
+            this.loadUrlFromEnvProperties(env);
+            System.out.println("PROP after loading env info = " + properties);
+
+            //  String env = System.getProperty("env.name");
+            //String env = BaseTest.properties.getProperty("Environment");
+
+            System.out.println("Environment=" + env);
             suitefilepathnamee = suite.toString();
             if (suitefilepathnamee.contains("Core Case") && env.equalsIgnoreCase("staging")) {
                 testRailId = BaseTest.properties.getProperty("staging_core_case_testrunid");
@@ -398,7 +416,7 @@ public class BaseTest {
         try {
             String browser = BaseTest.properties.getProperty("browser");
             String executionMode = BaseTest.properties.getProperty("executionMode");
-            if (executionMode.equalsIgnoreCase("local")) {
+            if (executionMode.equalsIgnoreCase("local") || (executionMode.equalsIgnoreCase("remote"))) {
                 if (browser.equalsIgnoreCase("chrome")) {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     //               io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
@@ -457,7 +475,7 @@ public class BaseTest {
                     }
                     io.github.bonigarcia.wdm.WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver(edgeoptions);
-                    System.out.println("******After Edge Driver*****" + driver);
+                   System.out.println("******After Edge Driver*****" + driver);
                 }
 
                 WebDriverManager.setWebDriver(driver);
@@ -514,7 +532,7 @@ public class BaseTest {
             switch (application) {
                 case "fpj":
                     jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/FPJ_TestData.json"))));
-                    break;
+                   break;
                 case "tsir":
                     jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/TSIR_TestData.json"))));
                     break;
@@ -539,7 +557,7 @@ public class BaseTest {
     public void fetchTestDataApplicationWise(String application) throws Exception {
         switch (application) {
             case "fpj":
-                jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/FPJ_TestData.json"))));
+               jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/FPJ_TestData.json"))));
                 break;
             case "tsir":
                 jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/TSIR_TestData.json"))));
@@ -606,7 +624,7 @@ public class BaseTest {
      * @author Rakesh.Shevale
      * @Created Date : 10/07/2023
      */
-    public void closeApplication() throws Exception {
+   public void closeApplication() throws Exception {
         try {
             System.out.println("After quit  :" + WebDriverManager.getDriver().toString());
             Helper.INSTANCE.logEventInfoToReport(driver.getCurrentUrl());
@@ -628,7 +646,7 @@ public class BaseTest {
     @AfterSuite(alwaysRun = true)
     public void closeDriver() throws Exception {
         try {
-            Helper.INSTANCE.logEventInfoToReport("After Suite");
+           Helper.INSTANCE.logEventInfoToReport("After Suite");
 
             WebDriverManager.closeDriver();
             WebDriverManager.resetFlagMap().clear();
@@ -974,7 +992,7 @@ public class BaseTest {
     public void navigateToUrl(String url) throws Exception {
         try {
             url = BaseTest.properties.getProperty(url);
-            WebDriverManager.getDriver().get(url);
+           WebDriverManager.getDriver().get(url);
             Allure.step("Opening URL: " + url);
             waitForLoad(driver);
         } catch (Exception e) {
@@ -1179,3 +1197,6 @@ public class BaseTest {
     }
 
 }
+
+
+

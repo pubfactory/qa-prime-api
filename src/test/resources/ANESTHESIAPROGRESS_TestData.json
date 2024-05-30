@@ -208,5 +208,14 @@
 			"description": "verifyThatMetaDataShouldBeLink",
 			"searchtext":"Squamous Papilloma Causing Airway Obstruction During Conscious Sedation"
 		}
-	}
+	},
+	{
+	"id": "101",
+		"data": {
+			"description": "VerifyThatUserAbleToPerformCopyPreviewCitationOperation",
+			"formatvalueapa":"APA",
+			"formatvalueama":"AMA",
+		}
+	},
+	
 ]

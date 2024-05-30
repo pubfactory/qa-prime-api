@@ -806,7 +806,68 @@ public class ArticleCitationPage extends BasePage {
     	String DOI=getTextFromElement(DOIMetaData);
     	return DOI;
     }
+    
+    /**
+     * This method is used to checks Copy to ClipBoard button is present on preview Export Citation popup
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return boolean
+     * @Created Date : 29/05/2024
+     */
+    public boolean verifyCopyToClipBoardButtonIsPresentOnPreviewExportCitationPopup() throws Exception {
+        List<WebElement> copyClipBoard = driver.findElements(By.xpath("//button[text()='Copy to clipboard']"));
+        return isElementPresent(copyClipBoard);
+    }
 
+    /**
+     * This method is used to click on the citation on article page
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 29/05/2024
+     */
+    public void clickOnCopyToClipBoardButtonOnPreviewExportCitationPopup() throws Exception {
+        clickOnElement(copyToClipboard, "Clicking on Copy to ClipBoard button on Preview Export Citation Popup");
+    }
+    
+    /**
+     * This method is used to checks Copy to ClipBoard button is present on preview Export Citation popup
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return boolean
+     * @Created Date : 29/05/2024
+     */
+    public boolean verifyChakraToastMessageIsDisplayedAfterClickingOnCopyToClipBoardButton() throws Exception {
+        List<WebElement> toastMessage = driver.findElements(By.xpath("//li[@class='chakra-toast']"));
+        return isElementPresent(toastMessage);
+    }
+    
+    /**
+     * This method is used to checks the Selected citation format is displayed on chakra toast message
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return boolean
+     * @Created Date : 29/05/2024
+     */
+    public boolean verifySelectedCitationFormatIsDisplayedInToastMessage(String formattype) throws Exception {
+        List<WebElement> formatType = driver.findElements(By.xpath("//div[text()='"+formattype+" Preview Copied.']"));
+        return isElementPresent(formatType);
+    }
+    
+    /**
+     * This method is used to clicks on close button of toast message popup
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 30/05/2024
+     */
+    public void clickOnToastMessagePopupCloseButton() throws Exception {
+        clickOnElement(toastMessageCloseButton, "Clicking on the close button of toast message popup");
+    }
+    
     @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
     @FindBy(xpath = "//header[contains(text(),'Preview/Export Citation')]")
@@ -869,4 +930,8 @@ public class ArticleCitationPage extends BasePage {
     private WebElement DOIMetaData;
     @FindBy(xpath="//div[@class='citation-doi']")
     private WebElement DOIMetaDataOnMeridianAllenPress;
+    @FindBy(xpath="//button[text()='Copy to clipboard']")
+    private WebElement copyToClipboard;
+    @FindBy(xpath="//div[@data-status='success']//button[@aria-label='Close']")
+    private WebElement toastMessageCloseButton;
 }

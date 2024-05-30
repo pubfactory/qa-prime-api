@@ -9,15 +9,15 @@
 
     	
 
-     <!-- 	 <parameter name="Environment" value="${Environment}" />
+     	 <parameter name="Environment" value="${Environment}" />
 
 			<parameter name="browser" value="${browser}" />
-			<parameter name="application" value="${application}" />  -->
+			<parameter name="application" value="${application}" />
 			
 
- 	 	   	    <parameter name="Environment" value="uat" /> 
+ 	<!--  	   	    <parameter name="Environment" value="uat" /> 
 			<parameter name="browser" value="chrome" />
-			<parameter name="application" value="anesthesiaprogress" />		 
+			<parameter name="application" value="anesthesiaprogress" />		 --> 
 
  	 	  
 
