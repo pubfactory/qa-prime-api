@@ -1021,6 +1021,27 @@ public class BrowseOrSearchPage extends BasePage {
 		return toDateUpdate;
     }
     
+    /**
+     *  This method used to copied message paste into textbox 
+     *  
+     *  @author Rakesh.Shevale
+     *  @created Date : 30/05/24
+     */
+    public void copiedMessagePasteIntoTextBox() {
+    	copiedTextPasteIntoTextBox(defaultRefinetermTextbox);
+    }
+    
+    /**
+     * This method return the attribute value from refine term textbox
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @created Date : 30/05/24
+     */
+    public String getRefineTermTextBoxValue() throws Exception {
+    	return getAttributeFromElement(defaultRefinetermTextbox,"value");
+    }
     
     @FindBy(xpath = "//h1[text()='Browse']")
     private WebElement browseText;
@@ -1105,6 +1126,8 @@ public class BrowseOrSearchPage extends BasePage {
     private WebElement toDateDD;
     @FindBy(xpath = "(//span[text()='Restricted access']//preceding::div[@class='title'])[1]")
     private WebElement firstRestrictedContent;
+    @FindBy(xpath="(//input[@aria-label='Quick search term'])[1]")
+    private WebElement defaultRefinetermTextbox;
     
 }
 

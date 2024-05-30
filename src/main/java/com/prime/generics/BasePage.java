@@ -2053,5 +2053,17 @@ public class BasePage {
             clickOnElement(Ok, "Clicking on ok button on popup On HomePage");
         }
     }
+    
+    /**
+     * This method used to copied message paste into textbox 
+     * 
+     * @param element
+     * @author Rakesh.Shevale
+     * @Created Date : 30/05/2024
+     */
+    public void copiedTextPasteIntoTextBox(WebElement element) {
+    	 Actions actions = new Actions(driver);
+         actions.moveToElement(element).click().keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();
+    }
 
 }

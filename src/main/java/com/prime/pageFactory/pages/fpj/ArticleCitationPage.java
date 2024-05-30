@@ -886,7 +886,7 @@ public class ArticleCitationPage extends BasePage {
     private WebElement PreviewCitationSection;
     @FindBy(xpath = "//h2[contains(text(),'Export Citation')]")
     private WebElement ExportCitationSection;
-    @FindBy(xpath = "(//h2[contains(text(),'Preview Citation')]//following-sibling::div//following-sibling::p)[1]")
+    @FindBy(xpath = "//p[@id='previewCitationContainer']")
     private WebElement abbreviatedJournalTitle;
     @FindBy(xpath = "(//div[@class='title'])[1]")
     private WebElement articleHeader;

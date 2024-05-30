@@ -1,6 +1,9 @@
 package com.prime.tests.E2E;
 
 import org.json.simple.JSONObject;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
@@ -40,7 +43,6 @@ public class CopyPreviewCitationTest extends BaseTest {
 	            masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
 	            masterPage.clickOnSearchMagnifyingLense();	           
 	            browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
-	            browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
 	            browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
 	            articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
 	            basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
@@ -48,27 +50,45 @@ public class CopyPreviewCitationTest extends BaseTest {
 	            
 	            //Verifying the Copy to ClipBoard button is present on preview Export Citation popup
 	            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.verifyCopyToClipBoardButtonIsPresentOnPreviewExportCitationPopup() , true,"Verifying the Copy to ClipBoard button is present on preview Export Citation popup");
-	            articleCitationPage.clickOnCopyToClipBoardButtonOnPreviewExportCitationPopup();
 	            
-	            
+	            	            
 	            //Verifying the chakra toast message is displayed
-	            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.verifyChakraToastMessageIsDisplayedAfterClickingOnCopyToClipBoardButton() , true,"Verifying the chakra toast message is displyed after clinking on the copt to clipboard button on Export Citation popup");
-	          
+	            articleCitationPage.clickOnCopyToClipBoardButtonOnPreviewExportCitationPopup();
+	            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.verifyChakraToastMessageIsDisplayedAfterClickingOnCopyToClipBoardButton() , true,"Verifying the chakra toast message is displyed after clinking on the copt to clipboard button on Export Citation popup");       
+	            articleCitationPage.clickOnToastMessagePopupCloseButton();
 	            
-	            
-	            //Verifying the selected format is displayed on toast message
+	            //Verifying the APA format is displayed on toast message and the APA format is copied and pasted
 	            articleCitationPage.selectFormatValueOnPreviewExportCitationPopUp(testData.get("formatvalueapa").toString());
+	            String abbreviatedTitleAPA= articleCitationPage.getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingAMAFormat();
 	            articleCitationPage.clickOnCopyToClipBoardButtonOnPreviewExportCitationPopup();
 	            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.verifySelectedCitationFormatIsDisplayedInToastMessage(testData.get("formatvalueapa").toString()), true,"Verifying the Selected APA citation format is displayed on chakra toast message");
-		        
-	            Actions actions = new Actions(driver);
+	            articleCitationPage.clickOnToastMessagePopupCloseButton();
+	            articleCitationPage.clickOnPreviewExportCitationPopUpCloseButton();	            
+	            masterPage.clickOnSearchMagnifyingLense();
+	            browseOrSearchPage.copiedMessagePasteIntoTextBox();
+	            browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
+	            String pastedAPAValued= browseOrSearchPage.getRefineTermTextBoxValue();
+	            BaseTest.assertEquals(WebDriverManager.getDriver(), abbreviatedTitleAPA, pastedAPAValued, "Verifying the correct format value is copied and pasted");
+	           
+	            //Verifying the AMA format is displayed on toast message and the AMA format is copied and pasted
+	            masterPage.clickOnSearchMagnifyingLense();
+	            browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
+	            articleCitationPage.clickOnCitationButtonOnArticlePage();
+	            articleCitationPage.selectFormatValueOnPreviewExportCitationPopUp(testData.get("formatvalueama").toString());
+	            String abbreviatedTitleAMA= articleCitationPage.getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingAMAFormat();           
+	            articleCitationPage.clickOnCopyToClipBoardButtonOnPreviewExportCitationPopup();
+	            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.verifySelectedCitationFormatIsDisplayedInToastMessage(testData.get("formatvalueama").toString()), true,"Verifying the Selected AMA citation format is displayed on chakra toast message");
+	            articleCitationPage.clickOnToastMessagePopupCloseButton();
+	            articleCitationPage.clickOnPreviewExportCitationPopUpCloseButton();	            
+	            masterPage.clickOnSearchMagnifyingLense();
+	            browseOrSearchPage.copiedMessagePasteIntoTextBox();
+	            browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
+	            String pastedAMAValued= browseOrSearchPage.getRefineTermTextBoxValue();
+	            BaseTest.assertEquals(WebDriverManager.getDriver(), abbreviatedTitleAPA, pastedAMAValued, "Verifying the correct format value is copied and pasted");
+
 	            
-	           // actions.moveToElement(destinationInput).click().keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();
 	            
-//	            articleCitationPage.selectFormatValueOnPreviewExportCitationPopUp(testData.get("formatvalueama").toString());
-//	            articleCitationPage.clickOnCopyToClipBoardButtonOnPreviewExportCitationPopup();
-//	            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.verifySelectedCitationFormatIsDisplayedInToastMessage(testData.get("formatvalueama").toString()), true,"Verifying the Selected AMA citation format is displayed on chakra toast message");
-			    
+	            
 	            Thread.sleep(4000);
 	    }
 }
