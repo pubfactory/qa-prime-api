@@ -50,7 +50,6 @@ public class CopyPreviewCitationTest extends BaseTest {
 	            
 	            //Verifying the Copy to ClipBoard button is present on preview Export Citation popup
 	            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.verifyCopyToClipBoardButtonIsPresentOnPreviewExportCitationPopup() , true,"Verifying the Copy to ClipBoard button is present on preview Export Citation popup");
-	            
 	            	            
 	            //Verifying the chakra toast message is displayed
 	            articleCitationPage.clickOnCopyToClipBoardButtonOnPreviewExportCitationPopup();
@@ -84,11 +83,7 @@ public class CopyPreviewCitationTest extends BaseTest {
 	            browseOrSearchPage.copiedMessagePasteIntoTextBox();
 	            browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
 	            String pastedAMAValued= browseOrSearchPage.getRefineTermTextBoxValue();
-	            BaseTest.assertEquals(WebDriverManager.getDriver(), abbreviatedTitleAPA, pastedAMAValued, "Verifying the correct format value is copied and pasted");
+	            BaseTest.assertEquals(WebDriverManager.getDriver(), abbreviatedTitleAMA, pastedAMAValued, "Verifying the correct format value is copied and pasted");
 
-	            
-	            
-	            
-	            Thread.sleep(4000);
 	    }
 }

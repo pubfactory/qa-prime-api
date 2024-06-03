@@ -48,7 +48,7 @@ public class IssuePage extends BasePage {
      * @Created Date : 27/09/2023
      */
     public void clickOnFirstArticleOnIssuePage() throws Exception {
-        clickOnElement(firstArticleOnIssuePage, "Clicking on Artcile on Issue Page");
+        clickOnElement(firstArticleOnIssuePage, "Clicking on Article on Issue Page");
     }
 
     /**

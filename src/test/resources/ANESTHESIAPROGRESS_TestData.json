@@ -20,7 +20,7 @@
 			"description": "verifyThatViewPagesDisplayed",
 			"title":"Anesthesia Progress",
 			"issuespageheader":"Issues",
-			"journalpageurl":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-uat.pubfactory.com/journal/anpr/",
+			"journalpageurl":"anpr-overview.xml",
 			"journalpageheader":"Archive"
 		}
 	},

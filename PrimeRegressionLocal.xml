@@ -146,6 +146,17 @@
 			</class>
 		</classes>
 	</test>
-	
+	<test name="CopyPreviewCitation" preserve-order="true">
+		<classes>
+			<class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+			<methods>
+			<include 
+			name="VerifyThatUserAbleToPerformCopyPreviewCitationOperation">
+			<parameter name="testcaseid" value="101" />
+			</include>
+			</methods>
+			</class>
+		</classes>
+	</test>
 
 </suite>

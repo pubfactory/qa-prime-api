@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.PubFactory</groupId>
 	<artifactId>com.PubFactory</artifactId>
@@ -174,6 +172,12 @@
     <artifactId>gson</artifactId>
     <version>2.10.1</version>
 </dependency>
+<dependency>
+      <groupId>com.browserstack</groupId>
+      <artifactId>browserstack-java-sdk</artifactId>
+      <version>LATEST</version>
+      <scope>compile</scope>
+    </dependency>
 
 
 	</dependencies>
@@ -203,7 +207,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
-					</suiteXmlFiles>
+					</suiteXmlFiles><argLine>-javaagent:"${com.browserstack:browserstack-java-sdk:jar}"</argLine>
 				</configuration>
 				
 
@@ -216,6 +220,18 @@
                     <reportVersion>2.10.0</reportVersion>
                 </configuration>
             </plugin>
+			<plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>getClasspathFilenames</id>
+            <goals>
+              <goal>properties</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 		</plugins>
 	</build>
 	<repositories>
@@ -229,4 +245,9 @@
 			</snapshots>
 		</repository>
 	</repositories>
+	<properties>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <surefire.plugin.version>3.0.0-M5</surefire.plugin.version>
+  </properties>
 </project>
