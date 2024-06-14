@@ -152,6 +152,30 @@ public class IssuePage extends BasePage {
         List<WebElement> volumeIssue = driver.findElements(By.xpath("(//span[contains(text(),'Volume/Issue')])[1]"));
         return isElementPresent(volumeIssue);
     }
+    
+    /**
+     * This method used to clicks on the Abstract button below the search result on search result page
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 12/11/2023
+     */
+    public void clickOnAbstractTabOfFirstActileOnBrowsePageOrSearchPage() throws Exception {
+    	clickOnElement(abstractButton,"Clicking on Abstract button below the search result on search result page");
+    }
+    
+    /**
+     * This method is used to verifying the search keyword is displayed as hit highlighted 
+     * 
+     * @param searchKeyword
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return boolean
+    * @created Date : 13/06/24
+     */
+    public boolean verifySearchKeywordIsNotHitHighlighted(String searchKeyword) throws Exception {
+       	 List<WebElement> element = driver.findElements(By.xpath("//span[@class='hi'][contains(text(),'"+searchKeyword+"')]"));
+           return isElementNotPresent(element);
+        }
 
     @FindBy(xpath = "//span[text()='Issues']")
     private WebElement issuePageHeader;
@@ -167,4 +191,6 @@ public class IssuePage extends BasePage {
     private WebElement authorElement;
     @FindBy(xpath = "(//button[contains(text(),'Abstract')])[1]")
     private WebElement abstractElement;
+    @FindBy(xpath="(//div[@class='title'])[1]//following::span[text()='Abstract'][1]")
+    private WebElement abstractButton;
 }

@@ -1521,4 +1521,13 @@ public enum Helper {
         String extensionName2 = extensionName1.substring(1, extensionName1.length());
         return extensionName2;
     }
+    
+    public boolean verifyingNewTabIsOpen() {
+    	Set<String> windowSize = WebDriverManager.getDriver().getWindowHandles();
+        if(windowSize.size()>1) {
+        	return true;
+        }
+        else
+        	return false;
+    }
 }

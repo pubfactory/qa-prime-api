@@ -217,5 +217,24 @@
 			"formatvalueama":"AMA",
 		}
 	},
+	{
+	"id": "102",
+		"data": {
+			"description": "VerifyThatTheCitationLinkFunctionalityIsWorkingFine",
+			
+		}
+	},
+	{
+	"id": "103",
+		"data": {
+			"description": "VerifyThattheHitHighlightingFuctionality",
+			"searchkeyword":"article",
+			"freeaccess":"Free",
+			"backgroundcolor":"rgba(1, 85, 147, 0.3)",
+			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
+			"testidvalueenterthree":"AdvanceSearchFilter-input-2",
+			"testidvalueenterfour":"AdvanceSearchFilter-input-3",
+		}
+	},
 	
 ]

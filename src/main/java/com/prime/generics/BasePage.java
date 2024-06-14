@@ -2065,5 +2065,43 @@ public class BasePage {
     	 Actions actions = new Actions(driver);
          actions.moveToElement(element).click().keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();
     }
+    
+    /**
+     * This method gets url of specified WebPage in String format for specified field
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/06/2024
+     */
+    public String getURLFromWebPage() throws Exception {
+        String currentURL = "";
+        try {
+            currentURL = WebDriverManager.getDriver().getCurrentUrl();
+            Allure.step("Fetching URL from web page : " + currentURL);
+        } catch (Exception e) {
+            Allure.step("Error while fetching URL from web page : " + currentURL);
+        }
+        return currentURL;
+    }
+    
+    /**
+     * This method used to remove the basic auth from URL
+     * 
+     * @param String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 07/06/2024
+     */
+    public String removeBasicAuthFromURLHomePage(String url) {
+        String[] string = url.split("@");
+        if (url.contains(string[0].toString() + "@")) {
+            String newURL = url.replace(string[0].toString() + "@", "");
+            String mainURL = "https://" + newURL;
+            return mainURL;
+        } else {
+            System.out.println(url);
+            return url;
+        }
+    }
 
 }

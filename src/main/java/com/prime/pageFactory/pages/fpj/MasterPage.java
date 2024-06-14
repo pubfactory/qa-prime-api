@@ -204,6 +204,18 @@ public class MasterPage extends BasePage {
     public void clickOnViewThisIssueOnHomePage() throws Exception {
         clickOnElement(viewThisIssue, "Clicking on View This Issue On HomePage");
     }
+    
+    /**
+     * This method clicks on main apps logo on left hand side
+     * 
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 20/07/2023
+     */
+    public void clickOnMainAppLogoInHeader() throws Exception {
+        clickOnElement(AppMainLogo, "Clicking on main apps logo in header");
+    }
 
     @FindBy(xpath = "//button[contains(text(),'Accept All Cookies')]")
     private WebElement AcceptAllCookies;
@@ -229,5 +241,7 @@ public class MasterPage extends BasePage {
     private WebElement contentListArticleTitle;
     @FindBy(xpath = "(//a[text()='View This Issue'])[2]")
     private WebElement viewThisIssue;
+    @FindBy(xpath="(//img[@alt='Logo'])[2]")
+    private WebElement AppMainLogo;
 
 }

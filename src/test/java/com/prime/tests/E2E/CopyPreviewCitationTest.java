@@ -46,6 +46,7 @@ public class CopyPreviewCitationTest extends BaseTest {
 	            browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
 	            articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
 	            basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
+	            //articleCitationPage.clickOnToolsButtonInActionBarOnArticlePage();
 	            articleCitationPage.clickOnCitationButtonOnArticlePage();
 	            
 	            //Verifying the Copy to ClipBoard button is present on preview Export Citation popup
@@ -58,7 +59,7 @@ public class CopyPreviewCitationTest extends BaseTest {
 	            
 	            //Verifying the APA format is displayed on toast message and the APA format is copied and pasted
 	            articleCitationPage.selectFormatValueOnPreviewExportCitationPopUp(testData.get("formatvalueapa").toString());
-	            String abbreviatedTitleAPA= articleCitationPage.getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingAMAFormat();
+	            String abbreviatedTitleAPA= articleCitationPage.getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingFormat();
 	            articleCitationPage.clickOnCopyToClipBoardButtonOnPreviewExportCitationPopup();
 	            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.verifySelectedCitationFormatIsDisplayedInToastMessage(testData.get("formatvalueapa").toString()), true,"Verifying the Selected APA citation format is displayed on chakra toast message");
 	            articleCitationPage.clickOnToastMessagePopupCloseButton();
@@ -72,9 +73,10 @@ public class CopyPreviewCitationTest extends BaseTest {
 	            //Verifying the AMA format is displayed on toast message and the AMA format is copied and pasted
 	            masterPage.clickOnSearchMagnifyingLense();
 	            browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
+	            //articleCitationPage.clickOnToolsButtonInActionBarOnArticlePage();
 	            articleCitationPage.clickOnCitationButtonOnArticlePage();
 	            articleCitationPage.selectFormatValueOnPreviewExportCitationPopUp(testData.get("formatvalueama").toString());
-	            String abbreviatedTitleAMA= articleCitationPage.getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingAMAFormat();           
+	            String abbreviatedTitleAMA= articleCitationPage.getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingFormat();           
 	            articleCitationPage.clickOnCopyToClipBoardButtonOnPreviewExportCitationPopup();
 	            BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.verifySelectedCitationFormatIsDisplayedInToastMessage(testData.get("formatvalueama").toString()), true,"Verifying the Selected AMA citation format is displayed on chakra toast message");
 	            articleCitationPage.clickOnToastMessagePopupCloseButton();

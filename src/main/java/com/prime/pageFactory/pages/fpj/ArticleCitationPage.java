@@ -203,7 +203,7 @@ public class ArticleCitationPage extends BasePage {
      * @author Rakesh.Shevale
      * @Created Date : 07/07/2023
      */
-    public String getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingAMAFormat() throws Exception {
+    public String getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingFormat() throws Exception {
         String actualTitle = getTextFromElement(abbreviatedJournalTitle);
         return actualTitle;
     }
@@ -292,7 +292,7 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 10/07/2023
      */
     public boolean verifyRISButtonIsPresentOnPreviewExportCitationOnPopup() throws Exception {
-        List<WebElement> RisButton = driver.findElements(By.xpath("(//h2[contains(text(),'Export Citation')]//parent::div//following-sibling::div//button)[1]"));
+        List<WebElement> RisButton = driver.findElements(By.xpath("//button[contains(text(),'.ris')]"));
         return isElementPresent(RisButton);
     }
 
@@ -305,7 +305,7 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 10/07/2023
      */
     public boolean verifyBIBButtonIsPresentOnPreviewExportCitationOnPopup() throws Exception {
-        List<WebElement> bibButton = driver.findElements(By.xpath("(//h2[contains(text(),'Export Citation')]//parent::div//following-sibling::div//button)[2]"));
+        List<WebElement> bibButton = driver.findElements(By.xpath("//button[contains(text(),'.bib')]"));
         return isElementPresent(bibButton);
     }
 
@@ -318,7 +318,7 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 10/07/2023
      */
     public boolean verifyENWButtonIsPresentOnPreviewExportCitationOnPopup() throws Exception {
-        List<WebElement> enwbButton = driver.findElements(By.xpath("(//h2[contains(text(),'Export Citation')]//parent::div//following-sibling::div//button)[3]"));
+        List<WebElement> enwbButton = driver.findElements(By.xpath("//button[contains(text(),'.enw')]"));
         return isElementPresent(enwbButton);
     }
 
@@ -868,17 +868,104 @@ public class ArticleCitationPage extends BasePage {
         clickOnElement(toastMessageCloseButton, "Clicking on the close button of toast message popup");
     }
     
+    /**
+     * This method used to Verify the Citations link is present in google scholar section on Article page
+     *
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return boolean
+     * @Created Date : 06/06/2024
+     */
+    public boolean verifyCitationsLinkIsPresentInGoofglrScholarSectionOnArticlePage() throws Exception {
+        List<WebElement> citationlink = driver.findElements(By.xpath("//a[text()='Citations']"));
+        return isElementPresent(citationlink);
+    }
+    
+    /**
+     * This method is used to clicks on Citations link in google scholar section on article page
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 30/05/2024
+     */
+    public void clickOnCitationsLinkInGoogleScholarSectionOnArticlePage() throws Exception {
+        clickOnElement(citationsLink, "Clicking on Citations link in google scholar section on article page");
+    }
+    
+    /**
+     * This method is used to remove unwanted string from URL and return String format URL
+     * 
+     * @param s
+     * @return String
+     * @author Rakesh.Shevale
+     * @Created Date : 07/06/2024
+     */
+    public String removeContainFromURL(String s) {
+        if (s.contains("q=link:")) {
+            String[] a = s.split("q=link:");
+            String mainURL= a[1].toString();
+                return mainURL;            
+        } else {
+            return s;
+        }
+    }
+    
+    /**
+     * This method is used to clicks on Abstract or full text tab on article page
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 12/06/2024
+     */
+    public void clickOnFullTextOrAbstractTabOnArticlePage() throws Exception {
+	   List<WebElement> abstractList = driver.findElements(By.xpath("//button[text()='Abstract']"));
+	   if(abstractList.size()>0) {
+		   WebElement abstractTab = driver.findElement(By.xpath("//button[text()='Abstract']"));
+		   clickOnElement(abstractTab, "Clicking on Abstract tab on article page");
+	   }
+	   else {
+		   WebElement abstractTab = driver.findElement(By.xpath("//button[text()='Full Text']"));
+		   clickOnElement(abstractTab, "Clicking on Full text tab on article page");
+	   }
+    }
+    
+   /** This method return the background color of element
+    * 
+    * @return String
+    * @author Rakesh.Shevale
+    * @created Date : 12/06/24
+    */
+    public String getBackgroundColor(String searchKeyword) {
+    	WebElement element = driver.findElement(By.xpath("((//div[@class='abstract'])[1]//span[@class='hi' ][contains(text(),'"+searchKeyword+"')])[1]"));
+        String backgroundColor = element.getCssValue("background-color");
+        return backgroundColor;
+    }
+    
+    /**
+     * This method is used to verifying the search keyword is displayed as hit highlighted 
+     * 
+     * @param searchKeyword
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return boolean
+    * @created Date : 12/06/24
+     */
+    public boolean verifySearchKeywordIsNotHitHighlighted(String searchKeyword) throws Exception {
+       	 List<WebElement> element = driver.findElements(By.xpath("//span[@class='hi'][contains(text(),'"+searchKeyword+"')]"));
+           return isElementNotPresent(element);
+        }
+    
+    
     @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
     @FindBy(xpath = "//header[contains(text(),'Preview/Export Citation')]")
     private WebElement PreviewExportCitationPopUp;
     @FindBy(xpath = "//Select[@id='Citation Format']")
     private WebElement citationFormatDropdown;
-    @FindBy(xpath = "(//h2[contains(text(),'Export Citation')]//parent::div//following-sibling::div//button)[1]")
+    @FindBy(xpath = "//button[contains(text(),'.ris')]")
     private WebElement RISButton;
-    @FindBy(xpath = "(//h2[contains(text(),'Export Citation')]//parent::div//following-sibling::div//button)[2]")
+    @FindBy(xpath = "//button[contains(text(),'.bib')]")
     private WebElement BIBButton;
-    @FindBy(xpath = "(//h2[contains(text(),'Export Citation')]//parent::div//following-sibling::div//button)[3]")
+    @FindBy(xpath = "//button[contains(text(),'.enw')]")
     private WebElement ENWButton;
     @FindBy(xpath = "//header[contains(text(),'Preview/Export Citation')]//following-sibling::button[@aria-label='Close']")
     private WebElement PreviewExportCitationPopUpCloseButton;
@@ -934,4 +1021,6 @@ public class ArticleCitationPage extends BasePage {
     private WebElement copyToClipboard;
     @FindBy(xpath="//div[@data-status='success']//button[@aria-label='Close']")
     private WebElement toastMessageCloseButton;
+    @FindBy(xpath="//a[text()='Citations']")
+    private WebElement citationsLink;
 }

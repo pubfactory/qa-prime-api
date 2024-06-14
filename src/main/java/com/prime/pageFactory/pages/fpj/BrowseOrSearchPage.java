@@ -1,6 +1,10 @@
 package com.prime.pageFactory.pages.fpj;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -859,7 +863,7 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 16/10/2023
      */
     public boolean verifyContentAbstractIsPresentOnBrosweOrSearchPage() throws Exception {
-        List<WebElement> abstractele = driver.findElements(By.xpath("(//button[contains(text(),'Abstract')])[1]"));
+        List<WebElement> abstractele = driver.findElements(By.xpath("((//div[@class='title'])[1]//following::span[text()='Abstract'])[1]"));
         return isElementPresent(abstractele);
     }
 
@@ -988,8 +992,15 @@ public class BrowseOrSearchPage extends BasePage {
         clickOnElement(firstRestrictedContent, "Clicking on First Restricted Content on Browse or search page");
     }
 
+    
+    /**
+     * This method used to clicks on the Abstract button below the search result on search result page
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 12/11/2023
+     */
     public void clickOnAbstractTabOfFirstActileOnBrowsePageOrSearchPage() throws Exception {
-    	clickOnElement(abstractElement,"Clicking on Abstract");
+    	clickOnElement(abstractButton,"Clicking on Abstract button below the search result on search result page");
     }
 
     /**
@@ -1042,6 +1053,58 @@ public class BrowseOrSearchPage extends BasePage {
     public String getRefineTermTextBoxValue() throws Exception {
     	return getAttributeFromElement(defaultRefinetermTextbox,"value");
     }
+    
+    /** This method return the background color of element
+     * 
+     * @return String
+     * @author Rakesh.Shevale
+     * @created Date : 12/06/24
+     */
+    public String getBackgroundColor(String searchKeyword) {
+    	WebElement element = driver.findElement(By.xpath("((//div[@class='abstract'])[1]//span[@class='hi' ][contains(text(),'"+searchKeyword+"')])[1]"));
+        String backgroundColor = element.getCssValue("background-color");
+        return backgroundColor;
+    }
+    
+    /**
+     * This method return the list of last two word with maximum character
+     * @return List<String>
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @created Date : 13/06/24
+     */
+    public List<String> getAbstract() throws Exception {
+    	WebElement wholeAbstract= driver.findElement(By.xpath("(//div[@class='abstract'])[1]//child::p"));
+    	String abstractPara=getTextFromElement(wholeAbstract);
+    	 List<String> list = Arrays.asList(abstractPara.split(" "));
+    	System.out.println("list.length : "+list.size());
+        List<String>list1 = new ArrayList<>(); 
+    	
+    	  int maxLength1 = 0;
+          int maxIndex1 = -1;
+          int maxLength2 = 0;
+          int maxIndex2 = -1;
+    	
+    	for (int i = 0; i < list.size(); i++) {
+            String str = list.get(i);
+            int length = str.length();
+            
+            if (length > maxLength1) {
+                maxLength2 = maxLength1;
+                maxIndex2 = maxIndex1;             
+                maxLength1 = length;
+                maxIndex1 = i;
+            } else if (length > maxLength2) {
+                // Update the second max if it's larger than the current second max
+                maxLength2 = length;
+                maxIndex2 = i;
+            }
+        }
+    	list1.add(list.get(maxIndex1));
+    	list1.add(list.get(maxIndex2));
+         return list1;        
+    }
+    
     
     @FindBy(xpath = "//h1[text()='Browse']")
     private WebElement browseText;
@@ -1128,7 +1191,8 @@ public class BrowseOrSearchPage extends BasePage {
     private WebElement firstRestrictedContent;
     @FindBy(xpath="(//input[@aria-label='Quick search term'])[1]")
     private WebElement defaultRefinetermTextbox;
-    
+    @FindBy(xpath="((//div[@class='title'])[1]//following::span[text()='Abstract'])[1]")
+    private WebElement abstractButton;
 }
 
 
