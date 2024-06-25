@@ -228,13 +228,23 @@
 	"id": "103",
 		"data": {
 			"description": "VerifyThattheHitHighlightingFuctionality",
-			"searchkeyword":"article",
-			"freeaccess":"Free",
+			"searchkeyword":"key",
+			"openaccess":"Open Access",
 			"backgroundcolor":"rgba(1, 85, 147, 0.3)",
 			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
 			"testidvalueenterthree":"AdvanceSearchFilter-input-2",
 			"testidvalueenterfour":"AdvanceSearchFilter-input-3",
 		}
 	},
-	
+	{
+	"id": "104",
+		"data": {
+			"description": "VerifyThattheAddCitedByFunctionality",
+			"searchkeyword":"article",
+			"freeaccess":"Free",
+			"numbercitationele":"Number of Citations:",
+			"citedby":"Cited By",
+			"crossref":"Crossref"
+		}
+	}
 ]

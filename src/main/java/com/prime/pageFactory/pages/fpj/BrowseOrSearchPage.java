@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -1061,7 +1062,7 @@ public class BrowseOrSearchPage extends BasePage {
      * @created Date : 12/06/24
      */
     public String getBackgroundColor(String searchKeyword) {
-    	WebElement element = driver.findElement(By.xpath("((//div[@class='abstract'])[1]//span[@class='hi' ][contains(text(),'"+searchKeyword+"')])[1]"));
+    	WebElement element = driver.findElement(By.xpath("(//span[@class='hi' ][contains(text(),'"+searchKeyword+"')])[1]"));
         String backgroundColor = element.getCssValue("background-color");
         return backgroundColor;
     }
@@ -1074,10 +1075,20 @@ public class BrowseOrSearchPage extends BasePage {
      * @created Date : 13/06/24
      */
     public List<String> getAbstract() throws Exception {
-    	WebElement wholeAbstract= driver.findElement(By.xpath("(//div[@class='abstract'])[1]//child::p"));
+    	WebElement wholeAbstract= driver.findElement(By.xpath("(//div[@data-identifier='abstract']//p)[1]"));
     	String abstractPara=getTextFromElement(wholeAbstract);
-    	 List<String> list = Arrays.asList(abstractPara.split(" "));
-    	System.out.println("list.length : "+list.size());
+    	System.out.println("Whole Abstract : "+abstractPara);
+    	String[] words =(abstractPara.split(" "));
+    	
+    	Pattern pattern = Pattern.compile("^[a-zA-Z]+$");
+    	List<String> list = new ArrayList<>();
+    	
+    	for (String word : words) {
+            if (pattern.matcher(word).matches()) {
+            	list.add(word);
+            }
+        }
+    	
         List<String>list1 = new ArrayList<>(); 
     	
     	  int maxLength1 = 0;
@@ -1101,8 +1112,18 @@ public class BrowseOrSearchPage extends BasePage {
             }
         }
     	list1.add(list.get(maxIndex1));
+    	System.out.println("maxIndex1 : "+maxIndex1);
     	list1.add(list.get(maxIndex2));
+    	System.out.println("maxIndex2 : "+maxIndex2);
          return list1;        
+    }
+    
+    public void ClickOnShowMoreLinkIfAvailableBelowTheContent() throws Exception{
+    	List<WebElement> showMoreLinkList = driver.findElements(By.xpath("(//button[text()=' ... Show More'])[1]"));
+    	if(showMoreLinkList.size()>0) {
+    		WebElement showMoreLink = driver.findElement(By.xpath("(//button[text()=' ... Show More'])[1]"));
+    		clickOnElement(showMoreLink, "Clicking on Show more link below the content on search or browse page");
+    	}
     }
     
     

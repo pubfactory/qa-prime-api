@@ -2,6 +2,8 @@ package com.prime.pageFactory.pages.fpj;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.velocity.runtime.directive.Parse;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -917,14 +919,14 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 12/06/2024
      */
     public void clickOnFullTextOrAbstractTabOnArticlePage() throws Exception {
-	   List<WebElement> abstractList = driver.findElements(By.xpath("//button[text()='Abstract']"));
-	   if(abstractList.size()>0) {
-		   WebElement abstractTab = driver.findElement(By.xpath("//button[text()='Abstract']"));
-		   clickOnElement(abstractTab, "Clicking on Abstract tab on article page");
+	   List<WebElement> fullTextList = driver.findElements(By.xpath("//button[text()='Full Text']"));
+	   if(fullTextList.size()>0) {
+		   WebElement fullTextTab = driver.findElement(By.xpath("//button[text()='Full Text']"));
+		   clickOnElement(fullTextTab, "Clicking on fullText tab on article page");
 	   }
 	   else {
-		   WebElement abstractTab = driver.findElement(By.xpath("//button[text()='Full Text']"));
-		   clickOnElement(abstractTab, "Clicking on Full text tab on article page");
+		   WebElement abstractTab = driver.findElement(By.xpath("//button[text()='Abstract']"));
+		   clickOnElement(abstractTab, "Clicking on Abstract tab on article page");
 	   }
     }
     
@@ -954,6 +956,232 @@ public class ArticleCitationPage extends BasePage {
            return isElementNotPresent(element);
         }
     
+    /**
+     * This method return the Number of Citation text which is available on Article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/06/2024
+     */
+    public String getNumberOfCitationTextOnArticlePae() throws Exception {
+        String NumberOfCitationText = getTextFromElement(NumberOfCitationWebElement);
+        return NumberOfCitationText;
+    }
+    
+    /**
+     * This method return the Number of Citation count which is available on Article page
+     * 
+     * @return int
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/06/2024
+     */
+    public int getCountOfNumberOfCitationOnArticlePage() throws Exception {
+        String CountOfNumberOfCitation = getTextFromElement(countOfNumberOfCitation);
+        return Integer.parseInt(CountOfNumberOfCitation);
+        
+    }
+    
+    /**
+     * This method returns Cited by text on Article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/06/2024
+     */
+    public String getCitedByTextOnArticlePage() throws Exception {
+        String citedByElementText = getTextFromElement(citedByElement);
+        return citedByElementText;
+    }
+    
+    /**
+     * This method is used to click in the cited by element on article page
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/06/2024
+     */
+    public void clickOnCitedByElementOnArticlePage() throws Exception {
+        clickOnElement(citedByElement, "Clicking on cited by element on Article Page");
+    }
+    
+    /**
+     * This method is used to checks not provided ascending number before the each citation
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return boolean
+     * @Created Date : 17/06/2024
+     */
+    public boolean verifyCitationIndexIsNotPresentInCitedByOnArticlePage() throws Exception {
+        List<WebElement> citationIndex = driver.findElements(By.xpath("//span[@class='citationIndex']"));
+        return isElementNotPresent(citationIndex);
+    }
+    
+    /**
+     * This method is used to checks the pagination style will be a string of numbers.
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return boolean
+     * @Created Date : 17/06/2024
+     */
+    public boolean verifyPaginationStyleWillBeAStringOfNumbersInCitedByOnArticlePage() throws Exception {
+        List<WebElement> secondPagination = driver.findElements(By.xpath("(//li[contains(@data-testid,'pagination-page-index-2')])[1]"));
+        return isElementPresent(secondPagination);
+    }
+    
+    /**
+     * This method is used to click 2nd pagination link in Cited by element on article page.
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/06/2024
+     */
+    public void clickOnSecondPaginationLinkInCitedByElementOnArticlePage() throws Exception {
+    	WebElement secondPagination = driver.findElement(By.xpath("((//span[text()='Page:'])[1]//following::li[text()='2'])[1]"));   	  
+        clickOnElement(secondPagination, "Clicking on second pagination link in cited by element on Article Page");
+    }
+    
+    /**
+     * This method used to returns the total citation result in Cited By element On Article Page
+     * 
+     * @return int
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/06/2024
+     */
+    public int getAppropriateCitationResultCountInCitedByElementOnArticlePage() throws Exception {
+    	List<WebElement> resultCount = driver.findElements(By.xpath("(//a[@target='_blank' and text()='Crossref'])"));
+        return resultCount.size();
+    }
+    
+    /**
+     * This method used to checks the pagInation links is present in cited by element on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/06/2024
+     */
+    public boolean verifyPagInationLinkNumberIsPresentInCitedByElement() throws Exception {
+        List<WebElement> Pagination = driver.findElements(By.xpath("(//li[@class='css-lkygn'])[1]"));
+        return isElementPresent(Pagination);
+    }
+    
+    /**
+     * This method used to returns the pagInation number in Cited By element On Article Page
+     * 
+     * @return int
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 18/06/2024
+     */
+    public int getPagInationLinkNumberInCitedByElement() throws Exception {
+    	String pagInationNumber=getTextFromElement(pagInationLinkNumber);
+    	return Integer.parseInt(pagInationNumber);
+    }
+    
+    
+    /**
+     * This method returns Default You are looking for text in Cited by element on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 18/06/2024
+     */
+    public String getDefaultYouAreLookingForTextInCitedByElement() throws Exception {
+    	WebElement youAreLooking=driver.findElement(By.xpath("//p[text()='Publications Citing This Document']//following-sibling::p"));
+    	return getTextFromElement(youAreLooking);   	
+    }
+    
+    
+    /**
+     * This method returns the starting or ending result number of You are looking text in cited by element
+     * 
+     * @param StartEndResultNumber
+     * @return int
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 18/06/2024
+     */
+    public int getStartingAndEndingResultTextOfYouAreLookingInCitedByElement(int StartEndResultNumber) throws Exception {
+    	if(verifyPagInationLinkNumberIsPresentInCitedByElement()==true) {
+    		int PagInationLinkNumber = getPagInationLinkNumberInCitedByElement();
+    		int totalAllResultUptoPagInationLinkNumbe=(PagInationLinkNumber-1)*20 + StartEndResultNumber;
+    		System.out.println("totalAllResultUptoPagInationLinkNumbe : "+totalAllResultUptoPagInationLinkNumbe);
+    		return totalAllResultUptoPagInationLinkNumbe;
+    	}
+    	else {
+    		System.out.println("totalAllResultUptoPagInationLinkNumbe : "+StartEndResultNumber);
+    		return StartEndResultNumber;
+    	}
+    }
+    
+    /**
+     * This method returns crossRef text in Cited by element on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 18/06/2024
+     */
+    public String getCrossRefTextInCitedByElement() throws Exception {
+       	return getTextFromElement(crossRefLink);   	
+    }
+    
+    /**
+     * This method is used to clicks rossRef link in Cited by element on article page.
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 18/06/2024
+     */
+    public void clickOnCrossRefLinkInCitedByElementOnArticlePage() throws Exception {
+           clickOnElement(crossRefLink, "Clicking on crossRef link in cited by element on Article Page");
+    }
+    
+    /**
+     * This method used to checks the DOI user to the citing article is present in a new browser tab after clicking on crossref link.
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 18/06/2024
+     */
+    public boolean verifyDOIUserIsPresentInNewTab() throws Exception {
+        List<WebElement> doiUser = driver.findElements(By.xpath("(//a[contains(@href,'doi.org')])[1]"));
+        return isElementPresent(doiUser);
+    }
+    
+    /**
+     * This method used to checks the pagInation in top of cited by element is present on article page.
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 19/06/2024
+     */
+    public boolean verifyPagInationInTopInCitedByElementIsPresentOnArticlePage() throws Exception {
+        List<WebElement> paginationTop = driver.findElements(By.xpath("(//span[text()='Page:'])[1]"));
+        return isElementPresent(paginationTop);
+    }
+    
+    /**
+     * This method used to checks the pagInation in bottom of cited by element is present on article page..
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 19/06/2024
+     */
+    public boolean verifyPagInationInBottomInCitedByElementIsPresentOnArticlePage() throws Exception {
+        List<WebElement> paginationBottom = driver.findElements(By.xpath("(//span[text()='Page:'])[2]"));
+        return isElementPresent(paginationBottom);
+    }
     
     @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
@@ -1023,4 +1251,18 @@ public class ArticleCitationPage extends BasePage {
     private WebElement toastMessageCloseButton;
     @FindBy(xpath="//a[text()='Citations']")
     private WebElement citationsLink;
+    @FindBy(xpath="//span[contains(text(),'Cited by:')]")
+    private WebElement NumberOfCitationWebElement;
+    @FindBy(xpath="(//span[contains(text(),'Cited by')]//following::span)[1]")
+    private WebElement countOfNumberOfCitation;
+    @FindBy(xpath="//span[contains(text(),'Cited By')]")
+    private WebElement citedByElement;
+    @FindBy(xpath="(//li[@class='css-lkygn'])[1]")
+    private WebElement pagInationLinkNumber;
+    @FindBy(xpath="(//a[@target='_blank' and text()='Crossref'])[1]")
+    private WebElement crossRefLink; 
+    @FindBy (xpath="(//span[text()='Page:'])[1]")
+    private WebElement pagInationTop;
+    @FindBy (xpath="(//span[text()='Page:'])[2]")
+    private WebElement pagInationBottom;
 }

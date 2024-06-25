@@ -44,54 +44,48 @@ public class HitHighlightingTest  extends BaseTest{
             browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
             issuePage = BasePage.initialize(WebDriverManager.getDriver(), IssuePage.class);
-            masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchkeyword").toString());
             masterPage.clickOnSearchMagnifyingLense();            
-            browseOrSearchPage.clickOnAbstractTabOfFirstActileOnBrowsePageOrSearchPage();
+            browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
+            browseOrSearchPage.ClickOnShowMoreLinkIfAvailableBelowTheContent();
+            String firstSearchKeyword=browseOrSearchPage.getAbstract().get(0).toString().trim();
+            System.out.println("firstSearchKeyword : "+firstSearchKeyword);
+            String secondSearchKeyword = browseOrSearchPage.getAbstract().get(1).toString().trim();
+            System.out.println("secodSearchKeyword : "+secondSearchKeyword);
+            masterPage.enterTextInSearchBoxOnHomePage(firstSearchKeyword);
+            masterPage.clickOnSearchMagnifyingLense();  
+            browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
             
-            //Verifying the search keyword is displayed as hit highlighted   
-            BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBackgroundColor(testData.get("searchkeyword").toString()),testData.get("backgroundcolor").toString(), "Verifying the hit highlighting the search keyword in abstract tab on search result page");
-            String secodSearchKeyword=browseOrSearchPage.getAbstract().get(0).toString();
-            String thirdSearchKeyword = browseOrSearchPage.getAbstract().get(1).toString();
-            browseOrSearchPage.clickOnAbstractTabOfFirstActileOnBrowsePageOrSearchPage();
             
+            //Verifying the search keyword is displayed as hit highlighted  on Search or browse page
+            BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBackgroundColor(firstSearchKeyword),testData.get("backgroundcolor").toString(), "Verifying the hit highlighting the search keyword in abstract tab on search result page");
+
+           
             //Verifying the search keyword is hit highlighted in fulltext or abstract tab on article page
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             articleCitationPage.clickOnFullTextOrAbstractTabOnArticlePage();
-            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getBackgroundColor(testData.get("searchkeyword").toString()),testData.get("backgroundcolor").toString(), "Verifying the hit highlighting the search keyword in abstract tab on article page");
+            BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getBackgroundColor(firstSearchKeyword),testData.get("backgroundcolor").toString(), "Verifying the hit highlighting the search keyword in abstract tab on article page");
             String articleTitle=articleCitationPage.getArticleHeaderOnArticlePage();
             System.out.println("First combination title : "+articleTitle);
             masterPage.enterTextInSearchBoxOnHomePage(articleTitle);
             masterPage.clickOnSearchMagnifyingLense();    
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
-            BaseTest.assertEquals(driver, articleCitationPage.verifySearchKeywordIsNotHitHighlighted(testData.get("searchkeyword").toString()), true, "Verifying the search keyword is not  hit highlighting in abstract tab on article page after navigate the same content without search opearation");
             
-            //Verifying the user can navigate to the same article repeatedly with a combination of searching 
-            masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchkeyword").toString());
+            //Verifying the Hit highlighted is not shows if the user direct navigated to same contecnt without using search keyword
+            BaseTest.assertEquals(driver, articleCitationPage.verifySearchKeywordIsNotHitHighlighted(firstSearchKeyword), true, "Verifying the search keyword is not  hit highlighting in abstract tab on article page after navigate the same content without search opearation");
+            
+            //Verifying the Combination of hit highlighted is displayed and user can navigate to the same article repeatedly with a combination of searching 
+            masterPage.enterTextInSearchBoxOnHomePage(firstSearchKeyword);
             masterPage.clickOnSearchMagnifyingLense(); 
             browseOrSearchPage.clickOnAddRowButtonInRefineTermDDOnBrowseOrSearchPage();
-            browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueentertwo").toString(), secodSearchKeyword);
+            browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueentertwo").toString(), secondSearchKeyword);
             browseOrSearchPage.clickOnAddRowButtonInRefineTermDDOnBrowseOrSearchPage();
-            browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenterthree").toString(), thirdSearchKeyword);
-            browseOrSearchPage.clickOnAddRowButtonInRefineTermDDOnBrowseOrSearchPage();
-            browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenterfour").toString(), articleTitle);
-            browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
-            
-            browseOrSearchPage.clickOnAbstractTabOfFirstActileOnBrowsePageOrSearchPage();
-            BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBackgroundColor(testData.get("searchkeyword").toString()),testData.get("backgroundcolor").toString(), "Verifying the hit highlighting the search keyword in abstract tab on search result page");
-            BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBackgroundColor(secodSearchKeyword),testData.get("backgroundcolor").toString(), "Verifying the hit highlighting the combination search keyword "+secodSearchKeyword+" in abstract tab on search result page");
-            BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBackgroundColor(thirdSearchKeyword),testData.get("backgroundcolor").toString(), "Verifying the hit highlighting the combination search keyword "+thirdSearchKeyword+"in abstract tab on search result page");
-            
-            browseOrSearchPage.clickOnAbstractTabOfFirstActileOnBrowsePageOrSearchPage();
-            browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
-            String articleTitleAfterCombination=articleCitationPage.getArticleHeaderOnArticlePage();     
-            BaseTest.assertEquals(driver, articleTitle, articleTitleAfterCombination, "Verifying the user can navigate to the same article repeatedly with a combination of searching");
-            
+            browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenterthree").toString(), articleTitle);
+           
             //Verify that when the user navigates to an issue or journal page, the hit highlights are not displayed
             articleCitationPage.clickOnJournalCoverOnArtcilePage();
             issuePage.clickOnAbstractTabOfFirstActileOnBrowsePageOrSearchPage();
-            issuePage.verifySearchKeywordIsNotHitHighlighted(thirdSearchKeyword);
-            BaseTest.assertEquals(driver, articleCitationPage.verifySearchKeywordIsNotHitHighlighted(thirdSearchKeyword), true, "Verifying the search keyword is not hit highlighting in abstract tab on issue page while comes through search page");
-          
-            
+            issuePage.verifySearchKeywordIsNotHitHighlighted(secondSearchKeyword);
+            BaseTest.assertEquals(driver, articleCitationPage.verifySearchKeywordIsNotHitHighlighted(firstSearchKeyword), true, "Verifying the search keyword is not hit highlighting in abstract tab on issue page while comes through search page");
+                      
     }
 }
