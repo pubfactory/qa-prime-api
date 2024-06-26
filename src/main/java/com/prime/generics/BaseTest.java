@@ -75,7 +75,7 @@ public class BaseTest {
     private static final String APP_URL = "appUrl";
     public static final String USERNAME = "kglselectsignal_7pEVPF";
     public static final String AUTOMATE_KEY = "3HpPxaxVR3GLRjgxWg2K";
-    public static final String URL = "https://"+ USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+    public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
     public Set<Cookie> allCookies;
     public static List<String> domainName = new ArrayList<String>();
     protected WebDriver driver;
@@ -208,7 +208,7 @@ public class BaseTest {
                     threadCount = threadCount - publisherCount;
                 }
                 publishers.add(publisherArray[i]);
-           }
+            }
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -421,8 +421,8 @@ public class BaseTest {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     //               io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
-                    //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
-                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+                    //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
                     options.addArguments("--disable-dev-shm-usage");
@@ -475,7 +475,7 @@ public class BaseTest {
                     }
                     io.github.bonigarcia.wdm.WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver(edgeoptions);
-                   System.out.println("******After Edge Driver*****" + driver);
+                    System.out.println("******After Edge Driver*****" + driver);
                 }
 
                 WebDriverManager.setWebDriver(driver);
@@ -532,7 +532,7 @@ public class BaseTest {
             switch (application) {
                 case "fpj":
                     jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/FPJ_TestData.json"))));
-                   break;
+                    break;
                 case "tsir":
                     jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/TSIR_TestData.json"))));
                     break;
@@ -557,7 +557,7 @@ public class BaseTest {
     public void fetchTestDataApplicationWise(String application) throws Exception {
         switch (application) {
             case "fpj":
-               jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/FPJ_TestData.json"))));
+                jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/FPJ_TestData.json"))));
                 break;
             case "tsir":
                 jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/TSIR_TestData.json"))));
@@ -624,7 +624,7 @@ public class BaseTest {
      * @author Rakesh.Shevale
      * @Created Date : 10/07/2023
      */
-   public void closeApplication() throws Exception {
+    public void closeApplication() throws Exception {
         try {
             System.out.println("After quit  :" + WebDriverManager.getDriver().toString());
             Helper.INSTANCE.logEventInfoToReport(driver.getCurrentUrl());
@@ -646,7 +646,7 @@ public class BaseTest {
     @AfterSuite(alwaysRun = true)
     public void closeDriver() throws Exception {
         try {
-           Helper.INSTANCE.logEventInfoToReport("After Suite");
+            Helper.INSTANCE.logEventInfoToReport("After Suite");
 
             WebDriverManager.closeDriver();
             WebDriverManager.resetFlagMap().clear();
@@ -992,7 +992,7 @@ public class BaseTest {
     public void navigateToUrl(String url) throws Exception {
         try {
             url = BaseTest.properties.getProperty(url);
-           WebDriverManager.getDriver().get(url);
+            WebDriverManager.getDriver().get(url);
             Allure.step("Opening URL: " + url);
             waitForLoad(driver);
         } catch (Exception e) {
@@ -1197,6 +1197,5 @@ public class BaseTest {
     }
 
 }
-
 
 
