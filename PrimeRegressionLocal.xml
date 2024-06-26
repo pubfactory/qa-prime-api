@@ -146,6 +146,54 @@
 			</class>
 		</classes>
 	</test>
+	<test name="AddCiteddBy" preserve-order="true">
+<classes>
+<class name="com.prime.tests.E2E.AddCiteddByTest">
+<methods>
+<include 
+			name="VerifyThattheAddCitedByFunctionality">
+<parameter name="testcaseid" value="104" />
+</include>
+</methods>
+</class>
+</classes>
+</test>
+<test name="CitationsLink" preserve-order="true">
+<classes>
+<class name="com.prime.tests.E2E.CitationLinkTest">
+<methods>
+<include 
+			name="VerifyThatTheCitationLinkFunctionalityIsWorkingFine">
+<parameter name="testcaseid" value="102" />
+</include>
+</methods>
+</class>
+</classes>
+</test>
+<test name="CopyPreviewCitation" preserve-order="true">
+<classes>
+<class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+<methods>
+<include 
+			name="VerifyThatUserAbleToPerformCopyPreviewCitationOperation">
+<parameter name="testcaseid" value="102" />
+</include>
+</methods>
+</class>
+</classes>
+</test>
+<test name="HitHighlighting" preserve-order="true">
+<classes>
+<class name="com.prime.tests.E2E.HitHighlightingTest">
+<methods>
+<include 
+			name="VerifyThattheHitHighlightingFuctionality">
+<parameter name="testcaseid" value="103" />
+</include>
+</methods>
+</class>
+</classes>
+</test>
 
 
 </suite>
