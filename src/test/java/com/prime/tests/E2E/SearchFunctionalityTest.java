@@ -208,7 +208,7 @@ public class SearchFunctionalityTest extends BaseTest {
         int abstractCount = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(browseResultCount, abstractCount), true,
                 "Verifying the total result count after applying the Abstract filter from refine term filter on search apge");
-        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("adv-field=abstract&adv-value=intravenous+anesthetic"), "Verifying the Abstract filter is applied on search result page");
+        BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("adv-field[0]=abstract&adv-value[0]=intravenous+anesthetic"), "Verifying the Abstract filter is applied on search result page");
 
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptiontitle").toString());

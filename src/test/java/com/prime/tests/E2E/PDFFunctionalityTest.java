@@ -58,7 +58,7 @@ public class PDFFunctionalityTest extends BaseTest {
             browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
 
             //Verifying Pdf download button is present on article page
-            browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("free").toString());
+            browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("open").toString());
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             pdfPage = BasePage.initialize(WebDriverManager.getDriver(), PDFPage.class);
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyPDFButtonPresentOnArticlePage(), true, "Verifying PDF Button is present on the article page");

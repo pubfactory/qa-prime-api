@@ -55,11 +55,9 @@ public class HitHighlightingTest  extends BaseTest{
             masterPage.clickOnSearchMagnifyingLense();  
             browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
             
-            
             //Verifying the search keyword is displayed as hit highlighted  on Search or browse page
             BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBackgroundColor(firstSearchKeyword),testData.get("backgroundcolor").toString(), "Verifying the hit highlighting the search keyword in abstract tab on search result page");
 
-           
             //Verifying the search keyword is hit highlighted in fulltext or abstract tab on article page
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             articleCitationPage.clickOnFullTextOrAbstractTabOnArticlePage();
@@ -80,7 +78,13 @@ public class HitHighlightingTest  extends BaseTest{
             browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueentertwo").toString(), secondSearchKeyword);
             browseOrSearchPage.clickOnAddRowButtonInRefineTermDDOnBrowseOrSearchPage();
             browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenterthree").toString(), articleTitle);
-           
+            browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
+            browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
+            BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBackgroundColor(firstSearchKeyword),testData.get("backgroundcolor").toString(), "Verifying the hit highlighting the search keyword in abstract tab on search result page");
+            BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBackgroundColor(secondSearchKeyword),testData.get("backgroundcolor").toString(), "Verifying the hit highlighting the combination search keyword "+secondSearchKeyword+" in abstract tab on search result page");                    
+            String articleTitleAfterCombination=articleCitationPage.getArticleHeaderOnArticlePage();     
+            BaseTest.assertEquals(driver, articleTitle, articleTitleAfterCombination, "Verifying the user can navigate to the same article repeatedly with a combination of searching");
+            
             //Verify that when the user navigates to an issue or journal page, the hit highlights are not displayed
             articleCitationPage.clickOnJournalCoverOnArtcilePage();
             issuePage.clickOnAbstractTabOfFirstActileOnBrowsePageOrSearchPage();
