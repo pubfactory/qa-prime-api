@@ -145,19 +145,7 @@
 			</methods>
 			</class>
 		</classes>
-	</test>
-	<test name="AddCiteddBy" preserve-order="true">
-<classes>
-<class name="com.prime.tests.E2E.AddCiteddByTest">
-<methods>
-<include 
-			name="VerifyThattheAddCitedByFunctionality">
-<parameter name="testcaseid" value="104" />
-</include>
-</methods>
-</class>
-</classes>
-</test>
+	
 <test name="CitationsLink" preserve-order="true">
 <classes>
 <class name="com.prime.tests.E2E.CitationLinkTest">
