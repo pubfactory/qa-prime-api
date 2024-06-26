@@ -8,6 +8,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.prime.generics.BasePage;
@@ -842,8 +845,30 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 29/05/2024
      */
     public boolean verifyChakraToastMessageIsDisplayedAfterClickingOnCopyToClipBoardButton() throws Exception {
-        List<WebElement> toastMessage = driver.findElements(By.xpath("//li[@class='chakra-toast']"));
+        List<WebElement> toastMessage = driver.findElements(By.xpath("(//div[@data-status='success'])[1]"));
         return isElementPresent(toastMessage);
+    }
+    
+    /**
+     * This method is used to checks Copy to ClipBoard button is present on preview Export Citation popup in headless ,ode
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return boolean
+     * @Created Date : 26/06/2024
+     */
+    public boolean verifyChakraToastMessageIsDisplayedAfterClickingOnCopyToClipBoardButtonInHeadless() throws Exception {
+		List<WebElement> toastMessage1 =null;
+		LogEntries logs = driver.manage().logs().get(LogType.BROWSER);
+		
+		for (LogEntry log : logs) {
+			if (log.getMessage().contains("Clipboard")) {
+				System.out.println("Toast message detected in logs!");								
+				toastMessage1 = driver.findElements(By.xpath("(//div[contains(@id,'toast-')])[1]"));	
+				break;
+			}
+		}
+		return isElementPresent(toastMessage1);
     }
     
     /**
