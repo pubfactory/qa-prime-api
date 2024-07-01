@@ -119,7 +119,7 @@ public class BaseTest {
     private XmlSuite suite;
     private String browserstack;
     private JSONParser parser;
-    protected String application;
+    public String application;
     protected String baseURI;
     protected String platform;
     protected String suitefilepathnamee;
@@ -282,6 +282,7 @@ public class BaseTest {
                 //System.setProperty("application", suite.getParameter("application"));
                 env = System.getProperty("Environment");
                 application = System.getProperty("application");
+                System.out.println("APPLICATION="+application);
             } else {
                 env = BaseTest.properties.getProperty("Environment");
                 application = BaseTest.properties.getProperty("application");
