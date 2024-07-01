@@ -119,7 +119,7 @@ public class BaseTest {
     private XmlSuite suite;
     private String browserstack;
     private JSONParser parser;
-    public String application;
+    protected String application;
     protected String baseURI;
     protected String platform;
     protected String suitefilepathnamee;
@@ -300,7 +300,7 @@ public class BaseTest {
             } else if (suitefilepathnamee.contains("Gates") && env.equalsIgnoreCase("staging")) {
                 testRailId = BaseTest.properties.getProperty("staging_gates_testrunid");
             }
-           // application = BaseTest.properties.getProperty("application");
+           application = BaseTest.properties.getProperty("application");
             baseURI = BaseTest.properties.getProperty("baseURI_Search");
             platform = BaseTest.properties.getProperty("platform");
             status = BaseTest.properties.getProperty("status");
@@ -528,7 +528,7 @@ public class BaseTest {
         JSONObject finalObj = null;
         try {
             parser = new JSONParser();
-      //      application = BaseTest.properties.getProperty("application");
+            application = BaseTest.properties.getProperty("application");
             this.fetchTestDataApplicationWise(application);
             switch (application) {
                 case "fpj":
@@ -940,7 +940,7 @@ public class BaseTest {
     public JSONArray getTCDetails() throws Exception {
         try {
             parser = new JSONParser();
-          //  application = BaseTest.properties.getProperty("application");
+            application = BaseTest.properties.getProperty("application");
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
             this.getTestDataDetailsWithFileName(testCaseId, testDataFileName);
         } catch (Exception ex) {
@@ -1043,7 +1043,7 @@ public class BaseTest {
         JSONObject finalObj = null;
         try {
             parser = new JSONParser();
-          //  application = BaseTest.properties.getProperty("application");
+            application = BaseTest.properties.getProperty("application");
             jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/" + filename))));
 
             for (Object jsonobj : jsonarray) {
