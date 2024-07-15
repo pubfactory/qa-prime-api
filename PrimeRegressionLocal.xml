@@ -172,4 +172,15 @@
 			</class>
 		</classes>
 	</test>
+	<test name="DevToolSettings" preserve-order="true">
+		<classes>
+			<class name="com.prime.tests.E2E.DevToolBoxSettingTest">
+				<methods>
+					<include name="veryifyDevToolboxSettingFunctionality">
+						<parameter name="testcaseid" value="105" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>

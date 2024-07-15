@@ -246,5 +246,12 @@
 			"citedby":"Cited By",
 			"crossref":"Crossref"
 		}
+	},
+	{
+	"id": "105",
+		"data": {
+			"description": "veryifyDevToolboxSettingFunctionality",
+			"searchkeyword":"article"
+		}
 	}
 ]

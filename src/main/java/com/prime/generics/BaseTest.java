@@ -282,7 +282,7 @@ public class BaseTest {
                 //System.setProperty("application", suite.getParameter("application"));
                 env = System.getProperty("Environment");
                 application = System.getProperty("application");
-                System.out.println("APPLICATION="+application);
+                System.out.println("APPLICATION=" + application);
             } else {
                 env = BaseTest.properties.getProperty("Environment");
                 application = BaseTest.properties.getProperty("application");
@@ -300,7 +300,7 @@ public class BaseTest {
             } else if (suitefilepathnamee.contains("Gates") && env.equalsIgnoreCase("staging")) {
                 testRailId = BaseTest.properties.getProperty("staging_gates_testrunid");
             }
-           application = BaseTest.properties.getProperty("application");
+            application = BaseTest.properties.getProperty("application");
             baseURI = BaseTest.properties.getProperty("baseURI_Search");
             platform = BaseTest.properties.getProperty("platform");
             status = BaseTest.properties.getProperty("status");

@@ -1,7 +1,6 @@
 package com.prime.pageFactory.pages.fpj;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,18 +25,18 @@ public class MasterPage extends BasePage {
     }
 
     /**
-	 * This method used to Verifying the search box is present on header
-	 *
-	 * @throws Exception
-	 * @author Rakesh.Shevale
+     * This method used to Verifying the search box is present on header
+     *
+     * @throws Exception
+     * @author Rakesh.Shevale
      * @return 
-	 * @Created Date : 10/10/2023
-	 */
-	public boolean verifySearchBoxIsPresentOnHeader() throws Exception {
-		List<WebElement>searchBox=driver.findElements(By.xpath("(//input[@placeholder='Search'])[1]"));
-		return isElementPresent(searchBox);
-	}
-    
+     * @Created Date : 10/10/2023
+     */
+    public boolean verifySearchBoxIsPresentOnHeader() throws Exception {
+        List<WebElement> searchBox = driver.findElements(By.xpath("(//input[@placeholder='Search'])[1]"));
+        return isElementPresent(searchBox);
+    }
+
     /**
      * This method used to enter the text in search box
      * 
@@ -51,8 +50,8 @@ public class MasterPage extends BasePage {
         typeOnElement(searchBox, searchText, "Entering the text in search box");
         return new MasterPage(driver);
     }
-    
-    
+
+
     /**
      * This method used to click on Magnifying Lens for search on home page`
      * 
@@ -65,18 +64,18 @@ public class MasterPage extends BasePage {
     }
 
     /**
-	 * This method used to Verifying the Magnifying Lense is present on header
-	 *
-	 * @throws Exception
-	 * @author Rakesh.Shevale
+     * This method used to Verifying the Magnifying Lense is present on header
+     *
+     * @throws Exception
+     * @author Rakesh.Shevale
      * @return boolean
-	 * @Created Date : 19/10/2023
-	 */
-	public boolean verifySearchMagnifyingLenseIsPresentOnHeader() throws Exception {
-		List<WebElement>magniFyingLense=driver.findElements(By.xpath("(//button[@type='submit'][@aria-label='Search'])[1]"));
-		return isElementPresent(magniFyingLense);
-	}
-    
+     * @Created Date : 19/10/2023
+     */
+    public boolean verifySearchMagnifyingLenseIsPresentOnHeader() throws Exception {
+        List<WebElement> magniFyingLense = driver.findElements(By.xpath("(//button[@type='submit'][@aria-label='Search'])[1]"));
+        return isElementPresent(magniFyingLense);
+    }
+
     /**
      * This method used to click on Article under Content List section on home page
      * 
@@ -204,7 +203,7 @@ public class MasterPage extends BasePage {
     public void clickOnViewThisIssueOnHomePage() throws Exception {
         clickOnElement(viewThisIssue, "Clicking on View This Issue On HomePage");
     }
-    
+
     /**
      * This method clicks on main apps logo on left hand side
      * 
@@ -215,6 +214,63 @@ public class MasterPage extends BasePage {
      */
     public void clickOnMainAppLogoInHeader() throws Exception {
         clickOnElement(AppMainLogo, "Clicking on main apps logo in header");
+    }
+
+    /**
+     * This method used to check Devtools setting link is present on header
+     * 
+     * @throws Exception
+     * @author Veena.Mathew
+     * @Created Date : 25/06/2024
+     */
+    public void verifyDevToolsSettings() throws Exception {
+        isElementPresent(DevToolSetting, "checking the Dev tool setting is present or not on home page");
+    }
+
+    /**
+     * This method clicks on dev tools button in the home page
+     * 
+     * 
+     * @throws Exception
+     * @author Veena.Mathew
+     * @Created Date : 25/06/2024
+     */
+    public void clickOnDevToolSetting() throws Exception {
+        clickOnElement(DevToolSetting, "Clicking on dev tool setting");
+    }
+
+    /**
+     * This method used to check Show Region Keys setting link is present on header
+     * 
+     * @throws Exception
+     * @author Veena.Mathew
+     * @Created Date : 25/06/2024
+     */
+    public boolean verifyShowRegionsKeysSettings() throws Exception {
+        return isElementPresent(ShowRegionKeys, "checking the Region Key setting is present or not on home page");
+    }
+
+    /**
+     * This method clicks on Show Region Keys  button in the home page
+     * 
+     * 
+     * @throws Exception
+     * @author Veena.Mathew
+     * @Created Date : 25/06/2024
+     */
+    public void clickOnRegionKeySetting() throws Exception {
+        clickOnElement(ShowRegionKeys, "Clicking on RegionKey setting");
+    }
+
+    /**
+     * This method used to check Devtools setting link is present on header
+     * 
+     * @throws Exception
+     * @author Veena.Mathew
+     * @Created Date : 25/06/2024
+     */
+    public String getLabelNameFromSignInPostShowRegionKeysOON() throws Exception {
+        return getTextFromElement(ShowRegionKeysSignIn).toString();
     }
 
     @FindBy(xpath = "//button[contains(text(),'Accept All Cookies')]")
@@ -241,7 +297,12 @@ public class MasterPage extends BasePage {
     private WebElement contentListArticleTitle;
     @FindBy(xpath = "(//a[text()='View This Issue'])[2]")
     private WebElement viewThisIssue;
-    @FindBy(xpath="(//img[@alt='Logo'])[2]")
+    @FindBy(xpath = "(//img[@alt='Logo'])[2]")
     private WebElement AppMainLogo;
-
+    @FindBy(xpath = "//button[@data-testid='DevtoolsControls']")
+    private WebElement DevToolSetting;
+    @FindBy(xpath = "//section[contains(@id,'popover-content-:r3:')]//label[@data-testid='showRegionKeys']//span")
+    private WebElement ShowRegionKeys;
+    @FindBy(xpath = "//div[@data-testid='block-authbuttons']/a")
+    private WebElement ShowRegionKeysSignIn;
 }
