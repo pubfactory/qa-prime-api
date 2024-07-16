@@ -27,7 +27,7 @@ public class SearchFunctionalityTest extends BaseTest {
     private String testCaseId;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722541 - Verify search page top panel")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1722541 - Verify search page top panel")
     @Story("EPIC-28")
 
     public void VerifySearchPageTopPanel() throws Exception {
@@ -66,7 +66,7 @@ public class SearchFunctionalityTest extends BaseTest {
         //          BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getTotalItemCountOnPage(),testData.get("itemperpagefifty").toString(),"Verifying the "+testData.get("itemperpagefifty").toString()+" Item per page is present on page");         
     }
 
-    @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722542 - Verify pagination and sorting options in the search results page")
+    @Test(groups = {"anesthesiaprogress","fpj"}, enabled = true, retryAnalyzer = Retry.class, description = "1722542 - Verify pagination and sorting options in the search results page")
     @Story("EPIC-28")
 
     public void VerifyPpaginationAndSortingOptionsIntheSearchResultsPage() throws Exception {
@@ -101,7 +101,7 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying the pagInation link size is changed after selecting the twenty item per page from item per page dropdown");
     }
 
-    @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722543 - Verify that  search results details , toolbar options , Save options are as expected")
+    @Test(groups = {"fpj"}, enabled = true, retryAnalyzer = Retry.class, description = "1722543 - Verify that  search results details , toolbar options , Save options are as expected")
     @Story("EPIC-28")
 
     public void VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected() throws Exception {
@@ -147,7 +147,7 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying the Refine by Access filter text on search or Browse Page");
     }
 
-    @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722544 - Verify various Refine terms in the search results page")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1722544 - Verify various Refine terms in the search results page")
     @Story("EPIC-28")
 
     public void VerifyVariousRefineTermsInTheSearchResultsPage() throws Exception {
@@ -234,7 +234,7 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying affiliation search keyword is exist in author affilaition popup");
     }
 
-    @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class,
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class,
             description = "1722545 - Verify that user is able to perform search with the combination of refine terms by adding, clearing , removing more than one rows.")
     @Story("EPIC-28")
 
@@ -302,7 +302,7 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying the refine term filter search keyword is not presented on the search/browse page after clicked on the refine term search slug sign on the search/browse page");
     }
 
-    @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class,
+    @Test(groups = {"MERIDIAN"}, enabled = true, retryAnalyzer = Retry.class,
             description = "1722546 - Verify that the appropriate result is displayed when user select the Article type filter and access type filter from index card")
     @Story("EPIC-28")
 
@@ -365,7 +365,7 @@ public class SearchFunctionalityTest extends BaseTest {
 //                "Verifying the open access type result is displayed on search/browse result page");
     }
 
-    @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722547 - Verify that the various Share button features.")
+    @Test(groups = {"MERIDIAN"}, enabled = true, retryAnalyzer = Retry.class, description = "1722547 - Verify that the various Share button features.")
     @Story("EPIC-28")
 
     public void VerifyThatTheVariousShareButtonFeatures() throws Exception {
@@ -391,7 +391,7 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying sharing platform " + testData.get("linkedinplatform").toString() + " is present when clicks on share button on Browse or search page");
     }
 
-    @Test(groups = {"Search Functionality"}, enabled = true, retryAnalyzer = Retry.class, description = "1722548 - Verify  Refine by Date Section and that search box is accessible in all pages")
+    @Test(groups = {"MERIDIAN"}, enabled = true, retryAnalyzer = Retry.class, description = "1722548 - Verify  Refine by Date Section and that search box is accessible in all pages")
     @Story("EPIC-28")
 
     public void VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages() throws Exception {

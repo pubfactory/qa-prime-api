@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PRIMEFPJ Regression Suite">
+ <listeners>
+        <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
+  </listeners>
+	<suite-files>
+		<suite-file path="TestGroup.xml">
+
+    	
+
+     	 <parameter name="Environment" value="${Environment}" />
+
+			<parameter name="browser" value="${browser}" />
+<!-- 			<parameter name="application" value="${application}" />  --> 
+			
+
+ 	<!--  	   	    <parameter name="Environment" value="uat" /> 
+			<parameter name="browser" value="chrome" />
+			<parameter name="application" value="anesthesiaprogress" />		 --> 
+
+ 	 	  
+
+					
+		</suite-file>
+	</suite-files>
+</suite>
