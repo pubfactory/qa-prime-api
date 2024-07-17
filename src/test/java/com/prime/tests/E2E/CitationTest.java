@@ -35,7 +35,7 @@ public class CitationTest extends BaseTest {
     private String testCaseId;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class,
+    @Test(groups = {"fpj"}, enabled = true, retryAnalyzer = Retry.class,
             description = "1721296  - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it")
     @Story("EPIC-971")
     public void verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt() throws Exception {

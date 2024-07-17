@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="0" name="Failed suite [Surefire suite]">
-  <test name="Surefire test(failed)">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [MultiApplicationSuite]">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="Environment" value="dev"/>
+  <listeners>
+    <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
+  </listeners>
+  <test name="ADD_CITED_BY_E2E(failed)">
+    <parameter name="application" value="astmh"/>
+    <groups>
+      <run>
+        <include name="astmh"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.prime.tests.FPJ.AuthenticateTestCase">
+      <class name="com.prime.tests.E2E.AddCiteddByTest">
         <methods>
           <include name="closeDriver"/>
           <include name="establishConnection"/>
-          <include name="verifyThatUserAbleToLaunchApplication" invocation-numbers="0 0"/>
+          <include name="VerifyThattheAddCitedByFunctionality">
+            <parameter name="testcaseid" value="104"/>
+          </include> <!-- VerifyThattheAddCitedByFunctionality -->
           <include name="loadConfigurationValues"/>
           <include name="setUp"/>
           <include name="closeApplication"/>
         </methods>
-      </class> <!-- com.prime.tests.FPJ.AuthenticateTestCase -->
+      </class> <!-- com.prime.tests.E2E.AddCiteddByTest -->
+      <class name="com.prime.tests.E2E.CitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationTest -->
     </classes>
-  </test> <!-- Surefire test(failed) -->
-</suite> <!-- Failed suite [Surefire suite] -->
+  </test> <!-- ADD_CITED_BY_E2E(failed) -->
+</suite> <!-- Failed suite [MultiApplicationSuite] -->

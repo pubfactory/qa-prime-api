@@ -27,7 +27,7 @@ public class SearchFunctionalityTest extends BaseTest {
     private String testCaseId;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1722541 - Verify search page top panel")
+    @Test(groups = {"fpj"}, enabled = true, retryAnalyzer = Retry.class, description = "1722541 - Verify search page top panel")
     @Story("EPIC-28")
 
     public void VerifySearchPageTopPanel() throws Exception {
@@ -66,7 +66,7 @@ public class SearchFunctionalityTest extends BaseTest {
         //          BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getTotalItemCountOnPage(),testData.get("itemperpagefifty").toString(),"Verifying the "+testData.get("itemperpagefifty").toString()+" Item per page is present on page");         
     }
 
-    @Test(groups = {"anesthesiaprogress","fpj"}, enabled = true, retryAnalyzer = Retry.class, description = "1722542 - Verify pagination and sorting options in the search results page")
+    @Test(groups = {"fpj"}, enabled = true, retryAnalyzer = Retry.class, description = "1722542 - Verify pagination and sorting options in the search results page")
     @Story("EPIC-28")
 
     public void VerifyPpaginationAndSortingOptionsIntheSearchResultsPage() throws Exception {
@@ -133,8 +133,8 @@ public class SearchFunctionalityTest extends BaseTest {
         WebDriverManager.getDriver().navigate().back();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineTermFilterTextOnSearchOrBrowsePage(), testData.get("refineterm").toString(),
                 "Verifying the Refine terms filter text on search or Browse Page");
-//        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByTypeFilterTextonSearchOrBrowsePage(), testData.get("refinetype").toString(),
-//                "Verifying the Refine by type filter text on search or Browse Page");
+        //        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByTypeFilterTextonSearchOrBrowsePage(), testData.get("refinetype").toString(),
+        //                "Verifying the Refine by type filter text on search or Browse Page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByArticleTypeFilterTextonSearchOrBrowsePage(), testData.get("refinearticletype").toString(),
                 "Verifying the Refine by artcile type filter text on search or Browse Page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByDateFilterTextonSearchOrBrowsePage(), testData.get("refinedate").toString(),
@@ -302,7 +302,7 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying the refine term filter search keyword is not presented on the search/browse page after clicked on the refine term search slug sign on the search/browse page");
     }
 
-    @Test(groups = {"MERIDIAN"}, enabled = true, retryAnalyzer = Retry.class,
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class,
             description = "1722546 - Verify that the appropriate result is displayed when user select the Article type filter and access type filter from index card")
     @Story("EPIC-28")
 
@@ -343,8 +343,7 @@ public class SearchFunctionalityTest extends BaseTest {
         WebDriverManager.getDriver().navigate().refresh();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("openaccess").toString()), true,
                 "Verifying the open access type result is displayed on search/browse result page");
-        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("open").toString()),
-                "Verifying the open access type result is displayed on search/browse result page");
+        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("open").toString()), "Verifying the open access type result is displayed on search/browse result page");
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("freeaccess").toString());
         WebDriverManager.getDriver().navigate().refresh();
@@ -354,18 +353,18 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying the open access type result is displayed on search/browse result page");
 
         //This funct available in dev not in UAT (Refine by type)
-//        masterPage.clickOnSearchMagnifyingLense();
-//        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByTypeFilterTextonSearchOrBrowsePage(), testData.get("refinetype").toString(),
-//                "Verifying the Refine by type filter text on search or Browse Page");
-//        browseOrSearchPage.clickOnRefineByTypeFilterValueOnBrowseOrSearchPage(testData.get("refinetypevalue").toString());
-//        WebDriverManager.getDriver().navigate().refresh();
-//        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("refinetypevalue").toString().toUpperCase()), true,
-//                "Verifying the free access type result is displayed on search/browse result page");
-//        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("type=" + testData.get("refinetypevalue").toString().toUpperCase()),
-//                "Verifying the open access type result is displayed on search/browse result page");
+        //        masterPage.clickOnSearchMagnifyingLense();
+        //        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByTypeFilterTextonSearchOrBrowsePage(), testData.get("refinetype").toString(),
+        //                "Verifying the Refine by type filter text on search or Browse Page");
+        //        browseOrSearchPage.clickOnRefineByTypeFilterValueOnBrowseOrSearchPage(testData.get("refinetypevalue").toString());
+        //        WebDriverManager.getDriver().navigate().refresh();
+        //        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage(testData.get("refinetypevalue").toString().toUpperCase()), true,
+        //                "Verifying the free access type result is displayed on search/browse result page");
+        //        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("type=" + testData.get("refinetypevalue").toString().toUpperCase()),
+        //                "Verifying the open access type result is displayed on search/browse result page");
     }
 
-    @Test(groups = {"MERIDIAN"}, enabled = true, retryAnalyzer = Retry.class, description = "1722547 - Verify that the various Share button features.")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1722547 - Verify that the various Share button features.")
     @Story("EPIC-28")
 
     public void VerifyThatTheVariousShareButtonFeatures() throws Exception {
@@ -391,7 +390,7 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying sharing platform " + testData.get("linkedinplatform").toString() + " is present when clicks on share button on Browse or search page");
     }
 
-    @Test(groups = {"MERIDIAN"}, enabled = true, retryAnalyzer = Retry.class, description = "1722548 - Verify  Refine by Date Section and that search box is accessible in all pages")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1722548 - Verify  Refine by Date Section and that search box is accessible in all pages")
     @Story("EPIC-28")
 
     public void VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages() throws Exception {
