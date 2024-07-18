@@ -46,7 +46,7 @@ public class PDFFunctionalityTest extends BaseTest {
         try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
             WebDriverManager.setTestcaseIdTestRail(testCaseId);
-            String application = BaseTest.properties.getProperty("application");
+            //String application = BaseTest.properties.getProperty("application");
             url = BaseTest.properties.getProperty(application);
             System.out.println("!url=" + url);
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
@@ -96,7 +96,7 @@ public class PDFFunctionalityTest extends BaseTest {
                     "Verifying that same article is displayed in PDF preview in inline PDF tab");
 
             String applicationName = BaseTest.properties.getProperty("application");
-      
+
             //Verifying the dynamic watermark on pdf preview in Inline pdf tab
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(applicationName), true,
                     "Verifying that watermark is present on pdf in Pdf preview in Inline tab on the articla page");
@@ -118,7 +118,7 @@ public class PDFFunctionalityTest extends BaseTest {
 
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         WebDriverManager.setTestcaseIdTestRail(testCaseId);
-        String application = BaseTest.properties.getProperty("application");
+        // String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);
         String testDataFileName = application.toUpperCase() + "_" + "TestData.json";

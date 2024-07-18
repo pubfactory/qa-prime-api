@@ -1,38 +1,869 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [MultiApplicationSuite]">
+<suite thread-count="22" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [MultiApplicationSuite]" parallel="tests">
   <parameter name="browser" value="chrome"/>
   <parameter name="Environment" value="dev"/>
   <listeners>
     <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
   </listeners>
-  <test name="ADD_CITED_BY_E2E(failed)">
-    <parameter name="application" value="astmh"/>
+  <test name="CITATION_E2E(failed)" parallel="tests">
+    <parameter name="application" value="anesthesiaprogress"/>
     <groups>
       <run>
-        <include name="astmh"/>
+        <include name="anesthesiaprogress"/>
       </run>
     </groups>
     <classes>
-      <class name="com.prime.tests.E2E.AddCiteddByTest">
+      <class name="com.prime.tests.E2E.DevToolBoxSettingTest">
         <methods>
           <include name="closeDriver"/>
           <include name="establishConnection"/>
-          <include name="VerifyThattheAddCitedByFunctionality">
-            <parameter name="testcaseid" value="104"/>
-          </include> <!-- VerifyThattheAddCitedByFunctionality -->
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DevToolBoxSettingTest -->
+      <class name="com.prime.tests.E2E.AddCiteddByTest">
+        <methods>
           <include name="loadConfigurationValues"/>
           <include name="setUp"/>
           <include name="closeApplication"/>
         </methods>
       </class> <!-- com.prime.tests.E2E.AddCiteddByTest -->
-      <class name="com.prime.tests.E2E.CitationTest">
+      <class name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
         <methods>
           <include name="loadConfigurationValues"/>
           <include name="setUp"/>
           <include name="closeApplication"/>
         </methods>
+      </class> <!-- com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow -->
+      <class name="com.prime.tests.E2E.PDFFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.PDFFunctionalityTest -->
+      <class name="com.prime.tests.E2E.DOITest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DOITest -->
+      <class name="com.prime.tests.E2E.IntegrationE2EFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
+      <class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DiscoveryWidgetTest -->
+      <class name="com.prime.tests.E2E.CitationLinkTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationLinkTest -->
+      <class name="com.prime.tests.E2E.HitHighlightingTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.HitHighlightingTest -->
+      <class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CopyPreviewCitationTest -->
+      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+      <class name="com.prime.tests.E2E.CitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+          <include name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt">
+            <parameter name="testcaseid" value="1721296"/>
+          </include> <!-- verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt -->
+        </methods>
       </class> <!-- com.prime.tests.E2E.CitationTest -->
+      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
     </classes>
-  </test> <!-- ADD_CITED_BY_E2E(failed) -->
+  </test> <!-- CITATION_E2E(failed) -->
+  <test name="SEARCH_E2E(failed)" parallel="tests">
+    <parameter name="application" value="anesthesiaprogress"/>
+    <groups>
+      <run>
+        <include name="anesthesiaprogress"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.prime.tests.E2E.DevToolBoxSettingTest">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="establishConnection"/>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DevToolBoxSettingTest -->
+      <class name="com.prime.tests.E2E.AddCiteddByTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.AddCiteddByTest -->
+      <class name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow -->
+      <class name="com.prime.tests.E2E.PDFFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.PDFFunctionalityTest -->
+      <class name="com.prime.tests.E2E.DOITest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DOITest -->
+      <class name="com.prime.tests.E2E.IntegrationE2EFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+          <include name="verifyThatUserAbleToLaunchApplication">
+            <parameter name="testcaseid" value="1721284"/>
+          </include> <!-- verifyThatUserAbleToLaunchApplication -->
+        </methods>
+      </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
+      <class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DiscoveryWidgetTest -->
+      <class name="com.prime.tests.E2E.CitationLinkTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationLinkTest -->
+      <class name="com.prime.tests.E2E.HitHighlightingTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.HitHighlightingTest -->
+      <class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CopyPreviewCitationTest -->
+      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+      <class name="com.prime.tests.E2E.CitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationTest -->
+      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
+    </classes>
+  </test> <!-- SEARCH_E2E(failed) -->
+  <test name="CitationsLink(failed)" parallel="tests">
+    <parameter name="application" value="anesthesiaprogress"/>
+    <groups>
+      <run>
+        <include name="anesthesiaprogress"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.prime.tests.E2E.DevToolBoxSettingTest">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="establishConnection"/>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DevToolBoxSettingTest -->
+      <class name="com.prime.tests.E2E.AddCiteddByTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.AddCiteddByTest -->
+      <class name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow -->
+      <class name="com.prime.tests.E2E.PDFFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.PDFFunctionalityTest -->
+      <class name="com.prime.tests.E2E.DOITest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DOITest -->
+      <class name="com.prime.tests.E2E.IntegrationE2EFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
+      <class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DiscoveryWidgetTest -->
+      <class name="com.prime.tests.E2E.CitationLinkTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+          <include name="VerifyThatTheCitationLinkFunctionalityIsWorkingFine">
+            <parameter name="testcaseid" value="102"/>
+          </include> <!-- VerifyThatTheCitationLinkFunctionalityIsWorkingFine -->
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationLinkTest -->
+      <class name="com.prime.tests.E2E.HitHighlightingTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.HitHighlightingTest -->
+      <class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CopyPreviewCitationTest -->
+      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+      <class name="com.prime.tests.E2E.CitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationTest -->
+      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
+    </classes>
+  </test> <!-- CitationsLink(failed) -->
+  <test name="HitHighlighting(failed)" parallel="tests">
+    <parameter name="application" value="anesthesiaprogress"/>
+    <groups>
+      <run>
+        <include name="anesthesiaprogress"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.prime.tests.E2E.DevToolBoxSettingTest">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="establishConnection"/>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DevToolBoxSettingTest -->
+      <class name="com.prime.tests.E2E.AddCiteddByTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.AddCiteddByTest -->
+      <class name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow -->
+      <class name="com.prime.tests.E2E.PDFFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.PDFFunctionalityTest -->
+      <class name="com.prime.tests.E2E.DOITest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DOITest -->
+      <class name="com.prime.tests.E2E.IntegrationE2EFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
+      <class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DiscoveryWidgetTest -->
+      <class name="com.prime.tests.E2E.CitationLinkTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationLinkTest -->
+      <class name="com.prime.tests.E2E.HitHighlightingTest">
+        <methods>
+          <include name="VerifyThattheHitHighlightingFuctionality">
+            <parameter name="testcaseid" value="103"/>
+          </include> <!-- VerifyThattheHitHighlightingFuctionality -->
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.HitHighlightingTest -->
+      <class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CopyPreviewCitationTest -->
+      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+      <class name="com.prime.tests.E2E.CitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationTest -->
+      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
+    </classes>
+  </test> <!-- HitHighlighting(failed) -->
+  <test name="CopyPreviewCitation(failed)" parallel="tests">
+    <parameter name="application" value="anesthesiaprogress"/>
+    <groups>
+      <run>
+        <include name="anesthesiaprogress"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.prime.tests.E2E.DevToolBoxSettingTest">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="establishConnection"/>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DevToolBoxSettingTest -->
+      <class name="com.prime.tests.E2E.AddCiteddByTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.AddCiteddByTest -->
+      <class name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow -->
+      <class name="com.prime.tests.E2E.PDFFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.PDFFunctionalityTest -->
+      <class name="com.prime.tests.E2E.DOITest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DOITest -->
+      <class name="com.prime.tests.E2E.IntegrationE2EFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
+      <class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DiscoveryWidgetTest -->
+      <class name="com.prime.tests.E2E.CitationLinkTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationLinkTest -->
+      <class name="com.prime.tests.E2E.HitHighlightingTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.HitHighlightingTest -->
+      <class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+        <methods>
+          <include name="VerifyThatUserAbleToPerformCopyPreviewCitationOperation">
+            <parameter name="testcaseid" value="102"/>
+          </include> <!-- VerifyThatUserAbleToPerformCopyPreviewCitationOperation -->
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CopyPreviewCitationTest -->
+      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+      <class name="com.prime.tests.E2E.CitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationTest -->
+      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
+    </classes>
+  </test> <!-- CopyPreviewCitation(failed) -->
+  <test name="PDF_WORK(failed)" parallel="tests">
+    <parameter name="application" value="anesthesiaprogress"/>
+    <groups>
+      <run>
+        <include name="anesthesiaprogress"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.prime.tests.E2E.DevToolBoxSettingTest">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="establishConnection"/>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DevToolBoxSettingTest -->
+      <class name="com.prime.tests.E2E.AddCiteddByTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.AddCiteddByTest -->
+      <class name="com.prime.tests.E2E.PDFFunctionalityTest">
+        <methods>
+          <include name="verifyPDFButonAvailableAndDownloadPDF">
+            <parameter name="testcaseid" value="1722758"/>
+          </include> <!-- verifyPDFButonAvailableAndDownloadPDF -->
+          <include name="VerifyPDFFeaturesInRestrictedAccessContentPage">
+            <parameter name="testcaseid" value="1722759"/>
+          </include> <!-- VerifyPDFFeaturesInRestrictedAccessContentPage -->
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.PDFFunctionalityTest -->
+      <class name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow -->
+      <class name="com.prime.tests.E2E.DOITest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DOITest -->
+      <class name="com.prime.tests.E2E.IntegrationE2EFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
+      <class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DiscoveryWidgetTest -->
+      <class name="com.prime.tests.E2E.CitationLinkTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationLinkTest -->
+      <class name="com.prime.tests.E2E.HitHighlightingTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.HitHighlightingTest -->
+      <class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CopyPreviewCitationTest -->
+      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+      <class name="com.prime.tests.E2E.CitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationTest -->
+      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
+    </classes>
+  </test> <!-- PDF_WORK(failed) -->
+  <test name="DISCOVERY_WIDGET(failed)" parallel="tests">
+    <parameter name="application" value="anesthesiaprogress"/>
+    <groups>
+      <run>
+        <include name="anesthesiaprogress"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.prime.tests.E2E.DevToolBoxSettingTest">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="establishConnection"/>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DevToolBoxSettingTest -->
+      <class name="com.prime.tests.E2E.AddCiteddByTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.AddCiteddByTest -->
+      <class name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow -->
+      <class name="com.prime.tests.E2E.PDFFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.PDFFunctionalityTest -->
+      <class name="com.prime.tests.E2E.DOITest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DOITest -->
+      <class name="com.prime.tests.E2E.IntegrationE2EFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
+      <class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+        <methods>
+          <include name="VerifyVariousEmailButtonFeatures">
+            <parameter name="testcaseid" value="1722741"/>
+          </include> <!-- VerifyVariousEmailButtonFeatures -->
+          <include name="VerifyGoogleScholarButtonFeatures">
+            <parameter name="testcaseid" value="1722742"/>
+          </include> <!-- VerifyGoogleScholarButtonFeatures -->
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DiscoveryWidgetTest -->
+      <class name="com.prime.tests.E2E.CitationLinkTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationLinkTest -->
+      <class name="com.prime.tests.E2E.HitHighlightingTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.HitHighlightingTest -->
+      <class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CopyPreviewCitationTest -->
+      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+      <class name="com.prime.tests.E2E.CitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationTest -->
+      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
+    </classes>
+  </test> <!-- DISCOVERY_WIDGET(failed) -->
+  <test name="SEARCH_E2E_FULL(failed)" parallel="tests">
+    <parameter name="application" value="anesthesiaprogress"/>
+    <groups>
+      <run>
+        <include name="anesthesiaprogress"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.prime.tests.E2E.DevToolBoxSettingTest">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="establishConnection"/>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DevToolBoxSettingTest -->
+      <class name="com.prime.tests.E2E.AddCiteddByTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.AddCiteddByTest -->
+      <class name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow -->
+      <class name="com.prime.tests.E2E.PDFFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.PDFFunctionalityTest -->
+      <class name="com.prime.tests.E2E.DOITest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DOITest -->
+      <class name="com.prime.tests.E2E.IntegrationE2EFlow">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
+      <class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.DiscoveryWidgetTest -->
+      <class name="com.prime.tests.E2E.CitationLinkTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationLinkTest -->
+      <class name="com.prime.tests.E2E.HitHighlightingTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.HitHighlightingTest -->
+      <class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CopyPreviewCitationTest -->
+      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+      <class name="com.prime.tests.E2E.CitationTest">
+        <methods>
+          <include name="loadConfigurationValues"/>
+          <include name="closeApplication"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.CitationTest -->
+      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
+        <methods>
+          <include name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">
+            <parameter name="testcaseid" value="1722548"/>
+          </include> <!-- VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages -->
+          <include name="VerifySearchPageTopPanel">
+            <parameter name="testcaseid" value="1722541"/>
+          </include> <!-- VerifySearchPageTopPanel -->
+          <include name="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage">
+            <parameter name="testcaseid" value="1722542"/>
+          </include> <!-- VerifyPpaginationAndSortingOptionsIntheSearchResultsPage -->
+          <include name="loadConfigurationValues"/>
+          <include name="setUp"/>
+          <include name="closeApplication"/>
+        </methods>
+      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
+    </classes>
+  </test> <!-- SEARCH_E2E_FULL(failed) -->
 </suite> <!-- Failed suite [MultiApplicationSuite] -->

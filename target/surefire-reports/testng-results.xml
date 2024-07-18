@@ -1,34 +1,393 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="1" ignored="0" total="3" passed="1">
+<testng-results skipped="12" failed="9" ignored="0" total="35" passed="14">
   <reporter-output>
   </reporter-output>
-  <suite name="PRIMEFPJ Regression Suite" duration-ms="0" started-at="2024-07-17T07:47:12Z" finished-at="2024-07-17T07:47:12Z">
+  <suite name="PRIMEFPJ Regression Suite" duration-ms="0" started-at="2024-07-17T13:28:00Z" finished-at="2024-07-17T13:28:00Z">
     <groups>
     </groups>
   </suite> <!-- PRIMEFPJ Regression Suite -->
-  <suite name="MultiApplicationSuite" duration-ms="38036" started-at="2024-07-17T07:46:33Z" finished-at="2024-07-17T07:47:11Z">
+  <suite name="MultiApplicationSuite" duration-ms="836253" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:24:33Z">
     <groups>
-      <group name="fpj">
-        <method signature="CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt()[pri:0, instance:com.prime.tests.E2E.CitationTest@313b2ea6]" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" class="com.prime.tests.E2E.CitationTest"/>
-      </group> <!-- fpj -->
       <group name="astmh">
-        <method signature="AddCiteddByTest.VerifyThattheAddCitedByFunctionality()[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@3e96bacf]" name="VerifyThattheAddCitedByFunctionality" class="com.prime.tests.E2E.AddCiteddByTest"/>
+        <method signature="AddCiteddByTest.VerifyThattheAddCitedByFunctionality()[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@55740540]" name="VerifyThattheAddCitedByFunctionality" class="com.prime.tests.E2E.AddCiteddByTest"/>
       </group> <!-- astmh -->
+      <group name="fpj">
+        <method signature="CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt()[pri:0, instance:com.prime.tests.E2E.CitationTest@50caa560]" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" class="com.prime.tests.E2E.CitationTest"/>
+        <method signature="SearchFunctionalityTest.VerifyPpaginationAndSortingOptionsIntheSearchResultsPage()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifySearchPageTopPanel()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifySearchPageTopPanel" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+      </group> <!-- fpj -->
+      <group name="anesthesiaprogress">
+        <method signature="SearchFunctionalityTest.VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyThatTheVariousShareButtonFeatures()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyThatTheVariousShareButtonFeatures" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+        <method signature="SearchFunctionalityTest.VerifyVariousRefineTermsInTheSearchResultsPage()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyVariousRefineTermsInTheSearchResultsPage" class="com.prime.tests.E2E.SearchFunctionalityTest"/>
+      </group> <!-- anesthesiaprogress -->
+      <group name="CitationLink">
+        <method signature="CitationLinkTest.VerifyThatTheCitationLinkFunctionalityIsWorkingFine()[pri:0, instance:com.prime.tests.E2E.CitationLinkTest@f381794]" name="VerifyThatTheCitationLinkFunctionalityIsWorkingFine" class="com.prime.tests.E2E.CitationLinkTest"/>
+      </group> <!-- CitationLink -->
+      <group name="Discovery Widget">
+        <method signature="DiscoveryWidgetTest.VerifyGoogleScholarButtonFeatures()[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="VerifyGoogleScholarButtonFeatures" class="com.prime.tests.E2E.DiscoveryWidgetTest"/>
+        <method signature="DiscoveryWidgetTest.VerifyPubMedButtonFeaturesAndAlmetricPageFeatures()[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures" class="com.prime.tests.E2E.DiscoveryWidgetTest"/>
+        <method signature="DiscoveryWidgetTest.VerifyVariousEmailButtonFeatures()[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="VerifyVariousEmailButtonFeatures" class="com.prime.tests.E2E.DiscoveryWidgetTest"/>
+      </group> <!-- Discovery Widget -->
+      <group name="TOC Functionality">
+        <method signature="ToCFunctionalityTest.VerifyJournalToCFeatures()[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@3cc1435c]" name="VerifyJournalToCFeatures" class="com.prime.tests.E2E.ToCFunctionalityTest"/>
+      </group> <!-- TOC Functionality -->
+      <group name="SignIn">
+        <method signature="IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication()[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@313b2ea6]" name="verifyThatUserAbleToLaunchApplication" class="com.prime.tests.E2E.IntegrationE2EFlow"/>
+        <method signature="UnAuthenticatedViewCheckPagesFlow.verifyThatViewPagesDisplayed()[pri:0, instance:com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow@3e96bacf]" name="verifyThatViewPagesDisplayed" class="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow"/>
+      </group> <!-- SignIn -->
+      <group name="PDF Work">
+        <method signature="PDFFunctionalityTest.VerifyPDFFeaturesInRestrictedAccessContentPage()[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="VerifyPDFFeaturesInRestrictedAccessContentPage" class="com.prime.tests.E2E.PDFFunctionalityTest"/>
+        <method signature="PDFFunctionalityTest.verifyPDFButonAvailableAndDownloadPDF()[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="verifyPDFButonAvailableAndDownloadPDF" class="com.prime.tests.E2E.PDFFunctionalityTest"/>
+      </group> <!-- PDF Work -->
+      <group name="Citation">
+        <method signature="DOITest.verifyThatMetaDataShouldBeLink()[pri:0, instance:com.prime.tests.E2E.DOITest@5f683daf]" name="verifyThatMetaDataShouldBeLink" class="com.prime.tests.E2E.DOITest"/>
+        <method signature="DevToolBoxSettingTest.veryifyDevToolboxSettingFunctionality()[pri:0, instance:com.prime.tests.E2E.DevToolBoxSettingTest@2177849e]" name="veryifyDevToolboxSettingFunctionality" class="com.prime.tests.E2E.DevToolBoxSettingTest"/>
+      </group> <!-- Citation -->
+      <group name="Hit highlighting for fulltext and abstract">
+        <method signature="HitHighlightingTest.VerifyThattheHitHighlightingFuctionality()[pri:0, instance:com.prime.tests.E2E.HitHighlightingTest@306cf3ea]" name="VerifyThattheHitHighlightingFuctionality" class="com.prime.tests.E2E.HitHighlightingTest"/>
+      </group> <!-- Hit highlighting for fulltext and abstract -->
+      <group name="CopyPreviewCitation">
+        <method signature="CopyPreviewCitationTest.VerifyThatUserAbleToPerformCopyPreviewCitationOperation()[pri:0, instance:com.prime.tests.E2E.CopyPreviewCitationTest@152aa092]" name="VerifyThatUserAbleToPerformCopyPreviewCitationOperation" class="com.prime.tests.E2E.CopyPreviewCitationTest"/>
+      </group> <!-- CopyPreviewCitation -->
     </groups>
-    <test name="CITATION_E2E" duration-ms="36373" started-at="2024-07-17T07:46:33Z" finished-at="2024-07-17T07:47:10Z">
-      <class name="com.prime.tests.E2E.CitationTest">
-        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.E2E.CitationTest@313b2ea6]" name="loadConfigurationValues" is-config="true" duration-ms="2" started-at="2024-07-17T13:16:33Z" finished-at="2024-07-17T13:16:33Z">
+    <test name="ADD_CITED_BY_E2E" duration-ms="129637" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:12:46Z">
+      <class name="com.prime.tests.E2E.AddCiteddByTest">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@55740540]" name="loadConfigurationValues" is-config="true" duration-ms="8" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@38eb2c50]]>
+                <![CDATA[org.testng.TestRunner@27462a88]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[astmh]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfigurationValues -->
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.CitationTest@313b2ea6]" name="setUp" is-config="true" duration-ms="2123" started-at="2024-07-17T13:16:33Z" finished-at="2024-07-17T13:16:35Z">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@55740540]" name="setUp" is-config="true" duration-ms="9077" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.AddCiteddByTest.VerifyThattheAddCitedByFunctionality() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="VerifyThattheAddCitedByFunctionality()[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@55740540]" name="VerifyThattheAddCitedByFunctionality" duration-ms="119268" started-at="2024-07-17T18:40:46Z" description="104  - Verify that the Add Cited By Functionality" finished-at="2024-07-17T18:42:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyThattheAddCitedByFunctionality -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@55740540]" name="closeApplication" is-config="true" duration-ms="1258" started-at="2024-07-17T18:42:45Z" finished-at="2024-07-17T18:42:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[104]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.AddCiteddByTest -->
+    </test> <!-- ADD_CITED_BY_E2E -->
+    <test name="JOURNAL_HOME_E2E" duration-ms="134111" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:12:51Z">
+      <class name="com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow@3e96bacf]" name="loadConfigurationValues" is-config="true" duration-ms="9" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@82de64a]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow@3e96bacf]" name="setUp" is-config="true" duration-ms="11704" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow.verifyThatViewPagesDisplayed() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyThatViewPagesDisplayed()[pri:0, instance:com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow@3e96bacf]" name="verifyThatViewPagesDisplayed" duration-ms="120872" started-at="2024-07-17T18:40:48Z" description="1721285 - Verify Journal pages" finished-at="2024-07-17T18:42:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThatViewPagesDisplayed -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow@3e96bacf]" name="closeApplication" is-config="true" duration-ms="1502" started-at="2024-07-17T18:42:49Z" finished-at="2024-07-17T18:42:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1721285]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.UnAuthenticatedViewCheckPagesFlow -->
+    </test> <!-- JOURNAL_HOME_E2E -->
+    <test name="JOURNAL_TOC" duration-ms="142601" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:12:59Z">
+      <class name="com.prime.tests.E2E.ToCFunctionalityTest">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@3cc1435c]" name="loadConfigurationValues" is-config="true" duration-ms="11" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6253c26]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@3cc1435c]" name="setUp" is-config="true" duration-ms="9737" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.ToCFunctionalityTest.VerifyJournalToCFeatures() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="VerifyJournalToCFeatures()[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@3cc1435c]" name="VerifyJournalToCFeatures" duration-ms="131669" started-at="2024-07-17T18:40:46Z" description="1722740 - Verify Journal ToC features" finished-at="2024-07-17T18:42:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyJournalToCFeatures -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.ToCFunctionalityTest@3cc1435c]" name="closeApplication" is-config="true" duration-ms="1160" started-at="2024-07-17T18:42:58Z" finished-at="2024-07-17T18:42:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722740]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.ToCFunctionalityTest -->
+    </test> <!-- JOURNAL_TOC -->
+    <test name="DOI" duration-ms="155560" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:13:12Z">
+      <class name="com.prime.tests.E2E.DOITest">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.DOITest@5f683daf]" name="loadConfigurationValues" is-config="true" duration-ms="7" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@47e2e487]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.DOITest@5f683daf]" name="setUp" is-config="true" duration-ms="16578" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.DOITest.verifyThatMetaDataShouldBeLink() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyThatMetaDataShouldBeLink()[pri:0, instance:com.prime.tests.E2E.DOITest@5f683daf]" name="verifyThatMetaDataShouldBeLink" duration-ms="134725" started-at="2024-07-17T18:40:53Z" description="1725698  - Verify that DOI meta data should be link" finished-at="2024-07-17T18:43:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThatMetaDataShouldBeLink -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.DOITest@5f683daf]" name="closeApplication" is-config="true" duration-ms="1609" started-at="2024-07-17T18:43:10Z" finished-at="2024-07-17T18:43:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1725698]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.DOITest -->
+    </test> <!-- DOI -->
+    <test name="DevToolSettings" duration-ms="159774" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:13:16Z">
+      <class name="com.prime.tests.E2E.DevToolBoxSettingTest">
+        <test-method status="PASS" signature="establishConnection(org.testng.ITestContext)[pri:0, instance:com.prime.tests.E2E.DevToolBoxSettingTest@2177849e]" name="establishConnection" is-config="true" duration-ms="32" started-at="2024-07-17T18:40:36Z" finished-at="2024-07-17T18:40:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@290222c1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- establishConnection -->
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.DevToolBoxSettingTest@2177849e]" name="loadConfigurationValues" is-config="true" duration-ms="6" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@290222c1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.DevToolBoxSettingTest@2177849e]" name="setUp" is-config="true" duration-ms="14285" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.DevToolBoxSettingTest.veryifyDevToolboxSettingFunctionality() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="veryifyDevToolboxSettingFunctionality()[pri:0, instance:com.prime.tests.E2E.DevToolBoxSettingTest@2177849e]" name="veryifyDevToolboxSettingFunctionality" duration-ms="143109" started-at="2024-07-17T18:40:51Z" description="105  - Verify that the dev tool box functnoality in the home page works" finished-at="2024-07-17T18:43:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- veryifyDevToolboxSettingFunctionality -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.DevToolBoxSettingTest@2177849e]" name="closeApplication" is-config="true" duration-ms="1852" started-at="2024-07-17T18:43:14Z" finished-at="2024-07-17T18:43:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[105]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.prime.tests.E2E.DevToolBoxSettingTest@2177849e]" name="closeDriver" is-config="true" duration-ms="190220" started-at="2024-07-17T18:54:33Z" finished-at="2024-07-17T18:57:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeDriver -->
+      </class> <!-- com.prime.tests.E2E.DevToolBoxSettingTest -->
+    </test> <!-- DevToolSettings -->
+    <test name="CITATION_E2E" duration-ms="161780" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:13:18Z">
+      <class name="com.prime.tests.E2E.CitationTest">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.CitationTest@50caa560]" name="loadConfigurationValues" is-config="true" duration-ms="10" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49049a04]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.CitationTest@50caa560]" name="setUp" is-config="true" duration-ms="10048" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:47Z">
           <params>
             <param index="0">
               <value>
@@ -53,78 +412,17 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt()[pri:0, instance:com.prime.tests.E2E.CitationTest@313b2ea6]" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" duration-ms="32946" started-at="2024-07-17T13:16:35Z" description="1721296  - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it" finished-at="2024-07-17T13:17:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt -->
-        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.CitationTest@313b2ea6]" name="closeApplication" is-config="true" duration-ms="1287" started-at="2024-07-17T13:17:08Z" finished-at="2024-07-17T13:17:10Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1721296]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeApplication -->
-      </class> <!-- com.prime.tests.E2E.CitationTest -->
-    </test> <!-- CITATION_E2E -->
-    <test name="ADD_CITED_BY_E2E" duration-ms="1648" started-at="2024-07-17T07:47:10Z" finished-at="2024-07-17T07:47:11Z">
-      <class name="com.prime.tests.E2E.AddCiteddByTest">
-        <test-method status="PASS" signature="establishConnection(org.testng.ITestContext)[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@3e96bacf]" name="establishConnection" is-config="true" duration-ms="25" started-at="2024-07-17T13:16:33Z" finished-at="2024-07-17T13:16:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@26a2f7f9]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- establishConnection -->
-        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext)[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@3e96bacf]" name="loadConfigurationValues" is-config="true" duration-ms="16" started-at="2024-07-17T13:17:10Z" finished-at="2024-07-17T13:17:10Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@26a2f7f9]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadConfigurationValues -->
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@3e96bacf]" name="setUp" is-config="true" duration-ms="0" started-at="2024-07-17T13:17:10Z" finished-at="2024-07-17T13:17:10Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value is-null="true"/>
-            </param>
-            <param index="2">
-              <value is-null="true"/>
-            </param>
-            <param index="3">
-              <value is-null="true"/>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[public void com.prime.tests.E2E.AddCiteddByTest.VerifyThattheAddCitedByFunctionality() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="SKIP" signature="VerifyThattheAddCitedByFunctionality()[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@3e96bacf]" name="VerifyThattheAddCitedByFunctionality" duration-ms="22" started-at="2024-07-17T13:17:10Z" description="104  - Verify that the Add Cited By Functionality" finished-at="2024-07-17T13:17:10Z">
-          <exception class="java.lang.NullPointerException">
+        <test-method status="SKIP" signature="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt()[pri:0, instance:com.prime.tests.E2E.CitationTest@50caa560]" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" duration-ms="75798" started-at="2024-07-17T18:40:47Z" description="1721296  - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it" finished-at="2024-07-17T18:42:02Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on Magnifying Lens on home page beside the search box expected true but found false]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.prime.generics.Helper.closeNewTab(Helper.java:1490)
-	at com.prime.tests.E2E.AddCiteddByTest.VerifyThattheAddCitedByFunctionality(AddCiteddByTest.java:116)
+              <![CDATA[java.lang.AssertionError: clicking on Magnifying Lens on home page beside the search box expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.MasterPage.clickOnSearchMagnifyingLense(MasterPage.java:63)
+	at com.prime.tests.E2E.CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(CitationTest.java:55)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -138,40 +436,31 @@
 	at org.testng.TestRunner.privateRun(TestRunner.java:756)
 	at org.testng.TestRunner.run(TestRunner.java:610)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1289)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyThattheAddCitedByFunctionality -->
-        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@3e96bacf]" name="closeApplication" is-config="true" duration-ms="1042" started-at="2024-07-17T13:17:10Z" finished-at="2024-07-17T13:17:11Z">
+        </test-method> <!-- verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.CitationTest@50caa560]" name="closeApplication" is-config="true" duration-ms="2048" started-at="2024-07-17T18:42:02Z" finished-at="2024-07-17T18:42:04Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[104]]>
+                <![CDATA[1721296]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@3e96bacf]" name="setUp" is-config="true" duration-ms="3" started-at="2024-07-17T13:17:11Z" finished-at="2024-07-17T13:17:11Z">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.CitationTest@50caa560]" name="setUp" is-config="true" duration-ms="5" started-at="2024-07-17T18:42:04Z" finished-at="2024-07-17T18:42:04Z">
           <params>
             <param index="0">
               <value>
@@ -189,19 +478,24 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[public void com.prime.tests.E2E.AddCiteddByTest.VerifyThattheAddCitedByFunctionality() throws java.lang.Exception]]>
+                <![CDATA[public void com.prime.tests.E2E.CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt() throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="VerifyThattheAddCitedByFunctionality()[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@3e96bacf]" name="VerifyThattheAddCitedByFunctionality" duration-ms="9" started-at="2024-07-17T13:17:11Z" description="104  - Verify that the Add Cited By Functionality" finished-at="2024-07-17T13:17:11Z">
-          <exception class="java.lang.NullPointerException">
+        <test-method status="FAIL" signature="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt()[pri:0, instance:com.prime.tests.E2E.CitationTest@50caa560]" name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt" duration-ms="72633" started-at="2024-07-17T18:42:04Z" description="1721296  - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it" finished-at="2024-07-17T18:43:17Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on Magnifying Lens on home page beside the search box expected true but found false]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.prime.generics.Helper.closeNewTab(Helper.java:1490)
-	at com.prime.tests.E2E.AddCiteddByTest.VerifyThattheAddCitedByFunctionality(AddCiteddByTest.java:116)
+              <![CDATA[java.lang.AssertionError: clicking on Magnifying Lens on home page beside the search box expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.MasterPage.clickOnSearchMagnifyingLense(MasterPage.java:63)
+	at com.prime.tests.E2E.CitationTest.verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt(CitationTest.java:55)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -215,44 +509,2106 @@
 	at org.testng.TestRunner.privateRun(TestRunner.java:756)
 	at org.testng.TestRunner.run(TestRunner.java:610)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1289)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyThattheAddCitedByFunctionality -->
-        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@3e96bacf]" name="closeApplication" is-config="true" duration-ms="547" started-at="2024-07-17T13:17:11Z" finished-at="2024-07-17T13:17:11Z">
+        </test-method> <!-- verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.CitationTest@50caa560]" name="closeApplication" is-config="true" duration-ms="1183" started-at="2024-07-17T18:43:17Z" finished-at="2024-07-17T18:43:18Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[104]]>
+                <![CDATA[1721296]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApplication -->
-        <test-method status="PASS" signature="closeDriver()[pri:0, instance:com.prime.tests.E2E.AddCiteddByTest@3e96bacf]" name="closeDriver" is-config="true" duration-ms="904" started-at="2024-07-17T13:17:11Z" finished-at="2024-07-17T13:17:12Z">
+      </class> <!-- com.prime.tests.E2E.CitationTest -->
+    </test> <!-- CITATION_E2E -->
+    <test name="SEARCH_E2E" duration-ms="182352" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:13:39Z">
+      <class name="com.prime.tests.E2E.IntegrationE2EFlow">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@313b2ea6]" name="loadConfigurationValues" is-config="true" duration-ms="9" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@67f639d3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeDriver -->
-      </class> <!-- com.prime.tests.E2E.AddCiteddByTest -->
-    </test> <!-- ADD_CITED_BY_E2E -->
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@313b2ea6]" name="setUp" is-config="true" duration-ms="18278" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="verifyThatUserAbleToLaunchApplication()[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@313b2ea6]" name="verifyThatUserAbleToLaunchApplication" duration-ms="103420" started-at="2024-07-17T18:40:55Z" description="1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results" finished-at="2024-07-17T18:42:38Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on Magnifying Lens on home page beside the search box expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: clicking on Magnifying Lens on home page beside the search box expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.MasterPage.clickOnSearchMagnifyingLense(MasterPage.java:63)
+	at com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(IntegrationE2EFlow.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThatUserAbleToLaunchApplication -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@313b2ea6]" name="closeApplication" is-config="true" duration-ms="1539" started-at="2024-07-17T18:42:38Z" finished-at="2024-07-17T18:42:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1721284]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@313b2ea6]" name="setUp" is-config="true" duration-ms="3" started-at="2024-07-17T18:42:40Z" finished-at="2024-07-17T18:42:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="verifyThatUserAbleToLaunchApplication()[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@313b2ea6]" name="verifyThatUserAbleToLaunchApplication" duration-ms="57314" started-at="2024-07-17T18:42:40Z" description="1721284 - Verify that the user is able to do blank search and compare that the search results API is giving the same results" finished-at="2024-07-17T18:43:37Z">
+          <exception class="java.net.UnknownHostException">
+            <message>
+              <![CDATA[meridian-fpj-draft.dev.prime.pubfactory.com]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.net.UnknownHostException: meridian-fpj-draft.dev.prime.pubfactory.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:263)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:162)
+	at org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:326)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at io.restassured.internal.RestAssuredHttpBuilder.doRequest(RestAssuredHttpBuilder.java:141)
+	at io.restassured.internal.http.HTTPBuilder.doRequest(HTTPBuilder.java:496)
+	at io.restassured.internal.http.HTTPBuilder.request(HTTPBuilder.java:453)
+	at io.restassured.internal.http.HTTPBuilder$request$2.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:166)
+	at io.restassured.internal.RequestSpecificationImpl.sendHttpRequest(RequestSpecificationImpl.groovy:1480)
+	at io.restassured.internal.RequestSpecificationImpl.this$2$sendHttpRequest(RequestSpecificationImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1348)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1103)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:792)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:46)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:57)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1229)
+	at io.restassured.internal.RequestSpecificationImpl.this$2$sendRequest(RequestSpecificationImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1348)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1103)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:792)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:46)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:166)
+	at io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at io.restassured.filter.Filter$filter.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)
+	at io.restassured.filter.Filter$filter.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.FilterContext$next.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at io.restassured.internal.filter.CsrfFilter.filter(CsrfFilter.groovy:70)
+	at io.restassured.filter.Filter$filter$0.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at io.restassured.filter.Filter$filter.call(Unknown Source)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:146)
+	at io.restassured.filter.Filter$filter.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:157)
+	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
+	at io.restassured.filter.FilterContext$next.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)
+	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1704)
+	at io.restassured.internal.RequestSpecificationImpl.this$2$applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1348)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1103)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:792)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:46)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:57)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)
+	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1710)
+	at io.restassured.internal.RequestSpecificationImpl.this$2$applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1348)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1103)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:792)
+	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:46)
+	at org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:57)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:49)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)
+	at io.restassured.internal.RequestSpecificationImpl.get(RequestSpecificationImpl.groovy:172)
+	at io.restassured.internal.RequestSpecificationImpl.get(RequestSpecificationImpl.groovy)
+	at com.prime.api.helpers.SearchServiceHelper.fetchSearchResults(SearchServiceHelper.java:35)
+	at com.prime.tests.E2E.IntegrationE2EFlow.verifyThatUserAbleToLaunchApplication(IntegrationE2EFlow.java:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.net.UnknownHostException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThatUserAbleToLaunchApplication -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.IntegrationE2EFlow@313b2ea6]" name="closeApplication" is-config="true" duration-ms="1747" started-at="2024-07-17T18:43:37Z" finished-at="2024-07-17T18:43:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1721284]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.IntegrationE2EFlow -->
+    </test> <!-- SEARCH_E2E -->
+    <test name="CitationsLink" duration-ms="182391" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:13:39Z">
+      <class name="com.prime.tests.E2E.CitationLinkTest">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.CitationLinkTest@f381794]" name="loadConfigurationValues" is-config="true" duration-ms="5" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@201a4587]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.CitationLinkTest@f381794]" name="setUp" is-config="true" duration-ms="14762" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.CitationLinkTest.VerifyThatTheCitationLinkFunctionalityIsWorkingFine() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="VerifyThatTheCitationLinkFunctionalityIsWorkingFine()[pri:0, instance:com.prime.tests.E2E.CitationLinkTest@f381794]" name="VerifyThatTheCitationLinkFunctionalityIsWorkingFine" duration-ms="81890" started-at="2024-07-17T18:40:51Z" description="102  - Verify that the Add Cited By functionality" finished-at="2024-07-17T18:42:13Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on Magnifying Lens on home page beside the search box expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: clicking on Magnifying Lens on home page beside the search box expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.MasterPage.clickOnSearchMagnifyingLense(MasterPage.java:63)
+	at com.prime.tests.E2E.CitationLinkTest.VerifyThatTheCitationLinkFunctionalityIsWorkingFine(CitationLinkTest.java:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyThatTheCitationLinkFunctionalityIsWorkingFine -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.CitationLinkTest@f381794]" name="closeApplication" is-config="true" duration-ms="2592" started-at="2024-07-17T18:42:13Z" finished-at="2024-07-17T18:42:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[102]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.CitationLinkTest@f381794]" name="setUp" is-config="true" duration-ms="7" started-at="2024-07-17T18:42:16Z" finished-at="2024-07-17T18:42:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.CitationLinkTest.VerifyThatTheCitationLinkFunctionalityIsWorkingFine() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="VerifyThatTheCitationLinkFunctionalityIsWorkingFine()[pri:0, instance:com.prime.tests.E2E.CitationLinkTest@f381794]" name="VerifyThatTheCitationLinkFunctionalityIsWorkingFine" duration-ms="81931" started-at="2024-07-17T18:42:16Z" description="102  - Verify that the Add Cited By functionality" finished-at="2024-07-17T18:43:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyThatTheCitationLinkFunctionalityIsWorkingFine -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.CitationLinkTest@f381794]" name="closeApplication" is-config="true" duration-ms="1170" started-at="2024-07-17T18:43:38Z" finished-at="2024-07-17T18:43:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[102]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.CitationLinkTest -->
+    </test> <!-- CitationsLink -->
+    <test name="HitHighlighting" duration-ms="211422" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:14:08Z">
+      <class name="com.prime.tests.E2E.HitHighlightingTest">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.HitHighlightingTest@306cf3ea]" name="loadConfigurationValues" is-config="true" duration-ms="2" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4310d43]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.HitHighlightingTest@306cf3ea]" name="setUp" is-config="true" duration-ms="9086" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.HitHighlightingTest.VerifyThattheHitHighlightingFuctionality() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="VerifyThattheHitHighlightingFuctionality()[pri:0, instance:com.prime.tests.E2E.HitHighlightingTest@306cf3ea]" name="VerifyThattheHitHighlightingFuctionality" duration-ms="112617" started-at="2024-07-17T18:40:46Z" description="103 - Verify various Email button features" finished-at="2024-07-17T18:42:38Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//span[@class='hi' ][contains(text(),'benzodiazepine')])[1]"}
+  (Session info: chrome=126.0.6478.183)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'XINMBDLN9C5Q', ip: '192.168.29.51', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.183, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\VEENA~1.MAT\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59984}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: none, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bf1e6aece79039b0bde3fb00b1c2d9e3
+*** Element info: {Using=xpath, value=(//span[@class='hi' ][contains(text(),'benzodiazepine')])[1]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//span[@class='hi' ][contains(text(),'benzodiazepine')])[1]"}
+  (Session info: chrome=126.0.6478.183)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'XINMBDLN9C5Q', ip: '192.168.29.51', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.183, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\VEENA~1.MAT\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59984}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: none, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bf1e6aece79039b0bde3fb00b1c2d9e3
+*** Element info: {Using=xpath, value=(//span[@class='hi' ][contains(text(),'benzodiazepine')])[1]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.prime.pageFactory.pages.fpj.BrowseOrSearchPage.getBackgroundColor(BrowseOrSearchPage.java:1065)
+	at com.prime.tests.E2E.HitHighlightingTest.VerifyThattheHitHighlightingFuctionality(HitHighlightingTest.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyThattheHitHighlightingFuctionality -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.HitHighlightingTest@306cf3ea]" name="closeApplication" is-config="true" duration-ms="1389" started-at="2024-07-17T18:42:38Z" finished-at="2024-07-17T18:42:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[103]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.HitHighlightingTest@306cf3ea]" name="setUp" is-config="true" duration-ms="5" started-at="2024-07-17T18:42:40Z" finished-at="2024-07-17T18:42:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.HitHighlightingTest.VerifyThattheHitHighlightingFuctionality() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="VerifyThattheHitHighlightingFuctionality()[pri:0, instance:com.prime.tests.E2E.HitHighlightingTest@306cf3ea]" name="VerifyThattheHitHighlightingFuctionality" duration-ms="87242" started-at="2024-07-17T18:42:40Z" description="103 - Verify various Email button features" finished-at="2024-07-17T18:44:07Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"((//div[@class='abstract'])[1]//span[@class='hi' ][contains(text(),'benzodiazepine')])[1]"}
+  (Session info: chrome=126.0.6478.183)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'XINMBDLN9C5Q', ip: '192.168.29.51', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.183, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\VEENA~1.MAT\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59984}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: none, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bf1e6aece79039b0bde3fb00b1c2d9e3
+*** Element info: {Using=xpath, value=((//div[@class='abstract'])[1]//span[@class='hi' ][contains(text(),'benzodiazepine')])[1]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"((//div[@class='abstract'])[1]//span[@class='hi' ][contains(text(),'benzodiazepine')])[1]"}
+  (Session info: chrome=126.0.6478.183)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'XINMBDLN9C5Q', ip: '192.168.29.51', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.183, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\VEENA~1.MAT\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59984}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: none, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bf1e6aece79039b0bde3fb00b1c2d9e3
+*** Element info: {Using=xpath, value=((//div[@class='abstract'])[1]//span[@class='hi' ][contains(text(),'benzodiazepine')])[1]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com.prime.pageFactory.pages.fpj.ArticleCitationPage.getBackgroundColor(ArticleCitationPage.java:965)
+	at com.prime.tests.E2E.HitHighlightingTest.VerifyThattheHitHighlightingFuctionality(HitHighlightingTest.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyThattheHitHighlightingFuctionality -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.HitHighlightingTest@306cf3ea]" name="closeApplication" is-config="true" duration-ms="1049" started-at="2024-07-17T18:44:07Z" finished-at="2024-07-17T18:44:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[103]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.HitHighlightingTest -->
+    </test> <!-- HitHighlighting -->
+    <test name="CopyPreviewCitation" duration-ms="373465" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:16:50Z">
+      <class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.CopyPreviewCitationTest@152aa092]" name="loadConfigurationValues" is-config="true" duration-ms="5" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@61001b64]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.CopyPreviewCitationTest@152aa092]" name="setUp" is-config="true" duration-ms="14756" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.CopyPreviewCitationTest.VerifyThatUserAbleToPerformCopyPreviewCitationOperation() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="VerifyThatUserAbleToPerformCopyPreviewCitationOperation()[pri:0, instance:com.prime.tests.E2E.CopyPreviewCitationTest@152aa092]" name="VerifyThatUserAbleToPerformCopyPreviewCitationOperation" duration-ms="103790" started-at="2024-07-17T18:40:51Z" description="101  - Verify that User able to perform copy preview citation operation" finished-at="2024-07-17T18:42:35Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Clicking on the close button of toast message popup expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Clicking on the close button of toast message popup expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.ArticleCitationPage.clickOnToastMessagePopupCloseButton(ArticleCitationPage.java:895)
+	at com.prime.tests.E2E.CopyPreviewCitationTest.VerifyThatUserAbleToPerformCopyPreviewCitationOperation(CopyPreviewCitationTest.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyThatUserAbleToPerformCopyPreviewCitationOperation -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.CopyPreviewCitationTest@152aa092]" name="closeApplication" is-config="true" duration-ms="1419" started-at="2024-07-17T18:42:35Z" finished-at="2024-07-17T18:42:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[102]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.CopyPreviewCitationTest@152aa092]" name="setUp" is-config="true" duration-ms="6" started-at="2024-07-17T18:42:37Z" finished-at="2024-07-17T18:42:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.CopyPreviewCitationTest.VerifyThatUserAbleToPerformCopyPreviewCitationOperation() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="VerifyThatUserAbleToPerformCopyPreviewCitationOperation()[pri:0, instance:com.prime.tests.E2E.CopyPreviewCitationTest@152aa092]" name="VerifyThatUserAbleToPerformCopyPreviewCitationOperation" duration-ms="252489" started-at="2024-07-17T18:42:37Z" description="101  - Verify that User able to perform copy preview citation operation" finished-at="2024-07-17T18:46:49Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Click On First Article On Search Or Browse Page expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Click On First Article On Search Or Browse Page expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.BrowseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage(BrowseOrSearchPage.java:301)
+	at com.prime.tests.E2E.CopyPreviewCitationTest.VerifyThatUserAbleToPerformCopyPreviewCitationOperation(CopyPreviewCitationTest.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyThatUserAbleToPerformCopyPreviewCitationOperation -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.CopyPreviewCitationTest@152aa092]" name="closeApplication" is-config="true" duration-ms="981" started-at="2024-07-17T18:46:49Z" finished-at="2024-07-17T18:46:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[102]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.CopyPreviewCitationTest -->
+    </test> <!-- CopyPreviewCitation -->
+    <test name="PDF_WORK" duration-ms="507483" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:19:04Z">
+      <class name="com.prime.tests.E2E.PDFFunctionalityTest">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="loadConfigurationValues" is-config="true" duration-ms="11" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@659499f1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="setUp" is-config="true" duration-ms="17262" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.PDFFunctionalityTest.verifyPDFButonAvailableAndDownloadPDF() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="verifyPDFButonAvailableAndDownloadPDF()[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="verifyPDFButonAvailableAndDownloadPDF" duration-ms="104896" started-at="2024-07-17T18:40:54Z" description="1722758 - Verify that the PDF button available on current content page and  PDF Download will be successful when clicked on it" finished-at="2024-07-17T18:42:39Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Click On First Article On Search Or Browse Page expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Click On First Article On Search Or Browse Page expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.BrowseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage(BrowseOrSearchPage.java:301)
+	at com.prime.tests.E2E.PDFFunctionalityTest.verifyPDFButonAvailableAndDownloadPDF(PDFFunctionalityTest.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPDFButonAvailableAndDownloadPDF -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="closeApplication" is-config="true" duration-ms="1162" started-at="2024-07-17T18:42:39Z" finished-at="2024-07-17T18:42:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722758]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="setUp" is-config="true" duration-ms="3" started-at="2024-07-17T18:42:40Z" finished-at="2024-07-17T18:42:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.PDFFunctionalityTest.verifyPDFButonAvailableAndDownloadPDF() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="verifyPDFButonAvailableAndDownloadPDF()[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="verifyPDFButonAvailableAndDownloadPDF" duration-ms="77334" started-at="2024-07-17T18:42:40Z" description="1722758 - Verify that the PDF button available on current content page and  PDF Download will be successful when clicked on it" finished-at="2024-07-17T18:43:57Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Verifying that watermark is present on pdf in Pdf preview in Inline tab on the articla page ::  Expected Result--> true || Actual Result--> false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Verifying that watermark is present on pdf in Pdf preview in Inline tab on the articla page ::  Expected Result--> true || Actual Result--> false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BaseTest.assertEquals(BaseTest.java:1125)
+	at com.prime.tests.E2E.PDFFunctionalityTest.verifyPDFButonAvailableAndDownloadPDF(PDFFunctionalityTest.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPDFButonAvailableAndDownloadPDF -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="closeApplication" is-config="true" duration-ms="1420" started-at="2024-07-17T18:43:57Z" finished-at="2024-07-17T18:43:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722758]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="setUp" is-config="true" duration-ms="3" started-at="2024-07-17T18:43:59Z" finished-at="2024-07-17T18:43:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.PDFFunctionalityTest.VerifyPDFFeaturesInRestrictedAccessContentPage() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="VerifyPDFFeaturesInRestrictedAccessContentPage()[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="VerifyPDFFeaturesInRestrictedAccessContentPage" duration-ms="150259" started-at="2024-07-17T18:43:59Z" description="1722759 - Verify PDF features in restricted access content page" finished-at="2024-07-17T18:46:29Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on Magnifying Lens on home page beside the search box expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: clicking on Magnifying Lens on home page beside the search box expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.MasterPage.clickOnSearchMagnifyingLense(MasterPage.java:63)
+	at com.prime.tests.E2E.PDFFunctionalityTest.VerifyPDFFeaturesInRestrictedAccessContentPage(PDFFunctionalityTest.java:130)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPDFFeaturesInRestrictedAccessContentPage -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="closeApplication" is-config="true" duration-ms="1275" started-at="2024-07-17T18:46:29Z" finished-at="2024-07-17T18:46:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722759]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="setUp" is-config="true" duration-ms="1" started-at="2024-07-17T18:46:30Z" finished-at="2024-07-17T18:46:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.PDFFunctionalityTest.VerifyPDFFeaturesInRestrictedAccessContentPage() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="VerifyPDFFeaturesInRestrictedAccessContentPage()[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="VerifyPDFFeaturesInRestrictedAccessContentPage" duration-ms="152818" started-at="2024-07-17T18:46:30Z" description="1722759 - Verify PDF features in restricted access content page" finished-at="2024-07-17T18:49:03Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on Magnifying Lens on home page beside the search box expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: clicking on Magnifying Lens on home page beside the search box expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.MasterPage.clickOnSearchMagnifyingLense(MasterPage.java:63)
+	at com.prime.tests.E2E.PDFFunctionalityTest.VerifyPDFFeaturesInRestrictedAccessContentPage(PDFFunctionalityTest.java:130)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPDFFeaturesInRestrictedAccessContentPage -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.PDFFunctionalityTest@6497b078]" name="closeApplication" is-config="true" duration-ms="1015" started-at="2024-07-17T18:49:03Z" finished-at="2024-07-17T18:49:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722759]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.PDFFunctionalityTest -->
+    </test> <!-- PDF_WORK -->
+    <test name="DISCOVERY_WIDGET" duration-ms="585717" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:20:22Z">
+      <class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="loadConfigurationValues" is-config="true" duration-ms="6" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@51e69659]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="setUp" is-config="true" duration-ms="10244" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyVariousEmailButtonFeatures() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="VerifyVariousEmailButtonFeatures()[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="VerifyVariousEmailButtonFeatures" duration-ms="94410" started-at="2024-07-17T18:40:47Z" description="1722741 - Verify various Email button features" finished-at="2024-07-17T18:42:21Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on copy link button on share Link popup on Article Page expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: clicking on copy link button on share Link popup on Article Page expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.ArticleCitationPage.clickOnCopyLinkButtonOnShareLinkOnArticlePage(ArticleCitationPage.java:488)
+	at com.prime.tests.E2E.DiscoveryWidgetTest.VerifyVariousEmailButtonFeatures(DiscoveryWidgetTest.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyVariousEmailButtonFeatures -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="closeApplication" is-config="true" duration-ms="1553" started-at="2024-07-17T18:42:21Z" finished-at="2024-07-17T18:42:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722741]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="setUp" is-config="true" duration-ms="4" started-at="2024-07-17T18:42:23Z" finished-at="2024-07-17T18:42:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyVariousEmailButtonFeatures() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="VerifyVariousEmailButtonFeatures()[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="VerifyVariousEmailButtonFeatures" duration-ms="76642" started-at="2024-07-17T18:42:23Z" description="1722741 - Verify various Email button features" finished-at="2024-07-17T18:43:39Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on copy link button on share Link popup on Article Page expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: clicking on copy link button on share Link popup on Article Page expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.ArticleCitationPage.clickOnCopyLinkButtonOnShareLinkOnArticlePage(ArticleCitationPage.java:488)
+	at com.prime.tests.E2E.DiscoveryWidgetTest.VerifyVariousEmailButtonFeatures(DiscoveryWidgetTest.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyVariousEmailButtonFeatures -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="closeApplication" is-config="true" duration-ms="1363" started-at="2024-07-17T18:43:39Z" finished-at="2024-07-17T18:43:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722741]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="setUp" is-config="true" duration-ms="3" started-at="2024-07-17T18:43:41Z" finished-at="2024-07-17T18:43:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyGoogleScholarButtonFeatures() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="VerifyGoogleScholarButtonFeatures()[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="VerifyGoogleScholarButtonFeatures" duration-ms="168140" started-at="2024-07-17T18:43:41Z" description="1722742 - Verify Google Scholar Button features" finished-at="2024-07-17T18:46:29Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Click On First Article On Search Or Browse Page expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Click On First Article On Search Or Browse Page expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.BrowseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage(BrowseOrSearchPage.java:301)
+	at com.prime.tests.E2E.DiscoveryWidgetTest.VerifyGoogleScholarButtonFeatures(DiscoveryWidgetTest.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyGoogleScholarButtonFeatures -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="closeApplication" is-config="true" duration-ms="1344" started-at="2024-07-17T18:46:29Z" finished-at="2024-07-17T18:46:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722742]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="setUp" is-config="true" duration-ms="2" started-at="2024-07-17T18:46:30Z" finished-at="2024-07-17T18:46:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyGoogleScholarButtonFeatures() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="VerifyGoogleScholarButtonFeatures()[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="VerifyGoogleScholarButtonFeatures" duration-ms="132607" started-at="2024-07-17T18:46:30Z" description="1722742 - Verify Google Scholar Button features" finished-at="2024-07-17T18:48:43Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on Magnifying Lens on home page beside the search box expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: clicking on Magnifying Lens on home page beside the search box expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.MasterPage.clickOnSearchMagnifyingLense(MasterPage.java:63)
+	at com.prime.tests.E2E.DiscoveryWidgetTest.VerifyGoogleScholarButtonFeatures(DiscoveryWidgetTest.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyGoogleScholarButtonFeatures -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="closeApplication" is-config="true" duration-ms="1301" started-at="2024-07-17T18:48:43Z" finished-at="2024-07-17T18:48:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722742]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="setUp" is-config="true" duration-ms="9" started-at="2024-07-17T18:48:44Z" finished-at="2024-07-17T18:48:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.DiscoveryWidgetTest.VerifyPubMedButtonFeaturesAndAlmetricPageFeatures() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures()[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures" duration-ms="96395" started-at="2024-07-17T18:48:44Z" description="1722743 - Verify PubMed button features and Almetric page features" finished-at="2024-07-17T18:50:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPubMedButtonFeaturesAndAlmetricPageFeatures -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.DiscoveryWidgetTest@5552768b]" name="closeApplication" is-config="true" duration-ms="1664" started-at="2024-07-17T18:50:21Z" finished-at="2024-07-17T18:50:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722743]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.DiscoveryWidgetTest -->
+    </test> <!-- DISCOVERY_WIDGET -->
+    <test name="SEARCH_E2E_FULL" duration-ms="836251" started-at="2024-07-17T13:10:37Z" finished-at="2024-07-17T13:24:33Z">
+      <class name="com.prime.tests.E2E.SearchFunctionalityTest">
+        <test-method status="PASS" signature="loadConfigurationValues(org.testng.ITestContext, java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="loadConfigurationValues" is-config="true" duration-ms="10" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@71a8adcf]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anesthesiaprogress]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfigurationValues -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="setUp" is-config="true" duration-ms="9083" started-at="2024-07-17T18:40:37Z" finished-at="2024-07-17T18:40:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifySearchPageTopPanel() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="VerifySearchPageTopPanel()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifySearchPageTopPanel" duration-ms="123699" started-at="2024-07-17T18:40:46Z" description="1722541 - Verify search page top panel" finished-at="2024-07-17T18:42:49Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on Magnifying Lens on home page beside the search box expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: clicking on Magnifying Lens on home page beside the search box expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.MasterPage.clickOnSearchMagnifyingLense(MasterPage.java:63)
+	at com.prime.tests.E2E.SearchFunctionalityTest.VerifySearchPageTopPanel(SearchFunctionalityTest.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifySearchPageTopPanel -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="closeApplication" is-config="true" duration-ms="2235" started-at="2024-07-17T18:42:49Z" finished-at="2024-07-17T18:42:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722541]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="setUp" is-config="true" duration-ms="4" started-at="2024-07-17T18:42:52Z" finished-at="2024-07-17T18:42:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifySearchPageTopPanel() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="VerifySearchPageTopPanel()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifySearchPageTopPanel" duration-ms="66707" started-at="2024-07-17T18:42:52Z" description="1722541 - Verify search page top panel" finished-at="2024-07-17T18:43:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifySearchPageTopPanel -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="closeApplication" is-config="true" duration-ms="1146" started-at="2024-07-17T18:43:58Z" finished-at="2024-07-17T18:43:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722541]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="setUp" is-config="true" duration-ms="8" started-at="2024-07-17T18:43:59Z" finished-at="2024-07-17T18:43:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyPpaginationAndSortingOptionsIntheSearchResultsPage() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage" duration-ms="149457" started-at="2024-07-17T18:43:59Z" description="1722542 - Verify pagination and sorting options in the search results page" finished-at="2024-07-17T18:46:29Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on Magnifying Lens on home page beside the search box expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: clicking on Magnifying Lens on home page beside the search box expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.MasterPage.clickOnSearchMagnifyingLense(MasterPage.java:63)
+	at com.prime.tests.E2E.SearchFunctionalityTest.VerifyPpaginationAndSortingOptionsIntheSearchResultsPage(SearchFunctionalityTest.java:82)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPpaginationAndSortingOptionsIntheSearchResultsPage -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="closeApplication" is-config="true" duration-ms="1290" started-at="2024-07-17T18:46:29Z" finished-at="2024-07-17T18:46:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722542]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="setUp" is-config="true" duration-ms="3" started-at="2024-07-17T18:46:30Z" finished-at="2024-07-17T18:46:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyPpaginationAndSortingOptionsIntheSearchResultsPage() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage" duration-ms="132665" started-at="2024-07-17T18:46:30Z" description="1722542 - Verify pagination and sorting options in the search results page" finished-at="2024-07-17T18:48:43Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[clicking on Magnifying Lens on home page beside the search box expected true but found false]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: clicking on Magnifying Lens on home page beside the search box expected true but found false
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.prime.generics.BasePage.clickOnElement(BasePage.java:244)
+	at com.prime.pageFactory.pages.fpj.MasterPage.clickOnSearchMagnifyingLense(MasterPage.java:63)
+	at com.prime.tests.E2E.SearchFunctionalityTest.VerifyPpaginationAndSortingOptionsIntheSearchResultsPage(SearchFunctionalityTest.java:82)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:998)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1200)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPpaginationAndSortingOptionsIntheSearchResultsPage -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="closeApplication" is-config="true" duration-ms="1296" started-at="2024-07-17T18:48:43Z" finished-at="2024-07-17T18:48:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722542]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="setUp" is-config="true" duration-ms="0" started-at="2024-07-17T18:48:44Z" finished-at="2024-07-17T18:48:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected" duration-ms="23725" started-at="2024-07-17T18:48:44Z" description="1722543 - Verify that  search results details , toolbar options , Save options are as expected" finished-at="2024-07-17T18:49:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="closeApplication" is-config="true" duration-ms="703" started-at="2024-07-17T18:49:08Z" finished-at="2024-07-17T18:49:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722543]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="setUp" is-config="true" duration-ms="0" started-at="2024-07-17T18:49:09Z" finished-at="2024-07-17T18:49:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyVariousRefineTermsInTheSearchResultsPage() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="VerifyVariousRefineTermsInTheSearchResultsPage()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyVariousRefineTermsInTheSearchResultsPage" duration-ms="88448" started-at="2024-07-17T18:49:09Z" description="1722544 - Verify various Refine terms in the search results page" finished-at="2024-07-17T18:50:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyVariousRefineTermsInTheSearchResultsPage -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="closeApplication" is-config="true" duration-ms="1030" started-at="2024-07-17T18:50:37Z" finished-at="2024-07-17T18:50:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722544]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows" duration-ms="99614" started-at="2024-07-17T18:50:38Z" description="1722545 - Verify that user is able to perform search with the combination of refine terms by adding, clearing , removing more than one rows." finished-at="2024-07-17T18:52:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="setUp" is-config="true" duration-ms="0" started-at="2024-07-17T18:50:38Z" finished-at="2024-07-17T18:50:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="closeApplication" is-config="true" duration-ms="2000" started-at="2024-07-17T18:52:18Z" finished-at="2024-07-17T18:52:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722545]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="setUp" is-config="true" duration-ms="0" started-at="2024-07-17T18:52:20Z" finished-at="2024-07-17T18:52:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard" duration-ms="38524" started-at="2024-07-17T18:52:20Z" description="1722546 - Verify that the appropriate result is displayed when user select the Article type filter and access type filter from index card" finished-at="2024-07-17T18:52:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="closeApplication" is-config="true" duration-ms="1066" started-at="2024-07-17T18:52:58Z" finished-at="2024-07-17T18:52:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722546]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="VerifyThatTheVariousShareButtonFeatures()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyThatTheVariousShareButtonFeatures" duration-ms="16794" started-at="2024-07-17T18:52:59Z" description="1722547 - Verify that the various Share button features." finished-at="2024-07-17T18:53:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyThatTheVariousShareButtonFeatures -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="setUp" is-config="true" duration-ms="0" started-at="2024-07-17T18:52:59Z" finished-at="2024-07-17T18:52:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyThatTheVariousShareButtonFeatures() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="closeApplication" is-config="true" duration-ms="1117" started-at="2024-07-17T18:53:16Z" finished-at="2024-07-17T18:53:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722547]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="setUp" is-config="true" duration-ms="15" started-at="2024-07-17T18:53:17Z" finished-at="2024-07-17T18:53:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="SKIP" signature="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages" duration-ms="21773" started-at="2024-07-17T18:53:17Z" description="1722548 - Verify  Refine by Date Section and that search box is accessible in all pages" finished-at="2024-07-17T18:53:39Z">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[Unable to retreive value org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=126.0.6478.183)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'XINMBDLN9C5Q', ip: '192.168.29.51', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.183, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\VEENA~1.MAT\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59994}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: none, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 911a34a7001ef3b3a7a8c07aeab092f1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: Unable to retreive value org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=126.0.6478.183)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'XINMBDLN9C5Q', ip: '192.168.29.51', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.183, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: C:\Users\VEENA~1.MAT\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59994}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: none, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 911a34a7001ef3b3a7a8c07aeab092f1
+	at com.prime.generics.BasePage.getMultipleWebElementText(BasePage.java:799)
+	at com.prime.pageFactory.pages.fpj.BrowseOrSearchPage.getFromDateOption(BrowseOrSearchPage.java:1017)
+	at com.prime.tests.E2E.SearchFunctionalityTest.VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages(SearchFunctionalityTest.java:417)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="closeApplication" is-config="true" duration-ms="1148" started-at="2024-07-17T18:53:39Z" finished-at="2024-07-17T18:53:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722548]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="setUp" is-config="true" duration-ms="0" started-at="2024-07-17T18:53:40Z" finished-at="2024-07-17T18:53:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value is-null="true"/>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void com.prime.tests.E2E.SearchFunctionalityTest.VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages()[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages" duration-ms="51519" started-at="2024-07-17T18:53:40Z" description="1722548 - Verify  Refine by Date Section and that search box is accessible in all pages" finished-at="2024-07-17T18:54:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages -->
+        <test-method status="PASS" signature="closeApplication(java.lang.String)[pri:0, instance:com.prime.tests.E2E.SearchFunctionalityTest@ba54932]" name="closeApplication" is-config="true" duration-ms="1095" started-at="2024-07-17T18:54:32Z" finished-at="2024-07-17T18:54:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1722548]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeApplication -->
+      </class> <!-- com.prime.tests.E2E.SearchFunctionalityTest -->
+    </test> <!-- SEARCH_E2E_FULL -->
   </suite> <!-- MultiApplicationSuite -->
 </testng-results>

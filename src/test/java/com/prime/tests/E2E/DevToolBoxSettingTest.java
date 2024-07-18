@@ -40,7 +40,7 @@ public class DevToolBoxSettingTest extends BaseTest {
     public void veryifyDevToolboxSettingFunctionality() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         WebDriverManager.setTestcaseIdTestRail(testCaseId);
-        String application = BaseTest.properties.getProperty("application");
+        // String application = BaseTest.properties.getProperty("application");
         //String application = System.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);

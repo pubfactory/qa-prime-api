@@ -259,7 +259,8 @@ public class BaseTest {
      * @Created Date : 10/07/2023
      */
     @BeforeTest(alwaysRun = true)
-    public void loadConfigurationValues(ITestContext context) {
+    @Parameters({"application"})
+    public void loadConfigurationValues(ITestContext context, @Optional String application) {
 
         try {
             Helper.INSTANCE.logEventInfoToReport("Before Test");
@@ -281,12 +282,15 @@ public class BaseTest {
                 //System.setProperty("Environment", suite.getParameter("Environment"));
                 //System.setProperty("application", suite.getParameter("application"));
                 env = System.getProperty("Environment");
-                application = System.getProperty("application");
-             //   String group=System.getProperty("groups");
+                this.application = application;
+                //application = System.getProperty("application");
+                //   String group=System.getProperty("groups");
                 System.out.println("APPLICATION=" + application);
             } else {
+                System.out.println("In local");
                 env = BaseTest.properties.getProperty("Environment");
-                application = BaseTest.properties.getProperty("application");
+                this.application = BaseTest.properties.getProperty("application");
+                System.out.println("application in local=" + application);
             }
             this.loadUrlFromEnvProperties(env);
             System.out.println("PROP after loading env info = " + properties);
@@ -301,7 +305,7 @@ public class BaseTest {
             } else if (suitefilepathnamee.contains("Gates") && env.equalsIgnoreCase("staging")) {
                 testRailId = BaseTest.properties.getProperty("staging_gates_testrunid");
             }
-            application = BaseTest.properties.getProperty("application");
+            // application = BaseTest.properties.getProperty("application");
             baseURI = BaseTest.properties.getProperty("baseURI_Search");
             platform = BaseTest.properties.getProperty("platform");
             status = BaseTest.properties.getProperty("status");
@@ -529,7 +533,7 @@ public class BaseTest {
         JSONObject finalObj = null;
         try {
             parser = new JSONParser();
-            application = BaseTest.properties.getProperty("application");
+            //application = BaseTest.properties.getProperty("application");
             this.fetchTestDataApplicationWise(application);
             switch (application) {
                 case "fpj":
@@ -941,8 +945,10 @@ public class BaseTest {
     public JSONArray getTCDetails() throws Exception {
         try {
             parser = new JSONParser();
-            application = BaseTest.properties.getProperty("application");
+            // application = BaseTest.properties.getProperty("application");
+            System.out.println("applicationname=" + application);
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
+            System.out.println("testDataFileName =" + testDataFileName);
             this.getTestDataDetailsWithFileName(testCaseId, testDataFileName);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -1044,7 +1050,7 @@ public class BaseTest {
         JSONObject finalObj = null;
         try {
             parser = new JSONParser();
-            application = BaseTest.properties.getProperty("application");
+            //  application = BaseTest.properties.getProperty("application");
             jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/" + filename))));
 
             for (Object jsonobj : jsonarray) {

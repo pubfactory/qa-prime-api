@@ -34,7 +34,7 @@ public class DiscoveryWidgetTest extends BaseTest {
         try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
             WebDriverManager.setTestcaseIdTestRail(testCaseId);
-            String application = BaseTest.properties.getProperty("application");
+            // String application = BaseTest.properties.getProperty("application");
             url = BaseTest.properties.getProperty(application);
             System.out.println("!url=" + url);
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
@@ -92,7 +92,7 @@ public class DiscoveryWidgetTest extends BaseTest {
         try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
             WebDriverManager.setTestcaseIdTestRail(testCaseId);
-            String application = BaseTest.properties.getProperty("application");
+            //String application = BaseTest.properties.getProperty("application");
             url = BaseTest.properties.getProperty(application);
             System.out.println("!url=" + url);
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
@@ -122,7 +122,7 @@ public class DiscoveryWidgetTest extends BaseTest {
             articleCitationPage.clickOnSimilarArticleInGoogleScholarHyperLink();
             Helper.INSTANCE.switchToWindowTab(1);
             BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("scholar"), "Verifying if google scholar tab is opened");
-         
+
             WebDriverManager.getDriver().close();
             Helper.INSTANCE.switchToWindowTab(0);
 
@@ -151,7 +151,7 @@ public class DiscoveryWidgetTest extends BaseTest {
         try {
             testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
             WebDriverManager.setTestcaseIdTestRail(testCaseId);
-            String application = BaseTest.properties.getProperty("application");
+            //String application = BaseTest.properties.getProperty("application");
             url = BaseTest.properties.getProperty(application);
             System.out.println("!url=" + url);
             String testDataFileName = application.toUpperCase() + "_" + "TestData.json";

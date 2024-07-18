@@ -41,7 +41,7 @@ public class IntegrationE2EFlow extends BaseTest {
         // WebDriverManager.setTestcaseIdTestRail(testCaseId);
         WebDriverManager.setTestcaseIdTestRail(testCaseId);
         // Identifying the application and its url to test
-        String application = BaseTest.properties.getProperty("application");
+        // String application = BaseTest.properties.getProperty("application");
         //String application = System.getProperty("application");
         String url = BaseTest.properties.getProperty(application);
         System.out.println("url=" + url);

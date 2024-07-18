@@ -6,7 +6,6 @@ import com.prime.api.helpers.LoginServiceHelper;
 import com.prime.api.helpers.SearchServiceHelper;
 import com.prime.generics.BasePage;
 import com.prime.generics.BaseTest;
-import com.prime.generics.Helper;
 import com.prime.generics.WebDriverManager;
 import com.prime.pageFactory.pages.fpj.ArticleCitationPage;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
@@ -45,7 +44,7 @@ public class UnAuthenticatedViewCheckPagesFlow extends BaseTest {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         WebDriverManager.setTestcaseIdTestRail(testCaseId);
         // Identifying the application and its url to test
-        String application = BaseTest.properties.getProperty("application");
+        // String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
         navigateToUrlLink(url);
@@ -69,7 +68,7 @@ public class UnAuthenticatedViewCheckPagesFlow extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), articleHeader, articleCitationPage.getArticleHeaderOnArticlePage(), "Verifying the Header Of Article page");
         WebDriverManager.getDriver().navigate().back();
         issuePage.clickOnAllIssuesOnIssuePage();
-        BaseTest.verifyTextInURL(testData.get("journalpageurl").toString());        
+        BaseTest.verifyTextInURL(testData.get("journalpageurl").toString());
         journalPage = BasePage.initialize(WebDriverManager.getDriver(), JournalPage.class);
         System.out.println("Journal Page Header : " + journalPage.getJournalPageHeaderText());
         BaseTest.assertEquals(WebDriverManager.getDriver(), journalPage.getJournalPageHeaderText(), testData.get("journalpageheader").toString(), "Verifying the Journal Page header");

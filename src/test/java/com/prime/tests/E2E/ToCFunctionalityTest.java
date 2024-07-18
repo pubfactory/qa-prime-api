@@ -19,7 +19,6 @@ import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 import com.prime.generics.BasePage;
 import com.prime.generics.BaseTest;
-import com.prime.generics.Helper;
 import com.prime.generics.WebDriverManager;
 import com.prime.pageFactory.pages.fpj.ArticleCitationPage;
 import com.prime.pageFactory.pages.fpj.BrowseOrSearchPage;
@@ -49,7 +48,7 @@ public class ToCFunctionalityTest extends BaseTest {
     public void VerifyJournalToCFeatures() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         WebDriverManager.setTestcaseIdTestRail(testCaseId);
-        String application = BaseTest.properties.getProperty("application");
+        // String application = BaseTest.properties.getProperty("application");
         url = BaseTest.properties.getProperty(application);
         System.out.println("!url=" + url);
         String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
