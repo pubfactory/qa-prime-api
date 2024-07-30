@@ -253,5 +253,14 @@
 			"description": "veryifyDevToolboxSettingFunctionality",
 			"searchkeyword":"article"
 		}
+	},
+	{
+	"id": "106",
+		"data": {
+			"description": "verifythatTheAutoCompleteTypeAheadFunctionality",
+			"searchkeyword":"Article",
+			"quickSearchAttribute":"block-quicksearchform-inline"
+		}
 	}
+
 ]
