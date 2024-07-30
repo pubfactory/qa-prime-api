@@ -1201,7 +1201,7 @@ public class BasePage {
             waitForDocumentReady();
             WebDriverManager.getWebdriverWait().until(ExpectedConditions.visibilityOf(element));
             text = element.getAttribute(attributeValue);
-            Helper.INSTANCE.logEventInfoToReport(driver, "Attribute", text);
+//            Helper.INSTANCE.logEventInfoToReport(driver, "Attribute", text);
         } catch (Exception e) {
             Helper.INSTANCE.logEventToReport(driver, "error", element, e.getMessage());
         }

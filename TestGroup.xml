@@ -272,7 +272,23 @@ parallel="tests" thread-count="22" preserve-order="true">
 			</class>
 		</classes>
 	</test>
-
+	<test name="AutoComplete" preserve-order="true">
+	 <parameter name="application" value="anesthesiaprogress" />
+    <groups>
+            <run>
+                <include name="anesthesiaprogress" />
+            </run>
+        </groups>
+		<classes>
+			<class name="com.prime.tests.E2E.AutoCompleteTypeAhead">
+				<methods>
+					<include name="verifythatTheAutoCompleteTypeAheadFunctionality">
+						<parameter name="testcaseid" value="106" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
 
 
 </suite>

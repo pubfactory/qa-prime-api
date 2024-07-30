@@ -7,302 +7,384 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.prime.generics.BasePage;
+import com.prime.generics.Helper;
 
 public class MasterPage extends BasePage {
 
-    /**
-     * This constructor initializes the MasterPage class object
-     * 
-     * @param WebDriver
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 07/07/2023
-     */
-    public MasterPage(WebDriver driver) throws Exception {
-        super(driver);
-        PageFactory.initElements(driver, this);
-        waitForDocumentReady();
-    }
+	/**
+	 * This constructor initializes the MasterPage class object
+	 * 
+	 * @param WebDriver
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 07/07/2023
+	 */
+	public MasterPage(WebDriver driver) throws Exception {
+		super(driver);
+		PageFactory.initElements(driver, this);
+		waitForDocumentReady();
+	}
 
-    /**
-     * This method used to Verifying the search box is present on header
-     *
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @return 
-     * @Created Date : 10/10/2023
-     */
-    public boolean verifySearchBoxIsPresentOnHeader() throws Exception {
-        List<WebElement> searchBox = driver.findElements(By.xpath("(//input[@placeholder='Search'])[1]"));
-        return isElementPresent(searchBox);
-    }
+	/**
+	 * This method used to Verifying the search box is present on header
+	 *
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @return
+	 * @Created Date : 10/10/2023
+	 */
+	public boolean verifySearchBoxIsPresentOnHeader() throws Exception {
+		List<WebElement> searchBox = driver.findElements(By.xpath("(//input[@placeholder='Search'])[1]"));
+		return isElementPresent(searchBox);
+	}
 
-    /**
-     * This method used to enter the text in search box
-     * 
-     * @param searchText
-     * @return MasterPage Object
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 07/07/2023
-     */
-    public MasterPage enterTextInSearchBoxOnHomePage(String searchText) throws Exception {
-        typeOnElement(searchBox, searchText, "Entering the text in search box");
-        return new MasterPage(driver);
-    }
+	/**
+	 * This method used to enter the text in search box
+	 * 
+	 * @param searchText
+	 * @return MasterPage Object
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 07/07/2023
+	 */
+	public MasterPage enterTextInSearchBoxOnHomePage(String searchText) throws Exception {
+		typeOnElement(searchBox, searchText, "Entering the text in search box");
+		return new MasterPage(driver);
+	}
 
+	/**
+	 * This method used to click on Magnifying Lens for search on home page`
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 07/07/2023
+	 */
+	public void clickOnSearchMagnifyingLense() throws Exception {
+		clickOnElement(clickOnMagnifyingLens, "clicking on Magnifying Lens on home page beside the search box");
+	}
 
-    /**
-     * This method used to click on Magnifying Lens for search on home page`
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 07/07/2023
-     */
-    public void clickOnSearchMagnifyingLense() throws Exception {
-        clickOnElement(clickOnMagnifyingLens, "clicking on Magnifying Lens on home page beside the search box");
-    }
+	/**
+	 * This method used to Verifying the Magnifying Lense is present on header
+	 *
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @return boolean
+	 * @Created Date : 19/10/2023
+	 */
+	public boolean verifySearchMagnifyingLenseIsPresentOnHeader() throws Exception {
+		List<WebElement> magniFyingLense = driver
+				.findElements(By.xpath("(//button[@type='submit'][@aria-label='Search'])[1]"));
+		return isElementPresent(magniFyingLense);
+	}
 
-    /**
-     * This method used to Verifying the Magnifying Lense is present on header
-     *
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @return boolean
-     * @Created Date : 19/10/2023
-     */
-    public boolean verifySearchMagnifyingLenseIsPresentOnHeader() throws Exception {
-        List<WebElement> magniFyingLense = driver.findElements(By.xpath("(//button[@type='submit'][@aria-label='Search'])[1]"));
-        return isElementPresent(magniFyingLense);
-    }
+	/**
+	 * This method used to click on Article under Content List section on home page
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 19/07/2023
+	 */
+	public void clickOnArticleUnderContentListOnHomePage() throws Exception {
+		clickOnElement(homePageArticle, "clicking on Article under Content List section on home page");
+	}
 
-    /**
-     * This method used to click on Article under Content List section on home page
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 19/07/2023
-     */
-    public void clickOnArticleUnderContentListOnHomePage() throws Exception {
-        clickOnElement(homePageArticle, "clicking on Article under Content List section on home page");
-    }
+	/**
+	 * This method used to click on Current Article on home page on TSCIR APP
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 19/07/2023
+	 */
+	public void clickOnCurrentArticleonHomePageTSCIRAPP() throws Exception {
+		clickOnElement(currentArticleonHomePageTSCIRAPP, "clicking on current Article on home page on TSCIR APP");
+	}
 
-    /**
-     * This method used to click on Current Article on home page on TSCIR APP
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 19/07/2023
-     */
-    public void clickOnCurrentArticleonHomePageTSCIRAPP() throws Exception {
-        clickOnElement(currentArticleonHomePageTSCIRAPP, "clicking on current Article on home page on TSCIR APP");
-    }
+	/**
+	 * This method used to click on SignIn link on the header()
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 20/07/2023
+	 */
+	public void clickOnsignInlinkOnHeader() throws Exception {
+		clickOnElement(signInlinkOnHeader, "clicking on SignIn link on the header");
+	}
 
-    /**
-     * This method used to click on SignIn link on the header()
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 20/07/2023
-     */
-    public void clickOnsignInlinkOnHeader() throws Exception {
-        clickOnElement(signInlinkOnHeader, "clicking on SignIn link on the header");
-    }
+	/**
+	 * This method used to click on Sign In button link on the header()
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 03/08/2023
+	 */
+	public void clickOnSignInButtonOnHeader() throws Exception {
+		clickOnElement(SignInButton, "clicking on SignIn link on the header");
+	}
 
-    /**
-     * This method used to click on Sign In button link on the header()
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 03/08/2023
-     */
-    public void clickOnSignInButtonOnHeader() throws Exception {
-        clickOnElement(SignInButton, "clicking on SignIn link on the header");
-    }
+	/**
+	 * This method used to click on SignUp link on the header()
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 20/07/2023
+	 */
+	public void clickOnsignUplinkOnHeader() throws Exception {
+		clickOnElement(signUplinkOnHeader, "clicking on SignUp link on the header");
+	}
 
-    /**
-     * This method used to click on SignUp link on the header()
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 20/07/2023
-     */
-    public void clickOnsignUplinkOnHeader() throws Exception {
-        clickOnElement(signUplinkOnHeader, "clicking on SignUp link on the header");
-    }
+	/**
+	 * This method used to click on My Stuff link on the header()
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 03/08/2023
+	 */
+	public void clickOnMystuffLinkOnHeader() throws Exception {
+		clickOnElement(myStuffLinkOnHeader, "clicking on mystuff link on the header");
+	}
 
-    /**
-     * This method used to click on My Stuff link on the header()
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 03/08/2023
-     */
-    public void clickOnMystuffLinkOnHeader() throws Exception {
-        clickOnElement(myStuffLinkOnHeader, "clicking on mystuff link on the header");
-    }
+	/**
+	 * This method return the About This Journal Text which is available on home
+	 * page
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 20/07/2023
+	 */
+	public String getAboutThisJournalTextOnHomePage() throws Exception {
+		String actualAboutThisJournalOnHomePage = getTextFromElement(AboutThisJournalOnHomePage);
+		return actualAboutThisJournalOnHomePage;
+	}
 
-    /**
-     * This method return the About This Journal Text which is available on home
-     * page
-     * 
-     * @return String
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 20/07/2023
-     */
-    public String getAboutThisJournalTextOnHomePage() throws Exception {
-        String actualAboutThisJournalOnHomePage = getTextFromElement(AboutThisJournalOnHomePage);
-        return actualAboutThisJournalOnHomePage;
-    }
+	/**
+	 * This method used to check signIn link is present on header
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 25/07/2023
+	 */
+	public void verifySignInLinkpresentOnHeader() throws Exception {
+		isElementPresent(signInlinkOnHeader, "checking the signIn link is present or not on header");
+	}
 
-    /**
-     * This method used to check signIn link is present on header
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 25/07/2023
-     */
-    public void verifySignInLinkpresentOnHeader() throws Exception {
-        isElementPresent(signInlinkOnHeader, "checking the signIn link is present or not on header");
-    }
+	/**
+	 * This method used to check signIn link is present on header
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 25/07/2023
+	 */
+	public void verifySignUpLinkpresentOnHeader() throws Exception {
+		isElementPresent(signUplinkOnHeader, "checking the signUp link is present or not on header");
+	}
 
+	/**
+	 * This method return the content list article title text on home page
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 20/07/2023
+	 */
+	public String getcontentListArticleTitleText() throws Exception {
+		String contentListArticleTitleText = getTextFromElement(contentListArticleTitle);
+		return contentListArticleTitleText;
+	}
 
-    /**
-     * This method used to check signIn link is present on header
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 25/07/2023
-     */
-    public void verifySignUpLinkpresentOnHeader() throws Exception {
-        isElementPresent(signUplinkOnHeader, "checking the signUp link is present or not on header");
-    }
+	/**
+	 * This method clicks on view this issue on homepage
+	 * 
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 20/07/2023
+	 */
+	public void clickOnViewThisIssueOnHomePage() throws Exception {
+		clickOnElement(viewThisIssue, "Clicking on View This Issue On HomePage");
+	}
 
-    /**
-     * This method return the content list article title text on home page
-     * 
-     * @return String
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 20/07/2023
-     */
-    public String getcontentListArticleTitleText() throws Exception {
-        String contentListArticleTitleText = getTextFromElement(contentListArticleTitle);
-        return contentListArticleTitleText;
-    }
+	/**
+	 * This method clicks on main apps logo on left hand side
+	 * 
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 20/07/2023
+	 */
+	public void clickOnMainAppLogoInHeader() throws Exception {
+		clickOnElement(AppMainLogo, "Clicking on main apps logo in header");
+	}
 
-    /**
-     * This method clicks on view this issue on homepage
-     * 
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 20/07/2023
-     */
-    public void clickOnViewThisIssueOnHomePage() throws Exception {
-        clickOnElement(viewThisIssue, "Clicking on View This Issue On HomePage");
-    }
+	/**
+	 * This method used to check Devtools setting link is present on header
+	 * 
+	 * @throws Exception
+	 * @author Veena.Mathew
+	 * @Created Date : 25/06/2024
+	 */
+	public void verifyDevToolsSettings() throws Exception {
+		isElementPresent(DevToolSetting, "checking the Dev tool setting is present or not on home page");
+	}
 
-    /**
-     * This method clicks on main apps logo on left hand side
-     * 
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 20/07/2023
-     */
-    public void clickOnMainAppLogoInHeader() throws Exception {
-        clickOnElement(AppMainLogo, "Clicking on main apps logo in header");
-    }
+	/**
+	 * This method clicks on dev tools button in the home page
+	 * 
+	 * 
+	 * @throws Exception
+	 * @author Veena.Mathew
+	 * @Created Date : 25/06/2024
+	 */
+	public void clickOnDevToolSetting() throws Exception {
+		clickOnElement(DevToolSetting, "Clicking on dev tool setting");
+	}
 
-    /**
-     * This method used to check Devtools setting link is present on header
-     * 
-     * @throws Exception
-     * @author Veena.Mathew
-     * @Created Date : 25/06/2024
-     */
-    public void verifyDevToolsSettings() throws Exception {
-        isElementPresent(DevToolSetting, "checking the Dev tool setting is present or not on home page");
-    }
+	/**
+	 * This method used to check Show Region Keys setting link is present on header
+	 * 
+	 * @throws Exception
+	 * @author Veena.Mathew
+	 * @Created Date : 25/06/2024
+	 */
+	public boolean verifyShowRegionsKeysSettings() throws Exception {
+		return isElementPresent(ShowRegionKeys, "checking the Region Key setting is present or not on home page");
+	}
 
-    /**
-     * This method clicks on dev tools button in the home page
-     * 
-     * 
-     * @throws Exception
-     * @author Veena.Mathew
-     * @Created Date : 25/06/2024
-     */
-    public void clickOnDevToolSetting() throws Exception {
-        clickOnElement(DevToolSetting, "Clicking on dev tool setting");
-    }
+	/**
+	 * This method clicks on Show Region Keys button in the home page
+	 * 
+	 * 
+	 * @throws Exception
+	 * @author Veena.Mathew
+	 * @Created Date : 25/06/2024
+	 */
+	public void clickOnRegionKeySetting() throws Exception {
+		clickOnElement(ShowRegionKeys, "Clicking on RegionKey setting");
+	}
 
-    /**
-     * This method used to check Show Region Keys setting link is present on header
-     * 
-     * @throws Exception
-     * @author Veena.Mathew
-     * @Created Date : 25/06/2024
-     */
-    public boolean verifyShowRegionsKeysSettings() throws Exception {
-        return isElementPresent(ShowRegionKeys, "checking the Region Key setting is present or not on home page");
-    }
+	/**
+	 * This method used to check Devtools setting link is present on header
+	 * 
+	 * @throws Exception
+	 * @author Veena.Mathew
+	 * @Created Date : 25/06/2024
+	 */
+	public String getLabelNameFromSignInPostShowRegionKeysOON() throws Exception {
+		return getTextFromElement(ShowRegionKeysSignIn).toString();
+	}
 
-    /**
-     * This method clicks on Show Region Keys  button in the home page
-     * 
-     * 
-     * @throws Exception
-     * @author Veena.Mathew
-     * @Created Date : 25/06/2024
-     */
-    public void clickOnRegionKeySetting() throws Exception {
-        clickOnElement(ShowRegionKeys, "Clicking on RegionKey setting");
-    }
+	/**
+	 * This method used to verify the with option(s) that matches the user has type
+	 * 
+	 * @param word
+	 * @return boolean
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 29/07/2024
+	 * 
+	 */
+	public boolean VerifyingAutoSuggetionContainSearchWord(String word) throws Exception {
 
-    /**
-     * This method used to check Devtools setting link is present on header
-     * 
-     * @throws Exception
-     * @author Veena.Mathew
-     * @Created Date : 25/06/2024
-     */
-    public String getLabelNameFromSignInPostShowRegionKeysOON() throws Exception {
-        return getTextFromElement(ShowRegionKeysSignIn).toString();
-    }
+		boolean flag = false;
+		List<String> AllSuggestion = getTextFindElements(By.xpath("//*[contains(@id,'id-typeahead-item')]"));
+		if (AllSuggestion.size() > 0) {
+			for (String tr : AllSuggestion) {
+				if (tr.toUpperCase().contains(word.toUpperCase())) {
+					flag = true;
+				} else {
+					return false;
+				}
+			}
+		}
+		return flag;
+	}
 
-    @FindBy(xpath = "//button[contains(text(),'Accept All Cookies')]")
-    private WebElement AcceptAllCookies;
-    @FindBy(xpath = "(//input[@placeholder='Search'])[1]")
-    private WebElement searchBox;
-    @FindBy(xpath = "(//button[@type='submit'][@aria-label='Search'])[1]")
-    private WebElement clickOnMagnifyingLens;
-    @FindBy(xpath = "(//button[contains(text(),'Content List')]//parent::div//following-sibling::div//following::div[@class='title'])[1]")
-    private WebElement homePageArticle;
-    @FindBy(xpath = "(//p[contains(text(),'Current Articles')])[2]//parent::div//ancestor::div[@data-identifier='<current-articles-title>']//following::div[@class='title'][1]")
-    private WebElement currentArticleonHomePageTSCIRAPP;
-    @FindBy(xpath = "//div[@data-identifier='<search_input>']//following-sibling::div//a[contains(text(),'Sign in')]")
-    private WebElement signInlinkOnHeader;
-    @FindBy(xpath = "//a[contains(text(),'Sign in')]")
-    private WebElement SignInButton;
-    @FindBy(xpath = "//div[@data-identifier='<search_input>']//following-sibling::div//a[contains(text(),'Sign up')]")
-    private WebElement signUplinkOnHeader;
-    @FindBy(xpath = "//div[@data-identifier='<search_input>']//following-sibling::div//a[contains(text(),'My Stuff')]")
-    private WebElement myStuffLinkOnHeader;
-    @FindBy(xpath = "//h3[contains(text(),'About this Journal')]")
-    private WebElement AboutThisJournalOnHomePage;
-    @FindBy(xpath = "//div[@class='title']")
-    private WebElement contentListArticleTitle;
-    @FindBy(xpath = "(//a[text()='View This Issue'])[2]")
-    private WebElement viewThisIssue;
-    @FindBy(xpath = "(//img[@alt='Logo'])[2]")
-    private WebElement AppMainLogo;
-    @FindBy(xpath = "//button[@data-testid='DevtoolsControls']")
-    private WebElement DevToolSetting;
-    @FindBy(xpath = "//section[contains(@id,'popover-content-:r3:')]//label[@data-testid='showRegionKeys']//span")
-    private WebElement ShowRegionKeys;
-    @FindBy(xpath = "//div[@data-testid='block-authbuttons']/a")
-    private WebElement ShowRegionKeysSignIn;
+	/**
+	 * This method returns the All Auto Suggestion List in list format
+	 * 
+	 * 
+	 * @return List<String>
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 29/07/2024
+	 */
+	public List<String> getAllAutoSuggestionList() throws Exception {
+		boolean flag = false;
+		List<String> AllSuggestion = getTextFindElements(By.xpath("//*[contains(@id,'id-typeahead-item')]"));
+		return AllSuggestion;
+	}
+
+	/**
+	 * This method return the attribute value from Search Box
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @created Date : 29/07/24
+	 */
+	public String getSearchBoxValue() throws Exception {
+		return getAttributeFromElement(searchBox, "value");
+	}
+
+	/**
+	 * This method return the Auto Suggestion DD Focused Text
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @created Date : 29/07/24
+	 */
+	public String getAutoSuggestionFocusedText() throws Exception {
+		return getTextFromElement(focusedAutoSuggestion);
+	}
+	
+	/**
+	 * This method return the attribute value from Search Box
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @created Date : 29/07/24
+	 */
+	public String getQuickSearchBoxAttributeValue() throws Exception {
+		return getAttributeFromElement(quickSearchWithFormTag, "data-testid");
+	}
+	
+
+	@FindBy(xpath = "//button[contains(text(),'Accept All Cookies')]")
+	private WebElement AcceptAllCookies;
+	@FindBy(xpath = "(//input[@placeholder='Search'])[1]")
+	private WebElement searchBox;
+	@FindBy(xpath = "(//button[@type='submit'][@aria-label='Search'])[1]")
+	private WebElement clickOnMagnifyingLens;
+	@FindBy(xpath = "(//button[contains(text(),'Content List')]//parent::div//following-sibling::div//following::div[@class='title'])[1]")
+	private WebElement homePageArticle;
+	@FindBy(xpath = "(//p[contains(text(),'Current Articles')])[2]//parent::div//ancestor::div[@data-identifier='<current-articles-title>']//following::div[@class='title'][1]")
+	private WebElement currentArticleonHomePageTSCIRAPP;
+	@FindBy(xpath = "//div[@data-identifier='<search_input>']//following-sibling::div//a[contains(text(),'Sign in')]")
+	private WebElement signInlinkOnHeader;
+	@FindBy(xpath = "//a[contains(text(),'Sign in')]")
+	private WebElement SignInButton;
+	@FindBy(xpath = "//div[@data-identifier='<search_input>']//following-sibling::div//a[contains(text(),'Sign up')]")
+	private WebElement signUplinkOnHeader;
+	@FindBy(xpath = "//div[@data-identifier='<search_input>']//following-sibling::div//a[contains(text(),'My Stuff')]")
+	private WebElement myStuffLinkOnHeader;
+	@FindBy(xpath = "//h3[contains(text(),'About this Journal')]")
+	private WebElement AboutThisJournalOnHomePage;
+	@FindBy(xpath = "//div[@class='title']")
+	private WebElement contentListArticleTitle;
+	@FindBy(xpath = "(//a[text()='View This Issue'])[2]")
+	private WebElement viewThisIssue;
+	@FindBy(xpath = "(//img[@alt='Logo'])[2]")
+	private WebElement AppMainLogo;
+	@FindBy(xpath = "//button[@data-testid='DevtoolsControls']")
+	private WebElement DevToolSetting;
+	@FindBy(xpath = "//section[contains(@id,'popover-content-:r3:')]//label[@data-testid='showRegionKeys']//span")
+	private WebElement ShowRegionKeys;
+	@FindBy(xpath = "//div[@data-testid='block-authbuttons']/a")
+	private WebElement ShowRegionKeysSignIn;
+	@FindBy(xpath = "//*[@class='dropdown-item active']")
+	private WebElement focusedAutoSuggestion;
+	@FindBy(xpath="//form[@role='search']")
+	private WebElement quickSearchWithFormTag;
 }
