@@ -1208,6 +1208,717 @@ public class ArticleCitationPage extends BasePage {
         return isElementPresent(paginationBottom);
     }
     
+    /**This method is used to check og:url meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean ogURLMetaTagisPresentOnArticlePage() throws Exception {
+    	Thread.sleep(4000);
+    	List<WebElement> OgURL=driver.findElements(By.xpath("//meta[@property='og:url']"));
+    	 return isElementPresent(OgURL);
+    }
+    
+    /**This method returns the og:url meta tag  content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getOgURLMetaTagPropertyValue() throws Exception {
+    	String URL=getMetaTagAttribute(ogURLMetaTag,"content");
+    	return URL;
+    }
+  
+    /**This method is used to check og:site_name meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean ogSiteNameMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> OgSiteName=driver.findElements(By.xpath("//meta[@property='og:site_name']"));
+    	 return isElementPresent(OgSiteName);
+    }
+    
+    /**This method returns the og:site_name meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getOgSiteNameMetaTagPropertyValue() throws Exception {
+    	String siteName=getMetaTagAttribute(ogSiteNameMetaTag,"content");
+    	return siteName;    	
+    }
+    
+    /**This method is used to check og:type meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean ogTypeMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> ogType=driver.findElements(By.xpath("//meta[@property='og:type']"));
+    	 return isElementPresent(ogType);
+    }
+    
+    /**This method returns the og:type meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getOgTypeMetaTagPropertyValue() throws Exception {
+    	String ogType=getMetaTagAttribute(ogTypeMetaTag,"content");
+    	return ogType;    	
+    }
+    
+    /**This method is used to check og:locale meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean ogLocaleMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> ogLocale=driver.findElements(By.xpath("//meta[@property='og:locale']"));
+    	 return isElementPresent(ogLocale);
+    }
+    
+    /**This method returns the og:locale meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getOgLocaleMetaTagPropertyValue() throws Exception {
+    	String ogLocale=getMetaTagAttribute(ogLocaleMetaTag,"content");
+    	return ogLocale;    	
+    }
+    
+    /**This method is used to check og:image meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean ogImageMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> ogImage=driver.findElements(By.xpath("//meta[@property='og:image']"));
+    	 return isElementPresent(ogImage);
+    }
+    
+    /**This method returns the og:image meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getOgImageMetaTagPropertyValue() throws Exception {
+    	String ogImage=getMetaTagAttribute(ogImageMetaTag,"content");
+    	return ogImage;    	
+    }
+    
+    /**This method is used to check twitter:card meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyTwitterCardMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> twitterCard=driver.findElements(By.xpath("//meta[@property='twitter:card']"));
+    	 return isElementPresent(twitterCard);
+    }
+    
+    /**This method returns the twitter:card meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getTwitterCardMetaTagPropertyValue() throws Exception {
+    	String twitterCard=getMetaTagAttribute(twitterCardMetaTag,"content");
+    	return twitterCard;    	
+    }
+    
+    /**This method is used to check twitter:title meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyTwitterTitleMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> twitterTitle=driver.findElements(By.xpath("//meta[@property='twitter:title']"));
+    	 return isElementPresent(twitterTitle);
+    }
+    
+    /**This method returns the twitter:title meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getTwitterTitleMetaTagPropertyValue() throws Exception {
+    	String twitterTitle=getMetaTagAttribute(twitterTitleMetaTag,"content");
+    	return twitterTitle;    	
+    }
+    
+    /**This method is used to check og:description meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyOgDescriptionMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> ogDescription=driver.findElements(By.xpath("(//meta[@property='og:description'])[1]"));
+    	 return isElementPresent(ogDescription);
+    }
+    
+    /**This method returns the og:description meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getOgDescriptionMetaTagPropertyValue() throws Exception {
+    	String ogDescription=getMetaTagAttribute(ogDescriptionMetaTag,"content");
+    	return ogDescription;    	
+    }
+    
+    /**This method is used to check twitter:description meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyTwitterDescriptionMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> twitterDescription=driver.findElements(By.xpath("//meta[@property='twitter:description']"));
+    	 return isElementPresent(twitterDescription);
+    }
+    
+    /**This method returns the twitter:description meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getTwitterDescriptionMetaTagPropertyValue() throws Exception {
+    	String twitterDescription=getMetaTagAttribute(twitterDescriptionMetaTag,"content");
+    	return twitterDescription;    	
+    }
+    
+    /**This method is used to check og:title meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyOgTitleMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> ogTitle=driver.findElements(By.xpath("//meta[@property='og:title']"));
+    	 return isElementPresent(ogTitle);
+    }
+    
+    /**This method returns the og:title meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getOgTitleMetaTagPropertyValue() throws Exception {
+    	String ogTitle=getMetaTagAttribute(ogTitleMetaTag,"content");
+    	return ogTitle;    	
+    }
+    
+    /**This method is used to check article author meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyArticleAuthorMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> articleAuthor=driver.findElements(By.xpath("(//meta[@property='article:author'])[1]"));
+    	 return isElementPresent(articleAuthor);
+    }
+    
+    /**This method returns the article author meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getArticleAuthorMetaTagProperytValue() throws Exception {
+    	String articleAuthor=getMetaTagAttribute(articleAuthorMetaTag,"content");
+    	return articleAuthor;    	
+    }
+    
+    /**This method is used to check article publish meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyArticlePublishTimeMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> articlePublishTime=driver.findElements(By.xpath("(//meta[@name='article:published_time'])[1]"));
+    	 return isElementPresent(articlePublishTime);
+    }
+    
+    /**This method returns the article publish meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getArticlePublishTimeMetaTagPropertyValue() throws Exception {
+    	String articlePublishTime=getMetaTagAttribute(articlePublishTimeMetaTag,"content");
+    	return articlePublishTime;    	
+    }
+    
+    /**This method is used to check article section meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyArticleSectionMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> articleSection=driver.findElements(By.xpath("(//meta[@name='article:section'])[1]"));
+    	 return isElementPresent(articleSection);
+    }
+    
+    /**This method returns the article section meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getArticleSectionMetaTagPropertyValue() throws Exception {
+    	String articleSection=getMetaTagAttribute(articleSectionMetaTag,"content");
+    	return articleSection;    	
+    }
+    
+    /**This method is used to check citation last page meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationLastPageMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationLastPage=driver.findElements(By.xpath("(//meta[@name='citation_lastpage'])[1]"));
+    	 return isElementPresent(citationLastPage);
+    }
+    
+    /**This method returns the citation last page meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationLastPageMetaTagPropertyValue() throws Exception {
+    	String citationLastPage=getMetaTagAttribute(citationLastPageMetaTag,"content");
+    	return citationLastPage;    	
+    }
+    
+    /**This method is used to check citation issue meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationIssueMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationIssue=driver.findElements(By.xpath("(//meta[@name='citation_issue'])[1]"));
+    	 return isElementPresent(citationIssue);
+    }
+    
+    /**This method returns the citation issue meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationIssueMetaTagPropertyValue() throws Exception {
+    	String citationIssue=getMetaTagAttribute(citationIssueMetaTag,"content");
+    	return citationIssue;    	
+    }
+    
+    /**This method is used to check citation language meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationLanguageMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationLanguage=driver.findElements(By.xpath("(//meta[@name='citation_language'])[1]"));
+    	 return isElementPresent(citationLanguage);
+    }
+    
+    /**This method returns the citation language meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationLanguageMetaTagPropertyValue() throws Exception {
+    	String citationLanguage=getMetaTagAttribute(citationLanguageMetaTag,"content");
+    	return citationLanguage;    	
+    }
+    
+    /**This method is used to check citation title meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationTitleMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationTitle=driver.findElements(By.xpath("(//meta[@name='citation_title'])[1]"));
+    	 return isElementPresent(citationTitle);
+    }
+    
+    /**This method returns the citation title meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationTitleMetaTagPropertyValue() throws Exception {
+    	String citationTitle=getMetaTagAttribute(citationTitleMetaTag,"content");
+    	return citationTitle;    	
+    }
+    
+    /**This method is used to check citation xml url meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationXMLURLMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationXMLURL=driver.findElements(By.xpath("(//meta[@name='citation_xml_url'])[1]"));
+    	 return isElementPresent(citationXMLURL);
+    }
+    
+    /**This method returns the citation xml url meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationXMLURLMetaTagPropertyValue() throws Exception {
+    	String citationXMLURL=getMetaTagAttribute(citationXMLURLMetaTag,"content");
+    	return citationXMLURL;    	
+    }
+    
+    /**This method is used to check citation volume meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean verifyCitationVolumeMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationVolume=driver.findElements(By.xpath("(//meta[@name='citation_volume'])[1]"));
+    	 return isElementPresent(citationVolume);
+    }
+    
+    /**This method returns the citation volume meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationVolumeMetaTagPropertyValue() throws Exception {
+    	String citationVolume=getMetaTagAttribute(citationVolumeMetaTag,"content");
+    	return citationVolume;    	
+    }
+    
+    /**This method is used to check citation PDF URL meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationPDFURLMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationPDFURL=driver.findElements(By.xpath("(//meta[@name='citation_pdf_url'])[1]"));
+    	 return isElementPresent(citationPDFURL);
+    }
+    
+    /**This method returns the citation PDF URL meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationPDFURLMetaTagPropertyValue() throws Exception {
+    	String citationPDFURL=getMetaTagAttribute(citationPDFURLMetaTag,"content");
+    	return citationPDFURL;    	
+    }
+    
+    /**This method is used to check citation ISSN meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationISSNMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationISSN=driver.findElements(By.xpath("(//meta[@name='citation_issn'])[1]"));
+    	 return isElementPresent(citationISSN);
+    }
+    
+    /**This method returns the citation ISSN meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationISSNMetaTagPropertyValue() throws Exception {
+    	String citationISSN=getMetaTagAttribute(citationISSNMetaTag,"content");
+    	return citationISSN;    	
+    }
+  
+    /**This method is used to check citation first page meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationFirstPageMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationFirstPage=driver.findElements(By.xpath("(//meta[@name='citation_firstpage'])[1]"));
+    	 return isElementPresent(citationFirstPage);
+    }
+    
+    /**This method returns the citation first page meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationFirstPagePageMetaTagPropertyValue() throws Exception {
+    	String citationFirstPage=getMetaTagAttribute(citationFirstPageMetaTag,"content");
+    	return citationFirstPage;    	
+    }  
+    
+    /**This method is used to check citation publisher meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationPublisherMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationPublisher=driver.findElements(By.xpath("(//meta[@name='citation_publisher'])[1]"));
+    	 return isElementPresent(citationPublisher);
+    }
+    
+    /**This method returns the citation publisher meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationPublisherMetaTagPropertyValue() throws Exception {
+    	String citationPublisher=getMetaTagAttribute(citationPublisherMetaTag,"content");
+    	return citationPublisher;    	
+    } 
+    
+    /**This method is used to check citation journal title meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationJournalTitleMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationJournalTite=driver.findElements(By.xpath("(//meta[@name='citation_journal_title'])[1]"));
+    	 return isElementPresent(citationJournalTite);
+    }
+    
+    /**This method returns the citation journal title meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationJournalTilteMetaTagPropertyValue() throws Exception {
+    	String citationJournalTite=getMetaTagAttribute(citationJoutnalTitleMetaTag,"content");
+    	return citationJournalTite;    	
+    } 
+        
+    /**This method is used to check publication date meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationPublicationDateMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationPublicationDate=driver.findElements(By.xpath("(//meta[@name='citation_publication_date'])[1]"));
+    	 return isElementPresent(citationPublicationDate);
+    }
+    
+    /**This method returns the citation publication date meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationPublicationDateMetaTagPropertyValue() throws Exception {
+    	String citationPublicationDate=getMetaTagAttribute(citationPulicationDateMetaTag,"content");
+    	return citationPublicationDate;    	
+    } 
+    
+    /**This method is used to check citation author meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationAuthorMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationAuthor=driver.findElements(By.xpath("(//meta[@name='citation_author'])[1]"));
+    	 return isElementPresent(citationAuthor);
+    }
+    
+    /**This method returns the citation author meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationAuthorMetaTagPropertyValue() throws Exception {
+    	String citationAuthor=getMetaTagAttribute(citationAuthorMetaTag,"content");
+    	return citationAuthor;    	
+    } 
+
+    /**This method is used to check citation DOI meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationDOIMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationDOI=driver.findElements(By.xpath("(//meta[@name='citation_doi'])[1]"));
+    	 return isElementPresent(citationDOI);
+    }
+    
+    /**This method returns the citation DOI meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationDOIMetaTagPropertyValue() throws Exception {
+    	String citationDOI=getMetaTagAttribute(citationDOIMetaTag,"content");
+    	return citationDOI;    	
+    } 
+    
+    /**This method is used to check article tag meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyArticleTagMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> articleTag=driver.findElements(By.xpath("(//meta[@name='article_tag'])[1]"));
+    	 return isElementPresent(articleTag);
+    }
+    
+    /**This method returns the article tag meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getArticleTagMetaTagPropertyValue() throws Exception {
+    	String articleTag=getMetaTagAttribute(articleTagMetaTag,"content");
+    	return articleTag;    	
+    } 
+    
+    /**This method is used to citation reference tag meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public boolean VerifyCitationReferenceMetaTagisPresentOnArticlePage() throws Exception {
+    	List<WebElement> citationReference=driver.findElements(By.xpath("(//meta[@name='citation:reference'])[1]"));
+    	 return isElementPresent(citationReference);
+    }
+    
+    /**This method returns the citation reference meta tag content attribute value on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 06/08/2024
+     */
+    public String getCitationReferenceMetaTagPropertyValue() throws Exception {
+    	String citationReference=getMetaTagAttribute(citationReferenceMetaTag,"content");
+    	return citationReference;    	
+    } 
+    
+    /**
+     * This method returns first Author name on article page.
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 07/08/2024
+     */
+    public String getFirstAuthorNameText() throws Exception {
+        String FirstAuthorName = getTextFromElement(firstAuthorText);
+        return FirstAuthorName;
+    }
+    
+    
     @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
     @FindBy(xpath = "//header[contains(text(),'Preview/Export Citation')]")
@@ -1290,4 +2001,64 @@ public class ArticleCitationPage extends BasePage {
     private WebElement pagInationTop;
     @FindBy (xpath="(//span[text()='Page:'])[2]")
     private WebElement pagInationBottom;
+    @FindBy(xpath="//meta[@property='og:url']")
+    private WebElement ogURLMetaTag;
+    @FindBy(xpath="//meta[@property='og:site_name']")
+    private WebElement ogSiteNameMetaTag;
+    @FindBy(xpath="//meta[@property='og:type']")
+    private WebElement ogTypeMetaTag;
+    @FindBy(xpath="//meta[@property='og:locale']")
+    private WebElement ogLocaleMetaTag;
+    @FindBy(xpath="//meta[@property='og:image']")
+    private WebElement ogImageMetaTag;
+    @FindBy(xpath="//meta[@property='twitter:card']")
+    private WebElement twitterCardMetaTag;
+    @FindBy(xpath="//meta[@property='twitter:title']")
+    private WebElement twitterTitleMetaTag;
+    @FindBy(xpath="(//meta[@property='og:description'])[1]")
+    private WebElement ogDescriptionMetaTag;
+    @FindBy(xpath="//meta[@property='twitter:description']")
+    private WebElement twitterDescriptionMetaTag;
+    @FindBy(xpath="//meta[@property='og:title']")
+    private WebElement ogTitleMetaTag;
+    @FindBy(xpath="(//meta[@property='article:author'])[1]")
+    private WebElement articleAuthorMetaTag;
+    @FindBy(xpath="(//meta[@name='article:published_time'])[1]")
+    private WebElement articlePublishTimeMetaTag;
+    @FindBy(xpath="(//meta[@name='article:section'])[1]")
+    private WebElement  articleSectionMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_lastpage'])[1]")
+    private WebElement  citationLastPageMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_issue'])[1]")
+    private WebElement  citationIssueMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_language'])[1]")
+    private WebElement  citationLanguageMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_title'])[1]")
+    private WebElement  citationTitleMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_xml_url'])[1]")
+    private WebElement  citationXMLURLMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_volume'])[1]")
+    private WebElement  citationVolumeMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_pdf_url'])[1]")
+    private WebElement  citationPDFURLMetaTag;    
+    @FindBy(xpath="(//meta[@name='citation_issn'])[1]")
+    private WebElement  citationISSNMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_firstpage'])[1]")
+    private WebElement  citationFirstPageMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_publisher'])[1]")
+    private WebElement  citationPublisherMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_journal_title'])[1]")
+    private WebElement  citationJoutnalTitleMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_publication_date'])[1]")
+    private WebElement  citationPulicationDateMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_author'])[1]")
+    private WebElement  citationAuthorMetaTag;
+    @FindBy(xpath="(//meta[@name='citation_doi'])[1]")
+    private WebElement  citationDOIMetaTag;
+    @FindBy(xpath="(//meta[@name='article_tag'])[1]")
+    private WebElement  articleTagMetaTag;
+    @FindBy(xpath="(//meta[@name='citation:reference'])[1]")
+    private WebElement  citationReferenceMetaTag;
+    @FindBy(xpath="(//div[@data-testid='block-contributors']//span)[1]")
+    private WebElement  firstAuthorText;
 }

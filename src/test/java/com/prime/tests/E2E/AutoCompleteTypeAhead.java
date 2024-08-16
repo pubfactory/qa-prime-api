@@ -59,7 +59,8 @@ public class AutoCompleteTypeAhead extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), masterPage.getAutoSuggestionFocusedText(), masterPage.getSearchBoxValue(),
                 "Verifying that in the autocomplete are highlighted in focus as the user navigates between options");
 
-        //Verifying the Quick Search Form component is used on the site(form tag) 		
+        //Verifying the Quick Search Form component is used on the site(form tag) 	
+        System.out.println("ABC : "+masterPage.getQuickSearchBoxAttributeValue());
         BaseTest.assertEquals(WebDriverManager.getDriver(), masterPage.getQuickSearchBoxAttributeValue(), testData.get("quickSearchAttribute").toString(),
                 "Verifying the Quick Search Form component is used on the site (form tag).");
 

@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="MultiApplicationSuite" verbose="5" 	
-parallel="tests" thread-count="22" preserve-order="true">
+ parallel="tests" thread-count="26" preserve-order="true">
 <listeners>
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>

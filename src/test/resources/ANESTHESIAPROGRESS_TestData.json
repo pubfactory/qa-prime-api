@@ -261,6 +261,230 @@
 			"searchkeyword":"Article",
 			"quickSearchAttribute":"block-quicksearchform-inline"
 		}
-	}
+	},
+	{
+	"id": "108",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForArticlePageWhenTheUserDirectlyNavigatedToTheArticlePage",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"searchtext":"view/journals/anpr/70/4/article-p159.xml",
+			"url":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/view/journals/anpr/70/4/article-p159.xml",
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"coverimage?doc=/journals/anpr/70/4/article-p159.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"twitterdescription":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"ogtitle":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"publishtime":"2023-11-30T00:00:00.000Z",
+			"articlesection":"Anesthesia Progress",
+			"citationlastpage":"167",
+			"citationissue":"4",
+			"citationlanguage":"en",
+			"citationtitle":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"xmlurlendpart":"anpr/70/4/article-p159.xml/xml/",
+			"citationvolume":"70",
+			"citatinpdfurlendpart":"downloadpdf/view/journals/anpr/70/4/article-p159.pdf",
+			"citationissn":"1878-7177",
+			"citationfirstpage":"159",
+			"citationpublisher":"American Dental Society of Anesthisiology",
+			"citationjournaltitle":"Anesthesia Progress",
+			"citationpublicationdate":"2023/11/30",
+			"citationdoi":"10.2344/523398",
+			"articletag":"Remimazolam; Propofol; General anesthesia; Total intravenous anesthesia (TIVA); Oral maxillofacial surgery; Dentistry",
+			"articlereference":"1. M. Doi , Remimazolam. Jpn J Clin Anesthesiol . 2014; 34 (7): 860–866."
+		}
+	},
+{
+	"id": "109",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForArticlePage",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"searchtext":"view/journals/anpr/70/4/article-p159.xml",
+			"url":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/view/journals/anpr/70/4/article-p159.xml",
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"coverimage?doc=/journals/anpr/70/4/article-p159.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"twitterdescription":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"ogtitle":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"publishtime":"2023-11-30T00:00:00.000Z",
+			"articlesection":"Anesthesia Progress",
+			"citationlastpage":"167",
+			"citationissue":"4",
+			"citationlanguage":"en",
+			"citationtitle":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"xmlurlendpart":"anpr/70/4/article-p159.xml/xml/",
+			"citationvolume":"70",
+			"citatinpdfurlendpart":"downloadpdf/view/journals/anpr/70/4/article-p159.pdf",
+			"citationissn":"1878-7177",
+			"citationfirstpage":"159",
+			"citationpublisher":"American Dental Society of Anesthisiology",
+			"citationjournaltitle":"Anesthesia Progress",
+			"citationpublicationdate":"2023/11/30",
+			"citationdoi":"10.2344/523398",
+			"articletag":"Remimazolam; Propofol; General anesthesia; Total intravenous anesthesia (TIVA); Oral maxillofacial surgery; Dentistry",
+			"articlereference":"1. M. Doi , Remimazolam. Jpn J Clin Anesthesiol . 2014; 34 (7): 860–866."
 
+		}
+	},
+	{
+	"id": "110",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForHomePage",
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"fileasset/anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Anesthesia Progress",
+			"descriptiontag":"anesthesiaprogress",
+			"twitterdescription":"Anesthesia Progress",
+	
+			}
+	},
+	{
+	"id": "111",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForSearchPageWhenTheUserDirectlyNavigatedToTheSearchPage",
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"fileasset/anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Browse | Anesthesia Progress",
+			"descriptiontag":"Browse | Anesthesia Progress",
+			"twitterdescription":"Browse | Anesthesia Progress",
+			"ogtitle":"Browse | Anesthesia Progress"
+			}
+	},
+	{
+	"id": "112",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForSearchPage",
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"fileasset/anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Browse | Anesthesia Progress",
+			"descriptiontag":"Browse | Anesthesia Progress",
+			"twitterdescription":"Browse | Anesthesia Progress",
+			"ogtitle":"Browse | Anesthesia Progress"
+			}
+	},
+	{
+	"id": "113",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForIssuePage",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",		
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"journals/anpr/70/4/anpr.70.issue-4.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Volume 70: Issue 4",
+			"descriptiontag":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"twitterdescription":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"ogtitle":"Volume 70: Issue 4",
+			}
+	},
+	{
+	"id": "114",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForIssuePageWhenTheUserDirectlyNavigatedToTheIssuePage",
+			"searchtext":"view/journals/anpr/70/4/anpr.70.issue-4.xml",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",		
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"journals/anpr/70/4/anpr.70.issue-4.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Volume 70: Issue 4",
+			"descriptiontag":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"twitterdescription":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"ogtitle":"Volume 70: Issue 4"
+			}
+	},
+	{
+	"id": "115",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForJournalPage",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",		
+			"ogurl":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/journal/anpr"
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/coverimage?doc=/journals/anpr/70/4/anpr.70.issue-4.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"&quot;Anesthesia Progress&quot; published on  by American Dental Society of Anesthesiology.",
+			"descriptiontag":"anesthesiaprogress",
+			"twitterdescription":"&quot;Anesthesia Progress&quot; published on  by American Dental Society of Anesthesiology.",
+			"ogtitle":"Anesthesia Progress",
+			}
+	},
+	{
+	"id": "116",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForJournalPageWhenTheUserDirectlyNavigatedToTheJournalPage",
+			"searchtext":"view/journals/anpr/anpr-overview.xml",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",		
+			"ogurl":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/journal/anpr"
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/coverimage?doc=/journals/anpr/70/4/anpr.70.issue-4.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"&quot;Anesthesia Progress&quot; published on  by American Dental Society of Anesthesiology.",
+			"descriptiontag":"anesthesiaprogress",
+			"twitterdescription":"&quot;Anesthesia Progress&quot; published on  by American Dental Society of Anesthesiology.",
+			"ogtitle":"Anesthesia Progress",
+			}
+	},
+	{
+	"id": "117",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForStaticAboutPageWhenTheUserDirectlyNavigatedToTheStaticAboutPage",
+			"searchtext":"page/about",	
+			"ogurl":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/journal/anpr"
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Anesthesia Progress",
+			"descriptiontag":"Anesthesia Progress",
+			"twitterdescription":"Anesthesia Progress",
+			}
+	},
+	{
+	"id": "118",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForStaticAboutPage",
+			"searchtext":"page/about",	
+			"ogurl":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/journal/anpr"
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Anesthesia Progress",
+			"descriptiontag":"Anesthesia Progress",
+			"twitterdescription":"Anesthesia Progress",
+			}
+	},
 ]

@@ -2103,5 +2103,17 @@ public class BasePage {
             return url;
         }
     }
+    
+    protected String getMetaTagAttribute(WebElement element, String attributeValue) throws Exception {
+        String text = "";
+        try {
+            waitForDocumentReady();
+            text = element.getAttribute(attributeValue);
+//            Helper.INSTANCE.logEventInfoToReport(driver, "Attribute", text);
+        } catch (Exception e) {
+            Helper.INSTANCE.logEventToReport(driver, "error", element, e.getMessage());
+        }
+        return text;
+    }
 
 }
