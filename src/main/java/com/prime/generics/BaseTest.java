@@ -642,27 +642,27 @@ public class BaseTest {
         }
     }
 
-    /**
-     * This method is used to quit the driver object
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 10/07/2023
-     */
-    @AfterSuite(alwaysRun = true)
-    public void closeDriver() throws Exception {
-        try {
-            Helper.INSTANCE.logEventInfoToReport("After Suite");
-
-            WebDriverManager.closeDriver();
-            WebDriverManager.resetFlagMap().clear();
-
-
-            System.out.println("After suite");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+//    /**
+//     * This method is used to quit the driver object
+//     * 
+//     * @throws Exception
+//     * @author Rakesh.Shevale
+//     * @Created Date : 10/07/2023
+//     */
+//    @AfterSuite(alwaysRun = true)
+//    public void closeDriver() throws Exception {
+//        try {
+//            Helper.INSTANCE.logEventInfoToReport("After Suite");
+//
+//            WebDriverManager.closeDriver();
+//            WebDriverManager.resetFlagMap().clear();
+//
+//
+//            System.out.println("After suite");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     /**
      * This method log Event Information update execution status in case all failure
@@ -728,7 +728,8 @@ public class BaseTest {
             Helper.INSTANCE.logEventInfoToReport("Execution Completed for " + testCaseId);
             Allure.step("Fetching Current URL: " + WebDriverManager.getDriver().getCurrentUrl());
             //  Helper.INSTANCE.setErrorMessage(testcaseId, "");
-
+            WebDriverManager.closeDriver();
+            WebDriverManager.resetFlagMap().clear();
         }
     }
 

@@ -20,7 +20,7 @@ public class WebDriverManager {
     private static Map<Integer, String> credentials = new HashMap<Integer, String>();
     private static Map<Integer, String> publishers = new HashMap<Integer, String>();
     private static Map<Integer, String> testcaseMap = new HashMap<Integer, String>();
-
+    
     /**
      * This method is used to get the Publisher
      * @return String
@@ -151,25 +151,25 @@ public class WebDriverManager {
         getAllCookies.put((int) (long) Thread.currentThread().getId(), cookies);
     }
 
-    /**
-     * This method is used to quite the driver in synchronized manner
-     * @throws IOException
-     * @author Rakesh.Shevale
-     * @Created Date : 01 Aug 2022
-     */
-    public static synchronized void closeDriver() throws IOException {
-        try {
-            for (Map.Entry<Integer, WebDriver> entry : webDriver.entrySet()) {
-                if (entry.getValue() != null) {
-                    entry.getValue().quit();
-                }
-            }
-        } catch (Exception e) {
-            // TODO: handle exception
-        } finally {
-            //	Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
-        }
-    }
+//    /**
+//     * This method is used to quite the driver in synchronized manner
+//     * @throws IOException
+//     * @author Rakesh.Shevale
+//     * @Created Date : 01 Aug 2022
+//     */
+//    public static synchronized void closeDriver() throws IOException {
+//        try {
+//            for (Map.Entry<Integer, WebDriver> entry : webDriver.entrySet()) {
+//                if (entry.getValue() != null) {
+//                    entry.getValue().quit();
+//                }
+//            }
+//        } catch (Exception e) {
+//            // TODO: handle exception
+//        } finally {
+//            //	Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
+//        }
+//    }
 
     public static synchronized Object getLoginPageObject() {
         return loginPageObject.get((int) (long) Thread.currentThread().getId());
@@ -226,7 +226,7 @@ public class WebDriverManager {
     public static synchronized void setTestcaseIdTestRail(String testcaseId) {
         testcaseMap.put((int) (long) Thread.currentThread().getId(), testcaseId);
     }
-}
+
 
 /*
  * private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
@@ -236,4 +236,9 @@ public class WebDriverManager {
  * public synchronized static WebDriver getDriver () { return tlDriver.get(); }
  */
 
+public static void closeDriver() throws Exception {
+	 webDriver.get((int) (long) Thread.currentThread().getId()).close();
+	 Helper.INSTANCE.logEventInfoToReport("Closing Browser");
+}
 
+}

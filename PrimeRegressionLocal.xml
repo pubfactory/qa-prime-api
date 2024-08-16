@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Prime Automation E2E Suite" verbose="5"
-	parallel="tests" thread-count="22" preserve-order="true">
+	parallel="tests" thread-count="5" preserve-order="true">
 	<listeners>
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>

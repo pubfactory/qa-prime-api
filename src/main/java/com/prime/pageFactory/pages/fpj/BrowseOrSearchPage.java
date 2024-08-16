@@ -304,14 +304,16 @@ public class BrowseOrSearchPage extends BasePage {
     public void clickOnFirstArticleOnSearchOrBrowsePage() throws Exception {
         clickOnElement(firstArticleOnBrowseOrSearchPage, "Click On First Article On Search Or Browse Page");
        
-        WebDriverWait wait = new WebDriverWait(driver, 20);
-        wait.until(new ExpectedCondition<Boolean>() {
-        
-            public Boolean apply(WebDriver driver) {
-                JavascriptExecutor js = (JavascriptExecutor) driver;
-                return js.executeScript("return document.readyState").equals("complete");
-            }
-        });
+//        WebDriverWait wait = new WebDriverWait(driver, 20);
+//        wait.until(new ExpectedCondition<Boolean>() {
+//        
+//            public Boolean apply(WebDriver driver) {
+//                JavascriptExecutor js = (JavascriptExecutor) driver;
+//                System.out.println("Full page load : "+js.executeScript("return document.readyState").equals("complete"));
+//                return js.executeScript("return document.readyState").equals("complete");
+//            }
+//        });
+//       
     }
 
 
