@@ -25,7 +25,7 @@ public class CitationLinkTest extends BaseTest {
     private String mainWindow;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"CitationLink"}, enabled = true, retryAnalyzer = Retry.class, description = "102  - Verify that the Add Cited By functionality")
+    @Test(groups = {"CitationLink"}, enabled = true, retryAnalyzer = Retry.class, description = "1729630  - Verify that the citation link functionality is working fine")
     @Story("EPIC-1940")
     public void VerifyThatTheCitationLinkFunctionalityIsWorkingFine() throws Exception {
         try {

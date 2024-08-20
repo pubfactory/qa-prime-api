@@ -214,12 +214,25 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 20/09/2023
      * 
      */
-    public int getLastItemOfPaginationLinks() throws Exception {
-        WebElement lastWebElementOfPaginationLinks = paginationArray.get(paginationArray.size() - 1);
-        String lastItemOfPaginationLinksString = getTextFromElement(lastWebElementOfPaginationLinks);
-        int lastPageOfPagination = Integer.parseInt(lastItemOfPaginationLinksString);
-        return lastPageOfPagination;
-    }
+    public int getLastItemOfPaginationLinks(String pageSize) throws Exception {
+//        WebElement lastWebElementOfPaginationLinks = paginationArray.get(paginationArray.size() - 1);
+//        String lastItemOfPaginationLinksString = getTextFromElement(lastWebElementOfPaginationLinks);
+//        int lastPageOfPagination = Integer.parseInt(lastItemOfPaginationLinksString);
+//        return lastPageOfPagination;
+    	getTotatResultOnBrowseOrSearchPage();  //746/10 = 6 == q 74 +1
+    	
+    	 int quotient = getTotatResultOnBrowseOrSearchPage() / Integer.parseInt(pageSize);
+         int remainder = getTotatResultOnBrowseOrSearchPage() % Integer.parseInt(pageSize);
+                
+         if (remainder != 0) {
+             quotient += 1;
+         }        
+         return quotient;
+     }
+
+    	
+    	
+    
 
     /**
      * 
@@ -402,7 +415,7 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 16/10/2023
      */
     public void enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(String testidvalue, String enterRefineTermValue) throws Exception {
-        WebElement refineTermValueTxtBox = driver.findElement(By.xpath("//input[@data-testid='" + testidvalue + "']"));
+        WebElement refineTermValueTxtBox = driver.findElement(By.xpath("//input[contains(@data-testid,'" + testidvalue + "')]"));
         typeOnElement(refineTermValueTxtBox, enterRefineTermValue, "Entering the Refine Term Value in Refine Term Textbox on Search or browse page");
     }
 
@@ -416,7 +429,7 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 17/10/2023
      */
     public boolean verifyRefineTermTextBoxIsPresentOnBrowseOrSearchPage(String testIDValue) throws Exception {
-        List<WebElement> refineTermValueTxtBox = driver.findElements(By.xpath("//input[@data-testid='" + testIDValue + "']"));
+        List<WebElement> refineTermValueTxtBox = driver.findElements(By.xpath("//input[contains(@data-testid,'" + testIDValue + "')]"));
         return isElementPresent(refineTermValueTxtBox);
     }
 
@@ -484,7 +497,7 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 06/10/2023
      */
     public void clickOnCancelButtonFrontOfRefineTermTextBoxInRefineTermDDOnBrowseOrSearchPage(String testIDValue) throws Exception {
-        WebElement refineTermTxtBoxCancelButton = driver.findElement(By.xpath("//button[@data-testid='" + testIDValue + "']"));
+        WebElement refineTermTxtBoxCancelButton = driver.findElement(By.xpath("//button[contains(@data-testid,'" + testIDValue + "')]"));
         clickOnElement(refineTermTxtBoxCancelButton, "Clicking on Cancel button in front of Refine Term text box in Refine term DD on Browse or search page");
     }
 

@@ -221,10 +221,12 @@ public class MasterPage extends BasePage {
 	 * 
 	 * @throws Exception
 	 * @author Veena.Mathew
+	 * @return boolean
 	 * @Created Date : 25/06/2024
 	 */
-	public void verifyDevToolsSettings() throws Exception {
-		isElementPresent(DevToolSetting, "checking the Dev tool setting is present or not on home page");
+	public boolean verifyDevToolsSettings() throws Exception {
+		List<WebElement>DevTool=driver.findElements(By.xpath("//button[@data-testid='DevtoolsControls']"));
+		 return isElementPresent(DevTool);
 	}
 
 	/**
@@ -247,7 +249,33 @@ public class MasterPage extends BasePage {
 	 * @Created Date : 25/06/2024
 	 */
 	public boolean verifyShowRegionsKeysSettings() throws Exception {
-		return isElementPresent(ShowRegionKeys, "checking the Region Key setting is present or not on home page");
+		List<WebElement>ShowRegion=driver.findElements(By.xpath("//div[text()='Show Region Keys']"));
+		 return isElementPresent(ShowRegion);
+		
+	}
+	/**
+	 * This method used to check Show Missing Components link is present on header
+	 * 
+	 * @throws Exception
+	 * @author Veena.Mathew
+	 * @Created Date : 25/06/2024
+	 */
+	public boolean verifyShowMissingComponents() throws Exception {
+		List<WebElement>ShowRegion=driver.findElements(By.xpath("//div[text()='Show Missing Components']"));
+		 return isElementPresent(ShowRegion);
+		
+	}
+	/**
+	 * This method used to check Bypass MetaData Cache is present on header
+	 * 
+	 * @throws Exception
+	 * @author Veena.Mathew
+	 * @Created Date : 25/06/2024
+	 */
+	public boolean verifyBypassMetaDataCatche() throws Exception {
+		List<WebElement>ShowRegion=driver.findElements(By.xpath("//div[text()='Bypass Metadata Cache']"));
+		 return isElementPresent(ShowRegion);
+		
 	}
 
 	/**

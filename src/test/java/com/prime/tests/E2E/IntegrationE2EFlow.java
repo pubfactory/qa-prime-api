@@ -93,7 +93,7 @@ public class IntegrationE2EFlow extends BaseTest {
         double noOfPaginationLinksD = Math.ceil(totalResultsFromWebPage / (double) numberOfItemsPerPage);
         Double dnp = new Double(noOfPaginationLinksD);
         int noOfPaginationLinks = dnp.intValue();
-        BaseTest.assertEquals(driver, browseOrSearchPage.getLastItemOfPaginationLinks(), noOfPaginationLinks, "Verifying if the number of pagination is as expected");
+        BaseTest.assertEquals(driver, browseOrSearchPage.getLastItemOfPaginationLinks("10"), noOfPaginationLinks, "Verifying if the number of pagination is as expected");
 
         /* Verify if search results page can be sorted in ascending and descending
          */

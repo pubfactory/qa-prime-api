@@ -20,7 +20,7 @@ public class AutoCompleteTypeAhead extends BaseTest {
 
     // Created for PRIME-3436
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "106 - Verify the autocomplete functionality - type ahead")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1729939 - Verify the autocomplete functionality - type ahead")
     @Story("EPIC-2719")
     public void verifythatTheAutoCompleteTypeAheadFunctionality() throws Exception {
 

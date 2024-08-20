@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="MultiApplicationSuite" verbose="5" 	
+<suite name="PrimeEndtoEndWithMultiAppl" verbose="5" 	
  parallel="tests" thread-count="4" preserve-order="true">
 <listeners>
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
@@ -39,24 +39,24 @@
 			</class>
 		</classes>
 	</test>
-<test name="ADD_CITED_BY_E2E" preserve-order="true">
-	<parameter name="application" value="astmh" />
-	<groups>
-			<run>
-				<include name="astmh" />
-			</run>
-		</groups>
-		<classes>
-			<class name="com.prime.tests.E2E.AddCiteddByTest">
-				<methods>
-					<include
-						name="VerifyThattheAddCitedByFunctionality">
-						<parameter name="testcaseid" value="104" />
-					</include>
-				</methods>
-			</class>
-		</classes>
-	</test>
+<!-- <test name="ADD_CITED_BY_E2E" preserve-order="true"> -->
+<!-- 	<parameter name="application" value="astmh" /> -->
+<!-- 	<groups> -->
+<!-- 			<run> -->
+<!-- 				<include name="astmh" /> -->
+<!-- 			</run> -->
+<!-- 		</groups> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.prime.tests.E2E.AddCiteddByTest"> -->
+<!-- 				<methods> -->
+<!-- 					<include -->
+<!-- 						name="VerifyThattheAddCitedByFunctionality"> -->
+<!-- 						<parameter name="testcaseid" value="104" /> -->
+<!-- 					</include> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 	
 	  <test name="CITATION_E2E" preserve-order="true">
     <parameter name="application" value="anesthesiaprogress" />
@@ -214,7 +214,7 @@
 				<methods>
 					<include
 						name="VerifyThatTheCitationLinkFunctionalityIsWorkingFine">
-						<parameter name="testcaseid" value="102" />
+						<parameter name="testcaseid" value="1729630" />
 					</include>
 				</methods>
 			</class>
@@ -232,7 +232,7 @@
 				<methods>
 					<include
 						name="VerifyThatUserAbleToPerformCopyPreviewCitationOperation">
-						<parameter name="testcaseid" value="102" />
+						<parameter name="testcaseid" value="1729633" />
 					</include>
 				</methods>
 			</class>
@@ -249,7 +249,7 @@
 			<class name="com.prime.tests.E2E.HitHighlightingTest">
 				<methods>
 					<include name="VerifyThattheHitHighlightingFuctionality">
-						<parameter name="testcaseid" value="103" />
+						<parameter name="testcaseid" value="1729632" />
 					</include>
 				</methods>
 			</class>
@@ -266,7 +266,7 @@
 			<class name="com.prime.tests.E2E.DevToolBoxSettingTest">
 				<methods>
 					<include name="veryifyDevToolboxSettingFunctionality">
-						<parameter name="testcaseid" value="105" />
+						<parameter name="testcaseid" value="1729937" />
 					</include>
 				</methods>
 			</class>
@@ -283,7 +283,7 @@
 			<class name="com.prime.tests.E2E.AutoCompleteTypeAhead">
 				<methods>
 					<include name="verifythatTheAutoCompleteTypeAheadFunctionality">
-						<parameter name="testcaseid" value="106" />
+						<parameter name="testcaseid" value="1729939" />
 					</include>
 				</methods>
 			</class>

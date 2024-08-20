@@ -27,42 +27,41 @@ import io.qameta.allure.Story;
 
 public class DevToolBoxSettingTest extends BaseTest {
 
-    private MasterPage masterPage;
-    private BasePage basePage;
-    private ArticleCitationPage articleCitationPage;
-    private BrowseOrSearchPage browseOrSearchPage;
-    private String url = "";
-    private String testCaseId;
+	private MasterPage masterPage;
+	private BasePage basePage;
+	private ArticleCitationPage articleCitationPage;
+	private BrowseOrSearchPage browseOrSearchPage;
+	private String url = "";
+	private String testCaseId;
 
-    @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"Citation"}, enabled = true, retryAnalyzer = Retry.class, description = "105  - Verify that the dev tool box functnoality in the home page works")
-    @Story("EPIC-971")
-    public void veryifyDevToolboxSettingFunctionality() throws Exception {
-        testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
-        WebDriverManager.setTestcaseIdTestRail(testCaseId);
-        // String application = BaseTest.properties.getProperty("application");
-        //String application = System.getProperty("application");
-        url = BaseTest.properties.getProperty(application);
-        System.out.println("!url=" + url);
-        String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
-        navigateToUrlLink(url);
-        JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
-        masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
-        System.out.println("HI");
-        //masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchtext").toString());
+	@Severity(SeverityLevel.BLOCKER)
+	@Test(groups = {
+			"Citation" }, enabled = true, retryAnalyzer = Retry.class, description = "1729937  - Verify that the dev tool box functnoality in the home page works")
+	@Story("EPIC-971")
+	public void veryifyDevToolboxSettingFunctionality() throws Exception {
+		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
+		WebDriverManager.setTestcaseIdTestRail(testCaseId);
+		// String application = BaseTest.properties.getProperty("application");
+		// String application = System.getProperty("application");
+		url = BaseTest.properties.getProperty(application);
+		System.out.println("!url=" + url);
+		String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
+		navigateToUrlLink(url);
+		JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
+		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
+		BaseTest.assertEquals(WebDriverManager.getDriver(), masterPage.verifyDevToolsSettings(), true,
+				"Verifying the Dev tool setting is present or not on home page");
+		masterPage.clickOnDevToolSetting();
+		BaseTest.assertEquals(WebDriverManager.getDriver(), masterPage.verifyShowRegionsKeysSettings(), true,
+				"Verifying the Region Key setting is present in devtool gear icon");
+		BaseTest.assertEquals(WebDriverManager.getDriver(), masterPage.verifyShowMissingComponents(), true,
+				"Verifying the Show Missing Components is present in devtool gear icon");
+		BaseTest.assertEquals(WebDriverManager.getDriver(), masterPage.verifyBypassMetaDataCatche(), true,
+				"Verifying the Bypass MetaData Cache is present in devtool gear icon");
+		masterPage.clickOnRegionKeySetting();
+		BaseTest.assertEquals(WebDriverManager.getDriver(),
+				masterPage.getLabelNameFromSignInPostShowRegionKeysOON().startsWith("[layout."), true,
+				"Verify if ShowKeyRegion is turned ON");
 
-        // masterPage.clickOnSearchMagnifyingLense();
-        System.out.println("HI2");
-        masterPage.verifyDevToolsSettings();
-        masterPage.clickOnDevToolSetting();
-        masterPage.verifyShowRegionsKeysSettings();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), masterPage.verifyShowRegionsKeysSettings(), true, "ShowKeyRegion is present in the application");
-        System.out.println("Going to clickOnRegionKeySetting");
-        masterPage.clickOnRegionKeySetting();
-        System.out.println("clicked on clickOnRegionKeySetting");
-        Thread.sleep(3000);
-        System.out.println("masterPage.getLabelNameFromSignInPostShowRegionKeysOON()" + masterPage.getLabelNameFromSignInPostShowRegionKeysOON());
-        BaseTest.assertEquals(WebDriverManager.getDriver(), masterPage.getLabelNameFromSignInPostShowRegionKeysOON().startsWith("[layout."), true, "Verify if ShowKeyRegion is turned ON");
-
-    }
+	}
 }

@@ -86,17 +86,17 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage();
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("sort=datedescending"), "Verifying the search results are sorted in Descending order");
 
-        int defaultItemPerPage = browseOrSearchPage.getLastItemOfPaginationLinks();
+        int defaultItemPerPage = browseOrSearchPage.getLastItemOfPaginationLinks("10");
         System.out.println("defaultItemPerPage" + defaultItemPerPage);
         browseOrSearchPage.selectItemPerPageValueFromItemPerPageDropdownOnBrowseOrSearchPage(testData.get("itemperpagetwenty").toString());
         driver.navigate().refresh();
-        int twentyItemPerPage = browseOrSearchPage.getLastItemOfPaginationLinks();
+        int twentyItemPerPage = browseOrSearchPage.getLastItemOfPaginationLinks("20");
         System.out.println("twentyItemPerPage" + twentyItemPerPage);
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(defaultItemPerPage, twentyItemPerPage), true,
                 "Verifying the pagInation link size is changed after selecting the twenty item per page from item per page dropdown");
         browseOrSearchPage.selectItemPerPageValueFromItemPerPageDropdownOnBrowseOrSearchPage(testData.get("itemperpagefifty").toString());
         driver.navigate().refresh();
-        int fiftyItemPerPage = browseOrSearchPage.getLastItemOfPaginationLinks();
+        int fiftyItemPerPage = browseOrSearchPage.getLastItemOfPaginationLinks("50");
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(twentyItemPerPage, fiftyItemPerPage), true,
                 "Verifying the pagInation link size is changed after selecting the twenty item per page from item per page dropdown");
     }
@@ -230,6 +230,7 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
         articleCitationPage.clickFirstAuthorOnArticlePage();
         String authorlabel = articleCitationPage.getauthorAffiliationPopupLabel();
+        System.out.println("authorlabel : "+ authorlabel);
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.verifyStringContainsSpecificWord(authorlabel, testData.get("refinefiltervalueaffiliation").toString()), true,
                 "Verifying affiliation search keyword is exist in author affilaition popup");
     }
@@ -414,7 +415,7 @@ public class SearchFunctionalityTest extends BaseTest {
         int afterDateFilterUse = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
         System.out.println("Browse" + totalResultCount);
         System.out.println("After" + afterDateFilterUse);
-        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("fromDate=" + browseOrSearchPage.getFromDateOption() + "&toDate=" + browseOrSearchPage.getToDateOption()),
+        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("fromDate[0]=" + browseOrSearchPage.getFromDateOption() + "&toDate[0]=" + browseOrSearchPage.getToDateOption()),
                 "Verifying Refine by Date filter is applied on search or browse page");
 
         masterPage.clickOnSearchMagnifyingLense();
