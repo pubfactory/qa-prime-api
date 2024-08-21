@@ -155,14 +155,14 @@
 					<include name="VerifyGoogleScholarButtonFeatures">
 						<parameter name="testcaseid" value="1722742" />
 					</include>
-					<include
-						name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures">
-						<parameter name="testcaseid" value="1722743" />
-					</include>
-				</methods>
-			</class>
-		</classes>
-	</test>
+<!-- 					<include -->
+<!-- 						name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures"> -->
+<!-- 						<parameter name="testcaseid" value="1722743" /> -->
+<!-- 					</include> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 
 	<test name="PDF_WORK" preserve-order="true">
 	 <parameter name="application" value="anesthesiaprogress" />

@@ -49,6 +49,7 @@ public class MasterPage extends BasePage {
 	 */
 	public MasterPage enterTextInSearchBoxOnHomePage(String searchText) throws Exception {
 		typeOnElement(searchBox, searchText, "Entering the text in search box");
+		Thread.sleep(1500);
 		return new MasterPage(driver);
 	}
 

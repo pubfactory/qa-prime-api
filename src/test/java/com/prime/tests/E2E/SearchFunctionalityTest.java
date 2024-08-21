@@ -42,6 +42,7 @@ public class SearchFunctionalityTest extends BaseTest {
         masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
         BaseTest.assertEquals(WebDriverManager.getDriver(), masterPage.verifySearchBoxIsPresentOnHeader(), true, "Verifying the Searchbox is presented on header");
         masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchtext").toString());
+        System.out.println(testData.get("searchtext").toString());
         masterPage.clickOnSearchMagnifyingLense();
         basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
         browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
