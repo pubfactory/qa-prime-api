@@ -99,6 +99,21 @@ public class BrowseOrSearchPage extends BasePage {
         String firstDOIValue = getTextFromElement(firstDOIvalue);
         return firstDOIValue;
     }
+    
+    /**This used to check the more than one journal are present in the journal filter
+     * 
+     * @return boolean
+     * @author Rakesh.Shevale
+     * @Created Date : 26/10/2023
+     */
+    public boolean VerifyMoreThanOneJournalISPresent() {
+    	boolean flag=false;
+    	List<WebElement> element = driver.findElements(By.xpath("//button[@data-facet-parametername='journalKey']"));
+    	if(element.size()>=2) {
+    		return true; 		
+    	}
+		return flag;
+    }
 
     /**
      * 
@@ -1419,6 +1434,127 @@ public class BrowseOrSearchPage extends BasePage {
     	return ogTitle;    	
     }
     
+    public void mouseHoverOnFirstcontentonSearchPage() {
+    	try {
+    	mouseOver(firstArticleOnBrowseOrSearchPage,"Hovering mouse on first article");
+    	}
+    	catch(Exception e) {
+    		e.getMessage();
+    	}
+    }
+    
+    /**
+     * This method is used get By filter text on Search page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 22/08/2024
+     */
+    public String getJournalFiterText() throws Exception {
+    	String journalFilter=getTextFromElement(byJournalFilter);
+    	return journalFilter;
+    }
+    
+    /**
+     * This method clicks on first journal filter value from By Journal filter on Browse or Search page
+     * @param articleType
+     * @return void
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 22/08/2024
+     */
+    public void clickOnFirstJournalFilterValueFromByJournalFilterOnBrowseOrSearchPage() throws Exception {
+          clickOnElement(firstJournalFilterValue, "Clicking on first journal filter value from By Journal filter On Browse or Search page");
+    }
+    
+    /**
+     * This method used to get the number of results front of journal filter value on Browse or Search page
+     * 
+     * @return void
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 22/08/2024
+     */
+    public int getNumberOfFilteredResultsFrontOfJournalFilterValueOnBrowseOrSearchPage() throws Exception {
+        mouseOver(firstJournalFilterValueCount, "Hovering mouse on Journal filter result");
+        String filterResult = getTextFromElement(firstJournalFilterValueCount);
+        String str = "";
+        for (int i = 1; i < filterResult.length() - 1; i++) {
+        	str += filterResult.charAt(i);
+        }
+        int result = Integer.parseInt(str);
+        return result; //12
+    }
+    
+    /**
+     * This method is used get By filter text on Search page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 22/08/2024
+     */
+    public String getJournalFiterFirstvalueText() throws Exception {
+    	String journalFilter=getTextFromElement(firstJournalFilterValue);
+    	return journalFilter;
+    }
+    
+    /**
+     * This method is return the First Journal data-facet-value attribute Value
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 23/08/2024
+     */
+    public String getFirstJournalAttributeValue() throws Exception {
+    	WebElement element=driver.findElement(By.xpath("//span[text()='By Journal']//following::span[@data-testid='treeFilter']//following::button[1]"));    	
+    	String attributeValue=getAttributeFromElement(element,"data-facet-value");
+    	return attributeValue;
+    }
+    
+    /**
+     * This method used to Verify refine term filter search keyword present on search/browse page
+     * 
+     * @param valueName
+     * @throws Exception
+     * @return boolean
+     * @author Rakesh.Shevale
+     * @Created Date : 23/08/2024
+     */
+    public boolean verifyByJournalFilterSearchSlugValueIsPresentOnSearchOrBrowsePage(String valueName) throws Exception {
+        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[text()='By Journal: "+valueName+"']"));
+        return isElementPresent(SearchSlugSign);
+    }
+    
+    /**
+     * This method used to Verify search slug label is region
+     * 
+     * @param valueName
+     * @throws Exception
+     * @return boolean
+     * @author Rakesh.Shevale
+     * @Created Date : 23/08/2024
+     */
+    public boolean verifySearchSlugLabelIsRegion() throws Exception {
+        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[contains(text(),'search.filter.by-journal-key.label]: [search.filter.by-journal-key.brainmed.label')]"));
+        return isElementPresent(SearchSlugSign);
+    }
+    
+    public boolean verifyCountIsPresntInFrontOfJournalTitleInJournalFilter() throws Exception {
+    	boolean flag = false;
+    	WebElement countNum=driver.findElement(By.xpath("//span[text()='Brain Medicine']//following::span[1]"));
+    	String countNumber=getTextFromElement(countNum);
+    	if(countNumber.startsWith("(") && countNumber.endsWith(")")) {
+    		flag = true;
+    	}
+    	return flag;
+      }
+    
+    
+    
+    
     @FindBy(xpath = "//h1[text()='Browse']")
     private WebElement browseText;
 
@@ -1528,6 +1664,14 @@ public class BrowseOrSearchPage extends BasePage {
     private WebElement twitterDescriptionMetaTag;
     @FindBy(xpath="//meta[@property='og:title']")
     private WebElement ogTitleMetaTag;
+    @FindBy(xpath="//span[text()='By Journal']")
+    private WebElement byJournalFilter;
+    @FindBy(xpath="//span[text()='Brain Medicine']")
+    private WebElement firstJournalFilterValue;
+    @FindBy(xpath="(//span[text()='By Journal']//following::span[@data-testid='treeFilter']//following::button[1]//child::span)[2]")
+    private WebElement firstJournalFilterValueCount;
+    
+    
 }
 
 

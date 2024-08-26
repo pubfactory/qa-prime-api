@@ -318,7 +318,7 @@ public class MasterPage extends BasePage {
 		List<String> AllSuggestion = getTextFindElements(By.xpath("//*[contains(@id,'id-typeahead-item')]"));
 		if (AllSuggestion.size() > 0) {
 			for (String tr : AllSuggestion) {
-				if (tr.toUpperCase().contains(word.toUpperCase())) {
+				if (tr.toUpperCase().startsWith(""+word.charAt(0))) {
 					flag = true;
 				} else {
 					return false;
