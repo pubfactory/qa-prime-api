@@ -93,12 +93,12 @@ public class SearchFunctionalityTest extends BaseTest {
         driver.navigate().refresh();
         int twentyItemPerPage = browseOrSearchPage.getLastItemOfPaginationLinks("20");
         System.out.println("twentyItemPerPage" + twentyItemPerPage);
-        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(defaultItemPerPage, twentyItemPerPage), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(defaultItemPerPage, twentyItemPerPage), true,
                 "Verifying the pagInation link size is changed after selecting the twenty item per page from item per page dropdown");
         browseOrSearchPage.selectItemPerPageValueFromItemPerPageDropdownOnBrowseOrSearchPage(testData.get("itemperpagefifty").toString());
         driver.navigate().refresh();
         int fiftyItemPerPage = browseOrSearchPage.getLastItemOfPaginationLinks("50");
-        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(twentyItemPerPage, fiftyItemPerPage), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(twentyItemPerPage, fiftyItemPerPage), true,
                 "Verifying the pagInation link size is changed after selecting the twenty item per page from item per page dropdown");
     }
 
@@ -172,7 +172,7 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         WebDriverManager.getDriver().navigate().refresh();
         int editorFilter = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(browseResultCount, editorFilter), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(browseResultCount, editorFilter), true,
                 "Verifying the total result count after applying the Author Editor filter from refine term filter on search Ppge");
         System.out.println("six " + BaseTest.getLastsixStringCharacter(authorEditor));
         String[] authoreditorwords = authorEditor.split(" ");
@@ -184,7 +184,7 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         WebDriverManager.getDriver().navigate().refresh();
         int fullText = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(browseResultCount, fullText), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(browseResultCount, fullText), true,
                 "Verifying the total result count after applying the fulltext filter from refine term filter on search apge");
         String[] fulltext = testData.get("refinefiltervaluefulltext").toString().split(" ");
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(fulltext[0]), "Verifying the fulltext filter is applied on search result page");
@@ -195,7 +195,7 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         WebDriverManager.getDriver().navigate().refresh();
         int isbnDOI = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(browseResultCount, isbnDOI), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(browseResultCount, isbnDOI), true,
                 "Verifying the total result count after applying the ISBN/ISSN/DOI filter from refine term filter on search apge");
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(BaseTest.getLastsixStringCharacter(browseOrSearchPage.getFirstDOIValueOnBrowseOrSearchPage())),
                 "Verifying the ISBN/ISSN/DOI filter is applied on search result page");
@@ -207,7 +207,7 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         WebDriverManager.getDriver().navigate().refresh();
         int abstractCount = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(browseResultCount, abstractCount), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(browseResultCount, abstractCount), true,
                 "Verifying the total result count after applying the Abstract filter from refine term filter on search apge");
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL("adv-field[0]=abstract&adv-value[0]=intravenous+anesthetic"), "Verifying the Abstract filter is applied on search result page");
 
@@ -217,7 +217,7 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         WebDriverManager.getDriver().navigate().refresh();
         int titleResultCount = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(browseResultCount, titleResultCount), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(browseResultCount, titleResultCount), true,
                 "Verifying the total result count after applying the Title filter from refine term filter on search apge");
 
         String[] titleText = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage().toString().split(" ");
@@ -231,7 +231,7 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
         articleCitationPage.clickFirstAuthorOnArticlePage();
         String authorlabel = articleCitationPage.getauthorAffiliationPopupLabel();
-        System.out.println("authorlabel : "+ authorlabel);
+        System.out.println("authorlabel : " + authorlabel);
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.verifyStringContainsSpecificWord(authorlabel, testData.get("refinefiltervalueaffiliation").toString()), true,
                 "Verifying affiliation search keyword is exist in author affilaition popup");
     }

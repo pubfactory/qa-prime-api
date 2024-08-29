@@ -75,7 +75,7 @@ public class JournalPage extends BasePage {
      * @Created Date : 20/10/2023
      */
     public boolean verifyVolumeLinkExpandOnJournalPage(String volumeValue) throws Exception {
-        List<WebElement> volumeCollpase = driver.findElements(By.xpath("(//span[contains(text(),'" + volumeValue + "')])[1]//parent::div//parent::button[@aria-expanded='true']"));        																			
+        List<WebElement> volumeCollpase = driver.findElements(By.xpath("(//span[contains(text(),'" + volumeValue + "')])[1]//parent::div//parent::button[@aria-expanded='true']"));
         return isElementPresent(volumeCollpase);
     }
 
@@ -116,7 +116,7 @@ public class JournalPage extends BasePage {
      * @Created Date : 20/10/2023
      */
     public boolean verifyIssueIsDisplayedUnderVolumeSectionOnJornalPage(String volumeValue) throws Exception {
-        List<WebElement> issue = driver.findElements(By.xpath("((//span[contains(text(),'"+volumeValue+"')])[1]//following::a[contains(text(),'Issue 1')])[1]"));
+        List<WebElement> issue = driver.findElements(By.xpath("((//span[contains(text(),'" + volumeValue + "')])[1]//following::a[contains(text(),'Issue 1')])[1]"));
         return isElementPresent(issue);
     }
 
@@ -132,7 +132,7 @@ public class JournalPage extends BasePage {
         WebElement volumeSection = driver.findElement(By.xpath("((//span[contains(text(),'" + volumeValue + "')])[1]//following::a[contains(text(),'" + issueValue + "')])[1]"));
         clickOnElement(volumeSection, "Clicking on issue under Volume section on Journal page");
     }
-    
+
     /**This method is used to check og:url meta tag is present on Journal page
      * 
      * @return boolean
@@ -141,10 +141,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public boolean ogURLMetaTagisPresentOnJournalPage() throws Exception {
-    	List<WebElement> OgURL=driver.findElements(By.xpath("//meta[@property='og:url']"));
-    	 return isElementPresent(OgURL);
+        List<WebElement> OgURL = driver.findElements(By.xpath("//meta[@property='og:url']"));
+        return isElementPresent(OgURL);
     }
-    
+
     /**This method returns the og:url meta tag  content attribute value on Journal page
      * 
      * @return String
@@ -153,10 +153,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public String getOgURLMetaTagPropertyValue() throws Exception {
-    	String URL=getMetaTagAttribute(ogURLMetaTag,"content");
-    	return URL;
+        String URL = getMetaTagAttribute(ogURLMetaTag, "content");
+        return URL;
     }
-	
+
     /**This method is used to check og:site_name meta tag is present on Journal page
      * 
      * @return boolean
@@ -165,10 +165,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public boolean ogSiteNameMetaTagisPresentOnJournalPage() throws Exception {
-    	List<WebElement> OgSiteName=driver.findElements(By.xpath("//meta[@property='og:site_name']"));
-    	 return isElementPresent(OgSiteName);
+        List<WebElement> OgSiteName = driver.findElements(By.xpath("//meta[@property='og:site_name']"));
+        return isElementPresent(OgSiteName);
     }
-    
+
     /**This method returns the og:site_name meta tag content attribute value on Journal page
      * 
      * @return String
@@ -177,10 +177,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public String getOgSiteNameMetaTagPropertyValue() throws Exception {
-    	String siteName=getMetaTagAttribute(ogSiteNameMetaTag,"content");
-    	return siteName;    	
+        String siteName = getMetaTagAttribute(ogSiteNameMetaTag, "content");
+        return siteName;
     }
-    
+
     /**This method is used to check og:type meta tag is present on Journal page
      * 
      * @return boolean
@@ -189,10 +189,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public boolean ogTypeMetaTagisPresentOnJournalPage() throws Exception {
-    	List<WebElement> ogType=driver.findElements(By.xpath("//meta[@property='og:type']"));
-    	 return isElementPresent(ogType);
+        List<WebElement> ogType = driver.findElements(By.xpath("//meta[@property='og:type']"));
+        return isElementPresent(ogType);
     }
-    
+
     /**This method returns the og:type meta tag content attribute value on Journal page
      * 
      * @return String
@@ -201,10 +201,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public String getOgTypeMetaTagPropertyValue() throws Exception {
-    	String ogType=getMetaTagAttribute(ogTypeMetaTag,"content");
-    	return ogType;    	
+        String ogType = getMetaTagAttribute(ogTypeMetaTag, "content");
+        return ogType;
     }
-    
+
     /**This method is used to check og:locale meta tag is present on Journal page
      * 
      * @return boolean
@@ -213,10 +213,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public boolean ogLocaleMetaTagisPresentOnJournalPage() throws Exception {
-    	List<WebElement> ogLocale=driver.findElements(By.xpath("//meta[@property='og:locale']"));
-    	 return isElementPresent(ogLocale);
+        List<WebElement> ogLocale = driver.findElements(By.xpath("//meta[@property='og:locale']"));
+        return isElementPresent(ogLocale);
     }
-    
+
     /**This method returns the og:locale meta tag content attribute value on Journal page
      * 
      * @return String
@@ -225,10 +225,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public String getOgLocaleMetaTagPropertyValue() throws Exception {
-    	String ogLocale=getMetaTagAttribute(ogLocaleMetaTag,"content");
-    	return ogLocale;    	
+        String ogLocale = getMetaTagAttribute(ogLocaleMetaTag, "content");
+        return ogLocale;
     }
-    
+
     /**This method is used to check og:image meta tag is present on Journal page
      * 
      * @return boolean
@@ -237,10 +237,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public boolean ogImageMetaTagisPresentOnJournalPage() throws Exception {
-    	List<WebElement> ogImage=driver.findElements(By.xpath("//meta[@property='og:image']"));
-    	 return isElementPresent(ogImage);
+        List<WebElement> ogImage = driver.findElements(By.xpath("//meta[@property='og:image']"));
+        return isElementPresent(ogImage);
     }
-    
+
     /**This method returns the og:image meta tag content attribute value on Journal page
      * 
      * @return String
@@ -249,10 +249,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public String getOgImageMetaTagPropertyValue() throws Exception {
-    	String ogImage=getMetaTagAttribute(ogImageMetaTag,"content");
-    	return ogImage;    	
+        String ogImage = getMetaTagAttribute(ogImageMetaTag, "content");
+        return ogImage;
     }
-    
+
     /**This method is used to check twitter:card meta tag is present on Journal page
      * 
      * @return boolean
@@ -261,10 +261,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public boolean VerifyTwitterCardMetaTagisPresentOnJournalPage() throws Exception {
-    	List<WebElement> twitterCard=driver.findElements(By.xpath("//meta[@property='twitter:card']"));
-    	 return isElementPresent(twitterCard);
+        List<WebElement> twitterCard = driver.findElements(By.xpath("//meta[@property='twitter:card']"));
+        return isElementPresent(twitterCard);
     }
-    
+
     /**This method returns the twitter:card meta tag content attribute value on Journal page
      * 
      * @return String
@@ -273,8 +273,8 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public String getTwitterCardMetaTagPropertyValue() throws Exception {
-    	String twitterCard=getMetaTagAttribute(twitterCardMetaTag,"content");
-    	return twitterCard;    	
+        String twitterCard = getMetaTagAttribute(twitterCardMetaTag, "content");
+        return twitterCard;
     }
 
     /**This method is used to check twitter:title meta tag is present on Journal page
@@ -285,10 +285,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public boolean VerifyTwitterTitleMetaTagisPresentOnJournalPage() throws Exception {
-    	List<WebElement> twitterTitle=driver.findElements(By.xpath("//meta[@property='twitter:title']"));
-    	 return isElementPresent(twitterTitle);
+        List<WebElement> twitterTitle = driver.findElements(By.xpath("//meta[@property='twitter:title']"));
+        return isElementPresent(twitterTitle);
     }
-    
+
     /**This method returns the twitter:title meta tag content attribute value on Issue page
      * 
      * @return String
@@ -297,10 +297,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public String getTwitterTitleMetaTagPropertyValue() throws Exception {
-    	String twitterTitle=getMetaTagAttribute(twitterTitleMetaTag,"content");
-    	return twitterTitle;    	
+        String twitterTitle = getMetaTagAttribute(twitterTitleMetaTag, "content");
+        return twitterTitle;
     }
-    
+
     /**This method is used to check og:description meta tag is present on Journal page
      * 
      * @return boolean
@@ -309,10 +309,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public boolean VerifyOgDescriptionMetaTagisPresentOnJournalPage() throws Exception {
-    	List<WebElement> ogDescription=driver.findElements(By.xpath("(//meta[@property='og:description'])[1]"));
-    	 return isElementPresent(ogDescription);
+        List<WebElement> ogDescription = driver.findElements(By.xpath("(//meta[@property='og:description'])[1]"));
+        return isElementPresent(ogDescription);
     }
-    
+
     /**This method returns the og:description meta tag content attribute value on Journal page
      * 
      * @return String
@@ -321,10 +321,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public String getOgDescriptionMetaTagPropertyValue() throws Exception {
-    	String ogDescription=getMetaTagAttribute(ogDescriptionMetaTag,"content");
-    	return ogDescription;    	
+        String ogDescription = getMetaTagAttribute(ogDescriptionMetaTag, "content");
+        return ogDescription;
     }
-    
+
     /**This method is used to check og:description meta tag is present on Journal page
      * 
      * @return boolean
@@ -333,10 +333,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public boolean VerifyDescriptionMetaTagisPresentOnJournalPage() throws Exception {
-    	List<WebElement> Description=driver.findElements(By.xpath("(//meta[@name='description'])[1]"));
-    	 return isElementPresent(Description);
+        List<WebElement> Description = driver.findElements(By.xpath("(//meta[@name='description'])[1]"));
+        return isElementPresent(Description);
     }
-    
+
     /**This method returns the og:description meta tag content attribute value on Issue page
      * 
      * @return String
@@ -345,10 +345,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public String getDescriptionMetaTagPropertyValue() throws Exception {
-    	String ogDescription=getMetaTagAttribute(descriptionMetaTag,"content");
-    	return ogDescription;    	
+        String ogDescription = getMetaTagAttribute(descriptionMetaTag, "content");
+        return ogDescription;
     }
-    
+
     /**This method is used to check twitter:description meta tag is present on Journal page
      * 
      * @return boolean
@@ -357,10 +357,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public boolean VerifyTwitterDescriptionMetaTagisPresentOnJournalPage() throws Exception {
-    	List<WebElement> twitterDescription=driver.findElements(By.xpath("//meta[@property='twitter:description']"));
-    	 return isElementPresent(twitterDescription);
+        List<WebElement> twitterDescription = driver.findElements(By.xpath("//meta[@property='twitter:description']"));
+        return isElementPresent(twitterDescription);
     }
-    
+
     /**This method returns the twitter:description meta tag content attribute value on Journal page
      * 
      * @return String
@@ -369,10 +369,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public String getTwitterDescriptionMetaTagPropertyValue() throws Exception {
-    	String twitterDescription=getMetaTagAttribute(twitterDescriptionMetaTag,"content");
-    	return twitterDescription;    	
+        String twitterDescription = getMetaTagAttribute(twitterDescriptionMetaTag, "content");
+        return twitterDescription;
     }
-    
+
     /**This method is used to check og:title meta tag is present on Journal page
      * 
      * @return boolean
@@ -381,10 +381,10 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public boolean VerifyOgTitleMetaTagisPresentOnJournalPage() throws Exception {
-    	List<WebElement> ogTitle=driver.findElements(By.xpath("//meta[@property='og:title']"));
-    	 return isElementPresent(ogTitle);
+        List<WebElement> ogTitle = driver.findElements(By.xpath("//meta[@property='og:title']"));
+        return isElementPresent(ogTitle);
     }
-    
+
     /**This method returns the og:title meta tag content attribute value on Journal page
      * 
      * @return String
@@ -393,12 +393,11 @@ public class JournalPage extends BasePage {
      * @Created Date : 13/08/2024
      */
     public String getOgTitleMetaTagPropertyValue() throws Exception {
-    	String ogTitle=getMetaTagAttribute(ogTitleMetaTag,"content");
-    	return ogTitle;    	
+        String ogTitle = getMetaTagAttribute(ogTitleMetaTag, "content");
+        return ogTitle;
     }
 
-    
-    
+
 
     @FindBy(xpath = "//span[text()='Archive']")
     private WebElement journalpageHeader;
@@ -406,26 +405,26 @@ public class JournalPage extends BasePage {
     private WebElement volumeLinkCollapse;
     @FindBy(xpath = "(//div[contains(text(),'Volume 70')])[1]//parent::button[@aria-expanded='true']")
     private WebElement volumeLinkExpand;
-    @FindBy(xpath="//meta[@property='og:url']")
+    @FindBy(xpath = "//meta[@property='og:url']")
     private WebElement ogURLMetaTag;
-	@FindBy(xpath="//meta[@property='og:site_name']")
-	private WebElement ogSiteNameMetaTag;
-    @FindBy(xpath="//meta[@property='og:type']")
+    @FindBy(xpath = "//meta[@property='og:site_name']")
+    private WebElement ogSiteNameMetaTag;
+    @FindBy(xpath = "//meta[@property='og:type']")
     private WebElement ogTypeMetaTag;
-    @FindBy(xpath="//meta[@property='og:locale']")
+    @FindBy(xpath = "//meta[@property='og:locale']")
     private WebElement ogLocaleMetaTag;
-    @FindBy(xpath="//meta[@property='og:image']")
+    @FindBy(xpath = "//meta[@property='og:image']")
     private WebElement ogImageMetaTag;
-    @FindBy(xpath="//meta[@property='twitter:card']")
+    @FindBy(xpath = "//meta[@property='twitter:card']")
     private WebElement twitterCardMetaTag;
-    @FindBy(xpath="//meta[@property='twitter:title']")
+    @FindBy(xpath = "//meta[@property='twitter:title']")
     private WebElement twitterTitleMetaTag;
-    @FindBy(xpath="(//meta[@property='og:description'])[1]")
+    @FindBy(xpath = "(//meta[@property='og:description'])[1]")
     private WebElement ogDescriptionMetaTag;
-    @FindBy(xpath="(//meta[@name='description'])[2]")
+    @FindBy(xpath = "(//meta[@name='description'])[1]")
     private WebElement descriptionMetaTag;
-    @FindBy(xpath="//meta[@property='twitter:description']")
+    @FindBy(xpath = "//meta[@property='twitter:description']")
     private WebElement twitterDescriptionMetaTag;
-    @FindBy(xpath="//meta[@property='og:title']")
+    @FindBy(xpath = "//meta[@property='og:title']")
     private WebElement ogTitleMetaTag;
 }

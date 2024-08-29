@@ -1136,7 +1136,7 @@ public class BaseTest {
      * @author Rakesh.Shevale
      * @Created Date : 14/10/2023
      */
-    public static boolean VerifyPagInationLinksizeChange(int defaultPagination, int selectePagination) throws Exception {
+    public static boolean compareBrowserResultsCount(int defaultPagination, int selectePagination) throws Exception {
         if (defaultPagination > selectePagination) {
             return true;
         } else

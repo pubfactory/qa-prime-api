@@ -41,14 +41,14 @@ public class AdvancedSearchToRefineTermsAndDate extends BaseTest {
         masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
-
+        int browseResultCount = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
         // Verify Add value button is present below the refine terms filter box 
 
         BaseTest.assertTrue(driver, browseOrSearchPage.verifyAddValueIsPresentOnBrowseOrSearchPage(), "Verifying that add value under Refine terms is visible");
 
         // Adding a full text filter option to Refine Terms
 
-        int browseResultCount = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
+
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptionfulltext").toString());
         System.out.println("test data =" + testData.get("testidvalueenter"));
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), testData.get("refinefiltervaluefulltext1").toString());
@@ -56,7 +56,7 @@ public class AdvancedSearchToRefineTermsAndDate extends BaseTest {
         WebDriverManager.getDriver().navigate().refresh();
         int fullTextResults = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
         System.out.println("fullTextResults" + fullTextResults);
-        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(browseResultCount, fullTextResults), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(browseResultCount, fullTextResults), true,
                 "Verifying the total result count after applying the fulltext filter from refine term filter on search page");
         // Verifying if adv-field[0] and adv-value[0]
 
@@ -85,7 +85,7 @@ public class AdvancedSearchToRefineTermsAndDate extends BaseTest {
         System.out.println("fullTextResults2" + fullTextResults2);
         //Verifying after the OR is applied, the search results have increased from the first
 
-        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(fullTextResults2, fullTextResults), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(fullTextResults2, fullTextResults), true,
                 "Verifying after the OR filter is applied, the search results have increased from the first on search page");
         String[] fulltext2 = testData.get("refinefiltervaluefulltext2").toString().split(" ");
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(fulltext2[0]), "Verifying the fulltext filter is applied on search result page");
@@ -102,13 +102,10 @@ public class AdvancedSearchToRefineTermsAndDate extends BaseTest {
         browseOrSearchPage.clickOnCrossButtonOnAdvancedSearchFilterBrowseOrSearchPage(2);
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         WebDriverManager.getDriver().navigate().refresh();
-        Thread.sleep(2000);
+        // Thread.sleep(2000);
 
         //Verifying that removing second filter , url has only adv-field[0] and adv-value[0]
 
-        System.out.println("fulltext2[0]" + fulltext2[0]);
-
-        System.out.println("driver.getCurrentUrl().contains(fulltext2[0])" + driver.getCurrentUrl().contains(fulltext2[0]));
         BaseTest.assertFalse(driver, driver.getCurrentUrl().contains(fulltext2[0]), "Verifying that the second filter text is now removed from the URL");
         // BaseTest.assertFalse(driver, BaseTest.verifyTextInURL(fulltext2[0]), "Verifying " + fulltext2[0] + " is seen on search result URL");
 
@@ -127,7 +124,7 @@ public class AdvancedSearchToRefineTermsAndDate extends BaseTest {
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         WebDriverManager.getDriver().navigate().refresh();
         int editorFilter = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.VerifyPagInationLinksizeChange(browseResultCount, editorFilter), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(browseResultCount, editorFilter), true,
                 "Verifying the total result count after applying the Author Editor filter from refine term filter on search Ppge");
         System.out.println("six " + BaseTest.getLastsixStringCharacter(authorEditor));
         String[] authoreditorwords = authorEditor.split(" ");

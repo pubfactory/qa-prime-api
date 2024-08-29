@@ -421,16 +421,16 @@
 		"data": {
 			"description": "verifyThatTheContentMetaTagFuctionalityForJournalPage",
 			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",		
-			"ogurl":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/journal/anpr"
+			"ogurl":"view/journals/anpr/anpr-overview.xml"
 			"sitename":"Anesthesia Progress",
 			"ogtype":"website",
 			"oglocale":"en",
-			"ogimage":"https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/coverimage?doc=/journals/anpr/70/4/anpr.70.issue-4.xml&width=200"
+			"ogimage":"journals/anpr/anpr-overview.xml&width=200"
 			"twittercard":"summary_large_image",
 			"twittertitle":"Anesthesia Progress",
-			"ogdescription":"&quot;Anesthesia Progress&quot; published on  by American Dental Society of Anesthesiology.",
+			"ogdescription":"Anesthesia Progress",
 			"descriptiontag":"anesthesiaprogress",
-			"twitterdescription":"&quot;Anesthesia Progress&quot; published on  by American Dental Society of Anesthesiology.",
+			"twitterdescription":"Anesthesia Progress",
 			"ogtitle":"Anesthesia Progress",
 			}
 	},
@@ -440,16 +440,16 @@
 			"description": "verifyThatTheContentMetaTagFuctionalityForJournalPageWhenTheUserDirectlyNavigatedToTheJournalPage",
 			"searchtext":"view/journals/anpr/anpr-overview.xml",
 			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",		
-			"ogurl":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/journal/anpr"
+			"ogurl":"view/journals/anpr/anpr-overview.xml"
 			"sitename":"Anesthesia Progress",
 			"ogtype":"website",
 			"oglocale":"en",
-			"ogimage":"https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/coverimage?doc=/journals/anpr/70/4/anpr.70.issue-4.xml&width=200"
+			"ogimage":"journals/anpr/anpr-overview.xml&width=200"
 			"twittercard":"summary_large_image",
 			"twittertitle":"Anesthesia Progress",
-			"ogdescription":"&quot;Anesthesia Progress&quot; published on  by American Dental Society of Anesthesiology.",
+			"ogdescription":"Anesthesia Progress",
 			"descriptiontag":"anesthesiaprogress",
-			"twitterdescription":"&quot;Anesthesia Progress&quot; published on  by American Dental Society of Anesthesiology.",
+			"twitterdescription":"Anesthesia Progress",
 			"ogtitle":"Anesthesia Progress",
 			}
 	},
