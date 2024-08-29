@@ -45,7 +45,6 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -642,27 +641,27 @@ public class BaseTest {
         }
     }
 
-//    /**
-//     * This method is used to quit the driver object
-//     * 
-//     * @throws Exception
-//     * @author Rakesh.Shevale
-//     * @Created Date : 10/07/2023
-//     */
-//    @AfterSuite(alwaysRun = true)
-//    public void closeDriver() throws Exception {
-//        try {
-//            Helper.INSTANCE.logEventInfoToReport("After Suite");
-//
-//            WebDriverManager.closeDriver();
-//            WebDriverManager.resetFlagMap().clear();
-//
-//
-//            System.out.println("After suite");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+    //    /**
+    //     * This method is used to quit the driver object
+    //     * 
+    //     * @throws Exception
+    //     * @author Rakesh.Shevale
+    //     * @Created Date : 10/07/2023
+    //     */
+    //    @AfterSuite(alwaysRun = true)
+    //    public void closeDriver() throws Exception {
+    //        try {
+    //            Helper.INSTANCE.logEventInfoToReport("After Suite");
+    //
+    //            WebDriverManager.closeDriver();
+    //            WebDriverManager.resetFlagMap().clear();
+    //
+    //
+    //            System.out.println("After suite");
+    //        } catch (Exception e) {
+    //            e.printStackTrace();
+    //        }
+    //    }
 
     /**
      * This method log Event Information update execution status in case all failure
@@ -1203,6 +1202,24 @@ public class BaseTest {
     public static void waitUntilTheURLGetLoads(String linkText) {
         WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 30);
         wait.until(ExpectedConditions.urlContains(linkText));
+    }
+
+    public static void assertFalse(WebDriver driver, boolean expected, String desc) throws Exception {
+        // String description = desc + " :: " + " Expected Result--> " + expected + " ||
+        // " + "Actual Result--> " + actual;
+        if (expected == false) {
+            Allure.step(desc);
+        } else {
+            Allure.step("Assertion Failed: " + desc);
+            try {
+                Allure.addAttachment(desc, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            error = desc + " expected false but found true";
+            Helper.INSTANCE.setErrorMessage(WebDriverManager.getTestcaseIdTestRail(), error);
+            Assert.fail(desc);
+        }
     }
 
 }

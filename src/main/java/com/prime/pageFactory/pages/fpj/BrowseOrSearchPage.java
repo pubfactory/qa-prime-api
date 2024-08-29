@@ -1,20 +1,13 @@
 package com.prime.pageFactory.pages.fpj;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 import java.util.regex.Pattern;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.prime.generics.BasePage;
 
 public class BrowseOrSearchPage extends BasePage {
@@ -99,7 +92,7 @@ public class BrowseOrSearchPage extends BasePage {
         String firstDOIValue = getTextFromElement(firstDOIvalue);
         return firstDOIValue;
     }
-    
+
     /**This used to check the more than one journal are present in the journal filter
      * 
      * @return boolean
@@ -107,12 +100,12 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 26/10/2023
      */
     public boolean VerifyMoreThanOneJournalISPresent() {
-    	boolean flag=false;
-    	List<WebElement> element = driver.findElements(By.xpath("//button[@data-facet-parametername='journalKey']"));
-    	if(element.size()>=2) {
-    		return true; 		
-    	}
-		return flag;
+        boolean flag = false;
+        List<WebElement> element = driver.findElements(By.xpath("//button[@data-facet-parametername='journalKey']"));
+        if (element.size() >= 2) {
+            return true;
+        }
+        return flag;
     }
 
     /**
@@ -230,24 +223,22 @@ public class BrowseOrSearchPage extends BasePage {
      * 
      */
     public int getLastItemOfPaginationLinks(String pageSize) throws Exception {
-//        WebElement lastWebElementOfPaginationLinks = paginationArray.get(paginationArray.size() - 1);
-//        String lastItemOfPaginationLinksString = getTextFromElement(lastWebElementOfPaginationLinks);
-//        int lastPageOfPagination = Integer.parseInt(lastItemOfPaginationLinksString);
-//        return lastPageOfPagination;
-    	getTotatResultOnBrowseOrSearchPage();  //746/10 = 6 == q 74 +1
-    	
-    	 int quotient = getTotatResultOnBrowseOrSearchPage() / Integer.parseInt(pageSize);
-         int remainder = getTotatResultOnBrowseOrSearchPage() % Integer.parseInt(pageSize);
-                
-         if (remainder != 0) {
-             quotient += 1;
-         }        
-         return quotient;
-     }
+        //        WebElement lastWebElementOfPaginationLinks = paginationArray.get(paginationArray.size() - 1);
+        //        String lastItemOfPaginationLinksString = getTextFromElement(lastWebElementOfPaginationLinks);
+        //        int lastPageOfPagination = Integer.parseInt(lastItemOfPaginationLinksString);
+        //        return lastPageOfPagination;
+        getTotatResultOnBrowseOrSearchPage(); //746/10 = 6 == q 74 +1
 
-    	
-    	
-    
+        int quotient = getTotatResultOnBrowseOrSearchPage() / Integer.parseInt(pageSize);
+        int remainder = getTotatResultOnBrowseOrSearchPage() % Integer.parseInt(pageSize);
+
+        if (remainder != 0) {
+            quotient += 1;
+        }
+        return quotient;
+    }
+
+
 
     /**
      * 
@@ -331,17 +322,17 @@ public class BrowseOrSearchPage extends BasePage {
      */
     public void clickOnFirstArticleOnSearchOrBrowsePage() throws Exception {
         clickOnElement(firstArticleOnBrowseOrSearchPage, "Click On First Article On Search Or Browse Page");
-       
-//        WebDriverWait wait = new WebDriverWait(driver, 20);
-//        wait.until(new ExpectedCondition<Boolean>() {
-//        
-//            public Boolean apply(WebDriver driver) {
-//                JavascriptExecutor js = (JavascriptExecutor) driver;
-//                System.out.println("Full page load : "+js.executeScript("return document.readyState").equals("complete"));
-//                return js.executeScript("return document.readyState").equals("complete");
-//            }
-//        });
-//       
+
+        //        WebDriverWait wait = new WebDriverWait(driver, 20);
+        //        wait.until(new ExpectedCondition<Boolean>() {
+        //        
+        //            public Boolean apply(WebDriver driver) {
+        //                JavascriptExecutor js = (JavascriptExecutor) driver;
+        //                System.out.println("Full page load : "+js.executeScript("return document.readyState").equals("complete"));
+        //                return js.executeScript("return document.readyState").equals("complete");
+        //            }
+        //        });
+        //       
     }
 
 
@@ -687,9 +678,9 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 11/10/2023
      */
     public boolean verifySearchSlugSignIsPresentOnBrowseOrSearchPage(String valueName) throws Exception {
-//        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[text()='" + valueName + "']//parent::span//following-sibling::button"));
-    	 List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[text()='"+valueName+": "+valueName+"']//parent::span//following-sibling::button"));  	  
-    	return isElementPresent(SearchSlugSign);
+        //        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[text()='" + valueName + "']//parent::span//following-sibling::button"));
+        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[text()='" + valueName + ": " + valueName + "']//parent::span//following-sibling::button"));
+        return isElementPresent(SearchSlugSign);
     }
 
     /**
@@ -764,7 +755,7 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 11/10/2023
      */
     public boolean verifySharingPlatformButtonIsPresentOnBrowseOrSearchPage(String platformName) throws Exception {
-        List<WebElement> platform = driver.findElements(By.xpath("//button[contains(text(),'Share on "+platformName+"')]"));
+        List<WebElement> platform = driver.findElements(By.xpath("//button[contains(text(),'Share on " + platformName + "')]"));
         return isElementPresent(platform);
     }
 
@@ -1035,7 +1026,7 @@ public class BrowseOrSearchPage extends BasePage {
         clickOnElement(firstRestrictedContent, "Clicking on First Restricted Content on Browse or search page");
     }
 
-    
+
     /**
      * This method used to clicks on the Abstract button below the search result on search result page
      * @throws Exception
@@ -1043,7 +1034,7 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/11/2023
      */
     public void clickOnAbstractTabOfFirstActileOnBrowsePageOrSearchPage() throws Exception {
-    	clickOnElement(abstractButton,"Clicking on Abstract button below the search result on search result page");
+        clickOnElement(abstractButton, "Clicking on Abstract button below the search result on search result page");
     }
 
     /**
@@ -1055,12 +1046,12 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 10/01/2024
      */
     public String getFromDateOption() throws Exception {
-    	List<WebElement> fromdateElement = driver.findElements(By.xpath("//select[@name='fromDate']//child::option"));
-    	List<String> fromdateText = getMultipleWebElementText(fromdateElement);
-    	String fromDate=fromdateText.get(1);
-    	return fromDate;
+        List<WebElement> fromdateElement = driver.findElements(By.xpath("//select[@name='fromDate']//child::option"));
+        List<String> fromdateText = getMultipleWebElementText(fromdateElement);
+        String fromDate = fromdateText.get(1);
+        return fromDate;
     }
-    
+
     /**
      * This method return the single toDate option  
      * 
@@ -1070,11 +1061,11 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 10/01/2024
      */
     public String getToDateOption() throws Exception {
-    	String toDate=getFromDateOption();
-    	String toDateUpdate= Integer.toString(Integer.parseInt(toDate)+ 1);
-		return toDateUpdate;
+        String toDate = getFromDateOption();
+        String toDateUpdate = Integer.toString(Integer.parseInt(toDate) + 1);
+        return toDateUpdate;
     }
-    
+
     /**
      *  This method used to copied message paste into textbox 
      *  
@@ -1082,9 +1073,9 @@ public class BrowseOrSearchPage extends BasePage {
      *  @created Date : 30/05/24
      */
     public void copiedMessagePasteIntoTextBox() {
-    	copiedTextPasteIntoTextBox(defaultRefinetermTextbox);
+        copiedTextPasteIntoTextBox(defaultRefinetermTextbox);
     }
-    
+
     /**
      * This method return the attribute value from refine term textbox
      * 
@@ -1094,9 +1085,9 @@ public class BrowseOrSearchPage extends BasePage {
      * @created Date : 30/05/24
      */
     public String getRefineTermTextBoxValue() throws Exception {
-    	return getAttributeFromElement(defaultRefinetermTextbox,"value");
+        return getAttributeFromElement(defaultRefinetermTextbox, "value");
     }
-    
+
     /** This method return the background color of element
      * 
      * @return String
@@ -1104,11 +1095,11 @@ public class BrowseOrSearchPage extends BasePage {
      * @created Date : 12/06/24
      */
     public String getBackgroundColor(String searchKeyword) {
-    	WebElement element = driver.findElement(By.xpath("(//span[@class='hi' ][contains(text(),'"+searchKeyword+"')])[1]"));
+        WebElement element = driver.findElement(By.xpath("(//span[@class='hi' ][contains(text(),'" + searchKeyword + "')])[1]"));
         String backgroundColor = element.getCssValue("background-color");
         return backgroundColor;
     }
-    
+
     /**
      * This method return the list of last two word with maximum character
      * @return List<String>
@@ -1117,34 +1108,34 @@ public class BrowseOrSearchPage extends BasePage {
      * @created Date : 13/06/24
      */
     public List<String> getAbstract() throws Exception {
-    	WebElement wholeAbstract= driver.findElement(By.xpath("(//div[@data-identifier='abstract']//p)[1]"));
-    	String abstractPara=getTextFromElement(wholeAbstract);
-    	System.out.println("Whole Abstract : "+abstractPara);
-    	String[] words =(abstractPara.split(" "));
-    	
-    	Pattern pattern = Pattern.compile("^[a-zA-Z]+$");
-    	List<String> list = new ArrayList<>();
-    	
-    	for (String word : words) {
+        WebElement wholeAbstract = driver.findElement(By.xpath("(//div[@data-identifier='abstract']//p)[1]"));
+        String abstractPara = getTextFromElement(wholeAbstract);
+        System.out.println("Whole Abstract : " + abstractPara);
+        String[] words = (abstractPara.split(" "));
+
+        Pattern pattern = Pattern.compile("^[a-zA-Z]+$");
+        List<String> list = new ArrayList<>();
+
+        for (String word : words) {
             if (pattern.matcher(word).matches()) {
-            	list.add(word);
+                list.add(word);
             }
         }
-    	
-        List<String>list1 = new ArrayList<>(); 
-    	
-    	  int maxLength1 = 0;
-          int maxIndex1 = -1;
-          int maxLength2 = 0;
-          int maxIndex2 = -1;
-    	
-    	for (int i = 0; i < list.size(); i++) {
+
+        List<String> list1 = new ArrayList<>();
+
+        int maxLength1 = 0;
+        int maxIndex1 = -1;
+        int maxLength2 = 0;
+        int maxIndex2 = -1;
+
+        for (int i = 0; i < list.size(); i++) {
             String str = list.get(i);
             int length = str.length();
-            
+
             if (length > maxLength1) {
                 maxLength2 = maxLength1;
-                maxIndex2 = maxIndex1;             
+                maxIndex2 = maxIndex1;
                 maxLength1 = length;
                 maxIndex1 = i;
             } else if (length > maxLength2) {
@@ -1153,22 +1144,22 @@ public class BrowseOrSearchPage extends BasePage {
                 maxIndex2 = i;
             }
         }
-    	list1.add(list.get(maxIndex1));
-    	System.out.println("maxIndex1 : "+maxIndex1);
-    	list1.add(list.get(maxIndex2));
-    	System.out.println("maxIndex2 : "+maxIndex2);
-         return list1;        
+        list1.add(list.get(maxIndex1));
+        System.out.println("maxIndex1 : " + maxIndex1);
+        list1.add(list.get(maxIndex2));
+        System.out.println("maxIndex2 : " + maxIndex2);
+        return list1;
     }
-    
-    public void ClickOnShowMoreLinkIfAvailableBelowTheContent() throws Exception{
-    	List<WebElement> showMoreLinkList = driver.findElements(By.xpath("(//button[text()=' ... Show More'])[1]"));
-    	if(showMoreLinkList.size()>0) {
-    		WebElement showMoreLink = driver.findElement(By.xpath("(//button[text()=' ... Show More'])[1]"));
-    		clickOnElement(showMoreLink, "Clicking on Show more link below the content on search or browse page");
-    	}
+
+    public void ClickOnShowMoreLinkIfAvailableBelowTheContent() throws Exception {
+        List<WebElement> showMoreLinkList = driver.findElements(By.xpath("(//button[text()=' ... Show More'])[1]"));
+        if (showMoreLinkList.size() > 0) {
+            WebElement showMoreLink = driver.findElement(By.xpath("(//button[text()=' ... Show More'])[1]"));
+            clickOnElement(showMoreLink, "Clicking on Show more link below the content on search or browse page");
+        }
     }
-    
-    
+
+
     /**This method is used to check og:url meta tag is present on Search page
      * 
      * @return boolean
@@ -1177,11 +1168,11 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public boolean ogURLMetaTagisPresentOnBrowseOrSearchPage() throws Exception {
-    	Thread.sleep(4000);
-    	List<WebElement> OgURL=driver.findElements(By.xpath("//meta[@property='og:url']"));
-    	 return isElementPresent(OgURL);
+        Thread.sleep(4000);
+        List<WebElement> OgURL = driver.findElements(By.xpath("//meta[@property='og:url']"));
+        return isElementPresent(OgURL);
     }
-    
+
     /**This method returns the og:url meta tag  content attribute value on Search page
      * 
      * @return String
@@ -1190,10 +1181,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public String getOgURLMetaTagPropertyValue() throws Exception {
-    	String URL=getMetaTagAttribute(ogURLMetaTag,"content");
-    	return URL;
+        String URL = getMetaTagAttribute(ogURLMetaTag, "content");
+        return URL;
     }
-	
+
     /**This method is used to check og:site_name meta tag is present on Search page
      * 
      * @return boolean
@@ -1202,10 +1193,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public boolean ogSiteNameMetaTagisPresentOnBrowseOrSearchPage() throws Exception {
-    	List<WebElement> OgSiteName=driver.findElements(By.xpath("//meta[@property='og:site_name']"));
-    	 return isElementPresent(OgSiteName);
+        List<WebElement> OgSiteName = driver.findElements(By.xpath("//meta[@property='og:site_name']"));
+        return isElementPresent(OgSiteName);
     }
-    
+
     /**This method returns the og:site_name meta tag content attribute value on Search page
      * 
      * @return String
@@ -1214,10 +1205,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public String getOgSiteNameMetaTagPropertyValue() throws Exception {
-    	String siteName=getMetaTagAttribute(ogSiteNameMetaTag,"content");
-    	return siteName;    	
+        String siteName = getMetaTagAttribute(ogSiteNameMetaTag, "content");
+        return siteName;
     }
-    
+
     /**This method is used to check og:type meta tag is present on Search page
      * 
      * @return boolean
@@ -1226,10 +1217,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public boolean ogTypeMetaTagisPresentOnBrowseOrSearchPage() throws Exception {
-    	List<WebElement> ogType=driver.findElements(By.xpath("//meta[@property='og:type']"));
-    	 return isElementPresent(ogType);
+        List<WebElement> ogType = driver.findElements(By.xpath("//meta[@property='og:type']"));
+        return isElementPresent(ogType);
     }
-    
+
     /**This method returns the og:type meta tag content attribute value on Search page
      * 
      * @return String
@@ -1238,10 +1229,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public String getOgTypeMetaTagPropertyValue() throws Exception {
-    	String ogType=getMetaTagAttribute(ogTypeMetaTag,"content");
-    	return ogType;    	
+        String ogType = getMetaTagAttribute(ogTypeMetaTag, "content");
+        return ogType;
     }
-    
+
     /**This method is used to check og:locale meta tag is present on Search page
      * 
      * @return boolean
@@ -1250,10 +1241,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public boolean ogLocaleMetaTagisPresentOnBrowseOrSearchPage() throws Exception {
-    	List<WebElement> ogLocale=driver.findElements(By.xpath("//meta[@property='og:locale']"));
-    	 return isElementPresent(ogLocale);
+        List<WebElement> ogLocale = driver.findElements(By.xpath("//meta[@property='og:locale']"));
+        return isElementPresent(ogLocale);
     }
-    
+
     /**This method returns the og:locale meta tag content attribute value on Search page
      * 
      * @return String
@@ -1262,10 +1253,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public String getOgLocaleMetaTagPropertyValue() throws Exception {
-    	String ogLocale=getMetaTagAttribute(ogLocaleMetaTag,"content");
-    	return ogLocale;    	
+        String ogLocale = getMetaTagAttribute(ogLocaleMetaTag, "content");
+        return ogLocale;
     }
-    
+
     /**This method is used to check og:image meta tag is present on Search page
      * 
      * @return boolean
@@ -1274,10 +1265,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public boolean ogImageMetaTagisPresentOnBrowseOrSearchPage() throws Exception {
-    	List<WebElement> ogImage=driver.findElements(By.xpath("//meta[@property='og:image']"));
-    	 return isElementPresent(ogImage);
+        List<WebElement> ogImage = driver.findElements(By.xpath("//meta[@property='og:image']"));
+        return isElementPresent(ogImage);
     }
-    
+
     /**This method returns the og:image meta tag content attribute value on Search page
      * 
      * @return String
@@ -1286,10 +1277,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public String getOgImageMetaTagPropertyValue() throws Exception {
-    	String ogImage=getMetaTagAttribute(ogImageMetaTag,"content");
-    	return ogImage;    	
+        String ogImage = getMetaTagAttribute(ogImageMetaTag, "content");
+        return ogImage;
     }
-    
+
     /**This method is used to check twitter:card meta tag is present on Search page
      * 
      * @return boolean
@@ -1298,10 +1289,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public boolean VerifyTwitterCardMetaTagisPresentOnBrowseOrSearchPage() throws Exception {
-    	List<WebElement> twitterCard=driver.findElements(By.xpath("//meta[@property='twitter:card']"));
-    	 return isElementPresent(twitterCard);
+        List<WebElement> twitterCard = driver.findElements(By.xpath("//meta[@property='twitter:card']"));
+        return isElementPresent(twitterCard);
     }
-    
+
     /**This method returns the twitter:card meta tag content attribute value on Search page
      * 
      * @return String
@@ -1310,8 +1301,8 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public String getTwitterCardMetaTagPropertyValue() throws Exception {
-    	String twitterCard=getMetaTagAttribute(twitterCardMetaTag,"content");
-    	return twitterCard;    	
+        String twitterCard = getMetaTagAttribute(twitterCardMetaTag, "content");
+        return twitterCard;
     }
 
     /**This method is used to check twitter:title meta tag is present on BrowseOrSearc page
@@ -1322,10 +1313,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public boolean VerifyTwitterTitleMetaTagisPresentOnBrowseOrSearchPage() throws Exception {
-    	List<WebElement> twitterTitle=driver.findElements(By.xpath("//meta[@property='twitter:title']"));
-    	 return isElementPresent(twitterTitle);
+        List<WebElement> twitterTitle = driver.findElements(By.xpath("//meta[@property='twitter:title']"));
+        return isElementPresent(twitterTitle);
     }
-    
+
     /**This method returns the twitter:title meta tag content attribute value on Search page
      * 
      * @return String
@@ -1334,10 +1325,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public String getTwitterTitleMetaTagPropertyValue() throws Exception {
-    	String twitterTitle=getMetaTagAttribute(twitterTitleMetaTag,"content");
-    	return twitterTitle;    	
+        String twitterTitle = getMetaTagAttribute(twitterTitleMetaTag, "content");
+        return twitterTitle;
     }
-    
+
     /**This method is used to check og:description meta tag is present on Search page
      * 
      * @return boolean
@@ -1346,10 +1337,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public boolean VerifyOgDescriptionMetaTagisPresentOnBrowseOrSearchPage() throws Exception {
-    	List<WebElement> ogDescription=driver.findElements(By.xpath("(//meta[@property='og:description'])[1]"));
-    	 return isElementPresent(ogDescription);
+        List<WebElement> ogDescription = driver.findElements(By.xpath("(//meta[@property='og:description'])[1]"));
+        return isElementPresent(ogDescription);
     }
-    
+
     /**This method returns the og:description meta tag content attribute value on Search page
      * 
      * @return String
@@ -1358,10 +1349,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public String getOgDescriptionMetaTagPropertyValue() throws Exception {
-    	String ogDescription=getMetaTagAttribute(ogDescriptionMetaTag,"content");
-    	return ogDescription;    	
+        String ogDescription = getMetaTagAttribute(ogDescriptionMetaTag, "content");
+        return ogDescription;
     }
-    
+
     /**This method is used to check og:description meta tag is present on Search page
      * 
      * @return boolean
@@ -1370,10 +1361,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public boolean VerifyDescriptionMetaTagisPresentOnBrowseOrSearchPage() throws Exception {
-    	List<WebElement> Description=driver.findElements(By.xpath("(//meta[@name='description'])[1]"));
-    	 return isElementPresent(Description);
+        List<WebElement> Description = driver.findElements(By.xpath("(//meta[@name='description'])[1]"));
+        return isElementPresent(Description);
     }
-    
+
     /**This method returns the og:description meta tag content attribute value on Search page
      * 
      * @return String
@@ -1382,10 +1373,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public String getDescriptionMetaTagPropertyValue() throws Exception {
-    	String ogDescription=getMetaTagAttribute(descriptionMetaTag,"content");
-    	return ogDescription;    	
+        String ogDescription = getMetaTagAttribute(descriptionMetaTag, "content");
+        return ogDescription;
     }
-    
+
     /**This method is used to check twitter:description meta tag is present on Search page
      * 
      * @return boolean
@@ -1394,10 +1385,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public boolean VerifyTwitterDescriptionMetaTagisPresentOnBrowseOrSearchPage() throws Exception {
-    	List<WebElement> twitterDescription=driver.findElements(By.xpath("//meta[@property='twitter:description']"));
-    	 return isElementPresent(twitterDescription);
+        List<WebElement> twitterDescription = driver.findElements(By.xpath("//meta[@property='twitter:description']"));
+        return isElementPresent(twitterDescription);
     }
-    
+
     /**This method returns the twitter:description meta tag content attribute value on Search page
      * 
      * @return String
@@ -1406,10 +1397,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public String getTwitterDescriptionMetaTagPropertyValue() throws Exception {
-    	String twitterDescription=getMetaTagAttribute(twitterDescriptionMetaTag,"content");
-    	return twitterDescription;    	
+        String twitterDescription = getMetaTagAttribute(twitterDescriptionMetaTag, "content");
+        return twitterDescription;
     }
-    
+
     /**This method is used to check og:title meta tag is present on Search page
      * 
      * @return boolean
@@ -1418,10 +1409,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public boolean VerifyOgTitleMetaTagisPresentOnBrowseOrSearchPage() throws Exception {
-    	List<WebElement> ogTitle=driver.findElements(By.xpath("//meta[@property='og:title']"));
-    	 return isElementPresent(ogTitle);
+        List<WebElement> ogTitle = driver.findElements(By.xpath("//meta[@property='og:title']"));
+        return isElementPresent(ogTitle);
     }
-    
+
     /**This method returns the og:title meta tag content attribute value on search page
      * 
      * @return String
@@ -1430,19 +1421,18 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 12/08/2024
      */
     public String getOgTitleMetaTagPropertyValue() throws Exception {
-    	String ogTitle=getMetaTagAttribute(ogTitleMetaTag,"content");
-    	return ogTitle;    	
+        String ogTitle = getMetaTagAttribute(ogTitleMetaTag, "content");
+        return ogTitle;
     }
-    
+
     public void mouseHoverOnFirstcontentonSearchPage() {
-    	try {
-    	mouseOver(firstArticleOnBrowseOrSearchPage,"Hovering mouse on first article");
-    	}
-    	catch(Exception e) {
-    		e.getMessage();
-    	}
+        try {
+            mouseOver(firstArticleOnBrowseOrSearchPage, "Hovering mouse on first article");
+        } catch (Exception e) {
+            e.getMessage();
+        }
     }
-    
+
     /**
      * This method is used get By filter text on Search page
      * 
@@ -1452,10 +1442,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 22/08/2024
      */
     public String getJournalFiterText() throws Exception {
-    	String journalFilter=getTextFromElement(byJournalFilter);
-    	return journalFilter;
+        String journalFilter = getTextFromElement(byJournalFilter);
+        return journalFilter;
     }
-    
+
     /**
      * This method clicks on first journal filter value from By Journal filter on Browse or Search page
      * @param articleType
@@ -1465,9 +1455,9 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 22/08/2024
      */
     public void clickOnFirstJournalFilterValueFromByJournalFilterOnBrowseOrSearchPage() throws Exception {
-          clickOnElement(firstJournalFilterValue, "Clicking on first journal filter value from By Journal filter On Browse or Search page");
+        clickOnElement(firstJournalFilterValue, "Clicking on first journal filter value from By Journal filter On Browse or Search page");
     }
-    
+
     /**
      * This method used to get the number of results front of journal filter value on Browse or Search page
      * 
@@ -1481,12 +1471,12 @@ public class BrowseOrSearchPage extends BasePage {
         String filterResult = getTextFromElement(firstJournalFilterValueCount);
         String str = "";
         for (int i = 1; i < filterResult.length() - 1; i++) {
-        	str += filterResult.charAt(i);
+            str += filterResult.charAt(i);
         }
         int result = Integer.parseInt(str);
         return result; //12
     }
-    
+
     /**
      * This method is used get By filter text on Search page
      * 
@@ -1496,10 +1486,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 22/08/2024
      */
     public String getJournalFiterFirstvalueText() throws Exception {
-    	String journalFilter=getTextFromElement(firstJournalFilterValue);
-    	return journalFilter;
+        String journalFilter = getTextFromElement(firstJournalFilterValue);
+        return journalFilter;
     }
-    
+
     /**
      * This method is return the First Journal data-facet-value attribute Value
      * 
@@ -1509,11 +1499,11 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 23/08/2024
      */
     public String getFirstJournalAttributeValue() throws Exception {
-    	WebElement element=driver.findElement(By.xpath("//span[text()='By Journal']//following::span[@data-testid='treeFilter']//following::button[1]"));    	
-    	String attributeValue=getAttributeFromElement(element,"data-facet-value");
-    	return attributeValue;
+        WebElement element = driver.findElement(By.xpath("//span[text()='By Journal']//following::span[@data-testid='treeFilter']//following::button[1]"));
+        String attributeValue = getAttributeFromElement(element, "data-facet-value");
+        return attributeValue;
     }
-    
+
     /**
      * This method used to Verify refine term filter search keyword present on search/browse page
      * 
@@ -1524,10 +1514,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 23/08/2024
      */
     public boolean verifyByJournalFilterSearchSlugValueIsPresentOnSearchOrBrowsePage(String valueName) throws Exception {
-        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[text()='By Journal: "+valueName+"']"));
+        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[text()='By Journal: " + valueName + "']"));
         return isElementPresent(SearchSlugSign);
     }
-    
+
     /**
      * This method used to Verify search slug label is region
      * 
@@ -1541,20 +1531,107 @@ public class BrowseOrSearchPage extends BasePage {
         List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[contains(text(),'search.filter.by-journal-key.label]: [search.filter.by-journal-key.brainmed.label')]"));
         return isElementPresent(SearchSlugSign);
     }
-    
+
     public boolean verifyCountIsPresntInFrontOfJournalTitleInJournalFilter() throws Exception {
-    	boolean flag = false;
-    	WebElement countNum=driver.findElement(By.xpath("//span[text()='Brain Medicine']//following::span[1]"));
-    	String countNumber=getTextFromElement(countNum);
-    	if(countNumber.startsWith("(") && countNumber.endsWith(")")) {
-    		flag = true;
-    	}
-    	return flag;
-      }
-    
-    
-    
-    
+        boolean flag = false;
+        WebElement countNum = driver.findElement(By.xpath("//span[text()='Brain Medicine']//following::span[1]"));
+        String countNumber = getTextFromElement(countNum);
+        if (countNumber.startsWith("(") && countNumber.endsWith(")")) {
+            flag = true;
+        }
+        return flag;
+    }
+
+
+    /**
+     * This method used to Verifying Add Value[+] Sign is Present On browse or SearchPage under Refine Terms.
+     *
+     * @param valueName
+     * @throws Exception
+     * @author Veena.Mathew
+     * @return 
+     * @Created Date : 27/08/2024
+     */
+    public boolean verifyAddValueIsPresentOnBrowseOrSearchPage() throws Exception {
+        List<WebElement> AddValueField = driver.findElements(By.xpath("//button[contains(@data-testid,'AdvanceSearchFilter-add-new-value-0')]"));
+        return isElementPresent(AddValueField);
+    }
+
+    /**
+     * This method clicks on AddValue Button In Refine Term DD On Browse Or SearchPage
+     * 
+     * @return void
+     * @throws Exception
+     * @author Veena.Mathew
+     * @Created Date : 27/08/2024
+     */
+    public void clickOnAddValueButtonInRefineTermDDOnBrowseOrSearchPage() throws Exception {
+        clickOnElement(AddValueRefineTerm, "Clicking on Add Value button in Refine term DD on Browse or search page");
+    }
+
+    /**
+     * This method used to Verifying Add Value[+] Sign is Present On browse or SearchPage under Refine Terms.
+     *
+     * @param valueName
+     * @throws Exception
+     * @author Veena.Mathew
+     * @return 
+     * @Created Date : 27/08/2024
+     */
+    public boolean verifySecondFilterboxIsPresentAfterClickingOnAddValue() throws Exception {
+        List<WebElement> SecondFilterBox = driver.findElements(By.xpath("//input[contains(@data-testid,'AdvanceSearchFilter-input-0-1')]"));
+        return isElementPresent(SecondFilterBox);
+    }
+
+    /**
+     * This method used to Verifying Add Value[+] Sign is Present On browse or SearchPage under Refine Terms.
+     *
+     * @param valueName
+     * @throws Exception
+     * @author Veena.Mathew
+     * @return 
+     * @Created Date : 27/08/2024
+     */
+    public boolean verifyORtextIsPresentWithSecondFilterBox() throws Exception {
+        List<WebElement> ORText = driver.findElements(By.xpath("//input[contains(@data-testid,'AdvanceSearchFilter-input-0-1')]/parent::div/preceding-sibling::div[1]/p"));
+        if (isElementPresent(ORText))
+            if (ORText.get(0).getText().equalsIgnoreCase("OR"))
+                return true;
+            else
+                return false;
+        else
+            return false;
+    }
+
+    /**
+     * This method used to clicks on Cross(Close) button on Advanced Search Filter on Browse or search page
+     * 
+     * @throws Exception
+     * @author Veena.Mathew
+     * @Created Date : 10/10/2023
+     */
+    public void clickOnCrossButtonOnAdvancedSearchFilterBrowseOrSearchPage(int itemRow) throws Exception {
+        itemRow--;
+        clickOnElement(driver.findElement(By.xpath("//button[contains(@data-testid,'AdvanceSearchFilter-remove-cta-0-" + itemRow + "')]")),
+                "Clicking on Cross button Button on Advanced Search Filter Under Refine Terms Browse or search page");
+    }
+
+    /**
+     * This method used to Verifying Add Row[+] Sign is Present On browse or SearchPage under Refine By Date.
+     *
+     * @param valueName
+     * @throws Exception
+     * @author Veena.Mathew
+     * @return 
+     * @Created Date : 27/08/2024
+     */
+    public boolean verifySecondFilterboxForDateAfterClickingOnAddRow() throws Exception {
+        List<WebElement> SecondFilterBox = driver.findElements(By.xpath("//button[contains(@data-testid,'dateSearchFilter-add-new-row')]"));
+        return isElementPresent(SecondFilterBox);
+    }
+
+
+
     @FindBy(xpath = "//h1[text()='Browse']")
     private WebElement browseText;
 
@@ -1638,40 +1715,44 @@ public class BrowseOrSearchPage extends BasePage {
     private WebElement toDateDD;
     @FindBy(xpath = "(//span[text()='Restricted access']//preceding::div[@class='title'])[1]")
     private WebElement firstRestrictedContent;
-    @FindBy(xpath="(//input[@aria-label='Quick search term'])[1]")
+    @FindBy(xpath = "(//input[@aria-label='Quick search term'])[1]")
     private WebElement defaultRefinetermTextbox;
-    @FindBy(xpath="((//div[@class='title'])[1]//following::span[text()='Abstract'])[1]")
+    @FindBy(xpath = "((//div[@class='title'])[1]//following::span[text()='Abstract'])[1]")
     private WebElement abstractButton;
-    @FindBy(xpath="//meta[@property='og:url']")
+    @FindBy(xpath = "//meta[@property='og:url']")
     private WebElement ogURLMetaTag;
-	@FindBy(xpath="//meta[@property='og:site_name']")
-	private WebElement ogSiteNameMetaTag;
-    @FindBy(xpath="//meta[@property='og:type']")
+    @FindBy(xpath = "//meta[@property='og:site_name']")
+    private WebElement ogSiteNameMetaTag;
+    @FindBy(xpath = "//meta[@property='og:type']")
     private WebElement ogTypeMetaTag;
-    @FindBy(xpath="//meta[@property='og:locale']")
+    @FindBy(xpath = "//meta[@property='og:locale']")
     private WebElement ogLocaleMetaTag;
-    @FindBy(xpath="//meta[@property='og:image']")
+    @FindBy(xpath = "//meta[@property='og:image']")
     private WebElement ogImageMetaTag;
-    @FindBy(xpath="//meta[@property='twitter:card']")
+    @FindBy(xpath = "//meta[@property='twitter:card']")
     private WebElement twitterCardMetaTag;
-    @FindBy(xpath="//meta[@property='twitter:title']")
+    @FindBy(xpath = "//meta[@property='twitter:title']")
     private WebElement twitterTitleMetaTag;
-    @FindBy(xpath="(//meta[@property='og:description'])[1]")
+    @FindBy(xpath = "(//meta[@property='og:description'])[1]")
     private WebElement ogDescriptionMetaTag;
-    @FindBy(xpath="(//meta[@name='description'])[2]")
+    @FindBy(xpath = "(//meta[@name='description'])[2]")
     private WebElement descriptionMetaTag;
-    @FindBy(xpath="//meta[@property='twitter:description']")
+    @FindBy(xpath = "//meta[@property='twitter:description']")
     private WebElement twitterDescriptionMetaTag;
-    @FindBy(xpath="//meta[@property='og:title']")
+    @FindBy(xpath = "//meta[@property='og:title']")
     private WebElement ogTitleMetaTag;
-    @FindBy(xpath="//span[text()='By Journal']")
+    @FindBy(xpath = "//span[text()='By Journal']")
     private WebElement byJournalFilter;
-    @FindBy(xpath="//span[text()='Brain Medicine']")
+    @FindBy(xpath = "//span[text()='Brain Medicine']")
     private WebElement firstJournalFilterValue;
-    @FindBy(xpath="(//span[text()='By Journal']//following::span[@data-testid='treeFilter']//following::button[1]//child::span)[2]")
+    @FindBy(xpath = "(//span[text()='By Journal']//following::span[@data-testid='treeFilter']//following::button[1]//child::span)[2]")
     private WebElement firstJournalFilterValueCount;
-    
-    
+    @FindBy(xpath = "//button[@title='[+] Add Value']")
+    private WebElement AddValueRefineTerm;
+    @FindBy(xpath = "//button[contains(@data-testid,'AdvanceSearchFilter-remove-cta-0-1')]")
+    private WebElement crossButtonAdvancedSearchFilter;
+
+
 }
 
 

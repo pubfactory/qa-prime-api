@@ -487,4 +487,31 @@
 			"twitterdescription":"Anesthesia Progress",
 			}
 	},
+	{
+	"id": "1",
+		"data": {
+			"description": "VerifyAdvancedFilterInRefineTermsDateInTheSearchResultsPage",
+			"searchtext":"book",
+			"refinefiltervalues":"All,Author or Editor,Full Text,ISBN / ISSN / DOI,Publisher,Title,Alternative Title,Affiliation,Abstract,Subjects"
+			"testidvalueselect":"AdvanceSearchFilter-select-0",
+			"testidvalueenter":"AdvanceSearchFilter-input-0",
+			"refinefilteroptionauthor":"Author or Editor",
+			"refinefilteroptionfulltext":"Full Text",
+			"refinefiltervaluefulltext1":"aims",
+			"refinefiltervaluefulltext2":"for",
+			"fromdate":"2010",
+			"todate":"2015",
+			"ORfromdate":"2007",
+			"ORtodate":"2009",
+			"refinefilteroptionisbndoi":"ISBN / ISSN / DOI",
+			"refinefilteroptionabstract":"Abstract",
+			"refinefiltervalueabstract":"intravenous anesthetic",
+			"refinefilteroptiontitle":"Title",
+			"testidvalueenterforOR":"AdvanceSearchFilter-input-0-1",
+			"testidvalueselecttwo":"AdvanceSearchFilter-select-1",
+			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
+			"refinefilteroptionaffiliation":"Affiliation",
+			"refinefiltervalueaffiliation":"Washington"
+		}
+	}	
 ]
