@@ -488,7 +488,7 @@
 			}
 	},
 	{
-	"id": "1",
+	"id": "1730099",
 		"data": {
 			"description": "VerifyAdvancedFilterInRefineTermsDateInTheSearchResultsPage",
 			"searchtext":"book",
@@ -499,10 +499,10 @@
 			"refinefilteroptionfulltext":"Full Text",
 			"refinefiltervaluefulltext1":"aims",
 			"refinefiltervaluefulltext2":"for",
-			"fromdate":"2010",
-			"todate":"2015",
-			"ORfromdate":"2007",
-			"ORtodate":"2009",
+			"fromdate":"2007",
+			"todate":"2009",
+			"ORfromdate":"2010",
+			"ORtodate":"2015",
 			"refinefilteroptionisbndoi":"ISBN / ISSN / DOI",
 			"refinefilteroptionabstract":"Abstract",
 			"refinefiltervalueabstract":"intravenous anesthetic",
@@ -512,6 +512,18 @@
 			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
 			"refinefilteroptionaffiliation":"Affiliation",
 			"refinefiltervalueaffiliation":"Washington"
+		}
+	},
+	{
+	"id": "1730100",
+		"data": {
+			"description": "verifyThatAdvancedRefineByDateFilterFunctionality",
+			"searchtext":"book",
+			"fromdate":"2007",
+			"todate":"2009",
+			"ORfromdate":"2010",
+			"ORtodate":"2015",
+			
 		}
 	}	
 ]

@@ -326,6 +326,26 @@
 			</class>
 		</classes>
 	</test>
+	<test name="ADVANCE_SEARCH" preserve-order="true">
+		<parameter name="application" value="anesthesiaprogress" />
+		<groups>
+			<run>
+				<include name="anesthesiaprogress" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.AdvancedSearchToRefineTermsAndDate">
+				<methods>
+					<include name="VerifyAdvancedFilterInRefineTermsDateInTheSearchResultsPage">
+						<parameter name="testcaseid" value="1730099" />
+					</include>
+					<include name="verifyThatAdvancedRefineByDateFilterFunctionality">
+						<parameter name="testcaseid" value="1730100" />
+					</include>					
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>
 
 
