@@ -860,7 +860,7 @@ public class ArticleCitationPage extends BasePage {
     public boolean verifyChakraToastMessageIsDisplayedAfterClickingOnCopyToClipBoardButtonInHeadless() throws Exception {
 		List<WebElement> toastMessage1 =null;
 		LogEntries logs = driver.manage().logs().get(LogType.BROWSER);
-		
+		System.out.println("logs : "+logs);
 		for (LogEntry log : logs) {
 			if (log.getMessage().contains("Clipboard")) {
 				System.out.println("Toast message detected in logs!");								
