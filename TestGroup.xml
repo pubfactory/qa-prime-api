@@ -346,6 +346,23 @@
 			</class>
 		</classes>
 	</test>
+	<test name="DOI_ExtraPath" preserve-order="true">
+		<parameter name="application" value="anesthesiaprogress" />
+		<groups>
+			<run>
+				<include name="anesthesiaprogress" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.DOITest">
+				<methods>
+					<include name="verifyThatHandlingDOIRedirectFunctionality">
+						<parameter name="testcaseid" value="1730101" />
+					</include>				
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>
 
 

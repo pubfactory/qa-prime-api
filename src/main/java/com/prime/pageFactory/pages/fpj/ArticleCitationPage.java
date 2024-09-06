@@ -2,6 +2,7 @@ package com.prime.pageFactory.pages.fpj;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.apache.velocity.runtime.directive.Parse;
 import org.openqa.selenium.By;
@@ -858,17 +859,20 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 26/06/2024
      */
     public boolean verifyChakraToastMessageIsDisplayedAfterClickingOnCopyToClipBoardButtonInHeadless() throws Exception {
-		List<WebElement> toastMessage1 =null;
-		LogEntries logs = driver.manage().logs().get(LogType.BROWSER);
-		System.out.println("logs : "+logs);
-		for (LogEntry log : logs) {
-			if (log.getMessage().contains("Clipboard")) {
-				System.out.println("Toast message detected in logs!");								
-				toastMessage1 = driver.findElements(By.xpath("(//div[contains(@id,'toast-')])[1]"));	
-				break;
-			}
+    	List<WebElement> toastMessage1 =null;
+		try {
+            WebElement toast = driver.findElement(By.xpath("//div[text()='Clipboard']")); // Adjust the CSS selector
+            String toastMessage = toast.getText();
+            if (toastMessage.contains("Clipboard")) { // Adjust the expected message
+            	toastMessage1 = driver.findElements(By.xpath("(//div[contains(@id,'toast-')])[1]"));
+            } else {
+            	 throw new Error("Toast Message not popup");
+            }
 		}
-		return isElementPresent(toastMessage1);
+         catch (NoSuchElementException e) {
+            System.out.println("Toast message not found.");
+        }
+		return isElementPresent(toastMessage1);		
     }
     
     /**

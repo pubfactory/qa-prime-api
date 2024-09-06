@@ -525,5 +525,14 @@
 			"ORtodate":"2015",
 			
 		}
-	}	
+	},
+	{
+	"id": "1730101",
+		"data": {
+			"description": "verifyThatHandlingDOIRedirectFunctionality",
+			"withoutextraslashdoi":"doi/10.2344/anpr-70-03-07",
+			"articletitle":"The Use of Pharyngeal Throat Packs in Dental Anesthesia",
+			"withextraslashdoi":"doi/somethinghere/10.2344/anpr-70-03-07"
+			}
+		},
 ]
