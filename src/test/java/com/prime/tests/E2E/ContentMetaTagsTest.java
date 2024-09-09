@@ -29,7 +29,7 @@ public class ContentMetaTagsTest extends BaseTest {
 
     // Created for PRIME-1028
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "108 - Verify the Content Meta Tag Fuctionality For Article Page when the user directly navigated to the articlePage")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1730109 - Verify the Content Meta Tag Fuctionality For Article Page when the user directly navigated to the articlePage")
     @Story("EPIC-1028")
     public void verifyThatTheContentMetaTagFuctionalityForArticlePageWhenTheUserDirectlyNavigatedToTheArticlePage() throws Exception {
 
@@ -223,7 +223,7 @@ public class ContentMetaTagsTest extends BaseTest {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "109 - Verify the Content Meta Tag Fuctionality For Article Page")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1730110 - Verify the Content Meta Tag Fuctionality For Article Page")
     @Story("EPIC-1028")
     public void verifyThatTheContentMetaTagFuctionalityForArticlePage() throws Exception {
 
@@ -424,7 +424,7 @@ public class ContentMetaTagsTest extends BaseTest {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "110 - Verify the Content Meta Tag Fuctionality For home Page")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1730102 - Verify the Content Meta Tag Fuctionality For home Page")
     @Story("EPIC-1028")
     public void verifyThatTheContentMetaTagFuctionalityForHomePage() throws Exception {
 
@@ -505,7 +505,7 @@ public class ContentMetaTagsTest extends BaseTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class,
-            description = "111 - verify that the content meta tag fuctionality for search page when the user directly navigated to the search Page")
+            description = "1730103 - verify that the content meta tag fuctionality for search page when the user directly navigated to the search Page")
     @Story("EPIC-1028")
     public void verifyThatTheContentMetaTagFuctionalityForSearchPageWhenTheUserDirectlyNavigatedToTheSearchPage() throws Exception {
 
@@ -592,7 +592,7 @@ public class ContentMetaTagsTest extends BaseTest {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "112 - Verify the Content Meta Tag Fuctionality For search Page")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1730104 - Verify the Content Meta Tag Fuctionality For search Page")
     @Story("EPIC-1028")
     public void verifyThatTheContentMetaTagFuctionalityForSearchPage() throws Exception {
 
@@ -679,7 +679,7 @@ public class ContentMetaTagsTest extends BaseTest {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "113 - Verify the Content Meta Tag Fuctionality For Issue Page")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1730106 - Verify the Content Meta Tag Fuctionality For Issue Page")
     @Story("EPIC-1028")
     public void verifyThatTheContentMetaTagFuctionalityForIssuePage() throws Exception {
 
@@ -779,7 +779,7 @@ public class ContentMetaTagsTest extends BaseTest {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "114 - Verify the Content Meta Tag Fuctionality For Issue Page When the user directly navigated to the Issue Page")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1730105 - Verify the Content Meta Tag Fuctionality For Issue Page When the user directly navigated to the Issue Page")
     @Story("EPIC-1028")
     public void verifyThatTheContentMetaTagFuctionalityForIssuePageWhenTheUserDirectlyNavigatedToTheIssuePage() throws Exception {
 
@@ -875,7 +875,7 @@ public class ContentMetaTagsTest extends BaseTest {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "115 - Verify the Content Meta Tag fuctionality For Journal Page")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1730108 - Verify the Content Meta Tag fuctionality For Journal Page")
     @Story("EPIC-1028")
     public void verifyThatTheContentMetaTagFuctionalityForJournalPage() throws Exception {
 
@@ -980,7 +980,7 @@ public class ContentMetaTagsTest extends BaseTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class,
-            description = "116 - Verify the Content Meta Tag Fuctionality For Journal Page when the user directly navigated to the Journal Page")
+            description = "1730107 - Verify the Content Meta Tag Fuctionality For Journal Page when the user directly navigated to the Journal Page")
     @Story("EPIC-1028")
     public void verifyThatTheContentMetaTagFuctionalityForJournalPageWhenTheUserDirectlyNavigatedToTheJournalPage() throws Exception {
 
@@ -1075,7 +1075,7 @@ public class ContentMetaTagsTest extends BaseTest {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class,
-            description = "117 - Verify the Content Meta Tag Fuctionality For About static Page when the user directly navigated to the About static Page")
+            description = "1730111 - Verify the Content Meta Tag Fuctionality For About static Page when the user directly navigated to the About static Page")
     @Story("EPIC-1028")
     public void verifyThatTheContentMetaTagFuctionalityForStaticAboutPageWhenTheUserDirectlyNavigatedToTheStaticAboutPage() throws Exception {
 
@@ -1166,7 +1166,7 @@ public class ContentMetaTagsTest extends BaseTest {
     }
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "118 - Verify the Content Meta Tag Fuctionality For About static Page")
+    @Test(groups = {"anesthesiaprogress"}, enabled = true, retryAnalyzer = Retry.class, description = "1730112 - Verify the Content Meta Tag Fuctionality For About static Page")
     @Story("EPIC-1028")
     public void verifyThatTheContentMetaTagFuctionalityForStaticAboutPage() throws Exception {
 
