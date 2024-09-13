@@ -664,7 +664,7 @@ public class MasterPage extends BasePage {
 	private WebElement AppMainLogo;
 	@FindBy(xpath = "//button[@data-testid='DevtoolsControls']")
 	private WebElement DevToolSetting;
-	@FindBy(xpath = "//section[contains(@id,'popover-content-:r3:')]//label[@data-testid='showRegionKeys']//span")
+	@FindBy(xpath = "//section[contains(@id,'popover-content')]//label[@data-testid='showRegionKeys']//span")
 	private WebElement ShowRegionKeys;
 	@FindBy(xpath = "//div[@data-testid='block-authbuttons']/a")
 	private WebElement ShowRegionKeysSignIn;

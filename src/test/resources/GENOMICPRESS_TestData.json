@@ -7,5 +7,15 @@
 			"brainmedicine":"Brain Medicine",
 
 		}
+	},
+	{
+	"id": "1730120",
+		"data": {
+			"description": "verifyThatTheAutoLaunchNewEmailFunctionality",
+			"openaccess":"Open Access",
+			"journalfiltertext":"By Journal",
+			"brainmedicine":"Brain Medicine",
+
+		}
 	}
 ]

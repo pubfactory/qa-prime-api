@@ -1922,6 +1922,49 @@ public class ArticleCitationPage extends BasePage {
         return FirstAuthorName;
     }
     
+    /**This method is used to click on Article Information tab on Article Page
+     * 
+     * @author Rakesh.Shevale
+     * @author Rakesh.Shevale
+     * @Created Date : 11/09/2024
+     */
+    public void clickOnArticleInformationTabOnArticlePage() throws Exception {
+    	clickOnElement(articleInformationTab,"Clicking on the Article Information tab on article page");
+    }
+    
+    /**This method is used to check email element is present under Article Information tab on Article Page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 11/09/2024
+     */
+    public boolean verifyEmailElementIsPresentUnderArticleInformationTabOnArticlePage() throws Exception {
+    	List<WebElement> emailUnderArticleInformationTab=driver.findElements(By.xpath("//div[@class='corresp']//a"));
+    	 return isElementPresent(emailUnderArticleInformationTab);
+    }
+    
+    /** 
+     * This method used to check the Email address is hyper link under Article Information Tab on article page
+     *
+     * @return boolean
+     * @author Rakesh.Shevale
+     * @Created Date : 11/09/2024
+     */
+    public boolean verifyEmailAddressIsHyperLinkUnderArticleInformationTab() {
+    	return VerifyLinkIsPresent(emailAddressUnderArticleInformationTab, "Verying the href attribute is present");
+    }
+    
+    /**This method is used to click on Email Address under Article Information tab on Article Page
+     * 
+     * @author Rakesh.Shevale
+     * @author Rakesh.Shevale
+     * @Created Date : 11/09/2024
+     */
+    public void clickOnEmailAddressUnderInformationTabOnArticlePage() throws Exception {
+    	clickOnElement(emailAddressUnderArticleInformationTab,"Clicking on the Email Address under Article Information tab on article page");
+    }
+    
     
     @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
@@ -2065,4 +2108,8 @@ public class ArticleCitationPage extends BasePage {
     private WebElement  citationReferenceMetaTag;
     @FindBy(xpath="(//div[@data-testid='block-contributors']//span)[1]")
     private WebElement  firstAuthorText;
+    @FindBy(xpath="//button[text()='Article Information']")
+    private WebElement articleInformationTab;
+    @FindBy(xpath="//div[@class='corresp']//a")
+    private WebElement emailAddressUnderArticleInformationTab;
 }
