@@ -27,7 +27,7 @@ public class AutoLaunchNewEmailTest extends BaseTest {
 	@Severity(SeverityLevel.BLOCKER)
 	@Test(groups = {
 			"anesthesiaprogress" }, enabled = true, retryAnalyzer = Retry.class, description = "1730120 - verify that the Auto Launch new Email functionality")
-	@Story("Feature-2737")
+	@Story("Feature-2937")
 	public void verifyThatTheAutoLaunchNewEmailFunctionality() throws Exception {
 
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
@@ -57,8 +57,5 @@ public class AutoLaunchNewEmailTest extends BaseTest {
 
 		//articleCitationPage.clickOnEmailAddressUnderInformationTabOnArticlePage();
 		
-		
-		Thread.sleep(10000);
-
 	}
 }

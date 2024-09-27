@@ -64,7 +64,7 @@ public class SourceFilterJournalTest extends BaseTest {
 		browseOrSearchPage.clickOnFirstJournalFilterValueFromByJournalFilterOnBrowseOrSearchPage();
 		browseOrSearchPage.getFirstJournalAttributeValue();
 		BaseTest.assertEquals(WebDriverManager.getDriver(),
-				browseOrSearchPage.verifyByJournalFilterSearchSlugValueIsPresentOnSearchOrBrowsePage(
+				browseOrSearchPage.verifyByJournalFilterSearchSlugValueIsPresentOnSearchOrBrowsePage("By Journal",
 						browseOrSearchPage.getFirstJournalAttributeValue()),
 				true,
 				"Verifying the By Journal filter Search Slug Value is present on Search Or Browse Page after clicking on journal filter value");

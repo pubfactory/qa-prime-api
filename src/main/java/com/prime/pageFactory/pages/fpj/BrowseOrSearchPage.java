@@ -736,7 +736,7 @@ public class BrowseOrSearchPage extends BasePage {
 		// driver.findElements(By.xpath("//strong[text()='" + valueName +
 		// "']//parent::span//following-sibling::button"));
 		List<WebElement> SearchSlugSign = driver.findElements(By.xpath(
-				"//strong[text()='" + valueName + ": " + valueName + "']//parent::span//following-sibling::button"));
+				"//strong[text()='Term']//following::strong[text()='"+valueName+"']"));
 		return isElementPresent(SearchSlugSign);
 	}
 
@@ -750,9 +750,9 @@ public class BrowseOrSearchPage extends BasePage {
 	 * @return
 	 * @Created Date : 18/10/2023
 	 */
-	public boolean verifyFilterValueIsPresentOnBrowseOrSearchPage(String valueName) throws Exception {
+	public boolean verifyFilterValueIsPresentOnBrowseOrSearchPage(String filterName, String valueName) throws Exception {
 		List<WebElement> filterValue = driver
-				.findElements(By.xpath("(//strong[contains(text(),'" + valueName + "')])[1]"));
+				.findElements(By.xpath("//strong[contains(text(),'"+filterName+"')]//following::strong[contains(text(),'"+valueName+"')]"));
 		return isElementPresent(filterValue);
 	}
 
@@ -1643,10 +1643,10 @@ public class BrowseOrSearchPage extends BasePage {
 	 * @author Rakesh.Shevale
 	 * @Created Date : 23/08/2024
 	 */
-	public boolean verifyByJournalFilterSearchSlugValueIsPresentOnSearchOrBrowsePage(String valueName)
+	public boolean verifyByJournalFilterSearchSlugValueIsPresentOnSearchOrBrowsePage(String filterName,String valueName)
 			throws Exception {
 		List<WebElement> SearchSlugSign = driver
-				.findElements(By.xpath("//strong[text()='By Journal: " + valueName + "']"));
+				.findElements(By.xpath("//strong[contains(text(),'"+filterName+"')]//following::strong[contains(text(),'"+valueName+"')]"));
 		return isElementPresent(SearchSlugSign);
 	}
 
@@ -1661,7 +1661,7 @@ public class BrowseOrSearchPage extends BasePage {
 	 */
 	public boolean verifySearchSlugLabelIsRegion() throws Exception {
 		List<WebElement> SearchSlugSign = driver.findElements(By.xpath(
-				"//strong[contains(text(),'search.filter.by-journal-key.label]: [search.filter.by-journal-key.brainmed.label')]"));
+				"//strong[contains(text(),'search.filter.by-journal-key.label')]//following::strong[contains(text(),'search.filter.by-journal-key.brainmed.label')]"));
 		return isElementPresent(SearchSlugSign);
 	}
 
@@ -1889,8 +1889,8 @@ public class BrowseOrSearchPage extends BasePage {
 	 * @author Rakesh.Shevale
 	 * @Created Date : 03/09/2024
 	 */
-	public boolean VerifyRefineByDateFilterSearchSlugIsPresentOSearchPage(String dateValue) throws Exception {
-		List<WebElement> dateElement = driver.findElements(By.xpath("//strong[text()='Refine by Date: "+dateValue+"']"));
+	public boolean VerifyRefineByDateFilterSearchSlugIsPresentOSearchPage(String fromDateValue,String toDateValue) throws Exception {
+		List<WebElement> dateElement = driver.findElements(By.xpath("//strong[text()='Refine by Date']//following::strong[text()='"+fromDateValue+" - "+toDateValue+"']"));
 		return isElementPresent(dateElement);
 	}
 	
@@ -1902,11 +1902,24 @@ public class BrowseOrSearchPage extends BasePage {
 	 * @author Rakesh.Shevale
 	 * @Created Date : 03/09/2024
 	 */
-	public boolean VerifyRefineByDateFilterSearchSlugIsNotPresentOSearchPage(String dateValue) throws Exception {
-		List<WebElement> dateElement = driver.findElements(By.xpath("//strong[text()='Refine by Date: "+dateValue+"']"));
+	public boolean VerifyRefineByDateFilterSearchSlugIsNotPresentOSearchPage(String fromDateValue, String toDateValue) throws Exception {
+		List<WebElement> dateElement = driver.findElements(By.xpath("//strong[text()='Refine by Date']//following::strong[text()='"+fromDateValue+" - "+toDateValue+"']"));
 		return isElementNotPresent(dateElement);
 	}
 
+	/**
+	 * This method used to verify the first article is present on search or browse result page
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @return boolean
+	 * @Created Date : 26/09/2024
+	 */
+	public boolean verifyFirstArticleIsPresentOnBrowseOrSearchPage() throws Exception {
+		List<WebElement> firstArticle = driver.findElements(By.xpath("(//div[@class='title'])[1]"));
+		return isElementPresent(firstArticle);
+	}
+	
 	@FindBy(xpath = "//h1[text()='Browse']")
 	private WebElement browseText;
 
