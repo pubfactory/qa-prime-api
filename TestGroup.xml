@@ -362,4 +362,21 @@
 			</class>
 		</classes>
 	</test>
+	<test name="REFERENCEDTOCONTENTMETADATASERVICE" preserve-order="true">
+		<parameter name="application" value="anesthesiaprogress" />
+		<groups>
+			<run>
+				<include name="anesthesiaprogress" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.CitationTest">
+				<methods>
+					<include name="verifyContentMetaDataServiceInReferences">
+						<parameter name="testcaseid" value="1733708" />
+					</include>				
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>
