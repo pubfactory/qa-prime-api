@@ -535,4 +535,13 @@
 			"withextraslashdoi":"doi/somethinghere/10.2344/anpr-70-03-07"
 			}
 		},
+	{
+	"id": "1733708",
+		"data": {
+			"description": "verifyContentMetaDataServiceInReferences",
+			"openaccess":"Open Access",
+			"searchpubmed":"Search PubMed",
+			"searchgooglescholar":"Search Google Scholar"
+			}
+		},
 ]

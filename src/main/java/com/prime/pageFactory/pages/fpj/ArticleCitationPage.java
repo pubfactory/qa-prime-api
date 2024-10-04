@@ -1965,6 +1965,88 @@ public class ArticleCitationPage extends BasePage {
     	clickOnElement(emailAddressUnderArticleInformationTab,"Clicking on the Email Address under Article Information tab on article page");
     }
     
+    /**This method is used to click on Reference Link On LHS on Article Page
+     * 
+     * @author Rakesh.Shevale
+     * @author Rakesh.Shevale
+     * @Created Date : 01/10/2024
+     */
+    public void clickOnReferenceLinkOnLHSOnArticlePage() throws Exception {
+    	mouseOver(referenceLinkOnLHS, "Hovering ouse on the reference link on LHS on article page");
+    	clickOnElement(referenceLinkOnLHS,"Clicking on the reference link on LHS on article page");
+    }
+    
+    /**
+     * This method returns the search pubmed text under references section on the article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 01/10/2024
+     */
+    public String getFirstSearchPubMedTextUnderReferecesSectionOnArticlePage() throws Exception {
+        String searchPubMedtext = getTextFromElement(searchPubMedUnderRef);
+        return searchPubMedtext;
+    }
+    
+    /**This method is used to click on first search pubmed under Refereces Section on Article Page
+     * 
+     * @author Rakesh.Shevale
+     * @author Rakesh.Shevale
+     * @Created Date : 01/10/2024
+     */
+    public void clickOnFirstSearchPubMedUnderReferecesSection() throws Exception {
+    	clickOnElement(searchPubMedUnderRef,"Clicking on the first search PubMed under Refereces on LHS on article page");
+    }
+    
+    /**
+     * This method returns the search Google Scholar text under references section on the article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 01/10/2024
+     */
+    public String getFirstSearchGoogleScholarTextUnderReferecesSectionOnArticlePage() throws Exception {
+        String searchPubMedtext = getTextFromElement(searchGoogleScholarUnderRef);
+        return searchPubMedtext;
+    }
+    
+    /**This method is used to click on first search Google Scholar under References Section on Article Page
+     * 
+     * @author Rakesh.Shevale
+     * @author Rakesh.Shevale
+     * @Created Date : 01/10/2024
+     */
+    public void clickOnFirstSearchGoogleScholarUnderReferecesSection() throws Exception {
+    	clickOnElement(searchGoogleScholarUnderRef,"Clicking on the first search Google Scholar under Refereces on LHS on article page");
+    }
+    
+    /**
+     * This method is used to check Pubmed site is loaded
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return boolean
+     * @Created Date : 01/10/2023
+     */
+    public boolean verifyPubmedSiteIsLoaded() throws Exception {
+    	List<WebElement>pubmed=driver.findElements(By.xpath("//img[@alt='pubmed logo']"));
+    	return isElementPresent(pubmed);
+    }
+    
+    /**
+     * This method is used to check GoogleS Scholar site is loaded
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return boolean
+     * @Created Date : 01/10/2023
+     */
+    public boolean verifyGoogleScholarSiteIsLoaded() throws Exception {
+    	List<WebElement>pubmed=driver.findElements(By.xpath("(//a[@aria-label='Homepage'])[2]"));
+    	return isElementPresent(pubmed);
+    }
     
     @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
@@ -2112,4 +2194,10 @@ public class ArticleCitationPage extends BasePage {
     private WebElement articleInformationTab;
     @FindBy(xpath="//div[@class='corresp']//a")
     private WebElement emailAddressUnderArticleInformationTab;
+    @FindBy(xpath="(//a[@target='_self' and  text()='REFERENCES'])[1]")
+    private WebElement referenceLinkOnLHS;
+    @FindBy(xpath="(//a[text()='Search PubMed'])[1]")
+    private WebElement searchPubMedUnderRef;
+    @FindBy(xpath="(//a[text()='Search Google Scholar'])[1]")
+    private WebElement searchGoogleScholarUnderRef;
 }
