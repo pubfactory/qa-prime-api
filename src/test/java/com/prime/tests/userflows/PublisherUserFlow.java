@@ -11,6 +11,8 @@
 package com.prime.tests.userflows;
 
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
 import com.prime.generics.UserFlowDef;
 import com.prime.generics.WebDriverManager;
 import com.prime.retryAnalyzers.Retry;
@@ -24,13 +26,19 @@ public class PublisherUserFlow extends UserFlowDef {
 
     @Severity(SeverityLevel.BLOCKER)
     @Test(groups = {"fpj"}, enabled = true, retryAnalyzer = Retry.class,
-            description = "1721296  - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it")
+            description = "11  - Verify Publisher User flows")
     @Story("EPIC-971")
     public void publisherUserFlow() throws Exception {
+    	SoftAssert soft = new SoftAssert();
         testCaseId = "1721296";
         WebDriverManager.setTestcaseIdTestRail(testCaseId);
+        testDataInIt(testCaseId);
         browserInit();
         verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt();
-        // pdf();
+        testDataInIt("1722758");
+        verifyPDFButonAvailableAndDownloadPDF();
+        testDataInIt("1722741");
+        VerifyVariousEmailButtonFeatures();
+        assertClose();
     }
 }
