@@ -1,5 +1,6 @@
 package com.prime.pageFactory.pages.fpj;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -396,9 +397,10 @@ public class JournalPage extends BasePage {
         String ogTitle = getMetaTagAttribute(ogTitleMetaTag, "content");
         return ogTitle;
     }
+    
+    
 
-
-
+    
     @FindBy(xpath = "//span[text()='Archive']")
     private WebElement journalpageHeader;
     @FindBy(xpath = "(//div[contains(text(),'Volume 70')])[1]//parent::button[@aria-expanded='false']")

@@ -1593,4 +1593,45 @@ public enum Helper {
 		}
 	}
 	
+	
+	
+	/**This method is used to comparing two integer values
+     * 
+     * @param first
+     * @param second
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 07/10/2024
+     */
+    public static boolean compareIntValue(int first, int second) throws Exception {
+        if (first > second) {
+            return true;
+        } else
+            return false;
+    }
+    
+    /**
+     * This method used to remove the basic auth from the webapp URL
+     * 
+     * @param String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 07/10/2024
+     */
+    public String removeBasicAuthFromURLFromWebAppURL(String url) {
+        String[] string = url.split("@");
+        if (url.contains(string[0].toString() + "@")) {
+            String newURL = url.replace(string[0].toString() + "@", "");
+            String mainURL = "https://" + newURL;
+            System.out.println("mainURL : " + mainURL);
+            return mainURL;
+        } else {
+            System.out.println(url);
+            return url;
+        }
+    }
+    
+    
+    
 }
