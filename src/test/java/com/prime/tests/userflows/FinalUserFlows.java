@@ -2,6 +2,7 @@ package com.prime.tests.userflows;
 
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import com.prime.generics.BaseTest;
 import com.prime.generics.UserFlowDef;
 import com.prime.generics.WebDriverManager;
 import com.prime.retryAnalyzers.Retry;
@@ -24,11 +25,16 @@ public class FinalUserFlows extends UserFlowDef {
         WebDriverManager.setTestcaseIdTestRail(testCaseId);
         testDataInIt(testCaseId);
         browserInit();
-        driver.get("https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/journal/anpr/current");
+
+        //Identifying userflow to redirect to 
+        String userflow = BaseTest.properties.getProperty("userflow");
+        String url = BaseTest.properties.getProperty(userflow);
+        driver.get(url);
+
         selectIssueDDAndVerifyCurrentIssueOnMostRecentVolumeList_VEENA();
-        MakeSureThatEachListingHasTitleContributorDOIAndAbstractButton();
-        VerifyAccessIconIsLockedWhenIamNotLoggedIn();
-        VerifyTheFirstArticleLoadsCorrectlyAndClickedLinkMatchesTitleOfLoadedArticle();
-        
+        verifyEachListingHasTitleContributorDOIAndAbstractButton();
+        verifyAccessIconIsLockedWhenIamNotLoggedIn();
+        verifyTheFirstArticleLoadsCorrectlyAndClickedLinkMatchesTitleOfLoadedArticle();
+
     }
 }
