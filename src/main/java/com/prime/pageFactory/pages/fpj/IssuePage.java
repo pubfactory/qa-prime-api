@@ -574,6 +574,84 @@ public class IssuePage extends BasePage {
 			return issue;
 	}
 
+	/**
+	 * This method returns the List of the content title under issue’s table of
+	 * content on Issue Page
+	 * 
+	 * @return List<String>
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 08/10/2024
+	 */
+	public List<String> getTotalContentTitleListOnJournalPage() throws Exception {
+		// waitFor("7");
+		List<String> actualList = new ArrayList<String>();
+		By locator = By.xpath("//div[@data-identifier='access']//child::h2");
+		actualList = getTextFindElements(locator);
+		return actualList;
+	}
+
+	/**
+	 * This method returns the List of the content contributor under issue’s table
+	 * of content on Issue Page
+	 * 
+	 * @return List<String>
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 08/10/2024
+	 */
+	public List<String> getTotalContentContributorListOnJournalPage() throws Exception {
+		List<String> actualList = new ArrayList<String>();
+		By locator = By
+				.xpath("//div[@data-identifier='access']//following-sibling::div[@data-testid='block-contributors']");
+		actualList = getTextFindElements(locator);
+		return actualList;
+	}
+
+	/**
+	 * This method returns the List of the content DOI under issue’s table of
+	 * content on Issue Page
+	 * 
+	 * @return List<String>
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 08/10/2024
+	 */
+	public List<String> getTotalContentDOIListOnJournalPage() throws Exception {
+		List<String> actualList = new ArrayList<String>();
+		By locator = By.xpath("//span[text()='DOI: ']//following::a[@data-testid='Metadata-doi-link']");
+		actualList = getTextFindElements(locator);
+		return actualList;
+	}
+
+	/**
+	 * This method returns the List of the content Abstract button under issue’s
+	 * table of content on Issue Page
+	 * 
+	 * @return List<String>
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 08/10/2024
+	 */
+	public List<String> getTotalContentAbstractButtonListOnJournalPage() throws Exception {
+		List<String> actualList = new ArrayList<String>();
+		By locator = By.xpath("//span[text()='DOI: ']//following::a[@data-testid='Metadata-doi-link']");
+		actualList = getTextFindElements(locator);
+		return actualList;
+	}
+
+	/**
+	 * This method returns the Access icon type value in string format on issue page
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 08/10/2024
+	 */
+	public String getAccessIconValue() throws Exception {
+		return getAttributeFromElement(accessIcon,"title");
+	}
+
 	@FindBy(xpath = "//span[text()='Issues']")
 	private WebElement issuePageHeader;
 	@FindBy(xpath = "(//div[@class='title'])[1]")
@@ -612,5 +690,7 @@ public class IssuePage extends BasePage {
 	private WebElement twitterDescriptionMetaTag;
 	@FindBy(xpath = "//meta[@property='og:title']")
 	private WebElement ogTitleMetaTag;
+	@FindBy(xpath="(//span[@title='Restricted access'])[1]")
+	private WebElement accessIcon;
 
 }

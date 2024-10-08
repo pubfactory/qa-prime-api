@@ -26,8 +26,9 @@ public class FinalUserFlows extends UserFlowDef {
         browserInit();
         driver.get("https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/journal/anpr/current");
         selectIssueDDAndVerifyCurrentIssueOnMostRecentVolumeList_VEENA();
-
-
-
+        MakeSureThatEachListingHasTitleContributorDOIAndAbstractButton();
+        VerifyAccessIconIsLockedWhenIamNotLoggedIn();
+        VerifyTheFirstArticleLoadsCorrectlyAndClickedLinkMatchesTitleOfLoadedArticle();
+        
     }
 }

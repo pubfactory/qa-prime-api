@@ -633,7 +633,17 @@ public class MasterPage extends BasePage {
         clickOnElement(aboutStaticButton, "clicking on About static button at the footer");
     }
     
-    
+    /**
+	 * This method return the Sign In button text
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @created Date : 08/10/24
+	 */
+	public String getSignInButtonText() throws Exception {
+		return getTextFromElement(SignInButton);
+	}
     
 
 	@FindBy(xpath = "//button[contains(text(),'Accept All Cookies')]")
