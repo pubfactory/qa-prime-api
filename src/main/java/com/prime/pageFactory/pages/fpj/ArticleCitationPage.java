@@ -14,7 +14,10 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import com.prime.generics.BasePage;
+import com.prime.generics.Helper;
 
 import io.qameta.allure.Allure;
 
@@ -2108,6 +2111,7 @@ public class ArticleCitationPage extends BasePage {
 	 * @Created Date : 11/09/2024
 	 */
 	public void clickOnArticleInformationTabOnArticlePage() throws Exception {
+		mouseOver(articleInformationTab, "");
 		clickOnElement(articleInformationTab, "Clicking on the Article Information tab on article page");
 	}
 
@@ -2242,25 +2246,179 @@ public class ArticleCitationPage extends BasePage {
 		return isElementPresent(pubmed);
 	}
 
-	
-	
 	/**
-	 * This method returns the aria-selected Attribute value of Abstract tab or pdf preview tab
+	 * This method returns the aria-selected Attribute value of Abstract tab or pdf
+	 * preview tab
 	 * 
 	 * @return String
 	 * @throws Exception
 	 * @author Rakesh.Shevale
 	 * @Created Date : 08/10/2024
 	 */
-	public String VerifyByDefaultAbstractTabClickedOrPDFTabIfNoAbstract() throws Exception {
-    List<WebElement> abtractList = driver.findElements(By.xpath("//button[text()='Abstract']"));
-	   if(abtractList.size()>0) {
-		   Allure.step("User land on abstract tab.");
-		   return getAttributeFromElement(abstractTab, "aria-selected");		   
-	   }
-	   else
-		   Allure.step("User land on PDF Preview tab");
-		   return getAttributeFromElement(pdfPreviewTab, "aria-selected");
+	public String getTheAriaExpandedValueForAbstractTabOrPDFTabIfNoAbstract() throws Exception {
+		List<WebElement> abtractList = driver.findElements(By.xpath("//button[text()='Abstract']"));
+		if (abtractList.size() > 0) {
+			Allure.step("User land on abstract tab.");
+			return getAttributeFromElement(abstractTab, "aria-selected");
+		} else
+			Allure.step("User land on PDF Preview tab");
+		return getAttributeFromElement(pdfPreviewTab, "aria-selected");
+	}
+
+	/**
+	 * This method is used to click on next article link on article page,
+	 * 
+	 * @author Rakesh.Shevale
+	 * @author Rakesh.Shevale
+	 * @throws Exception
+	 * @Created Date : 09/10/2024
+	 */
+	public void ClickOnNextArticleLinkOnArticlePage() throws Exception {
+		clickOnElement(nextArticleLink, "Clicking on the Next article link on article page");
+	}
+
+	/**
+	 * This method is used to click on prev article link on article page,
+	 * 
+	 * @author Rakesh.Shevale
+	 * @author Rakesh.Shevale
+	 * @throws Exception
+	 * @Created Date : 09/10/2024
+	 */
+	public void ClickOnPrevArticleLinkOnArticlePage() throws Exception {
+		clickOnElement(prevArticleLink, "Clicking on the Prev article link on article page");
+	}
+
+	/**
+	 * This method returns the aria-selected Attribute value of fulltext tab
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 09/10/2024
+	 */
+	public String getTheAriaExpandedValueForFulltextTab() throws Exception {
+		return getAttributeFromElement(fullTextTab, "aria-selected");
+	}
+
+	/**
+	 * This method returns the aria-selected Attribute value of article Information
+	 * tab
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 09/10/2024
+	 */
+	public String getTheAriaExpandedValueForarticleInformationTab() throws Exception {
+		return getAttributeFromElement(articleInformationTab, "aria-selected");
+	}
+
+	/**
+	 * This method is used to click on conclusion article content link on article
+	 * page,
+	 * 
+	 * @author Rakesh.Shevale
+	 * @author Rakesh.Shevale
+	 * @throws Exception
+	 * @Created Date : 09/10/2024
+	 */
+	public void ClickOnConclusionAticleContentLinkOnArticlePage() throws Exception {
+		clickOnElement(resultsArticleContent, "Clicking on the Conclusion article content link on article page");
+	}
+
+	/**
+	 * This method is used to click on results article content link on article page,
+	 * 
+	 * @author Rakesh.Shevale
+	 * @author Rakesh.Shevale
+	 * @throws Exception
+	 * @Created Date : 09/10/2024
+	 */
+	public void ClickOnResultsAticleContentLinkOnArticlePage() throws Exception {
+		mouseOver(resultsArticleContent, "");
+		clickOnElement(resultsArticleContent, "Clicking on the Results article content link on article page");
+	}
+
+	/**
+	 * This method is used to click on references article content link on article
+	 * page,
+	 * 
+	 * @author Rakesh.Shevale
+	 * @author Rakesh.Shevale
+	 * @throws Exception
+	 * @Created Date : 09/10/2024
+	 */
+	public void ClickOnReferenceAticleContentLinkOnArticlePage() throws Exception {
+		clickOnElementJs(referencesArticleContent, "Clicking on the References article content link on article page");
+		// clickOnElement(referencesArticleContent, "Clicking on the References article
+		// content link on article page");
+	}
+	
+	/**
+	 * This method is used to verifying the article from same issue while clicking on next button and return boolean value
+	 * 
+	 * @param list
+	 * @return boolean
+	 * @throws Exception
+	 * @throws Exception
+	 * @Created Date : 09/10/2024
+	 */
+	public boolean verifyArticleAreFromTheIssueWhileNavigatingTheNextArticle(List<String> list) throws Exception {
+		// ArrayList<String> list = new ArrayList<>();
+		int count=1;
+		boolean flag =false;
+		boolean isNextButtonVisible = true;
+		while (isNextButtonVisible) {
+			try {						
+				WebElement nextButton = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[text()='NEXT'])[1]")));
+				if (Helper.INSTANCE.VerifyListConainsSpecificString(list, getArticleHeaderOnArticlePage())) {
+					//System.out.println(count++ +" : " + getArticleHeaderOnArticlePage());
+					nextButton.click();
+					flag = true;	
+				}
+				else
+					flag =false;
+			} catch (Exception e) {
+				list.add(getArticleHeaderOnArticlePage());
+				isNextButtonVisible = false;
+			}
+		}
+		return flag;
+	}
+	
+	/**
+	 * This method is used to verifying the article from same issue while clicking on next button and return boolean value
+	 * 
+	 * @param list
+	 * @return boolean
+	 * @throws Exception
+	 * @throws Exception
+	 * @Created Date : 09/10/2024
+	 */
+	public boolean verifyArticleAreFromTheIssueWhileNavigatingThePrevArticle(List<String> list) throws Exception {
+		// ArrayList<String> list = new ArrayList<>();
+		int count=1;
+		boolean flag =false;
+		boolean isNextButtonVisible = true;
+		while (isNextButtonVisible) {
+			try {						
+				WebElement nextButton = wait
+						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[text()='PREV'])[1]")));
+				if (Helper.INSTANCE.VerifyListConainsSpecificString(list, getArticleHeaderOnArticlePage())) {
+					//System.out.println(count++ +" : " + getArticleHeaderOnArticlePage());
+					nextButton.click();
+					flag = true;	
+				}
+				else
+					flag =false;
+			} catch (Exception e) {
+				list.add(getArticleHeaderOnArticlePage());
+				isNextButtonVisible = false;
+			}
+		}
+		return flag;
 	}
 
 	@FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
@@ -2417,6 +2575,18 @@ public class ArticleCitationPage extends BasePage {
 	private WebElement searchGoogleScholarUnderRef;
 	@FindBy(xpath = "//button[text()='Abstract']")
 	private WebElement abstractTab;
-	@FindBy(xpath="//button[text()='PDF Preview']")
+	@FindBy(xpath = "//button[text()='PDF Preview']")
 	private WebElement pdfPreviewTab;
+	@FindBy(xpath = "(//a[text()='NEXT'])[1]")
+	private WebElement nextArticleLink;
+	@FindBy(xpath = "(//a[text()='PREV'])[1]")
+	private WebElement prevArticleLink;
+	@FindBy(xpath = "//button[text()='Full Text']")
+	private WebElement fullTextTab;
+	@FindBy(xpath = "(//a[text()='RESULTS'])[1]")
+	private WebElement resultsArticleContent;
+	@FindBy(xpath = "(//a[text()='CONCLUSION'])[1]")
+	private WebElement conclusionArticleContent;
+	@FindBy(xpath = "(//a[text()='REFERENCES'])[1]")
+	private WebElement referencesArticleContent;
 }

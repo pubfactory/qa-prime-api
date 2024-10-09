@@ -1632,6 +1632,15 @@ public enum Helper {
         }
     }
     
-    
+    public boolean VerifyListConainsSpecificString(List<String> list, String containString) {
+    	boolean flag=false;
+    	for (String word : list) {
+            if(word.contains(containString)) {
+               flag=true;
+            }	
+        }
+		return flag;
+		
+    }
     
 }

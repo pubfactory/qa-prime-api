@@ -35,6 +35,9 @@ public class FinalUserFlows extends UserFlowDef {
         verifyEachListingHasTitleContributorDOIAndAbstractButton();
         verifyAccessIconIsLockedWhenIamNotLoggedIn();
         verifyTheFirstArticleLoadsCorrectlyAndClickedLinkMatchesTitleOfLoadedArticle();
-
+        VerifyAllArticleAreFromTheIssueWhileNavigatingTheNextPrevControl();
+        driver.get("https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/view/journals/anpr/67/2/article-p72.xml");   
+        verifyFulltextIsNavigableThroughArticleContent();
+        
     }
 }
