@@ -1624,7 +1624,6 @@ public enum Helper {
         if (url.contains(string[0].toString() + "@")) {
             String newURL = url.replace(string[0].toString() + "@", "");
             String mainURL = "https://" + newURL;
-            System.out.println("mainURL : " + mainURL);
             return mainURL;
         } else {
             System.out.println(url);

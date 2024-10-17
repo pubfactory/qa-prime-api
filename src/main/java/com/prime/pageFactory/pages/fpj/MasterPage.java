@@ -274,7 +274,7 @@ public class MasterPage extends BasePage {
 	 * @Created Date : 25/06/2024
 	 */
 	public boolean verifyBypassMetaDataCatche() throws Exception {
-		List<WebElement>ShowRegion=driver.findElements(By.xpath("//div[text()='Bypass Metadata Cache']"));
+		List<WebElement>ShowRegion=driver.findElements(By.xpath("//div[text()='Bypass Cache']"));
 		 return isElementPresent(ShowRegion);
 		
 	}

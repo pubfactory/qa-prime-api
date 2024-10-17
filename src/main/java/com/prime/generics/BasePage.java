@@ -1961,7 +1961,6 @@ public class BasePage {
     public void waitForElementPresenceSpecified(WebElement element, int timeOut) {
 
         try {
-            System.out.println("Waiting in fluencyyyyyy");
 
             FluentWait<WebDriver> wait = new FluentWait<WebDriver>(WebDriverManager.getDriver());
 
@@ -1976,7 +1975,6 @@ public class BasePage {
                 public Boolean apply(WebDriver driver) {
 
                     element.isDisplayed();
-                    System.out.println("Waiting in fluency in isDisplayed");
 
                     return true;
 

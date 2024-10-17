@@ -545,4 +545,17 @@
 			"searchgooglescholar":"Search Google Scholar"
 			}
 		},
+	{
+		"id": "1111",
+		"data": {
+			"description": "publisherUserFlow",
+			"openaccessurl":"/view/journals/anpr/67/2/article-p72.xml",
+			"openaccess":"Open Access",
+			"searchpubmed":"Search PubMed",
+			"searchgooglescholar":"Search Google Scholar",
+			"withoutextraslashdoi":"doi/10.2344/anpr-66-04-06",
+			"articletitle":"Adding Dexmedetomidine to Articaine Increases the Latency of Thermal Antinociception in Rats",
+			"withextraslashdoi":"doi/somethinghere/10.2344/anpr-66-04-06"
+			}
+		},
 ]

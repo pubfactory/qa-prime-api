@@ -34,7 +34,7 @@ public class PublisherUserFlow extends UserFlowDef {
         WebDriverManager.setTestcaseIdTestRail(testCaseId);
         testDataInIt(testCaseId);
         browserInit();
-        verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt();
+        verifyCitationFunctionalityAndSelectEachFormatOfCitationAndCopyToClipBoardAndMakeSureItMatchesTheCitationPreview();
         testDataInIt("1722758");
         verifyPDFButonAvailableAndDownloadPDF();
         testDataInIt("1722741");

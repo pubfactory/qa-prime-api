@@ -698,6 +698,7 @@ public class ArticleCitationPage extends BasePage {
 	 * @Created Date : 03/11/2023
 	 */
 	public boolean verifyGoogleScholarButtonPresentOnArticlePage() throws Exception {
+		mouseOver(googleScholarButton,"");
 		List<WebElement> googleScholar = driver.findElements(By.xpath("(//button[text()='Google Scholar'])[1]"));
 		return isElementPresent(googleScholar);
 	}
@@ -2106,7 +2107,7 @@ public class ArticleCitationPage extends BasePage {
 	/**
 	 * This method is used to click on Article Information tab on Article Page
 	 * 
-	 * @author Rakesh.Shevale
+	 * @throws Exception
 	 * @author Rakesh.Shevale
 	 * @Created Date : 11/09/2024
 	 */
@@ -2145,7 +2146,7 @@ public class ArticleCitationPage extends BasePage {
 	 * This method is used to click on Email Address under Article Information tab
 	 * on Article Page
 	 * 
-	 * @author Rakesh.Shevale
+	 * @throws Exception
 	 * @author Rakesh.Shevale
 	 * @Created Date : 11/09/2024
 	 */
@@ -2157,7 +2158,7 @@ public class ArticleCitationPage extends BasePage {
 	/**
 	 * This method is used to click on Reference Link On LHS on Article Page
 	 * 
-	 * @author Rakesh.Shevale
+	 * @throws Exception
 	 * @author Rakesh.Shevale
 	 * @Created Date : 01/10/2024
 	 */
@@ -2184,7 +2185,7 @@ public class ArticleCitationPage extends BasePage {
 	 * This method is used to click on first search pubmed under Refereces Section
 	 * on Article Page
 	 * 
-	 * @author Rakesh.Shevale
+	 * @throws Exception
 	 * @author Rakesh.Shevale
 	 * @Created Date : 01/10/2024
 	 */
@@ -2211,7 +2212,7 @@ public class ArticleCitationPage extends BasePage {
 	 * This method is used to click on first search Google Scholar under References
 	 * Section on Article Page
 	 * 
-	 * @author Rakesh.Shevale
+	 * @throws Exception
 	 * @author Rakesh.Shevale
 	 * @Created Date : 01/10/2024
 	 */
@@ -2269,11 +2270,10 @@ public class ArticleCitationPage extends BasePage {
 	 * This method is used to click on next article link on article page,
 	 * 
 	 * @author Rakesh.Shevale
-	 * @author Rakesh.Shevale
 	 * @throws Exception
 	 * @Created Date : 09/10/2024
 	 */
-	public void ClickOnNextArticleLinkOnArticlePage() throws Exception {
+	public void clickOnNextArticleLinkOnArticlePage() throws Exception {
 		clickOnElement(nextArticleLink, "Clicking on the Next article link on article page");
 	}
 
@@ -2285,7 +2285,7 @@ public class ArticleCitationPage extends BasePage {
 	 * @throws Exception
 	 * @Created Date : 09/10/2024
 	 */
-	public void ClickOnPrevArticleLinkOnArticlePage() throws Exception {
+	public void clickOnPrevArticleLinkOnArticlePage() throws Exception {
 		clickOnElement(prevArticleLink, "Clicking on the Prev article link on article page");
 	}
 
@@ -2319,11 +2319,10 @@ public class ArticleCitationPage extends BasePage {
 	 * page,
 	 * 
 	 * @author Rakesh.Shevale
-	 * @author Rakesh.Shevale
 	 * @throws Exception
 	 * @Created Date : 09/10/2024
 	 */
-	public void ClickOnConclusionAticleContentLinkOnArticlePage() throws Exception {
+	public void clickOnConclusionAticleContentLinkOnArticlePage() throws Exception {
 		clickOnElement(resultsArticleContent, "Clicking on the Conclusion article content link on article page");
 	}
 
@@ -2331,11 +2330,10 @@ public class ArticleCitationPage extends BasePage {
 	 * This method is used to click on results article content link on article page,
 	 * 
 	 * @author Rakesh.Shevale
-	 * @author Rakesh.Shevale
 	 * @throws Exception
 	 * @Created Date : 09/10/2024
 	 */
-	public void ClickOnResultsAticleContentLinkOnArticlePage() throws Exception {
+	public void clickOnResultsAticleContentLinkOnArticlePage() throws Exception {
 		mouseOver(resultsArticleContent, "");
 		clickOnElement(resultsArticleContent, "Clicking on the Results article content link on article page");
 	}
@@ -2345,18 +2343,18 @@ public class ArticleCitationPage extends BasePage {
 	 * page,
 	 * 
 	 * @author Rakesh.Shevale
-	 * @author Rakesh.Shevale
 	 * @throws Exception
 	 * @Created Date : 09/10/2024
 	 */
-	public void ClickOnReferenceAticleContentLinkOnArticlePage() throws Exception {
+	public void clickOnReferenceAticleContentLinkOnArticlePage() throws Exception {
 		clickOnElementJs(referencesArticleContent, "Clicking on the References article content link on article page");
 		// clickOnElement(referencesArticleContent, "Clicking on the References article
 		// content link on article page");
 	}
-	
+
 	/**
-	 * This method is used to verifying the article from same issue while clicking on next button and return boolean value
+	 * This method is used to verifying the article from same issue while clicking
+	 * on next button and return boolean value
 	 * 
 	 * @param list
 	 * @return boolean
@@ -2366,20 +2364,19 @@ public class ArticleCitationPage extends BasePage {
 	 */
 	public boolean verifyArticleAreFromTheIssueWhileNavigatingTheNextArticle(List<String> list) throws Exception {
 		// ArrayList<String> list = new ArrayList<>();
-		int count=1;
-		boolean flag =false;
+		int count = 1;
+		boolean flag = false;
 		boolean isNextButtonVisible = true;
 		while (isNextButtonVisible) {
-			try {						
+			try {
 				WebElement nextButton = wait
 						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[text()='NEXT'])[1]")));
 				if (Helper.INSTANCE.VerifyListConainsSpecificString(list, getArticleHeaderOnArticlePage())) {
-					//System.out.println(count++ +" : " + getArticleHeaderOnArticlePage());
+					// System.out.println(count++ +" : " + getArticleHeaderOnArticlePage());
 					nextButton.click();
-					flag = true;	
-				}
-				else
-					flag =false;
+					flag = true;
+				} else
+					flag = false;
 			} catch (Exception e) {
 				list.add(getArticleHeaderOnArticlePage());
 				isNextButtonVisible = false;
@@ -2387,9 +2384,10 @@ public class ArticleCitationPage extends BasePage {
 		}
 		return flag;
 	}
-	
+
 	/**
-	 * This method is used to verifying the article from same issue while clicking on next button and return boolean value
+	 * This method is used to verifying the article from same issue while clicking
+	 * on next button and return boolean value
 	 * 
 	 * @param list
 	 * @return boolean
@@ -2399,20 +2397,19 @@ public class ArticleCitationPage extends BasePage {
 	 */
 	public boolean verifyArticleAreFromTheIssueWhileNavigatingThePrevArticle(List<String> list) throws Exception {
 		// ArrayList<String> list = new ArrayList<>();
-		int count=1;
-		boolean flag =false;
+		int count = 1;
+		boolean flag = false;
 		boolean isNextButtonVisible = true;
 		while (isNextButtonVisible) {
-			try {						
+			try {
 				WebElement nextButton = wait
 						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[text()='PREV'])[1]")));
 				if (Helper.INSTANCE.VerifyListConainsSpecificString(list, getArticleHeaderOnArticlePage())) {
-					//System.out.println(count++ +" : " + getArticleHeaderOnArticlePage());
+					// System.out.println(count++ +" : " + getArticleHeaderOnArticlePage());
 					nextButton.click();
-					flag = true;	
-				}
-				else
-					flag =false;
+					flag = true;
+				} else
+					flag = false;
 			} catch (Exception e) {
 				list.add(getArticleHeaderOnArticlePage());
 				isNextButtonVisible = false;
@@ -2420,6 +2417,217 @@ public class ArticleCitationPage extends BasePage {
 		}
 		return flag;
 	}
+
+	/**
+	 * This method is used to clicks on figures tab on article page
+	 * 
+	 * @author Rakesh.Shevale
+	 * @throws Exception
+	 * @Created Date : 10/10/2024
+	 */
+	public void clickOnFiguresTabOnArticlePage() throws Exception {
+		clickOnElementJs(figuresTab, "Clicking on the Fgures tab on article page");
+	}
+
+	/**
+	 * This method is used to check All figures are loaded properly
+	 * 
+	 * @return boolean
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 10/10/2024
+	 */
+	public boolean verifyAllFiguresAreLoadingInTheFigureTabOnArticlePage() {
+		List<WebElement> images = driver
+				.findElements(By.xpath("//img[contains(@alt,'Figure') and contains(@class,'chakra-image css')]"));
+		boolean allImagesLoaded = false;
+		for (WebElement image : images) {
+			Long naturalWidth = (Long) ((JavascriptExecutor) driver).executeScript("return arguments[0].naturalWidth;",
+					image);
+			if (naturalWidth == 0) {
+				allImagesLoaded = false;
+			} else {
+				allImagesLoaded = true;
+			}
+		}
+		return allImagesLoaded;
+	}
+
+	/**
+	 * This method is used to clicks on first figure from the figures tab on article
+	 * page.
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 10/10/2024
+	 */
+	public void clickOnSelectFirstFigureFromTheFiguresTabOnArticlePage() throws Exception {
+		clickOnElementJs(firstFigureImagefromFigTab, "Clicking on first figure from the figures tab on article page.");
+	}
+
+	public boolean verifyFiguresDiplayedInPPTFormat() throws Exception {
+		List<WebElement> images = driver
+				.findElements(By.xpath("//div[@class='slick-slide slick-active slick-current']"));
+		return isElementPresent(images);
+	}
+
+	/**
+	 * This method is used to clicks on next button for slide PPT.
+	 * 
+	 * @author Rakesh.Shevale
+	 * @throws Exception
+	 * @Created Date : 10/10/2024
+	 */
+	public void clickOnNextButtonForSlidePPT() throws Exception {
+		clickOnElementJs(nextButtoForSlidePPT, "Clicking on next button for slide PPT.");
+	}
+
+	/**
+	 * This method returns the src Attribute value of figure/image
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 10/10/2024
+	 */
+	public String getTheSrcAttributeValueOfImageOrFigure() throws Exception {
+		return getAttributeFromElement(curentImageOnSlidePPT, "src");
+	}
+
+	/**
+	 * This method is used to clicks on previous button for slide PPT.
+	 * 
+	 * @author Rakesh.Shevale
+	 * @throws Exception
+	 * @Created Date : 10/10/2024
+	 */
+	public void clickOnPreviousButtonForSlidePPT() throws Exception {
+		clickOnElementJs(previousButtoForSlidePPT, "Clicking on previous button for slide PPT.");
+	}
+
+	/**
+	 * This method is used to clicks on close button of slide PPT.
+	 * 
+	 * @author Rakesh.Shevale
+	 * @throws Exception
+	 * @Created Date : 10/10/2024
+	 */
+	public void clickOnSlidePPTCloseButton() throws Exception {
+		clickOnElement(slidePPTCloseButton, "Clicking on close button of slide PPT");
+	}
+
+	/**
+	 * This method is used to clicks on Export figures button in Figures tab on
+	 * Article page.
+	 * 
+	 * @author Rakesh.Shevale
+	 * @throws Exception
+	 * @Created Date : 10/10/2024
+	 */
+	public void clickOnExportFiguresButtonUnderFigureTab() throws Exception {
+		clickOnElement(exportFiguresButton, "Clicking on Export Figures button under Figures tab.");
+	}
+
+	/**
+	 * This method is used to clicks on figures download button.
+	 * 
+	 * @author Rakesh.Shevale
+	 * @throws Exception
+	 * @Created Date : 10/10/2024
+	 */
+	public void clickOnFiguresDownloadButton() throws Exception {
+		clickOnElementJs(figuresDownloadButton, "Clicking on figures download button");
+	}
+
+	/**
+	 * This method used to verify figures is downloaded in PPT format.
+	 *
+	 * @return boolean
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 10/10/2024
+	 */
+	public boolean verifyFiguresIsDownloadedInPPTFormat(String extensionName) throws Exception {
+		return verifyFileISDowloadedwithExtension(extensionName);
+	}
+	
+	/**
+	 * This method is used to clicks on first Author below the article title on article page.
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 11/10/2024
+	 */
+	public void clickOnFirstAuthorBelowTheArticleTitleOnArticlePage() throws Exception {
+		clickOnElementJs(firstAuthor, "Clicking on first author below the article title on article page.");
+	}
+	
+	/**
+	 * This method is used to clicks on current site link on author affiliation popup.
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 11/10/2024
+	 */
+	public void clickOnCurrentSiteLinkOnAuthorAffiliationPopup() throws Exception {
+		clickOnElementJs(currentSiteFromAuthorAffiPopup, "Clicking on current site link on author affiliation popup.");
+	}
+	
+	/**
+	 * This method used to clicks on Share button on Article page
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 14/10/2023
+	 */
+	public void clickOnShareButtonOnArticlePage() throws Exception {
+		clickOnElement(shareButton, "Clicking on Share Button on article page");
+	}
+	
+	/**
+	 * This method return the share button text on article page. 
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 14/10/2023
+	 */
+	public String getShareButtonTextOnArticlePage() throws Exception {
+		String shareText = getTextFromElement(shareButton);
+		return shareText;
+	}
+	
+	/**
+     * This method used to Verifying sharing platform is present when clicks on share button on Article page
+     *
+     *@param platformName
+     * @throws Exception
+     * @author Veena.Mathew
+     * @return boolean
+     * @Created Date : 14/10/2024
+     */
+    public boolean verifySharingPlatformDataNetworkUnderShareButton(String platformName) throws Exception {
+        WebElement platform = driver.findElement(By.xpath("(//span[@data-testid='block-sharebutton'])[1]//button[text()='Share on "+platformName+"']"));
+        if (platform.getAttribute("data-network").equalsIgnoreCase(platformName))
+            return true;
+        else
+            return false;
+    }
+    
+    /**
+     * This method used to Verifying sharing platform is present when clicks on share button on Article page
+     *
+     *@param platformName
+     * @throws Exception
+     * @author Veena.Mathew
+     * @return boolean
+     * @Created Date : 14/10/2024
+     */
+    public void clickingSharingPlatformButtonIsPresentOnArticlePageUnderShareButton(String platformName) throws Exception {
+        WebElement platform = driver.findElement(By.xpath("(//span[@data-testid='block-sharebutton'])[1]//button[text()='Share on "+platformName+"']"));
+        clickOnElement(platform, "Clicking on share in " + platformName + "");
+    }
+
 
 	@FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
 	private WebElement citationButton;
@@ -2589,4 +2797,26 @@ public class ArticleCitationPage extends BasePage {
 	private WebElement conclusionArticleContent;
 	@FindBy(xpath = "(//a[text()='REFERENCES'])[1]")
 	private WebElement referencesArticleContent;
+	@FindBy(xpath = "(//button[text()='Figures'])")
+	private WebElement figuresTab;
+	@FindBy(xpath = "(//img[contains(@alt,'Figure') and contains(@class,'chakra-image css')])[1]")
+	private WebElement firstFigureImagefromFigTab;
+	@FindBy(xpath = "//button[@aria-label='Next']")
+	private WebElement nextButtoForSlidePPT;
+	@FindBy(xpath = "//div[@class='slick-slide slick-active slick-current']//img")
+	private WebElement curentImageOnSlidePPT;
+	@FindBy(xpath = "//button[@aria-label='Previous']")
+	private WebElement previousButtoForSlidePPT;
+	@FindBy(xpath = "//section[contains(@id,'chakra-modal')]//button[@aria-label='Close']")
+	private WebElement slidePPTCloseButton;
+	@FindBy(xpath = "//button[text()='Export Figures']")
+	private WebElement exportFiguresButton;
+	@FindBy(xpath = "//button[text()='Download']")
+	private WebElement figuresDownloadButton;
+	@FindBy(xpath = "(//div[@data-testid='block-contributors']//button)[1]")
+	private WebElement firstAuthor;
+	@FindBy(xpath = "(//a[text()='Current site'])[1]")
+	private WebElement currentSiteFromAuthorAffiPopup;
+	@FindBy(xpath = "(//span[@data-testid='block-sharebutton'])[1]")
+	private WebElement shareButton;
 }

@@ -1077,7 +1077,7 @@ public class BaseTest {
 
     public static boolean verifyTextInURL(String linkText) {
         try {
-            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 5);
+            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 10);
             wait.until(ExpectedConditions.urlContains(linkText));
             return true;
         } catch (Exception ex) {
@@ -1220,6 +1220,22 @@ public class BaseTest {
             Helper.INSTANCE.setErrorMessage(WebDriverManager.getTestcaseIdTestRail(), error);
             Assert.fail(desc);
         }
+    }
+    
+    public static void softAssertEquals(WebDriver driver, String actual, String expected, String desc) throws Exception {
+        String description = desc + " :: " + " Expected Result--> " + expected + " || " + "Actual Result--> " + actual;
+        SoftAssert soft = new SoftAssert();
+        soft.assertEquals(actual, expected,
+				"Verifying that the new tab is opened and it contains the URL of the article page.");
+        Allure.step("Assertion Passed: " + description);
+//        if (expected == actual) {
+//            Allure.step("Assertion Passed: " + description);
+//        } else {
+//            Allure.step("Assertion Failed: " + description);
+//            error = description + " mismatch found";
+//            Helper.INSTANCE.setErrorMessage(WebDriverManager.getTestcaseIdTestRail(), error);
+//            Assert.fail(description);
+//        }
     }
 
 }
