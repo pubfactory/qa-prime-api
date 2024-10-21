@@ -1631,6 +1631,14 @@ public enum Helper {
         }
     }
     
+    /**This method used to check the List contains the specific string and return in boolean format
+     * 
+     * @param list
+     * @param containString
+     * @return boolean
+     * @author Rakesh.Shevale
+     * @Created Date : 16/10/2024
+     */
     public boolean VerifyListConainsSpecificString(List<String> list, String containString) {
     	boolean flag=false;
     	for (String word : list) {

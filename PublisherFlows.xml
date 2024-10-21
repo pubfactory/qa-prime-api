@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="PrimeEndtoEndWithMultiAppl" verbose="5"
+	parallel="tests" thread-count="3" preserve-order="true">
+	<listeners>
+		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
+	</listeners>
+	<test name="PUBLISHERUSERFLOWS" preserve-order="true">
+		<parameter name="application" value="anesthesiaprogress" />
+		<groups>
+			<run>
+				<include name="anesthesiaprogress" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.userflows.FinalUserFlows">
+				<methods>
+					<include name="publisherUserFlow">
+						<parameter name="testcaseid" value="1733756" />
+					</include>				
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

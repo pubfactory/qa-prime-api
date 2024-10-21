@@ -86,7 +86,6 @@ public class UserFlowDef extends BaseTest {
 			articleCitationPage.clickOnCopyLinkButtonOnShareLinkOnArticlePage();
 
 			// Verifying Link Copied successfully meassage displayed
-
 			String directCopyLink = articleCitationPage.getCopyLinkDirectlyOnShareLinkPopupOnArticlePage();
 			articleCitationPage.clickOnShareLinkPopupClosekButtonOnShareLinkOnArticlePage();
 
@@ -226,7 +225,6 @@ public class UserFlowDef extends BaseTest {
 	}
 
 	public void verifyEachListingHasTitleContributorDOIAndAbstractButton() throws Exception {
-
 		issuePage = BasePage.initialize(WebDriverManager.getDriver(), IssuePage.class);
 		issuePage.clickOnIssueSelector();
 		titleList = issuePage.getTotalContentTitleListOnJournalPage();
@@ -343,6 +341,8 @@ public class UserFlowDef extends BaseTest {
 							+ "view/journals/anpr/67/2/full-i0003-3006-67-2-72-f01.png",
 					"Verifying the figure changed once user click on previous button in slide PPT.");
 			Allure.step("Verifying the figure changed once user click on previous button in slide PPT.");
+			// clicking on the figure is not working on UAT env right now, that's why this
+			// case failing on uat
 
 			articleCitationPage.clickOnSlidePPTCloseButton();
 			articleCitationPage.clickOnExportFiguresButtonUnderFigureTab();
@@ -368,7 +368,8 @@ public class UserFlowDef extends BaseTest {
 //		BaseTest.assertEquals(WebDriverManager.getDriver(),
 //				browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("author", authorEditor), true,
 //				"Verifying the once click on Current site, Refine term filter for Author is displayed on browse/search result page.");
-		Allure.step("Verifying the once click on Current site, Refine term filter for Author is displayed on browse/search result page.");
+		Allure.step(
+				"Verifying the once click on Current site, Refine term filter for Author is displayed on browse/search result page.");
 		driver.navigate().back();
 	}
 
@@ -842,13 +843,15 @@ public class UserFlowDef extends BaseTest {
 			String expectedArticleTitle = testData.get("articletitle").toString();
 			soft.assertEquals(actualArticleTitlewithoutSlash, expectedArticleTitle,
 					"Verifying the proper content page is displayed if the URL contains only the actual DOI value.");
-			Allure.step("Verifying the proper content page is displayed if the URL contains only the actual DOI value.");
+			Allure.step(
+					"Verifying the proper content page is displayed if the URL contains only the actual DOI value.");
 			String withExtraSlashDOI = testData.get("withextraslashdoi").toString();
 			navigateToUrlLink(url + withExtraSlashDOI);
 			String actualArticleTitlewithSlash = articleCitationPage.getArticleHeaderOnArticlePage();
 			soft.assertEquals(actualArticleTitlewithSlash, expectedArticleTitle,
 					"Verifying that the correct content page is displayed if an extra path is added after the DOI.");
-			Allure.step("Verifying that the correct content page is displayed if an extra path is added after the DOI.");
+			Allure.step(
+					"Verifying that the correct content page is displayed if an extra path is added after the DOI.");
 		} finally {
 			Helper.INSTANCE.closeNewTab(mainWindow, WebDriverManager.getDriver());
 			Helper.INSTANCE.switchToWindowTab(0);
@@ -876,7 +879,8 @@ public class UserFlowDef extends BaseTest {
 			// query "( https://scholar.google.com/scholar/?=link)"
 			soft.assertTrue(BaseTest.verifyTextInURL("https://scholar.google.com/scholar?q=link"),
 					"Verifying the google scholar search result is displayed with following search query: https://scholar.google.com/scholar/?=link");
-			Allure.step("Verifying the google scholar search result is displayed with following search query: https://scholar.google.com/scholar/?=link");
+			Allure.step(
+					"Verifying the google scholar search result is displayed with following search query: https://scholar.google.com/scholar/?=link");
 			String googleScholarPageURL = articleCitationPage.removeContainFromURL(basePage.getURLFromWebPage());
 
 			// Verifying that the new tab is opened and it contains the URL of the article
@@ -884,7 +888,7 @@ public class UserFlowDef extends BaseTest {
 			soft.assertEquals(articlePageURL, googleScholarPageURL,
 					"Verifying that the new tab is opened and it contains the URL of the article page.");
 			Allure.step("Verifying that the new tab is opened and it contains the URL of the article page.");
-			
+
 //			softAssertEquals(WebDriverManager.getDriver(),articlePageURL, googleScholarPageURL,
 //					"Verifying that the new tab is opened and it contains the URL of the article page.");
 

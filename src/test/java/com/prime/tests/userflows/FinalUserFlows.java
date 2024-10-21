@@ -16,62 +16,41 @@ public class FinalUserFlows extends UserFlowDef {
 
 	@Severity(SeverityLevel.BLOCKER)
 	@Test(groups = {
-			"fpj" }, enabled = true, retryAnalyzer = Retry.class, description = "1111  - Verify Publisher User flows")
-	@Story("EPIC-971")
+			"AP" }, enabled = true, retryAnalyzer = Retry.class, description = "1733756  - Verify Publisher User flows")
+	@Story("EPIC-3818")
 	public void publisherUserFlow() throws Exception {
 		SoftAssert soft = new SoftAssert();
-		testCaseId = "1111";
+		testCaseId = "1733756";
 		WebDriverManager.setTestcaseIdTestRail(testCaseId);
 		testDataInIt(testCaseId);
 		browserInit();
 
 		// Identifying userflow to redirect to
-		String userflow = BaseTest.properties.getProperty("userflow");
-		String url = BaseTest.properties.getProperty(userflow);
-		driver.get(url);
+//		String userflow = BaseTest.properties.getProperty("userflow");
+//		String url = BaseTest.properties.getProperty(userflow);
+		String url = BaseTest.properties.getProperty(application);
+		System.out.println("!url=" + url);
+		String journalCurrentPage=testData.get("journalcurrentpage").toString();
+		driver.get(url+journalCurrentPage);
 		selectIssueDDAndVerifyCurrentIssueOnMostRecentVolumeList_VEENA();
-		System.out.println("selectIssueDDAndVerifyCurrentIssueOnMostRecentVolumeList_VEENA complete");
 		verifyEachListingHasTitleContributorDOIAndAbstractButton();
-		System.out.println("verifyEachListingHasTitleContributorDOIAndAbstractButton complete");
 		verifyAccessIconIsLockedWhenIamNotLoggedIn();
-		System.out.println("verifyAccessIconIsLockedWhenIamNotLoggedIn complete");
 		verifyTheFirstArticleLoadsCorrectlyAndClickedLinkMatchesTitleOfLoadedArticle();
-		System.out.println("verifyTheFirstArticleLoadsCorrectlyAndClickedLinkMatchesTitleOfLoadedArticle complete");
-		VerifyAllArticleAreFromTheIssueWhileNavigatingTheNextPrevControl();
-		System.out.println("VerifyAllArticleAreFromTheIssueWhileNavigatingTheNextPrevControl complete");		
-		verifyGooglescholarAndPubmedSectionFunctionality(); 
-		System.out.println("verifyGooglescholarAndPubmedSectionFunctionality complete");		
-		driver.get(
-				"https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/view/journals/anpr/67/2/article-p72.xml");
-		System.out.println("after hittng the Article page");
+		VerifyAllArticleAreFromTheIssueWhileNavigatingTheNextPrevControl();				
+		String openAccessContent=testData.get("openaccesscontent").toString();
+		driver.get(url+openAccessContent);
 		verifyFulltextIsNavigableThroughArticleContent();
-		System.out.println("verifyFulltextIsNavigableThroughArticleContent complete");	
 		verifyAllFiguresAreLoadingInTheFigureTab();
-		System.out.println("verifyAllFiguresAreLoadingInTheFigureTab complete");	
 		verifyFigureOpenInPowePointOnceClicksOnItAndAbleToDownloadTheFigureInPPTFormatIfClicksOnDownloadButton();
-		System.out.println("verifyFigureOpenInPowePointOnceClicksOnItAndAbleToDownloadTheFigureInPPTFormatIfClicksOnDownloadButton complete");	
 		clickContributorsAndPerformCurrentSiteSearch();
-		System.out.println("clickContributorsAndPerformCurrentSiteSearch complete");	
 		verifyCitationFunctionalityAndSelectEachFormatOfCitationAndCopyToClipBoardAndMakeSureItMatchesTheCitationPreview();
-		System.out.println("verifyCitationFunctionalityAndSelectEachFormatOfCitationAndCopyToClipBoardAndMakeSureItMatchesTheCitationPreview complete");	
-		verifyShareButtonIsPresentAndEachOptionPromptsTheUSerToLogInInToTheRespectiveService();
-		System.out.println("verifyShareButtonIsPresentAndEachOptionPromptsTheUSerToLogInInToTheRespectiveService complete");	
-		
+		verifyShareButtonIsPresentAndEachOptionPromptsTheUSerToLogInInToTheRespectiveService();		
 		verifyPDFButonAvailableAndDownloadPDF();
-		System.out.println("verifyPDFButonAvailableAndDownloadPDF complete");	
-		
 		verifyGooglescholarAndPubmedSectionFunctionality(); 
-		System.out.println("verifyGooglescholarAndPubmedSectionFunctionality complete");	
 		verifyThatTheAutoLaunchNewEmailFunctionality();
-		System.out.println("verifyThatTheAutoLaunchNewEmailFunctionality complete");	
-		//testDataInIt("1733708");
 		verifyContentMetaDataServiceInReferences();
-		System.out.println("verifyContentMetaDataServiceInReferences complete");
-		//testDataInIt("1730101");
 		verifyThatDOIShouldBeLinkAndHandlingDOIRedirectFunctionality();
-		System.out.println("verifyThatDOIShouldBeLinkAndHandlingDOIRedirectFunctionality complete");
 		verifyThatTheCitationLinkFunctionalityIsWorkingFine();
-		System.out.println("verifyThatTheCitationLinkFunctionalityIsWorkingFine complete");
 		assertClose();
 	}
 }

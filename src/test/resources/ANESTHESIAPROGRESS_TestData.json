@@ -546,9 +546,11 @@
 			}
 		},
 	{
-		"id": "1111",
+		"id": "1733756",
 		"data": {
 			"description": "publisherUserFlow",
+			"journalcurrentpage":"/journal/anpr/current",
+			"openaccesscontent":"/view/journals/anpr/67/2/article-p72.xml",
 			"openaccessurl":"/view/journals/anpr/67/2/article-p72.xml",
 			"openaccess":"Open Access",
 			"searchpubmed":"Search PubMed",

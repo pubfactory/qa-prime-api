@@ -399,8 +399,6 @@ public class JournalPage extends BasePage {
     }
     
     
-
-    
     @FindBy(xpath = "//span[text()='Archive']")
     private WebElement journalpageHeader;
     @FindBy(xpath = "(//div[contains(text(),'Volume 70')])[1]//parent::button[@aria-expanded='false']")
