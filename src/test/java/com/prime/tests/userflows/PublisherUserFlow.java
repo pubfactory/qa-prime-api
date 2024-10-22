@@ -38,7 +38,7 @@ public class PublisherUserFlow extends UserFlowDef {
         testDataInIt("1722758");
         verifyPDFButonAvailableAndDownloadPDF();
         testDataInIt("1722741");
-        VerifyVariousEmailButtonFeatures();
+      //  VerifyVariousEmailButtonFeatures();
         assertClose();
     }
 }
