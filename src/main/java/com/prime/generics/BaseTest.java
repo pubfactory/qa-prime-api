@@ -79,6 +79,7 @@ public class BaseTest {
     public static List<String> domainName = new ArrayList<String>();
     protected WebDriver driver;
     protected SoftAssert softAssert = new SoftAssert();
+    //public SoftAssert soft = new SoftAssert();
 
     private DesiredCapabilities capability;
     private static String executionMode;
@@ -676,10 +677,15 @@ public class BaseTest {
     @Parameters({"testcaseid"})
     public void closeApplication(@Optional String testcaseId) throws Exception {
         try {
+            System.out.println("in close application");
+            //soft.assertAll();
             Helper.INSTANCE.logEventInfoToReport("After Method");
             Helper.INSTANCE.logEventInfoToReport("testcase=" + testcaseId);
+            System.out.println("testcaseId= in aftermethod" + testcaseId);
             // testcaseId = WebDriverManager.getTestcaseIdTestRail();
             teststatus = Helper.INSTANCE.getErrorMessage(testcaseId);
+
+            System.out.println("teststatus=" + teststatus);
             //          try {
             //              status = Helper.INSTANCE.getErrorMessage(testcaseId);
             //          } catch (NullPointerException e) {
