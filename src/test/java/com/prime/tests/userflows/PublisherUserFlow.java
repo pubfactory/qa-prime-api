@@ -15,21 +15,7 @@ public class PublisherUserFlow extends UserFlowDef {
 
 	@Severity(SeverityLevel.BLOCKER)
 	@Test(groups = {
-			"AP" }, enabled = true, retryAnalyzer = Retry.class, description = "1733756  - Verify Publisher User flows
-1.Select Issue Drop Down in Journals Page 
-2.Listing - Title ,Contributor(s), DOI, Abstract Button Check. 
-3. UnAuthorised User Checks - Access Icon, Article Page
-4.Prev/Next Navigation
-5.Article Page - Full Text Tab Check 
-6.Article Page - Figure Tab Check
-7.Article Page - Contributor(s)
-8.Article Page - Citation/Copy Preview Citation
-9.Article Page - Share Button Functionality 
-10.Article Page - PDF Functionality
-11.Article Page - Google Scholar/PubMed Functionality
-12.Article Page - Article Information Tab Check
-13.Article Page - References Functionality
-14.Article Page - DOI Functionality")
+			"AP" }, enabled = true, retryAnalyzer = Retry.class, description = "1733756  - Verify Publisher User flows")
 	@Story("EPIC-3818")
 	public void publisherUserFlow() throws Exception {
 		// SoftAssert soft = new SoftAssert();
