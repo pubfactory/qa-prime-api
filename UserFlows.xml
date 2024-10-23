@@ -12,7 +12,7 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="com.prime.tests.userflows.FinalUserFlows">
+			<class name="com.prime.tests.userflows.PublisherUserFlow">
 				<methods>
 					<include name="publisherUserFlow">
 						<parameter name="testcaseid" value="1733756" />
