@@ -9,8 +9,8 @@
 name: Java CI with Maven
     
 on:
- schedule:
-    cron: "51 7 * * *"    # This means the job will run every day at 2 AM UTC
+  schedule:
+    - cron: "58 7 * * *"  # Runs at 7:50 AM UTC every day
   workflow_dispatch:
     inputs:
       gitcommitId:
