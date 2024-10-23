@@ -209,9 +209,9 @@ public class UserFlowDef extends BaseTest {
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
 		String signInText = masterPage.getSignInButtonText();
 		String accessIcon = issuePage.getAccessIconValue();
-		assertEqualsoftAssert(soft, driver, signInText, "Sign in", "Verifying the user has is not logged In.");
+		assertEqualsoftAssert(soft, driver, signInText, "Sign innn", "Verifying the user has is not logged In.");
 
-		assertEqualsoftAssert(soft, driver, accessIcon, "Restricted access",
+		assertEqualsoftAssert(soft, driver, accessIcon, "Restricted accesss",
 				"Verifying the access icon is locked when user is not logged in.");
 	}
 
