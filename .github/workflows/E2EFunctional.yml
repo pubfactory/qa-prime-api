@@ -10,7 +10,7 @@ name: Java CI with Maven
     
 on:
   schedule:
-    - cron: "30 9 * * *"  # Runs at 7:50 AM UTC every day
+    - cron: "30 2 * * *"  # Runs at 7:50 AM UTC every day
   workflow_dispatch:
     inputs:
       gitcommitId:
