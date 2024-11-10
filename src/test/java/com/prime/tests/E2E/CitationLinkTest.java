@@ -45,11 +45,13 @@ public class CitationLinkTest extends BaseTest {
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             String articlePageURL = basePage.removeBasicAuthFromURLHomePage(basePage.getURLFromWebPage());
 
+            articleCitationPage.closeHypothesisView();
             //Verifying the Citations link is present
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyCitationsLinkIsPresentInGoofglrScholarSectionOnArticlePage(), true,
                     "Verifying the Citations link is present in google scholar section on Article page");
             articleCitationPage.clickOnCitationsLinkInGoogleScholarSectionOnArticlePage();
             Helper.INSTANCE.switchToWindowTab(1);
+
 
             //Verifying the new tab opened after clicking on Citations link.
             BaseTest.assertEquals(WebDriverManager.getDriver(), Helper.INSTANCE.verifyingNewTabIsOpen(), true, "Verifying the new tab opened after clicking on Citation link");
