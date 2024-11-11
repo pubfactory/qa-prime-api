@@ -1083,7 +1083,7 @@ public class BaseTest {
             wait.until(ExpectedConditions.urlContains(linkText));
             return true;
         } catch (Exception ex) {
-            Assert.fail(linkText + " not found");
+            Assert.fail(linkText + " in URL not found");
             return false;
         }
     }
@@ -1355,4 +1355,23 @@ public class BaseTest {
         }
     }
 
+    /**
+     * This method used to Verify the URL
+     * 
+     * @throws Exception
+     * @return boolean
+     * @author Rakesh.Shevale
+     * @Created Date : 27/09/23
+     */
+
+    public static boolean verifyTextInURLIgnoreCase(String linkText) {
+        try {
+            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 10);
+            wait.until(CustomExpectedConditions.urlContainsIgnoreCase(linkText));
+            return true;
+        } catch (Exception ex) {
+            Assert.fail(linkText + " in URL not found");
+            return false;
+        }
+    }
 }
