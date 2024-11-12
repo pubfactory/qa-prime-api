@@ -640,6 +640,8 @@ public class UserFlowDef extends BaseTest {
 
             Helper.INSTANCE.switchToWindowTab(1);
             assertTruesoftAssert(soft, driver, BaseTest.verifyTextInURL(authorFirstNamePub), "Verifying Same article open in new PubMed site when clicked on author in PubMed section on article page");
+            WebDriverManager.getDriver().close();
+            Helper.INSTANCE.switchToWindowTab(0);
 
         } catch (Exception e) {
             e.getStackTrace();
@@ -656,7 +658,9 @@ public class UserFlowDef extends BaseTest {
     public void verifyThatTheAutoLaunchNewEmailFunctionality() throws Exception {
         browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
         articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
+        System.out.println("Going to click Article Information");
         articleCitationPage.clickOnArticleInformationTabOnArticlePage();
+        System.out.println("Clicked on Article Information");
 
         // Verifying the Email address is present under contributor Notes section in
         // Article
@@ -757,6 +761,7 @@ public class UserFlowDef extends BaseTest {
             // Verifying the Citations link is present
             assertEqualsoftAssert(soft, driver, articleCitationPage.verifyCitationsLinkIsPresentInGoofglrScholarSectionOnArticlePage(), true,
                     "Verifying the Citations link is present in google scholar section on Article page");
+            articleCitationPage.clickOnGoogleScholarkButtonOnArticlePage();
             articleCitationPage.clickOnCitationsLinkInGoogleScholarSectionOnArticlePage();
             Helper.INSTANCE.switchToWindowTab(1);
 

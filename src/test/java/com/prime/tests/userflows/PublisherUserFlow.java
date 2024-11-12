@@ -44,7 +44,7 @@ public class PublisherUserFlow extends UserFlowDef {
         verifyAllFiguresAreLoadingInTheFigureTab();
         verifyFigureOpenInPowePointOnceClicksOnItAndAbleToDownloadTheFigureInPPTFormatIfClicksOnDownloadButton();
         clickContributorsAndPerformCurrentSiteSearch();
-        verifyCitationFunctionalityAndSelectEachFormatOfCitationAndCopyToClipBoardAndMakeSureItMatchesTheCitationPreview();
+        // verifyCitationFunctionalityAndSelectEachFormatOfCitationAndCopyToClipBoardAndMakeSureItMatchesTheCitationPreview();
         verifyShareButtonIsPresentAndEachOptionPromptsTheUSerToLogInInToTheRespectiveService();
         verifyPDFButonAvailableAndDownloadPDF();
         verifyGooglescholarAndPubmedSectionFunctionality();

@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -2073,7 +2075,9 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 11/09/2024
      */
     public void clickOnArticleInformationTabOnArticlePage() throws Exception {
+        System.out.println("Going to mouse over");
         mouseOver(articleInformationTab, "");
+        System.out.println("Mouse over done on Article Information");
         clickOnElement(articleInformationTab, "Clicking on the Article Information tab on article page");
     }
 
@@ -2466,7 +2470,16 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 10/10/2024
      */
     public void clickOnSlidePPTCloseButton() throws Exception {
-        clickOnElement(slidePPTCloseButton, "Clicking on close button of slide PPT");
+        // clickOnElement(slidePPTCloseButton, "Clicking on close button of slide PPT");
+        Actions actions = new Actions(driver);
+
+        // Press the ESC key
+        actions.sendKeys(Keys.ESCAPE).perform();
+
+        //Scroll up
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, 0);");
+
     }
 
     /**
@@ -2593,23 +2606,26 @@ public class ArticleCitationPage extends BasePage {
      */
     public void closeHypothesisView() throws Exception {
         System.out.println("Inside closeHypothesisView");
-        WebElement shadowHost = driver.findElement(By.cssSelector("hypothesis-sidebar"));
-        System.out.println("AFter finding shadowHost");
-        System.out.println("Shadow Host Found: " + (shadowHost != null));
-        System.out.println("Shadow Host HTML: " + shadowHost.getAttribute("outerHTML"));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        String title = (String) js.executeScript("return document.title;");
-        System.out.println("Page Title: " + title);
-        WebElement button1 = (WebElement) js.executeScript("return document.querySelector('hypothesis-sidebar').shadowRoot.querySelector('button[aria-label=\"Annotation sidebar\"]');");
+        List<WebElement> shadowHosts = driver.findElements(By.cssSelector("hypothesis-sidebar"));
+        if (isElementPresent(shadowHosts)) {
+            WebElement shadowHost = driver.findElement(By.cssSelector("hypothesis-sidebar"));
+            System.out.println("AFter finding shadowHost");
+            System.out.println("Shadow Host Found: " + (shadowHost != null));
+            System.out.println("Shadow Host HTML: " + shadowHost.getAttribute("outerHTML"));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            String title = (String) js.executeScript("return document.title;");
+            System.out.println("Page Title: " + title);
+            WebElement button1 = (WebElement) js.executeScript("return document.querySelector('hypothesis-sidebar').shadowRoot.querySelector('button[aria-label=\"Annotation sidebar\"]');");
 
 
-        //        WebElement shadowRoot = (WebElement) js.executeScript("return arguments[0].shadowRoot", shadowHost);
-        //        System.out.println("AFter finding shadowRoot");
-        //        WebElement button = shadowRoot.findElement(By.cssSelector("button[aria-label='Annotation sidebar']"));
-        System.out.println("after finding annotation side bar");
-        clickOnElement(button1, "Closing Hypothesis side bar");
-        driver.switchTo().defaultContent();
-        System.out.println("Closed side bar");
+            //        WebElement shadowRoot = (WebElement) js.executeScript("return arguments[0].shadowRoot", shadowHost);
+            //        System.out.println("AFter finding shadowRoot");
+            //        WebElement button = shadowRoot.findElement(By.cssSelector("button[aria-label='Annotation sidebar']"));
+            System.out.println("after finding annotation side bar");
+            clickOnElement(button1, "Closing Hypothesis side bar");
+            driver.switchTo().defaultContent();
+            System.out.println("Closed side bar");
+        }
     }
 
 
