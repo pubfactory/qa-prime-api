@@ -24,6 +24,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -1650,4 +1652,13 @@ public enum Helper {
 		
     }
     
+    public static List<String> sortListAscending(List<String> list) {
+        Collections.sort(list);
+        return list;
+    }
+    
+    public static List<String> sortListDescending(List<String> list) {
+    	Collections.sort(list, Comparator.reverseOrder());
+        return list;
+    }
 }

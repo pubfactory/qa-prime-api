@@ -12,6 +12,7 @@ package com.prime.generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import org.json.simple.JSONObject;
@@ -40,6 +41,10 @@ public class UserFlowDef extends BaseTest {
 	private IssuePage issuePage;
 	List<String> titleList;
 	private String articleUrl;
+	public int beforefilterTotalResult;
+	public String last;
+	public int beforefilterResearchArticleNumber;
+	public String firstKeyword;
 
 	public void testDataInIt(String testCaseId) throws Exception {
 		String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
@@ -48,6 +53,7 @@ public class UserFlowDef extends BaseTest {
 
 	/**
 	 * This method used to initialized the browser
+	 * 
 	 * @throws Exception
 	 */
 	public void browserInit() throws Exception {
@@ -179,8 +185,8 @@ public class UserFlowDef extends BaseTest {
 	/**
 	 * Function to verify if each listing(article) has DOI, Title, Contributor
 	 * 
-	 * @throws Exception 
-	 * @author Rakesh.Shevale                 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
 	 */
 
 	public void verifyEachListingHasTitleContributorDOIAndAbstractButton() throws Exception {
@@ -202,7 +208,7 @@ public class UserFlowDef extends BaseTest {
 	 * Function to verify is Access Icon is locked for unauthorized user
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 	public void verifyAccessIconIsLockedWhenIamNotLoggedIn() throws Exception {
 		issuePage = BasePage.initialize(WebDriverManager.getDriver(), IssuePage.class);
@@ -219,7 +225,7 @@ public class UserFlowDef extends BaseTest {
 	 * Function to verify the first article loads correctly and verify title.
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 
 	public void verifyTheFirstArticleLoadsCorrectlyAndClickedLinkMatchesTitleOfLoadedArticle() throws Exception {
@@ -239,8 +245,8 @@ public class UserFlowDef extends BaseTest {
 	/**
 	 * Function to verify prev/next navigation for journals page
 	 * 
-	 * @throws Exception 
-	 * @author Rakesh.Shevale 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
 	 */
 	public void verifyAllArticleAreFromTheIssueWhileNavigatingTheNextPrevControl() throws Exception {
 		articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
@@ -289,7 +295,7 @@ public class UserFlowDef extends BaseTest {
 	 * page
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 
 	public void verifyAllFiguresAreLoadingInTheFigureTab() throws Exception {
@@ -306,7 +312,7 @@ public class UserFlowDef extends BaseTest {
 	 * download.
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 
 	public void verifyFigureOpenInPowePointOnceClicksOnItAndAbleToDownloadTheFigureInPPTFormatIfClicksOnDownloadButton()
@@ -346,7 +352,7 @@ public class UserFlowDef extends BaseTest {
 	 * Function to click on Contributor and perform current site search
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 
 	public void clickContributorsAndPerformCurrentSiteSearch() throws Exception {
@@ -369,7 +375,7 @@ public class UserFlowDef extends BaseTest {
 	 * Function to verify Citation functionality of the article page
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 
 	public void verifyCitationFunctionalityAndSelectEachFormatOfCitationAndCopyToClipBoardAndMakeSureItMatchesTheCitationPreview()
@@ -385,7 +391,7 @@ public class UserFlowDef extends BaseTest {
 					"Verifying Citation Button is present.");
 
 			articleCitationPage.clickOnCitationButtonOnArticlePage();
-			articleUrl = basePage.getURLFromWebPage();
+			String articleUrl = basePage.getURLFromWebPage();
 
 			// Verifying if citation pop-up is displayed when clicking on the citation
 			// button
@@ -514,7 +520,7 @@ public class UserFlowDef extends BaseTest {
 			assertEqualsoftAssert(soft, driver,
 					BaseTest.verifyStringContainsSpecificWord(abbreviatedTitleAMA, pastedAMAValued), true,
 					"Verifying the correct format value is copied and pasted");
-
+System.out.println("end citation");
 			driver.get(articleUrl);
 			// soft.assertAll();
 		} catch (Exception e) {
@@ -530,7 +536,7 @@ public class UserFlowDef extends BaseTest {
 	 * Function to verify Share Button and its features
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 
 	public void verifyShareButtonIsPresentAndEachOptionPromptsTheUSerToLogInInToTheRespectiveService()
@@ -592,7 +598,7 @@ public class UserFlowDef extends BaseTest {
 	 * Function to check PDF Download Functionality
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 	public void verifyPDFButonAvailableAndDownloadPDF() throws Exception {
 		try {
@@ -653,7 +659,7 @@ public class UserFlowDef extends BaseTest {
 	 * Function to verify Google Scholar And Pubmed Section Functionality
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 *
 	 */
 
@@ -736,7 +742,7 @@ public class UserFlowDef extends BaseTest {
 	 * function to verify auto launch New Email functionality
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 
 	public void verifyThatTheAutoLaunchNewEmailFunctionality() throws Exception {
@@ -761,7 +767,7 @@ public class UserFlowDef extends BaseTest {
 	 * Function to verify various content meta data in references.
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 
 	public void verifyContentMetaDataServiceInReferences() {
@@ -809,7 +815,7 @@ public class UserFlowDef extends BaseTest {
 	 * Function to verify DOI functionality and its redirect functionality
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 	public void verifyThatDOIShouldBeLinkAndHandlingDOIRedirectFunctionality() throws Exception {
 		try {
@@ -845,7 +851,7 @@ public class UserFlowDef extends BaseTest {
 	 * Function to verify Citations Link in Google Scholar Section.
 	 * 
 	 * @throws Exception
-	 * @author Rakesh.Shevale 
+	 * @author Rakesh.Shevale
 	 */
 	public void verifyThatTheCitationLinkFunctionalityIsWorkingFine() throws Exception {
 		try {
@@ -879,6 +885,242 @@ public class UserFlowDef extends BaseTest {
 			Helper.INSTANCE.closeNewTab(mainWindow, WebDriverManager.getDriver());
 			Helper.INSTANCE.switchToWindowTab(0);
 		}
+	}
+
+	public void verifyCurrentIssueVolumeOnHomeIsSameCurrentIssueIOnIssuePage() throws Exception {
+		soft = new SoftAssert();
+		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
+		issuePage = BasePage.initialize(WebDriverManager.getDriver(), IssuePage.class);
+		String CurrentIssueVolumeOnHomePage = masterPage.getCurrentIssueVolumeTextOnHomePage();
+		System.out.println("CurrentIssueVolumeOnHomePage : " + CurrentIssueVolumeOnHomePage);
+		masterPage.clickOnViewThisIssueOnHomePage();
+		String CurrentIssueVolumeOnIssuePage = issuePage.getCurrentIssueVolumeTextOnIssuePage();
+		System.out.println("CurrentIssueVolumeOnIssuePage : " + CurrentIssueVolumeOnIssuePage);
+		assertEqualsoftAssert(soft, driver, CurrentIssueVolumeOnHomePage, CurrentIssueVolumeOnIssuePage,
+				"Verifying that once user clicks on the latest issue link [view this issue] user will navigate to current issue page which is same as Volume/Issue list as the current one on the homepage");
+	}
+
+	public void verifyHowWellSearchRefinementWorks() throws Exception {
+		browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
+		basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
+		url = BaseTest.properties.getProperty(application);
+		String actualSearch = testData.get("searchkeyword").toString();
+		masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchkeyword").toString());
+		masterPage.clickOnSearchMagnifyingLense();
+		beforefilterTotalResult = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
+		beforefilterResearchArticleNumber = browseOrSearchPage
+				.getNumberOfFilteredResultsFrontOfArticleFilterValueOnBrowseOrSearchPage(
+						testData.get("articletypevalue").toString());
+		String searchURL = basePage.getURLFromWebPage();
+		assertEqualsoftAssert(soft, driver, searchURL, url + "search?q[0]=" + actualSearch,
+				"Verifying I do a broad term search with the word “sedation” so I can see how well search refinement works");
+	}
+
+	public void verifyIfUseTheRefineTermsToGetMoreSpecificInformationForSedationOfYoungerPatients() throws Exception {
+		browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
+		browseOrSearchPage.clickOnAddRowButtonInRefineTermDDOnBrowseOrSearchPage();
+		browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(
+				testData.get("testidvalueselecttwo").toString(), testData.get("refinefilteroptionfulltext").toString());
+		browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(
+				testData.get("testidvalueentertwo").toString(),
+				testData.get("refinefiltervaluefulltexttwo").toString());
+		browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
+		assertEqualsoftAssert(soft, driver,
+				browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("fulltext",
+						testData.get("refinefiltervaluefulltexttwo").toString()),
+				true,
+				"Verifying the if the use Refine Terms to get more specific information for sedation of younger patients and the filter for same creating on search results page.");
+	}
+
+	public void verifyRefineAllResultsToResearchArticlesFromByArticleTypeFilterWithinTheLastFourYears()
+			throws Exception {
+		browseOrSearchPage
+				.clickOnArticleTypeFilterValueOnBrowseOrSearchPage(testData.get("articletypevalue").toString());
+		assertEqualsoftAssert(soft, driver,
+				browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("By Article Type",
+						testData.get("articletypevalue").toString()),
+				true,
+				"Verifying the if the user clicks on the Research article from By Article type filter and By article type filter for same value is created on search results page.");
+		String four = browseOrSearchPage.getTotalDateListFromRefineByDateFilter()
+				.get(browseOrSearchPage.getTotalDateListFromRefineByDateFilter().size() - 4);
+		System.out.println("four : " + four);
+		last = browseOrSearchPage.getTotalDateListFromRefineByDateFilter()
+				.get(browseOrSearchPage.getTotalDateListFromRefineByDateFilter().size() - 1);
+		System.out.println("last : " + last);
+		browseOrSearchPage.selectFromDateValueFromFromDateDDInRefineByDateFilterOnBrowseOrSearchResultPage(four);
+		browseOrSearchPage.selectFromDateValueFromToDateDDInRefineByDateFilterOnBrowseOrSearchResultPage(last);
+		browseOrSearchPage.clickOnSubmitButtonInRefineByDateOnBrowseOrSearchPage();
+
+		assertEqualsoftAssert(soft, driver,
+				browseOrSearchPage.VerifyRefineByDateFilterSearchSlugIsPresentOSearchPage(four, last), true,
+				"Verifying the if the last four year filter is appliad from refie by date filter, the filter for same value is created on search results page.");
+		Thread.sleep(5000);
+	}
+
+	public void verifyPageThroughThe3PagesOfResultsAndMakeSureTheNumberOfReturnedResultsMatchTheNumberOfResultsOnTheSearchPageAndInTheFilters()
+			throws Exception {
+		int totalResultPagInation = browseOrSearchPage.getTotalResultFromPageInation();
+		int totalResult = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
+		int filterResult = browseOrSearchPage.getNumberOfFilteredResultsFrontOfArticleFilterValueOnBrowseOrSearchPage(
+				testData.get("articletypevalue").toString());
+		assertEqualsoftAssert(soft, driver, totalResultPagInation, totalResult,
+				"Verifying page through the 3 pages of results and make sure the number of returned results match the number of results on the search page.");
+		assertEqualsoftAssert(soft, driver, totalResultPagInation, filterResult,
+				"Verifying page through the 3 pages of results and make sure the number of returned results match the number of results in the filters.");
+	}
+
+	public void verifyIncreaseTheNumberOfResultsPerPageTo50SoNoLongerHaveAnyPagination() throws Exception {
+		browseOrSearchPage.selectItemPerPageValueFromItemPerPageDropdownOnBrowseOrSearchPage(
+				testData.get("pageperitem").toString());
+		driver.navigate().refresh();
+		assertEqualsoftAssert(soft, driver, browseOrSearchPage.verifyPagInationIsNotPresentOnBrowseOrSearchPage(), true,
+				"verifying the pagInation is not present on Search or browse page.");
+	}
+
+	public void verifyDefaultSortOrderIsRelevanceAndChangedToASCAndDESCAgainSetToBack() throws Exception {
+		browseOrSearchPage.selectItemPerPageValueFromItemPerPageDropdownOnBrowseOrSearchPage("10");
+		assertEqualsoftAssert(soft, driver,
+				browseOrSearchPage.verifyRelevanceIsSelectedInTheSortByDDOnBrowseOrSearchPage(), true,
+				"veriying the relevance is selected in sort by dd ");
+		driver.navigate().refresh();
+		String beforeAsc = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage();
+		System.out.println("beforeAsc : " + beforeAsc);
+		browseOrSearchPage.SelectSortDateAscFromSortByDropdownOnSearchOrBrowsePage();
+		driver.navigate().refresh();
+		List<String> dateListASC = browseOrSearchPage.getPublicationDateYearForAllContentOnsarchResultsPage();
+		assertEqualsoftAssert(soft, driver, dateListASC.toString(),
+				Helper.INSTANCE.sortListAscending(dateListASC).toString(),
+				"Verifying the All content are sorted in Ascending order after applied sort by dd");
+
+		browseOrSearchPage.SelectSortDateDescFromSortByDropdownOnSearchOrBrowsePage();
+		driver.navigate().refresh();
+		List<String> dateListDSC = browseOrSearchPage.getPublicationDateYearForAllContentOnsarchResultsPage();
+		assertEqualsoftAssert(soft, driver, dateListDSC.toString(),
+				Helper.INSTANCE.sortListDescending(dateListDSC).toString(),
+				"Verifying the All content are sorted in Descending order after applied sort by dd");
+
+		browseOrSearchPage.SelectRelevanceFromSortByDropdownOnSearchOrBrowsePage();
+		driver.navigate().refresh();
+		waitForLoad(driver);
+		String AfterRelevance = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage();
+		System.out.println("AfterRelevance : " + AfterRelevance);
+		assertEqualsoftAssert(soft, driver, AfterRelevance, beforeAsc,
+				"Verifying after applied the relevance in sort by , the set all order back to original sort order");
+	}
+
+	public void clearAllAppliedfilterOnBrowsePage() throws Exception {
+		browseOrSearchPage.clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage(last);
+		browseOrSearchPage.clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage(
+				testData.get("articletypevalue").toString());
+		browseOrSearchPage.clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage(
+				testData.get("refinefiltervaluefulltexttwo").toString());
+
+		driver.navigate().refresh();
+		int afterRemovedFilterResearchArticleNumber = browseOrSearchPage
+				.getNumberOfFilteredResultsFrontOfArticleFilterValueOnBrowseOrSearchPage(
+						testData.get("articletypevalue").toString());
+		int afterRmovedFilterTotalResult = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
+		assertEqualsoftAssert(soft, driver, beforefilterTotalResult, afterRmovedFilterTotalResult,
+				"Verifying the total count is upadted after removing the applied filters.");
+		assertEqualsoftAssert(soft, driver, beforefilterResearchArticleNumber, afterRemovedFilterResearchArticleNumber,
+				"Verifying the total count for the filter is upadted after removing the applied filters.");
+	}
+
+	public void verifyTheRightOpenAccessArticleIsLoaded() throws Exception {
+		browseOrSearchPage.ScrollAndClickOnOpenAccessArticle(testData.get("openaccesstitle").toString());
+		String articleURL = basePage.getURLFromWebPage();
+		assertEqualsoftAssert(soft, driver, url + testData.get("openaccesurl").toString(), articleURL,
+				"Verifying the proper article page is displayed.");
+	}
+
+	public void clickOnContributorOfArticleAndVerifyMoreInformationAboutThem() throws Exception {
+		articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
+		String firstAuthorName = articleCitationPage.getFirstAuthorNameText();
+		articleCitationPage.clickOnFirstAuthorBelowTheArticleTitleOnArticlePage();
+		assertEqualsoftAssert(soft, driver, articleCitationPage.verifyAuthorAffiliationPopUpIsDisplayed(), true,
+				"Verifying the Affilaition popup is displayed aftet clicking on the author name.");
+		assertEqualsoftAssert(soft, driver,
+				articleCitationPage.verifySameAuthornameIsPresentOnAuthorAffiliationPopup(firstAuthorName), true,
+				"Verifying the same author name is present on the popup.");
+		assertEqualsoftAssert(soft, driver,
+				articleCitationPage.verifyMoreInformationIsPresentOnAuthorAffiliationPopup(), true,
+				"Verifying the more informaion is present on the popup.");
+	}
+
+	public void verifyInFullTextTabContentIsAvailbale() throws Exception {
+		assertEqualsoftAssert(soft, driver, articleCitationPage.getReferenceTextFromTheFulltextTab(),
+				testData.get("referencestext").toString(),
+				"Verifying the referenes header is present in fulttext tab.");
+		assertEqualsoftAssert(soft, driver, articleCitationPage.getDownloadPDFTextFromTheFulltextTab(),
+				testData.get("keywordstext").toString(),
+				"Verifying the download PDF button is present in fulttext tab.");
+		assertEqualsoftAssert(soft, driver, articleCitationPage.getKeywordsTextFromTheFulltextTab(),
+				testData.get("downloadpdf").toString(), "Verifying the Keyword text is present in fulttext tab.");
+
+	}
+
+	public void clickOnKeywordsAndGetNewSearchesForThatKeywordsAgainClickOnBackButtonAndVerifyRetrunedToArticlePage()
+			throws Exception {
+		firstKeyword = articleCitationPage.getFirstKeywordsTextFromTheFulltextTab();
+		articleCitationPage.clickOnFirstKeywordInFulltextTabOnArticlePage();
+		assertEqualsoftAssert(soft, driver,
+				browseOrSearchPage.verifySearchSlugSignIsPresentOnBrowseOrSearchPage(firstKeyword), true,
+				"Verifying the new search and new filter is created for first keywords on Search Results Page.");
+		WebDriverManager.getDriver().navigate().back();
+		WebDriverManager.getDriver().navigate().back();
+		String articleUrl = basePage.getURLFromWebPage();
+		assertEqualsoftAssert(soft, driver, url + testData.get("openaccesurl").toString(), articleUrl,
+				"Verifying the after clicking the back button, article page is displayed.");
+	}
+
+	public void clickOnPDFTabAndScanTheInlinePDF() throws Exception {
+		String articleHeader = articleCitationPage.getArticleHeaderOnArticlePage();
+		pdfPage = BasePage.initialize(WebDriverManager.getDriver(), PDFPage.class);
+		articleCitationPage.clickOnPDFTabOnArticlePage();
+		pdfPage.switchToFrame(WebDriverManager.getDriver());
+		String partialArticleHeader = pdfPage.getPartialArticleTitleFromInlinePDFTab();
+		String allKeywords = pdfPage.getKeywordsFromThePDFTab();
+		assertEqualsoftAssert(soft, driver,
+				BaseTest.verifyStringContainsSpecificWord(articleHeader, partialArticleHeader), true,
+				"Verifying that same article is displayed in inline PDF in PDF tab");
+		String applicationName = BaseTest.properties.getProperty("application");
+		assertEqualsoftAssert(soft, WebDriverManager.getDriver(),
+				pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(applicationName), true,
+				"Verifying that watermark is present on inline pdf in Pdf tab on the articla page");
+		assertEqualsoftAssert(soft, driver, BaseTest.verifyStringContainsSpecificWord(allKeywords, firstKeyword), true,
+				"Verifying that same keyword is displayed in inline PDF in PDF tab");
+	}
+
+	public void clickOnFiguresTabScanTheFigures() throws Exception {
+		driver.navigate().refresh();
+		articleCitationPage.clickOnFiguresTabOnArticlePage();
+		Thread.sleep(4000);
+		assertEqualsoftAssert(soft, driver, articleCitationPage.verifyAllFiguresAreLoadingInTheFigureTabOnArticlePage(),
+				true, "Verifying all figures are loaded in figures tab on article page.");
+	}
+
+	public void selectOneFigureAndExportItAsPPT() {
+		try {
+			articleCitationPage.clickOnExportFiguresButtonUnderFigureTab();
+			articleCitationPage.clickOnSelectFirstFigureFromTheFiguresTabOnArticlePage();
+			articleCitationPage.clickOnFiguresDownloadButton();
+			assertEqualsoftAssert(soft, driver, articleCitationPage.verifyFiguresIsDownloadedInPPTFormat(".pptx"), true,
+					"Verifying the figures is downloaded in PPT format.");
+		} catch (Exception e) {
+			e.getStackTrace();
+		} finally {
+			deletedownloadedFiles(".pptx");
+		}
+	}
+
+	public void clickOnArticleInformationTabandScanTheSection() throws Exception {
+		articleCitationPage.clickOnArticleInformationTabOnArticlePage();
+		assertEqualsoftAssert(soft, driver, articleCitationPage.getContributorNotesTextFromArticleInformationTab(),
+				testData.get("contributornotes").toString(),
+				"Verifying the contributor header is present in Article Information tab.");
+		assertEqualsoftAssert(soft, driver,
+				articleCitationPage.verifyEmailElementIsPresentUnderArticleInformationTabOnArticlePage(), true,
+				"Verifying the contributor email addess is present in Article Information tab.");
 	}
 
 	/**

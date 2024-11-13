@@ -644,6 +644,18 @@ public class MasterPage extends BasePage {
 	public String getSignInButtonText() throws Exception {
 		return getTextFromElement(SignInButton);
 	}
+	
+	/**
+	 * This method return the current issue volume text on home page
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @created Date : 31/10/24
+	 */
+	public String getCurrentIssueVolumeTextOnHomePage() throws Exception {
+		return getTextFromElement(currentIssueVolumeText);
+	}
     
 
 	@FindBy(xpath = "//button[contains(text(),'Accept All Cookies')]")
@@ -704,4 +716,6 @@ public class MasterPage extends BasePage {
     private WebElement twitterDescriptionMetaTag;
     @FindBy(xpath="//a[@data-testid='block-labeledbutton' and text()='About']")
     private WebElement aboutStaticButton;   
+    @FindBy(xpath="//h1[@data-identifier='<issue_title>']")
+    private WebElement currentIssueVolumeText;
 }

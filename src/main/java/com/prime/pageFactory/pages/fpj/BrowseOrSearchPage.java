@@ -8,6 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.prime.generics.BasePage;
 
 public class BrowseOrSearchPage extends BasePage {
@@ -718,7 +721,7 @@ public class BrowseOrSearchPage extends BasePage {
 		WebElement SearchSlugSign = driver.findElement(
 				By.xpath("//strong[contains(text(),'" + valueName + "')]//parent::span//following-sibling::button"));
 		clickOnElement(SearchSlugSign,
-				"Clicking on - sign which is availbale in backside of " + valueName + " on Browse or search page");
+				"Clicking on X sign which is availbale in backside of " + valueName + " on Browse or search page");
 	}
 
 	/**
@@ -735,8 +738,8 @@ public class BrowseOrSearchPage extends BasePage {
 		// List<WebElement> SearchSlugSign =
 		// driver.findElements(By.xpath("//strong[text()='" + valueName +
 		// "']//parent::span//following-sibling::button"));
-		List<WebElement> SearchSlugSign = driver.findElements(By.xpath(
-				"//strong[text()='Term']//following::strong[text()='"+valueName+"']"));
+		List<WebElement> SearchSlugSign = driver
+				.findElements(By.xpath("//strong[text()='Term']//following::strong[text()='" + valueName + "']"));
 		return isElementPresent(SearchSlugSign);
 	}
 
@@ -750,9 +753,10 @@ public class BrowseOrSearchPage extends BasePage {
 	 * @return
 	 * @Created Date : 18/10/2023
 	 */
-	public boolean verifyFilterValueIsPresentOnBrowseOrSearchPage(String filterName, String valueName) throws Exception {
-		List<WebElement> filterValue = driver
-				.findElements(By.xpath("//strong[contains(text(),'"+filterName+"')]//following::strong[contains(text(),'"+valueName+"')]"));
+	public boolean verifyFilterValueIsPresentOnBrowseOrSearchPage(String filterName, String valueName)
+			throws Exception {
+		List<WebElement> filterValue = driver.findElements(By.xpath("//strong[contains(text(),'" + filterName
+				+ "')]//following::strong[contains(text(),'" + valueName + "')]"));
 		return isElementPresent(filterValue);
 	}
 
@@ -872,7 +876,7 @@ public class BrowseOrSearchPage extends BasePage {
 	 * @Created Date : 11/10/2023
 	 */
 	public String getTotalItemCountOnPage() {
-		List<String> list = getTextFindElements(By.xpath("//a[@target='_self']"));
+		List<String> list = getTextFindElements(By.xpath("//div[@class='title']"));
 		String totalCount = String.valueOf(list.size());
 		return totalCount;
 	}
@@ -1643,10 +1647,10 @@ public class BrowseOrSearchPage extends BasePage {
 	 * @author Rakesh.Shevale
 	 * @Created Date : 23/08/2024
 	 */
-	public boolean verifyByJournalFilterSearchSlugValueIsPresentOnSearchOrBrowsePage(String filterName,String valueName)
-			throws Exception {
-		List<WebElement> SearchSlugSign = driver
-				.findElements(By.xpath("//strong[contains(text(),'"+filterName+"')]//following::strong[contains(text(),'"+valueName+"')]"));
+	public boolean verifyByJournalFilterSearchSlugValueIsPresentOnSearchOrBrowsePage(String filterName,
+			String valueName) throws Exception {
+		List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[contains(text(),'" + filterName
+				+ "')]//following::strong[contains(text(),'" + valueName + "')]"));
 		return isElementPresent(SearchSlugSign);
 	}
 
@@ -1789,8 +1793,8 @@ public class BrowseOrSearchPage extends BasePage {
 	}
 
 	/**
-	 * This method used to clicks on Add row button in date filter
-	 * on Browse or search page
+	 * This method used to clicks on Add row button in date filter on Browse or
+	 * search page
 	 * 
 	 * @throws Exception
 	 * @author Rakesh.Shevale
@@ -1801,7 +1805,8 @@ public class BrowseOrSearchPage extends BasePage {
 	}
 
 	/**
-	 * this method is used to check the multi term refine date filter is present on search page
+	 * this method is used to check the multi term refine date filter is present on
+	 * search page
 	 * 
 	 * @param value
 	 * @throws Exception
@@ -1816,7 +1821,8 @@ public class BrowseOrSearchPage extends BasePage {
 	}
 
 	/**
-	 * this method is used to check the multi term refine date filter is not present on search page with date filter value
+	 * this method is used to check the multi term refine date filter is not present
+	 * on search page with date filter value
 	 * 
 	 * @param value
 	 * @throws Exception
@@ -1831,8 +1837,8 @@ public class BrowseOrSearchPage extends BasePage {
 	}
 
 	/**
-	 * This method used to clicks on cross button in date filter
-	 * on Browse or search page
+	 * This method used to clicks on cross button in date filter on Browse or search
+	 * page
 	 * 
 	 * @throws Exception
 	 * @author Rakesh.Shevale
@@ -1882,33 +1888,42 @@ public class BrowseOrSearchPage extends BasePage {
 	}
 
 	/**
-	 * this method is used to check the search slug is present on search page with date filter value
+	 * this method is used to check the search slug is present on search page with
+	 * date filter value
 	 * 
 	 * @param value
 	 * @throws Exception
 	 * @author Rakesh.Shevale
 	 * @Created Date : 03/09/2024
 	 */
-	public boolean VerifyRefineByDateFilterSearchSlugIsPresentOSearchPage(String fromDateValue,String toDateValue) throws Exception {
-		List<WebElement> dateElement = driver.findElements(By.xpath("//strong[text()='Refine by Date']//following::strong[text()='"+fromDateValue+" - "+toDateValue+"']"));
+	public boolean VerifyRefineByDateFilterSearchSlugIsPresentOSearchPage(String fromDateValue, String toDateValue)
+			throws Exception {
+		List<WebElement> dateElement = driver
+				.findElements(By.xpath("//strong[text()='Refine by Date']//following::strong[text()='" + fromDateValue
+						+ " - " + toDateValue + "']"));
 		return isElementPresent(dateElement);
 	}
-	
+
 	/**
-	 * this method is used to check the search slug is not present on search page with date filter value is removed
+	 * this method is used to check the search slug is not present on search page
+	 * with date filter value is removed
 	 * 
 	 * @param value
 	 * @throws Exception
 	 * @author Rakesh.Shevale
 	 * @Created Date : 03/09/2024
 	 */
-	public boolean VerifyRefineByDateFilterSearchSlugIsNotPresentOSearchPage(String fromDateValue, String toDateValue) throws Exception {
-		List<WebElement> dateElement = driver.findElements(By.xpath("//strong[text()='Refine by Date']//following::strong[text()='"+fromDateValue+" - "+toDateValue+"']"));
+	public boolean VerifyRefineByDateFilterSearchSlugIsNotPresentOSearchPage(String fromDateValue, String toDateValue)
+			throws Exception {
+		List<WebElement> dateElement = driver
+				.findElements(By.xpath("//strong[text()='Refine by Date']//following::strong[text()='" + fromDateValue
+						+ " - " + toDateValue + "']"));
 		return isElementNotPresent(dateElement);
 	}
 
 	/**
-	 * This method used to verify the first article is present on search or browse result page
+	 * This method used to verify the first article is present on search or browse
+	 * result page
 	 * 
 	 * @throws Exception
 	 * @author Rakesh.Shevale
@@ -1919,7 +1934,179 @@ public class BrowseOrSearchPage extends BasePage {
 		List<WebElement> firstArticle = driver.findElements(By.xpath("(//div[@class='title'])[1]"));
 		return isElementPresent(firstArticle);
 	}
+
+	/**
+	 * This method used to returns the list of date from refine by date filter
+	 * 
+	 * @return List <String>
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 04/11/2024
+	 */
+	public List<String> getTotalDateListFromRefineByDateFilter() throws Exception {
+		List<WebElement> dateList = driver.findElements(By.xpath("//select[@name='fromDate']//option"));
+		return getMultipleWebElementText(dateList);
+	}
+
+	/*
+	 * This method used to get the total result till the pagInation link on browse
+	 * or search results page.
+	 * 
+	 * @return integer
+	 * 
+	 * @throws Exception
+	 * 
+	 * @author Rakesh.Shevale
+	 * 
+	 * @Created Date : 05/11/2024
+	 */
+	public int getTotalResultFromPageInation() throws Exception {
+		int result = 0;
+		result = result + Integer.parseInt(getTotalItemCountOnPage());
+		List<WebElement> pagInation = driver.findElements(By.xpath("//nav[@aria-label='Pagination']//li"));
+		int pagInationPage = getMultipleWebElementText(pagInation).size();
+		for (int i = 2; i <= pagInationPage; i++) {
+			System.out.println("In for loops " + i);
+			clickOnElement(driver.findElement(By.xpath("//nav[@aria-label='Pagination']//li[text()='" + i + "']")));
+			Thread.sleep(7000);
+			result = result + Integer.parseInt(getTotalItemCountOnPage());
+		}
+		return result;
+	}
+
+	/**
+	 * This method used to verify the pagInation is not present on Search or browse
+	 * page throws Exception
+	 * 
+	 * @author Rakesh.Shevale
+	 * @return boolean
+	 * @Created Date : 05/11/2024
+	 */
+	public boolean verifyPagInationIsNotPresentOnBrowseOrSearchPage() throws Exception {
+		List<WebElement> pagInation = driver.findElements(By.xpath("//span[text()='Page:']"));
+		return isElementNotPresent(pagInation);
+	}
+
+	/**
+	 * This method used to verify the relevance is selected in sort by dd
+	 * 
+	 * throws Exception
+	 * 
+	 * @author Rakesh.Shevale
+	 * @return boolean
+	 * @Created Date : 05/11/2024
+	 */
+	public boolean verifyRelevanceIsSelectedInTheSortByDDOnBrowseOrSearchPage() throws Exception {
+		List<WebElement> relevance = driver.findElements(By.xpath("//option[text()='Relevance' and @selected]"));
+		return isElementPresent(relevance);
+	}
+
+	/**
+	 * This method used to return the list of publication date only for contents
+	 * 
+	 * @return List<String>
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 06/11/2024
+	 */
+	public List<String> getPublicationDateForAllContentOnsarchResultsPage() throws Exception {
+		Thread.sleep(10000);
+		List<WebElement> publicationDate = driver.findElements(By.xpath(
+				"//span[contains(text(),'Online Publication Date')]//parent::span//following-sibling::span//child::span"));
+		return getMultipleWebElementText(publicationDate);
+	}
+
+	/**
+	 * This method used to return the list of publication date in year only for
+	 * contents
+	 * 
+	 * @return List<String>
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 06/11/2024
+	 */
+	public List<String> getPublicationDateYearForAllContentOnsarchResultsPage() throws Exception {
+		List<String> onlyYear = new ArrayList<>();
+		List<String> publication = getPublicationDateForAllContentOnsarchResultsPage();
+		for (int i = 0; i < publication.size(); i++) {
+			onlyYear.add(publication.get(i).substring(publication.get(i).length() - 4, publication.get(i).length()));
+		}
+		return onlyYear;
+	}
+
+	/**
+	 * This method returns the list of total content title
+	 *
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @return List <String>
+	 * @Created Date : 06/11/2024
+	 */
+	public List<String> getTitleListOnSearchResultPage() throws Exception {
+		Thread.sleep(7000);
+		List<WebElement> titleWeb = driver.findElements(By.xpath("//div[@class='title']"));
+		List<String> title = getMultipleWebElementText(titleWeb);
+		return title;
+	}
+
+	/**
+	 * 
+	 * This method is used for selecting relevance option from sort by drop down
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 07/11/2024
+	 * 
+	 */
+
+	public void SelectRelevanceFromSortByDropdownOnSearchOrBrowsePage() throws Exception {
+		clickOnElement(relevanceSortBY, "Changing the drop down option to relevance in search results page");
+	}
+
+	/**
+	 * This method used click on open access article if not found click on next page again click on open article 
+	 * 
+	 * @param openAccesstitle
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 07/11/2024
+	 */
+	public void ScrollAndClickOnOpenAccessArticle(String openAccesstitle) throws Exception {
+		int lastPageInation=getLastItemOfPaginationLinks(getSeletedPerPageItemNumberFromDD());
+		List<WebElement> element = driver.findElements(By.xpath("//div[text()='" + openAccesstitle + "']"));
+		if (element.size() > 0) {
+			clickOnElement(driver.findElement(By.xpath("//div[text()='" + openAccesstitle + "']")));
+		} else {
+			System.out.println("In ELSE LOOPS");
+//			List<WebElement> pagInation = driver.findElements(By.xpath("//nav[@aria-label='Pagination']//li"));
+//			int pagInationPage = getMultipleWebElementText(pagInation).size();
+			if (lastPageInation >= 2) {
+				for (int i = 2; i <= lastPageInation; i++) {
+					clickOnElement(
+							driver.findElement(By.xpath("//nav[@aria-label='Pagination']//li[text()='" + i + "']")));
+					List<WebElement> title = driver.findElements(By.xpath("//div[text()='" + openAccesstitle + "']"));
+					if (title.size() > 0) {
+						clickOnElement(driver.findElement(By.xpath("//div[text()='" + openAccesstitle + "']")));
+						break;
+					}
+				}
+			}
+		}
+	}
 	
+	/**
+	 * This method used to get selected page per item in String format from DD
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 07/11/2024
+	 */
+	public String getSeletedPerPageItemNumberFromDD() throws Exception {
+		return getTextFromElement(selectedItemPerPage);
+	}
+	
+
 	@FindBy(xpath = "//h1[text()='Browse']")
 	private WebElement browseText;
 
@@ -2041,5 +2228,9 @@ public class BrowseOrSearchPage extends BasePage {
 	private WebElement crossButtonAdvancedSearchFilter;
 	@FindBy(xpath = "//span[@data-testid='dataFilter']//following::button[@title='[+] Add row']")
 	private WebElement addRowForDateFilter;
+	@FindBy(xpath = "//select[@id='sortOptions']//option[text()='Relevance']")
+	private WebElement relevanceSortBY;
+	@FindBy(xpath="//select[@id='itemsPerPage']//option[@selected]")
+	private WebElement selectedItemPerPage;
 
 }

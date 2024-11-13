@@ -575,4 +575,26 @@
 			"withextraslashdoi":"doi/somethinghere/10.2344/anpr-66-04-06"
 			}
 		},
+		{
+		"id": "1733809",
+		"data": {
+			"description": "librarianUserFlow",
+			"searchkeyword":"sedation",
+			"testidvalueselecttwo":"AdvanceSearchFilter-select-1",
+			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
+			"refinefilteroptionfulltext":"Full Text",
+			"refinefiltervaluefulltexttwo":"pediatric",
+			"articletypevalue":"Research Article",
+			"pageperitem":"50",
+			"dateasc":"Sort Date ASC",
+			"datedesc":"Sort Date DESC",
+			"openaccesstitle":"Squamous Papilloma Causing Airway Obstruction During Conscious Sedation",
+			"openaccesurl":"view/journals/anpr/64/3/article-p168.xml?isSearch=true",
+			"referencestext":"REFERENCES",
+			"keywordstext":"Keywords:",
+			"downloadpdf":"Download PDF",
+			"contributornotes":"Contributor Notes"
+			
+			}
+		},
 ]

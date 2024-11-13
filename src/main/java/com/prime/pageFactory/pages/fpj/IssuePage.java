@@ -651,6 +651,19 @@ public class IssuePage extends BasePage {
 	public String getAccessIconValue() throws Exception {
 		return getAttributeFromElement(accessIcon,"title");
 	}
+	
+	/**
+	 * This method return the current issue volume text on issue page
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @created Date : 31/10/24
+	 */
+	public String getCurrentIssueVolumeTextOnIssuePage() throws Exception {
+		return getTextFromElement(currentIssueVolumeText);
+	}
+    
 
 	@FindBy(xpath = "//span[text()='Issues']")
 	private WebElement issuePageHeader;
@@ -692,5 +705,7 @@ public class IssuePage extends BasePage {
 	private WebElement ogTitleMetaTag;
 	@FindBy(xpath="(//span[@title='Restricted access'])[1]")
 	private WebElement accessIcon;
+	@FindBy(xpath="//span[@data-identifier='<issue_title>']")
+    private WebElement currentIssueVolumeText;
 
 }

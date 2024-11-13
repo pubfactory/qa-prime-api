@@ -21,4 +21,21 @@
 			</class>
 		</classes>
 	</test>
+	<test name="LIBRARIANRUSERFLOWS" preserve-order="true">
+		<parameter name="application" value="anesthesiaprogress" />
+		<groups>
+			<run>
+				<include name="anesthesiaprogress" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.userflows.LibrarianUserFlow">
+				<methods>
+					<include name="librarianUserFlow">
+						<parameter name="testcaseid" value="1733809" />
+					</include>				
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>

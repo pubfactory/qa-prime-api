@@ -15,6 +15,7 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.prime.generics.BasePage;
 import com.prime.generics.Helper;
@@ -2437,7 +2438,8 @@ public class ArticleCitationPage extends BasePage {
 	 * @author Rakesh.Shevale
 	 * @Created Date : 10/10/2024
 	 */
-	public boolean verifyAllFiguresAreLoadingInTheFigureTabOnArticlePage() {
+	public boolean verifyAllFiguresAreLoadingInTheFigureTabOnArticlePage() throws Exception {
+		waitForDocumentReady();
 		List<WebElement> images = driver
 				.findElements(By.xpath("//img[contains(@alt,'Figure') and contains(@class,'chakra-image css')]"));
 		boolean allImagesLoaded = false;
@@ -2627,7 +2629,135 @@ public class ArticleCitationPage extends BasePage {
         WebElement platform = driver.findElement(By.xpath("(//span[@data-testid='block-sharebutton'])[1]//button[text()='Share on "+platformName+"']"));
         clickOnElement(platform, "Clicking on share in " + platformName + "");
     }
+    
+    /**
+	 * This method is used to check Author affiliation popup is displayed
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @return boolean
+	 * @Created Date : 07/11/2024
+	 */
+	public boolean verifyAuthorAffiliationPopUpIsDisplayed() throws Exception {
+		List<WebElement> popup = driver.findElements(By.xpath("//div[contains(@style,'visibility: visible')]"));
+		return isElementPresent(popup);
+	}
+	
+	/**
+	 * This method is used to check same author name is present on author affiliation popup
+	 * 
+	 * @param authorName
+	 * @return boolean
+	 * @author Rakesh.Shevale
+	 * @throws Exception 
+	 * @Created Date : 07/11/2024
+	 */
+	public boolean verifySameAuthornameIsPresentOnAuthorAffiliationPopup(String authorName) throws Exception {
+		List<WebElement> author = driver.findElements(By.xpath("//div[contains(@style,'visibility: visible')]//span[text()='"+authorName+"']"));
+		return isElementPresent(author);
+	}
 
+	/**
+	 * This method is used to check more information is present on author affiliation popup
+	 * 
+	 * @return boolean
+	 * @author Rakesh.Shevale
+	 * @throws Exception 
+	 * @Created Date : 07/11/2024
+	 */
+	public boolean verifyMoreInformationIsPresentOnAuthorAffiliationPopup() throws Exception {
+		List<WebElement> author = driver.findElements(By.xpath("(//div[@class='affiliation'])[1]"));
+		return isElementPresent(author);
+	}
+	
+	/**
+	 * This method is returns Reference text from the Fulltext Tab.
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 07/11/2024
+	 */
+	public String getReferenceTextFromTheFulltextTab() throws Exception {
+		String referenceText = getTextFromElement(referencesTextInFulltextTab);
+		return referenceText;
+	}
+	
+	/**
+	 * This method is returns keywords text from the Full text Tab.
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 07/11/2024
+	 */
+	public String getDownloadPDFTextFromTheFulltextTab() throws Exception {
+		String keywordsText = getTextFromElement(keywordsTextInFulltextTab);
+		return keywordsText;
+	}
+	
+	/**
+	 * This method is returns download PDF text from the Full text Tab.
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 11/11/2024
+	 */
+	public String getKeywordsTextFromTheFulltextTab() throws Exception {
+		String keywordsText = getTextFromElement(downloadPDFTEXTInFulltextTab);
+		return keywordsText;
+	}
+	
+	/**
+	 * This method used to clicks on the first keyword in full text tab on Article page
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 11/11/2024
+	 */
+	public void clickOnFirstKeywordInFulltextTabOnArticlePage() throws Exception {
+		clickOnElement(firstKeyword, "Clicking on first keyword in fulltext tab on article page");
+	}
+	
+	/**
+	 * This method is returns download PDF text from the Full text Tab.
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 11/11/2024
+	 */
+	public String getFirstKeywordsTextFromTheFulltextTab() throws Exception {
+		String firstKeywordText = getTextFromElement(firstKeyword);
+		return firstKeywordText;
+	}
+	
+	/**
+	 * This method is used to clicks on the PDF tab on the article page
+	 * 
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 11/11/2024
+	 */
+	public void clickOnPDFTabOnArticlePage() throws Exception {
+			mouseOver(PDFTab, "");
+			clickOnElement(PDFTab, "Clicking on PDF tab on the article page");
+	}
+	
+	/**
+	 * This method is returns contributor notes text from the Article Information tab.
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 12/11/2024
+	 */
+	public String getContributorNotesTextFromArticleInformationTab() throws Exception {
+		String contributorInfo = getTextFromElement(contributorNotesTextFromArticleInfoTab);
+		return contributorInfo;
+	}
+	
 
 	@FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
 	private WebElement citationButton;
@@ -2819,4 +2949,19 @@ public class ArticleCitationPage extends BasePage {
 	private WebElement currentSiteFromAuthorAffiPopup;
 	@FindBy(xpath = "(//span[@data-testid='block-sharebutton'])[1]")
 	private WebElement shareButton;
+	@FindBy(xpath="//div[contains(@style,'visibility: visible')]")
+	private WebElement authorAffiliationPopupDisplayed;
+	@FindBy(xpath="//h2[text()='REFERENCES']")
+	private WebElement referencesTextInFulltextTab;
+	@FindBy(xpath="//span[text()='Keywords: ']")
+	private WebElement keywordsTextInFulltextTab;
+	@FindBy(xpath="//h2[text()='REFERENCES']//following::a[text()='Download PDF']")
+	private WebElement downloadPDFTEXTInFulltextTab;
+	@FindBy(xpath="(//span[text()='Keywords: ']//following::a[@target='_self'])[1]")
+	private WebElement firstKeyword;
+	@FindBy(xpath="//button[text()='PDF']")
+	private WebElement PDFTab;
+	@FindBy(xpath="//p[text()='Contributor Notes']")
+	private WebElement contributorNotesTextFromArticleInfoTab;
+	
 }

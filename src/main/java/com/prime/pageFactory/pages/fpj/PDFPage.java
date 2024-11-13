@@ -267,8 +267,21 @@ public class PDFPage extends BasePage {
         List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])[1]"));
         return isElementPresent(element);
     }
+    
+    /**
+	 * This method is returns all keywords from PDF tab(PDF PREVIEW).
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 11/11/2024
+	 */
+	public String getKeywordsFromThePDFTab() throws Exception {
+		String keywords = getTextFromElement(keywordsFromPDFtab);
+		return keywords;
+	}
 
-    @FindBy(xpath = "(//div[@data-testid='block-downloadpdfbutton']//child::a)[1]")
+    @FindBy(xpath = "(//div[@data-testid='block-downloadpdfbutton'])[1]")
     private WebElement downloadPDFIntoolBar;
     //   @FindBy(xpath = "//button[contains(text(),'Inline PDF')]")
     @FindBy(xpath = "//button[text()='Full Text']//following::button[text()='PDF']")
@@ -292,4 +305,7 @@ public class PDFPage extends BasePage {
     private WebElement automaticZoompdfZoomDD;
     @FindBy(xpath = "(//div[@class='textLayer'])[1]//span[2]")
     private WebElement partialArticleTitleFromInlinePDFTab;
+    @FindBy(xpath="//span[text()='Key Words:']//following::span[2]")
+	private WebElement keywordsFromPDFtab;
+	
 }
