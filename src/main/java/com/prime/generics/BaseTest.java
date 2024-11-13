@@ -426,14 +426,9 @@ public class BaseTest {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     // io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
-<<<<<<< HEAD
 //                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
                     System.setProperty("webdriver.chrome.driver",
                     	System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
-=======
-                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
-                    //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
->>>>>>> d60e1601cabcbfd704bdb32d57188bac0202908f
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
                     options.addArguments("--disable-dev-shm-usage");
@@ -1089,7 +1084,7 @@ public class BaseTest {
             wait.until(ExpectedConditions.urlContains(linkText));
             return true;
         } catch (Exception ex) {
-            Assert.fail(linkText + " in URL not found");
+            Assert.fail(linkText + " not found");
             return false;
         }
     }
@@ -1360,14 +1355,14 @@ public class BaseTest {
             soft.assertEquals(actual, true, description);
         }
     }
-
+    
     /**
      * This method used to Verify the URL
      * 
      * @throws Exception
      * @return boolean
-     * @author Rakesh.Shevale
-     * @Created Date : 27/09/23
+     * @author Veena.mathew
+     * @Created Date : 10/11/24
      */
 
     public static boolean verifyTextInURLIgnoreCase(String linkText) {
@@ -1380,4 +1375,5 @@ public class BaseTest {
             return false;
         }
     }
+
 }
