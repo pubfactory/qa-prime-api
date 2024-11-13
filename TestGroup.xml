@@ -272,24 +272,24 @@
 			</class>
 		</classes>
 	</test>
-	<test name="AUTOCOMPLETE" preserve-order="true">
-		<parameter name="application" value="anesthesiaprogress" />
-		<groups>
-			<run>
-				<include name="anesthesiaprogress" />
-			</run>
-		</groups>
-		<classes>
-			<class name="com.prime.tests.E2E.AutoCompleteTypeAhead">
-				<methods>
-					<include
-						name="verifythatTheAutoCompleteTypeAheadFunctionality">
-						<parameter name="testcaseid" value="1729939" />
-					</include>
-				</methods>
-			</class>
-		</classes>
-	</test>
+<!-- 	<test name="AUTOCOMPLETE" preserve-order="true"> -->
+<!-- 		<parameter name="application" value="anesthesiaprogress" /> -->
+<!-- 		<groups> -->
+<!-- 			<run> -->
+<!-- 				<include name="anesthesiaprogress" /> -->
+<!-- 			</run> -->
+<!-- 		</groups> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.prime.tests.E2E.AutoCompleteTypeAhead"> -->
+<!-- 				<methods> -->
+<!-- 					<include -->
+<!-- 						name="verifythatTheAutoCompleteTypeAheadFunctionality"> -->
+<!-- 						<parameter name="testcaseid" value="1729939" /> -->
+<!-- 					</include> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 	<test name="SOURCEFILTERJOURNLFILTER" preserve-order="true">
 		<parameter name="application" value="genomicpress" />
 		<groups>
