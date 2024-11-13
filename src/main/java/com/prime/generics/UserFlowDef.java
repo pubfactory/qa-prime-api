@@ -391,7 +391,7 @@ public class UserFlowDef extends BaseTest {
 					"Verifying Citation Button is present.");
 
 			articleCitationPage.clickOnCitationButtonOnArticlePage();
-			String articleUrl = basePage.getURLFromWebPage();
+			articleUrl = basePage.getURLFromWebPage();
 
 			// Verifying if citation pop-up is displayed when clicking on the citation
 			// button
@@ -520,7 +520,7 @@ public class UserFlowDef extends BaseTest {
 			assertEqualsoftAssert(soft, driver,
 					BaseTest.verifyStringContainsSpecificWord(abbreviatedTitleAMA, pastedAMAValued), true,
 					"Verifying the correct format value is copied and pasted");
-System.out.println("end citation");
+
 			driver.get(articleUrl);
 			// soft.assertAll();
 		} catch (Exception e) {
