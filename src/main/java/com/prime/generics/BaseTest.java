@@ -426,9 +426,14 @@ public class BaseTest {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     // io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
+<<<<<<< HEAD
 //                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
                     System.setProperty("webdriver.chrome.driver",
                     	System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+=======
+                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+                    //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+>>>>>>> d60e1601cabcbfd704bdb32d57188bac0202908f
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
                     options.addArguments("--disable-dev-shm-usage");
@@ -1084,7 +1089,7 @@ public class BaseTest {
             wait.until(ExpectedConditions.urlContains(linkText));
             return true;
         } catch (Exception ex) {
-            Assert.fail(linkText + " not found");
+            Assert.fail(linkText + " in URL not found");
             return false;
         }
     }
@@ -1356,4 +1361,23 @@ public class BaseTest {
         }
     }
 
+    /**
+     * This method used to Verify the URL
+     * 
+     * @throws Exception
+     * @return boolean
+     * @author Rakesh.Shevale
+     * @Created Date : 27/09/23
+     */
+
+    public static boolean verifyTextInURLIgnoreCase(String linkText) {
+        try {
+            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 10);
+            wait.until(CustomExpectedConditions.urlContainsIgnoreCase(linkText));
+            return true;
+        } catch (Exception ex) {
+            Assert.fail(linkText + " in URL not found");
+            return false;
+        }
+    }
 }

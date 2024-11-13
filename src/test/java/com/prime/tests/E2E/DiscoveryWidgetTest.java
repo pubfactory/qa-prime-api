@@ -108,17 +108,22 @@ public class DiscoveryWidgetTest extends BaseTest {
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyGoogleScholarButtonPresentOnArticlePage(), true,
                     "Verifying the Google Scholar button is present at right hand side on Artical page");
 
+            articleCitationPage.closeHypothesisView();
 
             // Verifying Same author affiliation block authors present in Google scholar section
             articleCitationPage.clickOnGoogleScholarkButtonOnArticlePage();
+            System.out.println("After clicking on google scholar");
             List<String> affiliationBlockAuthor = articleCitationPage.getAllAuthorNamesFromAuthorAffiliationBlockOnArticlePage();
+            System.out.println("affiliationBlockAuthor in Google Scholar" + affiliationBlockAuthor);
             List<String> googleScholarAuthor = articleCitationPage.getAllAuthorNamesFromAuthorGoogleScholarSectionOnArticlePage();
+            System.out.println("googleScholarAuthor = " + googleScholarAuthor);
             BaseTest.assertEquals(WebDriverManager.getDriver(), affiliationBlockAuthor.toString(), googleScholarAuthor.toString(),
                     "Verifying the similar author affiliation block authors is present in the Google Scholar section on Artical page");
 
             //Verifying Similar article hyper link present in Google scholar section and similar article open when click on it
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifySimilarArtcileHyperLinkPresentOnArticlePage(), true,
                     "Verifying the Similar Artcile Hyper Link is present in the Google Scholar section on Artical page");
+            System.out.println("Before verifying GS");
             articleCitationPage.clickOnSimilarArticleInGoogleScholarHyperLink();
             Helper.INSTANCE.switchToWindowTab(1);
             BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("scholar"), "Verifying if google scholar tab is opened");
@@ -132,6 +137,7 @@ public class DiscoveryWidgetTest extends BaseTest {
             String authorFirstName = authorText.get(0);
             articleCitationPage.clickOnFirstAuthorInGoogleScholarSectionOnArticlePage();
             Helper.INSTANCE.switchToWindowTab(1);
+            System.out.println("End of Google Scholar before finally");
 
             BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL(authorFirstName), "Verifying Author name in google scholar tab when clicked on author in google schole section on article page");
         } catch (Exception e) {
@@ -139,6 +145,7 @@ public class DiscoveryWidgetTest extends BaseTest {
         } finally {
             Helper.INSTANCE.closeNewTab(mainWindow, WebDriverManager.getDriver());
             Helper.INSTANCE.switchToWindowTab(0);
+            System.out.println("End of Google Scholar after finally");
         }
     }
 
@@ -166,16 +173,20 @@ public class DiscoveryWidgetTest extends BaseTest {
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
             BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyPubmedButtonPresentOnArticlePage(), true, "Verifying the PubMed button is present at right hand side on Artical page");
-
+            articleCitationPage.closeHypothesisView();
             // Verifying Same author affiliation block authors present in Pubmed section
             articleCitationPage.clickOnPubMedButtonOnArticlePage();
             List<String> affiliationBlockAuthor = articleCitationPage.getAllAuthorNamesFromAuthorAffiliationBlockOnArticlePage();
+            System.out.println("affiliationBlockAuthor" + affiliationBlockAuthor);
             List<String> pubMedAuthor = articleCitationPage.getAllAuthorNamesFromPubMedSectionOnArticlePage();
+            System.out.println("pubMedAuthor" + pubMedAuthor);
             BaseTest.assertEquals(WebDriverManager.getDriver(), affiliationBlockAuthor.toString(), pubMedAuthor.toString(),
                     "Verifying the similar author affiliation block authors is present in the PubMed section on Artical page");
 
+            System.out.println("Before Verifying");
             //Verifying similar author article open in new tab when clicked on author in PubMed section
             String[] author = articleCitationPage.getFirstAuthorNamesFromPubMedSectionOnArticlePage().split(" ");
+            System.out.println("authors" + author);
             List<String> authorText = Helper.INSTANCE.convertArrayToList(author);
             String authorFirstName = authorText.get(0);
             articleCitationPage.clickOnFirstAuthorInPubMedSectionOnArticlePage();
@@ -186,6 +197,7 @@ public class DiscoveryWidgetTest extends BaseTest {
             //Verifying altmetric badge present on article page
             Helper.INSTANCE.closeNewTab(mainWindow, WebDriverManager.getDriver());
             Helper.INSTANCE.switchToWindowTab(0);
+            System.out.println("End of PubMed");
             //           BaseTest.assertEquals(WebDriverManager.getDriver(),articleCitationPage.verifyAltmetricBadgePresentOnArticlePage(), true, "Verifying the altmetric badge is present on the artical page");
         } catch (Exception e) {
             e.getStackTrace();
