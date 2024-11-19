@@ -1080,7 +1080,7 @@ public class UserFlowDef extends BaseTest {
 				browseOrSearchPage.verifySearchSlugSignIsPresentOnBrowseOrSearchPage(firstKeyword), true,
 				"Verifying the new search and new filter is created for first keywords on Search Results Page.");
 		WebDriverManager.getDriver().navigate().back();
-		WebDriverManager.getDriver().navigate().back();
+//		WebDriverManager.getDriver().navigate().back();
 		String articleUrl = basePage.getURLFromWebPage();
 		assertEqualsoftAssert(soft, driver, url + testData.get("openaccesurl").toString(), articleUrl,
 				"Verifying the after clicking the back button, article page is displayed.");
