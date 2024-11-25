@@ -76,19 +76,38 @@ jobs:
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
         keep_files: true
+        
+    - name: Collect Test Results
+      run: |
+          PASSED=$(grep -c 'passed' allure-results/*.json || echo 0)
+          FAILED=$(grep -c 'failed' allure-results/*.json || echo 0)
+          TOTAL=$((PASSED + FAILED))
+          echo "PASSED=$PASSED" >> $GITHUB_ENV
+          echo "FAILED=$FAILED" >> $GITHUB_ENV
+          echo "TOTAL=$TOTAL" >> $GITHUB_ENV
+      id: collect_results
 
     - name: Send ${{ job.status }} message to #qa-prime-integration room
       if: always()
-      uses: act10ns/slack@v2.0.0
-      with:
-          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-          channel: '#qa-prime-integration'
-          message: "*Build Status*: *${{ job.status }}*.\n*Environment:DEV*.\nAllure report URL is: https://pubfactory.github.io/qa-prime-e2e/${{ github.run_number }}\nGit commit ID is: ${{ inputs.gitcommitId }}.\nPrime-frontend job is: https://github.com/pubfactory/prime-frontend/actions/runs/${{ inputs.jobId }}"
-                  
       env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          PASSED: ${{ env.PASSED }}
+          FAILED: ${{ env.FAILED }}
+          TOTAL: ${{ env.TOTAL }}
+      run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{
+            "text": "Test Results Summary",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "🚀 *Test Results Summary*:\n*Total Tests*: '"${TOTAL}"'\n*Passed*: '"${PASSED}"'\n*Failed*: '"${FAILED}"'\n\n🔗 *Allure Report*: <https://pubfactory.github.io/qa-prime-e2e/${{ github.run_number }}|View Report>\nGit commit ID is: ${{ inputs.gitcommitId }}.\nPrime-frontend job is: https://github.com/pubfactory/prime-frontend/actions/runs/${{ inputs.jobId }}"
+                }
+              }
+            ]
+          }' $SLACK_WEBHOOK_URL
         
 
     
