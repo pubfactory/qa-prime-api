@@ -51,12 +51,19 @@ jobs:
     - name: Gather Allure Results
       id: parse-allure-results
       run: |
-        PASSED=$(grep -c '"status":"passed"' target/allure-results/*.json || echo 0)
-        FAILED=$(grep -c '"status":"failed"' target/allure-results/*.json || echo 0)
+        PASSED=$(grep -o '"status":"passed"' target/allure-results/*.json | wc -l || echo 0)
+        FAILED=$(grep -o '"status":"failed"' target/allure-results/*.json | wc -l || echo 0)
         TOTAL=$((PASSED + FAILED))
         echo "PASSED=$PASSED" >> $GITHUB_ENV
         echo "FAILED=$FAILED" >> $GITHUB_ENV
         echo "TOTAL=$TOTAL" >> $GITHUB_ENV
+        
+    - name: Debug Allure Results
+      run: |
+        echo "Inspecting Allure Results Directory:"
+        ls -l target/allure-results/
+        echo "Sample JSON File Content:"
+        cat target/allure-results/*.json | head -n 50
 
     - name: Get Allure history
       uses: actions/checkout@v2
