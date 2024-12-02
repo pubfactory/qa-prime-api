@@ -372,11 +372,10 @@ public class UserFlowDef extends BaseTest {
 		articleCitationPage.clickOnFirstAuthorBelowTheArticleTitleOnArticlePage();
 		articleCitationPage.clickOnCurrentSiteLinkOnAuthorAffiliationPopup();
 		String authorEditor = browseOrSearchPage.getFirstAuthorNameOnFirstArticleOnBrowseOrSearchPage();
-		// BaseTest.assertEquals(WebDriverManager.getDriver(),
-		// browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("author",
-		// authorEditor), true,
-		// "Verifying the once click on Current site, Refine term filter for Author is
-		// displayed on browse/search result page.");
+		 BaseTest.assertEquals(WebDriverManager.getDriver(),
+		 browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("author",
+		 authorEditor), true,
+		 "Verifying the once click on Current site, Refine term filter for Author is displayed on browse/search result page.");
 		Allure.step(
 				"Verifying the once click on Current site, Refine term filter for Author is displayed on browse/search result page.");
 		driver.navigate().back();
@@ -926,7 +925,7 @@ public class UserFlowDef extends BaseTest {
 						testData.get("articletypevalue").toString());
 		String searchURL = basePage.getURLFromWebPage();
 		assertEqualsoftAssert(soft, driver, searchURL, url + "search?q[0]=" + actualSearch,
-				"Verifying I do a broad term search with the word “sedation” so I can see how well search refinement works");
+				"Verifying I do a broad term search with the word Â“sedationÂ” so I can see how well search refinement works");
 	}
 
 	public void verifyIfUseTheRefineTermsToGetMoreSpecificInformationForSedationOfYoungerPatients() throws Exception {
@@ -1080,7 +1079,6 @@ public class UserFlowDef extends BaseTest {
 				browseOrSearchPage.verifySearchSlugSignIsPresentOnBrowseOrSearchPage(firstKeyword), true,
 				"Verifying the new search and new filter is created for first keywords on Search Results Page.");
 		WebDriverManager.getDriver().navigate().back();
-//		WebDriverManager.getDriver().navigate().back();
 		String articleUrl = basePage.getURLFromWebPage();
 		assertEqualsoftAssert(soft, driver, url + testData.get("openaccesurl").toString(), articleUrl,
 				"Verifying the after clicking the back button, article page is displayed.");
