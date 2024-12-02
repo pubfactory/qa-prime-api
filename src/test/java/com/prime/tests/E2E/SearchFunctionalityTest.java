@@ -295,7 +295,8 @@ public class SearchFunctionalityTest extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermTextBoxIsNotPresentOnBrowseOrSearchPage(testData.get("testidvalueentertwo").toString()), true,
                 "Verifying the additional Row Refine terms option is not present");
 
-        masterPage.clickOnSearchMagnifyingLense();
+        driver.navigate().refresh();
+       // masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptiontitle").toString());
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage());
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
