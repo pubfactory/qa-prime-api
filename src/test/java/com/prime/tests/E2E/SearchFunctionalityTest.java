@@ -255,7 +255,7 @@ public class SearchFunctionalityTest extends BaseTest {
             description = "1722545 - Verify that user is able to perform search with the combination of refine terms by adding, clearing , removing more than one rows.")
     @Story("EPIC-28")
 
-    public void VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows() throws Exception {
+     public void VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
         WebDriverManager.setTestcaseIdTestRail(testCaseId);
         //String application = BaseTest.properties.getProperty("application");
@@ -295,28 +295,28 @@ public class SearchFunctionalityTest extends BaseTest {
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermTextBoxIsNotPresentOnBrowseOrSearchPage(testData.get("testidvalueentertwo").toString()), true,
                 "Verifying the additional Row Refine terms option is not present");
 
+//        masterPage.clickOnSearchMagnifyingLense();
         driver.navigate().refresh();
-       // masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptiontitle").toString());
-        browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage());
+        browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), firstTitle.toLowerCase());
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsPresentOnSearchOrBrowsePage(browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage()), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsPresentOnSearchOrBrowsePage(firstTitle.toLowerCase()), true,
                 "Verifying the refine term filter search keyword is presented on the search/browse page before click on the ClearAll button on the search/browse page");
         browseOrSearchPage.clickOnClearAllOnBrowseOrSearchPage();
         WebDriverManager.getDriver().navigate().refresh();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsNotPresentOnSearchOrBrowsePage(browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage()), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsNotPresentOnSearchOrBrowsePage(firstTitle.toLowerCase()), true,
                 "Verifying the refine term filter search keyword is not presented on the search/browse page after clicked on the ClearAll button on the search/browse page");
         //
         masterPage.clickOnSearchMagnifyingLense();
         String title = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptiontitle").toString());
-        browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), title);
+        browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), firstTitle.toLowerCase());
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsPresentOnSearchOrBrowsePage(title), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsPresentOnSearchOrBrowsePage(firstTitle.toLowerCase()), true,
                 "Verifying the refine term filter search keyword is presented on the search/browse page before click on the refine term search slug sign on the search/browse page");
-        browseOrSearchPage.clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage(title);
+        browseOrSearchPage.clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage(firstTitle.toLowerCase());
         WebDriverManager.getDriver().navigate().refresh();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsNotPresentOnSearchOrBrowsePage(title), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsNotPresentOnSearchOrBrowsePage(firstTitle.toLowerCase()), true,
                 "Verifying the refine term filter search keyword is not presented on the search/browse page after clicked on the refine term search slug sign on the search/browse page");
     }
 
