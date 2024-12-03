@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,7 +55,7 @@ import org.testng.asserts.SoftAssert;
 import org.testng.xml.XmlSuite;
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import io.qameta.allure.Allure;
-import okhttp3.Cookie;
+//import okhttp3.Cookie;
 
 public class BaseTest {
 
@@ -75,7 +76,7 @@ public class BaseTest {
     public static final String USERNAME = "kglselectsignal_7pEVPF";
     public static final String AUTOMATE_KEY = "3HpPxaxVR3GLRjgxWg2K";
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-    public Set<Cookie> allCookies;
+//    public Set<Cookie> allCookies;
     public static List<String> domainName = new ArrayList<String>();
     protected WebDriver driver;
     protected SoftAssert softAssert = new SoftAssert();
@@ -464,14 +465,14 @@ public class BaseTest {
                     System.out.println("****** Initiate Firefox Browser using " + browser + " *****");
                     FirefoxOptions options = new FirefoxOptions();
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
-                        options.setHeadless(true);
+                       // options.setHeadless(true);
                     }
                     io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver(options);
                     System.out.println("******After Firefox Driver*****" + driver);
                 } else if (browser.equalsIgnoreCase("edge")) {
                     System.out.println("****** Initiate Edge Browser using " + browser + " *****");
-                    DesiredCapabilities capabilities = DesiredCapabilities.edge();
+                    //DesiredCapabilities capabilities = DesiredCapabilities.edge();
                     edgeoptions = new EdgeOptions();
 
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
@@ -590,8 +591,8 @@ public class BaseTest {
         boolean elementPresent = false;
         try {
             WebDriverManager.getWebdriverWait().until(ExpectedConditions.visibilityOf(element));
-            new WebDriverWait(driver, 60).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
-            new WebDriverWait(driver, 60).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(60)).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(60)).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
             Helper.INSTANCE.logEventToReport(driver, "Pass", element, "Visible & Stable");
             elementPresent = true;
         } catch (Exception e) {
@@ -968,7 +969,7 @@ public class BaseTest {
      * @Created Date : 14/12/2022
      */
     public void waitForLoad(WebDriver driver) {
-        new WebDriverWait(driver, 50).until((ExpectedCondition<Boolean>) wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
+        new WebDriverWait(driver, Duration.ofSeconds(50)).until((ExpectedCondition<Boolean>) wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
     }
 
     /**
@@ -1080,7 +1081,7 @@ public class BaseTest {
 
     public static boolean verifyTextInURL(String linkText) {
         try {
-            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 10);
+            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), Duration.ofSeconds(10));
             wait.until(ExpectedConditions.urlContains(linkText));
             return true;
         } catch (Exception ex) {
@@ -1206,7 +1207,7 @@ public class BaseTest {
      * @Created Date : 16/10/2023
      */
     public static void waitUntilTheURLGetLoads(String linkText) {
-        WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 30);
+        WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), Duration.ofSeconds(30));
         wait.until(ExpectedConditions.urlContains(linkText));
     }
 
@@ -1367,7 +1368,7 @@ public class BaseTest {
 
     public static boolean verifyTextInURLIgnoreCase(String linkText) {
         try {
-            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), 10);
+            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), Duration.ofSeconds(10));
             wait.until(CustomExpectedConditions.urlContainsIgnoreCase(linkText));
             return true;
         } catch (Exception ex) {

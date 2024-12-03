@@ -54,7 +54,7 @@ public class BasePage {
         this.driver = driver;
         action = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         if (WebDriverManager.getWebdriverWait() == null) {
             WebDriverManager.setWebdriverWait(wait);
         }
@@ -168,8 +168,8 @@ public class BasePage {
         try {
             waitForDocumentReady();
             WebDriverManager.getWebdriverWait().until(ExpectedConditions.visibilityOf(element));
-            new WebDriverWait(driver, 60).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
-            new WebDriverWait(driver, 60).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(60)).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(60)).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
             elementPresent = true;
         } catch (Exception e) {
             Helper.INSTANCE.logEventToReport(driver, "Error", element, e.getMessage());
@@ -189,7 +189,7 @@ public class BasePage {
     protected boolean waitForElementLoadWithOutLog(String element, int max_Time) throws Exception {
         boolean flag = false;
         try {
-            otherWait = new WebDriverWait(driver, max_Time);
+            otherWait = new WebDriverWait(driver, Duration.ofSeconds(max_Time));
             otherWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
             Helper.INSTANCE.logEventToReport(driver, "pass", element, "visibled");
             flag = true;
@@ -311,8 +311,8 @@ public class BasePage {
         try {
             System.out.println("Before wait time :   " + new SimpleDateFormat("hh:mm:ss").format(Calendar.getInstance().getTime()));
             element = WebDriverManager.getWebdriverWait().until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathExpression)));
-            new WebDriverWait(driver, 60).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
-            new WebDriverWait(driver, 60).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(60)).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(60)).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
 
         } catch (StaleElementReferenceException ste) {
             waitAndReturnElementPresent(xpathExpression);
@@ -409,7 +409,7 @@ public class BasePage {
     protected boolean waitTillUploadComplete(String element) throws Exception {
         boolean flag = false;
         try {
-            otherWait = new WebDriverWait(driver, 150);
+            otherWait = new WebDriverWait(driver, Duration.ofSeconds(150));
             otherWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
             Helper.INSTANCE.logEventToReport(driver, "pass", "File", "Uploaded");
             flag = true;
@@ -431,7 +431,7 @@ public class BasePage {
     protected boolean waitForElementLoad(String element, int max_Time) throws Exception {
         boolean flag = false;
         try {
-            otherWait = new WebDriverWait(driver, max_Time);
+            otherWait = new WebDriverWait(driver, Duration.ofSeconds(max_Time));
             otherWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(element)));
             flag = true;
         } catch (Exception e) {
@@ -454,9 +454,9 @@ public class BasePage {
         boolean elementPresent = false;
         try {
 
-            new WebDriverWait(driver, timeOut).until(ExpectedConditions.visibilityOf(element));
-            new WebDriverWait(driver, timeOut).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
-            new WebDriverWait(driver, timeOut).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(timeOut)).until(ExpectedConditions.visibilityOf(element));
+            new WebDriverWait(driver, Duration.ofSeconds(timeOut)).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(timeOut)).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
             elementPresent = true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -478,8 +478,8 @@ public class BasePage {
         try {
             waitForDocumentReady();
             WebDriverManager.getWebdriverWait().until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(element)));
-            new WebDriverWait(driver, 60).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
-            new WebDriverWait(driver, 60).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(60)).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(60)).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
             Helper.INSTANCE.logEventToReport(driver, "Pass", element, "InVisible & Stable");
             elementPresent = true;
         } catch (Exception e) {
@@ -1314,7 +1314,7 @@ public class BasePage {
     protected boolean waitTillUploadComplete(String element, String desc) throws Exception {
         boolean flag = false;
         try {
-            otherWait = new WebDriverWait(driver, 150);
+            otherWait = new WebDriverWait(driver, Duration.ofSeconds(150));
             otherWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
             Allure.step(desc);
             flag = true;
@@ -1654,8 +1654,8 @@ public class BasePage {
         try {
             waitForDocumentReady();
             WebDriverManager.getWebdriverWait().until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(element)));
-            new WebDriverWait(driver, 60).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
-            new WebDriverWait(driver, 60).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(60)).ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
+            new WebDriverWait(driver, Duration.ofSeconds(60)).ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
             elementPresent = true;
         } catch (Exception e) {
             Assert.fail(desc);
@@ -1879,7 +1879,7 @@ public class BasePage {
         boolean elementPresent = false;
         try {
             waitForDocumentReady();
-            WebDriverWait wait = new WebDriverWait(driver, timeOut);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
             wait.until(ExpectedConditions.visibilityOf(element));
             wait.ignoring(StaleElementReferenceException.class).ignoring(NoSuchElementException.class);
             wait.ignoring(InvalidElementStateException.class).ignoring(NoSuchElementException.class);
@@ -1964,9 +1964,9 @@ public class BasePage {
 
             FluentWait<WebDriver> wait = new FluentWait<WebDriver>(WebDriverManager.getDriver());
 
-            wait.pollingEvery(timeOut, TimeUnit.SECONDS);
+            wait.pollingEvery(Duration.ofSeconds(timeOut));
 
-            wait.withTimeout(30, TimeUnit.MILLISECONDS);
+            wait.withTimeout(Duration.ofSeconds(30));
 
             Function<WebDriver, Boolean> function = new Function<WebDriver, Boolean>()
 

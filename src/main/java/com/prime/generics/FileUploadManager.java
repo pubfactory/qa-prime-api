@@ -3,6 +3,7 @@ package com.prime.generics;
 import java.io.File;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
@@ -37,7 +38,7 @@ public class FileUploadManager {
 	public synchronized void fileUpload(WebElement element, String filePath, WebDriver driver, ExtentTest extentObj)
 			throws Exception {
 		try {
-			WebDriverWait driverWait = new WebDriverWait(driver, 180);
+			WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(180));
 			driverWait.until(ExpectedConditions.visibilityOf(element));
 			// logEventInfoToReport(driver, "pass", element, "Upload button visibled");
 			element.sendKeys(filePath);
@@ -207,7 +208,7 @@ public class FileUploadManager {
 			File filePath = new File(fileName);
 			if (filePath.exists()) {
 				JavascriptExecutor jse = (JavascriptExecutor) driver;
-				WebDriverWait wait = new WebDriverWait(driver, 30);
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 				String JS_DROP_FILE = "var target = arguments[0]," + "    offsetX = arguments[1],"
 						+ "    offsetY = arguments[2]," + "    document = target.ownerDocument || document,"
