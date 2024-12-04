@@ -46,6 +46,9 @@ jobs:
       run: |
           cd /home/runner/work/qa-prime-e2e/qa-prime-e2e/src/test/resources
           chmod +x chromedriver
+    - name: Clean and Install Dependencies
+      run: mvn clean install -U
+      
     - name: Build with Maven
       id: run-test-case
       run: mvn test -DsuiteXmlFile=TestGroupPrimeConfig2.xml  -DEnvironment=dev -Dbrowser=chrome
