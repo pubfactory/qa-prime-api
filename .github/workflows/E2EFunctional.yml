@@ -47,7 +47,7 @@ jobs:
           cd /home/runner/work/qa-prime-e2e/qa-prime-e2e/src/test/resources
           chmod +x chromedriver
     - name: Clean and Install Dependencies
-      run: mvn clean install -U
+      run: mvn clean install -U -DskipTests
       
     - name: Build with Maven
       id: run-test-case
