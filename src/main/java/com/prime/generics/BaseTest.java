@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Properties;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import org.apache.commons.io.FileUtils;
@@ -53,6 +52,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 import org.testng.xml.XmlSuite;
+import org.testng.xml.XmlTest;
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import io.qameta.allure.Allure;
 //import okhttp3.Cookie;
@@ -76,7 +76,7 @@ public class BaseTest {
     public static final String USERNAME = "kglselectsignal_7pEVPF";
     public static final String AUTOMATE_KEY = "3HpPxaxVR3GLRjgxWg2K";
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
-//    public Set<Cookie> allCookies;
+    //    public Set<Cookie> allCookies;
     public static List<String> domainName = new ArrayList<String>();
     protected WebDriver driver;
     protected SoftAssert softAssert = new SoftAssert();
@@ -90,6 +90,7 @@ public class BaseTest {
     private static String appUrl;
     private static String gridIP;
     private static String groupname;
+    private static String testNGtestName = "";
 
     public String subtitle;
     public String title;
@@ -278,6 +279,11 @@ public class BaseTest {
             suiteName = context.getSuite().getName();
             suite = context.getSuite().getXmlSuite();
             // String env = BaseTest.properties.getProperty("Environment");
+            //SSR Testcase ID 
+            XmlTest ssrTest = context.getSuite().getXmlSuite().getTests().stream().filter(test -> "SSRUSERFLOWS".equals(test.getName())).findFirst().orElse(null);
+            testNGtestName = ssrTest.getName();
+            System.out.println("ssrTest.getName()" + ssrTest.getName());
+            System.out.println("testcaseidfromxml" + ssrTest.getClasses().get(0).getIncludedMethods().get(0).getAllParameters().get("testcaseid"));
             String executionMode = BaseTest.properties.getProperty("executionMode");
             if (executionMode.equalsIgnoreCase("remote")) {
                 // System.setProperty("Environment", suite.getParameter("Environment"));
@@ -420,6 +426,7 @@ public class BaseTest {
      */
     private void setupEnvironment() {
         try {
+            // String tcid=
             String browser = BaseTest.properties.getProperty("browser");
             String executionMode = BaseTest.properties.getProperty("executionMode");
             if (executionMode.equalsIgnoreCase("local") || (executionMode.equalsIgnoreCase("remote"))) {
@@ -427,9 +434,8 @@ public class BaseTest {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     // io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     System.out.println(System.getProperty("user.dir"));
-                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
-//                    System.setProperty("webdriver.chrome.driver",
-//                    	System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                    //                 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
                     options.addArguments("--disable-dev-shm-usage");
@@ -437,7 +443,10 @@ public class BaseTest {
                     options.addArguments("--disable-extensions");
                     options.addArguments("--dns-prefetch-disable");
                     options.addArguments("--disable-gpu");
-                    options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
+                    if (testNGtestName.equalsIgnoreCase("SSRUSERFLOWS"))
+                        options.addArguments("X-Amzn-Waf-Bot=restricted");
+                    else
+                        options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
                         options.addArguments("--headless");
                         options.addArguments("--window-size=1400,600");
@@ -465,7 +474,7 @@ public class BaseTest {
                     System.out.println("****** Initiate Firefox Browser using " + browser + " *****");
                     FirefoxOptions options = new FirefoxOptions();
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
-                       // options.setHeadless(true);
+                        // options.setHeadless(true);
                     }
                     io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver(options);
@@ -1356,7 +1365,7 @@ public class BaseTest {
             soft.assertEquals(actual, true, description);
         }
     }
-    
+
     /**
      * This method used to Verify the URL
      * 
