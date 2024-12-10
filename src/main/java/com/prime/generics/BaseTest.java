@@ -280,10 +280,10 @@ public class BaseTest {
             suite = context.getSuite().getXmlSuite();
             // String env = BaseTest.properties.getProperty("Environment");
             //SSR Testcase ID 
-            XmlTest ssrTest = context.getSuite().getXmlSuite().getTests().stream().filter(test -> "SSRUSERFLOWS".equals(test.getName())).findFirst().orElse(null);
-            testNGtestName = ssrTest.getName();
-            System.out.println("ssrTest.getName()" + ssrTest.getName());
-            System.out.println("testcaseidfromxml" + ssrTest.getClasses().get(0).getIncludedMethods().get(0).getAllParameters().get("testcaseid"));
+//            XmlTest ssrTest = context.getSuite().getXmlSuite().getTests().stream().filter(test -> "SSRUSERFLOWS".equals(test.getName())).findFirst().orElse(null);
+//            testNGtestName = ssrTest.getName();
+//            System.out.println("ssrTest.getName()" + ssrTest.getName());
+//            System.out.println("testcaseidfromxml" + ssrTest.getClasses().get(0).getIncludedMethods().get(0).getAllParameters().get("testcaseid"));
             String executionMode = BaseTest.properties.getProperty("executionMode");
             if (executionMode.equalsIgnoreCase("remote")) {
                 // System.setProperty("Environment", suite.getParameter("Environment"));
@@ -443,10 +443,12 @@ public class BaseTest {
                     options.addArguments("--disable-extensions");
                     options.addArguments("--dns-prefetch-disable");
                     options.addArguments("--disable-gpu");
-                    if (testNGtestName.equalsIgnoreCase("SSRUSERFLOWS"))
-                        options.addArguments("X-Amzn-Waf-Bot=restricted");
-                    else
-                        options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
+                    options.addArguments("--Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
+//                    if (testNGtestName.equalsIgnoreCase("SSRUSERFLOWS"))
+//                        //options.addArguments("X-Amzn-Waf-Bot=restricted");
+//                    	 options.addArguments("--Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
+//                    else
+//                        options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
                         options.addArguments("--headless");
                         options.addArguments("--window-size=1400,600");

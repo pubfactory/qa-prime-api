@@ -4,7 +4,41 @@
 	<listeners>
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>
-	<test name="PUBLISHERUSERFLOWS" preserve-order="true">
+<!-- 	<test name="PUBLISHERUSERFLOWS" preserve-order="true"> -->
+<!-- 		<parameter name="application" value="anesthesiaprogress" /> -->
+<!-- 		<groups> -->
+<!-- 			<run> -->
+<!-- 				<include name="anesthesiaprogress" /> -->
+<!-- 			</run> -->
+<!-- 		</groups> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.prime.tests.userflows.PublisherUserFlow"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="publisherUserFlow"> -->
+<!-- 						<parameter name="testcaseid" value="1733756" /> -->
+<!-- 					</include>				 -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="LIBRARIANRUSERFLOWS" preserve-order="true"> -->
+<!-- 		<parameter name="application" value="anesthesiaprogress" /> -->
+<!-- 		<groups> -->
+<!-- 			<run> -->
+<!-- 				<include name="anesthesiaprogress" /> -->
+<!-- 			</run> -->
+<!-- 		</groups> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.prime.tests.userflows.LibrarianUserFlow"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="librarianUserFlow"> -->
+<!-- 						<parameter name="testcaseid" value="1733809" /> -->
+<!-- 					</include>				 -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	<test name="SSRUSERFLOWS" preserve-order="true">
 		<parameter name="application" value="anesthesiaprogress" />
 		<groups>
 			<run>
@@ -12,27 +46,10 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="com.prime.tests.userflows.PublisherUserFlow">
+			<class name="com.prime.tests.userflows.SSRUserFlow">
 				<methods>
-					<include name="publisherUserFlow">
-						<parameter name="testcaseid" value="1733756" />
-					</include>				
-				</methods>
-			</class>
-		</classes>
-	</test>
-	<test name="LIBRARIANRUSERFLOWS" preserve-order="true">
-		<parameter name="application" value="anesthesiaprogress" />
-		<groups>
-			<run>
-				<include name="anesthesiaprogress" />
-			</run>
-		</groups>
-		<classes>
-			<class name="com.prime.tests.userflows.LibrarianUserFlow">
-				<methods>
-					<include name="librarianUserFlow">
-						<parameter name="testcaseid" value="1733809" />
+					<include name="SSRUserFlowTest">
+						<parameter name="testcaseid" value="101" />
 					</include>				
 				</methods>
 			</class>
