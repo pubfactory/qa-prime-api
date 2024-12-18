@@ -664,6 +664,60 @@ public class IssuePage extends BasePage {
 		return getTextFromElement(currentIssueVolumeText);
 	}
     
+	 /**This method is used to check description meta tag is present on Issue page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/12/2024
+     */
+    public boolean VerifyDescriptionSSRMetaTagisPresentOnIssuePage() throws Exception {
+    	List<WebElement> Description=driver.findElements(By.xpath("(//meta[@property='description'])[1]"));
+    	 return isElementPresent(Description);
+    }
+    
+    /**This method returns the description meta tag content attribute value on Issue page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/12/2024
+     */
+    public String getDescriptionSSRMetaTagPropertyValue() throws Exception {
+    	WebElement descriptionSSR = driver.findElement(By.xpath("(//meta[@property='description'])[1]"));
+    	String description=getMetaTagAttribute(descriptionSSR,"content");
+    	return description;    	
+    }
+    
+    /**
+	 * This method is used to check twitter:description meta tag is present on Issue
+	 * page
+	 * 
+	 * @return boolean
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 17/12/2024
+	 */
+	public boolean VerifyTwitterDescriptionSSRMetaTagisPresentOnIssuePage() throws Exception {
+		List<WebElement> twitterDescription = driver.findElements(By.xpath("//meta[@name='twitter:description']"));
+		return isElementPresent(twitterDescription);
+	}
+
+	/**
+	 * This method returns the twitter:description meta tag content attribute value
+	 * on Issue page
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 17/12/2024
+	 */
+	public String getTwitterDescriptionSSRMetaTagPropertyValue() throws Exception {
+		WebElement twitterDescription=driver.findElement(By.xpath("//meta[@name='twitter:description']"));
+		String twitterDescriptiontag = getMetaTagAttribute(twitterDescription, "content");
+		return twitterDescriptiontag;
+	}
+    
 
 	@FindBy(xpath = "//span[text()='Issues']")
 	private WebElement issuePageHeader;

@@ -2755,8 +2755,95 @@ public class ArticleCitationPage extends BasePage {
 		String contributorInfo = getTextFromElement(contributorNotesTextFromArticleInfoTab);
 		return contributorInfo;
 	}
+	
+	/**
+     * This method is used to check twitter:description meta tag is present on
+     * article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 13/12/2024
+     */
+    public boolean VerifyTwitterDescriptionSSRAttributeMetaTagisPresentOnArticlePage() throws Exception {
+        List<WebElement> twitterDescription = driver.findElements(By.xpath("//meta[@name='twitter:description']"));
+        return isElementPresent(twitterDescription);
+    }
 
+    /**
+     * This method returns the twitter:description meta tag content attribute value
+     * on article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 13/12/2024
+     */
+    public String getTwitterDescriptionSSRMetaTagPropertyValue() throws Exception {
+    	WebElement twitterDescriptionNameMetaTag=driver.findElement(By.xpath("//meta[@name='twitter:description']"));
+        String twitterDescription = getMetaTagAttribute(twitterDescriptionNameMetaTag, "content");
+        return twitterDescription;
+    }
+    
+    /**
+     * This method is used to check twitter:title meta tag is present on article
+     * page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 13/12/2024
+     */
+    public boolean VerifyTwitterTitleSSRMetaTagisPresentOnArticlePage() throws Exception {
+        List<WebElement> twitterTitle = driver.findElements(By.xpath("//meta[@name='twitter:title']"));
+        return isElementPresent(twitterTitle);
+    }
 
+    /**
+     * This method returns the twitter:title meta tag content attribute value on
+     * article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 13/12/2024
+     */
+    public String getTwitterTitleSSRMetaTagPropertyValue() throws Exception {
+    	WebElement twitterTitleSSRMetaTag=driver.findElement(By.xpath("//meta[@name='twitter:title']"));
+        String twitterTitle = getMetaTagAttribute(twitterTitleSSRMetaTag, "content");
+        return twitterTitle;
+    }
+
+//    /**
+//     * This method is used to check og:site name meta tag is present on article
+//     * page
+//     * 
+//     * @return boolean
+//     * @throws Exception
+//     * @author Rakesh.Shevale
+//     * @Created Date : 13/12/2024
+//     */
+//    public boolean VerifyOgSiteNameLSSRMetaTagisPresentOnArticlePage() throws Exception {
+//        List<WebElement> ogsite = driver.findElements(By.xpath("//meta[@property='og:site_name']"));
+//        return isElementPresent(ogsite);
+//    }
+//
+//    /**
+//     * This method returns the og:site name meta tag content attribute value on
+//     * article page
+//     * 
+//     * @return String
+//     * @throws Exception
+//     * @author Rakesh.Shevale
+//     * @Created Date : 13/12/2024
+//     */
+//    public String getOgSiteNameSSRMetaTagPropertyValue() throws Exception {
+//        String ogsite = getMetaTagAttribute(ogSiteName, "content");
+//        return ogsite;
+//    }
+    
+    
+    
 
     @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
@@ -2962,5 +3049,7 @@ public class ArticleCitationPage extends BasePage {
 	private WebElement PDFTab;
 	@FindBy(xpath="//p[text()='Contributor Notes']")
 	private WebElement contributorNotesTextFromArticleInfoTab;
+	@FindBy(xpath="//meta[@property='og:site_name']")
+	private WebElement ogSiteName;
 
 }

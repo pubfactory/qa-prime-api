@@ -24,15 +24,11 @@ public class SSRUserFlow extends UserFlowDef {
 		testDataInIt(testCaseId);
 		browserInit();    
 		System.out.println("PageResource :"+driver.getPageSource());
-		verifyTheSSRIsLoaded();   
-//		System.out.println("Page source : " +driver.getPageSource());
-//		descriptionMetaTag();
-//		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
-//		 masterPage.clickOnThefirstArticleFromTheOpenAccessArticles();
-//		Thread.sleep(5000);
-//		articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
-//		System.out.println(articleCitationPage.getCitationLastPageMetaTagPropertyValue()); 
-//		assertEqualsoftAssert(soft, driver, articleCitationPage.getCitationLastPageMetaTagPropertyValue(),"219",
-//				"Verifying the ciattaion last page content value is present."); 
+		verifyTheSSRIsLoaded();
+		verifytheMetaTagsForHomePage();
+		clicKOnTheFirstArticleFromOpenAccessArticle();
+		verifytheMetaTagsForArticlePage();
+		verifytheMetaTagsForIssuePage();
+		assertClose();
     }
 }

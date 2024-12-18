@@ -443,7 +443,7 @@ public class BaseTest {
                     options.addArguments("--disable-extensions");
                     options.addArguments("--dns-prefetch-disable");
                     options.addArguments("--disable-gpu");
-                    options.addArguments("--Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
+                    options.addArguments("--user-agent=Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
 //                    if (testNGtestName.equalsIgnoreCase("SSRUSERFLOWS"))
 //                        //options.addArguments("X-Amzn-Waf-Bot=restricted");
 //                    	 options.addArguments("--Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");

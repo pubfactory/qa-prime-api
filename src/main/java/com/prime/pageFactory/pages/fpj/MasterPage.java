@@ -656,7 +656,12 @@ public class MasterPage extends BasePage {
 	public String getCurrentIssueVolumeTextOnHomePage() throws Exception {
 		return getTextFromElement(currentIssueVolumeText);
 	}
-    
+	
+	public void clickOnThefirstArticleFromTheOpenAccessArticles() throws Exception {
+		clickOnElement(driver.findElement(By.xpath("//span[text()='Open Access Articles']//following::div[text()='Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension']")));
+	}
+	
+	
 
 	@FindBy(xpath = "//button[contains(text(),'Accept All Cookies')]")
 	private WebElement AcceptAllCookies;
