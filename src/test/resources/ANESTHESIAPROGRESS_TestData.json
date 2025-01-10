@@ -623,7 +623,13 @@
 			"articlesection":"Anesthesia Progress",
 			"articletag":"Pulpal blood flow; Pulpal oxygen tension; Epinephrine; Felypressin, Lidocaine, Local anesthesia",
 			"ogsitename":"Anesthesia Progress",
+			"ogtype":"website",
 			"oglocale":"en",
+			"ogimage":"fileasset/anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Anesthesia Progress",
+			"namedescription":"anesthesiaprogress"
 			"descriptionissue":"&quot;Volume 70: Issue 4&quot; published on Jan 15, 2024 by American Dental Society of Anesthisiology.",
 			"twitterdescriptionissue":"&quot;Volume 70: Issue 4&quot; published on Jan 15, 2024 by American Dental Society of Anesthisiology.",
 			"issuurl":"view/journals/anpr/70/4/anpr.70.issue-4.xml"

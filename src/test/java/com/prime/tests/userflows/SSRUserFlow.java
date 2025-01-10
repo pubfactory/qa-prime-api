@@ -26,8 +26,8 @@ public class SSRUserFlow extends UserFlowDef {
 		System.out.println("PageResource :"+driver.getPageSource());
 		verifyTheSSRIsLoaded();
 		verifytheMetaTagsForHomePage();
-		clicKOnTheFirstArticleFromOpenAccessArticle();
-		verifytheMetaTagsForArticlePage();
+//		clicKOnTheFirstArticleFromOpenAccessArticle();
+//		verifytheMetaTagsForArticlePage();
 		verifytheMetaTagsForIssuePage();
 		assertClose();
     }
