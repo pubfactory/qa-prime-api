@@ -418,7 +418,8 @@ public class IssuePage extends BasePage {
 	 * @Created Date : 13/08/2024
 	 */
 	public String getDescriptionMetaTagPropertyValue() throws Exception {
-		String ogDescription = getMetaTagAttribute(descriptionMetaTag, "content");
+		WebElement Description = driver.findElement(By.xpath("(//meta[@name='description'])[1]"));
+		String ogDescription = getMetaTagAttribute(Description, "content");
 		return ogDescription;
 	}
 
@@ -718,6 +719,33 @@ public class IssuePage extends BasePage {
 		return twitterDescriptiontag;
 	}
     
+	/**
+	 * This method is used to check description meta tag is present on Issue page
+	 * 
+	 * @return boolean
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 13/01/2025
+	 */
+	public boolean VerifyDescriptionNameMetaTagisPresentOnIssuePage() throws Exception {
+		List<WebElement> Description = driver.findElements(By.xpath("(//meta[@name='description'])[2]"));
+		return isElementPresent(Description);
+	}
+
+	/**
+	 * This method returns the description meta tag content attribute value on
+	 * Issue page
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 13/01/2025
+	 */
+	public String getDescriptionNameMetaTagPropertyValue() throws Exception {
+		WebElement Description = driver.findElement(By.xpath("(//meta[@name='description'])[2]"));
+		String description = getMetaTagAttribute(Description, "content");
+		return description;
+	}
 
 	@FindBy(xpath = "//span[text()='Issues']")
 	private WebElement issuePageHeader;

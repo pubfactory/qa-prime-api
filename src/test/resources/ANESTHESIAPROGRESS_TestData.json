@@ -602,7 +602,12 @@
 		"data": {
 			"description": "SSRUserFlowTest",
 			"searchkeyword":"sedation",
-			"citationlastpage":"219"
+			"ogimagearticle":"coverimage?doc=/journals/anpr/68/4/article-p214.xml&width=200",
+			"twittertitlename":"Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension",
+			"twittertitleprop":"Anesthesia Progress",
+			"ogdescriptionarticleone":"Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension"
+			"ogdescriptionarticletwo":"Objective: The aim of this study was to investigate the changes in pulpal blood flow (PBF) and pulpal oxygen tension (PpulpO2)",
+			"citationlastpage":"219",
 			"citationissue":"4",
 			"citationlanguage":"en"
 			"citationtitle":"Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension",
@@ -615,8 +620,7 @@
 			"citationjournaltitle":"Anesthesia Progress",
 			"citationauthor":"Keikoku Tachibana",
 			"citationdoi":"10.2344/anpr-68-02-09",
-			"citationreference":"1. Ohkado S, Ichinohe T, Kaneko Y. Comparative study on anesthetic potency depending on concentrations of lidocaine and epinephrine: assessment of dental local anesthetics using the jaw-opening reflex. Anesth Prog. 2001; 48: 16– 20.",
-			"twittertitle":"Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension",
+			"citationreference":"1. Ohkado S, Ichinohe T, Kaneko Y. Comparative study on anesthetic potency depending on concentrations of lidocaine and epinephrine: assessment of dental local anesthetics using the jaw-opening reflex. Anesth Prog. 2001; 48: 16– 20.",		
 			"twitterdescription":"Objective: The aim of this study was to investigate the changes in pulpal blood",
 			"articleauthor":"Keikoku Tachibana",
 			"publishedtime":"2021-11-30T00:00:00.000Z",
@@ -629,16 +633,17 @@
 			"twittercard":"summary_large_image",
 			"twittertitle":"Anesthesia Progress",
 			"ogdescription":"Anesthesia Progress",
-			"namedescription":"anesthesiaprogress"
-			"descriptionissue":"&quot;Volume 70: Issue 4&quot; published on Jan 15, 2024 by American Dental Society of Anesthisiology.",
-			"twitterdescriptionissue":"&quot;Volume 70: Issue 4&quot; published on Jan 15, 2024 by American Dental Society of Anesthisiology.",
+			"namedescription":"anesthesiaprogress",			
 			"issuurl":"view/journals/anpr/70/4/anpr.70.issue-4.xml"
-			
-		
-			
-			
-			
-			
+			"ogimageissue":"/coverimage?doc=/journals/anpr/70/4/anpr.70.issue-4.xml&width=200/coverimage?doc=/journals/anpr/70/4/anpr.70.issue-4.xml&width=200",		
+			"ogdescriptionissueone":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"ogdescriptionissuetwo":"&quot;Volume 70: Issue 4&quot; published on Dec 01, 2023 by American Dental Society of Anesthisiology.",
+			"descriptioissuenone":"anesthesiaprogress",
+			"descriptionissuetwo":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"descriptionissuethird":"&quot;Volume 70: Issue 4&quot; published on Dec 01, 2023 by American Dental Society of Anesthisiology.",
+			"twitterdescriptionissueprop":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"twitterdescriptionissuename":"&quot;Volume 70: Issue 4&quot; published on Dec 01, 2023 by American Dental Society of Anesthisiology.",
+			"ogtitle":"Volume 70: Issue 4",
 			}
 		},	
 ]

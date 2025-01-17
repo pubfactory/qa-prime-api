@@ -996,14 +996,64 @@ public class UserFlowDef extends BaseTest {
     }
     
     public void verifytheMetaTagsForArticlePage() throws Exception {
+       	
     	articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.VerifyCitationLastPageMetaTagisPresentOnArticlePage(), true,"verifying the citation last page meta tag is present on artile page when emabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.ogURLMetaTagisPresentOnArticlePage(), true,"verifying the og URL meta tag is present on artile page when enabled SSR.");
+    	String ogURL =basePage.removeBasicAuthFromURLHomePage(basePage.getURLFromWebPage());
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getOgURLMetaTagPropertyValue(),ogURL.replace("https:", "http:"),"verifying the og URL meta tag with content value is present on artile page when enabled SSR.");
+    	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.ogSiteNameMetaTagisPresentOnArticlePage(), true, "verifying the og site name meta tag is present on artile page when enabled SSR.");
+    	String ogSiteName = testData.get("ogsitename").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getOgSiteNameMetaTagPropertyValue(),ogSiteName, "verifying the og site name meta tag with content value is present on artile page when emabled SSR.");
+
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.ogTypeMetaTagisPresentOnArticlePage(), true, "verifying the og Type meta tag is present on artile page when enabled SSR.");
+    	String ogType = testData.get("ogtype").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getOgTypeMetaTagPropertyValue(),ogType, "verifying the og Type meta tag with content value is present on artile page when emabled SSR.");
+    	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.ogLocaleMetaTagisPresentOnArticlePage(), true, "verifying the og locale meta tag is present on artile page when enabled SSR.");
+    	String ogLocale = testData.get("oglocale").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getOgLocaleMetaTagPropertyValue(),ogLocale, "verifying the og locale meta tag with content value is present on artile page when emabled SSR.");
+
+    	
+//    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.ogImageMetaTagisPresentOnHomePage(), true, "verifying the og Image meta tag is present on home page when enabled SSR.");
+//    	String ogImage = testData.get("ogimagearticle").toString();
+//    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getOgImageMetaTagPropertyValue(),ogURL+ogImage, "verifying the og Image meta tag with content value is present on home page when emabled SSR.");
+//
+//    	System.out.println("Actual : "+ masterPage.getOgImageMetaTagPropertyValue());
+//    	System.out.println("Expected : "+ ogURL+ogImage);
+    	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.VerifyTwitterCardMetaTagisPresentOnArticlePage(), true,"verifying the twitter card meta tag is present on artile page when enabled SSR.");
+    	String twitterCard=testData.get("twittercard").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getTwitterCardMetaTagPropertyValue(),twitterCard,"verifying the twitter card meta tag with content value is present on artile page when enabled SSR.");
+    	   	   	 	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.VerifyTwitterTitleMetaTagisPresentOnArticlePage(), true,"verifying the twitter title meta tag is present on artile page when enabled SSR.(property attribute)");
+    	String twittertitleProp=testData.get("twittertitleprop").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getTwitterTitleMetaTagPropertyValue(),twittertitleProp,"verifying the twitter title meta tag with content value is present on artile page when enabled SSR.(property attribute)");
+    	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.VerifyTwitterTitleSSRMetaTagisPresentOnArticlePage(), true, "verifying the twitter title meta tag is present on artile page when enabled SSR.(name attribute)");
+    	String twittertitleName = testData.get("twittertitlename").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getTwitterTitleSSRMetaTagPropertyValue(), twittertitleName, "verifying the twitter title meta tag with content value is present on artile page when enabled SSR.(name attribute)");
+
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.VerifyOgDescriptionMetaTagisPresentOnArticlePage(), true, "verifying the og description meta tag is present on artile page when enabled SSR.(first index)");
+    	String ogdescOne = testData.get("ogdescriptionarticleone").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getOgDescriptionMetaTagPropertyValue(), ogdescOne, "verifying the og description meta tag with content value is present on artile page when enabled SSR.(first index)");
+
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.VerifyOgDescriptionSecondIndexMetaTagisPresentOnArticlePage(), true, "verifying the og description meta tag is present on artile page when enabled SSR.(second index)");
+    	String ogdescTwo = testData.get("ogdescriptionarticletwo").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), verifyStringContainsSpecificWord(articleCitationPage.getOgDescriptionSecondIndexMetaTagPropertyValue(), ogdescTwo), true, "verifying the og description meta tag with content value is present on artile page when enabled SSR.(second index)");
+
+    	
+    	
+    	
+    	
+    	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.VerifyCitationLastPageMetaTagisPresentOnArticlePage(), true,"verifying the citation last page meta tag is present on artile page when enabled SSR.");
     	String citationLastPage=testData.get("citationlastpage").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getCitationLastPageMetaTagPropertyValue(),citationLastPage,"verifying the citation last page meta tag with content value is present on artile page when emabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getCitationLastPageMetaTagPropertyValue(),citationLastPage,"verifying the citation last page meta tag with content value is present on artile page when enabled SSR.");
     	  	
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.VerifyCitationIssueMetaTagisPresentOnArticlePage(), true,"verifying the citation issue meta tag is present on artile page when emabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.VerifyCitationIssueMetaTagisPresentOnArticlePage(), true,"verifying the citation issue meta tag is present on artile page when enabled SSR.");
      	String citationIssue=testData.get("citationissue").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getCitationIssueMetaTagPropertyValue(),citationIssue,"verifying the citation issue meta tag with content value is present on artile page when emabled SSR..");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getCitationIssueMetaTagPropertyValue(),citationIssue,"verifying the citation issue meta tag with content value is present on artile page when enabled SSR..");
     	
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.VerifyCitationLanguageMetaTagisPresentOnArticlePage(), true,"verifying the citation language meta tag is present on artile page when emabled SSR.");
      	String citationLanguage=testData.get("citationlanguage").toString();
@@ -1059,10 +1109,7 @@ public class UserFlowDef extends BaseTest {
     	String citationReference=testData.get("citationreference").toString();
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getCitationReferenceMetaTagPropertyValue(),citationReference,"verifying the citation references meta tag with content value is present on artile page when enabled SSR.");
     
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.VerifyTwitterTitleSSRMetaTagisPresentOnArticlePage(), true, "verifying the twitter title meta tag is present on artile page when enabled SSR.");
-    	String twitterTitle = testData.get("twittertitle").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getTwitterTitleSSRMetaTagPropertyValue(), twitterTitle, "verifying the twitter title meta tag with content value is present on artile page when enabled SSR.");
-
+    	
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.VerifyTwitterDescriptionSSRAttributeMetaTagisPresentOnArticlePage(), true, "verifying the twitter description meta tag is present on artile page when enabled SSR.");
     	String twitterDescription = testData.get("twitterdescription").toString();
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), verifyStringContainsSpecificWord(articleCitationPage.getTwitterDescriptionSSRMetaTagPropertyValue(),twitterDescription), true, "verifying the twitter description meta tag with content value is present on artile page when emabled SSR.");
@@ -1083,14 +1130,8 @@ public class UserFlowDef extends BaseTest {
     	String articleTag = testData.get("articletag").toString();
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getArticleTagMetaTagPropertyValue(),articleTag, "verifying the article tag meta tag with content value is present on artile page when emabled SSR.");
 
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.ogSiteNameMetaTagisPresentOnArticlePage(), true, "verifying the og site name meta tag is present on artile page when enabled SSR.");
-    	String ogSiteName = testData.get("ogsitename").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getOgSiteNameMetaTagPropertyValue(),ogSiteName, "verifying the og site name meta tag with content value is present on artile page when emabled SSR.");
-
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.ogLocaleMetaTagisPresentOnArticlePage(), true, "verifying the og locale meta tag is present on artile page when enabled SSR.");
-    	String ogLocale = testData.get("oglocale").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getOgLocaleMetaTagPropertyValue(),ogLocale, "verifying the og locale meta tag with content value is present on artile page when emabled SSR.");
-
+    	
+    	
     }
     
     public void verifytheMetaTagsForHomePage() throws Exception {
@@ -1148,23 +1189,71 @@ public class UserFlowDef extends BaseTest {
     	driver.get(url+issuURL);	
     	issuePage = BasePage.initialize(WebDriverManager.getDriver(), IssuePage.class);
     	  	
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyDescriptionSSRMetaTagisPresentOnIssuePage(), true, "verifying the description meta tag is present on issue page when enabled SSR.");
-    	String descriptionIssue = testData.get("descriptionissue").toString();
-    	String orignalDescriptionIssue=descriptionIssue.replaceAll("&quot;", "\"");
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getDescriptionSSRMetaTagPropertyValue(),orignalDescriptionIssue, "verifying the description meta tag with content value is present on issue page when emabled SSR.");
-
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyTwitterDescriptionSSRMetaTagisPresentOnIssuePage(), true, "verifying the twitter description meta tag is present on issue page when enabled SSR.");
-    	String twitterDescriptionIssue = testData.get("twitterdescriptionissue").toString();
-    	String orignalTwitterdescriptionissue=twitterDescriptionIssue.replaceAll("&quot;", "\"");
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getTwitterDescriptionSSRMetaTagPropertyValue(),orignalTwitterdescriptionissue, "verifying the twitter description meta tag with content value is present on issue page when emabled SSR.");
-
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.ogSiteNameMetaTagisPresentOnIssuePage(), true, "verifying the og site name meta tag is present on issue page when enabled SSR.");
-    	String siteName = testData.get("ogsitename").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getOgSiteNameMetaTagPropertyValue(),siteName, "verifying the og site name meta tag with content value is present on issue page when emabled SSR.");
-
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.ogLocaleMetaTagisPresentOnIssuePage(), true, "verifying the og locale meta tag is present on issue page when enabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.ogURLMetaTagisPresentOnIssuePage(), true, "verifying the og URL meta tag is present on Issue page when enabled SSR.");
+    	String ogURL =basePage.removeBasicAuthFromURLHomePage(basePage.getURLFromWebPage());
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getOgURLMetaTagPropertyValue(),ogURL.replace("https:", "http:"), "verifying the og URL meta tag with content value is present on Issue page when emabled SSR.");
+    	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.ogSiteNameMetaTagisPresentOnIssuePage(), true, "verifying the og site name meta tag is present on Issue page when enabled SSR.");
+    	String ogSiteName = testData.get("ogsitename").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getOgSiteNameMetaTagPropertyValue(),ogSiteName, "verifying the og site name meta tag with content value is present on Issue page when emabled SSR.");
+    	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.ogTypeMetaTagisPresentOnIssuePage(), true, "verifying the og type meta tag is present on Issue page when enabled SSR.");
+    	String ogType = testData.get("ogtype").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getOgTypeMetaTagPropertyValue(),ogType, "verifying the og type meta tag with content value is present on Issue page when emabled SSR.");
+    
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.ogLocaleMetaTagisPresentOnIssuePage(), true, "verifying the og locale meta tag is present on Issue page when enabled SSR.");
     	String ogLocale = testData.get("oglocale").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getOgLocaleMetaTagPropertyValue(),ogLocale, "verifying the og locale meta tag with content value is present on issue page when emabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getOgLocaleMetaTagPropertyValue(),ogLocale, "verifying the og locale meta tag with content value is present on Issue page when emabled SSR.");
+    	
+//    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.ogImageMetaTagisPresentOnIssuePage(), true, "verifying the og Image meta tag is present on Issue page when enabled SSR.");
+//    	String ogimageIssue = testData.get("ogimageissue").toString();
+//    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getOgImageMetaTagPropertyValue(),ogURL+ogimageIssue, "verifying the og Image meta tag with content value is present on Issue page when emabled SSR.");
+//
+//    	System.out.println("Actual : "+ masterPage.getOgImageMetaTagPropertyValue());
+//    	System.out.println("Expected : "+ ogURL+ogimageIssue);
+    	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyTwitterCardMetaTagisPresentOnIssuePage(), true, "verifying the twitter card meta tag is present on Issue page when enabled SSR.");
+    	String twitterCard = testData.get("twittercard").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getTwitterCardMetaTagPropertyValue(),twitterCard, "verifying the twitter Card meta tag with content value is present on Issue page when emabled SSR.");
+
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyTwitterTitleMetaTagisPresentOnIssuePage(), true, "verifying the twitter Title meta tag is present on Issue page when enabled SSR.");
+    	String twitterTitle = testData.get("twittertitle").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getTwitterTitleMetaTagPropertyValue(),twitterTitle, "verifying the twitter Title meta tag with content value is present on Issue page when emabled SSR.");
+
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.VerifyOgDescriptionMetaTagisPresentOnHomePage(), true, "verifying the og description meta tag is present on Issue page when enabled SSR.(index first)");
+    	String ogDescriptionOne = testData.get("ogdescriptionissueone").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getOgDescriptionMetaTagPropertyValue(),ogDescriptionOne, "verifying the og description meta tag with content value is present on Issue page when emabled SSR.(index first)");
+
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.VerifyOgDescriptionIndexSecodMetaTagisPresentOnHomePage(), true, "verifying the og description meta tag is present on Issue page when enabled SSR.(index second)");
+    	String ogDescriptionTwo = testData.get("ogdescriptionissuetwo").toString();
+    	String orignalOgDescriptionIssue=ogDescriptionTwo.replaceAll("&quot;", "\"");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getOgDescriptionIndexSecondMetaTagPropertyValue(),orignalOgDescriptionIssue, "verifying the og description meta tag with content value is present on Issue page when emabled SSR.(index second)");
+    	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyDescriptionMetaTagisPresentOnIssuePage(), true, "verifying the description meta tag is present on issue page when enabled SSR.(index one)");
+    	String descriptionIssueOne = testData.get("descriptioissuenone").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getDescriptionMetaTagPropertyValue(),descriptionIssueOne, "verifying the description meta tag with content value is present on issue page when emabled SSR.(index one)");
+
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyDescriptionNameMetaTagisPresentOnIssuePage(), true, "verifying the description meta tag is present on issue page when enabled SSR.(index two)");
+    	String descriptionIssueTwo = testData.get("descriptionissuetwo").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getDescriptionNameMetaTagPropertyValue(),descriptionIssueTwo, "verifying the description meta tag with content value is present on issue page when emabled SSR.(index two)");
+ 	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyDescriptionSSRMetaTagisPresentOnIssuePage(), true, "verifying the description meta tag is present on issue page when enabled SSR.(index third)");
+    	String descriptionIssueThird = testData.get("descriptionissuethird").toString();
+    	String orignalDescriptionIssue=descriptionIssueThird.replaceAll("&quot;", "\"");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getDescriptionSSRMetaTagPropertyValue(),orignalDescriptionIssue, "verifying the description meta tag with content value is present on issue page when emabled SSR.(index third)");
+	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyTwitterDescriptionSSRMetaTagisPresentOnIssuePage(), true, "verifying the twitter description meta tag is present on issue page when enabled SSR.(name attribute)");
+    	String twitterDescriptionIssue = testData.get("twitterdescriptionissuename").toString();
+    	String orignalTwitterdescriptionissue=twitterDescriptionIssue.replaceAll("&quot;", "\"");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getTwitterDescriptionSSRMetaTagPropertyValue(),orignalTwitterdescriptionissue, "verifying the twitter description meta tag with content value is present on issue page when emabled SSR.(name attribute)");
+
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyTwitterDescriptionMetaTagisPresentOnIssuePage(), true, "verifying the twitter description meta tag is present on issue page when enabled SSR. (property attribute)");
+    	String twitterDescriptionIssuename = testData.get("twitterdescriptionissueprop").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getTwitterDescriptionMetaTagPropertyValue(),twitterDescriptionIssuename, "verifying the twitter description meta tag with content value is present on issue page when emabled SSR.(property attribute)");
+
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyOgTitleMetaTagisPresentOnIssuePage(), true, "verifying the og title meta tag is present on issue page when enabled SSR.");
+    	String ogTitle = testData.get("ogtitle").toString();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getOgTitleMetaTagPropertyValue(),ogTitle, "verifying the og title meta tag with content value is present on issue page when emabled SSR.");
 
     	
     }

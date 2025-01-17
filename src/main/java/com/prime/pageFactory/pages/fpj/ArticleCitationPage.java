@@ -2813,6 +2813,37 @@ public class ArticleCitationPage extends BasePage {
         String twitterTitle = getMetaTagAttribute(twitterTitleSSRMetaTag, "content");
         return twitterTitle;
     }
+    
+    /**
+     * This method is used to check og:description meta tag is present on article
+     * page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 16/01/2025
+     */
+    public boolean VerifyOgDescriptionSecondIndexMetaTagisPresentOnArticlePage() throws Exception {
+        List<WebElement> ogDescription = driver.findElements(By.xpath("(//meta[@property='og:description'])[2]"));
+        return isElementPresent(ogDescription);
+    }
+
+    /**
+     * This method returns the og:description meta tag content attribute value on
+     * article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 16/01/2025
+     */
+    public String getOgDescriptionSecondIndexMetaTagPropertyValue() throws Exception {
+    	WebElement ogDescription = driver.findElement(By.xpath("(//meta[@property='og:description'])[2]"));     
+        String ogDescriptiontag = getMetaTagAttribute(ogDescription, "content");
+        return ogDescriptiontag;
+    }
+    
+    
 
 //    /**
 //     * This method is used to check og:site name meta tag is present on article

@@ -661,6 +661,30 @@ public class MasterPage extends BasePage {
 		clickOnElement(driver.findElement(By.xpath("//span[text()='Open Access Articles']//following::div[text()='Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension']")));
 	}
 	
+	 /**This method is used to check og:description meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 13/01/2025
+     */
+    public boolean VerifyOgDescriptionIndexSecodMetaTagisPresentOnHomePage() throws Exception {
+    	List<WebElement> ogDescription=driver.findElements(By.xpath("(//meta[@property='og:description'])[2]"));
+    	 return isElementPresent(ogDescription);
+    }
+    
+    /**This method returns the og:description meta tag content attribute value on Home page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 13/01/2025
+     */
+    public String getOgDescriptionIndexSecondMetaTagPropertyValue() throws Exception {
+    	WebElement ogDescriptionSecond=driver.findElement(By.xpath("(//meta[@property='og:description'])[2]"));
+    	String ogDescription=getMetaTagAttribute(ogDescriptionSecond,"content");
+    	return ogDescription;    	
+    }
 	
 
 	@FindBy(xpath = "//button[contains(text(),'Accept All Cookies')]")
