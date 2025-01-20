@@ -2076,9 +2076,9 @@ public class ArticleCitationPage extends BasePage {
      */
     public void clickOnArticleInformationTabOnArticlePage() throws Exception {
         System.out.println("Going to mouse over");
-        mouseOver(articleInformationTab, "");
+        mouseOver(ContributorNotesTab, "");
         System.out.println("Mouse over done on Article Information");
-        clickOnElement(articleInformationTab, "Clicking on the Article Information tab on article page");
+        clickOnElement(ContributorNotesTab, "Clicking on the Article Information tab on article page");
     }
 
     /**
@@ -2273,7 +2273,7 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 09/10/2024
      */
     public String getTheAriaExpandedValueForarticleInformationTab() throws Exception {
-        return getAttributeFromElement(articleInformationTab, "aria-selected");
+        return getAttributeFromElement(ContributorNotesTab, "aria-selected");
     }
 
     /**
@@ -2843,8 +2843,151 @@ public class ArticleCitationPage extends BasePage {
         return ogDescriptiontag;
     }
     
-    
 
+    /**
+        * This method is used to check name attribute (first index) description meta tag is present on article
+        * page
+        * 
+        * @return boolean
+        * @throws Exception
+        * @author Rakesh.Shevale
+        * @Created Date : 17/01/2025
+        */
+       public boolean VerifyDescriptionFirstIndexNameAttributeMetaTagisPresentOnArticlePage() throws Exception {
+           List<WebElement> description = driver.findElements(By.xpath("(//meta[@name='description'])[1]"));
+           return isElementPresent(description);
+       }
+
+       /**
+        * This method returns the name attribute (first index) description meta tag content attribute value on
+        * article page
+        * 
+        * @return String
+        * @throws Exception
+        * @author Rakesh.Shevale
+        * @Created Date : 17/01/2025
+        */
+       public String getDescriptionFirstIndexNameAttrubuteMetaTagValue() throws Exception {     
+           String descriptiontag = getMetaTagAttribute(descriptionNameAttriFirstIndex, "content");
+           return descriptiontag;
+       }
+       
+
+       /**
+           * This method is used to check name attribute (Second index) description meta tag is present on article
+           * page
+           * 
+           * @return boolean
+           * @throws Exception
+           * @author Rakesh.Shevale
+           * @Created Date : 17/01/2025
+           */
+          public boolean VerifyDescriptionSecondIndexNameAttributeMetaTagisPresentOnArticlePage() throws Exception {
+              List<WebElement> description = driver.findElements(By.xpath("(//meta[@name='description'])[2]"));
+              return isElementPresent(description);
+          }
+
+          /**
+           * This method returns the name attribute (Second index) description meta tag content attribute value on
+           * article page
+           * 
+           * @return String
+           * @throws Exception
+           * @author Rakesh.Shevale
+           * @Created Date : 17/01/2025
+           */
+          public String getDescriptionScondIndexNameAttrubuteMetaTagValue() throws Exception {     
+              String descriptiontag = getMetaTagAttribute(descriptionNameAttriSecondIndex, "content");
+              return descriptiontag;
+          }
+          
+          /**
+           * This method is used to check name attribute (Third index) description meta tag is present on article
+           * page
+           * 
+           * @return boolean
+           * @throws Exception
+           * @author Rakesh.Shevale
+           * @Created Date : 17/01/2025
+           */
+          public boolean VerifyDescriptionThirdIndexNameAttributeMetaTagisPresentOnArticlePage() throws Exception {
+              List<WebElement> description = driver.findElements(By.xpath("(//meta[@name='description'])[3]"));
+              return isElementPresent(description);
+          }
+
+          /**
+           * This method returns the name attribute (Third index) description meta tag content attribute value on
+           * article page
+           * 
+           * @return String
+           * @throws Exception
+           * @author Rakesh.Shevale
+           * @Created Date : 17/01/2025
+           */
+          public String getDescriptionThirdIndexNameAttrubuteMetaTagValue() throws Exception {     
+              String descriptiontag = getMetaTagAttribute(descriptionNameAttriThirdIndex, "content");
+              return descriptiontag;
+          }
+          
+          /**
+           * This method is used to check dc identifier meta tag is present on article
+           * page
+           * 
+           * @return boolean
+           * @throws Exception
+           * @author Rakesh.Shevale
+           * @Created Date : 17/01/2025
+           */
+          public boolean VerifyDcIdentifierMetaTagisPresentOnArticlePage() throws Exception {
+              List<WebElement> description = driver.findElements(By.xpath("//meta[@name='dc.identifier']"));
+              return isElementPresent(description);
+          }
+
+          /**
+           * This method returns the dc identifier meta tag content attribute value on
+           * article page
+           * 
+           * @return String
+           * @throws Exception
+           * @author Rakesh.Shevale
+           * @Created Date : 17/01/2025
+           */
+          public String getDcidentifierMetaTagValue() throws Exception {     
+              String dcidentifier = getMetaTagAttribute(dcIdentifier, "content");
+              return dcidentifier;
+          }
+          
+          /**
+           * This method is used to check citation ISSN second index meta tag is present on article
+           * page
+           * 
+           * @return boolean
+           * @throws Exception
+           * @author Rakesh.Shevale
+           * @Created Date : 17/01/2025
+           */
+          public boolean VerifyCitationISSNSecondIndexMetaTagisPresentOnArticlePage() throws Exception {
+              List<WebElement> citationISSN = driver.findElements(By.xpath("(//meta[@name='citation_issn'])[2]"));
+              return isElementPresent(citationISSN);
+          }
+
+          /**
+           * This method returns the citation ISSN second index meta tag content attribute value on
+           * article page
+           * 
+           * @return String
+           * @throws Exception
+           * @author Rakesh.Shevale
+           * @Created Date : 17/01/2025
+           */
+          public String getCitationISSNSecondIndexMetaTagPropertyValue() throws Exception {
+              WebElement citationISSN = driver.findElement(By.xpath("(//meta[@name='citation_issn'])[2]"));
+              String citationIssn = getMetaTagAttribute(citationISSN, "content");
+              return citationIssn;
+          }
+          
+          
+          
 //    /**
 //     * This method is used to check og:site name meta tag is present on article
 //     * page
@@ -3018,8 +3161,8 @@ public class ArticleCitationPage extends BasePage {
     private WebElement citationReferenceMetaTag;
     @FindBy(xpath = "(//div[@data-testid='block-contributors']//span)[1]")
     private WebElement firstAuthorText;
-    @FindBy(xpath = "//button[text()='Article Information']")
-    private WebElement articleInformationTab;
+    @FindBy(xpath = "//button[text()='Contributor Notes']")
+    private WebElement ContributorNotesTab;
     @FindBy(xpath = "//div[@class='corresp']//a")
     private WebElement emailAddressUnderArticleInformationTab;
     @FindBy(xpath = "(//a[@target='_self' and  text()='REFERENCES'])[1]")
@@ -3082,5 +3225,15 @@ public class ArticleCitationPage extends BasePage {
 	private WebElement contributorNotesTextFromArticleInfoTab;
 	@FindBy(xpath="//meta[@property='og:site_name']")
 	private WebElement ogSiteName;
+	@FindBy(xpath="(//meta[@name='description'])[1]")
+	private WebElement descriptionNameAttriFirstIndex;
+	@FindBy(xpath="(//meta[@name='description'])[2]")
+	private WebElement descriptionNameAttriSecondIndex;
+	@FindBy(xpath="(//meta[@name='description'])[3]")
+	private WebElement descriptionNameAttriThirdIndex;
+	@FindBy(xpath="//meta[@property='description']")
+	private WebElement descriptionPropAttriSecondIndex;
+	@FindBy(xpath="//meta[@name='dc.identifier']")
+	private WebElement dcIdentifier;
 
 }

@@ -443,12 +443,13 @@ public class BaseTest {
                     options.addArguments("--disable-extensions");
                     options.addArguments("--dns-prefetch-disable");
                     options.addArguments("--disable-gpu");
-                    options.addArguments("--user-agent=Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
+                   // options.addArguments("--user-agent=Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
 //                    if (testNGtestName.equalsIgnoreCase("SSRUSERFLOWS"))
 //                        //options.addArguments("X-Amzn-Waf-Bot=restricted");
 //                    	 options.addArguments("--Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
 //                    else
 //                        options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
+                    options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
                         options.addArguments("--headless");
                         options.addArguments("--window-size=1400,600");

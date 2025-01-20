@@ -102,6 +102,7 @@ public class PDFPage extends BasePage {
      * @Created Date : 07/11/2023
      */
     public void clickOnInlinePdfTabOnArticlePage() throws Exception {
+    	mouseOver(inlinePDF, "");
         clickOnElement(inlinePDF, "Clicking on Inline PDF tab on Article Page");
     }
 

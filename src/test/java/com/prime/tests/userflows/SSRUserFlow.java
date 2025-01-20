@@ -28,7 +28,7 @@ public class SSRUserFlow extends UserFlowDef {
 		verifytheMetaTagsForHomePage();
 		clicKOnTheFirstArticleFromOpenAccessArticle();
 		verifytheMetaTagsForArticlePage();
-//		verifytheMetaTagsForIssuePage();
+		verifytheMetaTagsForIssuePage();
 		assertClose();
     }
 }
