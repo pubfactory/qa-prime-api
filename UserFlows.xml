@@ -38,21 +38,21 @@
 			</class>
 		</classes>
 	</test>
-<!-- 	<test name="SSRUSERFLOWS" preserve-order="true"> -->
-<!-- 		<parameter name="application" value="anesthesiaprogress" /> -->
-<!-- 		<groups> -->
-<!-- 			<run> -->
-<!-- 				<include name="anesthesiaprogress" /> -->
-<!-- 			</run> -->
-<!-- 		</groups> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.prime.tests.userflows.SSRUserFlow"> -->
-<!-- 				<methods> -->
-<!-- 					<include name="SSRUserFlowTest"> -->
-<!-- 						<parameter name="testcaseid" value="101" /> -->
-<!-- 					</include>				 -->
-<!-- 				</methods> -->
-<!-- 			</class> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
+	<test name="SSRUSERFLOWS" preserve-order="true">
+		<parameter name="application" value="anesthesiaprogress" />
+		<groups>
+			<run>
+				<include name="anesthesiaprogress" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.userflows.SSRUserFlow">
+				<methods>
+					<include name="SSRUserFlowTest">
+						<parameter name="testcaseid" value="101" />
+					</include>				
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>	

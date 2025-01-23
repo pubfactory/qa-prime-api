@@ -45,6 +45,7 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -78,6 +79,7 @@ public class BaseTest {
     public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
     //    public Set<Cookie> allCookies;
     public static List<String> domainName = new ArrayList<String>();
+    private static ThreadLocal<ITestContext> threadContext = new ThreadLocal<>();
     protected WebDriver driver;
     protected SoftAssert softAssert = new SoftAssert();
     // public SoftAssert soft = new SoftAssert();
@@ -265,6 +267,7 @@ public class BaseTest {
     public void loadConfigurationValues(ITestContext context, @Optional String application) {
 
         try {
+        	threadContext.set(context); // Store the context in ThreadLocal for the current thread
             Helper.INSTANCE.logEventInfoToReport("Before Test");
             ConfigurationManager.createManager(context);
             executionMode = ConfigurationManager.getExecutionMode();
@@ -278,6 +281,9 @@ public class BaseTest {
             testRailId = BaseTest.properties.getProperty("testRunId");
             suiteName = context.getSuite().getName();
             suite = context.getSuite().getXmlSuite();
+            testNGtestName=context.getName();
+           //System.out.println("testName="+testNGtestName);
+            
             // String env = BaseTest.properties.getProperty("Environment");
             //SSR Testcase ID 
 //            XmlTest ssrTest = context.getSuite().getXmlSuite().getTests().stream().filter(test -> "SSRUSERFLOWS".equals(test.getName())).findFirst().orElse(null);
@@ -427,6 +433,8 @@ public class BaseTest {
     private void setupEnvironment() {
         try {
             // String tcid=
+        	ITestContext context = threadContext.get(); // Get the thread-local context
+            String currenttestName = context.getName();
             String browser = BaseTest.properties.getProperty("browser");
             String executionMode = BaseTest.properties.getProperty("executionMode");
             if (executionMode.equalsIgnoreCase("local") || (executionMode.equalsIgnoreCase("remote"))) {
@@ -443,11 +451,12 @@ public class BaseTest {
                     options.addArguments("--disable-extensions");
                     options.addArguments("--dns-prefetch-disable");
                     options.addArguments("--disable-gpu");
-                   // options.addArguments("--user-agent=Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
-//                    if (testNGtestName.equalsIgnoreCase("SSRUSERFLOWS"))
-//                        //options.addArguments("X-Amzn-Waf-Bot=restricted");
-//                    	 options.addArguments("--Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
-//                    else
+                    //options.addArguments("--user-agent=Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
+                    System.out.println("currenttestName="+currenttestName);
+                    if (currenttestName.equalsIgnoreCase("SSRUSERFLOWS"))
+                      options.addArguments("--user-agent=Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
+
+                    else
 //                        options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
                     options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
                     if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
@@ -1387,6 +1396,11 @@ public class BaseTest {
             Assert.fail(linkText + " in URL not found");
             return false;
         }
+    }
+    
+    @AfterTest
+    public void cleanup() {
+        threadContext.remove(); // Clear the ThreadLocal to avoid memory leaks
     }
 
 }
