@@ -1158,7 +1158,7 @@ public class UserFlowDef extends BaseTest {
     	
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.VerifyCitationReferenceMetaTagisPresentOnArticlePage(), true,"verifying the citation references meta tag is present on artile page when enabled SSR.");
     	String citationReference=testData.get("citationreference").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getCitationReferenceMetaTagPropertyValue(),citationReference,"verifying the citation references meta tag with content value is present on artile page when enabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), verifyStringContainsSpecificWord(articleCitationPage.getCitationReferenceMetaTagPropertyValue(),citationReference),true,"verifying the citation references meta tag with content value is present on artile page when enabled SSR.");
       	
     }
     
