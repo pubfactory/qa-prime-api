@@ -49,7 +49,7 @@
 			<class name="com.prime.tests.userflows.SSRUserFlow">
 				<methods>
 					<include name="SSRUserFlowTest">
-						<parameter name="testcaseid" value="101" />
+						<parameter name="testcaseid" value="1735306" />
 					</include>				
 				</methods>
 			</class>
