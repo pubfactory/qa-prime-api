@@ -15,7 +15,7 @@ public class SSRUserFlow extends UserFlowDef {
     private String testCaseId;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"AP"}, enabled = true, retryAnalyzer = Retry.class, description = "101  - Verify SSR User flows")
+    @Test(groups = {"AP"}, enabled = true, retryAnalyzer = Retry.class, description = "C1735306  - Verify SSR User flows")
     @Story("EPIC-3818")
     public void SSRUserFlowTest() throws Exception {
 //    	soft = new SoftAssert();
