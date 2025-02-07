@@ -1,0 +1,659 @@
+[
+	{
+		"id": "1721284",
+		"data": {
+			"description": "verifyThatUserAbleToLaunchApplication",
+			"title":"Anesthesia Progress",
+			"searchtext":"book",
+			"searchpage":"Search Results",
+			"username":"veena.mathew@kwglobal.com",
+			"password":"Default@123",
+			"paginationsize":"1,2",
+			"searchresulttext":"Search Results",
+			"browsetext":"Browse",
+			"articletypename":"Other"
+		}
+	},
+	{
+		"id": "1721285",
+		"data": {
+			"description": "verifyThatViewPagesDisplayed",
+			"title":"Anesthesia Progress",
+			"issuespageheader":"Issues",
+			"journalpageurl":"anpr-overview.xml",
+			"journalpageheader":"Archive"
+		}
+	},
+	{
+		"id": "1721296",
+		"data": {
+			"description": "verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt",
+			"searchtext":"Anesthetic Management Using Remimazolam in a Hemodialysis Patient",
+			"popupheader":"Preview/Export Citation",
+			"formatvalueapa":"APA",
+			"formatvalueama":"AMA",
+			"risbuttonformat":".ris",
+			"bibbuttonformat":".bib",
+			"enwbuttonformat":".enw",
+			"risbutton":".ris",
+			"bibbutton":".bib",
+			"enwbutton":".enw",
+			"risbuttonlabel":"ProCite,RefWorks,Reference Manager",
+			"bibbuttonlabel":"BibTeX,Zotero",
+			"enwbuttonlabel":"EndNote",
+			"abbreviatedtitle":"Nishioka Y, Miyake S, Hamaoka M, et al. Anesthetic Management Using Remimazolam in a Hemodialysis Patient. Anesthesia Progress. 2023;70(2):65-69. doi: 10.2344/anpr-70-02-06",
+			"open":"Open Access",
+		}
+	},
+	{
+		"id": "1722541",
+		"data": {
+			"description": "VerifySearchPageTopPanel",
+			"searchtext":"book",
+			"searchpagetitle":"Search Results",
+			"browserpagetitle":"Browse",
+			"itemperpagedefaultval":"10",
+			"itemperpagetwenty":"20",
+			"itemperpagefifty":"50"
+		}
+	},
+	{
+	"id": "1722542",
+		"data": {
+			"description": "VerifyPpaginationAndSortingOptionsIntheSearchResultsPage",
+			"searchtext":"men",
+			"itemperpagetwenty":"20",
+			"itemperpagefifty":"50"
+		}
+	},
+	{
+	"id": "1722543",
+		"data": {
+			"description": "VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected",
+			"searchtext":"book",
+			"signinpageheader":"Sign in to your personal profile",
+			"refineterm":"Refine terms",
+			"refinetype":"Refine by Type",
+			"refinearticletype":"By Article Type",
+			"refinedate":"Refine by Date",
+			"refineaccess":"Refine by Access"
+		}
+	},	
+	{
+	"id": "1722544",
+		"data": {
+			"description": "VerifyVariousRefineTermsInTheSearchResultsPage",
+			"searchtext":"book",
+			"refinefiltervalues":"All,Author or Editor,Full Text,ISBN / ISSN / DOI,Publisher,Title,Alternative Title,Affiliation,Abstract,Subjects"
+			"testidvalueselect":"AdvanceSearchFilter-select-0",
+			"testidvalueenter":"AdvanceSearchFilter-input-0",
+			"refinefilteroptionauthor":"Author or Editor",
+			"refinefilteroptionfulltext":"Full Text",
+			"refinefiltervaluefulltext":"aims to",
+			"refinefilteroptionisbndoi":"ISBN / ISSN / DOI",
+			"refinefilteroptionabstract":"Abstract",
+			"refinefiltervalueabstract":"intravenous anesthetic",
+			"refinefilteroptiontitle":"Title",
+			"testidvalueselecttwo":"AdvanceSearchFilter-select-1",
+			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
+			"refinefilteroptionaffiliation":"Affiliation",
+			"refinefiltervalueaffiliation":"Washington"
+		}
+	},	
+	{
+	"id": "1722545",
+		"data": {
+			"description": "VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows",
+			"refinefiltervalues":"All,Author or Editor,Full Text,ISBN / ISSN / DOI,Publisher,Title,Alternative Title,Affiliation,Abstract,Subjects"
+			"testidvalueselect":"AdvanceSearchFilter-select-0",
+			"testidvalueenter":"AdvanceSearchFilter-input-0",
+			"refinefilteroptionisbndoi":"ISBN / ISSN / DOI",
+			"refinefilteroptiontitle":"Title",
+			"testidvalueselecttwo":"AdvanceSearchFilter-select-1",
+			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
+			"rowcancelbuttton":"AdvanceSearchFilter-remove-cta-1",
+		}
+	},
+	{
+	"id": "1722546",
+		"data": {
+			"description": "VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard",
+			"refinearticletype":"By Article Type",
+			"articletypename":"Editorial",
+			"refineaccess":"Refine by Access"
+			"allaccess":"All Content",
+			"useraccess":"Available",
+			"openaccess":"Open Access",
+			"freeaccess":"Free",
+			"refinetype":"Refine by Type",
+			"refinetypevalue":"Article"
+			"open":"OPEN",
+			"all":"ALL",
+			"free":"Free"
+			}
+	},
+	{
+	"id": "1722547",
+		"data": {
+			"description": "VerifyThatTheVariousShareButtonFeatures",
+			"refinearticletype":"By Article Type",
+			"facebookplatform":"facebook",
+			"twitterplatform":"twitter",
+			"linkedinplatform":"linkedin"
+		}
+	},
+	{
+	"id": "1722548",
+		"data": {
+			"description": "VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages",
+			"todate":"2010",
+			"fromdate":"2015",
+			"searchtext":"book",
+			"articlepage":"article",
+			"issuepage":"issue",
+			"journalpage":"anpr-overview.xml"
+
+		}
+	},
+	{
+	"id": "1722740",
+		"data": {
+			"description": "VerifyJournalToCFeatures",
+			"journalpageheader":"Archive",
+			"volumevalue":"Volume 70",
+			"issuevalue":"1",
+			"issuepageheader":"Issues"
+		}
+	},
+	{
+	"id": "1722741",
+		"data": {
+			"description": "VerifyVariousEmailButtonFeatures",
+			"sharelinkpopupHeader":"Share Link"
+		}
+	},
+	{
+	"id": "1722742",
+		"data": {
+			"description": "VerifyGoogleScholarButtonFeatures"
+		}
+	},
+	{
+	"id": "1722743",
+		"data": {
+			"description": "VerifyPubMedButtonFeaturesAndAlmetricPageFeatures"
+
+		}
+	},
+			{
+	"id": "1722758",
+		"data": {
+			"description": "verifyPDFButonAvailableAndDownloadPDF",
+			"searchtext":"men",
+			"free":"Free",
+			"open":"Open Access",
+			"defaultzoomvalue":"Automatic Zoom",
+			"watermarkappname":"anesthesiaprogress"
+		}
+	},
+		{
+	"id": "1722759",
+		"data": {
+			"description": "VerifyPDFFeaturesInRestrictedAccessContentPage",
+			"fiftyvalue":"50"
+		}
+	},
+	{
+	"id": "1725698",
+		"data": {
+			"description": "verifyThatMetaDataShouldBeLink",
+			"searchtext":"The ASDA-AAOMS-AAP Rules Template"
+		}
+	},
+	{
+	"id": "1729633",
+		"data": {
+			"description": "VerifyThatUserAbleToPerformCopyPreviewCitationOperation",
+			"formatvalueapa":"APA",
+			"formatvalueama":"AMA",
+		}
+	},
+	{
+	"id": "1729630",
+		"data": {
+			"description": "VerifyThatTheCitationLinkFunctionalityIsWorkingFine",
+			
+		}
+	},
+	{
+	"id": "1729632",
+		"data": {
+			"description": "VerifyThattheHitHighlightingFuctionality",
+			"searchkeyword":"key",
+			"openaccess":"Open Access",
+			"backgroundcolor":"rgba(1, 85, 147, 0.3)",
+			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
+			"testidvalueenterthree":"AdvanceSearchFilter-input-2",
+			"testidvalueenterfour":"AdvanceSearchFilter-input-3",
+		}
+	},
+	{
+	"id": "104",
+		"data": {
+			"description": "VerifyThattheAddCitedByFunctionality",
+			"searchkeyword":"article",
+			"freeaccess":"Free",
+			"numbercitationele":"Number of Citations:",
+			"citedby":"Cited By",
+			"crossref":"Crossref"
+		}
+	},
+	{
+	"id": "1729937",
+		"data": {
+			"description": "veryifyDevToolboxSettingFunctionality",
+			"searchkeyword":"article"
+		}
+	},
+	{
+	"id": "1729939",
+		"data": {
+			"description": "verifythatTheAutoCompleteTypeAheadFunctionality",
+			"searchkeyword":"Article",
+			"quickSearchAttribute":"block-quicksearchform-inline"
+		}
+	},
+	{
+	"id": "1730109",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForArticlePageWhenTheUserDirectlyNavigatedToTheArticlePage",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"searchtext":"view/journals/anpr/70/4/article-p159.xml",
+			"url":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/view/journals/anpr/70/4/article-p159.xml",
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"coverimage?doc=/journals/anpr/70/4/article-p159.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"twitterdescription":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"ogtitle":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"publishtime":"2023-11-30T00:00:00.000Z",
+			"articlesection":"Anesthesia Progress",
+			"citationlastpage":"167",
+			"citationissue":"4",
+			"citationlanguage":"en",
+			"citationtitle":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"xmlurlendpart":"anpr/70/4/article-p159.xml/xml/",
+			"citationvolume":"70",
+			"citatinpdfurlendpart":"downloadpdf/view/journals/anpr/70/4/article-p159.pdf",
+			"citationissn":"1878-7177",
+			"citationfirstpage":"159",
+			"citationpublisher":"American Dental Society of Anesthisiology",
+			"citationjournaltitle":"Anesthesia Progress",
+			"citationpublicationdate":"2023/11/30",
+			"citationdoi":"10.2344/523398",
+			"articletag":"Remimazolam; Propofol; General anesthesia; Total intravenous anesthesia (TIVA); Oral maxillofacial surgery; Dentistry",
+			"articlereference":"1. M. Doi , Remimazolam. Jpn J Clin Anesthesiol . 2014; 34 (7): 860�866."
+		}
+	},
+{
+	"id": "1730110",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForArticlePage",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"searchtext":"view/journals/anpr/70/4/article-p159.xml",
+			"url":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/view/journals/anpr/70/4/article-p159.xml",
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"coverimage?doc=/journals/anpr/70/4/article-p159.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"twitterdescription":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"ogtitle":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"publishtime":"2023-11-30T00:00:00.000Z",
+			"citationlastpage":"167",
+			"citationissue":"4",
+			"citationlanguage":"en",
+			"citationtitle":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",
+			"xmlurlendpart":"anpr/70/4/article-p159.xml/xml/",
+			"citationvolume":"70",
+			"citatinpdfurlendpart":"downloadpdf/view/journals/anpr/70/4/article-p159.pdf",
+			"citationissn":"1878-7177",
+			"citationfirstpage":"159",
+			"citationpublisher":"American Dental Society of Anesthisiology",
+			"citationjournaltitle":"Anesthesia Progress",
+			"citationpublicationdate":"2023/11/30",
+			"citationdoi":"10.2344/523398",
+			"articletag":"Remimazolam; Propofol; General anesthesia; Total intravenous anesthesia (TIVA); Oral maxillofacial surgery; Dentistry",
+			"articlereference":"1. M. Doi , Remimazolam. Jpn J Clin Anesthesiol . 2014; 34 (7): 860�866."
+
+		}
+	},
+	{
+	"id": "1730102",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForHomePage",
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"fileasset/anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Anesthesia Progress",
+			"descriptiontag":"anesthesiaprogress",
+			"twitterdescription":"Anesthesia Progress",
+	
+			}
+	},
+	{
+	"id": "1730103",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForSearchPageWhenTheUserDirectlyNavigatedToTheSearchPage",
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"fileasset/anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Browse | Anesthesia Progress",
+			"descriptiontag":"Browse | Anesthesia Progress",
+			"twitterdescription":"Browse | Anesthesia Progress",
+			"ogtitle":"Browse | Anesthesia Progress"
+			}
+	},
+	{
+	"id": "1730104",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForSearchPage",
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"fileasset/anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Browse | Anesthesia Progress",
+			"descriptiontag":"Browse | Anesthesia Progress",
+			"twitterdescription":"Browse | Anesthesia Progress",
+			"ogtitle":"Browse | Anesthesia Progress"
+			}
+	},
+	{
+	"id": "1730106",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForIssuePage",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",		
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"journals/anpr/70/4/anpr.70.issue-4.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Volume 70: Issue 4",
+			"descriptiontag":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"twitterdescription":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"ogtitle":"Volume 70: Issue 4",
+			}
+	},
+	{
+	"id": "1730105",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForIssuePageWhenTheUserDirectlyNavigatedToTheIssuePage",
+			"searchtext":"view/journals/anpr/70/4/anpr.70.issue-4.xml",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",		
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"journals/anpr/70/4/anpr.70.issue-4.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Volume 70: Issue 4",
+			"descriptiontag":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"twitterdescription":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"ogtitle":"Volume 70: Issue 4"
+			}
+	},
+	{
+	"id": "1730108",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForJournalPage",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",		
+			"ogurl":"view/journals/anpr/anpr-overview.xml"
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"journals/anpr/anpr-overview.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Anesthesia Progress",
+			"descriptiontag":"anesthesiaprogress",
+			"twitterdescription":"Anesthesia Progress",
+			"ogtitle":"Anesthesia Progress",
+			}
+	},
+	{
+	"id": "1730107",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForJournalPageWhenTheUserDirectlyNavigatedToTheJournalPage",
+			"searchtext":"view/journals/anpr/anpr-overview.xml",
+			"searchkeyword":"Comparison of Remimazolam and Propofol for Intubated General Anesthesia for Oral and Maxillofacial Surgery",		
+			"ogurl":"view/journals/anpr/anpr-overview.xml"
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"journals/anpr/anpr-overview.xml&width=200"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Anesthesia Progress",
+			"descriptiontag":"anesthesiaprogress",
+			"twitterdescription":"Anesthesia Progress",
+			"ogtitle":"Anesthesia Progress",
+			}
+	},
+	{
+	"id": "1730111",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForStaticAboutPageWhenTheUserDirectlyNavigatedToTheStaticAboutPage",
+			"searchtext":"page/about",	
+			"ogurl":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/journal/anpr"
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Anesthesia Progress",
+			"descriptiontag":"Anesthesia Progress",
+			"twitterdescription":"Anesthesia Progress",
+			}
+	},
+	{
+	"id": "1730112",
+		"data": {
+			"description": "verifyThatTheContentMetaTagFuctionalityForStaticAboutPage",
+			"searchtext":"page/about",	
+			"ogurl":"https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/journal/anpr"
+			"sitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Anesthesia Progress",
+			"descriptiontag":"Anesthesia Progress",
+			"twitterdescription":"Anesthesia Progress",
+			}
+	},
+	{
+	"id": "1730099",
+		"data": {
+			"description": "VerifyAdvancedFilterInRefineTermsDateInTheSearchResultsPage",
+			"searchtext":"book",
+			"refinefiltervalues":"All,Author or Editor,Full Text,ISBN / ISSN / DOI,Publisher,Title,Alternative Title,Affiliation,Abstract,Subjects"
+			"testidvalueselect":"AdvanceSearchFilter-select-0",
+			"testidvalueenter":"AdvanceSearchFilter-input-0",
+			"refinefilteroptionauthor":"Author or Editor",
+			"refinefilteroptionfulltext":"Full Text",
+			"refinefiltervaluefulltext1":"aims",
+			"refinefiltervaluefulltext2":"for",
+			"fromdate":"2007",
+			"todate":"2009",
+			"ORfromdate":"2010",
+			"ORtodate":"2015",
+			"refinefilteroptionisbndoi":"ISBN / ISSN / DOI",
+			"refinefilteroptionabstract":"Abstract",
+			"refinefiltervalueabstract":"intravenous anesthetic",
+			"refinefilteroptiontitle":"Title",
+			"testidvalueenterforOR":"AdvanceSearchFilter-input-0-1",
+			"testidvalueselecttwo":"AdvanceSearchFilter-select-1",
+			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
+			"refinefilteroptionaffiliation":"Affiliation",
+			"refinefiltervalueaffiliation":"Washington"
+		}
+	},
+	{
+	"id": "1730100",
+		"data": {
+			"description": "verifyThatAdvancedRefineByDateFilterFunctionality",
+			"searchtext":"book",
+			"fromdate":"2007",
+			"todate":"2009",
+			"ORfromdate":"2010",
+			"ORtodate":"2015",
+			
+		}
+	},
+	{
+	"id": "1730101",
+		"data": {
+			"description": "verifyThatHandlingDOIRedirectFunctionality",
+			"withoutextraslashdoi":"doi/10.2344/anpr-70-03-07",
+			"articletitle":"The Use of Pharyngeal Throat Packs in Dental Anesthesia",
+			"withextraslashdoi":"doi/somethinghere/10.2344/anpr-70-03-07"
+			}
+		},
+	{
+	"id": "1733708",
+		"data": {
+			"description": "verifyContentMetaDataServiceInReferences",
+			"openaccess":"Open Access",
+			"searchpubmed":"Search PubMed",
+			"searchgooglescholar":"Search Google Scholar"
+			}
+		},
+	{
+		"id": "1733756",
+		"data": {
+			"description": "publisherUserFlow",
+			"journalcurrentpage":"/journal/anpr/current",
+			"openaccesscontent":"/view/journals/anpr/67/2/article-p72.xml",
+			"openaccessurl":"/view/journals/anpr/67/2/article-p72.xml",
+			"openaccess":"Open Access",
+			"formatvalueapa":"APA",
+			"formatvalueama":"AMA",
+			"popupheader":"Preview/Export Citation",
+			"risbuttonformat":".ris",
+			"bibbuttonformat":".bib",
+			"enwbuttonformat":".enw",
+			"risbutton":".ris",
+			"bibbutton":".bib",
+			"enwbutton":".enw",
+			"risbuttonlabel":"ProCite,RefWorks,Reference Manager",
+			"bibbuttonlabel":"BibTeX,Zotero",
+			"enwbuttonlabel":"EndNote",
+			"abbreviatedtitle":"Nishioka Y, Miyake S, Hamaoka M, et al. Anesthetic Management Using Remimazolam in a Hemodialysis Patient. Anesthesia Progress. 2023;70(2):65-69. doi: 10.2344/anpr-70-02-06",
+			"defaultzoomvalue":"Automatic Zoom",
+			"watermarkappname":"anesthesiaprogress"
+			"searchpubmed":"Search PubMed",
+			"searchgooglescholar":"Search Google Scholar",
+			"withoutextraslashdoi":"doi/10.2344/anpr-66-04-06",
+			"articletitle":"Adding Dexmedetomidine to Articaine Increases the Latency of Thermal Antinociception in Rats",
+			"withextraslashdoi":"doi/somethinghere/10.2344/anpr-66-04-06"
+			}
+		},
+		{
+		"id": "1733809",
+		"data": {
+			"description": "librarianUserFlow",
+			"searchkeyword":"sedation",
+			"testidvalueselecttwo":"AdvanceSearchFilter-select-1",
+			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
+			"refinefilteroptionfulltext":"Full Text",
+			"refinefiltervaluefulltexttwo":"pediatric",
+			"articletypevalue":"Research Article",
+			"pageperitem":"50",
+			"dateasc":"Sort Date ASC",
+			"datedesc":"Sort Date DESC",
+			"openaccesstitle":"Squamous Papilloma Causing Airway Obstruction During Conscious Sedation",
+			"openaccesurl":"view/journals/anpr/64/3/article-p168.xml?isSearch=true",
+			"referencestext":"REFERENCES",
+			"keywordstext":"Keywords:",
+			"downloadpdf":"Download PDF",
+			"contributornotes":"Contributor Notes"
+			
+			}
+		},
+		{
+		"id": "101",
+		"data": {
+			"description": "SSRUserFlowTest",
+			"searchkeyword":"sedation",
+			"ogimagearticle":"coverimage?doc=/journals/anpr/68/4/article-p214.xml&width=200",
+			"twittertitlename":"Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension",
+			"twittertitleprop":"Anesthesia Progress",
+			"ogdescriptionarticleone":"Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension"
+			"ogdescriptionarticletwo":"Objective: The aim of this study was to investigate the changes in pulpal blood flow (PBF) and pulpal oxygen tension (PpulpO2)",
+			"descriptionnameattrione":"anesthesiaprogress",
+			"descriptionnameattritwo":"Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension",
+			"descriptionnameattrithree":"Objective: The aim of this study was to investigate the changes in pulpal blood flow (PBF) and pulpal oxygen tension (PpulpO2)",
+			"descriptionpropattrione":"Objective: The aim of this study was to investigate the changes in pulpal blood flow (PBF) and pulpal oxygen tension (PpulpO2)",
+			"twitterdescriptionarticlename":"Objective: The aim of this study was to investigate the changes in pulpal blood",
+			"twitterdescriptionarticleprop":"Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension",
+			"dcidentifier":"10.2344/anpr-68-02-09",
+			"ogtitlearticle":"Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension",
+			"articleauthor":"Keikoku Tachibana",
+			"articlepublishtime":"2021-11-30T00:00:00.000Z",
+			"articlesection":"Anesthesia Progress",
+			"citationlastpage":"219",
+			"citationissue":"4",
+			"citationlanguage":"en"
+			"citationtitle":"Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension",
+			"xmlurlPart":"/meridian/anesthesiaprogress/draft/rest/content/v1/journals/anpr/68/4/article-p214.xml/xml/"
+			"citationvolume":"68",
+			"citationpdf":"/downloadpdf/view/journals/anpr/68/4/article-p214.pdf",
+			"citationissn":"1878-7177",
+			"citationissnsecondindex":"0003-3006",
+			"citationfirstpage":"214",
+			"citationpublisher":"American Dental Society of Anesthisiology",
+			"citationjournaltitle":"Anesthesia Progress",
+			"citationauthor":"Keikoku Tachibana",
+			"citationdoi":"10.2344/anpr-68-02-09",
+			"citationreference":"1. Ohkado S, Ichinohe T, Kaneko Y. Comparative study on anesthetic potency depending on concentrations of lidocaine and epinephrine: assessment of dental local anesthetics using the jaw-opening reflex. Anesth Prog. 2001",		
+			"publishedtime":"2021-11-30T00:00:00.000Z",
+			"articlesection":"Anesthesia Progress",
+			"articletag":"Pulpal blood flow; Pulpal oxygen tension; Epinephrine; Felypressin, Lidocaine, Local anesthesia",
+			"ogsitename":"Anesthesia Progress",
+			"ogtype":"website",
+			"oglocale":"en",
+			"ogimage":"fileasset/anpr/adsa-journal-logo.svg"
+			"twittercard":"summary_large_image",
+			"twittertitle":"Anesthesia Progress",
+			"ogdescription":"Anesthesia Progress",
+			"namedescription":"anesthesiaprogress",
+			"twitterdescriptionhome":"Anesthesia Progress",				
+			"issuurl":"view/journals/anpr/70/4/anpr.70.issue-4.xml"
+			"ogimageissue":"/coverimage?doc=/journals/anpr/70/4/anpr.70.issue-4.xml&width=200/coverimage?doc=/journals/anpr/70/4/anpr.70.issue-4.xml&width=200",		
+			"ogdescriptionissueone":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"ogdescriptionissuetwo":"&quot;Volume 70: Issue 4&quot; published on Dec 01, 2023 by American Dental Society of Anesthisiology.",
+			"descriptioissuenone":"anesthesiaprogress",
+			"descriptionissuetwo":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"descriptionissuethird":"&quot;Volume 70: Issue 4&quot; published on Dec 01, 2023 by American Dental Society of Anesthisiology.",
+			"twitterdescriptionissueprop":"Anesthesia Progress Volume 70: Issue 4 | Anesthesia Progress",
+			"twitterdescriptionissuename":"&quot;Volume 70: Issue 4&quot; published on Dec 01, 2023 by American Dental Society of Anesthisiology.",
+			"ogtitle":"Volume 70: Issue 4",
+			}
+		},	
+]
