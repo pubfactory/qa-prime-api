@@ -5,7 +5,27 @@
         <listener class-name="com.prime.retryAnalyzers.RetryListener"/>
   </listeners>
 	<suite-files>
+		<suite-file path="proxy.xml">
+		
+
+    	
+
+     	 <parameter name="Environment" value="${Environment}" />
+
+			<parameter name="browser" value="${browser}" />
+<!-- 			<parameter name="application" value="${application}" />  --> 
+			
+
+ 	<!--  	   	    <parameter name="Environment" value="uat" /> 
+			<parameter name="browser" value="chrome" />
+			<parameter name="application" value="anesthesiaprogress" />		 --> 
+
+ 	 	  
+
+					
+		</suite-file>
 		<suite-file path="TestGroup.xml">
+		
 
     	
 
@@ -24,4 +44,5 @@
 					
 		</suite-file>
 	</suite-files>
+	
 </suite>

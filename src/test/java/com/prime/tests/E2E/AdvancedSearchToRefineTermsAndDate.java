@@ -27,7 +27,7 @@ public class AdvancedSearchToRefineTermsAndDate extends BaseTest {
 	private String mainWindow;
 
 	@Test(groups = {
-			"anesthesiaprogress" }, enabled = true, retryAnalyzer = Retry.class, description = "1730099 - Verify advanced Refine terms in the search results page")
+			"anesthesiaprogress","proxy" }, enabled = true, retryAnalyzer = Retry.class, description = "1730099 - Verify advanced Refine terms in the search results page")
 	@Story("EPIC-237")
 
 	public void VerifyAdvancedFilterInRefineTermsDateInTheSearchResultsPage() throws Exception {
