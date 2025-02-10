@@ -2152,7 +2152,6 @@ public class BrowseOrSearchPage extends BasePage {
 	@FindBy(xpath="//select[@id='itemsPerPage']//option[@selected]")
 	private WebElement selectedItemPerPage;
 
-
 }
 
 

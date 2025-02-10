@@ -2113,5 +2113,13 @@ public class BasePage {
         }
         return text;
     }
+    
+    public boolean verifyStringNotNull(String text) {
+    	boolean flag=true;
+    	if(text==null || text.isEmpty()) {
+    		flag = false;
+    	}
+    	return flag;
+    }
 
 }

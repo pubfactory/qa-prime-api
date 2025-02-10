@@ -58,24 +58,24 @@
 	<!-- </classes> -->
 	<!-- </test> -->
 
-	<test name="CITATION_E2E" preserve-order="true">
-		<parameter name="application" value="anesthesiaprogress" />
-		<groups>
-			<run>
-				<include name="anesthesiaprogress" />
-			</run>
-		</groups>
-		<classes>
-			<class name="com.prime.tests.E2E.CitationTest">
-				<methods>
-					<include
-						name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt">
-						<parameter name="testcaseid" value="1721296" />
-					</include>
-				</methods>
-			</class>
-		</classes>
-	</test>
+<!-- 	<test name="CITATION_E2E" preserve-order="true"> -->
+<!-- 		<parameter name="application" value="anesthesiaprogress" /> -->
+<!-- 		<groups> -->
+<!-- 			<run> -->
+<!-- 				<include name="anesthesiaprogress" /> -->
+<!-- 			</run> -->
+<!-- 		</groups> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.prime.tests.E2E.CitationTest"> -->
+<!-- 				<methods> -->
+<!-- 					<include -->
+<!-- 						name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt"> -->
+<!-- 						<parameter name="testcaseid" value="1721296" /> -->
+<!-- 					</include> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 <!-- 	<test name="SEARCH_E2E_FULL" preserve-order="true"> -->
 <!-- 		<parameter name="application" value="anesthesiaprogress" /> -->
 <!-- 		<groups> -->
@@ -308,26 +308,26 @@
 <!-- 			</class> -->
 <!-- 		</classes> -->
 <!-- 	</test> -->
-<!-- 	<test name="ADVANCE_SEARCH" preserve-order="true"> -->
-<!-- 		<parameter name="application" value="anesthesiaprogress" /> -->
-<!-- 		<groups> -->
-<!-- 			<run> -->
-<!-- 				<include name="anesthesiaprogress" /> -->
-<!-- 			</run> -->
-<!-- 		</groups> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.prime.tests.E2E.AdvancedSearchToRefineTermsAndDate"> -->
-<!-- 				<methods> -->
-<!-- 					<include name="VerifyAdvancedFilterInRefineTermsDateInTheSearchResultsPage"> -->
-<!-- 						<parameter name="testcaseid" value="1730099" /> -->
-<!-- 					</include> -->
-<!-- 					<include name="verifyThatAdvancedRefineByDateFilterFunctionality"> -->
-<!-- 						<parameter name="testcaseid" value="1730100" /> -->
-<!-- 					</include>					 -->
-<!-- 				</methods> -->
-<!-- 			</class> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
+	<test name="ADVANCE_SEARCH" preserve-order="true">
+		<parameter name="application" value="anesthesiaprogress" />
+		<groups>
+			<run>
+				<include name="anesthesiaprogress" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.AdvancedSearchToRefineTermsAndDate">
+				<methods>
+					<include name="VerifyAdvancedFilterInRefineTermsDateInTheSearchResultsPage">
+						<parameter name="testcaseid" value="1730099" />
+					</include>
+					<include name="verifyThatAdvancedRefineByDateFilterFunctionality">
+						<parameter name="testcaseid" value="1730100" />
+					</include>					
+				</methods>
+			</class>
+		</classes>
+	</test>
 <!-- 	<test name="DOI_ExtraPath" preserve-order="true"> -->
 <!-- 		<parameter name="application" value="anesthesiaprogress" /> -->
 <!-- 		<groups> -->
