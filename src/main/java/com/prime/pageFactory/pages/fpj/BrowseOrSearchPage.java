@@ -2023,6 +2023,9 @@ public class BrowseOrSearchPage extends BasePage {
 		return getTextFromElement(selectedItemPerPage);
 	}
 
+	public void ClickOnArticleFromeRefineByType() throws Exception {
+		clickOnElement(articleValuefromRefineByType, "Clicking on the article type from the Refine by type filter on browse page.");
+	}
 
 
 
@@ -2059,7 +2062,7 @@ public class BrowseOrSearchPage extends BasePage {
     @FindBy(xpath = "//h1[text()='Search Results']")
     private WebElement SearchResultText;
 
-    @FindBy(xpath = "(//div[@class='title'])[1]")
+    @FindBy(xpath = "(//h6[@data-identifier='<title>'])[1]")
     private WebElement firstArticleOnBrowseOrSearchPage;
     @FindBy(xpath = "//button[@title='[+] Add row']")
     private WebElement AddRowRefineTerm;
@@ -2151,6 +2154,8 @@ public class BrowseOrSearchPage extends BasePage {
 	private WebElement relevanceSortBY;
 	@FindBy(xpath="//select[@id='itemsPerPage']//option[@selected]")
 	private WebElement selectedItemPerPage;
+	@FindBy(xpath="(//span[text()='Refine by Type']//following::span[text()='Article'])[1]")
+	private WebElement articleValuefromRefineByType;
 
 }
 

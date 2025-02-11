@@ -273,6 +273,7 @@ public class AdvancedSearchToRefineTermsAndDate extends BaseTest {
 			browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
 			mainWindow = Helper.INSTANCE.getWindow(driver);
 			masterPage.clickOnSearchMagnifyingLense();
+			browseOrSearchPage.ClickOnArticleFromeRefineByType();
 			int totalResultCount = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
 			String fromDate = testData.get("fromdate").toString();
 			String toDate = testData.get("todate").toString();
