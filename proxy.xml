@@ -43,4 +43,21 @@
 			</class>
 		</classes>
 	</test>
+	<test name="HITHIGHLIGHTING" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.HitHighlightingTest">
+				<methods>
+					<include name="VerifyThattheHitHighlightingFuctionality">
+						<parameter name="testcaseid" value="1729632" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>

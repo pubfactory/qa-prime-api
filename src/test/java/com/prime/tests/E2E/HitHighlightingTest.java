@@ -25,7 +25,7 @@ public class HitHighlightingTest extends BaseTest {
     private String mainWindow;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"Hit highlighting for fulltext and abstract"}, enabled = true, retryAnalyzer = Retry.class, description = "1729632 - Verify that the hit highlighting fuctionality")
+    @Test(groups = {"anesthesiaprogress","proxy"}, enabled = true, retryAnalyzer = Retry.class, description = "1729632 - Verify that the hit highlighting fuctionality")
     @Story("EPIC-2720")
 
 
@@ -45,6 +45,7 @@ public class HitHighlightingTest extends BaseTest {
         browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
         browseOrSearchPage.mouseHoverOnFirstcontentonSearchPage();
         browseOrSearchPage.ClickOnShowMoreLinkIfAvailableBelowTheContent();
+        Thread.sleep(1000);
         String firstSearchKeyword = browseOrSearchPage.getAbstract().get(0).toString().trim();
         System.out.println("firstSearchKeyword : " + firstSearchKeyword);
         String secondSearchKeyword = browseOrSearchPage.getAbstract().get(1).toString().trim();
