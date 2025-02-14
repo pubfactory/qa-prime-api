@@ -315,7 +315,7 @@ public class MasterPage extends BasePage {
 	public boolean VerifyingAutoSuggetionContainSearchWord(String word) throws Exception {
 
 		boolean flag = false;
-		List<String> AllSuggestion = getTextFindElements(By.xpath("//*[contains(@id,'id-typeahead-item')]"));
+		List<String> AllSuggestion = getTextFindElements(By.xpath("//*[contains(@id,'typeAheadId-item')]"));
 		if (AllSuggestion.size() > 0) {
 			for (String tr : AllSuggestion) {
 				if (tr.toUpperCase().startsWith(""+word.charAt(0))) {
@@ -339,7 +339,7 @@ public class MasterPage extends BasePage {
 	 */
 	public List<String> getAllAutoSuggestionList() throws Exception {
 		boolean flag = false;
-		List<String> AllSuggestion = getTextFindElements(By.xpath("//*[contains(@id,'id-typeahead-item')]"));
+		List<String> AllSuggestion = getTextFindElements(By.xpath("//*[contains(@id,'typeAheadId-item')]"));
 		return AllSuggestion;
 	}
 
@@ -686,7 +686,48 @@ public class MasterPage extends BasePage {
     	return ogDescription;    	
     }
 	
+    /**This method used to hovering the mouse on auto suggestion
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 12/02/2025
+     */
+    public void mouseOverOnAutoCompleteSuggetions() throws Exception {   	
+    	List<String> AllSuggestion = getTextFindElements(By.xpath("//*[contains(@id,'typeAheadId-item')]"));  	
+    	WebElement firstSuggestion=driver.findElement(By.xpath("//a[@target='_self']//p[text()='"+AllSuggestion.get(AllSuggestion.size()-1)+"']"));
+    	mouseOver(firstSuggestion,"mouer hovering on last auto suggestion.");
+    	
+    }
 
+    /**
+     * This method used to check the text that matches the search in the suggestion list should be bold.
+     * 
+     * @param searchWord
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 13/02/2025
+     */
+    public boolean verifyMatchesSearchInTheSuggestionListIsBold(String searchWord) throws Exception {
+    	List<WebElement> boldList = driver.findElements(By.xpath("//mark[text()='"+searchWord+"']"));
+    	return isElementPresent(boldList);
+    }
+    
+    /**
+     * This method used to check the suggest list is displayed.
+     * 
+     * @param searchWord
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 13/02/2025
+     */
+    public boolean verifySuggestionListIsDisplayed() throws Exception {
+    	List<WebElement> AllSuggestion = driver.findElements(By.xpath("//*[contains(@id,'typeAheadId-item')]"));
+    	return isElementPresent(AllSuggestion);
+    }
+    
+    
 	@FindBy(xpath = "//button[contains(text(),'Accept All Cookies')]")
 	private WebElement AcceptAllCookies;
 	@FindBy(xpath = "(//input[@placeholder='Search'])[1]")
@@ -719,7 +760,7 @@ public class MasterPage extends BasePage {
 	private WebElement ShowRegionKeys;
 	@FindBy(xpath = "//div[@data-testid='block-authbuttons']/a")
 	private WebElement ShowRegionKeysSignIn;
-	@FindBy(xpath = "//*[@class='dropdown-item active']")
+	@FindBy(xpath = "//*[contains(@id,'typeAheadId-item') and @aria-selected='true']")
 	private WebElement focusedAutoSuggestion;
 	@FindBy(xpath="//form[@role='search']")
 	private WebElement quickSearchWithFormTag;
