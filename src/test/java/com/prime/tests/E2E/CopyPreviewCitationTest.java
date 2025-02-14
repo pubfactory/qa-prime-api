@@ -22,7 +22,8 @@ public class CopyPreviewCitationTest extends BaseTest {
     private String testCaseId;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"CopyPreviewCitation"}, enabled = true, retryAnalyzer = Retry.class, description = "1729633  - Verify that User able to perform copy preview citation operation")
+    @Test(groups = {
+			"anesthesiaprogress","proxy" }, enabled = true, retryAnalyzer = Retry.class, description = "1729633  - Verify that User able to perform copy preview citation operation")
     @Story("EPIC-2789")
     public void VerifyThatUserAbleToPerformCopyPreviewCitationOperation() throws Exception {
         testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
