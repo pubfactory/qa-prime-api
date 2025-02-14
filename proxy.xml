@@ -64,10 +64,10 @@
 		</classes>
 	</test>
 	<test name="AUTOCOMPLETE" preserve-order="true">
-		<parameter name="application" value="anesthesiaprogress" />
+		<parameter name="application" value="proxy" />
 		<groups>
 			<run>
-				<include name="anesthesiaprogress" />
+				<include name="proxy" />
 			</run>
 		</groups>
 		<classes>
