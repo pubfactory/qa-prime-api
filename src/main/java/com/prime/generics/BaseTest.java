@@ -292,6 +292,7 @@ public class BaseTest {
 //            System.out.println("testcaseidfromxml" + ssrTest.getClasses().get(0).getIncludedMethods().get(0).getAllParameters().get("testcaseid"));
             String executionMode = BaseTest.properties.getProperty("executionMode");
             if (executionMode.equalsIgnoreCase("remote")) {
+            	System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
                 // System.setProperty("Environment", suite.getParameter("Environment"));
                 // System.setProperty("application", suite.getParameter("application"));
                 env = System.getProperty("Environment");
@@ -301,6 +302,7 @@ public class BaseTest {
                 System.out.println("APPLICATION=" + application);
             } else {
                 System.out.println("In local");
+                System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                 env = BaseTest.properties.getProperty("Environment");
                 this.application = BaseTest.properties.getProperty("application");
                 System.out.println("application in local=" + application);
@@ -442,8 +444,8 @@ public class BaseTest {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     // io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
                     //System.out.println(System.getProperty("user.dir"));
-                                    System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
-                    //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
+                               //     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
+                   // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--disable-extensions");
                     options.addArguments("--disable-dev-shm-usage");
