@@ -266,7 +266,8 @@ public class PDFPage extends BasePage {
      */
     public boolean verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(String waterMarkAppsName) throws Exception {
         List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])[1]"));
-        return isElementPresent(element);
+        mouseOver(element.get(0),"Mouse hovering on the water mark");
+	return isElementPresent(element);
     }
     
     /**
