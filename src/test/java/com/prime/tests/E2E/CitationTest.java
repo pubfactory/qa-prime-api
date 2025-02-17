@@ -38,7 +38,7 @@ public class CitationTest extends BaseTest {
 
 	@Severity(SeverityLevel.BLOCKER)
 	@Test(groups = {
-			"fpj" }, enabled = true, retryAnalyzer = Retry.class, description = "1721296  - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it")
+			"anesthesiaprogress","proxy" }, enabled = true, retryAnalyzer = Retry.class, description = "1721296  - Verify that the cite button available on current content page and  Preview/Export citation pop up will be displayed when clicked on it")
 	@Story("EPIC-971")
 	public void verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt()
 			throws Exception {
@@ -142,7 +142,7 @@ public class CitationTest extends BaseTest {
 
 	@Severity(SeverityLevel.BLOCKER)
 	@Test(groups = {
-			"fpj" }, enabled = true, retryAnalyzer = Retry.class, description = "1733708  - Verify content metadata service in references")
+			"anesthesiaprogress","proxy" }, enabled = true, retryAnalyzer = Retry.class, description = "1733708  - Verify content metadata service in references")
 	@Story("EPIC-971")
 	public void verifyContentMetaDataServiceInReferences() throws Exception {
 		try {
