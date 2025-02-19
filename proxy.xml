@@ -64,10 +64,10 @@
 		</classes>
 	</test>
 	<test name="AUTOCOMPLETE" preserve-order="true">
-		<parameter name="application" value="anesthesiaprogress" />
+		<parameter name="application" value="proxy" />
 		<groups>
 			<run>
-				<include name="anesthesiaprogress" />
+				<include name="proxy" />
 			</run>
 		</groups>
 		<classes>
@@ -76,6 +76,24 @@
 					<include
 						name="verifythatTheAutoCompleteTypeAheadFunctionality">
 						<parameter name="testcaseid" value="1729939" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="OPENURLROUTE" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.OpenURLTest">
+				<methods>
+					<include
+						name="VerifyThatOpenURLRouteFunctionality">
+						<parameter name="testcaseid" value="1736541" />
 					</include>
 				</methods>
 			</class>

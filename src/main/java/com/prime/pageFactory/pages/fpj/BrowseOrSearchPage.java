@@ -2027,7 +2027,63 @@ public class BrowseOrSearchPage extends BasePage {
 		clickOnElement(articleValuefromRefineByType, "Clicking on the article type from the Refine by type filter on browse page.");
 	}
 
+	/**
+	 * This method used to get Open URL page header
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 17/02/2025
+	 */
+	public String getOpenURLPageHeader() throws Exception {
+		return getTextFromElement(openURLResultText);
+	}
+	
+	/**
+     * This method used to clicks on Search slug (x) on issue open url
+     * 
+     * @param valueName
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/02/2025
+     */
+    public void clickOnissueSearchSlugForOpenURLROUTE() throws Exception {
+        WebElement SearchSlugSign = driver.findElement(By.xpath("//strong[contains(text(),'issue')]//parent::span//following-sibling::span//button"));
+        clickOnElement(SearchSlugSign, "Clicking on x sign which is availbale in backside of issue search slug for open URL route.");
+    }
 
+    /**
+	 * This method used to check the open url is not present
+	 * 
+	 * @author Rakesh.Shevale
+	 * @return boolean
+	 * @Created Date : 17/02/2025
+	 */
+	public boolean verifyOpenURLHeaderIsNotPresent() throws Exception {
+		List<WebElement> openURL = driver.findElements(By.xpath("//strong[contains(text(),'issue')]//parent::span//following-sibling::span//button"));
+		return isElementNotPresent(openURL);
+	}
+	
+	/**
+	 * This method used to get no search result header
+	 * 
+	 * @return String
+	 * @throws Exception
+	 * @author Rakesh.Shevale
+	 * @Created Date : 17/02/2025
+	 */
+	public String getNoSearchResultsHeader() throws Exception {
+		return getTextFromElement(noSearchResultsText);
+	}
+	
+	public List<String> getAllVolumeWithIssueForOpenURL() throws Exception {
+		waitForDocumentReady();
+		List<WebElement> WebElement = driver.findElements(By.xpath("//a[@target='_self']"));
+		List<String> issueVolumeText = getMultipleWebElementText(WebElement);
+		return issueVolumeText;
+	}
+	
+	
 
     @FindBy(xpath = "//h1[text()='Browse']")
     private WebElement browseText;
@@ -2156,7 +2212,10 @@ public class BrowseOrSearchPage extends BasePage {
 	private WebElement selectedItemPerPage;
 	@FindBy(xpath="(//span[text()='Refine by Type']//following::span[text()='Article'])[1]")
 	private WebElement articleValuefromRefineByType;
-
+    @FindBy(xpath="//h1[text()='OpenURL Results']")
+    private WebElement openURLResultText;
+    @FindBy(xpath="//h1[text()='No Search Results']")
+    private WebElement noSearchResultsText;
 }
 
 
