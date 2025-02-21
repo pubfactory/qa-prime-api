@@ -27,7 +27,7 @@ public class SearchFunctionalityTest extends BaseTest {
     private String testCaseId;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"fpj"}, enabled = true, retryAnalyzer = Retry.class, description = "1722541 - Verify search page top panel")
+    @Test(groups = {"anesthesiaprogress","proxy"}, enabled = true, retryAnalyzer = Retry.class, description = "1722541 - Verify search page top panel")
     @Story("EPIC-28")
 
     public void VerifySearchPageTopPanel() throws Exception {

@@ -1,0 +1,161 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="PROTOTYPE_PROXY" verbose="5" parallel="tests"
+	thread-count="3" preserve-order="true">
+	<listeners>
+		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
+	</listeners>
+
+	<test name="ADVANCE_SEARCH" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.prime.tests.E2E.AdvancedSearchToRefineTermsAndDate">
+				<methods>
+					<include
+						name="VerifyAdvancedFilterInRefineTermsDateInTheSearchResultsPage">
+						<parameter name="testcaseid" value="1730099" />
+					</include>
+					<include
+						name="verifyThatAdvancedRefineByDateFilterFunctionality">
+						<parameter name="testcaseid" value="1730100" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="COPYPREVIEWCITATION" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+				<methods>
+					<include
+						name="VerifyThatUserAbleToPerformCopyPreviewCitationOperation">
+						<parameter name="testcaseid" value="1729633" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="HITHIGHLIGHTING" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.HitHighlightingTest">
+				<methods>
+					<include name="VerifyThattheHitHighlightingFuctionality">
+						<parameter name="testcaseid" value="1729632" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="AUTOCOMPLETE" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.AutoCompleteTypeAhead">
+				<methods>
+					<include
+						name="verifythatTheAutoCompleteTypeAheadFunctionality">
+						<parameter name="testcaseid" value="1729939" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="CITATION_E2E" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.CitationTest">
+				<methods>
+					<include
+						name="verifyCitationButonAvailableAndPreviewExportCitationPopUpWillBeDisplayedWhenClickedOnIt">
+						<parameter name="testcaseid" value="1721296" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="REFERENCEDTOCONTENTMETADATASERVICE"
+		preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.CitationTest">
+				<methods>
+					<include name="verifyContentMetaDataServiceInReferences">
+						<parameter name="testcaseid" value="1733708" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="DISCOVERY_WIDGET" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+				<methods>
+					<include name="VerifyVariousEmailButtonFeatures">
+						<parameter name="testcaseid" value="1722741" />
+					</include>
+					<include name="VerifyGoogleScholarButtonFeatures">
+						<parameter name="testcaseid" value="1722742" />
+					</include>
+					<include
+						name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures">
+						<parameter name="testcaseid" value="1722743" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="OPENURLROUTE" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.OpenURLTest">
+				<methods>
+					<include name="VerifyThatOpenURLRouteFunctionality">
+						<parameter name="testcaseid" value="1736541" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

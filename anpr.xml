@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="PrimeEndtoEndWithMultiAppl" verbose="5"
+<suite name="MERIDIAN" verbose="5"
 	parallel="tests" thread-count="3" preserve-order="true">
 	<listeners>
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
@@ -375,6 +375,24 @@
 					<include name="verifyContentMetaDataServiceInReferences">
 						<parameter name="testcaseid" value="1733708" />
 					</include>				
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="OPENURLROUTE" preserve-order="true">
+		<parameter name="application" value="anesthesiaprogress" />
+		<groups>
+			<run>
+				<include name="anesthesiaprogress" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.OpenURLTest">
+				<methods>
+					<include
+						name="VerifyThatOpenURLRouteFunctionality">
+						<parameter name="testcaseid" value="1736541" />
+					</include>
 				</methods>
 			</class>
 		</classes>

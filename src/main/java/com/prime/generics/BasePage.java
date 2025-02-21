@@ -2113,5 +2113,21 @@ public class BasePage {
         }
         return text;
     }
+    
+    /**
+     * This method used to verify the variable is null or not and return in boolean
+     * 
+     * @param String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 11/02/2025
+     */
+    public boolean verifyStringNotNull(String text) {
+    	boolean flag=true;
+    	if(text==null || text.isEmpty()) {
+    		flag = false;
+    	}
+    	return flag;
+    }
 
 }

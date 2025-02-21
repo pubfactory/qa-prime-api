@@ -26,7 +26,7 @@ public class DiscoveryWidgetTest extends BaseTest {
     private String mainWindow;
 
     @Severity(SeverityLevel.BLOCKER)
-    @Test(groups = {"Discovery Widget"}, enabled = true, retryAnalyzer = Retry.class, description = "1722741 - Verify various Email button features")
+    @Test(groups = {"anesthesiaprogress","proxy"}, enabled = true, retryAnalyzer = Retry.class, description = "1722741 - Verify various Email button features")
     @Story("EPIC-973")
 
 

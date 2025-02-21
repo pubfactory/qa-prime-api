@@ -259,8 +259,9 @@
 	"id": "1729939",
 		"data": {
 			"description": "verifythatTheAutoCompleteTypeAheadFunctionality",
-			"searchkeyword":"Article",
-			"quickSearchAttribute":"block-quicksearchform-inline"
+			"searchkeyword":"Book",
+			"quickSearchAttribute":"block-quicksearchform-inline",
+			"searchthreechar":"boo"
 		}
 	},
 	{
@@ -597,7 +598,7 @@
 			}
 		},
 		{
-		"id": "1735306",
+		"id": "101",
 		"data": {
 			"description": "SSRUserFlowTest",
 			"searchkeyword":"sedation",
@@ -665,5 +666,18 @@
 			"noresult":"No Search Results",
 			"issueNumber":"Issue 1",
 			}
-	},
+		},
+		{
+		"id": "105",
+		"data": {
+			"description": "VerifyThatAddMetricFunctionalityFunctionality",
+			"addmetricurl":"view/journals/fis/53/1/article-p3_2.xml?siqEnabled=true",
+			"alltimetext":"All Time",
+			"pastyeartext":"Past Year",
+			"past30daystext":"Past 30 Days"
+			"fulltexttext":"Full Text Views",
+			"pdfdownloadtext":"PDF Downloads"
+			}
+		},
+	
 ]

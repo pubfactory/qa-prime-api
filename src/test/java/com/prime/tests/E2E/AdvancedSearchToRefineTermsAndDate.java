@@ -27,7 +27,7 @@ public class AdvancedSearchToRefineTermsAndDate extends BaseTest {
 	private String mainWindow;
 
 	@Test(groups = {
-			"anesthesiaprogress" }, enabled = true, retryAnalyzer = Retry.class, description = "1730099 - Verify advanced Refine terms in the search results page")
+			"anesthesiaprogress","proxy" }, enabled = true, retryAnalyzer = Retry.class, description = "1730099 - Verify advanced Refine terms in the search results page")
 	@Story("EPIC-237")
 
 	public void VerifyAdvancedFilterInRefineTermsDateInTheSearchResultsPage() throws Exception {
@@ -269,9 +269,11 @@ public class AdvancedSearchToRefineTermsAndDate extends BaseTest {
 			navigateToUrlLink(url);
 			JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
 			masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
+			basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
 			browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
 			mainWindow = Helper.INSTANCE.getWindow(driver);
 			masterPage.clickOnSearchMagnifyingLense();
+			browseOrSearchPage.ClickOnArticleFromeRefineByType();
 			int totalResultCount = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
 			String fromDate = testData.get("fromdate").toString();
 			String toDate = testData.get("todate").toString();
@@ -379,18 +381,24 @@ public class AdvancedSearchToRefineTermsAndDate extends BaseTest {
 					orFromDate);
 			browseOrSearchPage.selectFromDateValueFromToDateDDInRefineByDateFilterOnBrowseOrSearchResultPage("1",
 					orToDate);
-
 			browseOrSearchPage.clickOnSubmitButtonInRefineByDateOnBrowseOrSearchPage();
 
 			// Verify when user opened the same content page with same total result count is
 			// displayed in new tab while copy URL from one tab.
 			String titleOnMainWind = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage();
+			System.out.println("titleOnMainWind : "+titleOnMainWind);
+			BaseTest.assertEquals(driver, basePage.verifyStringNotNull(titleOnMainWind), true, "titleOnMainWind is not empty");
 			int ResultCountOnMainWind = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
+			System.out.println("1");
 			String filterURL = basePage.getURLFromWebPage();
+			System.out.println("2");
 			Helper.INSTANCE.openNewTab();
 			Helper.INSTANCE.switchToWindowTab(1);
+			System.out.println("3");
 			driver.get(filterURL);
 			String titleOnNewWind = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage();
+			System.out.println("titleOnNewWind : "+titleOnNewWind);
+			BaseTest.assertEquals(driver, basePage.verifyStringNotNull(titleOnNewWind), true, "titleOnNewWind is not empty");
 			int ResultCountOnNewWind = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
 			BaseTest.assertEquals(driver, titleOnMainWind, titleOnNewWind,
 					"Verifying when user opened the same content page with same total result count is displayed in new tab while copy URL from one tab.");
