@@ -719,7 +719,7 @@ public class BaseTest {
                 if (!suiteName.contains("Default suite")) {
                     Helper.INSTANCE.publishResults(testRailId, testcaseId, "5", teststatus);
                 }
-                Allure.addAttachment("Test Failed!", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+                Allure.addAttachment("Test Failed for application :"+application+" !", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
                 Allure.step(testCaseId + " :: " + teststatus);
                 browserstack = BaseTest.properties.getProperty("BrowserStack");
                 if (browserstack.equalsIgnoreCase("Y")) {
@@ -734,7 +734,7 @@ public class BaseTest {
                 }
             } else {
                 if (!suiteName.contains("Default suite")) {
-                    Helper.INSTANCE.publishResults(testRailId, testcaseId, "1", "Test Passed Successfully");
+                    Helper.INSTANCE.publishResults(testRailId, testcaseId, "1", "Test Passed Successfully for application "+application);
                 }
                 Allure.addAttachment("Test Passed Successfully", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
                 browserstack = BaseTest.properties.getProperty("BrowserStack");
