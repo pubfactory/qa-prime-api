@@ -427,4 +427,5 @@ public class JournalPage extends BasePage {
     private WebElement twitterDescriptionMetaTag;
     @FindBy(xpath = "//meta[@property='og:title']")
     private WebElement ogTitleMetaTag;
+
 }

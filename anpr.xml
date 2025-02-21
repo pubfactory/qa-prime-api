@@ -379,4 +379,22 @@
 			</class>
 		</classes>
 	</test>
+	<test name="OPENURLROUTE" preserve-order="true">
+		<parameter name="application" value="anesthesiaprogress" />
+		<groups>
+			<run>
+				<include name="anesthesiaprogress" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.OpenURLTest">
+				<methods>
+					<include
+						name="VerifyThatOpenURLRouteFunctionality">
+						<parameter name="testcaseid" value="1736541" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>

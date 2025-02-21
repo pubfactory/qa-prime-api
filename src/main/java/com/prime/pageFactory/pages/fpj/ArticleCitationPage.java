@@ -3016,6 +3016,50 @@ public class ArticleCitationPage extends BasePage {
 //        return ogsite;
 //    }
     
+    /**
+     * This method used to verify the table bar article metric is present 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 19/02/2025
+     */
+    public boolean verifyArticleMetricsTableBarIsPresent() throws Exception {
+    	 List<WebElement> tableBar = driver.findElements(By.xpath("//div[@data-identifier='content-metrics-padding']"));
+    	 return isElementPresent(tableBar);
+    }
+    
+    
+    /**
+     * This method used to verify the pie chart article metric is present 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 19/02/2025
+     */
+    public boolean verifyArticleMetricsPieChartIsPresent() throws Exception {
+    	 List<WebElement> tableBar = driver.findElements(By.xpath("//canvas[@aria-describedby='pie-chart-description']"));
+    	 return isElementPresent(tableBar);
+    }
+    
+    public String getTextForPastYearColumnOfTableBarArticleMetrics() throws Exception {
+    	return getTextFromElement(pastYearTableBarColumn);
+    }
+    
+    public String getTextForPast30DaysColumnOfTableBarArticleMetrics() throws Exception {
+    	return getTextFromElement(past30DaysTableBarColumn);
+    }
+    
+    public String getTextForAllTimeColumnOfTableBarArticleMetrics() throws Exception {
+    	return getTextFromElement(allTimeTableBarColumn);
+    }
+    
+    public String getTextForFullTextRowOfTableBarArticleMetrics() throws Exception {
+    	return getTextFromElement(fullTextTableBarRow);
+    }
+    
+    public String getTextForPDFDownloadsRowOfTableBarArticleMetrics() throws Exception {
+    	return getTextFromElement(pdfDownloadsTableBarRow);
+    }
     
     
 
@@ -3235,5 +3279,16 @@ public class ArticleCitationPage extends BasePage {
 	private WebElement descriptionPropAttriSecondIndex;
 	@FindBy(xpath="//meta[@name='dc.identifier']")
 	private WebElement dcIdentifier;
-
+	@FindBy(xpath="//div[@data-identifier='content-metrics-padding']//th[text()='All Time']")
+	private WebElement allTimeTableBarColumn;
+	@FindBy(xpath="//div[@data-identifier='content-metrics-padding']//th[text()='Past Year']")
+	private WebElement pastYearTableBarColumn;
+	@FindBy(xpath="//div[@data-identifier='content-metrics-padding']//th[text()='Past 30 Days']")
+	private WebElement past30DaysTableBarColumn;
+	@FindBy(xpath="//div[@data-identifier='content-metrics-padding']//th[text()='Full Text Views']")
+	private WebElement fullTextTableBarRow;
+	@FindBy(xpath="//div[@data-identifier='content-metrics-padding']//th[text()='PDF Downloads']")
+	private WebElement pdfDownloadsTableBarRow;
 }
+
+

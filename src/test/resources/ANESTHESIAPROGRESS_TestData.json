@@ -656,4 +656,14 @@
 			"ogtitle":"Volume 70: Issue 4",
 			}
 		},	
+		{
+		"id": "1736541",
+		"data": {
+			"description": "VerifyThatOpenURLRouteFunctionality",
+			"openurl": "openurl?issue=1&pageNumber=1",
+			"openurlheader":"OpenURL Results",
+			"noresult":"No Search Results",
+			"issueNumber":"Issue 1",
+			}
+	},
 ]

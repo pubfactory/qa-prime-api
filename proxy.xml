@@ -81,7 +81,7 @@
 			</class>
 		</classes>
 	</test>
-		<test name="CITATION_E2E" preserve-order="true">
+	<test name="CITATION_E2E" preserve-order="true">
 		<parameter name="application" value="proxy" />
 		<groups>
 			<run>
@@ -99,7 +99,8 @@
 			</class>
 		</classes>
 	</test>
-	<test name="REFERENCEDTOCONTENTMETADATASERVICE" preserve-order="true">
+	<test name="REFERENCEDTOCONTENTMETADATASERVICE"
+		preserve-order="true">
 		<parameter name="application" value="proxy" />
 		<groups>
 			<run>
@@ -111,7 +112,7 @@
 				<methods>
 					<include name="verifyContentMetaDataServiceInReferences">
 						<parameter name="testcaseid" value="1733708" />
-					</include>				
+					</include>
 				</methods>
 			</class>
 		</classes>
@@ -133,13 +134,28 @@
 						<parameter name="testcaseid" value="1722742" />
 					</include>
 					<include
-					name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures">
-					<parameter name="testcaseid" value="1722743" />
+						name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures">
+						<parameter name="testcaseid" value="1722743" />
 					</include>
 				</methods>
 			</class>
 		</classes>
 	</test>
-
-	
+	<test name="OPENURLROUTE" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.OpenURLTest">
+				<methods>
+					<include name="VerifyThatOpenURLRouteFunctionality">
+						<parameter name="testcaseid" value="1736541" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>

@@ -657,4 +657,27 @@
 			"ogtitle":"Volume 70: Issue 4",
 			}
 		},	
+		{
+		"id": "1736541",
+		"data": {
+			"description": "VerifyThatOpenURLRouteFunctionality",
+			"openurl": "openurl?issue=1&pageNumber=1",
+			"openurlheader":"OpenURL Results",
+			"noresult":"No Search Results",
+			"issueNumber":"Issue 1",
+			}
+		},
+		{
+		"id": "105",
+		"data": {
+			"description": "VerifyThatAddMetricFunctionalityFunctionality",
+			"addmetricurl":"view/journals/fis/53/1/article-p3_2.xml?siqEnabled=true",
+			"alltimetext":"All Time",
+			"pastyeartext":"Past Year",
+			"past30daystext":"Past 30 Days"
+			"fulltexttext":"Full Text Views",
+			"pdfdownloadtext":"PDF Downloads"
+			}
+		},
+	
 ]
