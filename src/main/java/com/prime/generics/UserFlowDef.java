@@ -942,6 +942,7 @@ public class UserFlowDef extends BaseTest {
     }
 
     public void clickOnPDFTabAndScanTheInlinePDF() throws Exception {
+	driver.navigate().refresh();
         String articleHeader = articleCitationPage.getArticleHeaderOnArticlePage();
         pdfPage = BasePage.initialize(WebDriverManager.getDriver(), PDFPage.class);
         articleCitationPage.clickOnPDFTabOnArticlePage();
