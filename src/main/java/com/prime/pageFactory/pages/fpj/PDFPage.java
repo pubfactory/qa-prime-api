@@ -271,8 +271,8 @@ public class PDFPage extends BasePage {
     	Actions actions = new Actions(driver);
     	actions.sendKeys(Keys.PAGE_DOWN).perform();
     	actions.sendKeys(Keys.PAGE_DOWN).perform();
-    	//Thread.sleep(20000);
-        	List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])"));
+    	Thread.sleep(3000);
+        	List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])[1]"));
     	System.out.println("Water element size :"+element.size());
 //            mouseOver(element.get(0),"Mouse hovering on the water mark");
             Thread.sleep(2000);   	
