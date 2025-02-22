@@ -267,7 +267,7 @@ public class PDFPage extends BasePage {
 public boolean verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(String waterMarkAppsName) throws Exception {
     	waitForDocumentReady();
     	   JavascriptExecutor js = (JavascriptExecutor) driver;   
-                js.executeScript("window.scrollBy(0, 1000)");
+                js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     	     Thread.sleep(5000);
         	List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])"));
     	System.out.println("Water element size :"+element.size());
