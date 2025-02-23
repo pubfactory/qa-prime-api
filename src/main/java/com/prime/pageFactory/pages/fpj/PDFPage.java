@@ -269,7 +269,10 @@ public boolean verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(String wat
     	   JavascriptExecutor js = (JavascriptExecutor) driver;   
 	Object result = js.executeScript("return document.readyState;");
 System.out.println("Page Ready State: " + result);
-                js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+                js.executeScript(
+    "window.scrollBy(0, 500); " +
+    "window.dispatchEvent(new Event('scroll', {bubbles: true}));"
+);
     	     Thread.sleep(5000);
         	List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])"));
     	System.out.println("Water element size :"+element.size());
