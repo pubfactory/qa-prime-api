@@ -219,7 +219,7 @@ public class PDFPage extends BasePage {
      */
     public void switchToFrame(WebDriver driver) {
 	JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,500);");
+        js.executeScript("window.scrollBy(0,120);");
         Helper.INSTANCE.switchToIFrame(driver, pdfIFrame, "Switching to Pdf IFrame");
     }
 
@@ -268,21 +268,24 @@ public class PDFPage extends BasePage {
      */
 public boolean verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(String waterMarkAppsName) throws Exception {
     	waitForDocumentReady();
-    	   JavascriptExecutor js = (JavascriptExecutor) driver;   
-	Object result = js.executeScript("return document.readyState;");
-System.out.println("Page Ready State: " + result);
-                js.executeScript(
-    "window.scrollBy(0, 500); " +
-    "window.dispatchEvent(new Event('scroll', {bubbles: true}));"
-);
-    	     Thread.sleep(5000);
-        	List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])"));
-    	System.out.println("Water element size :"+element.size());
+        List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])[1]"));
+        return isElementPresent(element);
+    
+    	//   JavascriptExecutor js = (JavascriptExecutor) driver;   
+	//Object result = js.executeScript("return document.readyState;");
+//System.out.println("Page Ready State: " + result);
+  //              js.executeScript(
+    //"window.scrollBy(0, 500); " +
+    //"window.dispatchEvent(new Event('scroll', {bubbles: true}));"
+//);
+  //  	     Thread.sleep(5000);
+    //    	List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])"));
+    //	System.out.println("Water element size :"+element.size());
 //            mouseOver(element.get(0),"Mouse hovering on the water mark");
-            Thread.sleep(2000);
-            js.executeScript("arguments[0].scrollIntoView();", element.get(0));
-    	Thread.sleep(2000);
-            return isElementPresent(element);
+      //      Thread.sleep(2000);
+        //    js.executeScript("arguments[0].scrollIntoView();", element.get(0));
+    	//Thread.sleep(2000);
+         //   return isElementPresent(element);
         }
     
     /**
