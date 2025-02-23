@@ -218,6 +218,8 @@ public class PDFPage extends BasePage {
      * @Created Date : 08/11/2023
      */
     public void switchToFrame(WebDriver driver) {
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,500);");
         Helper.INSTANCE.switchToIFrame(driver, pdfIFrame, "Switching to Pdf IFrame");
     }
 
