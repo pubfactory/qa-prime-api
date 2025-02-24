@@ -158,4 +158,40 @@
 			</class>
 		</classes>
 	</test>
+		<test name="CITATIONLINK" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.CitationLinkTest">
+				<methods>
+					<include
+						name="VerifyThatTheCitationLinkFunctionalityIsWorkingFine">
+						<parameter name="testcaseid" value="1729630" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="COPYPREVIEWCITATION" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.CopyPreviewCitationTest">
+				<methods>
+					<include
+						name="VerifyThatUserAbleToPerformCopyPreviewCitationOperation">
+						<parameter name="testcaseid" value="1729633" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>
