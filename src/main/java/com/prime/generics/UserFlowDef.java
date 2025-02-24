@@ -581,10 +581,10 @@ public class UserFlowDef extends BaseTest {
             String partialArticleHeader = pdfPage.getPartialArticleTitleFromInlinePDFTab();
             assertEqualsoftAssert(soft, driver, BaseTest.verifyStringContainsSpecificWord(articleHeader, partialArticleHeader), true, "Verifying that same article is displayed in PDF preview in inline PDF tab");
 
-            String applicationName = BaseTest.properties.getProperty("application");
+          //  String applicationName = BaseTest.properties.getProperty("application");
 
             // Verifying the dynamic watermark on pdf preview in Inline pdf tab
-            assertEqualsoftAssert(soft, driver, pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(applicationName), true,
+            assertEqualsoftAssert(soft, driver, pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(application), true,
                     "Verifying that watermark is present on pdf in Pdf preview in Inline tab on the articla page");
         } catch (Exception e) {
             e.getStackTrace();
