@@ -10,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.prime.generics.BasePage;
 import com.prime.generics.Helper;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.Keys;
 
 public class PDFPage extends BasePage {
 
@@ -272,10 +274,14 @@ public boolean verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(String wat
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	js.executeScript("window.scrollBy(0,500)");
 	switchToFrame(driver);
-        List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])[1]"));
+	 Actions actions = new Actions(driver);
+    	actions.sendKeys(Keys.PAGE_DOWN).perform();
+    	actions.sendKeys(Keys.PAGE_DOWN).perform();
+	 List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])[1]"));
 	 System.out.println("Element size in watermark : "+element.size());
+    	Thread.sleep(5000);
 	 JavascriptExecutor js1 = (JavascriptExecutor) driver;
-js1.executeScript("window.scrollBy(0,500)");
+//js1.executeScript("window.scrollBy(0,500)");
 	// js1.executeScript("arguments[0].scrollIntoView();", element.get(0));
         return isElementPresent(element);
     
