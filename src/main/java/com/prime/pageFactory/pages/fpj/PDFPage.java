@@ -277,7 +277,9 @@ public boolean verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(String wat
 	 Actions actions = new Actions(driver);
     	actions.sendKeys(Keys.PAGE_DOWN).perform();
     //	actions.sendKeys(Keys.PAGE_DOWN).perform();
+	Thread.sleep(5000);
 	 List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])"));
+	System.out.println("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])");
 	 System.out.println("Element size in watermark : "+element.size());
     	Thread.sleep(5000);
 	 JavascriptExecutor js1 = (JavascriptExecutor) driver;
