@@ -168,6 +168,7 @@ public class DiscoveryWidgetTest extends BaseTest {
             mainWindow = Helper.INSTANCE.getWindow(driver);
             browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
             masterPage.enterTextInSearchBoxOnHomePage("Doctor");
+            Thread.sleep(3000);
             masterPage.clickOnSearchMagnifyingLense();
             browseOrSearchPage.ClickOnArticleFromeRefineByType();
             
