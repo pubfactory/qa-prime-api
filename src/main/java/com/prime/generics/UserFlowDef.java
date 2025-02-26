@@ -326,11 +326,11 @@ public class UserFlowDef extends BaseTest {
             articleCitationPage.clickOnExportFiguresButtonUnderFigureTab();
             articleCitationPage.clickOnSelectFirstFigureFromTheFiguresTabOnArticlePage();
             articleCitationPage.clickOnFiguresDownloadButton();
-            assertEqualsoftAssert(soft, driver, articleCitationPage.verifyFiguresIsDownloadedInPPTFormat(".pptx"), true, "Verifying the figures is downloaded in PPT format.");
+            assertEqualsoftAssert(soft, driver, articleCitationPage.verifyFiguresIsDownloadedInPPTFormat(".ppt"), true, "Verifying the figures is downloaded in PPT format.");
         } catch (Exception e) {
             e.getStackTrace();
         } finally {
-            deletedownloadedFiles(".pptx");
+            deletedownloadedFiles(".ppt");
         }
     }
 
@@ -968,11 +968,11 @@ public class UserFlowDef extends BaseTest {
             articleCitationPage.clickOnExportFiguresButtonUnderFigureTab();
             articleCitationPage.clickOnSelectFirstFigureFromTheFiguresTabOnArticlePage();
             articleCitationPage.clickOnFiguresDownloadButton();
-            assertEqualsoftAssert(soft, driver, articleCitationPage.verifyFiguresIsDownloadedInPPTFormat(".pptx"), true, "Verifying the figures is downloaded in PPT format.");
+            assertEqualsoftAssert(soft, driver, articleCitationPage.verifyFiguresIsDownloadedInPPTFormat(".ppt"), true, "Verifying the figures is downloaded in PPT format.");
         } catch (Exception e) {
             e.getStackTrace();
         } finally {
-            deletedownloadedFiles(".pptx");
+            deletedownloadedFiles(".ppt");
         }
     }
 
