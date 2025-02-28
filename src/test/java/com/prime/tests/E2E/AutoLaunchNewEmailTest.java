@@ -40,10 +40,12 @@ public class AutoLaunchNewEmailTest extends BaseTest {
 		masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
 		browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
 		articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
-		masterPage.clickOnSearchMagnifyingLense();
-		browseOrSearchPage
-				.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
-		browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
+		String urlredirect = testData.get("autolaunchurl").toString();
+		driver.get(url + urlredirect);
+		//masterPage.clickOnSearchMagnifyingLense();
+		//browseOrSearchPage
+		//		.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
+		//browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
 		articleCitationPage.clickOnArticleInformationTabOnArticlePage();
 
 		// Verifying the Email address is present under contributor Notes section in Article

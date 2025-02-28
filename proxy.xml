@@ -175,30 +175,6 @@
 			</class>
 		</classes>
 	</test>
-	<test name="DISCOVERY_WIDGET" preserve-order="true">
-	<parameter name="application" value="proxy" />
-		<groups>
-			<run>
-				<include name="proxy" />
-			</run>
-		</groups>
-		<classes>
-			<class name="com.prime.tests.E2E.DiscoveryWidgetTest">
-				<methods>
-					<include name="VerifyVariousEmailButtonFeatures">
-						<parameter name="testcaseid" value="1722741" />
-					</include>
-					<include name="VerifyGoogleScholarButtonFeatures">
-						<parameter name="testcaseid" value="1722742" />
-					</include>
-					<include
-						name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures">
-						<parameter name="testcaseid" value="1722743" />
-					</include>
-				</methods>
-			</class>
-		</classes>
-	</test>
 	<test name="PDF_WORK" preserve-order="true">
 		<parameter name="application" value="proxy" />
 		<groups>
@@ -216,6 +192,23 @@
 						name="VerifyPDFFeaturesInRestrictedAccessContentPage">
 						<parameter name="testcaseid" value="1722759" />
 					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="AUTOLAUNCHNEWEMAILADDRESS" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.AutoLaunchNewEmailTest">
+				<methods>
+					<include name="verifyThatTheAutoLaunchNewEmailFunctionality">
+						<parameter name="testcaseid" value="1730120" />
+					</include>				
 				</methods>
 			</class>
 		</classes>

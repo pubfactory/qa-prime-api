@@ -682,5 +682,16 @@
 			"addmetricurlrestricted":"view/journals/fis/53/1/article-p62_5.xml?siqEnabled=true"
 			}
 		},
+		{
+			"id": "1730120",
+				"data": {
+					"description": "verifyThatTheAutoLaunchNewEmailFunctionality",
+					"autolaunchurl":"/view/journals/horttech/aop/article-10.21273-HORTTECH04809-21/article-10.21273-HORTTECH04809-21.xml?isSearch=true&body=PDF",
+					"openaccess":"Open Access",
+					"journalfiltertext":"By Journal",
+					"brainmedicine":"Brain Medicine"
+		
+				}
+			}
 	
 ]
