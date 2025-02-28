@@ -942,7 +942,9 @@ public class UserFlowDef extends BaseTest {
     }
 
     public void clickOnPDFTabAndScanTheInlinePDF() throws Exception {
+
     	driver.navigate().refresh();
+
         String articleHeader = articleCitationPage.getArticleHeaderOnArticlePage();
         pdfPage = BasePage.initialize(WebDriverManager.getDriver(), PDFPage.class);
         articleCitationPage.clickOnPDFTabOnArticlePage();
@@ -951,7 +953,7 @@ public class UserFlowDef extends BaseTest {
         String allKeywords = pdfPage.getKeywordsFromThePDFTab();
         assertEqualsoftAssert(soft, driver, BaseTest.verifyStringContainsSpecificWord(articleHeader, partialArticleHeader), true, "Verifying that same article is displayed in inline PDF in PDF tab");
 
-        //String applicationName = BaseTest.properties.getProperty("application");
+       // String applicationName = BaseTest.properties.getProperty("application");
 
         assertEqualsoftAssert(soft, WebDriverManager.getDriver(), pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(application), true,
                 "Verifying that watermark is present on inline pdf in Pdf tab on the articla page");
