@@ -326,11 +326,11 @@ public class UserFlowDef extends BaseTest {
             articleCitationPage.clickOnExportFiguresButtonUnderFigureTab();
             articleCitationPage.clickOnSelectFirstFigureFromTheFiguresTabOnArticlePage();
             articleCitationPage.clickOnFiguresDownloadButton();
-            assertEqualsoftAssert(soft, driver, articleCitationPage.verifyFiguresIsDownloadedInPPTFormat(".pptx"), true, "Verifying the figures is downloaded in PPT format.");
+            assertEqualsoftAssert(soft, driver, articleCitationPage.verifyFiguresIsDownloadedInPPTFormat(".ppt"), true, "Verifying the figures is downloaded in PPT format.");
         } catch (Exception e) {
             e.getStackTrace();
         } finally {
-            deletedownloadedFiles(".pptx");
+            deletedownloadedFiles(".ppt");
         }
     }
 
@@ -581,10 +581,10 @@ public class UserFlowDef extends BaseTest {
             String partialArticleHeader = pdfPage.getPartialArticleTitleFromInlinePDFTab();
             assertEqualsoftAssert(soft, driver, BaseTest.verifyStringContainsSpecificWord(articleHeader, partialArticleHeader), true, "Verifying that same article is displayed in PDF preview in inline PDF tab");
 
-            String applicationName = BaseTest.properties.getProperty("application");
+           // String applicationName = BaseTest.properties.getProperty("application");
 
             // Verifying the dynamic watermark on pdf preview in Inline pdf tab
-            assertEqualsoftAssert(soft, driver, pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(applicationName), true,
+            assertEqualsoftAssert(soft, driver, pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(application), true,
                     "Verifying that watermark is present on pdf in Pdf preview in Inline tab on the articla page");
         } catch (Exception e) {
             e.getStackTrace();
@@ -942,6 +942,7 @@ public class UserFlowDef extends BaseTest {
     }
 
     public void clickOnPDFTabAndScanTheInlinePDF() throws Exception {
+	driver.navigate().refresh();
         String articleHeader = articleCitationPage.getArticleHeaderOnArticlePage();
         pdfPage = BasePage.initialize(WebDriverManager.getDriver(), PDFPage.class);
         articleCitationPage.clickOnPDFTabOnArticlePage();
@@ -949,8 +950,8 @@ public class UserFlowDef extends BaseTest {
         String partialArticleHeader = pdfPage.getPartialArticleTitleFromInlinePDFTab();
         String allKeywords = pdfPage.getKeywordsFromThePDFTab();
         assertEqualsoftAssert(soft, driver, BaseTest.verifyStringContainsSpecificWord(articleHeader, partialArticleHeader), true, "Verifying that same article is displayed in inline PDF in PDF tab");
-        String applicationName = BaseTest.properties.getProperty("application");
-        assertEqualsoftAssert(soft, WebDriverManager.getDriver(), pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(applicationName), true,
+       // String applicationName = BaseTest.properties.getProperty("application");
+        assertEqualsoftAssert(soft, WebDriverManager.getDriver(), pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(application), true,
                 "Verifying that watermark is present on inline pdf in Pdf tab on the articla page");
         assertEqualsoftAssert(soft, driver, BaseTest.verifyStringContainsSpecificWord(allKeywords, firstKeyword), true, "Verifying that same keyword is displayed in inline PDF in PDF tab");
     }
@@ -967,11 +968,11 @@ public class UserFlowDef extends BaseTest {
             articleCitationPage.clickOnExportFiguresButtonUnderFigureTab();
             articleCitationPage.clickOnSelectFirstFigureFromTheFiguresTabOnArticlePage();
             articleCitationPage.clickOnFiguresDownloadButton();
-            assertEqualsoftAssert(soft, driver, articleCitationPage.verifyFiguresIsDownloadedInPPTFormat(".pptx"), true, "Verifying the figures is downloaded in PPT format.");
+            assertEqualsoftAssert(soft, driver, articleCitationPage.verifyFiguresIsDownloadedInPPTFormat(".ppt"), true, "Verifying the figures is downloaded in PPT format.");
         } catch (Exception e) {
             e.getStackTrace();
         } finally {
-            deletedownloadedFiles(".pptx");
+            deletedownloadedFiles(".ppt");
         }
     }
 
