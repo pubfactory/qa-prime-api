@@ -5,7 +5,7 @@
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>
 
-<!-- 	<test name="ADVANCE_SEARCH" preserve-order="true">
+	<test name="ADVANCE_SEARCH" preserve-order="true">
 		<parameter name="application" value="proxy" />
 		<groups>
 			<run>
@@ -175,7 +175,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test> -->
+	</test>
 	<test name="AUTOLAUNCHNEWEMAILADDRESS" preserve-order="true">
 		<parameter name="application" value="proxy" />
 		<groups>

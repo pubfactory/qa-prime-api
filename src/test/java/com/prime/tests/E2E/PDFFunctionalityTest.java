@@ -105,6 +105,7 @@ public class PDFFunctionalityTest extends BaseTest {
 
           //  String applicationName = BaseTest.properties.getProperty("application");
 
+
             //Verifying the dynamic watermark on pdf preview in Inline pdf tab
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(application), true,
                     "Verifying that watermark is present on pdf in Pdf preview in Inline tab on the articla page");

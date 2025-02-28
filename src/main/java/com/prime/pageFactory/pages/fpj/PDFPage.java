@@ -218,6 +218,8 @@ public class PDFPage extends BasePage {
      * @Created Date : 08/11/2023
      */
     public void switchToFrame(WebDriver driver) {
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,120);");
         Helper.INSTANCE.switchToIFrame(driver, pdfIFrame, "Switching to Pdf IFrame");
     }
 
@@ -264,14 +266,14 @@ public class PDFPage extends BasePage {
      * @return boolean
      * @Created Date : 09/11/2023
      */
-    public boolean verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(String waterMarkAppsName) throws Exception {
+
+public boolean verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(String waterMarkAppsName) throws Exception {
     	waitForDocumentReady();
-   	 List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])"));
-   	System.out.println("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])");
-   	 System.out.println("Element size in watermark : "+element.size());
-       	Thread.sleep(5000);
-           return isElementPresent(element);
-    }
+	 List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])"));
+	System.out.println("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])");
+	 System.out.println("Element size in watermark : "+element.size());
+        return isElementPresent(element);
+        }
     
     /**
 	 * This method is returns all keywords from PDF tab(PDF PREVIEW).
