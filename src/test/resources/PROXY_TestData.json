@@ -193,7 +193,8 @@
 			"free":"Free",
 			"open":"Open Access",
 			"defaultzoomvalue":"Automatic Zoom",
-			"watermarkappname":"anesthesiaprogress"
+			"watermarkappname":"primetesting",
+			"pdfurl":"view/journals/blc/4/1/article-p121.xml?isSearch=true&body=PDF"
 		}
 	},
 		{
@@ -668,15 +669,17 @@
 			}
 		},
 		{
-		"id": "105",
+		"id": "1736542",
 		"data": {
 			"description": "VerifyThatAddMetricFunctionalityFunctionality",
-			"addmetricurl":"view/journals/fis/53/1/article-p3_2.xml?siqEnabled=true",
+			"addmetricurlopen":"view/journals/fis/53/1/article-p3_2.xml?siqEnabled=true",
 			"alltimetext":"All Time",
 			"pastyeartext":"Past Year",
-			"past30daystext":"Past 30 Days"
+			"past30daystext":"Past 30 Days",
+			"abstractviewstext":"Abstract Views"
 			"fulltexttext":"Full Text Views",
-			"pdfdownloadtext":"PDF Downloads"
+			"pdfdownloadtext":"PDF Downloads",
+			"addmetricurlrestricted":"view/journals/fis/53/1/article-p62_5.xml?siqEnabled=true"
 			}
 		},
 	

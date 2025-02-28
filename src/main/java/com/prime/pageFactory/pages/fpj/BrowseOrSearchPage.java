@@ -2083,7 +2083,11 @@ public class BrowseOrSearchPage extends BasePage {
 		return issueVolumeText;
 	}
 	
-	
+	 public void clickOnFirstArticleOnSearchOrBrowsePageThroughJS() throws Exception {	
+		 mouseHoverOnFirstcontentonSearchPage();
+		 clickOnElementJs(firstArticleOnBrowseOrSearchPage, "");
+//		 clickOnElement(firstArticleOnBrowseOrSearchPage, "Click On First Article On Search Or Browse Page");
+	 }
 
     @FindBy(xpath = "//h1[text()='Browse']")
     private WebElement browseText;

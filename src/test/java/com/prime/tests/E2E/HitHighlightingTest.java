@@ -52,8 +52,8 @@ public class HitHighlightingTest extends BaseTest {
         System.out.println("secodSearchKeyword : " + secondSearchKeyword);
         masterPage.enterTextInSearchBoxOnHomePage(firstSearchKeyword);
         masterPage.clickOnSearchMagnifyingLense();
-        browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
-        browseOrSearchPage.mouseHoverOnFirstcontentonSearchPage();
+//        browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
+//        browseOrSearchPage.mouseHoverOnFirstcontentonSearchPage();
         //Verifying the search keyword is displayed as hit highlighted  on Search or browse page
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getBackgroundColor(firstSearchKeyword), testData.get("backgroundcolor").toString(),
                 "Verifying the hit highlighting the search keyword in abstract tab on search result page");

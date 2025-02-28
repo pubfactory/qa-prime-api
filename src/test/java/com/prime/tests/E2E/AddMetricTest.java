@@ -29,8 +29,8 @@ public class AddMetricTest extends BaseTest {
 
 	@Severity(SeverityLevel.BLOCKER)
 	@Test(groups = {
-			"proxy" }, enabled = true, retryAnalyzer = Retry.class, description = "105  - Verify that the open URL Route functionality")
-	@Story("EPIC-1137")
+			"proxy" }, enabled = true, retryAnalyzer = Retry.class, description = "1736542  - Verify that Add Metric article functionality ")
+	@Story("EPIC-1943")
 	public void VerifyThatAddMetricFunctionalityFunctionality() throws Exception {
 
 		testCaseId = retrieveTCID(new Exception().getStackTrace()[0].getMethodName().split("-")[0].trim());
@@ -40,8 +40,8 @@ public class AddMetricTest extends BaseTest {
 		String testDataFileName = application.toUpperCase() + "_" + "TestData.json";
 		navigateToUrlLink(url);
 		JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
-		String addMetricurl = testData.get("addmetricurl").toString();
-		driver.get(url + addMetricurl);
+		String addMetricurlOpen = testData.get("addmetricurlopen").toString();
+		driver.get(url + addMetricurlOpen);
 		articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
 		pdfPage = BasePage.initialize(WebDriverManager.getDriver(), PDFPage.class);
 		BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.verifyArticleMetricsTableBarIsPresent(),
@@ -64,15 +64,33 @@ public class AddMetricTest extends BaseTest {
 		BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getTextForPDFDownloadsRowOfTableBarArticleMetrics(),
 				testData.get("pdfdownloadtext").toString(), "Verifying the PDF downlads row of table bar article metric is present.");
 		
+		int beforRefreshPDF=Integer.parseInt(articleCitationPage.getTextForAllTimeColumnPDFDownlodRowValueTableBarOfArticleMetrics());
+		int beforRefreshFulltext=Integer.parseInt(articleCitationPage.getTextForAllTimeColumnFulltextViewsRowValueTableBarOfArticleMetrics());
+		pdfPage.clickOnDownloadPDFButtonOnArticlePage();
 		articleCitationPage.clickOnFullTextOrAbstractTabOnArticlePage();
-		Thread.sleep(5000);
+		driver.navigate().refresh();
 		
+		int afterRefreshFulltext=Integer.parseInt(articleCitationPage.getTextForAllTimeColumnFulltextViewsRowValueTableBarOfArticleMetrics());
+		int afterRefreshPDF=Integer.parseInt(articleCitationPage.getTextForAllTimeColumnPDFDownlodRowValueTableBarOfArticleMetrics());	
+	
+		BaseTest.assertEquals(WebDriverManager.getDriver(), beforRefreshFulltext +1,
+				afterRefreshFulltext, "Verifying that the value in the AllTime Column for Fulltext Views in the bar table increases after the user clicks on the Fulltext tab and refreshes it.");
+	
+		BaseTest.assertEquals(WebDriverManager.getDriver(), beforRefreshPDF +1,
+				afterRefreshPDF, "Verifying that the value in the AllTime Column for PDF Download in the bar table increases after the user clicks on the Dowload PDF button and refreshes it.");
 		
+		String addMetricurlRestricted = testData.get("addmetricurlrestricted").toString();
+		driver.get(url + addMetricurlRestricted);
 		
+		BaseTest.assertEquals(WebDriverManager.getDriver(), articleCitationPage.getTextForAbstractViewsRowOfTableBarArticleMetrics(),
+				testData.get("abstractviewstext").toString(), "Verifying the Abstract Views row of table bar article metric is present.");
 		
-//		pdfPage.clickOnDownloadPDFButtonOnArticlePage();
-//		driver.navigate().refresh();
-//		Thread.sleep(50000);
-
+		int beforeRefreshAbstract=Integer.parseInt(articleCitationPage.getTextForAllTimeColumnAbstractViewsRowValueTableBarOfArticleMetrics());
+		driver.navigate().refresh();
+		int afterRefreshAbstract=Integer.parseInt(articleCitationPage.getTextForAllTimeColumnAbstractViewsRowValueTableBarOfArticleMetrics());
+		
+		BaseTest.assertEquals(WebDriverManager.getDriver(), beforeRefreshAbstract +1,
+				afterRefreshAbstract, "Verifying that the value in the AllTime Column for Abstract Views in the bar table increases after the user refreshes it.");
+			
 	}
 }

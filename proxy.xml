@@ -158,4 +158,66 @@
 			</class>
 		</classes>
 	</test>
+	<test name="ADDMETRIC" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.AddMetricTest">
+				<methods>
+					<include name="VerifyThatAddMetricFunctionalityFunctionality">
+						<parameter name="testcaseid" value="1736542" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="DISCOVERY_WIDGET" preserve-order="true">
+	<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.DiscoveryWidgetTest">
+				<methods>
+					<include name="VerifyVariousEmailButtonFeatures">
+						<parameter name="testcaseid" value="1722741" />
+					</include>
+					<include name="VerifyGoogleScholarButtonFeatures">
+						<parameter name="testcaseid" value="1722742" />
+					</include>
+					<include
+						name="VerifyPubMedButtonFeaturesAndAlmetricPageFeatures">
+						<parameter name="testcaseid" value="1722743" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="PDF_WORK" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.PDFFunctionalityTest">
+				<methods>
+					<include name="verifyPDFButonAvailableAndDownloadPDF">
+						<parameter name="testcaseid" value="1722758" />
+					</include>
+					<include
+						name="VerifyPDFFeaturesInRestrictedAccessContentPage">
+						<parameter name="testcaseid" value="1722759" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>

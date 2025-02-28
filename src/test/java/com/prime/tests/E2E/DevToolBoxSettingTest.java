@@ -62,6 +62,6 @@ public class DevToolBoxSettingTest extends BaseTest {
 		BaseTest.assertEquals(WebDriverManager.getDriver(),
 				masterPage.getLabelNameFromSignInPostShowRegionKeysOON().startsWith("[layout."), true,
 				"Verify if ShowKeyRegion is turned ON");
-
+Thread.sleep(3000);
 	}
 }

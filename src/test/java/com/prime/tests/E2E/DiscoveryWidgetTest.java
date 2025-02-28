@@ -167,7 +167,9 @@ public class DiscoveryWidgetTest extends BaseTest {
             masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
             mainWindow = Helper.INSTANCE.getWindow(driver);
             browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
+            masterPage.enterTextInSearchBoxOnHomePage("Doctor");
             masterPage.clickOnSearchMagnifyingLense();
+            browseOrSearchPage.ClickOnArticleFromeRefineByType();
 
             // Verifying PubMed Button
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();

@@ -3061,7 +3061,34 @@ public class ArticleCitationPage extends BasePage {
     	return getTextFromElement(pdfDownloadsTableBarRow);
     }
     
+    public String getTextForAllTimeColumnFulltextViewsRowValueTableBarOfArticleMetrics() throws Exception {
+    	return getTextFromElement(allTimeFulltextViewsValueTableBar);
+    }
     
+    public String getTextForAllTimeColumnPDFDownlodRowValueTableBarOfArticleMetrics() throws Exception {
+    	return getTextFromElement(allTimePDFDownloadValueTableBar);
+    }
+    
+    public String getTextForAbstractViewsRowOfTableBarArticleMetrics() throws Exception {
+    	return getTextFromElement(abstractViewsTableBarRow);
+    }
+    
+    public String getTextForAllTimeColumnAbstractViewsRowValueTableBarOfArticleMetrics() throws Exception {
+    	return getTextFromElement(allTimeAbstractViewsValueTableBar);
+    }
+    
+    /**
+     * This method return Article title text on the article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 27/02/2025
+     */
+    public String getArticleTitleOnArticlePage() throws Exception {
+        String articleTitleText = getTextFromElement(articleTitle);
+        return articleTitleText;
+    }
 
     @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
@@ -3289,6 +3316,16 @@ public class ArticleCitationPage extends BasePage {
 	private WebElement fullTextTableBarRow;
 	@FindBy(xpath="//div[@data-identifier='content-metrics-padding']//th[text()='PDF Downloads']")
 	private WebElement pdfDownloadsTableBarRow;
+	@FindBy(xpath="//div[@data-identifier='content-metrics-padding']//th[text()='Full Text Views']//following ::td[1]")
+	private WebElement allTimeFulltextViewsValueTableBar;
+	@FindBy(xpath="//div[@data-identifier='content-metrics-padding']//th[text()='PDF Downloads']//following::td[1]")
+	private WebElement allTimePDFDownloadValueTableBar;
+	@FindBy(xpath="//div[@data-identifier='content-metrics-padding']//th[text()='Abstract Views']")
+	private WebElement abstractViewsTableBarRow;
+	@FindBy(xpath="//div[@data-identifier='content-metrics-padding']//th[text()='Abstract Views']//following::td[1]")
+	private WebElement allTimeAbstractViewsValueTableBar;
+	@FindBy(xpath="(//div[@data-identifier='<title>'])[1]//child::h1")
+	private WebElement articleTitle;
 }
 
 

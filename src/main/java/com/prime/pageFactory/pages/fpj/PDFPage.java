@@ -4,8 +4,10 @@ package com.prime.pageFactory.pages.fpj;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.prime.generics.BasePage;
@@ -265,13 +267,10 @@ public class PDFPage extends BasePage {
      * @Created Date : 09/11/2023
      */
     public boolean verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(String waterMarkAppsName) throws Exception {
-    	 JavascriptExecutor js = (JavascriptExecutor) driver;
-    	List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])[1]"));
-//        mouseOver(element.get(0),"Mouse hovering on the water mark");
-//        Thread.sleep(2000);
-        js.executeScript("arguments[0].scrollIntoView();", element.get(0));
-        return isElementPresent(element);
-    }
+    	waitForDocumentReady();
+          	List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])"));      
+            return isElementPresent(element);
+        }
     
     /**
 	 * This method is returns all keywords from PDF tab(PDF PREVIEW).
@@ -285,6 +284,19 @@ public class PDFPage extends BasePage {
 		String keywords = getTextFromElement(keywordsFromPDFtab);
 		return keywords;
 	}
+	
+	/**
+     * This method return partial article title from PDF viewer in Inline PDF tab on article page
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 27/02/2025
+     */
+    public String getPartialArticleTitleFromInlinePDFTab(String text) throws Exception {
+    	WebElement partialText = driver.findElement(By.xpath("(//div[@class='textLayer'])[1]//span[contains(text(),'"+text+"')]"));
+        String text1 = getTextFromElement(partialText);
+        return text1;
+    }
 
     @FindBy(xpath = "(//div[@data-testid='block-downloadpdfbutton'])[1]")
     private WebElement downloadPDFIntoolBar;
