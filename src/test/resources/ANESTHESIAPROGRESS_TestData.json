@@ -666,4 +666,15 @@
 			"issueNumber":"Issue 1",
 			}
 	},
+	{
+		"id": "1730120",
+			"data": {
+				"description": "verifyThatTheAutoLaunchNewEmailFunctionality",
+				"autolaunchurl":"/view/journals/anpr/68/4/article-p214.xml?isSearch=true&body=PDF",
+				"openaccess":"Open Access",
+				"journalfiltertext":"By Journal",
+				"brainmedicine":"Brain Medicine"
+	
+			}
+		}
 ]

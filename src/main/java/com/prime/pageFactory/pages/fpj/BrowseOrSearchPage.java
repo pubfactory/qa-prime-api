@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -318,7 +319,10 @@ public class BrowseOrSearchPage extends BasePage {
      * 
      */
     public void clickOnFirstArticleOnSearchOrBrowsePage() throws Exception {
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+    	js.executeScript("window.scrollTo(0, 500);");
         clickOnElement(firstArticleOnBrowseOrSearchPage, "Click On First Article On Search Or Browse Page");
+        Thread.sleep(10000);
 
         // WebDriverWait wait = new WebDriverWait(driver, 20);
         // wait.until(new ExpectedCondition<Boolean>() {

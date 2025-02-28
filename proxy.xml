@@ -5,7 +5,7 @@
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>
 
-	<test name="ADVANCE_SEARCH" preserve-order="true">
+<!-- 	<test name="ADVANCE_SEARCH" preserve-order="true">
 		<parameter name="application" value="proxy" />
 		<groups>
 			<run>
@@ -154,6 +154,41 @@
 					<include name="VerifyThatOpenURLRouteFunctionality">
 						<parameter name="testcaseid" value="1736541" />
 					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+		<test name="CITATIONLINK" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.CitationLinkTest">
+				<methods>
+					<include
+						name="VerifyThatTheCitationLinkFunctionalityIsWorkingFine">
+						<parameter name="testcaseid" value="1729630" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+	<test name="AUTOLAUNCHNEWEMAILADDRESS" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.AutoLaunchNewEmailTest">
+				<methods>
+					<include name="verifyThatTheAutoLaunchNewEmailFunctionality">
+						<parameter name="testcaseid" value="1730120" />
+					</include>				
 				</methods>
 			</class>
 		</classes>

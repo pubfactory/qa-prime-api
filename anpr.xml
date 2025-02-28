@@ -39,24 +39,24 @@
 <!-- 			</class> -->
 <!-- 		</classes> -->
 <!-- 	</test> -->
-	<!-- <test name="ADD_CITED_BY_E2E" preserve-order="true"> -->
-	<!-- <parameter name="application" value="astmh" /> -->
-	<!-- <groups> -->
-	<!-- <run> -->
-	<!-- <include name="astmh" /> -->
-	<!-- </run> -->
-	<!-- </groups> -->
-	<!-- <classes> -->
-	<!-- <class name="com.prime.tests.E2E.AddCiteddByTest"> -->
-	<!-- <methods> -->
-	<!-- <include -->
-	<!-- name="VerifyThattheAddCitedByFunctionality"> -->
-	<!-- <parameter name="testcaseid" value="104" /> -->
-	<!-- </include> -->
-	<!-- </methods> -->
-	<!-- </class> -->
-	<!-- </classes> -->
-	<!-- </test> -->
+<!-- 	<test name="ADD_CITED_BY_E2E" preserve-order="true"> -->
+<!-- 	<parameter name="application" value="astmh" /> -->
+<!-- 	<groups> -->
+<!-- 	<run> -->
+<!-- 	<include name="astmh" /> -->
+<!-- 	</run> -->
+<!-- 	</groups> -->
+<!-- 	<classes> -->
+<!-- 	<class name="com.prime.tests.E2E.AddCiteddByTest"> -->
+<!-- 	<methods> -->
+<!-- 	<include -->
+<!-- 	name="VerifyThattheAddCitedByFunctionality"> -->
+<!-- 	<parameter name="testcaseid" value="104" /> -->
+<!-- 	</include> -->
+<!-- 	</methods> -->
+<!-- 	</class> -->
+<!-- 	</classes> -->
+<!-- 	</test> -->
 
 	<test name="CITATION_E2E" preserve-order="true">
 		<parameter name="application" value="anesthesiaprogress" />
@@ -346,10 +346,10 @@
 		</classes>
 	</test>
 	<test name="AUTOLAUNCHNEWEMAILADDRESS" preserve-order="true">
-		<parameter name="application" value="genomicpress" />
+		<parameter name="application" value="anesthesiaprogress" />
 		<groups>
 			<run>
-				<include name="genomicpress" />
+				<include name="anesthesiaprogress" />
 			</run>
 		</groups>
 		<classes>

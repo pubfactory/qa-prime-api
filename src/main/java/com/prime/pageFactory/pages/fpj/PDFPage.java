@@ -265,12 +265,12 @@ public class PDFPage extends BasePage {
      * @Created Date : 09/11/2023
      */
     public boolean verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(String waterMarkAppsName) throws Exception {
-    	 JavascriptExecutor js = (JavascriptExecutor) driver;
-    	List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])[1]"));
-//        mouseOver(element.get(0),"Mouse hovering on the water mark");
-//        Thread.sleep(2000);
-        js.executeScript("arguments[0].scrollIntoView();", element.get(0));
-        return isElementPresent(element);
+    	waitForDocumentReady();
+   	 List<WebElement> element = driver.findElements(By.xpath("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])"));
+   	System.out.println("(//span[@role='presentation' and contains(text(),'" + waterMarkAppsName + "')])");
+   	 System.out.println("Element size in watermark : "+element.size());
+       	Thread.sleep(5000);
+           return isElementPresent(element);
     }
     
     /**

@@ -2091,7 +2091,7 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 11/09/2024
      */
     public boolean verifyEmailElementIsPresentUnderArticleInformationTabOnArticlePage() throws Exception {
-        List<WebElement> emailUnderArticleInformationTab = driver.findElements(By.xpath("//div[@class='corresp']//a"));
+        List<WebElement> emailUnderArticleInformationTab = driver.findElements(By.xpath("//div[@data-jats-fn-type='corresp']//a"));
         return isElementPresent(emailUnderArticleInformationTab);
     }
 
@@ -3207,7 +3207,7 @@ public class ArticleCitationPage extends BasePage {
     private WebElement firstAuthorText;
     @FindBy(xpath = "//button[text()='Contributor Notes']")
     private WebElement ContributorNotesTab;
-    @FindBy(xpath = "//div[@class='corresp']//a")
+    @FindBy(xpath = "//div[@data-jats-fn-type='corresp']//a")
     private WebElement emailAddressUnderArticleInformationTab;
     @FindBy(xpath = "(//a[@target='_self' and  text()='REFERENCES'])[1]")
     private WebElement referenceLinkOnLHS;

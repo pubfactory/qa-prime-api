@@ -54,12 +54,20 @@ public class PDFFunctionalityTest extends BaseTest {
             JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
             masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
+            masterPage.enterTextInSearchBoxOnHomePage("health");
             masterPage.clickOnSearchMagnifyingLense();
             browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
-
+ 
+            //Verifying Pdf download button is present on article page
+            browseOrSearchPage.ClickOnArticleFromeRefineByType();
+//            masterPage.clickOnSearchMagnifyingLense();
+//            browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
+//
             //Verifying Pdf download button is present on article page
             browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("open").toString());
+            Thread.sleep(6000);
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
+            
             pdfPage = BasePage.initialize(WebDriverManager.getDriver(), PDFPage.class);
             BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyPDFButtonPresentOnArticlePage(), true, "Verifying PDF Button is present on the article page");
 
@@ -95,10 +103,10 @@ public class PDFFunctionalityTest extends BaseTest {
             BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.verifyStringContainsSpecificWord(articleHeader, partialArticleHeader), true,
                     "Verifying that same article is displayed in PDF preview in inline PDF tab");
 
-            String applicationName = BaseTest.properties.getProperty("application");
+          //  String applicationName = BaseTest.properties.getProperty("application");
 
             //Verifying the dynamic watermark on pdf preview in Inline pdf tab
-            BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(applicationName), true,
+            BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyWatermarkIsPresentOnPreviewInPDFTabOnArticlePage(application), true,
                     "Verifying that watermark is present on pdf in Pdf preview in Inline tab on the articla page");
             // Pickup Apps name or COnfig properly apps name 
 
