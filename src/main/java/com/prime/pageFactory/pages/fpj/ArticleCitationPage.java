@@ -3234,7 +3234,7 @@ public class ArticleCitationPage extends BasePage {
     private WebElement firstAuthorText;
     @FindBy(xpath = "//button[text()='Contributor Notes']")
     private WebElement ContributorNotesTab;
-    @FindBy(xpath = "//div[@data-jats-fn-type='corresp']//a")
+    @FindBy(xpath = "(//div[@class='contributor-notes']//following::a[@href])[1]")
     private WebElement emailAddressUnderArticleInformationTab;
     @FindBy(xpath = "(//a[@target='_self' and  text()='REFERENCES'])[1]")
     private WebElement referenceLinkOnLHS;
