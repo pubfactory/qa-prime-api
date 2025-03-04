@@ -692,6 +692,15 @@
 					"brainmedicine":"Brain Medicine"
 		
 				}
-			}
+			},
+			{
+				"id": "1729970",
+					"data": {
+						"description": "VerifyThatTheByJournalFilterFunctionality",
+						"journalfiltertext":"Journal",
+						"brainmedicine":"Brain Medicine"
+			
+					}
+				}
 	
 ]
