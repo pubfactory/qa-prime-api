@@ -2091,7 +2091,7 @@ public class ArticleCitationPage extends BasePage {
      * @Created Date : 11/09/2024
      */
     public boolean verifyEmailElementIsPresentUnderArticleInformationTabOnArticlePage() throws Exception {
-        List<WebElement> emailUnderArticleInformationTab = driver.findElements(By.xpath("//div[@data-jats-fn-type='corresp']//a"));
+        List<WebElement> emailUnderArticleInformationTab = driver.findElements(By.xpath("(//div[@class='contributor-notes']//following::a[@href])[1]"));
         return isElementPresent(emailUnderArticleInformationTab);
     }
 
