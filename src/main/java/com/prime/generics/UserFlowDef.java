@@ -1019,7 +1019,7 @@ public class UserFlowDef extends BaseTest {
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getOgSiteNameMetaTagPropertyValue(),ogSiteName, "verifying the og site name meta tag with content value is present on article page when enabled SSR.");
 
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.ogTypeMetaTagisPresentOnArticlePage(), true, "verifying the og Type meta tag is present on article page when enabled SSR.");
-    	String ogType = testData.get("ogtype").toString();
+    	String ogType = testData.get("ogtypearticle").toString();
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.getOgTypeMetaTagPropertyValue(),ogType, "verifying the og Type meta tag with content value is present on article page when enabled SSR.");
     	
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.ogLocaleMetaTagisPresentOnArticlePage(), true, "verifying the og locale meta tag is present on article page when enabled SSR.");
