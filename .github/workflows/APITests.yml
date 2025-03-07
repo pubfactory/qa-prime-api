@@ -48,6 +48,7 @@ jobs:
         ref: gh-pages
         path: /tmp/gh-pages
 
+
     - name: Allure Report action from marketplace
       uses: simple-elf/allure-report-action@master
       if: always()
@@ -60,8 +61,10 @@ jobs:
           
     - name: Move Allure History Back to Workspace
       run: |
-        mkdir -p gh-pages
-        cp -r /tmp/gh-pages/* gh-pages/
+         rm -rf gh-pages  # Remove any existing folder to avoid conflicts
+         mkdir -p gh-pages
+         cp -r /tmp/gh-pages/* gh-pages/
+          
 
     - name: Deploy report to Github Pages
       id: gh-pages
@@ -70,7 +73,7 @@ jobs:
       env:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: gh-pages
+        PUBLISH_DIR: allure-history
         keep_files: true
 
     - name: Send ${{ job.status }} message to #qa-prime-integration room
