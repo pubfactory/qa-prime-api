@@ -20,6 +20,11 @@ jobs:
 
     steps:
 
+    - name: Remove Existing Allure History Git Folder
+      run: |
+        rm -rf gh-pages/.git || true
+
+
     - uses: actions/checkout@v3
       id: checkout-gitrepo
       
