@@ -168,7 +168,8 @@
 		<classes>
 			<class name="com.prime.tests.E2E.AddMetricTest">
 				<methods>
-					<include name="VerifyThatAddMetricFunctionalityFunctionality">
+					<include
+						name="VerifyThatAddMetricFunctionalityFunctionality">
 						<parameter name="testcaseid" value="1736542" />
 					</include>
 				</methods>
@@ -206,9 +207,62 @@
 		<classes>
 			<class name="com.prime.tests.E2E.AutoLaunchNewEmailTest">
 				<methods>
-					<include name="verifyThatTheAutoLaunchNewEmailFunctionality">
+					<include
+						name="verifyThatTheAutoLaunchNewEmailFunctionality">
 						<parameter name="testcaseid" value="1730120" />
-					</include>				
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="DOI_ExtraPath" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.DOITest">
+				<methods>
+					<include name="verifyThatHandlingDOIRedirectFunctionality">
+						<parameter name="testcaseid" value="1730101" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="REFERENCEDTOCONTENTMETADATASERVICE"
+		preserve-order="true">
+		<parameter name="application" value="anesthesiaprogress" />
+		<groups>
+			<run>
+				<include name="anesthesiaprogress" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.CitationTest">
+				<methods>
+					<include name="verifyContentMetaDataServiceInReferences">
+						<parameter name="testcaseid" value="1733708" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="SOURCEFILTERJOURNLFILTER" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.SourceFilterJournalTest">
+				<methods>
+					<include name="VerifyThatTheByJournalFilterFunctionality">
+						<parameter name="testcaseid" value="1729970" />
+					</include>
 				</methods>
 			</class>
 		</classes>

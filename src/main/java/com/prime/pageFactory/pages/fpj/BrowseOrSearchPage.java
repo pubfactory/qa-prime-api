@@ -1591,6 +1591,20 @@ public class BrowseOrSearchPage extends BasePage {
         String attributeValue = getAttributeFromElement(element, "data-facet-value");
         return attributeValue;
     }
+    
+    /**
+     * This method is return the First Journal Name 
+     * 
+     * @return String
+     * @throws Exception
+     * @author Veena.Mathew
+     * @Created Date : 04/03/2025
+     */
+    public String getFirstJournalName() throws Exception {
+        WebElement element = driver.findElement(By.xpath("(//div[contains(@class,'content-markup')]//a)[1]"));
+        //String attributeValue = getAttributeFromElement(element, "data-facet-value");
+        return element.getText();
+    }
 
     /**
      * This method used to Verify refine term filter search keyword present on
@@ -1618,13 +1632,26 @@ public class BrowseOrSearchPage extends BasePage {
      */
     public boolean verifySearchSlugLabelIsRegion() throws Exception {
         List<WebElement> SearchSlugSign =
-                driver.findElements(By.xpath("//strong[contains(text(),'search.filter.by-journal-key.label')]//following::strong[contains(text(),'search.filter.by-journal-key.brainmed.label')]"));
+                driver.findElements(By.xpath("//strong[contains(text(),'search.filter.by-type.label')]//following::strong[contains(text(),'search.filter.by-type.journal.label')]"));
         return isElementPresent(SearchSlugSign);
     }
 
+    /**
+     * This method used to Verify if slugis present after refining
+     * 
+     * @param valueName
+     * @throws Exception
+     * @return boolean
+     * @author Veena.Mathew
+     * @Created Date : 04/03/2025
+     */
+    public boolean verifyByJournalSearchSlugValueIsPresentOnSearchOrBrowsePage(String filterName) throws Exception {
+        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[contains(text(),'" + filterName + "')]"));
+        return isElementPresent(SearchSlugSign);
+    }
     public boolean verifyCountIsPresntInFrontOfJournalTitleInJournalFilter() throws Exception {
         boolean flag = false;
-        WebElement countNum = driver.findElement(By.xpath("//span[text()='Brain Medicine']//following::span[1]"));
+        WebElement countNum = driver.findElement(By.xpath("//span[text()='Journal']//following::span[1]"));
         String countNumber = getTextFromElement(countNum);
         if (countNumber.startsWith("(") && countNumber.endsWith(")")) {
             flag = true;
@@ -2203,7 +2230,7 @@ public class BrowseOrSearchPage extends BasePage {
     private WebElement twitterDescriptionMetaTag;
     @FindBy(xpath = "//meta[@property='og:title']")
     private WebElement ogTitleMetaTag;
-    @FindBy(xpath = "//span[text()='By Journal']")
+    @FindBy(xpath = "//span[text()='Journal']")
     private WebElement byJournalFilter;
     @FindBy(xpath = "//span[text()='Brain Medicine']")
     private WebElement firstJournalFilterValue;
