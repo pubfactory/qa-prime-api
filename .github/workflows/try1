@@ -1,0 +1,34 @@
+name: APITests.yml
+    
+on:
+  workflow_dispatch:
+    inputs:
+      gitcommitId:
+        required: true
+        description: "get git commit Id from prime-frontend"
+        type: string
+        default: ''
+      jobId:
+        required: true
+        description: "get job Id from prime-frontend"
+        type: string
+        default: ''
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      id: checkout-gitrepo
+
+    - name: Navigating to chromedriver and making it executable
+      id: chromedriver-executable
+      run: |
+          ls -l
+          pwd
+          cd /opt/actions-runner/_work/qa-prime-e2e/qa-prime-e2e/src/test/resources
+          chmod +x chromedriver
+          
+
+   
