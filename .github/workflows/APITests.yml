@@ -57,6 +57,29 @@ jobs:
           gh_pages: /tmp/gh-pages
           allure_report: allure-report
           allure_history: allure-history
+
+    - name: Deploy report to Github Pages
+      id: gh-pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: allure-history
+        keep_files: true
+
+    - name: Send ${{ job.status }} message to #qa-prime-integration room
+      if: always()
+      uses: act10ns/slack@v2.0.0
+      with:
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: '#qa-prime-integration'
+          message: "*Build Status*: *${{ job.status }}*.\n*Environment:DEV*.\nAllure report URL is: https://pubfactory.github.io/qa-prime-e2e/${{ github.run_number }}\nGit commit ID is: ${{ inputs.gitcommitId }}.\nPrime-frontend job is: https://github.com/pubfactory/prime-frontend/actions/runs/${{ inputs.jobId }}"
+                  
+      env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     
           
     
