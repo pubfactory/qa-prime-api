@@ -65,7 +65,7 @@ jobs:
       env:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: allure-history
+        PUBLISH_DIR: /tmp/gh-pages
         keep_files: true
 
     - name: Send ${{ job.status }} message to #qa-prime-integration room
