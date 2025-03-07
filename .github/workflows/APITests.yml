@@ -30,9 +30,23 @@ jobs:
           pwd
           cd /opt/actions-runner/_work/qa-prime-e2e/qa-prime-e2e/src/test/resources
           chmod +x chromedriver
-          
+
+    - name: Clean and Install Dependencies
+      run: mvn clean install -U -DskipTests
+      
     - name: Build with Maven
       id: run-test-case
       run: mvn test -DsuiteXmlFile=UserFlowsPrimeConfig.xml  -DEnvironment=dev -Dbrowser=chrome
+
+    - name: Get Allure history
+      uses: actions/checkout@v2
+      id: allure-history
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+          
+    
 
    
