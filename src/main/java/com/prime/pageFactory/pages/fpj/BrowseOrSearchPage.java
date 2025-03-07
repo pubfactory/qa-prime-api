@@ -1107,9 +1107,10 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 10/01/2024
      */
     public String getToDateOption() throws Exception {
-        String toDate = getFromDateOption();
-        String toDateUpdate = Integer.toString(Integer.parseInt(toDate) + 1);
-        return toDateUpdate;
+    	List<WebElement> fromdateElement = driver.findElements(By.xpath("//select[@name='fromDate']//child::option"));
+        List<String> fromdateText = getMultipleWebElementText(fromdateElement);
+        String toDate = fromdateText.get(2);
+        return toDate;
     }
 
     /**

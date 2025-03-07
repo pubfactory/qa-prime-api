@@ -213,4 +213,48 @@
 			</class>
 		</classes>
 	</test>
+	<test name="SEARCH_E2E_FULL" preserve-order="true">
+		<parameter name="application" value="proxy" />
+		<groups>
+			<run>
+				<include name="proxy" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.E2E.SearchFunctionalityTest">
+				<methods>
+					<include name="VerifySearchPageTopPanel">
+						<parameter name="testcaseid" value="1722541" />
+					</include>
+					<include
+						name="VerifyPpaginationAndSortingOptionsIntheSearchResultsPage">
+						<parameter name="testcaseid" value="1722542" />
+					</include>
+					<include
+						name="VerifyThatSsearchResultsDetailsToolbarOptionsSaveOptionsAreAsExpected">
+						<parameter name="testcaseid" value="1722543" />
+					</include>
+					<include
+						name="VerifyVariousRefineTermsInTheSearchResultsPage">
+						<parameter name="testcaseid" value="1722544" />
+					</include>
+					<!-- <include
+						name="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows">
+						<parameter name="testcaseid" value="1722545" />
+					</include> -->
+					<include
+						name="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard">
+						<parameter name="testcaseid" value="1722546" />
+					</include>
+					<include name="VerifyThatTheVariousShareButtonFeatures">
+						<parameter name="testcaseid" value="1722547" />
+					</include>
+					<include
+						name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">
+						<parameter name="testcaseid" value="1722548" />
+					</include>
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite>

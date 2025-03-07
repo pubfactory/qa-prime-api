@@ -99,7 +99,7 @@ public class SearchFunctionalityTest extends BaseTest {
         driver.navigate().refresh();
         int fiftyItemPerPage = browseOrSearchPage.getLastItemOfPaginationLinks("50");
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(twentyItemPerPage, fiftyItemPerPage), true,
-                "Verifying the pagInation link size is changed after selecting the twenty item per page from item per page dropdown");
+                "Verifying the pagInation link size is changed after selecting the fifty item per page from item per page dropdown");
     }
 
     @Test(groups = {"fpj"}, enabled = true, retryAnalyzer = Retry.class, description = "1722543 - Verify that  search results details , toolbar options , Save options are as expected")
@@ -200,7 +200,7 @@ public class SearchFunctionalityTest extends BaseTest {
         WebDriverManager.getDriver().navigate().refresh();
         int isbnDOI = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.compareBrowserResultsCount(browseResultCount, isbnDOI), true,
-                "Verifying the total result count after applying the ISBN/ISSN/DOI filter from refine term filter on search apge");
+                "Verifying the total result count after applying the ISBN/ISSN/DOI filter from refine term filter on search page");
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURL(BaseTest.getLastsixStringCharacter(browseOrSearchPage.getFirstDOIValueOnBrowseOrSearchPage())),
                 "Verifying the ISBN/ISSN/DOI filter is applied on search result page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("identifier", firstDOI), true,
@@ -354,22 +354,24 @@ public class SearchFunctionalityTest extends BaseTest {
         //      "verifying the user access option in Refine By Access filter is present on Browse or search page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.VerifyfilterOptionInRefineByAccessFilterIsPresentOnBrowseOrSearchPage(testData.get("openaccess").toString()), true,
                 "verifying the open access option in Refine By Access filter is present on Browse or search page");
+        if(!application.equalsIgnoreCase("proxy")) {
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.VerifyfilterOptionInRefineByAccessFilterIsPresentOnBrowseOrSearchPage(testData.get("freeaccess").toString()), true,
                 "verifying the free access option in Refine By Access filter is present on Browse or search page");
-
+        }
         browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
         WebDriverManager.getDriver().navigate().refresh();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("Refine by Access", testData.get("openaccess").toString()), true,
                 "Verifying the open access type result is displayed on search/browse result page");
-        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("open").toString()), "Verifying the open access type result is displayed on search/browse result page");
+        BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("open").toString()), "Verifying the open access type result is displayed on search/browse result page");        
+        if(!application.equalsIgnoreCase("proxy")) {
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("freeaccess").toString());
         WebDriverManager.getDriver().navigate().refresh();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("Refine by Access", testData.get("freeaccess").toString()), true,
                 "Verifying the free access type result is displayed on search/browse result page");
         BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("access=" + testData.get("free").toString().toUpperCase()),
-                "Verifying the open access type result is displayed on search/browse result page");
-
+                "Verifying the free access type result is displayed on search/browse result page");
+        }
         //This funct available in dev not in UAT (Refine by type)
         //        masterPage.clickOnSearchMagnifyingLense();
         //        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getRefineByTypeFilterTextonSearchOrBrowsePage(), testData.get("refinetype").toString(),

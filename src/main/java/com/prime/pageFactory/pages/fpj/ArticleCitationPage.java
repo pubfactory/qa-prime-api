@@ -3112,7 +3112,7 @@ public class ArticleCitationPage extends BasePage {
     private WebElement abbreviatedJournalTitle;
     @FindBy(xpath = "(//div[@class='title'])[1]")
     private WebElement articleHeader;
-    @FindBy(xpath = "(//img[contains(@alt,'Cover Anesthesia Progress')])[1]")
+    @FindBy(xpath = "(//span[@data-testid='block-coverimage'])[1]//child::img")
     private WebElement journalCover;
     @FindBy(xpath = "((//div[contains(@data-testid,'contributors')])//div//span)[1]")
     private WebElement firstauthor;

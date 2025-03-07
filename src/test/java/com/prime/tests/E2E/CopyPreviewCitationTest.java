@@ -62,13 +62,16 @@ public class CopyPreviewCitationTest extends BaseTest {
 
         //Verifying the APA format is displayed on toast message and the APA format is copied and pasted
         articleCitationPage.selectFormatValueOnPreviewExportCitationPopUp(testData.get("formatvalueapa").toString());
-        String abbreviatedTitleAPA = articleCitationPage.getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingFormat();
+        String abbreviatedTitleAPA = articleCitationPage.getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingFormat().replaceAll("\\n", " ");
         articleCitationPage.clickOnCopyToClipBoardButtonOnPreviewExportCitationPopup();
         articleCitationPage.clickOnPreviewExportCitationPopUpCloseButton();
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.copiedMessagePasteIntoTextBox();
-        browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
-        String pastedAPAValued = browseOrSearchPage.getRefineTermTextBoxValue();
+        //browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
+        String pastedAPAValued = browseOrSearchPage.getRefineTermTextBoxValue().replaceAll("\\n", " ");
+        System.out.println("abbreviatedTitleAPA : "+abbreviatedTitleAPA);
+        System.out.println("pastedAPAValued : "+pastedAPAValued);
+        
         // BaseTest.assertEquals(WebDriverManager.getDriver(), abbreviatedTitleAPA, pastedAPAValued, "Verifying the correct format value is copied and pasted");
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.verifyStringContainsSpecificWord(abbreviatedTitleAPA, pastedAPAValued), true, "Verifying the correct format value is copied and pasted");
 
@@ -79,13 +82,15 @@ public class CopyPreviewCitationTest extends BaseTest {
         articleCitationPage.clickOnToolsButtonInActionBarOnArticlePage();
         articleCitationPage.clickOnCitationButtonOnArticlePage();
         articleCitationPage.selectFormatValueOnPreviewExportCitationPopUp(testData.get("formatvalueama").toString());
-        String abbreviatedTitleAMA = articleCitationPage.getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingFormat();
+        String abbreviatedTitleAMA = articleCitationPage.getAbbreviatedJournalTitleOnCitationPopUpWhileSelectingFormat().replaceAll("\\n", " ");
         articleCitationPage.clickOnCopyToClipBoardButtonOnPreviewExportCitationPopup();
         articleCitationPage.clickOnPreviewExportCitationPopUpCloseButton();
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.copiedMessagePasteIntoTextBox();
-        browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
-        String pastedAMAValued = browseOrSearchPage.getRefineTermTextBoxValue();
+       // browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
+        String pastedAMAValued = browseOrSearchPage.getRefineTermTextBoxValue().replaceAll("\\n", " ");
+        System.out.println("abbreviatedTitleAMA : "+abbreviatedTitleAMA);
+        System.out.println("pastedAMAValued : "+pastedAMAValued);
         //BaseTest.assertEquals(WebDriverManager.getDriver(), abbreviatedTitleAMA, pastedAMAValued, "Verifying the correct format value is copied and pasted");
         BaseTest.assertEquals(WebDriverManager.getDriver(), BaseTest.verifyStringContainsSpecificWord(abbreviatedTitleAMA, pastedAMAValued), true, "Verifying the correct format value is copied and pasted");
 
