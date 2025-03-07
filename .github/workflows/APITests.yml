@@ -32,8 +32,18 @@ jobs:
 
      # - name: Remove Old Repository
   #run: rm -rf /opt/actions-runner/_work/qa-prime-e2e/qa-prime-e2e/.git || true
-    - name: Remove Old Repository
-      run: rm -rf /opt/actions-runner/_work/qa-prime-e2e/qa-prime-e2e/.git || true
+    #- name: Remove Old Repository
+     # run: rm -rf /opt/actions-runner/_work/qa-prime-e2e/qa-prime-e2e/.git || true
+
+    - name: Remove Old Repository if Present
+      run: |
+        if [ -d "/opt/actions-runner/_work/qa-prime-e2e/qa-prime-e2e/.git" ]; then
+          rm -rf /opt/actions-runner/_work/qa-prime-e2e/qa-prime-e2e/.git
+          echo "Old repository removed."
+        else
+          echo "No repository found, skipping removal."
+        fi
+
 
     - uses: actions/checkout@v3
       id: checkout-gitrepo
