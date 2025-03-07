@@ -1,0 +1,116 @@
+name: APITests.yml
+    
+on:
+  workflow_dispatch:
+    inputs:
+      gitcommitId:
+        required: true
+        description: "get git commit Id from prime-frontend"
+        type: string
+        default: ''
+      jobId:
+        required: true
+        description: "get job Id from prime-frontend"
+        type: string
+        default: ''
+jobs:
+  build:
+
+    runs-on: ${{ (github.ref_name == 'uat') && fromJSON('["self-hosted","uat"]') || (github.ref_name == 'prod') && fromJSON('["self-hosted","prod"]') || fromJSON('["self-hosted","dev"]') }}
+
+    steps:
+   # - name: Change Ownership of allure-history
+    #  run: sudo chown -R $(whoami) allure-history/.git
+
+    #- name: Fix Permissions for allure-history
+     # run: |
+      #    chmod -R u+w allure-history/.git || true
+
+    #- name: Force Remove allure-history
+     # run: |
+      #    rm -rf allure-history/.git || true
+
+     # - name: Remove Old Repository
+  #run: rm -rf /opt/actions-runner/_work/qa-prime-e2e/qa-prime-e2e/.git || true
+    - name: Remove Old Repository
+      run: rm -rf /opt/actions-runner/_work/qa-prime-e2e/qa-prime-e2e/.git || true
+
+    - uses: actions/checkout@v3
+      id: checkout-gitrepo
+      with:
+        persist-credentials: false  # Prevents GitHub token from restricting permissions
+        clean: true
+        fetch-depth: 0
+      
+    - name: Navigating to chromedriver and making it executable
+      id: chromedriver-executable
+      run: |
+          ls -l
+          pwd
+          cd /opt/actions-runner/_work/qa-prime-e2e/qa-prime-e2e/src/test/resources
+          chmod +x chromedriver
+          
+    - name: Build with Maven
+      id: run-test-case
+      run: mvn test -DsuiteXmlFile=UserFlowsPrimeConfig.xml  -DEnvironment=dev -Dbrowser=chrome
+
+    - name: Gather Allure Results
+      id: parse-allure-results
+      run: |
+        PASSED=$(grep -o '"status":"passed"' target/allure-results/*.json | wc -l || echo 0)
+        FAILED=$(grep -o '"status":"failed"' target/allure-results/*.json | wc -l || echo 0)
+        TOTAL=$((PASSED + FAILED))
+        echo "PASSED=$PASSED" >> $GITHUB_ENV
+        echo "FAILED=$FAILED" >> $GITHUB_ENV
+        echo "TOTAL=$TOTAL" >> $GITHUB_ENV
+        
+    - name: Debug Allure Results
+      run: |
+        echo "Inspecting Allure Results Directory:"
+        ls -l target/allure-results/
+        echo "Sample JSON File Content:"
+        cat target/allure-results/*.json | head -n 50
+    - name: Get Allure history
+      uses: actions/checkout@v2
+      id: allure-history
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+        clean: false
+
+    - name: Allure Report action from marketplace
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      id: allure-report
+      with:
+          allure_results: target/allure-results
+          gh_pages: gh-pages
+          allure_report: allure-report
+          allure_history: allure-history
+          
+    - name: Deploy report to Github Pages
+      id: gh-pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: allure-history
+        keep_files: true
+        
+
+
+    - name: Send ${{ job.status }} message to #qa-prime-integration room
+      if: always()
+      uses: act10ns/slack@v2.0.0
+      with:
+        webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+        status: ${{ job.status }}
+        steps: ${{ toJson(steps) }}
+        channel: '#qa-prime-integration'
+        message: "*Build Status*: *${{ job.status }}*.\n*Environment:DEV*.\nAllure report URL is: https://pubfactory.github.io/qa-prime-e2e/${{ github.run_number }}\nGit commit ID is: ${{ inputs.gitcommitId }}.\nPrime-frontend job is: https://github.com/pubfactory/prime-frontend/actions/runs/${{ inputs.jobId }}"
+      
+      env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
