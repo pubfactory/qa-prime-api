@@ -79,14 +79,14 @@ jobs:
       run: rm -rf gh-pages || true
 
     - name: Deploy report to Github Pages
+      id: gh-pages
       if: always()
       uses: peaceiris/actions-gh-pages@v2
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: allure-history
-        publish_branch: gh-pages
+      env:
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: allure-history
         keep_files: true
-        commit_message: "Deploy Allure report: ${{ github.run_number }}"
 
     - name: Send ${{ job.status }} message to #qa-prime-integration room
       if: always()
