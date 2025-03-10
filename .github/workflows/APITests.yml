@@ -77,9 +77,9 @@ jobs:
           keep_files: true
 
       # Optionally clean up the .allure directory
-    - name: Clean up allure artifacts
-      if: always()
-      run: rm -rf .allure
+   # - name: Clean up allure artifacts
+    #  if: always()
+     # run: rm -rf .allure
 
     - name: Send ${{ job.status }} message to #qa-prime-integration room
       if: always()
