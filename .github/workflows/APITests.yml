@@ -39,47 +39,54 @@ jobs:
       id: run-test-case
       run: mvn test -DsuiteXmlFile=UserFlowsPrimeConfig.xml  -DEnvironment=dev -Dbrowser=chrome
       
-      # Create working directories for Allure inside the repo workspace
-    - name: Prepare Allure directories
-      run: mkdir -p .allure/gh-pages .allure/allure-report .allure/allure-history
-
-      # Checkout gh-pages branch into `.allure/gh-pages`
-    - name: Get Allure history
+ # Checkout gh-pages branch to get previous allure history
+    - name: Checkout gh-pages branch
       uses: actions/checkout@v2
-      id: allure-history
       if: always()
-      continue-on-error: true
       with:
-          ref: gh-pages
-          path: .allure/gh-pages
+        ref: gh-pages
+        path: gh-pages
 
-      # Generate Allure Report using simple-elf action
-    - name: Allure Report action from marketplace
+    # Copy ONLY the allure history from gh-pages folder
+    - name: Copy Allure History Only
+      if: always()
+      run: |
+        mkdir -p allure-history
+        if [ -d gh-pages/history ]; then
+          cp -R gh-pages/history/* allure-history/ || true
+        fi
+
+    # OPTIONAL: Fix permissions (useful for self-hosted runners)
+    - name: Fix permissions on allure-history
+      if: always()
+      run: |
+        sudo chown -R $USER:$USER allure-history || true
+        chmod -R u+rwX allure-history || true
+
+    - name: Generate Allure Report
       uses: simple-elf/allure-report-action@master
       if: always()
-      id: allure-report
       with:
-          allure_results: target/allure-results
-          gh_pages: .allure/gh-pages
-          allure_report: .allure/allure-report
-          allure_history: .allure/allure-history
-          keep_reports: 20
+        allure_results: target/allure-results
+        gh_pages: gh-pages
+        allure_report: allure-report
+        allure_history: allure-history
+        keep_reports: 20
 
-      # Deploy the allure report to GitHub Pages from `.allure/allure-history`
+    # OPTIONAL CLEANUP: Clean up leftover files
+    - name: Clean up allure artifacts
+      if: always()
+      run: rm -rf gh-pages || true
+
     - name: Deploy report to Github Pages
-      id: gh-pages
       if: always()
       uses: peaceiris/actions-gh-pages@v2
-      env:
-          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: .allure/allure-history
-          keep_files: true
-
-      # Optionally clean up the .allure directory
-   # - name: Clean up allure artifacts
-    #  if: always()
-     # run: rm -rf .allure
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: allure-history
+        publish_branch: gh-pages
+        keep_files: true
+        commit_message: "Deploy Allure report: ${{ github.run_number }}"
 
     - name: Send ${{ job.status }} message to #qa-prime-integration room
       if: always()
