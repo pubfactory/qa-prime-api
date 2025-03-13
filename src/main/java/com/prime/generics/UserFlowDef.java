@@ -10,6 +10,9 @@
 */
 package com.prime.generics;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -23,6 +26,11 @@ import com.prime.pageFactory.pages.fpj.JournalPage;
 import com.prime.pageFactory.pages.fpj.MasterPage;
 import com.prime.pageFactory.pages.fpj.PDFPage;
 import io.qameta.allure.Allure;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpHead;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 
 public class UserFlowDef extends BaseTest {
 
@@ -1204,17 +1212,17 @@ public class UserFlowDef extends BaseTest {
     	String twitterTitle = testData.get("twittertitle").toString();
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getTwitterTitleMetaTagPropertyValue(),twitterTitle, "verifying the twitter Title meta tag with content value is present on home page when enabled SSR.");
 
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.VerifyOgDescriptionMetaTagisPresentOnHomePage(), true, "verifying the og description meta tag is present on artile page when enabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.VerifyOgDescriptionMetaTagisPresentOnHomePage(), true, "verifying the og description meta tag is present on home page when enabled SSR.");
     	String ogDescription = testData.get("ogdescription").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getOgDescriptionMetaTagPropertyValue(),ogDescription, "verifying the og description meta tag with content value is present on artile page when enabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getOgDescriptionMetaTagPropertyValue(),ogDescription, "verifying the og description meta tag with content value is present on home page when enabled SSR.");
 
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.VerifyDescriptionMetaTagisPresentOnHomePage(), true, "verifying the name description meta tag is present on artile page when enabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.VerifyDescriptionMetaTagisPresentOnHomePage(), true, "verifying the name description meta tag is present on home page when enabled SSR.");
     	String description = testData.get("namedescription").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getDescriptionMetaTagPropertyValue(),description, "verifying the name description meta tag with content value is present on artile page when enabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getDescriptionMetaTagPropertyValue(),description, "verifying the name description meta tag with content value is present on home page when enabled SSR.");
 
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.VerifyTwitterDescriptionMetaTagisPresentOnHomePage(), true, "verifying the twitter description meta tag is present on artile page when enabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.VerifyTwitterDescriptionMetaTagisPresentOnHomePage(), true, "verifying the twitter description meta tag is present on home page when enabled SSR.");
     	String twitterDescription = testData.get("twitterdescriptionhome").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getTwitterDescriptionMetaTagPropertyValue(),twitterDescription, "verifying the twitter description meta tag with content value is present on artile page when enabled SSR.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getTwitterDescriptionMetaTagPropertyValue(),twitterDescription, "verifying the twitter description meta tag with content value is present on home page when enabled SSR.");
 
     	
     }
@@ -1256,14 +1264,14 @@ public class UserFlowDef extends BaseTest {
     	String twitterTitle = testData.get("twittertitle").toString();
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getTwitterTitleMetaTagPropertyValue(),twitterTitle, "verifying the twitter Title meta tag with content value is present on Issue page when enabled SSR.");
 
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.VerifyOgDescriptionMetaTagisPresentOnHomePage(), true, "verifying the og description meta tag is present on Issue page when enabled SSR.(index first)");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyOgDescriptionMetaTagisPresentOnIssuePage(), true, "verifying the og description meta tag is present on Issue page when enabled SSR.(index first)");
     	String ogDescriptionOne = testData.get("ogdescriptionissueone").toString();
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getOgDescriptionMetaTagPropertyValue(),ogDescriptionOne, "verifying the og description meta tag with content value is present on Issue page when enabled SSR.(index first)");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getOgDescriptionMetaTagPropertyValue(),ogDescriptionOne, "verifying the og description meta tag with content value is present on Issue page when enabled SSR.(index first)");
 
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.VerifyOgDescriptionIndexSecodMetaTagisPresentOnHomePage(), true, "verifying the og description meta tag is present on Issue page when enabled SSR.(index second)");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyOgDescriptionIndexSecodMetaTagisPresentOnIssuePage(), true, "verifying the og description meta tag is present on Issue page when enabled SSR.(index second)");
     	String ogDescriptionTwo = testData.get("ogdescriptionissuetwo").toString();
     	String orignalOgDescriptionIssue=ogDescriptionTwo.replaceAll("&quot;", "\"");
-    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), masterPage.getOgDescriptionIndexSecondMetaTagPropertyValue(),orignalOgDescriptionIssue, "verifying the og description meta tag with content value is present on Issue page when enabled SSR.(index second)");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getOgDescriptionIndexSecondMetaTagPropertyValue(),orignalOgDescriptionIssue, "verifying the og description meta tag with content value is present on Issue page when enabled SSR.(index second)");
     	
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issuePage.VerifyDescriptionMetaTagisPresentOnIssuePage(), true, "verifying the description meta tag is present on issue page when enabled SSR.(index one)");
     	String descriptionIssueOne = testData.get("descriptioissuenone").toString();
@@ -1291,9 +1299,78 @@ public class UserFlowDef extends BaseTest {
     	String ogTitle = testData.get("ogtitle").toString();
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), issuePage.getOgTitleMetaTagPropertyValue(),ogTitle, "verifying the og title meta tag with content value is present on issue page when enabled SSR.");
 
-    	
     }
     
+    public void verifyPageReturns200Response(String liveHomePageURL, String desc) throws Exception {  	    
+    	    	URL newurl = new URL(liveHomePageURL);
+                HttpURLConnection connection = (HttpURLConnection) newurl.openConnection();
+                connection.setRequestMethod("GET");
+                int responseCode = connection.getResponseCode();
+    	
+//    	CloseableHttpClient httpClient = HttpClients.createDefault();
+//        HttpGet request = new HttpGet(liveHomePageURL);
+//        HttpResponse response = httpClient.execute(request);
+//        int statusCode = response.getStatusLine().getStatusCode();
+        System.out.println(" statusCode : "+responseCode);
+        System.out.println(" 200 url : "+liveHomePageURL);
+    	
+                assertEqualsoftAssert(soft,WebDriverManager.getDriver(),responseCode,200, desc);
+         }
+
+    
+    public void returnsTheServerIsUpMeassageText(String url) throws Exception {	
+    	driver.get(url);
+    	String serverup=masterPage.getTextForServerIsUp();
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),serverup,testData.get("serveruptext").toString(), "Verifying after enabling the ssr the server is up.");
+    }
+    
+    public void VerifyPageTitleIsPresent(String url,String title,String desc) throws Exception {
+    	driver.get(url);
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),masterPage.verifyTitleIspresent(title),true,desc);
+    }
+    
+    public void vreifyTheFileSizeOfPDF() throws Exception {
+//    	pdfPage = BasePage.initialize(WebDriverManager.getDriver(), PDFPage.class);
+//    	pdfPage.clickOnDownloadPDFButtonOnArticlePage();
+//    	driver.get("https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");
+//    	driver.get("https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-uat.pubfactory.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");   	
+    	driver.get("https://anesthesiaprogress.kglmeridian.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");
+    	
+//    	URL newURL = new URL("https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");
+//    	URL newURL = new URL("https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-uat.pubfactory.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");       
+//    	URL newURL = new URL("https://anesthesiaprogress.kglmeridian.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");
+//         HttpURLConnection connection = (HttpURLConnection) newURL.openConnection();
+//         connection.setRequestMethod("HEAD"); // Use HEAD to get metadata
+//         connection.connect();
+//
+//         int fileSizeInBytes = connection.getContentLength();
+//         double fileSizeInKB = fileSizeInBytes / 1024.0;
+//         System.out.println("fileSizeInKB  : "+fileSizeInKB);
+//         
+//         connection.disconnect();
+    
+    	try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
+            HttpHead request = new HttpHead("https://anesthesiaprogress.kglmeridian.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");
+            HttpResponse response = httpClient.execute(request);
+
+            // Get Content-Length from headers
+            long fileSizeInBytes = Long.parseLong(response.getFirstHeader("Content-Length").getValue());
+            double fileSizeInKB = fileSizeInBytes / 1024.0;
+            double fileSizeInMB = fileSizeInKB / 1024.0;
+
+            System.out.println("PDF File Size: " + fileSizeInBytes + " Bytes");
+            System.out.println("PDF File Size: " + fileSizeInKB + " KB");
+            System.out.println("PDF File Size: " + fileSizeInMB + " MB");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    	
+    	
+    	
+    	
+    	
     
     
     /**

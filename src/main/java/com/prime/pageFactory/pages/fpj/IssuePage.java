@@ -747,6 +747,30 @@ public class IssuePage extends BasePage {
 		return description;
 	}
 
+	 /**This method is used to check og:description meta tag is present on article page
+     * 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 13/01/2025
+     */
+    public boolean VerifyOgDescriptionIndexSecodMetaTagisPresentOnIssuePage() throws Exception {
+    	List<WebElement> ogDescription=driver.findElements(By.xpath("(//meta[@property='og:description'])[2]"));
+    	 return isElementPresent(ogDescription);
+    }
+    
+    /**This method returns the og:description meta tag content attribute value on Home page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 13/01/2025
+     */
+    public String getOgDescriptionIndexSecondMetaTagPropertyValue() throws Exception {
+    	WebElement ogDescriptionSecond=driver.findElement(By.xpath("(//meta[@property='og:description'])[2]"));
+    	String ogDescription=getMetaTagAttribute(ogDescriptionSecond,"content");
+    	return ogDescription;    	
+    }
 	@FindBy(xpath = "//span[text()='Issues']")
 	private WebElement issuePageHeader;
 	@FindBy(xpath = "(//div[@class='title'])[1]")

@@ -5,7 +5,7 @@
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>
 
-	<test name="ADVANCE_SEARCH" preserve-order="true">
+	<!-- <test name="ADVANCE_SEARCH" preserve-order="true">
 		<parameter name="application" value="proxy" />
 		<groups>
 			<run>
@@ -232,24 +232,6 @@
 			</class>
 		</classes>
 	</test>
-	<test name="REFERENCEDTOCONTENTMETADATASERVICE"
-		preserve-order="true">
-		<parameter name="application" value="anesthesiaprogress" />
-		<groups>
-			<run>
-				<include name="anesthesiaprogress" />
-			</run>
-		</groups>
-		<classes>
-			<class name="com.prime.tests.E2E.CitationTest">
-				<methods>
-					<include name="verifyContentMetaDataServiceInReferences">
-						<parameter name="testcaseid" value="1733708" />
-					</include>
-				</methods>
-			</class>
-		</classes>
-	</test>
 	<test name="SOURCEFILTERJOURNLFILTER" preserve-order="true">
 		<parameter name="application" value="proxy" />
 		<groups>
@@ -292,10 +274,10 @@
 						name="VerifyVariousRefineTermsInTheSearchResultsPage">
 						<parameter name="testcaseid" value="1722544" />
 					</include>
-					<!-- <include
+					<include
 						name="VerifyUserIsAbleToPerformSearchWithTheCombinationOfRefineTermsByAddingClearingRemovingMoreThanOneRows">
 						<parameter name="testcaseid" value="1722545" />
-					</include> -->
+					</include>
 					<include
 						name="VerifyThatTheAppropriateResultIsDisplayedWhenUserSelectTheArticleTypeFilterAndAccessTypeFilterFromIndexCard">
 						<parameter name="testcaseid" value="1722546" />
@@ -307,6 +289,23 @@
 						name="VerifyRefineByDateSectionAndThatSearchBoxIsAccessibleInAllPages">
 						<parameter name="testcaseid" value="1722548" />
 					</include>
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+	<test name="SSRUSERFLOWS" preserve-order="true">
+		<parameter name="application" value="anesthesiaprogress" />
+		<groups>
+			<run>
+				<include name="anesthesiaprogress" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.prime.tests.userflows.SSRUserFlow">
+				<methods>
+					<include name="SSRUserFlowTest">
+						<parameter name="testcaseid" value="1735306" />
+					</include>				
 				</methods>
 			</class>
 		</classes>

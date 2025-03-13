@@ -727,6 +727,32 @@ public class MasterPage extends BasePage {
     	return isElementPresent(AllSuggestion);
     }
     
+    /**
+     * This method used to get text for server is up for home page
+     * 
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @return String
+     * @Created Date : 12/03/2025
+     */
+    public String getTextForServerIsUp() throws Exception {
+    	return getTextFromElement(serverIsUp);
+    }
+    
+    /**
+     * This method used to check the title is present.
+     * 
+     * @param searchWord
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 12/03/2025
+     */
+    public boolean verifyTitleIspresent(String title) throws Exception {
+    	List<WebElement> titlelist = driver.findElements(By.xpath("//title[text()='"+title+"']"));
+    	return isElementPresent(titlelist);
+    }
+    
     
 	@FindBy(xpath = "//button[contains(text(),'Accept All Cookies')]")
 	private WebElement AcceptAllCookies;
@@ -788,4 +814,8 @@ public class MasterPage extends BasePage {
     private WebElement aboutStaticButton;   
     @FindBy(xpath="//h1[@data-identifier='<issue_title>']")
     private WebElement currentIssueVolumeText;
+    @FindBy(xpath="//div[@id='root']")
+    private WebElement serverIsUp;
+    @FindBy(xpath="//div[@id='root']//preceding::title")
+    private WebElement titleTag;
 }
