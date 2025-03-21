@@ -684,10 +684,9 @@ public class BrowseOrSearchPage extends BasePage {
      * @author Rakesh.Shevale
      * @Created Date : 10/10/2023
      */
-    public void clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage(String valueName) throws Exception {
-        WebElement SearchSlugSign = driver.findElement(By.xpath("(//strong[text()='"+valueName+"']//parent::span//following::button)[1]"));
+     public void clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage(String valueName) throws Exception {
+        WebElement SearchSlugSign = driver.findElement(By.xpath("//strong[contains(text(),'" + valueName + "')]//parent::span//following-sibling::button"));
         clickOnElement(SearchSlugSign, "Clicking on - sign which is availbale in backside of " + valueName + " on Browse or search page");
-        Thread.sleep(2000);
     }
 
     /**
