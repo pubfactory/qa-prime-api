@@ -5,7 +5,7 @@
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>
 
-	<!-- <test name="ADVANCE_SEARCH" preserve-order="true">
+	<test name="ADVANCE_SEARCH" preserve-order="true">
 		<parameter name="application" value="proxy" />
 		<groups>
 			<run>
@@ -292,12 +292,12 @@
 				</methods>
 			</class>
 		</classes>
-	</test> -->
+	</test> 
 	<test name="SSRUSERFLOWS" preserve-order="true">
-		<parameter name="application" value="anesthesiaprogress" />
+		<parameter name="application" value="proxy" />
 		<groups>
 			<run>
-				<include name="anesthesiaprogress" />
+				<include name="proxy" />
 			</run>
 		</groups>
 		<classes>
