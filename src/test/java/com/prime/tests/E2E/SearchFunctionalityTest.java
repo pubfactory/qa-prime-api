@@ -329,11 +329,11 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsPresentOnSearchOrBrowsePage(firstTitle.toLowerCase()), true,
                 "Verifying the refine term filter search keyword is presented on the search/browse page before click on the refine term search slug sign on the search/browse page");
-        browseOrSearchPage.clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage("title");
+        browseOrSearchPage.clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage(title);
        Thread.sleep(10000);
         WebDriverManager.getDriver().navigate().refresh();
 //        Thread.sleep(100000);
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsNotPresentOnSearchOrBrowsePage("title"), true,
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsNotPresentOnSearchOrBrowsePage(title), true,
                 "Verifying the refine term filter search keyword is not presented on the search/browse page after clicked on the refine term search slug sign on the search/browse page");
     }
 
