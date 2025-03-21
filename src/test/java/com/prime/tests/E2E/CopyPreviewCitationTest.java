@@ -37,6 +37,7 @@ public class CopyPreviewCitationTest extends BaseTest {
         masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
+		browseOrSearchPage.ClickOnArticleFromeRefineByType();
         browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
         articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
         basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
@@ -78,6 +79,7 @@ public class CopyPreviewCitationTest extends BaseTest {
 
         //Verifying the AMA format is displayed on toast message and the AMA format is copied and pasted
         masterPage.clickOnSearchMagnifyingLense();
+        browseOrSearchPage.ClickOnArticleFromeRefineByType();
         browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
         articleCitationPage.clickOnToolsButtonInActionBarOnArticlePage();
         articleCitationPage.clickOnCitationButtonOnArticlePage();

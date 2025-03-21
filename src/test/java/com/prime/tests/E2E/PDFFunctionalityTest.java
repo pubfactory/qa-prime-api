@@ -67,7 +67,7 @@ public class PDFFunctionalityTest extends BaseTest {
 //            browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
 			pdfPage = BasePage.initialize(WebDriverManager.getDriver(), PDFPage.class);
 			BaseTest.assertEquals(WebDriverManager.getDriver(), pdfPage.verifyPDFButtonPresentOnArticlePage(), true,
-					"Verifying PDF Button is present on the article page");
+					"Verifying PDF Download button is present on the article page");
 
 			// Verifying Button Downloaded
 			String articleHeader = articleCitationPage.getArticleTitleOnArticlePage();

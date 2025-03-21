@@ -44,6 +44,7 @@ public class DiscoveryWidgetTest extends BaseTest {
             mainWindow = Helper.INSTANCE.getWindow(driver);
             browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
             masterPage.clickOnSearchMagnifyingLense();
+            browseOrSearchPage.ClickOnArticleFromeRefineByType();
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
             String articleText = articleCitationPage.getArticleHeaderOnArticlePage();
@@ -102,6 +103,7 @@ public class DiscoveryWidgetTest extends BaseTest {
             mainWindow = Helper.INSTANCE.getWindow(driver);
             browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
             masterPage.clickOnSearchMagnifyingLense();
+            browseOrSearchPage.ClickOnArticleFromeRefineByType();
             // Verifying Google Scholar Button
             browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
             articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);

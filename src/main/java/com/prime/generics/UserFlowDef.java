@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+
 import org.json.simple.JSONObject;
 import org.testng.asserts.SoftAssert;
 import com.prime.pageFactory.pages.fpj.ArticleCitationPage;
@@ -28,9 +30,9 @@ import com.prime.pageFactory.pages.fpj.PDFPage;
 import io.qameta.allure.Allure;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpHead;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.Header;
 
 public class UserFlowDef extends BaseTest {
 
@@ -836,7 +838,7 @@ public class UserFlowDef extends BaseTest {
         beforefilterTotalResult = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
         beforefilterResearchArticleNumber = browseOrSearchPage.getNumberOfFilteredResultsFrontOfArticleFilterValueOnBrowseOrSearchPage(testData.get("articletypevalue").toString());
         String searchURL = basePage.getURLFromWebPage();
-        assertEqualsoftAssert(soft, driver, searchURL, url + "search?q[0]=" + actualSearch, "Verifying I do a broad term search with the word sedation so I can see how well search refinement works");
+        assertEqualsoftAssert(soft, driver, searchURL, url + "search?q[0]=" + actualSearch, "Verifying I do a broad term search with the word Â“sedationÂ” so I can see how well search refinement works");
     }
 
     public void verifyIfUseTheRefineTermsToGetMoreSpecificInformationForSedationOfYoungerPatients() throws Exception {
@@ -1011,12 +1013,14 @@ public class UserFlowDef extends BaseTest {
     }
     
     public void clicKOnTheFirstArticleFromOpenAccessArticle() throws Exception{
-    	 masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
-    	 masterPage.clickOnThefirstArticleFromTheOpenAccessArticles();
+    	String clickTitleHomePage=testData.get("clicktitlehomepage").toString();
+    	masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
+    	masterPage.clickOnThefirstArticleFromTheOpenAccessArticles(clickTitleHomePage);
     }
     
     public void verifytheMetaTagsForArticlePage() throws Exception {
-       	
+       	String articlePageUrl=testData.get("articlepageurl").toString();
+    	driver.get(url+articlePageUrl);
     	articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(), articleCitationPage.ogURLMetaTagisPresentOnArticlePage(), true,"verifying the og URL meta tag is present on article page when enabled SSR.");
     	String ogURL =basePage.removeBasicAuthFromURLHomePage(basePage.getURLFromWebPage());
@@ -1306,20 +1310,43 @@ public class UserFlowDef extends BaseTest {
                 HttpURLConnection connection = (HttpURLConnection) newurl.openConnection();
                 connection.setRequestMethod("GET");
                 int responseCode = connection.getResponseCode();
-    	
+//                Map<String, List<String>> headerFields = connection.getHeaderFields();
+                System.out.println("responseCode : "+responseCode);
+//                // Print all headers
+//                for (Map.Entry<String, List<String>> entry : headerFields.entrySet()) {
+//                    String headerName = entry.getKey();
+//                    List<String> headerValues = entry.getValue();
+//                    System.out.println(headerName + ": " + String.join(", ", headerValues));
+//                }
+//                System.out.println("Map 1 ENd here*************");
+//                System.out.println("responseCode : "+responseCode);
+//                int fileSizeInBytes = connection.getContentLength();
+//                double fileSizeInKB = (fileSizeInBytes / 1024.0);
+//                System.out.println("fileSizeInKB  : "+fileSizeInKB);
+                
 //    	CloseableHttpClient httpClient = HttpClients.createDefault();
 //        HttpGet request = new HttpGet(liveHomePageURL);
 //        HttpResponse response = httpClient.execute(request);
 //        int statusCode = response.getStatusLine().getStatusCode();
-        System.out.println(" statusCode : "+responseCode);
-        System.out.println(" 200 url : "+liveHomePageURL);
+//        Header[] headers = response.getAllHeaders();
+//
+//        // Print all headers
+//        System.out.println("header Start here **********");
+//        for (Header header : headers) {	
+//            System.out.println(header.getName() + ": " + header.getValue());
+//        }
+//        System.out.println("header ends here********");
+////        System.out.println("response.getAllHeaders() "+response.getAllHeaders());
+//        System.out.println(" statusCode : "+statusCode);
+//        System.out.println(" 200 url : "+liveHomePageURL);
     	
                 assertEqualsoftAssert(soft,WebDriverManager.getDriver(),responseCode,200, desc);
+
          }
 
     
-    public void returnsTheServerIsUpMeassageText(String url) throws Exception {	
-    	driver.get(url);
+    public void returnsTheServerIsUpMeassageText() throws Exception {	
+    	driver.get(testData.get("livehomeurl").toString()+testData.get("probe").toString());
     	String serverup=masterPage.getTextForServerIsUp();
     	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),serverup,testData.get("serveruptext").toString(), "Verifying after enabling the ssr the server is up.");
     }
@@ -1330,48 +1357,55 @@ public class UserFlowDef extends BaseTest {
     }
     
     public void vreifyTheFileSizeOfPDF() throws Exception {
-//    	pdfPage = BasePage.initialize(WebDriverManager.getDriver(), PDFPage.class);
-//    	pdfPage.clickOnDownloadPDFButtonOnArticlePage();
 //    	driver.get("https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");
 //    	driver.get("https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-uat.pubfactory.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");   	
     	driver.get("https://anesthesiaprogress.kglmeridian.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");
     	
 //    	URL newURL = new URL("https://meridian-anesthesiaprogress-draft.prime-dev.pubfactory.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");
 //    	URL newURL = new URL("https://meridian:meridian2023@meridian-anesthesiaprogress-draft.prime-uat.pubfactory.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");       
-//    	URL newURL = new URL("https://anesthesiaprogress.kglmeridian.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");
-//         HttpURLConnection connection = (HttpURLConnection) newURL.openConnection();
-//         connection.setRequestMethod("HEAD"); // Use HEAD to get metadata
-//         connection.connect();
-//
-//         int fileSizeInBytes = connection.getContentLength();
-//         double fileSizeInKB = fileSizeInBytes / 1024.0;
-//         System.out.println("fileSizeInKB  : "+fileSizeInKB);
-//         
-//         connection.disconnect();
-    
-    	try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
-            HttpHead request = new HttpHead("https://anesthesiaprogress.kglmeridian.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");
-            HttpResponse response = httpClient.execute(request);
+    	URL newURL = new URL("https://anesthesiaprogress.kglmeridian.com/downloadpdf/view/journals/anpr/64/3/article-p168.pdf");
+         HttpURLConnection connection = (HttpURLConnection) newURL.openConnection();
+         connection.setRequestMethod("HEAD"); // Use HEAD to get metadata
+         connection.connect();
+         int fileSizeInBytes = connection.getContentLength();
+         int fileSizeInKB = (int)Math.round(fileSizeInBytes / 1024.0);
+         System.out.println("fileSizeInKB  : "+fileSizeInKB);   
+         
+         int responseCode = connection.getResponseCode();
+         System.out.println("Response Code: " + responseCode);
 
-            // Get Content-Length from headers
-            long fileSizeInBytes = Long.parseLong(response.getFirstHeader("Content-Length").getValue());
-            double fileSizeInKB = fileSizeInBytes / 1024.0;
-            double fileSizeInMB = fileSizeInKB / 1024.0;
-
-            System.out.println("PDF File Size: " + fileSizeInBytes + " Bytes");
-            System.out.println("PDF File Size: " + fileSizeInKB + " KB");
-            System.out.println("PDF File Size: " + fileSizeInMB + " MB");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+         // Retrieve all headers
+         Map<String, List<String>> headerFields = connection.getHeaderFields();
+         System.out.println("Map Start here*************");
+         // Print all headers
+         for (Map.Entry<String, List<String>> entry : headerFields.entrySet()) {
+             String headerName = entry.getKey();
+             List<String> headerValues = entry.getValue();
+             System.out.println(headerName + ": " + String.join(", ", headerValues));
+         }
+         System.out.println("Map Start here ***************");
+         connection.disconnect();
+         Thread.sleep(2000);
+         
+         assertEqualsoftAssert(soft,WebDriverManager.getDriver(),Helper.INSTANCE.compareIntValue(fileSizeInKB,200),true,"Verifying the file size of PDF.");
     }
-    	
-    	
-    	
-    	
-    	
     
+    public void verifyArticlePageMetadata() throws Exception {
+    	String articleTitle=articleCitationPage.getArticleTitleOnArticlePage();
+    	String firstAuthorName=articleCitationPage.getFirstAuthorNameText();
+    	String publicationDate=articleCitationPage.getOnlinePublicationDateOnArticlePage();    	
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleTitle,testData.get("articletitle").toString(),"Verify that the article title metadata is present on the article page while SSR is enabled.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),firstAuthorName,testData.get("firstauthorname").toString(),"Verify that the contributor (first author) metadata is present on the article page while SSR is enabled.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),publicationDate,testData.get("publicationdate").toString(),"Verify that the publication date metadata is present on the article page while SSR is enabled.");
+    	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),articleCitationPage.verifyDOILinkIsPresent(),true,"Verify that the DOI Link metadata is present on the article page while SSR is enabled.");
+    }
+    
+    public void verifyIssuePageMetadata() throws Exception {
+    String publicationDate =issuePage.getOnlinePublicationDateOnIssuePage();
+    String issueTitle =issuePage.getIssueTitleOnIssuePage();
+    assertEqualsoftAssert(soft,WebDriverManager.getDriver(),publicationDate,testData.get("issuepublicationdate").toString(),"Verify that the publication date metadata is present on the issue page while SSR is enabled.");
+	assertEqualsoftAssert(soft,WebDriverManager.getDriver(),issueTitle,testData.get("issuetitle").toString(),"Verify that the issue title metadata is present on the issue page while SSR is enabled.");
+    }
     
     /**
      * Function to Assert all soft Assertion

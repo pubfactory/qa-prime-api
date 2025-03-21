@@ -685,8 +685,9 @@ public class BrowseOrSearchPage extends BasePage {
      * @Created Date : 10/10/2023
      */
     public void clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage(String valueName) throws Exception {
-        WebElement SearchSlugSign = driver.findElement(By.xpath("//strong[contains(text(),'" + valueName + "')]//parent::span//following-sibling::button"));
+        WebElement SearchSlugSign = driver.findElement(By.xpath("(//strong[text()='"+valueName+"']//parent::span//following::button)[1]"));
         clickOnElement(SearchSlugSign, "Clicking on - sign which is availbale in backside of " + valueName + " on Browse or search page");
+        Thread.sleep(2000);
     }
 
     /**
@@ -703,7 +704,7 @@ public class BrowseOrSearchPage extends BasePage {
         // List<WebElement> SearchSlugSign =
         // driver.findElements(By.xpath("//strong[text()='" + valueName +
         // "']//parent::span//following-sibling::button"));
-        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("//strong[text()='Term']//following::strong[text()='" + valueName + "']"));
+        List<WebElement> SearchSlugSign = driver.findElements(By.xpath("(//strong[text()='"+valueName+"']//parent::span//following::button)[1]"));
         return isElementPresent(SearchSlugSign);
     }
 
@@ -2120,6 +2121,23 @@ public class BrowseOrSearchPage extends BasePage {
 		 clickOnElementJs(firstArticleOnBrowseOrSearchPage, "");
 //		 clickOnElement(firstArticleOnBrowseOrSearchPage, "Click On First Article On Search Or Browse Page");
 	 }
+	 
+	 /**
+	     * 
+	     * This method returns second DOI Value on Browse/search Page
+	     * 
+	     * @return String
+	     * @throws Exception
+	     * @author Rakesh.Shevale
+	     * @Created Date : 19/03/2025
+	     * 
+	     */
+	    public String getSecondDOIValueOnBrowseOrSearchPage() throws Exception {
+	        WebElement firstDOIvalue = driver.findElement(By.xpath("(//span[contains(text(),'DOI')])[2]//following::span[1]"));
+	        String firstDOIValue = getTextFromElement(firstDOIvalue);
+	        return firstDOIValue;
+	    }
+	 
 
     @FindBy(xpath = "//h1[text()='Browse']")
     private WebElement browseText;

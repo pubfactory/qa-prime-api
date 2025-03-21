@@ -58,6 +58,7 @@ public class CitationTest extends BaseTest {
 			masterPage.clickOnSearchMagnifyingLense();
 			System.out.println("HI2");
 			browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
+			browseOrSearchPage.ClickOnArticleFromeRefineByType();
 			browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
 			articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
 			basePage = BasePage.initialize(WebDriverManager.getDriver(), BasePage.class);
@@ -159,11 +160,14 @@ public class CitationTest extends BaseTest {
 			browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
 			articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
 			mainWindow = driver.getWindowHandle();
-			masterPage.clickOnSearchMagnifyingLense();
-			browseOrSearchPage
-					.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
-			browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
+			String contentURL=testData.get("contenturl").toString();
+//			masterPage.clickOnSearchMagnifyingLense();
+//			browseOrSearchPage
+//					.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
+//			browseOrSearchPage.ClickOnArticleFromeRefineByType();
+//			browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
 			// articleCitationPage.clickOnReferenceLinkOnLHSOnArticlePage();
+			driver.get(url+contentURL);
 
 			// Verifying the Search pubmed link is present under every references on article
 			// page and Pubmed site is opened in new tab when user clicked on it.
@@ -185,7 +189,7 @@ public class CitationTest extends BaseTest {
 			// on it.
 			BaseTest.assertEquals(WebDriverManager.getDriver(), testData.get("searchgooglescholar").toString(),
 					articleCitationPage.getFirstSearchGoogleScholarTextUnderReferecesSectionOnArticlePage(),
-					"Verifying the Search Google Scholar link is present under every references on article page ");
+					"Verifying the Search Google Scholar link is present under every references on article page.");
 			articleCitationPage.clickOnFirstSearchGoogleScholarUnderReferecesSection();
 			Helper.INSTANCE.switchToWindowTab(1);
 			BaseTest.assertTrue(WebDriverManager.getDriver(), BaseTest.verifyTextInURL("scholar"),

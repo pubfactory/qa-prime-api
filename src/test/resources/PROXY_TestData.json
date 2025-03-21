@@ -97,7 +97,7 @@
 			"testidvalueselecttwo":"AdvanceSearchFilter-select-1",
 			"testidvalueentertwo":"AdvanceSearchFilter-input-1",
 			"refinefilteroptionaffiliation":"Affiliation",
-			"refinefiltervalueaffiliation":"Washington"
+			"refinefiltervalueaffiliation":"UK"
 		}
 	},	
 	{
@@ -194,7 +194,7 @@
 			"open":"Open Access",
 			"defaultzoomvalue":"Automatic Zoom",
 			"watermarkappname":"primetesting",
-			"pdfurl":"view/journals/blc/4/1/article-p121.xml?isSearch=true&body=PDF"
+			"pdfurl":"view/journals/ejeep/21/1/article-p42.xml"
 		}
 	},
 		{
@@ -543,7 +543,8 @@
 			"description": "verifyContentMetaDataServiceInReferences",
 			"openaccess":"Open Access",
 			"searchpubmed":"Search PubMed",
-			"searchgooglescholar":"Search Google Scholar"
+			"searchgooglescholar":"Search Google Scholar",
+			"contenturl":"view/journals/anpr/68/4/article-p214.xml"
 			}
 		},
 	{
@@ -630,7 +631,7 @@
 			"citationissnsecondindex":"0003-3006",
 			"citationfirstpage":"214",
 			"citationpublisher":"American Dental Society of Anesthisiology",
-			"citationjournaltitle":"Prime Testing",
+			"citationjournaltitle":"Anesthesia Progress",
 			"citationauthor":"Keikoku Tachibana",
 			"citationdoi":"10.2344/anpr-68-02-09",
 			"citationreference":"1. Ohkado S, Ichinohe T, Kaneko Y. Comparative study on anesthetic potency depending on concentrations of lidocaine and epinephrine: assessment of dental local anesthetics using the jaw-opening reflex. Anesth Prog. 2001",		
@@ -663,6 +664,13 @@
 			"livearticleurl":"https://anesthesiaprogress.kglmeridian.com/view/journals/anpr/64/3/article-p168.xml",
 			"articleurlprobe":"/view/journals/anpr/64/3/article-p168.xml",
 			"hometitle":"Prime Testing",
+			"articletitle":"Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension",
+			"firstauthorname":"Keikoku Tachibana",
+			"publicationdate":"Dec 15, 2021",
+			"issuepublicationdate":"Dec 01, 2023",
+			"issuetitle":"Volume 70: Issue 4",
+			"clicktitlehomepage":"A supermultiplier demand-led growth accounting analysis applied to the Spanish",
+			"articlepageurl":"view/journals/anpr/68/4/article-p214.xml?isSearch=true",
 			}
 		},	
 		{
@@ -679,21 +687,21 @@
 		"id": "1736542",
 		"data": {
 			"description": "VerifyThatAddMetricFunctionalityFunctionality",
-			"addmetricurlopen":"view/journals/fis/53/1/article-p3_2.xml?siqEnabled=true",
+			"addmetricurlopen":"view/journals/horttech/29/2/article-p98.xml?siqEnabled=true",
 			"alltimetext":"All Time",
 			"pastyeartext":"Past Year",
 			"past30daystext":"Past 30 Days",
 			"abstractviewstext":"Abstract Views"
 			"fulltexttext":"Full Text Views",
 			"pdfdownloadtext":"PDF Downloads",
-			"addmetricurlrestricted":"view/journals/fis/53/1/article-p62_5.xml?siqEnabled=true"
+			"addmetricurlrestricted":"view/journals/aee/3/2/article-p164.xml?siqEnabled=true"
 			}
 		},
 		{
 			"id": "1730120",
 				"data": {
 					"description": "verifyThatTheAutoLaunchNewEmailFunctionality",
-					"autolaunchurl":"/view/journals/horttech/aop/article-10.21273-HORTTECH04809-21/article-10.21273-HORTTECH04809-21.xml?isSearch=true&body=PDF",
+					"autolaunchurl":"view/journals/aee/3/2/article-p164.xml",
 					"openaccess":"Open Access",
 					"journalfiltertext":"By Journal",
 					"brainmedicine":"Brain Medicine"

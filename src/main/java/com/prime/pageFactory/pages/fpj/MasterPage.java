@@ -657,8 +657,8 @@ public class MasterPage extends BasePage {
 		return getTextFromElement(currentIssueVolumeText);
 	}
 	
-	public void clickOnThefirstArticleFromTheOpenAccessArticles() throws Exception {
-		clickOnElement(driver.findElement(By.xpath("//span[text()='Open Access Articles']//following::div[text()='Effects of Local Anesthetics With Vasoconstrictors on Dental Pulp Blood Flow and Oxygen Tension']")));
+	public void clickOnThefirstArticleFromTheOpenAccessArticles(String articleTitle) throws Exception {
+		clickOnElement(driver.findElement(By.xpath("//span[text()='Open Access Articles']//following::div[contains(text(),'"+articleTitle+"')]")));
 	}
 	
 	 /**This method is used to check og:description meta tag is present on article page

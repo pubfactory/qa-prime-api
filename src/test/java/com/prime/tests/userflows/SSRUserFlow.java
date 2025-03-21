@@ -28,18 +28,20 @@ public class SSRUserFlow extends UserFlowDef {
 		url = BaseTest.properties.getProperty(application);
 		System.out.println("PageResource :"+driver.getPageSource());
 		verifyTheSSRIsLoaded();
-//		verifytheMetaTagsForHomePage();
+		verifytheMetaTagsForHomePage();
 //		clicKOnTheFirstArticleFromOpenAccessArticle();
-//		verifytheMetaTagsForArticlePage();
-//		verifytheMetaTagsForIssuePage();
+		verifytheMetaTagsForArticlePage();
+		verifyArticlePageMetadata();
+		verifytheMetaTagsForIssuePage();
+		verifyIssuePageMetadata();
+		if(!application.equalsIgnoreCase("proxy")){
 		verifyPageReturns200Response(testData.get("livehomeurl").toString(),"verifying the status code 200 is return on home page while enabling the SSR.");
-		returnsTheServerIsUpMeassageText(url+testData.get("probe").toString());
+		returnsTheServerIsUpMeassageText();
 		verifyPageReturns200Response(testData.get("livearticleurl").toString(),"verifying the status code 200 is return on article page while enabling the SSR.");
-//		returnsTheServerIsUpMeassageText(url+testData.get("articleurlprobe").toString()+testData.get("probe").toString());
-		VerifyPageTitleIsPresent(url,testData.get("hometitle").toString(),"Verifying the Title is present on home page while enabling the SSR.");
-		VerifyPageTitleIsPresent(url+testData.get("articleurl").toString(),testData.get("articletitle").toString(),"Verifying the Title is present on Article page while enabling the SSR.");
+		VerifyPageTitleIsPresent(testData.get("livehomeurl").toString(),testData.get("hometitle").toString(),"Verifying the Title is present on home page while enabling the SSR.");
+		VerifyPageTitleIsPresent(testData.get("livearticleurl").toString(),testData.get("livearticletitle").toString(),"Verifying the Title is present on Article page while enabling the SSR.");
 		vreifyTheFileSizeOfPDF();
-	
+		}
 //		Thread.sleep(3000);
 		assertClose();
     }

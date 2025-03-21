@@ -576,7 +576,7 @@ public class IssuePage extends BasePage {
 	}
 
 	/**
-	 * This method returns the List of the content title under issue’s table of
+	 * This method returns the List of the content title under issueï¿½s table of
 	 * content on Issue Page
 	 * 
 	 * @return List<String>
@@ -593,7 +593,7 @@ public class IssuePage extends BasePage {
 	}
 
 	/**
-	 * This method returns the List of the content contributor under issue’s table
+	 * This method returns the List of the content contributor under issueï¿½s table
 	 * of content on Issue Page
 	 * 
 	 * @return List<String>
@@ -610,7 +610,7 @@ public class IssuePage extends BasePage {
 	}
 
 	/**
-	 * This method returns the List of the content DOI under issue’s table of
+	 * This method returns the List of the content DOI under issueï¿½s table of
 	 * content on Issue Page
 	 * 
 	 * @return List<String>
@@ -626,7 +626,7 @@ public class IssuePage extends BasePage {
 	}
 
 	/**
-	 * This method returns the List of the content Abstract button under issue’s
+	 * This method returns the List of the content Abstract button under issueï¿½s
 	 * table of content on Issue Page
 	 * 
 	 * @return List<String>
@@ -771,6 +771,34 @@ public class IssuePage extends BasePage {
     	String ogDescription=getMetaTagAttribute(ogDescriptionSecond,"content");
     	return ogDescription;    	
     }
+    
+    /**
+     * This method return publication value on the Issue page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/03/2025
+     */
+    public String getOnlinePublicationDateOnIssuePage() throws Exception {
+        String publicationdate = getTextFromElement(publicationDate);
+        return publicationdate;
+    }
+    
+    /**
+     * This method return Issue title value on the Issue page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/03/2025
+     */
+    public String getIssueTitleOnIssuePage() throws Exception {
+        String publicationdate = getTextFromElement(issueTitle);
+        return publicationdate;
+    }
+    
+    
 	@FindBy(xpath = "//span[text()='Issues']")
 	private WebElement issuePageHeader;
 	@FindBy(xpath = "(//div[@class='title'])[1]")
@@ -813,5 +841,9 @@ public class IssuePage extends BasePage {
 	private WebElement accessIcon;
 	@FindBy(xpath="//span[@data-identifier='<issue_title>']")
     private WebElement currentIssueVolumeText;
+	@FindBy(xpath="//span[text()='Publication Date: ']//parent::span//following::span[1]")
+	private WebElement publicationDate;
+	@FindBy(xpath="//span[@data-identifier='<issue_title>']//child::a")
+	private WebElement issueTitle;
 
 }

@@ -42,6 +42,7 @@ public class HitHighlightingTest extends BaseTest {
         articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
         issuePage = BasePage.initialize(WebDriverManager.getDriver(), IssuePage.class);
         masterPage.clickOnSearchMagnifyingLense();
+        browseOrSearchPage.ClickOnArticleFromeRefineByType();
         browseOrSearchPage.clickOnAccessTypeInRefineByAccessFilterOnBrowseOrSearchPage(testData.get("openaccess").toString());
         browseOrSearchPage.mouseHoverOnFirstcontentonSearchPage();
         browseOrSearchPage.ClickOnShowMoreLinkIfAvailableBelowTheContent();

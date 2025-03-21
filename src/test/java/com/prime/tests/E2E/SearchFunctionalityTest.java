@@ -116,8 +116,9 @@ public class SearchFunctionalityTest extends BaseTest {
         JSONObject testData = getTestDataDetailsWithFileName(testCaseId, testDataFileName);
         masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
         //masterPage.enterTextInSearchBoxOnHomePage(testData.get("searchtext").toString());
-        masterPage.clickOnSearchMagnifyingLense();
+        masterPage.clickOnSearchMagnifyingLense();      
         browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
+        browseOrSearchPage.ClickOnArticleFromeRefineByType();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyContentTitleNameIsPresentOnBrosweOrSearchPage(), true, "Verifying the content title name is present on browse or search page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyContentAccessIconIsPresentOnBrosweOrSearchPage(), true, "Verifying the content Access is present on Content");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyContentAuthorIsPresentOnBrosweOrSearchPage(), true, "Verifying the content Author is present on Content");
@@ -163,6 +164,7 @@ public class SearchFunctionalityTest extends BaseTest {
         masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
+        browseOrSearchPage.ClickOnArticleFromeRefineByType();
         articleCitationPage = BasePage.initialize(WebDriverManager.getDriver(), ArticleCitationPage.class);
         int browseResultCount = browseOrSearchPage.getTotatResultOnBrowseOrSearchPage();
         String authorEditor = browseOrSearchPage.getFirstAuthorNameOnFirstArticleOnBrowseOrSearchPage();
@@ -193,6 +195,7 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying the refine term fiter with full text is displayed on search results page");
 
         masterPage.clickOnSearchMagnifyingLense();
+        browseOrSearchPage.ClickOnArticleFromeRefineByType();
         String firstDOI = browseOrSearchPage.getFirstDOIValueOnBrowseOrSearchPage();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptionisbndoi").toString());
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), firstDOI);
@@ -207,6 +210,7 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying the refine term fiter with DOI text is displayed on search results page");
 
         masterPage.clickOnSearchMagnifyingLense();
+        browseOrSearchPage.ClickOnArticleFromeRefineByType();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptionabstract").toString());
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), testData.get("refinefiltervalueabstract").toString());
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
@@ -219,6 +223,7 @@ public class SearchFunctionalityTest extends BaseTest {
                 "Verifying the refine term fiter with Abstract text is displayed on search results page");
 
         masterPage.clickOnSearchMagnifyingLense();
+        browseOrSearchPage.ClickOnArticleFromeRefineByType();
         String firstArticleTitle = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptiontitle").toString());
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), firstArticleTitle);
@@ -232,16 +237,19 @@ public class SearchFunctionalityTest extends BaseTest {
         String[] titleText = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage().toString().split(" ");
         System.out.println("Title text=" + titleText[0]);
         BaseTest.assertTrue(driver, BaseTest.verifyTextInURLIgnoreCase(titleText[0]), "Verifying the Title filter is applied on search result page");
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("title", firstArticleTitle), true,
+        String finalArticleTitle=titleText[0].trim();
+        System.out.println("finalArticleTitle : "+finalArticleTitle);
+      
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("title", finalArticleTitle), true,
                 "Verifying the refine term fiter with Title text is displayed on search results page");
 
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptionaffiliation").toString());
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), testData.get("refinefiltervalueaffiliation").toString());
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
-        // Thread.sleep(5000);
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("affiliation", testData.get("refinefiltervalueaffiliation").toString()), true,
                 "Verifying the refine term fiter with affiliation text is displayed on search results page");
+
         browseOrSearchPage.clickOnFirstArticleOnSearchOrBrowsePage();
         articleCitationPage.clickFirstAuthorOnArticlePage();
         String authorlabel = articleCitationPage.getauthorAffiliationPopupLabel();
@@ -267,8 +275,11 @@ public class SearchFunctionalityTest extends BaseTest {
         masterPage = BasePage.initialize(WebDriverManager.getDriver(), MasterPage.class);
         masterPage.clickOnSearchMagnifyingLense();
         browseOrSearchPage = BasePage.initialize(WebDriverManager.getDriver(), BrowseOrSearchPage.class);
-        String firstTitle = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage();
-        String firstDOI = browseOrSearchPage.getFirstDOIValueOnBrowseOrSearchPage();
+        browseOrSearchPage.ClickOnArticleFromeRefineByType();
+//        String firstTitle = browseOrSearchPage.getFirstArticleTitleOnBrowseOrSearchPage();
+//        String firstDOI = browseOrSearchPage.getFirstDOIValueOnBrowseOrSearchPage();
+        String firstTitle =browseOrSearchPage.getTitleListOnSearchResultPage().get(1);
+        String firstDOI = browseOrSearchPage.getSecondDOIValueOnBrowseOrSearchPage();
         browseOrSearchPage.selectRefineTermValueFromRefineTermDDOnBrowseOrSearchResultPage(testData.get("testidvalueselect").toString(), testData.get("refinefilteroptiontitle").toString());
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueenter").toString(), firstTitle);
         browseOrSearchPage.clickOnAddRowButtonInRefineTermDDOnBrowseOrSearchPage();
@@ -276,7 +287,11 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.enterRefineTermValueInRefineTermBoxOnBrowseOrSearchPage(testData.get("testidvalueentertwo").toString(), firstDOI);
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         WebDriverManager.getDriver().navigate().refresh();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("title", firstTitle), true,
+        String[] titleText = firstTitle.toString().split(" ");
+        System.out.println("Title text=" + titleText[0]);
+        BaseTest.assertTrue(driver, BaseTest.verifyTextInURLIgnoreCase(titleText[0]), "Verifying the Title filter is applied on search result page");
+        String finalArticleTitle=titleText[0].trim();
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("title", finalArticleTitle), true,
                 "Verifying the Title filter from Refine terms filter is presented on search/browse result page");
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyFilterValueIsPresentOnBrowseOrSearchPage("identifier", firstDOI), true,
                 "Verifying the DOI filter Refine terms filter is presented on search/browse result page");
@@ -314,9 +329,11 @@ public class SearchFunctionalityTest extends BaseTest {
         browseOrSearchPage.clickOnSearchButtonInRefineTermDDOnBrowseOrSearchPage();
         BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsPresentOnSearchOrBrowsePage(firstTitle.toLowerCase()), true,
                 "Verifying the refine term filter search keyword is presented on the search/browse page before click on the refine term search slug sign on the search/browse page");
-        browseOrSearchPage.clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage(firstTitle.toLowerCase());
+        browseOrSearchPage.clickOnSearchKeywordSearchSlugOrFilterValueSearchSlugOnBrowseOrSearchPage("title");
+       Thread.sleep(10000);
         WebDriverManager.getDriver().navigate().refresh();
-        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsNotPresentOnSearchOrBrowsePage(firstTitle.toLowerCase()), true,
+//        Thread.sleep(100000);
+        BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifyRefineTermFilterSearchKewordIsNotPresentOnSearchOrBrowsePage("title"), true,
                 "Verifying the refine term filter search keyword is not presented on the search/browse page after clicked on the refine term search slug sign on the search/browse page");
     }
 

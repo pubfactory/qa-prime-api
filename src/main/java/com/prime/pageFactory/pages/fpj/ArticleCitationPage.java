@@ -3089,6 +3089,31 @@ public class ArticleCitationPage extends BasePage {
         String articleTitleText = getTextFromElement(articleTitle);
         return articleTitleText;
     }
+    
+    /**
+     * This method return publication value on the article page
+     * 
+     * @return String
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/03/2025
+     */
+    public String getOnlinePublicationDateOnArticlePage() throws Exception {
+        String publicationDate = getTextFromElement(onlinePublicationDate);
+        return publicationDate;
+    }
+    
+    /**
+     * This method used to verify the DOI link is present 
+     * @return boolean
+     * @throws Exception
+     * @author Rakesh.Shevale
+     * @Created Date : 17/03/2025
+     */
+    public boolean verifyDOILinkIsPresent() throws Exception {
+    	 List<WebElement> doi = driver.findElements(By.xpath("//a[@data-testid='Metadata-doi-link']"));
+    	 return isElementPresent(doi);
+    }
 
     @FindBy(xpath = "(//a[contains(text(),'Get Permissions')])[1]//following-sibling::button")
     private WebElement citationButton;
@@ -3326,6 +3351,8 @@ public class ArticleCitationPage extends BasePage {
 	private WebElement allTimeAbstractViewsValueTableBar;
 	@FindBy(xpath="(//div[@data-identifier='<title>'])[1]//child::h1")
 	private WebElement articleTitle;
+	@FindBy(xpath="//span[text()='Online Publication Date: ']//parent::span//following::span[1]")
+	private WebElement onlinePublicationDate;
 }
 
 
