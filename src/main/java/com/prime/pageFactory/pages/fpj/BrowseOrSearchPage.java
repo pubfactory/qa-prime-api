@@ -1541,8 +1541,9 @@ public class BrowseOrSearchPage extends BasePage {
      * @author Rakesh.Shevale
      * @Created Date : 22/08/2024
      */
-    public void clickOnFirstJournalFilterValueFromByJournalFilterOnBrowseOrSearchPage() throws Exception {
-        clickOnElement(firstJournalFilterValue, "Clicking on first journal filter value from By Journal filter On Browse or Search page");
+    public void clickOnFirstJournalFilterValueFromByJournalFilterOnBrowseOrSearchPage(String value) throws Exception {
+    	WebElement firstvalue=driver.findElement(By.xpath("//span[text()='"+value+"']"));
+    	clickOnElement(firstvalue, "Clicking on first journal filter value from By Journal filter On Browse or Search page");
     }
 
     /**
@@ -1573,8 +1574,9 @@ public class BrowseOrSearchPage extends BasePage {
      * @author Rakesh.Shevale
      * @Created Date : 22/08/2024
      */
-    public String getJournalFiterFirstvalueText() throws Exception {
-        String journalFilter = getTextFromElement(firstJournalFilterValue);
+    public String getJournalFiterFirstvalueText(String value) throws Exception {
+    	WebElement firstvalue=driver.findElement(By.xpath("//span[text()='"+value+"']"));
+        String journalFilter = getTextFromElement(firstvalue);
         return journalFilter;
     }
 
@@ -1630,9 +1632,9 @@ public class BrowseOrSearchPage extends BasePage {
      * @author Rakesh.Shevale
      * @Created Date : 23/08/2024
      */
-    public boolean verifySearchSlugLabelIsRegion() throws Exception {
+    public boolean verifySearchSlugLabelIsRegion(String regionlabeljournal) throws Exception {
         List<WebElement> SearchSlugSign =
-                driver.findElements(By.xpath("//strong[contains(text(),'search.filter.by-type.label')]//following::strong[contains(text(),'search.filter.by-type.journal.label')]"));
+                driver.findElements(By.xpath("//strong[contains(text(),'search.filter.by-journal-key.label')]//following::strong[contains(text(),'search.filter.by-journal-key."+regionlabeljournal+".label')]"));
         return isElementPresent(SearchSlugSign);
     }
 
@@ -1651,7 +1653,7 @@ public class BrowseOrSearchPage extends BasePage {
     }
     public boolean verifyCountIsPresntInFrontOfJournalTitleInJournalFilter() throws Exception {
         boolean flag = false;
-        WebElement countNum = driver.findElement(By.xpath("//span[text()='Journal']//following::span[1]"));
+        WebElement countNum = driver.findElement(By.xpath("(//span[text()='By Journal']//following::span[contains(text(),'(')])[1]"));
         String countNumber = getTextFromElement(countNum);
         if (countNumber.startsWith("(") && countNumber.endsWith(")")) {
             flag = true;
@@ -2247,7 +2249,7 @@ public class BrowseOrSearchPage extends BasePage {
     private WebElement twitterDescriptionMetaTag;
     @FindBy(xpath = "//meta[@property='og:title']")
     private WebElement ogTitleMetaTag;
-    @FindBy(xpath = "//span[text()='Journal']")
+    @FindBy(xpath = "//span[text()='By Journal']")
     private WebElement byJournalFilter;
     @FindBy(xpath = "//span[text()='Brain Medicine']")
     private WebElement firstJournalFilterValue;

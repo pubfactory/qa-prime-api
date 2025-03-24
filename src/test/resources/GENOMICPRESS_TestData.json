@@ -4,7 +4,8 @@
 		"data": {
 			"description": "VerifyThatTheByJournalFilterFunctionality",
 			"journalfiltertext":"By Journal",
-			"brainmedicine":"Brain Medicine",
+			"journalname":"Brain Medicine",
+			"regionlabeljournal":"brainmed"
 
 		}
 	},

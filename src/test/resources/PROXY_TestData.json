@@ -712,8 +712,9 @@
 				"id": "1729970",
 					"data": {
 						"description": "VerifyThatTheByJournalFilterFunctionality",
-						"journalfiltertext":"Journal",
-						"brainmedicine":"Brain Medicine"
+						"journalfiltertext":"By Journal",
+						"journalname":"Anesthesia Progress",
+						"regionlabeljournal":"anpr"
 			
 					}
 				}

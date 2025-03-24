@@ -40,24 +40,17 @@ public class SourceFilterJournalTest extends BaseTest {
 		// Verifying the Journal filter is present on search page
 		BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getJournalFiterText(),
 				testData.get("journalfiltertext").toString(), "Verifying the Journal filter is present on search page");
-		browseOrSearchPage.clickOnRefineByTypeFilterValueOnBrowseOrSearchPage(testData.get("journalfiltertext").toString());
 
 		//Verifying the more than one journal are present in the journal filter
-		//BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.VerifyMoreThanOneJournalISPresent(), true, "Verifying the more than one journal are present in the journal filter");
+		BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.VerifyMoreThanOneJournalISPresent(), true, "Verifying the more than one journal are present in the journal filter");
 		
 		// verifying journal title from journal filter will NOT be a region.
-		String journalNamebeforeRegion=browseOrSearchPage.getFirstJournalName();
-		
 		masterPage.clickOnDevToolSetting();
 		masterPage.clickOnRegionKeySetting();
-		BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getFirstJournalName(),
-				journalNamebeforeRegion,
+		BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.getJournalFiterFirstvalueText(testData.get("journalname").toString()),
+				testData.get("journalname").toString(),
 				"verifying journal title from journal filter is not a region");
-		
-		BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifySearchSlugLabelIsRegion(), true,
-				"Verify search slug label is region after applying the region key setting");
 
-		
 		masterPage.clickOnDevToolSetting();
 		masterPage.clickOnRegionKeySetting();
 
@@ -68,24 +61,26 @@ public class SourceFilterJournalTest extends BaseTest {
 
 		// Verify the By Journal filter Search Slug Value is present on Search Or Browse
 		// Page
-		//browseOrSearchPage.clickOnFirstJournalFilterValueFromByJournalFilterOnBrowseOrSearchPage();
-		//browseOrSearchPage.getFirstJournalAttributeValue();
+		browseOrSearchPage.clickOnFirstJournalFilterValueFromByJournalFilterOnBrowseOrSearchPage(testData.get("journalname").toString());
+		browseOrSearchPage.getFirstJournalAttributeValue();
 		BaseTest.assertEquals(WebDriverManager.getDriver(),
-				browseOrSearchPage.verifyByJournalSearchSlugValueIsPresentOnSearchOrBrowsePage("journal"),
+				browseOrSearchPage.verifyByJournalFilterSearchSlugValueIsPresentOnSearchOrBrowsePage("By Journal",
+						browseOrSearchPage.getFirstJournalAttributeValue()),
 				true,
 				"Verifying the By Journal filter Search Slug Value is present on Search Or Browse Page after clicking on journal filter value");
 
 		// Verify when the user clicks on the journal title from the journal filter,
 		// which returns only results that are a child of the clicked title.
-//		BaseTest.assertEquals(WebDriverManager.getDriver(),
-//				browseOrSearchPage.getNumberOfFilteredResultsFrontOfJournalFilterValueOnBrowseOrSearchPage(),
-//				browseOrSearchPage.getTotatResultOnBrowseOrSearchPage(),
-//				"Verifying when the user clicks on the journal title from the journal filter, which returns only results that are a child of the clicked title.");
+		BaseTest.assertEquals(WebDriverManager.getDriver(),
+				browseOrSearchPage.getNumberOfFilteredResultsFrontOfJournalFilterValueOnBrowseOrSearchPage(),
+				browseOrSearchPage.getTotatResultOnBrowseOrSearchPage(),
+				"Verifying when the user clicks on the journal title from the journal filter, which returns only results that are a child of the clicked title.");
 
 		// Verify search slug label is region
 			masterPage.clickOnDevToolSetting();
 			masterPage.clickOnRegionKeySetting();
-		
+		BaseTest.assertEquals(WebDriverManager.getDriver(), browseOrSearchPage.verifySearchSlugLabelIsRegion(testData.get("regionlabeljournal").toString()), true,
+				"Verify search slug label is region after applying the region key setting");
 
 	}
 }
