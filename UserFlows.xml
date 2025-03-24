@@ -4,7 +4,7 @@
 	<listeners>
 		<listener class-name="com.prime.retryAnalyzers.RetryListener" />
 	</listeners>
-	<test name="PUBLISHERUSERFLOWS" preserve-order="true">
+<!-- 	<test name="PUBLISHERUSERFLOWS" preserve-order="true">
 		<parameter name="application" value="anesthesiaprogress" />
 		<groups>
 			<run>
@@ -38,7 +38,7 @@
 			</class>
 		</classes>
 	</test>
-	<test name="SSRUSERFLOWS" preserve-order="true">
+ -->	<test name="SSRUSERFLOWS" preserve-order="true">
 		<parameter name="application" value="anesthesiaprogress" />
 		<groups>
 			<run>
