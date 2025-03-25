@@ -39,7 +39,12 @@ jobs:
       
     - name: Build with Maven
       id: run-test-case
-      run: mvn test -DsuiteXmlFile=UserFlowsPrimeConfig.xml  -DEnvironment=dev -Dbrowser=chrome | tee test-results.log
+      run: |
+        set -o pipefail
+        mvn test -DsuiteXmlFile=UserFlowsPrimeConfig.xml -DEnvironment=dev -Dbrowser=chrome | tee test-results.log
+        EXIT_CODE=${PIPESTATUS[0]}
+        exit $EXIT_CODE
+      #run: mvn test -DsuiteXmlFile=UserFlowsPrimeConfig.xml  -DEnvironment=dev -Dbrowser=chrome | tee test-results.log
 
     - name: Extract and Print Test Failures
       if: always()
