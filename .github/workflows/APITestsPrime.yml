@@ -41,27 +41,54 @@ jobs:
       id: run-test-case
       run: |
         set -o pipefail
-        mvn test -DsuiteXmlFile=UserFlowsPrimeConfig.xml -DEnvironment=dev -Dbrowser=chrome | tee test-results.log
+        mvn test -DsuiteXmlFile=APITestsPrimeConfig.xml -DEnvironment=dev -Dbrowser=chrome | tee test-results.log
         EXIT_CODE=${PIPESTATUS[0]}
         exit $EXIT_CODE
-      #run: mvn test -DsuiteXmlFile=UserFlowsPrimeConfig.xml  -DEnvironment=dev -Dbrowser=chrome | tee test-results.log
+      #run: mvn test -DsuiteXmlFile=APITestsPrimeConfig.xml  -DEnvironment=dev -Dbrowser=chrome | tee test-results.log
 
-    - name: Extract and Print Test Failures
+    - name: Extract Brief Test Report
       if: always()
       run: |
-        echo "Failed Tests:"
-        grep -E "Tests run:.*Failures: [1-9]+" test-results.log || echo "No Failures Found"
+        {
+          echo "📌 **Failed Tests Summary:**"
+          grep -E "Tests run:.*Failures: [1-9]+" test-results.log || echo "✅ No Test Failures Found"
+        } > test-failures-summary.txt
 
- 
+          echo "FAILURE_SUMMARY=$(cat test-failures-summary.txt | sed ':a;N;$!ba;s/\n/\\n/g')" >> $GITHUB_ENV
+
+    - name: Extract and Print Detailed logs Test Failures
+      if: always()
+      run: |
+        {
+          echo "📌 **Failed Tests Summary:**"
+          grep -E "Tests run:.*Failures: [1-9]+" test-results.log || echo "✅ No Test Failures Found"
+
+          echo ""
+          echo "⚠️ **Failed Test Cases:**"
+          grep -E "<<< FAILURE!|<<< ERROR!" test-results.log || echo "✅ No Test Cases Failed"
+
+          echo ""
+          echo "🔍 **Assertion Errors & Stacktrace Snippets:**"
+          grep -A 5 -E "(Failure!|AssertionError|expected:.*but was:|at .*Test\()" test-results.log || echo "✅ No Assertions Failed"
+        } 
+
     - name: Send ${{ job.status }} message to #qa-prime-integration room
       if: always()
       uses: act10ns/slack@v2.0.0
       with:
-          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
-          status: ${{ job.status }}
-          steps: ${{ toJson(steps) }}
-          channel: '#qa-prime-integration'
-          message: "*Build Status*: *${{ job.status }}*.\n*Environment:DEV*.\nAllure report URL is: https://pubfactory.github.io/qa-prime-e2e/${{ github.run_number }}\nGit commit ID is: ${{ inputs.gitcommitId }}.\nPrime-frontend job is: https://github.com/pubfactory/prime-frontend/actions/runs/${{ inputs.jobId }}"
-                  
-      env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+         webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+         status: ${{ job.status }}
+         steps: ${{ toJson(steps) }}
+         channel: '#qa-prime-integration'
+         message: |
+            *Build Status*: *${{ job.status }}*.
+            *Environment: DEV*.
+            Git commit ID: ${{ inputs.gitcommitId }}.
+            Prime-frontend job: https://github.com/pubfactory/prime-frontend/actions/runs/${{ inputs.jobId }}
+
+            *Test Failures Summary*:
+            ```
+            ${{ env.FAILURE_SUMMARY }}
+            ```
+              env:
+              SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
