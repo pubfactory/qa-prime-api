@@ -717,6 +717,16 @@
 						"regionlabeljournal":"anpr"
 			
 					}
-				}
+				},{
+					"id": "1737005",
+						"data": {
+							"description": "VerifyAPITests",
+							"autolaunchurl":"/view/journals/anpr/68/4/article-p214.xml?isSearch=true&body=PDF",
+							"openaccess":"Open Access",
+							"journalfiltertext":"By Journal",
+							"brainmedicine":"Brain Medicine"
+				
+						}
+						}
 	
 ]
