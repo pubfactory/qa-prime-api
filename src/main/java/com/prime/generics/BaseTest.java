@@ -280,7 +280,9 @@ public class BaseTest {
             // groupname = ConfigurationManager.getGroupName();
             testRailId = BaseTest.properties.getProperty("testRunId");
             suiteName = context.getSuite().getName();
+            System.out.println("suiteName="+suiteName);
             suite = context.getSuite().getXmlSuite();
+            System.out.println("suite="+suite);
             testNGtestName=context.getName();
            //System.out.println("testName="+testNGtestName);
             
@@ -439,7 +441,9 @@ public class BaseTest {
             String currenttestName = context.getName();
             String browser = BaseTest.properties.getProperty("browser");
             String executionMode = BaseTest.properties.getProperty("executionMode");
-            if (executionMode.equalsIgnoreCase("local") || (executionMode.equalsIgnoreCase("remote"))) {
+            System.out.println("suiteName.contains(\"API\")="+suiteName.contains("API"));
+            if ((executionMode.equalsIgnoreCase("local") || (executionMode.equalsIgnoreCase("remote")))&&suiteName.contains("API")==false) {
+            	System.out.println("API CHeck");
                 if (browser.equalsIgnoreCase("chrome")) {
                     System.out.println("******Enter Chrome Browser*****" + browser);
                     // io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
@@ -736,6 +740,7 @@ public class BaseTest {
                 if (!suiteName.contains("Default suite")) {
                     Helper.INSTANCE.publishResults(testRailId, testcaseId, "1", "Test Passed Successfully for application "+application);
                 }
+                if(suiteName.contains("API")==false) {
                 Allure.addAttachment("Test Passed Successfully", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
                 browserstack = BaseTest.properties.getProperty("BrowserStack");
                 if (browserstack.equalsIgnoreCase("Y")) {
@@ -748,16 +753,19 @@ public class BaseTest {
                     executorObject.put("arguments", argumentsObject);
                     jse.executeScript(String.format("browserstack_executor: %s", executorObject));
                 }
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
 
         } finally {
             Helper.INSTANCE.logEventInfoToReport("Execution Completed for " + testCaseId);
+            if(suiteName.contains("API")==false) {
             Allure.step("Fetching Current URL: " + WebDriverManager.getDriver().getCurrentUrl());
             // Helper.INSTANCE.setErrorMessage(testcaseId, "");
             WebDriverManager.closeDriver();
             WebDriverManager.resetFlagMap().clear();
+            }
         }
     }
 
