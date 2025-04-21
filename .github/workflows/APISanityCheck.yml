@@ -31,7 +31,7 @@ jobs:
       run: |
           ls -l
           pwd
-          cd /opt/actions-runner/_work/qa-prime-e2e/qa-prime-e2e/src/test/resources
+          cd /opt/actions-runner/_work/qa-prime-api/qa-prime-api/src/test/resources
           chmod +x chromedriver
 
     - name: Clean and Install Dependencies
