@@ -54,7 +54,6 @@ import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 import org.testng.xml.XmlSuite;
 import org.testng.xml.XmlTest;
-import com.prime.pageFactory.pages.fpj.MasterPage;
 import io.qameta.allure.Allure;
 //import okhttp3.Cookie;
 
@@ -107,7 +106,6 @@ public class BaseTest {
 
     public static Properties properties;
 
-    public MasterPage masterPage;
 
     public int counter = 0;
     public int maxAttempt = 1;
@@ -442,78 +440,6 @@ public class BaseTest {
             String browser = BaseTest.properties.getProperty("browser");
             String executionMode = BaseTest.properties.getProperty("executionMode");
             System.out.println("suiteName.contains(\"API\")="+suiteName.contains("API"));
-            if ((executionMode.equalsIgnoreCase("local") || (executionMode.equalsIgnoreCase("remote")))&&suiteName.contains("API")==false) {
-            	System.out.println("API CHeck");
-                if (browser.equalsIgnoreCase("chrome")) {
-                    System.out.println("******Enter Chrome Browser*****" + browser);
-                    // io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
-                    //System.out.println(System.getProperty("user.dir"));
-                               //     System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver");
-                   // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--disable-extensions");
-                    options.addArguments("--disable-dev-shm-usage");
-                    options.addArguments("--no-sandbox");
-                    options.addArguments("--disable-extensions");
-                    options.addArguments("--dns-prefetch-disable");
-                    options.addArguments("--disable-gpu");
-                    //options.addArguments("--user-agent=Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
-                    System.out.println("currenttestName="+currenttestName);
-                    if (currenttestName.equalsIgnoreCase("SSRUSERFLOWS"))
-                      options.addArguments("--user-agent=Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)");
-
-                    else
-//                        options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
-                    options.addArguments("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
-                    if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
-                        options.addArguments("--headless");
-                        options.addArguments("--window-size=1400,600");
-                    } else {
-                        options.addArguments("--start-maximized");
-                    }
-                    Thread.sleep(Integer.parseInt(BasePage.randomWait()));
-                    HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-                    chromePrefs.put("hardware_acceleration_mode.enabled", false);
-                    chromePrefs.put("download.prompt_for_download", false);
-                    chromePrefs.put("profile.default_content_settings.popups", 0);
-                    chromePrefs.put("profile.content_settings.pattern_pairs.*.multiple-automatic-downloads", 1);
-                    chromePrefs.put("profile.content_settings.exceptions.automatic_downloads.*.setting", 1);
-                    chromePrefs.put("profile.default_content_setting_values.automatic_downloads", 1);
-                    chromePrefs.put("profile.block_third_party_cookies", true);
-                    chromePrefs.put("safebrowsing.enabled", true);
-                    chromePrefs.put("download.default_directory", System.getProperty("user.dir") + File.separator + "target\\Assets");
-                    options.setExperimentalOption("prefs", chromePrefs);
-                    options.setPageLoadStrategy(PageLoadStrategy.NONE);
-                    Thread.sleep(Integer.parseInt(BasePage.randomWait()));
-                    System.out.println("******Before Chrome Driver*****" + browser);
-                    driver = new ChromeDriver(options);
-                    System.out.println("******After Chrome Driver*****" + driver);
-                } else if (browser.equalsIgnoreCase("firefox")) {
-                    System.out.println("****** Initiate Firefox Browser using " + browser + " *****");
-                    FirefoxOptions options = new FirefoxOptions();
-                    if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
-                        // options.setHeadless(true);
-                    }
-                    io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver(options);
-                    System.out.println("******After Firefox Driver*****" + driver);
-                } else if (browser.equalsIgnoreCase("edge")) {
-                    System.out.println("****** Initiate Edge Browser using " + browser + " *****");
-                    //DesiredCapabilities capabilities = DesiredCapabilities.edge();
-                    edgeoptions = new EdgeOptions();
-
-                    if (BaseTest.properties.getProperty("headLess").equalsIgnoreCase("Y")) {
-
-                        // edgeoptions.addArguments("--headless");
-
-                    }
-                    io.github.bonigarcia.wdm.WebDriverManager.edgedriver().setup();
-                    driver = new EdgeDriver(edgeoptions);
-                    System.out.println("******After Edge Driver*****" + driver);
-                }
-
-                WebDriverManager.setWebDriver(driver);
-            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -547,62 +473,7 @@ public class BaseTest {
         return logins;
     }
 
-    /**
-     * It is used to get test case id from testCase.json
-     * 
-     * @param testcaseid
-     * @return JSONObject
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 10/07/2023
-     */
-    public JSONObject getDetails(String testcaseid) throws Exception {
-        JSONObject finalObj = null;
-        try {
-            parser = new JSONParser();
-            // application = BaseTest.properties.getProperty("application");
-            this.fetchTestDataApplicationWise(application);
-            switch (application) {
-                case "fpj":
-                    jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/FPJ_TestData.json"))));
-                    break;
-                case "tsir":
-                    jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/TSIR_TestData.json"))));
-                    break;
-                default:
-                    throw new Exception("Not a valid application Choice");
-            }
-
-            for (Object jsonobj : jsonarray) {
-                JSONObject myObj = (JSONObject) jsonobj;
-                String id = myObj.get("id").toString();
-                if (id.equalsIgnoreCase(testcaseid)) {
-                    finalObj = (JSONObject) myObj.get("data");
-                }
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            throw new Exception("Unable to Find TestCase " + testcaseid);
-        }
-        return finalObj;
-    }
-
-    public void fetchTestDataApplicationWise(String application) throws Exception {
-        switch (application) {
-            case "fpj":
-                jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/FPJ_TestData.json"))));
-                break;
-            case "tsir":
-                jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/TSIR_TestData.json"))));
-                break;
-
-            case "anesthesiaprogress":
-                jsonarray = (JSONArray) parser.parse(new InputStreamReader(new FileInputStream(new File("./src/test/resources/ANESTHESIAPROGRESS_TestData.json"))));
-                break;
-            default:
-                throw new Exception("Not a valid application Choice");
-        }
-    }
+ 
 
     /**
      * This method performs to wait until the element visible in DOM of the page
@@ -650,46 +521,7 @@ public class BaseTest {
         }
     }
 
-    /**
-     * This method used to close the application
-     * 
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 10/07/2023
-     */
-    public void closeApplication() throws Exception {
-        try {
-            System.out.println("After quit  :" + WebDriverManager.getDriver().toString());
-            Helper.INSTANCE.logEventInfoToReport(driver.getCurrentUrl());
-            if (WebDriverManager.getDriver().toString().contains("null")) {
-                System.out.println("check browser ");
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
 
-    // /**
-    // * This method is used to quit the driver object
-    // *
-    // * @throws Exception
-    // * @author Rakesh.Shevale
-    // * @Created Date : 10/07/2023
-    // */
-    // @AfterSuite(alwaysRun = true)
-    // public void closeDriver() throws Exception {
-    // try {
-    // Helper.INSTANCE.logEventInfoToReport("After Suite");
-    //
-    // WebDriverManager.closeDriver();
-    // WebDriverManager.resetFlagMap().clear();
-    //
-    //
-    // System.out.println("After suite");
-    // } catch (Exception e) {
-    // e.printStackTrace();
-    // }
-    // }
 
     /**
      * This method log Event Information update execution status in case all failure
@@ -740,69 +572,16 @@ public class BaseTest {
                 if (!suiteName.contains("Default suite")) {
                     Helper.INSTANCE.publishResults(testRailId, testcaseId, "1", "Test Passed Successfully for application "+application);
                 }
-                if(suiteName.contains("API")==false) {
-                Allure.addAttachment("Test Passed Successfully", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-                browserstack = BaseTest.properties.getProperty("BrowserStack");
-                if (browserstack.equalsIgnoreCase("Y")) {
-                    final JavascriptExecutor jse = (JavascriptExecutor) driver;
-                    JSONObject executorObject = new JSONObject();
-                    JSONObject argumentsObject = new JSONObject();
-                    argumentsObject.put("status", "passed");
-                    argumentsObject.put("reason", "TEST PASSED SUCCESSFULLY");
-                    executorObject.put("action", "setSessionStatus");
-                    executorObject.put("arguments", argumentsObject);
-                    jse.executeScript(String.format("browserstack_executor: %s", executorObject));
-                }
-                }
             }
         } catch (Exception e) {
             e.printStackTrace();
 
         } finally {
             Helper.INSTANCE.logEventInfoToReport("Execution Completed for " + testCaseId);
-            if(suiteName.contains("API")==false) {
-            Allure.step("Fetching Current URL: " + WebDriverManager.getDriver().getCurrentUrl());
-            // Helper.INSTANCE.setErrorMessage(testcaseId, "");
-            WebDriverManager.closeDriver();
-            WebDriverManager.resetFlagMap().clear();
-            }
         }
     }
 
-    /**
-     * This method takes allure screenshot at end step for Pass and Fail Cases
-     * 
-     * @param driver
-     * @param name
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 23rd Dec 2022
-     */
-    public synchronized void takeScreenshot(WebDriver driver, String name) throws Exception {
-        try {
-            Allure.addAttachment(name, new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
-    /**
-     * This method used to navigate the URL
-     * 
-     * @param url
-     * @param drivers
-     * @author Rakesh.Shevale
-     * @Created Date : 10/07/2023
-     */
-    private void navigateToURL(String url, WebDriver driver) {
-        try {
-            driver.get(url);
-            Allure.step("Opening URL: " + url);
-        } catch (Exception e) {
-            Assert.fail("Failure while opening URL: " + url);
-        }
-
-    }
 
     /**
      * setter method initializes testcase id
@@ -992,84 +771,7 @@ public class BaseTest {
         return jsonarray;
     }
 
-    /**
-     * This method wait for load through Javascript Executor
-     * 
-     * @param driver
-     * @author Rakesh.Shevale
-     * @Created Date : 14/12/2022
-     */
-    public void waitForLoad(WebDriver driver) {
-        new WebDriverWait(driver, Duration.ofSeconds(50)).until((ExpectedCondition<Boolean>) wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
-    }
 
-    /**
-     * This method navigates the specific URL
-     * 
-     * @param url
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 01 Aug 2022
-     */
-    public void navigateToURL(String url) throws Exception {
-        try {
-            driver.get(properties.getProperty(url));
-            Allure.step("Opening URL: " + url);
-            WebDriverManager.getWebdriverWait().until(new Function<WebDriver, Boolean>() {
-                public Boolean apply(WebDriver driver) {
-                    return String.valueOf(((JavascriptExecutor) driver).executeScript("return document.readyState")).equals("complete");
-                }
-            });
-        } catch (Exception e) {
-            Assert.fail("Failure while opening URL: " + url);
-        }
-    }
-
-    /**
-     * This method navigates the specific URL
-     * 
-     * @param url
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 01 Aug 2022
-     */
-    public void navigateToUrl(String url) throws Exception {
-        try {
-            url = BaseTest.properties.getProperty(url);
-            WebDriverManager.getDriver().get(url);
-            Allure.step("Opening URL: " + url);
-            waitForLoad(driver);
-        } catch (Exception e) {
-            Assert.fail("Failure while opening URL: " + url);
-        }
-    }
-
-    /**
-     * This method navigates the specific URL when you have the link
-     * 
-     * @param url
-     * @throws Exception
-     * @author Veena.Mathew
-     * @Created Date : 26 Sep 2022
-     */
-    public void navigateToUrlLink(String url) throws Exception {
-        try {
-            // url = BaseTest.properties.getProperty(url);
-            WebDriverManager.getDriver().get(url);
-            Allure.step("Opening Application: " + application);
-            waitForLoad(driver);
-            BasePage basePage = new BasePage(WebDriverManager.getDriver());
-            int j = driver.findElements(By.xpath("//button[text()='Ok']")).size();
-            if (j > 0) {
-                WebElement Ok = WebDriverManager.getDriver().findElement(By.xpath("//button[text()='Ok']"));
-                basePage.clickOnElement(Ok, "Clicking on ok button on popup On HomePage");
-            }
-        } catch (Exception e) {
-            error = "Failure while opening URL: " + url;
-            Helper.INSTANCE.setErrorMessage(WebDriverManager.getTestcaseIdTestRail(), error);
-            Assert.fail(error);
-        }
-    }
 
     /**
      * It is used to get test case id from testCase.json
@@ -1101,35 +803,6 @@ public class BaseTest {
         return finalObj;
     }
 
-    /**
-     * This method used to Verify the URL
-     * 
-     * @throws Exception
-     * @return boolean
-     * @author Rakesh.Shevale
-     * @Created Date : 27/09/23
-     */
-
-    public static boolean verifyTextInURL(String linkText) {
-        try {
-            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.urlContains(linkText));
-            return true;
-        } catch (Exception ex) {
-            Assert.fail(linkText + " not found");
-            return false;
-        }
-    }
-
-    /**
-     * This methos automatically generates allure html report
-     * 
-     * @throws IOException
-     */
-    public void allureReporting() throws IOException {
-        Runtime.getRuntime().exec(new String[] {"mvn allure:serve"});
-
-    }
 
     public static void deleteDonwloadedFile() throws IOException {
         File f = new File(System.getProperty("user.dir") + "//target//Assets");
@@ -1161,41 +834,7 @@ public class BaseTest {
         }
     }
 
-    /**
-     * This method is used to verify PagInation Link size change after applying
-     * filter
-     * 
-     * @param totalResult
-     * @param afterApplyFilter
-     * @return boolean
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 14/10/2023
-     */
-    public static boolean compareBrowserResultsCount(int defaultPagination, int selectePagination) throws Exception {
-        if (defaultPagination > selectePagination) {
-            return true;
-        } else
-            return false;
-    }
 
-    /**
-     * This method is used to verify search result count change after applying
-     * filter
-     * 
-     * @param totalResult
-     * @param afterApplyFilter
-     * @return boolean
-     * @throws Exception
-     * @author Rakesh.Shevale
-     * @Created Date : 19/10/2023
-     */
-    public static boolean VerifyTotalResultCOuntChangeAfterApplyingFilter(int totalResult, int afterApplyFilter) throws Exception {
-        if (totalResult > afterApplyFilter) {
-            return true;
-        } else
-            return false;
-    }
 
     public static String getLastsixStringCharacter(String str) {
         String finalWord = str.substring(str.length() - 6, str.length());
@@ -1230,17 +869,6 @@ public class BaseTest {
 
     }
 
-    /**
-     * This method is used wait until the URL gets loads
-     * 
-     * @param totalResult
-     * @author Rakesh.Shevale
-     * @Created Date : 16/10/2023
-     */
-    public static void waitUntilTheURLGetLoads(String linkText) {
-        WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.urlContains(linkText));
-    }
 
     /**
      * This method asserts expected value equal to false
@@ -1388,25 +1016,7 @@ public class BaseTest {
         }
     }
 
-    /**
-     * This method used to Verify the URL
-     * 
-     * @throws Exception
-     * @return boolean
-     * @author Veena.mathew
-     * @Created Date : 10/11/24
-     */
-
-    public static boolean verifyTextInURLIgnoreCase(String linkText) {
-        try {
-            WebDriverWait wait = new WebDriverWait(WebDriverManager.getDriver(), Duration.ofSeconds(10));
-            wait.until(CustomExpectedConditions.urlContainsIgnoreCase(linkText));
-            return true;
-        } catch (Exception ex) {
-            Assert.fail(linkText + " in URL not found");
-            return false;
-        }
-    }
+   
     
     @AfterTest
     public void cleanup() {
