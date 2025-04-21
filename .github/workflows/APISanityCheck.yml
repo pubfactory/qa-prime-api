@@ -1,5 +1,5 @@
 
-name: APITestsPrime.yml
+name: APISanityCheck.yml
     
 on:
   workflow_dispatch:
